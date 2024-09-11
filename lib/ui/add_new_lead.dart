@@ -337,7 +337,7 @@ class _AddNewLeadState extends State<AddNewLead> {
                 ],
               ),
             ),
-            Divider(thickness: 0.5),
+            const Divider(thickness: 0.5),
             Padding(
               padding: const EdgeInsets.only(left: 115),
               child: Column(
@@ -364,7 +364,7 @@ class _AddNewLeadState extends State<AddNewLead> {
                 ],
               ),
             ),
-            Divider(
+            const Divider(
               thickness: 0.5,
             ),
             Padding(
@@ -382,27 +382,36 @@ class _AddNewLeadState extends State<AddNewLead> {
                           fontSize: 17),
                     ),
                   ),
-                  Row(
-                    children: [
-                      Consumer<UserProvider>(
-                        builder: (context, userProvider, child) {
-                          return Checkbox(
-                            checkColor: Colors.white,
-                            activeColor: Colors.black,
-                            value: userProvider.isChecked,
-                            onChanged: (bool? newValue) {
-                              userProvider.toggleCheckbox(newValue ?? false);
-                            },
-                          );
-                        },
-                      ),
-                      Text(
-                        'Email',
-                        style: TextStyle(color: Colors.black),
-                      ),
-                      Text('SMS'),
-                      Text('WhatsApp')
-                    ],
+                  Consumer<UserProvider>(
+                    builder: (context, userProvider, child) {
+                      return Row(
+                        children: [
+                          Widgets().checkBox(userProvider.isCheckedEmail,
+                              (bool? newValue) {
+                            userProvider.toggleCheckboxEmail(newValue ?? false);
+                          }),
+                          const SizedBox(width: 5),
+                          const Text(
+                            'Email',
+                            style: TextStyle(color: Colors.black),
+                          ),
+                          const SizedBox(width: 80),
+                          Widgets().checkBox(userProvider.isCheckedSMS,
+                              (bool? newValue) {
+                            userProvider.toggleCheckboxSMS(newValue ?? false);
+                          }),
+                          const Text('SMS'),
+                          const SizedBox(width: 80),
+                          Widgets().checkBox(userProvider.isCheckedWhatsApp,
+                              (bool? newValue) {
+                            userProvider
+                                .toggleCheckboxWhatsApp(newValue ?? false);
+                          }),
+                          const Text('WhatsApp'),
+                          const SizedBox(width: 5),
+                        ],
+                      );
+                    },
                   )
                 ],
               ),

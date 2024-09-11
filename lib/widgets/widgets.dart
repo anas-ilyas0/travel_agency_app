@@ -3,6 +3,15 @@ import 'package:fab_tech_sol/dimensions.dart';
 import 'package:flutter/material.dart';
 
 class Widgets {
+  Widget checkBox(bool value, Function(bool?) onChanged) {
+    return Checkbox(
+      value: value,
+      onChanged: onChanged,
+      checkColor: Colors.white,
+      activeColor: Colors.black,
+    );
+  }
+
   Widget textFormField({int? maxLines}) {
     return Container(
       width: 250,
