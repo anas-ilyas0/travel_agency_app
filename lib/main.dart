@@ -1,22 +1,26 @@
-import 'package:fab_tech_sol/home_screen.dart';
+
+import 'package:fab_tech_sol/Screen/invoice_details.dart';
+import 'package:fab_tech_sol/Screen/lead_details.dart';
+import 'package:fab_tech_sol/themedata.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+   final ThemeApp themeApp = ThemeApp();
+  
+   MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
+  
     return MaterialApp(
-      title: '',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: HomeScreen(),
+      debugShowCheckedModeBanner: false,
+      
+      theme: ThemeApp.myThemeData,
+      home: const InvoiceDetails(),
     );
   }
 }
