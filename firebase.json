@@ -1,0 +1,38 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "travel-agency-82655",
+          "appId": "1:704385165707:android:f360d28cfcfea8aaa2e78e",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "travel-agency-82655",
+          "configurations": {
+            "android": "1:704385165707:android:f360d28cfcfea8aaa2e78e",
+            "ios": "1:704385165707:ios:136037dc7257f5c6a2e78e",
+            "macos": "1:704385165707:ios:136037dc7257f5c6a2e78e",
+            "web": "1:704385165707:web:4ee67a89002de027a2e78e"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

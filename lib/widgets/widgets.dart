@@ -3,7 +3,129 @@ import 'package:fab_tech_sol/dimensions.dart';
 import 'package:flutter/material.dart';
 
 class Widgets {
-  Widget textFormField({int? maxLines}) {
+  Widget agentText(String text, double fontSize) {
+    return Expanded(
+      child: Text(text,
+          style: TextStyle(
+              fontSize: fontSize,
+              fontWeight: FontWeight.w300,
+              fontFamily: fontFamily)),
+    );
+  }
+
+  Widget finalButton(String text, Color color, VoidCallback onPress) {
+    return SizedBox(
+      height: 45,
+      width: 140,
+      child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+              backgroundColor: color,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5))),
+          onPressed: onPress,
+          child: Text(
+            text,
+            style: TextStyle(
+                fontFamily: fontFamily, color: const Color(0XFF202529)),
+          )),
+    );
+  }
+
+  Widget checkBox(bool value, Function(bool?) onChanged) {
+    return Checkbox(
+      value: value,
+      onChanged: onChanged,
+      checkColor: Colors.white,
+      activeColor: Colors.black,
+    );
+  }
+
+  Widget searchTextField() {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(30),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.3),
+            blurRadius: 5,
+            offset: const Offset(0, 3),
+          ),
+        ],
+      ),
+      child: Row(
+        children: [
+          Container(
+            width: 400,
+            height: 44,
+            decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(30),
+                border: Border.all(color: Colors.grey.withOpacity(0.3))),
+            child: TextFormField(
+              decoration: InputDecoration(
+                prefixIcon: Icon(
+                  Icons.search,
+                  color: addLeadButtonColor,
+                ),
+                suffixIcon: Container(
+                  height: 48,
+                  decoration: BoxDecoration(
+                    color: addLeadButtonColor,
+                    borderRadius: const BorderRadius.only(
+                      topRight: Radius.circular(30),
+                      bottomRight: Radius.circular(30),
+                    ),
+                  ),
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Search',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 12,
+                          fontFamily: fontFamily),
+                    ),
+                  ),
+                ),
+                hintText: 'Search Agent',
+                hintStyle: TextStyle(
+                    color: Colors.grey, fontFamily: fontFamily, fontSize: 12),
+                contentPadding: const EdgeInsets.symmetric(
+                  horizontal: 5,
+                  //vertical: 22
+                ),
+                border: const OutlineInputBorder(borderSide: BorderSide.none),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget textFormNoteField(int maxLines, double width) {
+    return Container(
+      width: width,
+      decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: Colors.grey.withOpacity(0.3))),
+      child: TextFormField(
+        maxLines: maxLines,
+        decoration: InputDecoration(
+          hintText: 'Add Here',
+          hintStyle: TextStyle(
+              color: Colors.grey, fontFamily: fontFamily, fontSize: 13),
+          contentPadding:
+              const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+          border: const OutlineInputBorder(borderSide: BorderSide.none),
+        ),
+      ),
+    );
+  }
+
+  Widget textFormField() {
     return Container(
       width: 250,
       decoration: BoxDecoration(
@@ -11,31 +133,40 @@ class Widgets {
           borderRadius: BorderRadius.circular(10),
           border: Border.all(color: Colors.grey.withOpacity(0.3))),
       child: TextFormField(
-        maxLines: maxLines,
-        //cursorColor: addLeadButtonColor,
-        decoration: const InputDecoration(
+        decoration: InputDecoration(
           hintText: 'Add Here',
-          hintStyle: TextStyle(color: Colors.grey),
-          contentPadding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-          border: OutlineInputBorder(borderSide: BorderSide.none),
+          hintStyle: TextStyle(
+              color: Colors.grey, fontFamily: fontFamily, fontSize: 13),
+          contentPadding:
+              const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+          border: const OutlineInputBorder(borderSide: BorderSide.none),
         ),
       ),
     );
   }
 
-  Widget circularAvatar() {
+  Widget circularAvatar({String? text, String? backgroundImage}) {
     return Row(
       children: [
-        const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10),
-          child: Text('Name here', style: TextStyle(fontSize: 18)),
-        ),
+        if (text != null)
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Text(
+              text,
+              style: TextStyle(fontSize: 17, fontFamily: fontFamily),
+            ),
+          ),
         Padding(
           padding: const EdgeInsets.only(right: 30),
           child: CircleAvatar(
-            backgroundColor: color,
+            backgroundImage:
+                backgroundImage != null ? AssetImage(backgroundImage) : null,
+            // backgroundColor:
+            //     backgroundImage != null ? color : Colors.transparent,
             radius: 15,
-            child: const Icon(Icons.person, color: Colors.white),
+            child: backgroundImage == null
+                ? const Icon(Icons.person, color: Colors.white)
+                : null,
           ),
         ),
       ],
@@ -48,11 +179,19 @@ class Widgets {
         Expanded(
           child: Text(
             firstText,
-            style: const TextStyle(fontWeight: FontWeight.bold),
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontFamily: fontFamily,
+            ),
           ),
         ),
         Expanded(
-          child: Text(secondText),
+          child: Text(
+            secondText,
+            style: TextStyle(
+              fontFamily: fontFamily,
+            ),
+          ),
         ),
         const SizedBox(height: 7),
       ],
@@ -79,12 +218,19 @@ class Widgets {
                 children: [
                   Text(
                     title,
-                    style: TextStyle(fontWeight: FontWeight.w600, color: color),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: color,
+                        fontFamily: 'Readex Pro',
+                        fontSize: 13),
                   ),
                   const SizedBox(height: 30),
                   Text(
                     numbers,
-                    style: const TextStyle(fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Readex Pro',
+                    ),
                   ),
                 ],
               ),
@@ -116,6 +262,7 @@ class Widgets {
 
   Widget button(String text, VoidCallback onTap) {
     return Container(
+      height: 48,
       decoration: BoxDecoration(
           color: addLeadButtonColor, borderRadius: BorderRadius.circular(5)),
       child: Padding(
@@ -130,7 +277,7 @@ class Widgets {
                 child: Center(
                   child: Text(
                     text,
-                    style: TextStyle(color: color),
+                    style: TextStyle(color: color, fontWeight: FontWeight.bold),
                   ),
                 ),
               ),
@@ -141,11 +288,12 @@ class Widgets {
     );
   }
 
-  Widget dropDownButton(
-      String value, List<String> data, Function(String?)? onChanged) {
+  Widget dropDownButton(String value, List<String> data,
+      Function(String?)? onChanged, BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 10),
       child: Container(
+        width: context.screenWidth * 0.14,
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(7),
@@ -154,15 +302,19 @@ class Widgets {
         child: Row(
           children: [
             SizedBox(
-              height: 30,
+              height: context.screenHeight * 0.2,
               width: 30,
-              child: Image(
-                image: AssetImage('${imageUrl}vector.png'),
-                fit: BoxFit.contain,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 12),
+                child: Image(
+                  image: AssetImage('${imageUrl}vector.png'),
+                  fit: BoxFit.contain,
+                ),
               ),
             ),
             const SizedBox(width: 10),
             DropdownButton<String>(
+              dropdownColor: Colors.white,
               isDense: true,
               underline: Container(),
               value: value,

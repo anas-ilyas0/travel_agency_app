@@ -12,6 +12,30 @@ class AddNewLead extends StatefulWidget {
 }
 
 class _AddNewLeadState extends State<AddNewLead> {
+  List<String> agents = ['John Doe', 'Jane Smith', 'James Bond', 'Tony Stark'];
+  List<String> filteredAgents = [];
+
+  // TextController for the search field
+  TextEditingController searchController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    filteredAgents = agents; // Initially, all agents are displayed
+  }
+
+  void filterAgents(String query) {
+    setState(() {
+      if (query.isEmpty) {
+        filteredAgents = agents;
+      } else {
+        filteredAgents = agents
+            .where((agent) => agent.toLowerCase().contains(query.toLowerCase()))
+            .toList();
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +63,10 @@ class _AddNewLeadState extends State<AddNewLead> {
                   const SizedBox(width: 10),
                   Text(
                     'Add New Lead',
-                    style: TextStyle(color: addLeadButtonColor, fontSize: 17),
+                    style: TextStyle(
+                        color: addLeadButtonColor,
+                        fontSize: 17,
+                        fontFamily: fontFamily),
                   ),
                 ],
               ),
@@ -68,6 +95,7 @@ class _AddNewLeadState extends State<AddNewLead> {
                           'Add New Lead Details',
                           style: TextStyle(
                               color: color,
+                              fontFamily: fontFamily,
                               fontWeight: FontWeight.bold,
                               fontSize: 15),
                         ),
@@ -76,15 +104,17 @@ class _AddNewLeadState extends State<AddNewLead> {
                           'Agent Details',
                           style: TextStyle(
                               color: color,
+                              fontFamily: fontFamily,
                               fontWeight: FontWeight.bold,
                               fontSize: 17),
                         ),
                         const SizedBox(height: 15),
-                        const Text(
+                        Text(
                           'Agent Name',
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: 13,
+                              fontFamily: fontFamily,
                               fontWeight: FontWeight.bold),
                         ),
                         const SizedBox(height: 5),
@@ -107,7 +137,10 @@ class _AddNewLeadState extends State<AddNewLead> {
               child: Text(
                 'Client Details',
                 style: TextStyle(
-                    color: color, fontWeight: FontWeight.bold, fontSize: 17),
+                    color: color,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: fontFamily,
+                    fontSize: 17),
               ),
             ),
             const SizedBox(height: 15),
@@ -118,11 +151,12 @@ class _AddNewLeadState extends State<AddNewLead> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
+                      Text(
                         'Client Name',
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: 13,
+                            fontFamily: fontFamily,
                             fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(height: 5),
@@ -133,11 +167,12 @@ class _AddNewLeadState extends State<AddNewLead> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
+                      Text(
                         'Phone Number',
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: 13,
+                            fontFamily: fontFamily,
                             fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(height: 5),
@@ -157,7 +192,10 @@ class _AddNewLeadState extends State<AddNewLead> {
                   children: [
                     Text(
                       'Different rates for different category',
-                      style: TextStyle(color: addLeadButtonColor),
+                      style: TextStyle(
+                        color: addLeadButtonColor,
+                        fontFamily: fontFamily,
+                      ),
                     ),
                     const SizedBox(height: 10),
                     Row(
@@ -167,14 +205,18 @@ class _AddNewLeadState extends State<AddNewLead> {
                           child: Text(
                             'Name',
                             style: TextStyle(
-                                color: addLeadButtonColor, fontSize: 16),
+                                color: addLeadButtonColor,
+                                fontSize: 16,
+                                fontFamily: fontFamily),
                           ),
                         ),
                         Expanded(
                           child: Text(
                             'Number of People',
                             style: TextStyle(
-                                color: addLeadButtonColor, fontSize: 16),
+                                color: addLeadButtonColor,
+                                fontSize: 16,
+                                fontFamily: fontFamily),
                           ),
                         ),
                         Expanded(
@@ -183,7 +225,9 @@ class _AddNewLeadState extends State<AddNewLead> {
                             child: Text(
                               'Budget',
                               style: TextStyle(
-                                  color: addLeadButtonColor, fontSize: 16),
+                                  color: addLeadButtonColor,
+                                  fontSize: 16,
+                                  fontFamily: fontFamily),
                             ),
                           ),
                         ),
@@ -191,10 +235,12 @@ class _AddNewLeadState extends State<AddNewLead> {
                     ),
                     Row(
                       children: [
-                        const Expanded(
+                        Expanded(
                             child: Text(
                           'Adult',
-                          style: TextStyle(fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontFamily: fontFamily),
                         )),
                         Expanded(
                           child: Widgets().textFormField(),
@@ -208,9 +254,11 @@ class _AddNewLeadState extends State<AddNewLead> {
                     const SizedBox(height: 7),
                     Row(
                       children: [
-                        const Expanded(
+                        Expanded(
                           child: Text('Child',
-                              style: TextStyle(fontWeight: FontWeight.bold)),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: fontFamily)),
                         ),
                         Expanded(
                           child: Widgets().textFormField(),
@@ -224,9 +272,11 @@ class _AddNewLeadState extends State<AddNewLead> {
                     const SizedBox(height: 7),
                     Row(
                       children: [
-                        const Expanded(
+                        Expanded(
                           child: Text('Infant',
-                              style: TextStyle(fontWeight: FontWeight.bold)),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: fontFamily)),
                         ),
                         Expanded(
                           child: Widgets().textFormField(),
@@ -240,9 +290,11 @@ class _AddNewLeadState extends State<AddNewLead> {
                     const SizedBox(height: 7),
                     Row(
                       children: [
-                        const Expanded(
+                        Expanded(
                           child: Text('Senior Citizen',
-                              style: TextStyle(fontWeight: FontWeight.bold)),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: fontFamily)),
                         ),
                         Expanded(
                           child: Widgets().textFormField(),
@@ -256,9 +308,11 @@ class _AddNewLeadState extends State<AddNewLead> {
                     const SizedBox(height: 7),
                     Row(
                       children: [
-                        const Expanded(
+                        Expanded(
                           child: Text('Other',
-                              style: TextStyle(fontWeight: FontWeight.bold)),
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: fontFamily)),
                         ),
                         Expanded(
                           child: Widgets().textFormField(),
@@ -286,6 +340,7 @@ class _AddNewLeadState extends State<AddNewLead> {
                       style: TextStyle(
                           color: color,
                           fontWeight: FontWeight.bold,
+                          fontFamily: fontFamily,
                           fontSize: 17),
                     ),
                   ),
@@ -294,11 +349,12 @@ class _AddNewLeadState extends State<AddNewLead> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             'Destination',
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 13,
+                                fontFamily: fontFamily,
                                 fontWeight: FontWeight.bold),
                           ),
                           Widgets().textFormField(),
@@ -308,11 +364,12 @@ class _AddNewLeadState extends State<AddNewLead> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             'Travel Date',
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 13,
+                                fontFamily: fontFamily,
                                 fontWeight: FontWeight.bold),
                           ),
                           Widgets().textFormField(),
@@ -322,11 +379,12 @@ class _AddNewLeadState extends State<AddNewLead> {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             'Departure Date',
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 13,
+                                fontFamily: fontFamily,
                                 fontWeight: FontWeight.bold),
                           ),
                           Widgets().textFormField(),
@@ -337,7 +395,7 @@ class _AddNewLeadState extends State<AddNewLead> {
                 ],
               ),
             ),
-            Divider(thickness: 0.5),
+            const Divider(thickness: 0.5),
             Padding(
               padding: const EdgeInsets.only(left: 115),
               child: Column(
@@ -349,22 +407,24 @@ class _AddNewLeadState extends State<AddNewLead> {
                       'Additional Notes',
                       style: TextStyle(
                           color: color,
+                          fontFamily: fontFamily,
                           fontWeight: FontWeight.bold,
                           fontSize: 17),
                     ),
                   ),
-                  const Text(
+                  Text(
                     'Add Note',
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: 13,
+                        fontFamily: fontFamily,
                         fontWeight: FontWeight.bold),
                   ),
-                  Widgets().textFormField(maxLines: 5),
+                  Widgets().textFormNoteField(5, 775),
                 ],
               ),
             ),
-            Divider(
+            const Divider(
               thickness: 0.5,
             ),
             Padding(
@@ -378,32 +438,63 @@ class _AddNewLeadState extends State<AddNewLead> {
                       'Best Way to Reach You',
                       style: TextStyle(
                           color: color,
+                          fontFamily: fontFamily,
                           fontWeight: FontWeight.bold,
                           fontSize: 17),
                     ),
                   ),
-                  Row(
-                    children: [
-                      Consumer<UserProvider>(
-                        builder: (context, userProvider, child) {
-                          return Checkbox(
-                            checkColor: Colors.white,
-                            activeColor: Colors.black,
-                            value: userProvider.isChecked,
-                            onChanged: (bool? newValue) {
-                              userProvider.toggleCheckbox(newValue ?? false);
-                            },
-                          );
-                        },
-                      ),
-                      Text(
-                        'Email',
-                        style: TextStyle(color: Colors.black),
-                      ),
-                      Text('SMS'),
-                      Text('WhatsApp')
-                    ],
-                  )
+                  Consumer<UserProvider>(
+                    builder: (context, userProvider, child) {
+                      return Row(
+                        children: [
+                          Widgets().checkBox(userProvider.isCheckedEmail,
+                              (bool? newValue) {
+                            userProvider.toggleCheckboxEmail(newValue ?? false);
+                          }),
+                          const SizedBox(width: 5),
+                          Text(
+                            'Email',
+                            style: TextStyle(
+                                color: Colors.black, fontFamily: fontFamily),
+                          ),
+                          const SizedBox(width: 80),
+                          Widgets().checkBox(userProvider.isCheckedSMS,
+                              (bool? newValue) {
+                            userProvider.toggleCheckboxSMS(newValue ?? false);
+                          }),
+                          Text(
+                            'SMS',
+                            style: TextStyle(
+                                color: Colors.black, fontFamily: fontFamily),
+                          ),
+                          const SizedBox(width: 80),
+                          Widgets().checkBox(userProvider.isCheckedWhatsApp,
+                              (bool? newValue) {
+                            userProvider
+                                .toggleCheckboxWhatsApp(newValue ?? false);
+                          }),
+                          Text(
+                            'WhatsApp',
+                            style: TextStyle(
+                                color: Colors.black, fontFamily: fontFamily),
+                          ),
+                          const SizedBox(width: 5),
+                        ],
+                      );
+                    },
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 70),
+                    child: Row(
+                      children: [
+                        Widgets().finalButton(
+                            'Cancel', const Color(0XFFE7E7E7), () {}),
+                        const SizedBox(width: 15),
+                        Widgets()
+                            .finalButton('Save', const Color(0XFF83D0E3), () {})
+                      ],
+                    ),
+                  ),
                 ],
               ),
             )
