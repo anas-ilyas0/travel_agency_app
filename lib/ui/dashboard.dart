@@ -64,8 +64,12 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
               child: Row(
                 children: [
                   TabBar(
+                    labelStyle: const TextStyle(
+                        fontFamily: 'Readex Pro', fontWeight: FontWeight.bold),
                     labelColor: color,
                     unselectedLabelColor: Colors.grey,
+                    unselectedLabelStyle:
+                        const TextStyle(fontWeight: FontWeight.normal),
                     indicatorColor: color,
                     dividerColor: Colors.transparent,
                     controller: dashboardTabController,
@@ -83,7 +87,7 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
             ),
           ],
         ),
-        actions: [Widgets().circularAvatar()],
+        actions: [Widgets().circularAvatar(text: 'Name here')],
       ),
       body: Column(
         children: [
@@ -98,14 +102,15 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          const Padding(
-                            padding: EdgeInsets.only(left: 30),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 50),
                             child: Text(
                               'Dashboard',
                               style: TextStyle(
                                   fontSize: 20,
+                                  fontFamily: 'Readex Pro',
                                   fontWeight: FontWeight.bold,
-                                  color: Color(0XFF11345A)),
+                                  color: color),
                             ),
                           ),
                           Row(
@@ -119,7 +124,7 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
                                       providerValue.dropdownItems1,
                                       (String? newValue) {
                                     providerValue.updateSelectedItem1(newValue);
-                                  }),
+                                  }, context),
                                 ],
                               ),
                               const SizedBox(width: 15),
@@ -128,7 +133,7 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
                                   providerValue.dropdownItems2,
                                   (String? newValue) {
                                 providerValue.updateSelectedItem2(newValue);
-                              }),
+                              }, context),
                               const SizedBox(width: 15),
                               Widgets().button('Add New Lead', () {
                                 Navigator.pushNamed(
@@ -181,27 +186,36 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
                     children: [
                       Row(
                         children: [
-                          const Padding(
-                            padding: EdgeInsets.only(left: 75),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 75),
                             child: Text(
                               'All Leads',
                               style: TextStyle(
                                   fontSize: 20,
+                                  fontFamily: 'Readex Pro',
                                   fontWeight: FontWeight.bold,
-                                  color: Color(0XFF11345A)),
+                                  color: color),
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.only(left: 400),
+                            padding:
+                                const EdgeInsets.only(left: 370, right: 25),
                             child: Row(
                               children: [
-                                const Text(
+                                Text(
                                   'Leads Status :',
                                   style: TextStyle(
-                                      color: Color(0XFF11345A),
+                                      color: color,
+                                      fontFamily: 'Readex Pro',
                                       fontWeight: FontWeight.w600),
                                 ),
                                 TabBar(
+                                    labelStyle: const TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'Readex Pro',
+                                    ),
+                                    unselectedLabelStyle: const TextStyle(
+                                        fontWeight: FontWeight.normal),
                                     unselectedLabelColor: Colors.grey,
                                     labelColor: color,
                                     indicatorColor: color,
@@ -218,7 +232,7 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
                                     providerValue.dropdownItems2,
                                     (String? newValue) {
                                   providerValue.updateSelectedItem2(newValue);
-                                }),
+                                }, context),
                                 const SizedBox(width: 15),
                                 Widgets().button('Add New Lead', () {
                                   Navigator.pushNamed(
@@ -280,9 +294,11 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
                                                             backgroundColor:
                                                                 color),
                                                     onPressed: () {},
-                                                    child: const Text(
+                                                    child: Text(
                                                       'View Details',
                                                       style: TextStyle(
+                                                          fontFamily:
+                                                              fontFamily,
                                                           color: Colors.white),
                                                     )),
                                               )
@@ -299,8 +315,294 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
                     ],
                   ),
                 ),
-                const Center(child: Text('Agents Content')),
-                const Center(child: Text('Supplier Content')),
+                Padding(
+                  padding: const EdgeInsets.only(top: 25),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 75),
+                              child: Text(
+                                'All Agents',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontFamily: fontFamily,
+                                    fontWeight: FontWeight.bold,
+                                    color: color),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(right: 30),
+                              child: Row(
+                                children: [
+                                  Widgets().searchTextField(),
+                                  Widgets().dropDownButton(
+                                      providerValue.selectedItem2,
+                                      providerValue.dropdownItems2,
+                                      (String? newValue) {
+                                    providerValue.updateSelectedItem2(newValue);
+                                  }, context),
+                                  const SizedBox(width: 15),
+                                  Widgets().button('Add Agent', () {})
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              top: 30, left: 20, right: 20, bottom: 10),
+                          child: Container(
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(7)),
+                            height: 50,
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 15),
+                              child: Row(
+                                children: [
+                                  Widgets().agentText('Name', 14),
+                                  Widgets().agentText('Phone Number', 14),
+                                  Widgets().agentText('Email', 14),
+                                  Widgets().agentText('Location', 14),
+                                  Widgets().agentText('Status', 14),
+                                  Widgets().agentText('Action', 14),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                          child: ListView.builder(
+                              physics: const NeverScrollableScrollPhysics(),
+                              shrinkWrap: true,
+                              itemCount: 10,
+                              itemBuilder: (context, index) {
+                                return Container(
+                                    decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(7)),
+                                    height: 50,
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 15),
+                                      child: Row(
+                                        children: [
+                                          Expanded(
+                                            child: Row(
+                                              children: [
+                                                Widgets().circularAvatar(
+                                                    backgroundImage:
+                                                        '${imageUrl}agent.png'),
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          right: 10),
+                                                  child: Widgets().agentText(
+                                                      'John Doe', 12),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Widgets()
+                                              .agentText('+21 999 999 999', 12),
+                                          Widgets().agentText(
+                                              'example@gmail.com', 12),
+                                          Widgets().agentText(
+                                              'Sialkot Punjab 51040', 12),
+                                          Widgets().agentText('Active', 12),
+                                          Expanded(
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      vertical: 5),
+                                              child: Container(
+                                                decoration: BoxDecoration(
+                                                    color:
+                                                        editDelContainerColor,
+                                                    border: Border.all(
+                                                        color:
+                                                            addLeadButtonColor),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5)),
+                                                child: Row(
+                                                  children: [
+                                                    IconButton(
+                                                        onPressed: () {},
+                                                        icon: const Icon(
+                                                            Icons.edit),
+                                                        color: color),
+                                                    const VerticalDivider(
+                                                      thickness: 0.8,
+                                                      indent: 5,
+                                                      endIndent: 5,
+                                                    ),
+                                                    IconButton(
+                                                        onPressed: () {},
+                                                        icon: Image(
+                                                            image: AssetImage(
+                                                                '${imageUrl}delImage.png')),
+                                                        color: color),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    ));
+                              }),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 25),
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 75),
+                              child: Text(
+                                'Local Supplier',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontFamily: fontFamily,
+                                    fontWeight: FontWeight.bold,
+                                    color: color),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(right: 30),
+                              child: Row(
+                                children: [
+                                  Widgets().searchTextField(),
+                                  Widgets().dropDownButton(
+                                      providerValue.selectedItem2,
+                                      providerValue.dropdownItems2,
+                                      (String? newValue) {
+                                    providerValue.updateSelectedItem2(newValue);
+                                  }, context),
+                                  const SizedBox(width: 15),
+                                  Widgets().button('Add Supplier', () {})
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                              top: 30, left: 20, right: 20, bottom: 10),
+                          child: Container(
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(7)),
+                            height: 50,
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 15),
+                              child: Row(
+                                children: [
+                                  Widgets().agentText('Company Name', 14),
+                                  Widgets().agentText('Supplier Name', 14),
+                                  Widgets().agentText('Supplier Address', 14),
+                                  Widgets().agentText('Service', 14),
+                                  Widgets().agentText('Company Address', 14),
+                                  Widgets().agentText('Status', 14),
+                                  Widgets().agentText('Action', 14),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 20),
+                          child: ListView.builder(
+                              physics: const NeverScrollableScrollPhysics(),
+                              shrinkWrap: true,
+                              itemCount: 10,
+                              itemBuilder: (context, index) {
+                                return Container(
+                                    decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(7)),
+                                    height: 50,
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 15),
+                                      child: Row(
+                                        children: [
+                                          Widgets().agentText(
+                                              'BIRAM TOUR GUIDE', 12),
+                                          Widgets().agentText('Naseeb', 12),
+                                          Widgets().agentText(
+                                              'Sialkot, Punjab, Pakistan', 12),
+                                          Widgets().agentText(
+                                              'Hotel Accommodation', 12),
+                                          Widgets().agentText(
+                                              'agentlocationhere', 12),
+                                          Widgets().agentText('Active', 12),
+                                          Expanded(
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      vertical: 5),
+                                              child: Container(
+                                                width: 50,
+                                                decoration: BoxDecoration(
+                                                    color:
+                                                        editDelContainerColor,
+                                                    border: Border.all(
+                                                        color:
+                                                            addLeadButtonColor),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5)),
+                                                child: Row(
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment
+                                                          .spaceAround,
+                                                  children: [
+                                                    IconButton(
+                                                        onPressed: () {},
+                                                        icon: const Icon(
+                                                            Icons.edit),
+                                                        color: color),
+                                                    const VerticalDivider(
+                                                      thickness: 0.8,
+                                                      indent: 5,
+                                                      endIndent: 5,
+                                                    ),
+                                                    IconButton(
+                                                        onPressed: () {},
+                                                        icon: Image(
+                                                            image: AssetImage(
+                                                                '${imageUrl}delImage.png')),
+                                                        color: color),
+                                                  ],
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ));
+                              }),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
                 const Center(child: Text('Package Content')),
               ],
             ),

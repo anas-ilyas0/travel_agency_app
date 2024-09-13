@@ -30,9 +30,13 @@ class UserProvider extends ChangeNotifier {
   String selectedItem1 = 'Today';
   final List<String> dropdownItems1 = [
     'Today',
-    'Tomorrow',
-    'Yesterday',
-    'Week ago'
+    'Last Week',
+    'This Week',
+    'Next Week',
+    'Last Month',
+    'This Month',
+    'Last Year',
+    'This Year',
   ];
 
   String selectedItem2 = 'Filter';
