@@ -5,9 +5,10 @@ import 'package:flutter/material.dart';
 class ThemeApp {
   static ThemeData myThemeData = ThemeData(
     appBarTheme: AppBarTheme(
-  backgroundColor: AppColor.background,),
-  scaffoldBackgroundColor: AppColor.background,
- fontFamily: 'ReadexPro-Light', 
+      backgroundColor: AppColor.background,
+    ),
+    scaffoldBackgroundColor: AppColor.background,
+    fontFamily: 'ReadexPro-Light',
     textTheme: const TextTheme(),
   );
 }

@@ -3,7 +3,9 @@ import 'package:fab_tech_sol/Screen/lead_details.dart';
 import 'package:fab_tech_sol/Screen/package.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
+import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:fab_tech_sol/routes/routes.dart';
+import 'package:fab_tech_sol/widgets/dashboardDrawer.dart';
 import 'package:fab_tech_sol/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -92,6 +94,7 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
         ),
         actions: [Widgets().circularAvatar(text: 'Name here')],
       ),
+      drawer: Responsive.isDesktop(context)? null: DashboardDrawer(),
       body: Column(
         children: [
           Expanded(

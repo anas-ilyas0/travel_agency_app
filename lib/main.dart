@@ -4,6 +4,7 @@ import 'package:fab_tech_sol/Screen/addnewinternationalsuppliers.dart';
 import 'package:fab_tech_sol/Screen/international_suppliers_details.dart';
 import 'package:fab_tech_sol/Screen/local_supplier_detail.dart';
 import 'package:fab_tech_sol/login_page.dart';
+import 'package:fab_tech_sol/providers/manage_color_state.dart';
 
 import 'package:fab_tech_sol/themedata.dart';
 
@@ -11,6 +12,7 @@ import 'package:fab_tech_sol/themedata.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/Screen/add_new_lead_detail.dart';
 import 'package:fab_tech_sol/firebase_options.dart';
+import 'package:fab_tech_sol/ui/dashboard.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 
@@ -30,6 +32,7 @@ void main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => UserProvider()),
+        ChangeNotifierProvider(create: (_) => DrawerStateInfo()),
       ],
       child: MyApp(),
     ),
@@ -48,7 +51,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeApp.myThemeData,
         
-        home:LoginPage() );
+        home: const Dashboard() );
       // debugShowCheckedModeBanner: false,
       // theme: ThemeApp.myThemeData,
       // initialRoute: AppRoutes.dashboard,

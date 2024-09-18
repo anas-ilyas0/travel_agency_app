@@ -7,6 +7,7 @@ class AppColor {
      static Color buttonTextColors= const Color(0XFF83D0E3);
     static Color blueColor=const Color(0XFF83D0E3);
     static Color borderColor=const Color(0XFF70707033);
+    static Color darkGrey=const Color(0XFF707070);
    // static Color borderColor=const Color(0XFF303C6C);
    
   
