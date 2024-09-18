@@ -51,7 +51,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
           SizedBox(
             height: context.screenHeight * 0.02,
           ),
-          Divider(
+          const Divider(
             indent: 42,
             endIndent: 42,
           ),
@@ -60,7 +60,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
               SizedBox(
                 width: context.screenWidth * 0.05,
               ),
-              Text(
+              const Text(
                 'Briton Consultancy & Travel Tours',
                 style: TextStyle(
                     fontSize: 22,
@@ -78,7 +78,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
               SizedBox(
                 width: context.screenWidth * 0.23,
               ),
-              Text(
+              const Text(
                 'Invoice Number:',
                 style: TextStyle(
                     fontWeight: FontWeight.bold, color: Color(0XFF83D0E3)),
@@ -86,7 +86,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
               SizedBox(
                 width: context.screenWidth * 0.02,
               ),
-              Text(
+              const Text(
                 'In834892234',
                 style: TextStyle(
                     color: Color(0XFF11345A), fontWeight: FontWeight.bold),
@@ -119,13 +119,13 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
                       fontSize: 16)),
             ),
           ),
-          Divider(
+          const Divider(
             indent: 70,
             endIndent: 70,
           ),
           Row(
             children: [
-              Padding(
+              const Padding(
                   padding:
                       EdgeInsets.only(left: 70), // Adds padding around the text
                   child: Align(
@@ -139,7 +139,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
               SizedBox(
                 width: context.screenWidth * 0.05,
               ),
-              Text(
+              const Text(
                 'Beeharree Praina',
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
@@ -149,7 +149,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
               SizedBox(
                 width: context.screenWidth * 0.555,
               ),
-              Text(
+              const Text(
                 'Invoice Number:',
                 style: TextStyle(
                     fontWeight: FontWeight.bold, color: Color(0XFF83D0E3)),
@@ -157,14 +157,14 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
               SizedBox(
                 width: context.screenWidth * 0.02,
               ),
-              Text(
+              const Text(
                 '08/15/2024',
                 style: TextStyle(
                     color: Color(0XFF11345A), fontWeight: FontWeight.bold),
               )
             ],
           ),
-          Divider(
+          const Divider(
             indent: 70,
             endIndent: 70,
           ),
@@ -177,7 +177,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
             ),
             child: Row(
               children: [
-                Padding(
+                const Padding(
                   padding: EdgeInsets.all(12),
                   child: Text(
                     'Price Per Pax',
@@ -188,7 +188,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
                 SizedBox(
                   width: context.screenWidth * 0.2,
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.all(12),
                   child: Text(
                     'Qty',
@@ -199,7 +199,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
                 SizedBox(
                   width: context.screenWidth * 0.2,
                 ),
-                Padding(
+                const Padding(
                   padding: EdgeInsets.all(12),
                   child: Text(
                     'Total Per Pax',
@@ -214,7 +214,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
           Row(
             children: [
               Padding(
-                padding: EdgeInsets.only(left: 70),
+                padding: const EdgeInsets.only(left: 70),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Container(
@@ -226,7 +226,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
                           Text1: "Adult",
                           Text2: "000000",
                         ),
-                        Divider(
+                        const Divider(
                           color: Colors.grey,
                           thickness: .5,
                         ),
@@ -234,7 +234,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
                           Text1: "Child",
                           Text2: "",
                         ),
-                        Divider(
+                        const Divider(
                           color: Colors.grey,
                           thickness: .5,
                         ),
@@ -242,7 +242,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
                           Text1: "Infant",
                           Text2: "",
                         ),
-                        Divider(
+                        const Divider(
                           color: Colors.grey,
                           thickness: .5,
                         ),
@@ -250,7 +250,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
                           Text1: "ABCD",
                           Text2: "",
                         ),
-                        Divider(
+                        const Divider(
                           color: Colors.grey,
                           thickness: .5,
                         ),
@@ -267,7 +267,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
                 width: context.screenWidth * 0.05,
               ),
               Padding(
-                padding: EdgeInsets.only(left: 70),
+                padding: const EdgeInsets.only(left: 70),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Container(
@@ -279,7 +279,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
                           Text1: "ABCD",
                           Text2: "1",
                         ),
-                        Divider(
+                        const Divider(
                           color: Colors.grey,
                           thickness: .5,
                         ),
@@ -287,7 +287,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
                           Text1: "ABCD",
                           Text2: "",
                         ),
-                        Divider(
+                        const Divider(
                           color: Colors.grey,
                           thickness: .5,
                         ),
@@ -295,7 +295,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
                           Text1: "ABCD",
                           Text2: "",
                         ),
-                        Divider(
+                        const Divider(
                           color: Colors.grey,
                           thickness: .5,
                         ),
@@ -303,7 +303,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
                           Text1: "ABCD",
                           Text2: "",
                         ),
-                        Divider(
+                        const Divider(
                           color: Colors.grey,
                           thickness: .5,
                         ),
@@ -320,7 +320,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
                 width: context.screenWidth * 0.012,
               ),
               Padding(
-                padding: EdgeInsets.only(left: 70),
+                padding: const EdgeInsets.only(left: 70),
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Container(
@@ -332,7 +332,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
                           Text1: "",
                           Text2: "1",
                         ),
-                        Divider(
+                        const Divider(
                           color: Colors.grey,
                           thickness: .5,
                         ),
@@ -340,7 +340,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
                           Text1: "",
                           Text2: "",
                         ),
-                        Divider(
+                        const Divider(
                           color: Colors.grey,
                           thickness: .5,
                         ),
@@ -348,7 +348,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
                           Text1: "",
                           Text2: "",
                         ),
-                        Divider(
+                        const Divider(
                           color: Colors.grey,
                           thickness: .5,
                         ),
@@ -356,7 +356,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
                           Text1: "",
                           Text2: "",
                         ),
-                        Divider(
+                        const Divider(
                           color: Colors.grey,
                           thickness: .5,
                         ),
@@ -375,7 +375,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
             height: context.screenHeight * 0.03,
           ),
           Padding(
-            padding: EdgeInsets.only(left: 70),
+            padding: const EdgeInsets.only(left: 70),
             child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
@@ -389,7 +389,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          child: Padding(
+                          child: const Padding(
                               padding: EdgeInsets.all(12),
                               child: Text('Flight Details'))),
                       SizedBox(
@@ -402,7 +402,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          child: Padding(
+                          child: const Padding(
                               padding: EdgeInsets.all(12),
                               child: Text('List of Passenger (s)'))),
                     ],
@@ -423,19 +423,19 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
                               SizedBox(
                                 height: context.screenHeight * 0.05,
                               ),
-                              Divider(),
+                              const Divider(),
                               SizedBox(
                                 height: context.screenHeight * 0.05,
                               ),
-                              Divider(),
+                              const Divider(),
                               SizedBox(
                                 height: context.screenHeight * 0.05,
                               ),
-                              Divider(),
+                              const Divider(),
                               SizedBox(
                                 height: context.screenHeight * 0.05,
                               ),
-                              Divider(),
+                              const Divider(),
                             ],
                           ),
                         ),
@@ -452,19 +452,19 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
                             SizedBox(
                               height: context.screenHeight * 0.05,
                             ),
-                            Divider(),
+                            const Divider(),
                             SizedBox(
                               height: context.screenHeight * 0.05,
                             ),
-                            Divider(),
+                            const Divider(),
                             SizedBox(
                               height: context.screenHeight * 0.05,
                             ),
-                            Divider(),
+                            const Divider(),
                             SizedBox(
                               height: context.screenHeight * 0.05,
                             ),
-                            Divider(),
+                            const Divider(),
                           ],
                         ),
                       ),
@@ -482,7 +482,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: Padding(
+                        child: const Padding(
                             padding: EdgeInsets.all(12),
                             child: Text('Package Details',
                                 style: TextStyle(
@@ -496,7 +496,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
                   SizedBox(
                     height: context.screenHeight * 0.05,
                   ),
-                  Align(
+                  const Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         'Package Details',
@@ -517,7 +517,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          child: Padding(
+                          child: const Padding(
                               padding: EdgeInsets.all(12),
                               child: Text(
                                 'Notes',
@@ -536,7 +536,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          child: Padding(
+                          child: const Padding(
                               padding: EdgeInsets.all(12),
                               child: Text(
                                 'Banking Details',
@@ -554,7 +554,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
                     height: context.screenHeight * 0.1,
                   ),
                   Row(children: [
-                    Align(
+                    const Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
                           'For our full terms and conditions, please',
@@ -566,7 +566,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
                     SizedBox(
                       width: context.screenWidth * 0.24,
                     ),
-                    Align(
+                    const Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
                           'MCB',
@@ -580,7 +580,7 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
                     height: context.screenHeight * 0.01,
                   ),
                   Row(children: [
-                    Align(
+                    const Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
                           'Visit Our Website:',
@@ -594,14 +594,14 @@ class _InvoiceDetailsState extends State<InvoiceDetails> {
                     ),
                     TextButton(
                         onPressed: () {},
-                        child: Text(
+                        child: const Text(
                           'www.britontraveltours.com',
                           style: TextStyle(color: Color(0XFF83D0E3)),
                         )),
                     SizedBox(
                       width: context.screenWidth * 0.22,
                     ),
-                    Align(
+                    const Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
                           'Briton Consultancy & Travel Tours 000 44 25 29 104',

@@ -1,6 +1,6 @@
 import 'package:fab_tech_sol/Image.dart';
-import 'package:fab_tech_sol/app_text_style.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
+import 'package:fab_tech_sol/ui/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 class LoginPage extends StatefulWidget {
@@ -42,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
                   
                 SizedBox(width:context.screenWidth*0.03), 
       
-        const Text('Welcome Back  ', style: TextStyle(fontSize: 34,fontWeight: FontWeight.w900,),),
+        const Text('Welcome Back  ', style: TextStyle(fontSize: 34,fontWeight: FontWeight.w400,fontFamily: 'Readex Pro bold'),),
        const Text('👋',style: TextStyle(color: Colors.yellow,fontSize: 32),)
        ]),
        SizedBox(
@@ -150,7 +150,7 @@ class _LoginPageState extends State<LoginPage> {
     Row(
       mainAxisAlignment: MainAxisAlignment.end,
       children:[ ElevatedButton(onPressed: () {
-        
+        Navigator.push(context, MaterialPageRoute(builder: (context) => Dashboard(),));
       }, 
        style: ElevatedButton.styleFrom(
       backgroundColor: const Color(0XFFC2E9F3),

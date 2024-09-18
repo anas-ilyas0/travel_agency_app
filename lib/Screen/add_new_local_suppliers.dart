@@ -18,13 +18,13 @@ class AddNewLocalSupplier extends StatelessWidget {
               height: context.screenHeight * 0.02,
             ),
             BackButtonAverter(text1: 'Add New Local Supplier',),
-            Divider(),
-           Padding(padding: EdgeInsets.only(left: 90,right: 90),
+            const Divider(),
+           Padding(padding: const EdgeInsets.only(left: 90,right: 90),
            child: 
            Column(
             children: [
                SizedBox(height: context.screenHeight*0.02,),
-                Align(alignment: Alignment.centerLeft,
+                const Align(alignment: Alignment.centerLeft,
                 child: Text('Local Suppler Details',style: TextStyle(fontSize: 23,color: Color(0XFF11345A),fontFamily: 'Readex Pro',fontWeight: FontWeight.w500),)),
                SizedBox(height: context.screenHeight*0.01,),
                Align(
@@ -40,18 +40,18 @@ class AddNewLocalSupplier extends StatelessWidget {
                       width: 150,
                       color: Colors.white,
                      ),
-                        SizedBox(
+                        const SizedBox(
                   width: 10,
                  ),
                  ElevatedButton(onPressed: () {
             
           }, 
            style: ElevatedButton.styleFrom(
-            padding: EdgeInsets.symmetric(vertical: 7,horizontal: 12),
+            padding: const EdgeInsets.symmetric(vertical: 7,horizontal: 12),
           backgroundColor: const Color(0XFF11345A),
           ),
           
-          child:  Row(
+          child:  const Row(
               // Make Row as wide as the content
                   children: [
                     Icon(Icons.file_upload_outlined,
@@ -76,10 +76,10 @@ class AddNewLocalSupplier extends StatelessWidget {
           }, 
            style: ElevatedButton.styleFrom(
           backgroundColor: const Color(0XFF11345A),
-           padding: EdgeInsets.symmetric(vertical: 7,horizontal: 12),
+           padding: const EdgeInsets.symmetric(vertical: 7,horizontal: 12),
           ),
           
-          child:  Row(
+          child:  const Row(
                   mainAxisSize: MainAxisSize.min, // Make Row as wide as the content
                   children: [
                     Icon(Icons.file_upload_outlined,size: 15,
@@ -99,11 +99,11 @@ class AddNewLocalSupplier extends StatelessWidget {
                 
                ),
              ),
-             Divider(),
+             const Divider(),
              SizedBox(
               height: context.screenHeight*0.03,
              ),
-               Align(alignment: Alignment.centerLeft,
+               const Align(alignment: Alignment.centerLeft,
                 child: Text('Bank Details',style: TextStyle(fontSize: 23,color: Color(0XFF11345A),fontFamily: 'Readex Pro'),)),
               SizedBox(
               height: context.screenHeight*0.04,
@@ -124,11 +124,11 @@ class AddNewLocalSupplier extends StatelessWidget {
               height: context.screenHeight*0.015,
              ),
         
-             Divider(),
+             const Divider(),
                SizedBox(
               height: context.screenHeight*0.03,
              ),
-               Align(alignment: Alignment.centerLeft,
+               const Align(alignment: Alignment.centerLeft,
                 child: Text('Company Details',style: TextStyle(fontSize: 23,color: Color(0XFF11345A),fontFamily: 'Readex Pro',fontWeight: FontWeight.w600),)),
               SizedBox(
               height: context.screenHeight*0.04,
@@ -147,11 +147,11 @@ class AddNewLocalSupplier extends StatelessWidget {
               SizedBox(
               height: context.screenHeight*0.015,
              ),
-        Divider(),
+        const Divider(),
          SizedBox(
               height: context.screenHeight*0.03,
              ),
-               Align(alignment: Alignment.centerLeft,
+               const Align(alignment: Alignment.centerLeft,
                 child: Text('Supplier Details',style: TextStyle(fontSize: 23,color: Color(0XFF11345A),fontFamily: 'Readex Pro'),)),
               SizedBox(
               height: context.screenHeight*0.04,
@@ -169,7 +169,7 @@ class AddNewLocalSupplier extends StatelessWidget {
                  
                ],
              ),
-             SizedBox(
+             const SizedBox(
               height: 8,
 
              ),
@@ -184,12 +184,12 @@ class AddNewLocalSupplier extends StatelessWidget {
                  
                ],
              ),
-             Divider(),
-             SizedBox(height: 50,),
+             const Divider(),
+             const SizedBox(height: 50,),
              
 
           
-             Align(alignment: Alignment.centerLeft,
+             const Align(alignment: Alignment.centerLeft,
                 child: Text('Supplier Service Details',style: TextStyle(fontSize: 23,color: Color(0XFF11345A),fontFamily: 'Readex Pro',fontWeight: FontWeight.w600),)),
               SizedBox(
               height: context.screenHeight*0.04,
@@ -199,12 +199,12 @@ class AddNewLocalSupplier extends StatelessWidget {
              Row(
           
                children: [
-                 Container(
+                 SizedBox(
   height: context.screenHeight * 0.15,
   width: context.screenWidth * 0.2,
   child: Column(
     children: [
-      Align(
+      const Align(
         alignment: Alignment.centerLeft,
         child: Text(
           'Select Service',
@@ -216,21 +216,21 @@ class AddNewLocalSupplier extends StatelessWidget {
           fillColor: Colors.white,
           filled: true,
           hintText: 'Add Here',
-          enabledBorder: OutlineInputBorder(
+          enabledBorder: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners
             borderSide: BorderSide(
               color: Color(0XFFD4D7E3),
               width: 2,
             ),
           ),
-          focusedBorder: OutlineInputBorder(
+          focusedBorder: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners
             borderSide: BorderSide(
               color: Color(0XFFD4D7E3),
               width: 2,
             ),
           ),
-          border: OutlineInputBorder(
+          border: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners
             borderSide: BorderSide(
               color: Color(0XFFD4D7E3),
@@ -238,8 +238,8 @@ class AddNewLocalSupplier extends StatelessWidget {
             ),
           ),
           suffixIcon: DropdownButton<String>(
-            underline: SizedBox(), // Removes default underline of dropdown
-            icon: Icon(Icons.arrow_drop_down, color: Color(0XFFD4D7E3)),
+            underline: const SizedBox(), // Removes default underline of dropdown
+            icon: const Icon(Icons.arrow_drop_down, color: Color(0XFFD4D7E3)),
             items: <String>['Option 1', 'Option 2', 'Option 3'].map((String value) {
               return DropdownMenuItem<String>(
                 value: value,
@@ -271,13 +271,13 @@ class AddNewLocalSupplier extends StatelessWidget {
                    width: 140,
                    child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0XFFD5D5D5),
+                  backgroundColor: const Color(0XFFD5D5D5),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5))),
               onPressed: () {
                 
               },
-              child: Text(
+              child: const Text(
                 'Cancle',style: TextStyle(fontSize: 18,fontFamily: 'Readex Pro',color: Colors.black),
               
               )),
@@ -290,13 +290,13 @@ class AddNewLocalSupplier extends StatelessWidget {
                    width: 140,
                    child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0XFF83D0E3),
+                  backgroundColor: const Color(0XFF83D0E3),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5))),
               onPressed: () {
                 
               },
-              child: Text(
+              child: const Text(
                 'Save',style: TextStyle(fontSize: 18,fontFamily: 'Readex Pro',color: Colors.black),
               
               )),

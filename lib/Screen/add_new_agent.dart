@@ -19,14 +19,14 @@ class AddNewAgent extends StatelessWidget {
               height: context.screenHeight*0.02,
             ),
            BackButtonAverter(text1: 'Add New Agent',),
-           Divider(),
+           const Divider(),
            Padding(
-            padding: EdgeInsets.only(left: 90,right: 90),
+            padding: const EdgeInsets.only(left: 90,right: 90),
              child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 SizedBox(height: context.screenHeight*0.05,),
-             Align(alignment: Alignment.centerLeft,
+             const Align(alignment: Alignment.centerLeft,
               child: Text('Agent Details',style: TextStyle(fontSize: 23,color: Color(0XFF11345A),fontFamily: 'Readex Pro'),)),
              SizedBox(height: context.screenHeight*0.06,),
            Align(
@@ -52,7 +52,7 @@ class AddNewAgent extends StatelessWidget {
         backgroundColor: const Color(0XFF11345A),
         minimumSize: Size(context.screenWidth*0.14, context.screenHeight*0.09)),
         
-        child:  Row(
+        child:  const Row(
                 mainAxisSize: MainAxisSize.min, // Make Row as wide as the content
                 children: [
                   Icon(Icons.file_upload_outlined,
@@ -103,13 +103,13 @@ class AddNewAgent extends StatelessWidget {
                    width: 140,
                    child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0XFFD5D5D5),
+                  backgroundColor: const Color(0XFFD5D5D5),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5))),
               onPressed: () {
                 
               },
-              child: Text(
+              child: const Text(
                 'Cancle',style: TextStyle(fontSize: 18,fontFamily: 'Readex Pro',color: Colors.black),
               
               )),
@@ -122,13 +122,13 @@ class AddNewAgent extends StatelessWidget {
                    width: 140,
                    child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0XFF83D0E3),
+                  backgroundColor: const Color(0XFF83D0E3),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5))),
               onPressed: () {
                 
               },
-              child: Text(
+              child: const Text(
                 'Save',style: TextStyle(fontSize: 18,fontFamily: 'Readex Pro',color: Colors.black),
               
               )),
