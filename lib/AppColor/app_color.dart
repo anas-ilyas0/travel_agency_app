@@ -7,7 +7,10 @@ class AppColor {
      static Color buttonTextColors= const Color(0XFF83D0E3);
     static Color blueColor=const Color(0XFF83D0E3);
     static Color borderColor=const Color(0XFF70707033);
-   // static Color borderColor=const Color(0XFF303C6C);
+    static Color borderColor2=const Color(0XFF78534D);
+    static Color borderColor3=const Color(0XFFD4D7E3);
+     static Color Textbackground=const Color(0XFFFCFCFC);
+      static Color customdropdownColor=const Color(0XFFF7FBFF);
    
   
 }

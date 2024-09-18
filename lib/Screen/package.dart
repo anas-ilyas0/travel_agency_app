@@ -46,17 +46,19 @@ class Package extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => PackageDetail(),));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => PackageDetail(),
+                        ));
                   },
                   child: Text(
                     'Add New Package',
                     style: TextStyle(
                         fontSize: 14,
                         color: AppColor.buttonTextColor,
-                       // fontWeight: FontWeight.w400,
-                        fontFamily: 'Readex Pro'
-                        
-                        ),
+                        // fontWeight: FontWeight.w400,
+                        fontFamily: 'Readex Pro'),
                   ),
                 ),
               ),
@@ -73,13 +75,12 @@ class Package extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(24),
                   color: Colors.white,
-                  border: Border.all(
-                    color: AppColor.borderColor
-                  ),
-                   boxShadow:  [
-      BoxShadow(color: Color(0XFFE3F5FA)),
-      BoxShadow(color: Colors.white, blurRadius: 7, spreadRadius: -4),
-    ],
+                  border: Border.all(color: AppColor.borderColor),
+                  boxShadow: [
+                    BoxShadow(color: Color(0XFFE3F5FA)),
+                    BoxShadow(
+                        color: Colors.white, blurRadius: 7, spreadRadius: -4),
+                  ],
                 ),
                 child: ListView.builder(
                     itemBuilder: (context, index) {
