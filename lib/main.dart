@@ -35,10 +35,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeApp.myThemeData,
-      //  home: PacakgeDetails2(),
-      // home: LoginPage()
       home: Dashboard(),
-      // home: Dashboard(),
     );
   }
 }
