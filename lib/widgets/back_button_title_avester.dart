@@ -9,8 +9,8 @@ class BackButtonAverter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 32, right: 32),
-      child: Container(
+      padding: const EdgeInsets.only(left: 32, right: 32),
+      child: SizedBox(
         height: context.screenHeight * 0.1,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -27,8 +27,8 @@ class BackButtonAverter extends StatelessWidget {
                       size: 24, color: Colors.black),
                 ),
                  Text(
-                  '$text1',
-                  style: TextStyle(
+                  text1,
+                  style: const TextStyle(
                       fontSize: 20,
                      // fontWeight: FontWeight.w600,
                       fontFamily: 'Readex Pro',
@@ -38,7 +38,7 @@ class BackButtonAverter extends StatelessWidget {
             ),
             Row(
               children: [
-                Text(
+                const Text(
                   'Your Name',
                   style: TextStyle(fontFamily: 'Readex Pro'),
                 ),

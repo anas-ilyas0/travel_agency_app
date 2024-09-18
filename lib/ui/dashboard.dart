@@ -1,3 +1,6 @@
+import 'package:fab_tech_sol/Screen/invoice_details.dart';
+import 'package:fab_tech_sol/Screen/lead_details.dart';
+import 'package:fab_tech_sol/Screen/package.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/routes/routes.dart';
@@ -149,13 +152,13 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
                           children: [
                             Row(
                               children: [
-                                Widgets().container('Total Clients', '230',
+                                Widgets().containerfield('Total Clients', '230',
                                     '${imageUrl}clients.png', context),
-                                Widgets().container('Total Leads', '230',
+                                Widgets().containerfield('Total Leads', '230',
                                     '${imageUrl}leads.png', context),
-                                Widgets().container('Total Agents', '230',
+                                Widgets().containerfield('Total Agents', '230',
                                     '${imageUrl}agents.png', context),
-                                Widgets().container(
+                                Widgets().containerfield(
                                     'Total Local Supplier',
                                     '230',
                                     '${imageUrl}localSupplier.png',
@@ -165,12 +168,12 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
                             const SizedBox(height: 20),
                             Row(
                               children: [
-                                Widgets().container(
+                                Widgets().containerfield(
                                     'Total International Supplier',
                                     '230',
                                     '${imageUrl}internationalSupplier.png',
                                     context),
-                                Widgets().container('Total Package', '230',
+                                Widgets().containerfield('Total Package', '230',
                                     '${imageUrl}package.png', context),
                               ],
                             ),
@@ -235,9 +238,10 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
                                 }, context),
                                 const SizedBox(width: 15),
                                 Widgets().button('Add New Lead', () {
-                                  Navigator.pushNamed(
-                                      context, AppRoutes.addNewLead);
-                                })
+                                 // Navigator.pushNamed(
+                                   //   context, AppRoutes.lead_details);
+                                   Navigator.push(context, MaterialPageRoute(builder: (context) => InvoiceDetails(),));
+                                }),
                               ],
                             ),
                           ),
@@ -293,11 +297,14 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
                                                         .styleFrom(
                                                             backgroundColor:
                                                                 color),
-                                                    onPressed: () {},
+                                                    onPressed: () {
+                                                      Navigator.push(context, MaterialPageRoute(builder: (context) => LeadDetails(),));
+                                                    },
                                                     child: Text(
                                                       'View Details',
                                                       style: TextStyle(
                                                           fontFamily:
+                                  
                                                               fontFamily,
                                                           color: Colors.white),
                                                     )),
@@ -603,7 +610,9 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
                     ),
                   ),
                 ),
+                Package(),
                 const Center(child: Text('Package Content')),
+                
               ],
             ),
           ),

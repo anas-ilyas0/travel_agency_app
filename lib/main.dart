@@ -9,6 +9,9 @@ import 'package:fab_tech_sol/themedata.dart';
 
 
 import 'package:fab_tech_sol/providers/provider.dart';
+import 'package:fab_tech_sol/Screen/add_new_lead_detail.dart';
+import 'package:fab_tech_sol/firebase_options.dart';
+
 import 'package:firebase_core/firebase_core.dart';
 
 import 'package:flutter/material.dart';
@@ -21,6 +24,8 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+
   runApp(
     MultiProvider(
       providers: [
@@ -33,6 +38,8 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   final ThemeApp themeApp = ThemeApp();
+
+
   MyApp({super.key});
 
   @override
@@ -48,5 +55,7 @@ class MyApp extends StatelessWidget {
       // home: const Dashboard(),
       // routes: AppRoutes.getRoutes(),
     // );
+
+    
   }
 }

@@ -1,16 +1,17 @@
+import 'package:fab_tech_sol/AppColor/app_color.dart';
+import 'package:fab_tech_sol/Screen/client_detail_package.dart';
+import 'package:fab_tech_sol/Screen/create_new_package.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:flutter/material.dart';
 
 class Widgets {
   Widget agentText(String text, double fontSize) {
-    return Expanded(
-      child: Text(text,
-          style: TextStyle(
-              fontSize: fontSize,
-              fontWeight: FontWeight.w300,
-              fontFamily: fontFamily)),
-    );
+    return Text(text,
+        style: TextStyle(
+            fontSize: fontSize,
+            fontWeight: FontWeight.w300,
+            fontFamily: fontFamily));
   }
 
   Widget finalButton(String text, Color color, VoidCallback onPress) {
@@ -198,7 +199,7 @@ class Widgets {
     );
   }
 
-  Widget container(
+  Widget containerfield(
       String title, String numbers, String assetImage, BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 25),
@@ -335,4 +336,67 @@ class Widgets {
       ),
     );
   }
+
+  Widget PackageDetailButton(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(2.0),
+      child: GestureDetector(
+        onTap: () {
+             Navigator.push(context, MaterialPageRoute(builder: (context) =>const ClientDetailPackage()));
+        },
+        child: Container(
+          padding: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
+          decoration: BoxDecoration(
+            color: Colors.blue,
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Row(
+            children: [
+              Text(
+                "Detail",
+                style: TextStyle(
+                  color: Color(0XFF11345A),
+                  fontSize: 16,
+                  fontFamily: 'Readex Pro bold',
+                  fontWeight: FontWeight.bold,
+                  
+                ),
+              ),
+              SizedBox(width: 10,),
+              Icon(
+                Icons.arrow_forward
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+  Widget CreateNewPackagetext(String textpackage){
+    return Text('$textpackage',style: TextStyle(fontSize: 18,color: Color(0XFF83D0E3),fontFamily: 'Readex Pro bold',fontWeight: FontWeight.w300),);
+  }
+  Widget PackageTextNmaelist(String nameListText){
+    return Text('$nameListText',style: TextStyle(fontSize: 18,fontFamily: 'Readex Pro bold',fontWeight: FontWeight.w300,color: Colors.black),);
+  }
+  Widget  PackageDeatilNumberOfListText(String TextNumberlist,BuildContext context){
+    return Container(
+      height: context.screenHeight*0.06,
+      width: context.screenWidth*0.2,
+      
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(6),
+        border: Border.all(
+          color: Color(0XFF70707033),
+          width: 1,
+          
+        )
+      ),
+      child: Padding(
+        padding: const EdgeInsets.only(left: 8,top: 8),
+        child: Text('$TextNumberlist',style: TextStyle(fontSize: 14,color: Color(0XFF8897AD)),),
+      ),
+    );
+  }
+ 
 }

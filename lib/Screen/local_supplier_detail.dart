@@ -17,7 +17,7 @@ class LocalSupplierDetail extends StatelessWidget {
             height: context.screenHeight * 0.02,
           ),
           BackButtonAverter(text1: 'Local Supplier Details',),
-          Divider(),
+          const Divider(),
           SizedBox(
             height: context.screenHeight * 0.01,
           ),
@@ -43,7 +43,7 @@ class LocalSupplierDetail extends StatelessWidget {
                         .center, // Centers vertically within the Row
                     children: [
                       // Text on the left
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.only(
                             left: 46.0), // Add padding for better alignment
                         child: Text(
@@ -58,7 +58,7 @@ class LocalSupplierDetail extends StatelessWidget {
 
                       // ElevatedButton on the right
                       Padding(
-                        padding: EdgeInsets.only(
+                        padding: const EdgeInsets.only(
                             right: 16.0), // Add padding for better alignment
                         child: SizedBox(
                           height: context.screenHeight * 0.08,
@@ -66,7 +66,7 @@ class LocalSupplierDetail extends StatelessWidget {
                               0.13, // Increased width for better text fit
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Color(0XFF83D0E3),
+                              backgroundColor: const Color(0XFF83D0E3),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(5),
                               ),
@@ -117,7 +117,7 @@ class LocalSupplierDetail extends StatelessWidget {
                               color: Colors
                                   .white, // Optional: Set the background color
                               border: Border.all(
-                                color: Color(0XFF3551B64D), // Border color
+                                color: const Color(0xff3551b64d), // Border color
                                 width: 1.0, // Border thickness
                               ),
                               borderRadius: BorderRadius.circular(
@@ -180,7 +180,7 @@ class LocalSupplierDetail extends StatelessWidget {
                             color: Colors
                                 .white, // Optional: Set the background color
                             border: Border.all(
-                              color: Color(0XFF3551B64D), // Border color
+                              color: const Color(0xff3551b64d), // Border color
                               width: 1.0, // Border thickness
                             ),
                             borderRadius: BorderRadius.circular(
@@ -188,8 +188,8 @@ class LocalSupplierDetail extends StatelessWidget {
                           ),
                           child: Row(
                             children: [
-                              Padding(
-                                  padding: const EdgeInsets.only(left: 16),
+                              const Padding(
+                                  padding: EdgeInsets.only(left: 16),
                                   child: Align(
                                     alignment: Alignment.centerLeft,
                                     child: CircleAvatar(
@@ -201,7 +201,7 @@ class LocalSupplierDetail extends StatelessWidget {
                               SizedBox(
                                 width: context.screenWidth * 0.01,
                               ),
-                              Text(
+                              const Text(
                                 'Company Name here',
                                 style: TextStyle(
                                     fontFamily: 'Readex Pro',
@@ -228,7 +228,7 @@ class LocalSupplierDetail extends StatelessWidget {
                           color: Colors
                               .white, // Optional: Set the background color
                           border: Border.all(
-                            color: Color(0XFF3551B64D), // Border color
+                            color: const Color(0xff3551b64d), // Border color
                             width: 1.0, // Border thickness
                           ),
                           borderRadius: BorderRadius.circular(
@@ -240,7 +240,7 @@ class LocalSupplierDetail extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment
                                 .start, // Aligns text to the left
                             children: [
-                              Text(
+                              const Text(
                                 'Personal Information',
                                 style: TextStyle(
                                   fontFamily: 'Readex Pro',
@@ -249,11 +249,11 @@ class LocalSupplierDetail extends StatelessWidget {
                                   fontSize: 20,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                   height: 8), // Add some space between texts
                               Row(
                                 children: [
-                                  Text('Name',
+                                  const Text('Name',
                                       style: TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.w600,
@@ -262,7 +262,7 @@ class LocalSupplierDetail extends StatelessWidget {
                                   SizedBox(
                                     width: context.screenWidth * 0.12,
                                   ),
-                                  Text('Phone Number',
+                                  const Text('Phone Number',
                                       style: TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.w600,
@@ -271,7 +271,7 @@ class LocalSupplierDetail extends StatelessWidget {
                                   SizedBox(
                                     width: context.screenWidth * 0.08,
                                   ),
-                                  Text('E-Mail',
+                                  const Text('E-Mail',
                                       style: TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.w600,
@@ -280,7 +280,7 @@ class LocalSupplierDetail extends StatelessWidget {
                                   SizedBox(
                                     width: context.screenWidth * 0.12,
                                   ),
-                                  Text('Address',
+                                  const Text('Address',
                                       style: TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.w600,
@@ -298,7 +298,7 @@ class LocalSupplierDetail extends StatelessWidget {
                                   SizedBox(
                                     width: context.screenWidth * 0.005,
                                   ),
-                                  Text('Naseeb Zulfiqar',
+                                  const Text('Naseeb Zulfiqar',
                                       style: TextStyle(
                                           fontSize: 14,
                                           fontWeight: FontWeight.w500,
@@ -310,7 +310,7 @@ class LocalSupplierDetail extends StatelessWidget {
                                   SizedBox(
                                     width: context.screenWidth * 0.005,
                                   ),
-                                  Text(
+                                  const Text(
                                     '+21 315 909 909',
                                     style: TextStyle(
                                         fontSize: 14,
@@ -324,7 +324,7 @@ class LocalSupplierDetail extends StatelessWidget {
                                   SizedBox(
                                     width: context.screenWidth * 0.005,
                                   ),
-                                  Text(
+                                  const Text(
                                     'client@gmail.com',
                                     style: TextStyle(
                                         fontSize: 14,
@@ -338,7 +338,7 @@ class LocalSupplierDetail extends StatelessWidget {
                                   SizedBox(
                                     width: context.screenWidth * 0.005,
                                   ),
-                                  Text(
+                                  const Text(
                                     'client@gmail.com',
                                     style: TextStyle(
                                         fontSize: 14,
@@ -368,7 +368,7 @@ class LocalSupplierDetail extends StatelessWidget {
                           color: Colors
                               .white, // Optional: Set the background color
                           border: Border.all(
-                            color: Color(0XFF3551B64D), // Border color
+                            color: const Color(0xff3551b64d), // Border color
                             width: 1.0, // Border thickness
                           ),
                           borderRadius: BorderRadius.circular(
@@ -380,7 +380,7 @@ class LocalSupplierDetail extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment
                                 .start, // Aligns text to the left
                             children: [
-                              Text(
+                              const Text(
                                 'Bank Information',
                                 style: TextStyle(
                                   fontFamily: 'Readex Pro',
@@ -389,11 +389,11 @@ class LocalSupplierDetail extends StatelessWidget {
                                   fontSize: 20,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                   height: 8), // Add some space between texts
                               Row(
                                 children: [
-                                  Text('Bank Name',
+                                  const Text('Bank Name',
                                       style: TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.w600,
@@ -402,7 +402,7 @@ class LocalSupplierDetail extends StatelessWidget {
                                   SizedBox(
                                     width: context.screenWidth * 0.088,
                                   ),
-                                  Text('Bank Name',
+                                  const Text('Bank Name',
                                       style: TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.w600,
@@ -411,7 +411,7 @@ class LocalSupplierDetail extends StatelessWidget {
                                   SizedBox(
                                     width: context.screenWidth * 0.08,
                                   ),
-                                  Text('Bank Name',
+                                  const Text('Bank Name',
                                       style: TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.w600,
@@ -429,7 +429,7 @@ class LocalSupplierDetail extends StatelessWidget {
                                   SizedBox(
                                     width: context.screenWidth * 0.005,
                                   ),
-                                  Text('Naseeb Zulfiqar',
+                                  const Text('Naseeb Zulfiqar',
                                       style: TextStyle(
                                           fontSize: 14,
                                           fontWeight: FontWeight.w500,
@@ -441,7 +441,7 @@ class LocalSupplierDetail extends StatelessWidget {
                                   SizedBox(
                                     width: context.screenWidth * 0.005,
                                   ),
-                                  Text(
+                                  const Text(
                                     '+21 315 909 909',
                                     style: TextStyle(
                                         fontSize: 14,
@@ -455,7 +455,7 @@ class LocalSupplierDetail extends StatelessWidget {
                                   SizedBox(
                                     width: context.screenWidth * 0.005,
                                   ),
-                                  Text(
+                                  const Text(
                                     'client@gmail.com',
                                     style: TextStyle(
                                         fontSize: 14,
@@ -485,7 +485,7 @@ class LocalSupplierDetail extends StatelessWidget {
                           color: Colors
                               .white, // Optional: Set the background color
                           border: Border.all(
-                            color: Color(0XFF3551B64D), // Border color
+                            color: const Color(0xff3551b64d), // Border color
                             width: 1.0, // Border thickness
                           ),
                           borderRadius: BorderRadius.circular(
@@ -497,7 +497,7 @@ class LocalSupplierDetail extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment
                                 .start, // Aligns text to the left
                             children: [
-                              Text(
+                              const Text(
                                 'Company Information',
                                 style: TextStyle(
                                   fontFamily: 'Readex Pro',
@@ -506,11 +506,11 @@ class LocalSupplierDetail extends StatelessWidget {
                                   fontSize: 20,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                   height: 8), // Add some space between texts
                               Row(
                                 children: [
-                                  Text('Company Name',
+                                  const Text('Company Name',
                                       style: TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.w600,
@@ -519,7 +519,7 @@ class LocalSupplierDetail extends StatelessWidget {
                                   SizedBox(
                                     width: context.screenWidth * 0.056,
                                   ),
-                                  Text('Vet Number',
+                                  const Text('Vet Number',
                                       style: TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.w600,
@@ -528,7 +528,7 @@ class LocalSupplierDetail extends StatelessWidget {
                                   SizedBox(
                                     width: context.screenWidth * 0.08,
                                   ),
-                                  Text('E-Mail',
+                                  const Text('E-Mail',
                                       style: TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.w600,
@@ -537,7 +537,7 @@ class LocalSupplierDetail extends StatelessWidget {
                                   SizedBox(
                                     width: context.screenWidth * 0.1,
                                   ),
-                                  Text('Brm-Number',
+                                  const Text('Brm-Number',
                                       style: TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.w600,
@@ -546,7 +546,7 @@ class LocalSupplierDetail extends StatelessWidget {
                                   SizedBox(
                                     width: context.screenWidth * 0.05,
                                   ),
-                                  Text('Company Address',
+                                  const Text('Company Address',
                                       style: TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.w600,
@@ -564,7 +564,7 @@ class LocalSupplierDetail extends StatelessWidget {
                                   SizedBox(
                                     width: context.screenWidth * 0.005,
                                   ),
-                                  Text('Company name here',
+                                  const Text('Company name here',
                                       style: TextStyle(
                                           fontSize: 14,
                                           fontWeight: FontWeight.w500,
@@ -576,7 +576,7 @@ class LocalSupplierDetail extends StatelessWidget {
                                   SizedBox(
                                     width: context.screenWidth * 0.005,
                                   ),
-                                  Text(
+                                  const Text(
                                     '+21 315 909 909',
                                     style: TextStyle(
                                         fontSize: 14,
@@ -590,7 +590,7 @@ class LocalSupplierDetail extends StatelessWidget {
                                   SizedBox(
                                     width: context.screenWidth * 0.005,
                                   ),
-                                  Text(
+                                  const Text(
                                     'client@gmail.com',
                                     style: TextStyle(
                                         fontSize: 14,
@@ -604,7 +604,7 @@ class LocalSupplierDetail extends StatelessWidget {
                                   SizedBox(
                                     width: context.screenWidth * 0.005,
                                   ),
-                                  Text(
+                                  const Text(
                                     'Mailing Address',
                                     style: TextStyle(
                                         fontSize: 14,
@@ -618,7 +618,7 @@ class LocalSupplierDetail extends StatelessWidget {
                                   SizedBox(
                                     width: context.screenWidth * 0.005,
                                   ),
-                                  Text(
+                                  const Text(
                                     'Mailing Address',
                                     style: TextStyle(
                                         fontSize: 14,
@@ -648,7 +648,7 @@ class LocalSupplierDetail extends StatelessWidget {
                           color: Colors
                               .white, // Optional: Set the background color
                           border: Border.all(
-                            color: Color(0XFF3551B64D), // Border color
+                            color: const Color(0xff3551b64d), // Border color
                             width: 1.0, // Border thickness
                           ),
                           borderRadius: BorderRadius.circular(
@@ -660,7 +660,7 @@ class LocalSupplierDetail extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment
                                 .start, // Aligns text to the left
                             children: [
-                              Text(
+                              const Text(
                                 'Service Information',
                                 style: TextStyle(
                                   fontFamily: 'Readex Pro',
@@ -669,9 +669,9 @@ class LocalSupplierDetail extends StatelessWidget {
                                   fontSize: 20,
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                   height: 8), // Add some space between texts
-                              Text('Supplier Service',
+                              const Text('Supplier Service',
                                   style: TextStyle(
                                       fontSize: 18,
                                       fontWeight: FontWeight.w600,
@@ -687,7 +687,7 @@ class LocalSupplierDetail extends StatelessWidget {
                                   SizedBox(
                                     width: context.screenWidth * 0.005,
                                   ),
-                                  Text('Air Tickets',
+                                  const Text('Air Tickets',
                                       style: TextStyle(
                                           fontSize: 14,
                                           fontWeight: FontWeight.w500,
