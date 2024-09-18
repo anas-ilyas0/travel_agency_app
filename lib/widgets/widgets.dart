@@ -1,11 +1,159 @@
-import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Screen/client_detail_package.dart';
-import 'package:fab_tech_sol/Screen/create_new_package.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
+import 'package:fab_tech_sol/ui/tasks_data_source.dart';
 import 'package:flutter/material.dart';
 
 class Widgets {
+  final List<AgentsTask> agentsTasks = [
+    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
+        'Sialkot Punjab 51040', 'Active', ''),
+    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
+        'Sialkot Punjab 51040', 'Active', ''),
+    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
+        'Sialkot Punjab 51040', 'Active', ''),
+    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
+        'Sialkot Punjab 51040', 'Active', ''),
+    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
+        'Sialkot Punjab 51040', 'Active', ''),
+    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
+        'Sialkot Punjab 51040', 'Active', ''),
+    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
+        'Sialkot Punjab 51040', 'Active', ''),
+    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
+        'Sialkot Punjab 51040', 'Active', ''),
+    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
+        'Sialkot Punjab 51040', 'Active', ''),
+    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
+        'Sialkot Punjab 51040', 'Active', ''),
+    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
+        'Sialkot Punjab 51040', 'Active', ''),
+    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
+        'Sialkot Punjab 51040', 'Active', ''),
+    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
+        'Sialkot Punjab 51040', 'Active', ''),
+    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
+        'Sialkot Punjab 51040', 'Active', ''),
+    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
+        'Sialkot Punjab 51040', 'Active', ''),
+    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
+        'Sialkot Punjab 51040', 'Active', ''),
+    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
+        'Sialkot Punjab 51040', 'Active', ''),
+    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
+        'Sialkot Punjab 51040', 'Active', ''),
+    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
+        'Sialkot Punjab 51040', 'Active', ''),
+    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
+        'Sialkot Punjab 51040', 'Active', ''),
+    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
+        'Sialkot Punjab 51040', 'Active', ''),
+    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
+        'Sialkot Punjab 51040', 'Active', ''),
+    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
+        'Sialkot Punjab 51040', 'Active', ''),
+    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
+        'Sialkot Punjab 51040', 'Active', ''),
+  ];
+
+  final List<SupplierTask> tasks = [
+    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+  ];
+
+  Widget editDelContainer(VoidCallback onPress) {
+    return Container(
+      decoration: BoxDecoration(
+          color: editDelContainerColor,
+          border: Border.all(color: addLeadButtonColor),
+          borderRadius: BorderRadius.circular(5)),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          IconButton(
+              onPressed: onPress, icon: const Icon(Icons.edit), color: color),
+          const VerticalDivider(
+            thickness: 0.8,
+            indent: 5,
+            endIndent: 5,
+          ),
+          IconButton(
+              onPressed: () {},
+              icon: Image(image: AssetImage('${imageUrl}delImage.png')),
+              color: color),
+        ],
+      ),
+    );
+  }
+
+  Widget agentFormText(String text, double fontSize) {
+    return Expanded(
+      child: Text(text,
+          style: TextStyle(
+              fontSize: fontSize,
+              fontWeight: FontWeight.w300,
+              fontFamily: fontFamily)),
+    );
+  }
+
   Widget agentText(String text, double fontSize) {
     return Text(text,
         style: TextStyle(
@@ -342,7 +490,10 @@ class Widgets {
       padding: const EdgeInsets.all(2.0),
       child: GestureDetector(
         onTap: () {
-             Navigator.push(context, MaterialPageRoute(builder: (context) =>const ClientDetailPackage()));
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => const ClientDetailPackage()));
         },
         child: Container(
           padding: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
@@ -359,44 +510,60 @@ class Widgets {
                   fontSize: 16,
                   fontFamily: 'Readex Pro bold',
                   fontWeight: FontWeight.bold,
-                  
                 ),
               ),
-              SizedBox(width: 10,),
-              Icon(
-                Icons.arrow_forward
-              )
+              SizedBox(
+                width: 10,
+              ),
+              Icon(Icons.arrow_forward)
             ],
           ),
         ),
       ),
     );
   }
-  Widget CreateNewPackagetext(String textpackage){
-    return Text('$textpackage',style: TextStyle(fontSize: 18,color: Color(0XFF83D0E3),fontFamily: 'Readex Pro bold',fontWeight: FontWeight.w300),);
+
+  Widget CreateNewPackagetext(String textpackage) {
+    return Text(
+      '$textpackage',
+      style: TextStyle(
+          fontSize: 18,
+          color: Color(0XFF83D0E3),
+          fontFamily: 'Readex Pro bold',
+          fontWeight: FontWeight.w300),
+    );
   }
-  Widget PackageTextNmaelist(String nameListText){
-    return Text('$nameListText',style: TextStyle(fontSize: 18,fontFamily: 'Readex Pro bold',fontWeight: FontWeight.w300,color: Colors.black),);
+
+  Widget PackageTextNmaelist(String nameListText) {
+    return Text(
+      '$nameListText',
+      style: TextStyle(
+          fontSize: 18,
+          fontFamily: 'Readex Pro bold',
+          fontWeight: FontWeight.w300,
+          color: Colors.black),
+    );
   }
-  Widget  PackageDeatilNumberOfListText(String TextNumberlist,BuildContext context){
+
+  Widget PackageDeatilNumberOfListText(
+      String TextNumberlist, BuildContext context) {
     return Container(
-      height: context.screenHeight*0.06,
-      width: context.screenWidth*0.2,
-      
+      height: context.screenHeight * 0.06,
+      width: context.screenWidth * 0.2,
       decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(6),
-        border: Border.all(
-          color: Color(0XFF70707033),
-          width: 1,
-          
-        )
-      ),
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(6),
+          border: Border.all(
+            color: Color(0XFF70707033),
+            width: 1,
+          )),
       child: Padding(
-        padding: const EdgeInsets.only(left: 8,top: 8),
-        child: Text('$TextNumberlist',style: TextStyle(fontSize: 14,color: Color(0XFF8897AD)),),
+        padding: const EdgeInsets.only(left: 8, top: 8),
+        child: Text(
+          '$TextNumberlist',
+          style: TextStyle(fontSize: 14, color: Color(0XFF8897AD)),
+        ),
       ),
     );
   }
- 
 }
