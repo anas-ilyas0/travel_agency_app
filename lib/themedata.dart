@@ -8,8 +8,17 @@ class ThemeApp {
       surfaceTintColor: Colors.white,
       shadowColor: Colors.white,
     ),
+
     appBarTheme: AppBarTheme(
       backgroundColor: AppColor.background,
+    ),
+    popupMenuTheme: PopupMenuThemeData(
+      color: Colors.white,
+      textStyle: TextStyle(color: Colors.black),
+      elevation: 8.0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(8.0),
+      ),
     ),
     scaffoldBackgroundColor: AppColor.background,
     fontFamily: 'ReadexPro-Light',

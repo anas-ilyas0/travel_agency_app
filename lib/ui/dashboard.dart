@@ -48,7 +48,8 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Row(
+        title: Responsive.isDesktop(context)?
+        Row(
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -91,10 +92,23 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
               ),
             ),
           ],
-        ),
-        actions: [Widgets().circularAvatar(text: 'Name here')],
+        ): null,
+          leading: Responsive.isDesktop(context)  || Responsive .isTablet(context)
+              ? dashboardTabController.index ==0?IconButton(
+            icon: const Icon(Icons.menu),
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          )
+              : null: null,
+        actions:  [Widgets().circularAvatar(text: 'Name here'),
+          if(dashboardTabController.index ==0)...[
+            
+            if (Responsive.isMobile(context) || Responsive.isTablet(context)) _buildMenuBar()
+          ]
+        ],
       ),
-      drawer: Responsive.isDesktop(context)? null: DashboardDrawer(),
+      drawer: Responsive.isDesktop(context)? null:  DashboardDrawer(tabController: dashboardTabController),
       body: Column(
         children: [
           Expanded(
@@ -113,4 +127,38 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
       ),
     );
   }
+  Widget _buildMenuBar() {
+    return PopupMenuButton<String>(
+      onSelected: (value) {
+        print("Selected: $value");
+      },
+      itemBuilder: (BuildContext context) {
+
+        return [
+          PopupMenuItem<String>(
+            value: 'Today',
+
+            child: Text('Today'),
+          ),
+          PopupMenuItem<String>(
+            value: 'Filter',
+
+            child: Text('Filter'),
+          ),
+          PopupMenuItem<String>(
+            value: 'Add new Leads',
+            child: Text('Add new Leads'),
+          ),
+
+
+
+
+        ];
+
+
+      },
+      icon: const Icon(Icons.more_vert_rounded),
+    );
+  }
+
 }
