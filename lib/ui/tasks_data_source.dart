@@ -22,17 +22,20 @@ class TaskDataSource extends DataTableSource {
 
   @override
   DataRow? getRow(int index) {
-    if (index >= tasks.length || index < 0) return null;
-    final SupplierTask task = tasks[index];
+    // if (index >= tasks.length || index < 0) return null;
+    assert(index >= 0);
+
+    final  task = tasks[index];
     return DataRow.byIndex(
       index: index,
       cells: [
-        DataCell(Widgets().agentFormText(task.companyName, 12)),
-        DataCell(Widgets().agentFormText(task.supplierName, 12)),
-        DataCell(Widgets().agentFormText(task.supplierAddress, 12)),
-        DataCell(Widgets().agentFormText(task.service, 12)),
-        DataCell(Widgets().agentFormText(task.action, 12)),
-        DataCell(Widgets().agentFormText(task.companyAddress, 12)),
+        DataCell(Text(task.companyName)),
+        DataCell(Text(task.supplierName)),
+        DataCell(Text(task.supplierAddress)),
+        DataCell(Text(task.service)),
+        DataCell(Text(task.action)),
+        DataCell(Text(task.companyAddress)),
+
         DataCell(Row(
           children: [
             Padding(
@@ -82,16 +85,14 @@ class AgentsTaskDataSource extends DataTableSource {
         DataCell(Row(
           children: [
             Widgets().circularAvatar(backgroundImage: '${imageUrl}agent.png'),
-            Widgets().agentFormText(task.name, 12),
+            Text(task.name)
           ],
         )),
-        DataCell(Widgets().agentFormText(task.phoneNumber, 12)),
-        DataCell(Widgets().agentFormText(task.email, 12)),
-        DataCell(Widgets().agentFormText(task.location, 12)),
-        DataCell(Padding(
-          padding: const EdgeInsets.only(left: 200),
-          child: Widgets().agentFormText(task.status, 12),
-        )),
+        DataCell(Text(task.phoneNumber)),
+        DataCell(Text(task.email)),
+        DataCell(Text(task.location)),
+        DataCell(Text(task.status)),
+
         DataCell(Row(
           children: [
             Padding(

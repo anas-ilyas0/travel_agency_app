@@ -90,6 +90,9 @@ flutter:
     - family: Readex Pro bold
       fonts:
         - asset: assets/fonts/ReadexPro-bold.ttf
+    - family: Poppin
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
    #ts/fonts/Poppins-Regular.ttf
 
   #       - asset: fonts/TrajanPro_Bold.ttf

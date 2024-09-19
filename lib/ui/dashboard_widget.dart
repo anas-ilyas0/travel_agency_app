@@ -16,7 +16,7 @@ class DashboardWidget {
   ) {
     final providerValue = Provider.of<UserProvider>(context);
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 40,vertical: 30),
+      padding: const EdgeInsets.symmetric(horizontal: 50,vertical: 30),
       child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,

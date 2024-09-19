@@ -136,6 +136,86 @@ class LeadsWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Padding(
+                            padding: const EdgeInsets.all(14.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Widgets().row('Lead Number', '01'),
+                                SizedBox(height: 2,),
+                                Widgets().row('Agent Name', 'John Doe'),
+                                SizedBox(height: 2,),
+                                Widgets().row('Client Name', 'John Doe'),
+                                SizedBox(height: 2,),
+                                Widgets().row('Lead Date', '08/16/2024'),
+                                SizedBox(height: 2,),
+
+                                Widgets().row('Status', 'Confirmed'),
+                                const SizedBox(height: 20),
+                                Align(
+                                  alignment: Alignment.centerRight,
+                                  child: SizedBox(
+                                    width: 150,
+                                    child: ElevatedButton(
+                                      style: ElevatedButton.styleFrom(
+                                        backgroundColor: color,
+                                      ),
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => LeadDetails(),
+                                          ),
+                                        );
+                                      },
+                                      child: Text(
+                                        'View Details',
+                                        style: TextStyle(
+                                          fontFamily: fontFamily,
+                                          color: Colors.white,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+
+                  // Desktop view: Use GridView.builder
+                  desktop: GridView.builder(
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 4, // 4 items per row for desktop
+                      crossAxisSpacing: 10.0,
+                      mainAxisSpacing: 10.0,
+                      childAspectRatio: 1.0,
+                    ),
+                    itemCount: 6,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            border: Border.all(
+                              color: Colors.blue.withOpacity(0.2),
+                            ),
+                            // color: const Color(0XFFFFFFFF),
+                            borderRadius: BorderRadius.circular(20),
+                            boxShadow: [
+                              BoxShadow(
+                                color: containerColor,
+                              ),
+                             const BoxShadow(
+                                color: Colors.white,
+                                spreadRadius: -2.0,
+                                blurRadius: 10.0,
+                              ),
+                            ],
+                          ),
+                          child: Padding(
                             padding: const EdgeInsets.all(12.0),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -148,9 +228,11 @@ class LeadsWidget {
                                 const SizedBox(height: 20),
                                 SizedBox(
                                   width: double.infinity,
+                                  height: 38,
                                   child: ElevatedButton(
                                     style: ElevatedButton.styleFrom(
-                                      backgroundColor: color,
+                                      elevation: 5,
+                                      backgroundColor: color,shadowColor:Colors.orange.withOpacity(.2),
                                     ),
                                     onPressed: () {
                                       Navigator.push(
@@ -177,69 +259,10 @@ class LeadsWidget {
                     },
                   ),
 
-                  // Desktop view: Use GridView.builder
-                  desktop: GridView.builder(
-                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 4, // 4 items per row for desktop
-                      crossAxisSpacing: 10.0,
-                      mainAxisSpacing: 10.0,
-                      childAspectRatio: 1.0,
-                    ),
-                    itemCount: 6,
-                    itemBuilder: (context, index) {
-                      return Container(
-                        decoration: BoxDecoration(
-                          border: Border.all(
-                            color: Colors.blue.withOpacity(0.4),
-                          ),
-                          color: const Color(0XFFFFFFFF),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(12.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Widgets().row('Lead Number', '01'),
-                              Widgets().row('Agent Name', 'John Doe'),
-                              Widgets().row('Client Name', 'John Doe'),
-                              Widgets().row('Lead Date', '08/16/2024'),
-                              Widgets().row('Status', 'Confirmed'),
-                              const SizedBox(height: 20),
-                              SizedBox(
-                                width: double.infinity,
-                                child: ElevatedButton(
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: color,
-                                  ),
-                                  onPressed: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => LeadDetails(),
-                                      ),
-                                    );
-                                  },
-                                  child: Text(
-                                    'View Details',
-                                    style: TextStyle(
-                                      fontFamily: fontFamily,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      );
-                    },
-                  ),
-
 
                   tablet: GridView.builder(
                     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2, // 2 items per row for tablet
+                      crossAxisCount: 3, // 2 items per row for tablet
                       crossAxisSpacing: 10.0,
                       mainAxisSpacing: 10.0,
                       childAspectRatio: 1.0,
