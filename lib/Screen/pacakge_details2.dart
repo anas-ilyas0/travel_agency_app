@@ -1,7 +1,6 @@
 import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
-import 'package:fab_tech_sol/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -18,14 +17,13 @@ class PacakgeDetails2 extends StatelessWidget {
         child: SingleChildScrollView(
           child: Row(
             children: [
-           
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
                     height: context.screenHeight * 0.04,
                   ),
-                  Text(
+                  const Text(
                     'Package Details',
                     style: TextStyle(
                         fontSize: 22,
@@ -40,7 +38,7 @@ class PacakgeDetails2 extends StatelessWidget {
                       alignment: Alignment.centerLeft,
                       child: Row(
                         children: [
-                          Text(
+                          const Text(
                             'price',
                             style: TextStyle(
                                 fontSize: 16,
@@ -50,7 +48,7 @@ class PacakgeDetails2 extends StatelessWidget {
                           SizedBox(
                             width: context.screenWidth * 0.2,
                           ),
-                          Text(
+                          const Text(
                             'Types of people',
                             style: TextStyle(
                                 fontSize: 16,
@@ -59,7 +57,9 @@ class PacakgeDetails2 extends StatelessWidget {
                           ),
                         ],
                       )),
-                      SizedBox(height: context.screenHeight*0.01,),
+                  SizedBox(
+                    height: context.screenHeight * 0.01,
+                  ),
                   Row(
                     children: [
                       Container(
@@ -68,37 +68,37 @@ class PacakgeDetails2 extends StatelessWidget {
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8)),
-                            child: Padding(
-                              padding: const EdgeInsets.all(14.0),
-                              child: Text('\$ 500'),
-                            ),
+                        child: const Padding(
+                          padding: EdgeInsets.all(14.0),
+                          child: Text('\$ 500'),
+                        ),
                       ),
                       SizedBox(
                         width: context.screenWidth * 0.025,
                       ),
                       Container(
-                          height: context.screenHeight * 0.08,
-                          width: context.screenWidth * 0.2,
-                          decoration: BoxDecoration(
-                              color: Colors.white,
-                              borderRadius: BorderRadius.circular(8)),
-                              child:Padding(
-                                padding: const EdgeInsets.all(14.0),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text('Adult'),
-                                    Icon(Icons.arrow_downward)
-                                  ],
-                                ),
-                              ) ,
-                              ),
+                        height: context.screenHeight * 0.08,
+                        width: context.screenWidth * 0.2,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(8)),
+                        child: const Padding(
+                          padding: EdgeInsets.all(14.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text('Adult'),
+                              Icon(Icons.arrow_downward)
+                            ],
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                   SizedBox(
                     height: context.screenHeight * 0.03,
                   ),
-                  Text('Place',
+                  const Text('Place',
                       style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
@@ -124,17 +124,16 @@ class PacakgeDetails2 extends StatelessWidget {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Checkbox(activeColor: AppColor.blueColor,
-                                    materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                                  checkColor: AppColor.blueColor,
-                                    value: false, 
-                                    onChanged: (bool? newValue) {
-                                      
-                                    },
+                                  Checkbox(
+                                    activeColor: AppColor.blueColor,
+                                    materialTapTargetSize:
+                                        MaterialTapTargetSize.shrinkWrap,
+                                    checkColor: AppColor.blueColor,
+                                    value: false,
+                                    onChanged: (bool? newValue) {},
                                   ),
                                   Container(
-                                    width: context.screenWidth *
-                                        0.36, 
+                                    width: context.screenWidth * 0.36,
                                     height: 45,
                                     decoration: BoxDecoration(
                                       color: AppColor.Textbackground,
@@ -142,8 +141,9 @@ class PacakgeDetails2 extends StatelessWidget {
                                           color: AppColor.borderColor3),
                                       borderRadius: BorderRadius.circular(8),
                                     ),
-                                    child: Padding(
-                                      padding: const EdgeInsets.only(left: 7,top: 12),
+                                    child: const Padding(
+                                      padding: EdgeInsets.only(
+                                          left: 7, top: 12),
                                       child: Text(
                                           'Laxmisagar, BBSR, Bhubaneshwar-751006'),
                                     ),
@@ -169,7 +169,7 @@ class PacakgeDetails2 extends StatelessWidget {
                   SizedBox(
                     height: context.screenHeight * 0.03,
                   ),
-                  Text('Activity',
+                  const Text('Activity',
                       style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
@@ -196,7 +196,8 @@ class PacakgeDetails2 extends StatelessWidget {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Checkbox(
-                                      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                                    materialTapTargetSize:
+                                        MaterialTapTargetSize.shrinkWrap,
                                     activeColor: AppColor.blueColor,
                                     checkColor: AppColor.blueColor,
                                     value: false, // Set initial value
@@ -211,8 +212,9 @@ class PacakgeDetails2 extends StatelessWidget {
                                           color: AppColor.borderColor3),
                                       borderRadius: BorderRadius.circular(8),
                                     ),
-                                    child: Padding(
-                                      padding: const EdgeInsets.only(left: 7,top: 10),
+                                    child: const Padding(
+                                      padding: EdgeInsets.only(
+                                          left: 7, top: 10),
                                       child: Text(
                                           'Share or listen to a success story.'),
                                     ),
@@ -282,11 +284,11 @@ class PacakgeDetails2 extends StatelessWidget {
                   )
                 ],
               ),
-                 Align(
+              Align(
                   alignment: Alignment.centerRight,
                   child: SizedBox(
-                    height: context.screenHeight*0.5,
-                    width: context.screenWidth*0.47,
+                      height: context.screenHeight * 0.5,
+                      width: context.screenWidth * 0.47,
                       child: SvgPicture.asset(
                           '${ImagesAssets.imagePath}OBJECTS.svg'))),
             ],

@@ -1,10 +1,11 @@
-
-import 'package:fab_tech_sol/Screen/DropDownButton/type_of_people.dart';
-import 'package:fab_tech_sol/Screen/drop_down_button.dart';
-import 'package:fab_tech_sol/Screen/pacakge_details2.dart';
+import 'package:fab_tech_sol/Screen/package.dart';
 import 'package:fab_tech_sol/firebase_options.dart';
+import 'package:fab_tech_sol/login_page.dart';
+
+import 'package:fab_tech_sol/providers/manage_color_state.dart';
 
 import 'package:fab_tech_sol/themedata.dart';
+
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/ui/dashboard.dart';
 
@@ -21,6 +22,7 @@ void main() async {
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_) => UserProvider()),
+        ChangeNotifierProvider(create: (_) => DrawerStateInfo()),
       ],
       child: MyApp(),
     ),
@@ -37,12 +39,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeApp.myThemeData,
-    //home: PacakgeDetails2(),
-      // home: LoginPage()
-     //  home: CustomDropDownButton(),
-     //home: Dashboard(),
-     home: TypesDropDownButton(),
-    
+      // home: Package(),
+      home: Dashboard(),
     );
   }
 }

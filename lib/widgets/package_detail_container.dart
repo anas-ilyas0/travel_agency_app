@@ -18,7 +18,7 @@ class PackageDetailContainer extends StatelessWidget {
        height: context.screenHeight*0.3,
         width: context.screenWidth*0.85,
        
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(22),color: AppColor.background,border: Border.all(color: AppColor.borderColor,width: 1)),
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(22),color: AppColor.background,border: Border.all(color: AppColor.borderColor.withOpacity(0.08),width: 1)),
         child: Padding(
           padding: const EdgeInsets.only(left: 18),
           child: Column(
@@ -131,8 +131,8 @@ Align(
       
       ),
       Positioned(
-        left: 50,
-        bottom: 190,
+        left: context.screenHeight*0.08,
+        bottom: context.screenHeight*0.3,
         child: Container(
           height: 45,
           width: 160,

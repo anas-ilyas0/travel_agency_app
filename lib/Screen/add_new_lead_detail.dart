@@ -208,7 +208,7 @@ class AddNewLeadDetail extends StatelessWidget {
                   SizedBox(
                     height: context.screenHeight * 0.05,
                   ),
-                  Align(
+                  const Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         'Trip Detail',
@@ -223,23 +223,23 @@ class AddNewLeadDetail extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Text('Destination',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400,fontFamily: 'Readex Pro bold'),),
+                      const Text('Destination',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400,fontFamily: 'Readex Pro bold'),),
                       SizedBox(
                         width: context.screenWidth * 0.19,
                       ),
-                      Text('Travel Date',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400,fontFamily: 'Readex Pro bold')),
+                      const Text('Travel Date',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400,fontFamily: 'Readex Pro bold')),
                       SizedBox(
                         width: context.screenWidth * 0.17,
                       ),
-                      Text('Departure  Date',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400,fontFamily: 'Readex Pro bold'))
+                      const Text('Departure  Date',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400,fontFamily: 'Readex Pro bold'))
                     ],
                   ),
                   Row(
                      children: [ Widgets().PackageDeatilNumberOfListText('London', context),SizedBox(width: context.screenWidth*0.05,), Widgets().PackageDeatilNumberOfListText('05/07/2024', context),SizedBox(width: context.screenWidth*0.03,), Widgets().PackageDeatilNumberOfListText('22/07/2024', context),],
                   ),
-                  Divider(),
+                  const Divider(),
                   SizedBox(height: context.screenHeight*0.02,),
-                  Align(
+                  const Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         'Additional Notes',
@@ -250,7 +250,7 @@ class AddNewLeadDetail extends StatelessWidget {
                             fontWeight: FontWeight.w400),
                       )),
                       SizedBox(height: context.screenHeight*0.02,),
-                      Align(
+                      const Align(
                         alignment: Alignment.centerLeft,
                         child: Text('Add Note',style: TextStyle(fontSize: 14,fontWeight: FontWeight.w200,fontFamily: 'Readex Pro bold'),)),
                         Align(
@@ -259,14 +259,14 @@ class AddNewLeadDetail extends StatelessWidget {
                             height: context.screenHeight*0.22,
                             width: context.screenWidth*0.68,
                             color: Colors.white,
-                            child: Padding(
-                              padding: const EdgeInsets.only(top: 8,left: 12,bottom: 60,right: 12),
+                            child: const Padding(
+                              padding: EdgeInsets.only(top: 8,left: 12,bottom: 60,right: 12),
                               child: Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the \ 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also \ the leap into electronic typesetting, remaining essentially unchanged......'),
                             ),
                           ),
                         ),
                         SizedBox(height: context.screenHeight*0.04,),
-                         Align(
+                         const Align(
                       alignment: Alignment.centerLeft,
                       child: Text(
                         'Best way to Reach You',
@@ -278,7 +278,7 @@ class AddNewLeadDetail extends StatelessWidget {
                             
                       )),
                        SizedBox(height: context.screenHeight*0.02,),
-                      Row(children: [],),
+                      const Row(children: [],),
                        SizedBox(height: context.screenHeight*0.04,),
                   Row(
                     children: [
