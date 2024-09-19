@@ -1,3 +1,5 @@
+import 'package:fab_tech_sol/Screen/add_new_lead_detail.dart';
+import 'package:fab_tech_sol/Screen/add_new_lead_form_create_new_package.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
@@ -58,7 +60,7 @@ class DashboardWidget {
                             }, context),
                             const SizedBox(width: 10),
                             Widgets().button('Add New Lead', () {
-                              Navigator.pushNamed(context, AppRoutes.addNewLead);
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => AddNewLeadDetail()));
                             }),
                           ],
                         ),

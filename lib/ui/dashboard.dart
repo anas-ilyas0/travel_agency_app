@@ -7,7 +7,7 @@ import 'package:fab_tech_sol/ui/agents_widget.dart';
 import 'package:fab_tech_sol/ui/dashboard_widget.dart';
 import 'package:fab_tech_sol/ui/leads_widget.dart';
 import 'package:fab_tech_sol/ui/supplier_widget.dart';
-import 'package:fab_tech_sol/widgets/widgets.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -62,75 +62,81 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
         //   ],
         // )
         //     : null,
-        title:
-        Responsive.isDesktop(context) ? Row(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Padding(
-                padding: const EdgeInsets.only(left: 50),
-                child: SizedBox(
-                  width: 150,
-                  height: 60,
-                  child: Image.asset(
-                    '${imageUrl}briton_logo.png',
-                    fit: BoxFit.contain,
-                  ),
-                ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 170),
-              child: Row(
+        title: Responsive.isDesktop(context)
+            ? Row(
                 children: [
-                  TabBar(
-                    labelStyle: TextStyle(
-                        fontFamily: fontFamily, fontWeight: FontWeight.bold),
-                    labelColor: color,
-                    unselectedLabelColor: Colors.grey,
-                    unselectedLabelStyle:
-                    const TextStyle(fontWeight: FontWeight.normal),
-                    indicatorColor: color,
-                    dividerColor: Colors.transparent,
-                    controller: dashboardTabController,
-                    isScrollable: true,
-                    tabs: const [
-                      Tab(text: 'Dashboard'),
-                      Tab(text: 'Leads'),
-                      Tab(text: 'Agents'),
-                      Tab(text: 'Supplier'),
-                      Tab(text: 'Package'),
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 50),
+                      child: SizedBox(
+                        width: 150,
+                        height: 60,
+                        child: Image.asset(
+                          '${imageUrl}briton_logo.png',
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 170),
+                    child: Row(
+                      children: [
+                        TabBar(
+                          labelStyle: TextStyle(
+                              fontFamily: fontFamily,
+                              fontWeight: FontWeight.bold),
+                          labelColor: color,
+                          unselectedLabelColor: Colors.grey,
+                          unselectedLabelStyle:
+                              const TextStyle(fontWeight: FontWeight.normal),
+                          indicatorColor: color,
+                          dividerColor: Colors.transparent,
+                          controller: dashboardTabController,
+                          isScrollable: true,
+                          tabs: const [
+                            Tab(text: 'Dashboard'),
+                            Tab(text: 'Leads'),
+                            Tab(text: 'Agents'),
+                            Tab(text: 'Supplier'),
+                            Tab(text: 'Package'),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
                 ],
-              ),
-            ),
-          ],
-        ) : null,
-        leading: Responsive.isMobile(context) &&
-            dashboardTabController.index == 0
-            ? Builder(
-          builder: (context) {
-            return IconButton(
-              icon: const Icon(Icons.menu),
-              onPressed: () {
-                Scaffold.of(context)
-                    .openDrawer(); // Correct context provided here
-              },
-            );
-          },
-        )
+              )
             : null,
+        leading:
+            Responsive.isMobile(context) && dashboardTabController.index == 0
+                ? Builder(
+                    builder: (context) {
+                      return IconButton(
+                        icon: const Icon(Icons.menu),
+                        onPressed: () {
+                          Scaffold.of(context)
+                              .openDrawer(); // Correct context provided here
+                        },
+                      );
+                    },
+                  )
+                : null,
         actions: [
           // Widgets().circularAvatar(text: 'Name here'),
-          if(dashboardTabController.index == 0)...[
-
+          if (dashboardTabController.index == 0) ...[
             if (Responsive.isMobile(context)) _buildMenuBar()
           ]
         ],
       ),
-      drawer: Responsive.isDesktop(context) ? null : DashboardDrawer(
-          tabController: dashboardTabController),
+
+      drawer: Responsive.isDesktop(context)
+          ? null
+          : DashboardDrawer(tabController: dashboardTabController),
+
+      // drawer: Responsive.isDesktop(context) ? null : DashboardDrawer(
+      //     tabController: dashboardTabController),
 
       body: Column(
         children: [
@@ -141,7 +147,6 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
           Expanded(
             child: TabBarView(
               controller: dashboardTabController,
-
               children: [
                 DashboardWidget().dashboard(context),
                 LeadsWidget().leads(context, leadsTabController),
@@ -165,24 +170,19 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
         return [
           PopupMenuItem<String>(
             value: 'Today',
-
             child: Text('Today'),
           ),
           PopupMenuItem<String>(
             value: 'Filter',
-
             child: Text('Filter'),
           ),
           PopupMenuItem<String>(
             value: 'Add new Leads',
             child: Text('Add new Leads'),
           ),
-
-
         ];
       },
       icon: const Icon(Icons.more_vert_rounded),
     );
   }
-
 }

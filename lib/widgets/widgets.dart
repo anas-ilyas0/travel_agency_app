@@ -1,9 +1,12 @@
+import 'package:fab_tech_sol/AppColor/app_color.dart';
+import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/Screen/client_detail_package.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:fab_tech_sol/ui/tasks_data_source.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class Widgets {
   final List<AgentsTask> agentsTasks = [
@@ -551,6 +554,42 @@ class Widgets {
           '$TextNumberlist',
           style: TextStyle(fontSize: 14, color: Color(0XFF8897AD)),
         ),
+      ),
+    );
+  }
+
+  Widget buildFeature(BuildContext context, String featureText) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 6.0),
+      child: Row(
+        children: [
+          Container(
+            height: 20,
+            width: 20,
+            decoration: BoxDecoration(
+              color: AppColor.blueColor,
+              borderRadius: BorderRadius.circular(18),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: SvgPicture.asset('${ImagesAssets.imagePath}VectorRight.svg'),
+            ),
+          ),
+          SizedBox(width: 8),
+          Expanded(
+            child: Text(
+              featureText,
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 12,
+                fontFamily: 'Readex Pro',
+              ),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+        ],
       ),
     );
   }

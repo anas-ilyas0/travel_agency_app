@@ -6,8 +6,8 @@ import 'package:fab_tech_sol/widgets/back_button_title_avester.dart';
 import 'package:fab_tech_sol/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
-class CreateNewPackage extends StatelessWidget {
-  const CreateNewPackage({super.key});
+class CreateNewPackageForm extends StatelessWidget {
+  const CreateNewPackageForm({super.key});
 
   @override
   Widget build(BuildContext context) {
