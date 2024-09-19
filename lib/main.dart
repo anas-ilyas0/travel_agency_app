@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeApp.myThemeData,
         
-        home: const Dashboard() );
+        home: const LoginPage() );
       // debugShowCheckedModeBanner: false,
       // theme: ThemeApp.myThemeData,
       // initialRoute: AppRoutes.dashboard,

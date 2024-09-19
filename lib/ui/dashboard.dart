@@ -48,8 +48,23 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Responsive.isDesktop(context)?
-        Row(
+        elevation: .2,
+        // bottom: Responsive.isMobile(context) && dashboardTabController.index ==1
+        //     ? TabBar(
+        //
+        //   controller: leadsTabController,
+        //   isScrollable: true,
+        //   tabAlignment: TabAlignment.center,
+        //   tabs: const [
+        //     Tab(text: 'Confirmed'),
+        //     Tab(text: 'Pending'),
+        //     Tab(text: 'Canceled'),
+        //
+        //   ],
+        // )
+        //     : null,
+        title:
+        Responsive.isDesktop(context) ? Row(
           children: [
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -75,7 +90,7 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
                     labelColor: color,
                     unselectedLabelColor: Colors.grey,
                     unselectedLabelStyle:
-                        const TextStyle(fontWeight: FontWeight.normal),
+                    const TextStyle(fontWeight: FontWeight.normal),
                     indicatorColor: color,
                     dividerColor: Colors.transparent,
                     controller: dashboardTabController,
@@ -92,28 +107,41 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
               ),
             ),
           ],
-        ): null,
-          leading: Responsive.isDesktop(context)  || Responsive .isTablet(context)
-              ? dashboardTabController.index ==0?IconButton(
-            icon: const Icon(Icons.menu),
-            onPressed: () {
-              Scaffold.of(context).openDrawer();
-            },
-          )
-              : null: null,
-        actions:  [Widgets().circularAvatar(text: 'Name here'),
-          if(dashboardTabController.index ==0)...[
-            
-            if (Responsive.isMobile(context) || Responsive.isTablet(context)) _buildMenuBar()
+        ) : null,
+        leading: Responsive.isMobile(context) &&
+            dashboardTabController.index == 0
+            ? Builder(
+          builder: (context) {
+            return IconButton(
+              icon: const Icon(Icons.menu),
+              onPressed: () {
+                Scaffold.of(context)
+                    .openDrawer(); // Correct context provided here
+              },
+            );
+          },
+        )
+            : null,
+        actions: [
+          // Widgets().circularAvatar(text: 'Name here'),
+          if(dashboardTabController.index == 0)...[
+
+            if (Responsive.isMobile(context)) _buildMenuBar()
           ]
         ],
       ),
-      drawer: Responsive.isDesktop(context)? null:  DashboardDrawer(tabController: dashboardTabController),
+      drawer: Responsive.isDesktop(context) ? null : DashboardDrawer(
+          tabController: dashboardTabController),
       body: Column(
         children: [
+          Divider(
+            height: .5,
+            color: Colors.grey.withOpacity(.2),
+          ),
           Expanded(
             child: TabBarView(
               controller: dashboardTabController,
+
               children: [
                 DashboardWidget().dashboard(context),
                 LeadsWidget().leads(context, leadsTabController),
@@ -127,13 +155,13 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
       ),
     );
   }
+
   Widget _buildMenuBar() {
     return PopupMenuButton<String>(
       onSelected: (value) {
         print("Selected: $value");
       },
       itemBuilder: (BuildContext context) {
-
         return [
           PopupMenuItem<String>(
             value: 'Today',
@@ -151,11 +179,7 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
           ),
 
 
-
-
         ];
-
-
       },
       icon: const Icon(Icons.more_vert_rounded),
     );

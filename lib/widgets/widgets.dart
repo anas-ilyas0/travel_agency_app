@@ -350,21 +350,21 @@ class Widgets {
 
   Widget containerfield(
       String title, String numbers, String assetImage, BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 25),
-      child: Container(
-        width: Responsive.isDesktop(context)? context.screenWidth * 0.2 : Responsive.isTablet(context)? context.screenWidth * 0.4:context.screenWidth * 0.8,
-        decoration: BoxDecoration(
-            color: containerColor,
-            borderRadius: BorderRadius.circular(7),
-            border: Border.all(color: Colors.blue.withOpacity(0.2))),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
+    return Container(
+      width: Responsive.isDesktop(context)? context.screenWidth * 0.2 : Responsive.isTablet(context)? context.screenWidth * 0.4:context.screenWidth * 0.8,
+      decoration: BoxDecoration(
+          color: containerColor,
+          borderRadius: BorderRadius.circular(7),
+          border: Border.all(color: Colors.blue.withOpacity(0.2))),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     title,
@@ -374,7 +374,7 @@ class Widgets {
                         fontFamily: 'Readex Pro',
                         fontSize: 13),
                   ),
-                  const SizedBox(height: 30),
+                  SizedBox(height: 20,),
                   Text(
                     numbers,
                     style: const TextStyle(
@@ -384,27 +384,23 @@ class Widgets {
                   ),
                 ],
               ),
-              Column(
-                children: [
-                  Container(
-                    height: 60,
-                    width: 60,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(7)),
-                    child: Center(
-                      child: Image(
-                        width: 30,
-                        height: 30,
-                        image: AssetImage(assetImage),
-                        fit: BoxFit.contain,
-                      ),
-                    ),
-                  ),
-                ],
-              )
-            ],
-          ),
+            ),
+            Container(
+              height: 60,
+              width: 60,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(7)),
+              child: Center(
+                child: Image(
+                  width: 30,
+                  height: 30,
+                  image: AssetImage(assetImage),
+                  fit: BoxFit.contain,
+                ),
+              ),
+            )
+          ],
         ),
       ),
     );

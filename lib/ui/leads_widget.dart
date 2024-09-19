@@ -2,6 +2,7 @@ import 'package:fab_tech_sol/Screen/invoice_details.dart';
 import 'package:fab_tech_sol/Screen/lead_details.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
+import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:fab_tech_sol/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -10,70 +11,96 @@ class LeadsWidget {
   Widget leads(BuildContext context, TabController leadsTabController) {
     final providerValue = Provider.of<UserProvider>(context);
     return Padding(
-      padding: const EdgeInsets.only(top: 40),
+      padding: EdgeInsets.only(
+          top: Responsive.isMobile(context) ? 2 : 35,
+          left: Responsive.isMobile(context) ? 16 : 50,
+          right: Responsive.isMobile(context) ? 16 : 50),
       child: Column(
         children: [
           Row(
+            mainAxisAlignment:Responsive.isMobile(context)? MainAxisAlignment.start:MainAxisAlignment.spaceBetween,
             children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 75),
-                child: Text(
-                  'All Leads',
-                  style: TextStyle(
-                      fontSize: 20,
-                      fontFamily: fontFamily,
-                      fontWeight: FontWeight.bold,
-                      color: color),
-                ),
+              Responsive.isMobile(context)?  SizedBox.shrink(): Text(
+                'All Leads',
+                style: TextStyle(
+                    fontSize: 20,
+                    fontFamily: fontFamily,
+                    fontWeight: FontWeight.bold,
+                    color: color),
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 370, right: 25),
-                child: Row(
-                  children: [
-                    Text(
-                      'Leads Status :',
-                      style: TextStyle(
-                          color: color,
-                          fontFamily: fontFamily,
-                          fontWeight: FontWeight.w600),
-                    ),
-                    TabBar(
-                        labelStyle: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontFamily: fontFamily,
-                        ),
-                        unselectedLabelStyle:
-                            const TextStyle(fontWeight: FontWeight.normal),
-                        unselectedLabelColor: Colors.grey,
-                        labelColor: color,
-                        indicatorColor: color,
-                        dividerColor: Colors.transparent,
-                        controller: leadsTabController,
-                        isScrollable: true,
-                        tabs: const [
-                          Tab(text: 'Confirmed'),
-                          Tab(text: 'Pending'),
-                          Tab(text: 'Canceled'),
-                        ]),
-                    Widgets().dropDownButton(providerValue.selectedItem2,
-                        providerValue.dropdownItems2, (String? newValue) {
-                      providerValue.updateSelectedItem2(newValue);
-                    }, context),
-                    const SizedBox(width: 15),
-                    Widgets().button('Add New Lead', () {
-                      // Navigator.pushNamed(
-                      //   context, AppRoutes.lead_details);
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => InvoiceDetails(),
-                          ));
-                    }),
-                  ],
-                ),
+              Row(
+                children: [
+                 Text(
+                    'Leads Status :',
+                    style: TextStyle(
+                        color: color,
+                        fontFamily: fontFamily,
+                        fontWeight: FontWeight.w600),
+                  ),
+                  TabBar(
+                      labelStyle: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontFamily: fontFamily,
+                      ),
+                      unselectedLabelStyle:
+                          const TextStyle(fontWeight: FontWeight.normal),
+                      unselectedLabelColor: Colors.grey,
+                      labelColor: color,
+                      indicatorColor: color,
+                      dividerColor: Colors.transparent,
+                      controller: leadsTabController,
+                      isScrollable: true,
+                      tabs: const [
+                        Tab(text: 'Confirmed'),
+                        Tab(text: 'Pending'),
+                        Tab(text: 'Canceled'),
+                      ]),
+                  Responsive.isDesktop(context)
+                      ? Widgets().dropDownButton(providerValue.selectedItem2,
+                          providerValue.dropdownItems2, (String? newValue) {
+                          providerValue.updateSelectedItem2(newValue);
+                        }, context)
+                      : SizedBox.shrink(),
+                  const SizedBox(width: 15),
+                  Responsive.isDesktop(context)
+                      ? Widgets().button('Add New Lead', () {
+                          // Navigator.pushNamed(
+                          //   context, AppRoutes.lead_details);
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => InvoiceDetails(),
+                              ));
+                        })
+                      : SizedBox.shrink(),
+                ],
               ),
             ],
           ),
+          Responsive.isDesktop(context)
+              ? SizedBox.shrink()
+              : Padding(
+                  padding: const EdgeInsets.only(top: 12),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Widgets().dropDownButton(providerValue.selectedItem2,
+                          providerValue.dropdownItems2, (String? newValue) {
+                        providerValue.updateSelectedItem2(newValue);
+                      }, context),
+                      const SizedBox(width: 15),
+                      Widgets().button('Add New Lead', () {
+                        // Navigator.pushNamed(
+                        //   context, AppRoutes.lead_details);
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => InvoiceDetails(),
+                            ));
+                      }),
+                    ],
+                  ),
+                ),
           Expanded(
             child: TabBarView(controller: leadsTabController, children: [
               Padding(
