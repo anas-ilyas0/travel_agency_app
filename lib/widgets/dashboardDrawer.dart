@@ -4,9 +4,12 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/manage_color_state.dart';
+import '../ui/agents_widget.dart';
+import '../ui/dashboard_widget.dart';
 
 class DashboardDrawer extends StatefulWidget {
-  const DashboardDrawer({super.key});
+  TabController tabController;
+   DashboardDrawer({super.key, required this.tabController});
 
   @override
   State<DashboardDrawer> createState() => _DashboardDrawerState();
@@ -30,71 +33,70 @@ class _DashboardDrawerState extends State<DashboardDrawer> {
                 onTap: () {
 
                   context.read<DrawerStateInfo>().setCurrentDrawer(0);
+                  // DashboardWidget().dashboard(context);
+                  Navigator.pop(context);
 
-                }),
+                },
+              tabController: widget.tabController, // Pass TabController
+            ),
             DrawerWidget(
                 icon: Icons.supervisor_account_outlined,
                 index: 1,
                 title: 'Leads',
                 onTap: () {
                   context.read<DrawerStateInfo>().setCurrentDrawer(1);
+                  Navigator.pop(context);
 
-                }),
+
+                },
+              tabController: widget.tabController, // Pass TabController
+            ),
             DrawerWidget(
                 icon: Icons.supervisor_account_outlined,
                 index: 2,
                 title: 'Agent',
                 onTap: () {
+                  // AgentsWidget().agent(context);
+                  Navigator.pop(context);
                   context.read<DrawerStateInfo>().setCurrentDrawer(2);
 
-                }),   DrawerWidget(
+                },
+              tabController: widget.tabController, // Pass TabController
+            ),   DrawerWidget(
                 icon: Icons.supervisor_account_outlined,
                 index: 3,
                 title: 'Supplier',
                 onTap: () {
                   context.read<DrawerStateInfo>().setCurrentDrawer(3);
+                  Navigator.pop(context);
 
-                }),
+                },
+              tabController: widget.tabController, // Pass TabController
+            ),
             DrawerWidget(
                 icon: Icons.supervisor_account_outlined,
                 index: 4,
                 title: 'Agent',
                 onTap: () {
                   context.read<DrawerStateInfo>().setCurrentDrawer(4);
-
-                }),   DrawerWidget(
+                  Navigator.pop(context);
+                },
+              tabController: widget.tabController, // Pass TabController
+            ),   DrawerWidget(
                 icon: Icons.supervisor_account_outlined,
                 index: 5,
                 title: 'Package',
                 onTap: () {
                   context.read<DrawerStateInfo>().setCurrentDrawer(5);
+                  Navigator.pop(context);
 
-                }),
+                },
+              tabController: widget.tabController, // Pass TabController
+            ),
 
           ],
         ),
       ),
-      // child: ListView(
-      //   children: [
-      //     Container(
-      //       height: 40,
-      //         width: 200,
-      //         margin: EdgeInsets.all(12),
-      //         decoration:  BoxDecoration(
-      //           borderRadius: BorderRadius.circular(14),
-      //           color: AppColor.background,
-      //
-      //         ),
-      //         child: Padding(
-      //           padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
-      //           child: Text("Dashboard", style: TextStyle(fontWeight: FontWeight.bold,fontSize: 14)),
-      //         )),
-      //     Text("Leads", style: TextStyle(fontWeight: FontWeight.bold),),
-      //     Text("Agents"),
-      //     Text("Supplier"),
-      //     Text("Packages"),
-      //   ],
-      // ),
     );
   }
 }
@@ -103,12 +105,16 @@ class DrawerWidget extends StatelessWidget {
   final int index;
   final VoidCallback onTap;
   final IconData icon;
+  final TabController tabController; // Pass the TabController
   const DrawerWidget(
       {super.key,
         required this.title,
         required this.onTap,
         required this.index,
-        required this.icon});
+        required this.icon,
+        required this.tabController, // Add TabController to constructor
+
+      });
 
   @override
   Widget build(BuildContext context) {
@@ -124,7 +130,10 @@ class DrawerWidget extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextButton(
-                onPressed: onTap,
+                onPressed: (){
+                  tabController.animateTo(index); // Switch to the selected tab
+                  onTap();
+                },
                 child: Row(
                   children: [
                     Icon(

@@ -1,6 +1,7 @@
 import 'package:fab_tech_sol/Screen/client_detail_package.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
+import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:fab_tech_sol/ui/tasks_data_source.dart';
 import 'package:flutter/material.dart';
 
@@ -352,7 +353,7 @@ class Widgets {
     return Padding(
       padding: const EdgeInsets.only(left: 25),
       child: Container(
-        width: context.screenWidth * 0.2,
+        width: Responsive.isDesktop(context)? context.screenWidth * 0.2 : Responsive.isTablet(context)? context.screenWidth * 0.4:context.screenWidth * 0.8,
         decoration: BoxDecoration(
             color: containerColor,
             borderRadius: BorderRadius.circular(7),
@@ -421,8 +422,8 @@ class Widgets {
             GestureDetector(
               onTap: onTap,
               child: SizedBox(
-                height: 35,
-                width: 145,
+                height: 34,
+                width: 135,
                 child: Center(
                   child: Text(
                     text,
@@ -442,7 +443,7 @@ class Widgets {
     return Padding(
       padding: const EdgeInsets.only(left: 10),
       child: Container(
-        width: context.screenWidth * 0.14,
+        width: Responsive.isDesktop(context)? 180 : 160,
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(7),
@@ -451,17 +452,17 @@ class Widgets {
         child: Row(
           children: [
             SizedBox(
-              height: context.screenHeight * 0.2,
-              width: 30,
+              height: Responsive.isDesktop(context)? 40: 30  ,
+              width:  Responsive.isDesktop(context)? 25:5,
               child: Padding(
-                padding: const EdgeInsets.only(left: 12),
+                padding: const EdgeInsets.only(left: 5),
                 child: Image(
                   image: AssetImage('${imageUrl}vector.png'),
                   fit: BoxFit.contain,
                 ),
               ),
             ),
-            const SizedBox(width: 10),
+            const SizedBox(width: 5),
             DropdownButton<String>(
               dropdownColor: Colors.white,
               isDense: true,
