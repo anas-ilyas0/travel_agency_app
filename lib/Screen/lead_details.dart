@@ -24,7 +24,7 @@ class LeadDetails extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                // Button logic here
+                
               },
               style: ElevatedButton.styleFrom(
                 shape: const CircleBorder(),  // Makes the button circular
@@ -45,8 +45,8 @@ class LeadDetails extends StatelessWidget {
             ),
             child: TextButton(
               onPressed: () {
-                // Action when button is pressed
-                print("Add new Lead button pressed");
+                // // Action when button is pressed
+                // print("Add new Lead button pressed");
               },
               child: const Text(
                 "Add new Lead",
@@ -72,7 +72,7 @@ class LeadDetails extends StatelessWidget {
   height: context.screenHeight * 0.86,
   width: context.screenWidth * 0.9,
   decoration: BoxDecoration(
-    boxShadow: const [
+    boxShadow:  [
       BoxShadow(color: Color(0XFFE3F5FA)),
       BoxShadow(color: Colors.white, blurRadius: 7, spreadRadius: -4),
     ],

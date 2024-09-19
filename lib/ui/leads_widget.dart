@@ -10,6 +10,16 @@ import 'package:provider/provider.dart';
 class LeadsWidget {
   Widget leads(BuildContext context, TabController leadsTabController) {
     final providerValue = Provider.of<UserProvider>(context);
+
+    final isMobile = Responsive.isMobile(context);
+    final isTablet = Responsive.isTablet(context);
+
+    double horizontalPadding = isMobile
+        ? 20.0 // Mobile padding
+        : isTablet
+            ? 40.0 // Tablet padding
+            : 75.0; // Desktop padding
+
     return Padding(
       padding: EdgeInsets.only(
           top: Responsive.isMobile(context) ? 2 : 35,
@@ -17,6 +27,7 @@ class LeadsWidget {
           right: Responsive.isMobile(context) ? 16 : 50),
       child: Column(
         children: [
+          // Header Row
           Row(
             mainAxisAlignment:Responsive.isMobile(context)? MainAxisAlignment.start:MainAxisAlignment.spaceBetween,
             children: [
@@ -101,26 +112,89 @@ class LeadsWidget {
                     ],
                   ),
                 ),
+
           Expanded(
             child: TabBarView(controller: leadsTabController, children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(50, 20, 50, 20),
-                child: GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 4,
-                    crossAxisSpacing: 10.0,
-                    mainAxisSpacing: 10.0,
-                    childAspectRatio: 1.0,
-                  ),
-                  itemCount: 6,
-                  itemBuilder: (context, index) {
-                    return Container(
-                        decoration: BoxDecoration(
+                padding: EdgeInsets.symmetric(
+                  horizontal: horizontalPadding, // Responsive horizontal padding
+                  vertical: 20,
+                ),
+                child: Responsive(
+                  // Mobile view: Use ListView.builder
+                  mobile: ListView.builder(
+                    itemCount: 6,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.only(bottom: 10.0),
+                        child: Container(
+                          decoration: BoxDecoration(
                             border: Border.all(
                               color: Colors.blue.withOpacity(0.4),
                             ),
                             color: const Color(0XFFFFFFFF),
-                            borderRadius: BorderRadius.circular(10)),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(12.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Widgets().row('Lead Number', '01'),
+                                Widgets().row('Agent Name', 'John Doe'),
+                                Widgets().row('Client Name', 'John Doe'),
+                                Widgets().row('Lead Date', '08/16/2024'),
+                                Widgets().row('Status', 'Confirmed'),
+                                const SizedBox(height: 20),
+                                SizedBox(
+                                  width: double.infinity,
+                                  child: ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: color,
+                                    ),
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => LeadDetails(),
+                                        ),
+                                      );
+                                    },
+                                    child: Text(
+                                      'View Details',
+                                      style: TextStyle(
+                                        fontFamily: fontFamily,
+                                        color: Colors.white,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+
+                  // Desktop view: Use GridView.builder
+                  desktop: GridView.builder(
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 4, // 4 items per row for desktop
+                      crossAxisSpacing: 10.0,
+                      mainAxisSpacing: 10.0,
+                      childAspectRatio: 1.0,
+                    ),
+                    itemCount: 6,
+                    itemBuilder: (context, index) {
+                      return Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.blue.withOpacity(0.4),
+                          ),
+                          color: const Color(0XFFFFFFFF),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
                         child: Padding(
                           padding: const EdgeInsets.all(12.0),
                           child: Column(
@@ -133,36 +207,104 @@ class LeadsWidget {
                               Widgets().row('Status', 'Confirmed'),
                               const SizedBox(height: 20),
                               SizedBox(
-                                width: 230,
+                                width: double.infinity,
                                 child: ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                        backgroundColor: color),
-                                    onPressed: () {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => LeadDetails(),
-                                          ));
-                                    },
-                                    child: Text(
-                                      'View Details',
-                                      style: TextStyle(
-                                          fontFamily: fontFamily,
-                                          color: Colors.white),
-                                    )),
-                              )
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: color,
+                                  ),
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => LeadDetails(),
+                                      ),
+                                    );
+                                  },
+                                  child: Text(
+                                    'View Details',
+                                    style: TextStyle(
+                                      fontFamily: fontFamily,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ),
                             ],
                           ),
-                        ));
-                  },
+                        ),
+                      );
+                    },
+                  ),
+
+
+                  tablet: GridView.builder(
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2, // 2 items per row for tablet
+                      crossAxisSpacing: 10.0,
+                      mainAxisSpacing: 10.0,
+                      childAspectRatio: 1.0,
+                    ),
+                    itemCount: 6,
+                    itemBuilder: (context, index) {
+                      return Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            color: Colors.blue.withOpacity(0.4),
+                          ),
+                          color: const Color(0XFFFFFFFF),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(12.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Widgets().row('Lead Number', '01'),
+                              Widgets().row('Agent Name', 'John Doe'),
+                              Widgets().row('Client Name', 'John Doe'),
+                              Widgets().row('Lead Date', '08/16/2024'),
+                              Widgets().row('Status', 'Confirmed'),
+                              const SizedBox(height: 20),
+                              SizedBox(
+                                width: double.infinity,
+                                child: ElevatedButton(
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: color,
+                                  ),
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => LeadDetails(),
+                                      ),
+                                    );
+                                  },
+                                  child: Text(
+                                    'View Details',
+                                    style: TextStyle(
+                                      fontFamily: fontFamily,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  ),
                 ),
               ),
               const Center(child: Text('Pending')),
               const Center(child: Text('Canceled')),
             ]),
           ),
-        ],
-      ),
-    );
+            ],
+          ),
+          // Expanded content area (Grid/List view for leads)
+
+
+      );
   }
 }
