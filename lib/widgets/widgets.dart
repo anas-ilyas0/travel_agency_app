@@ -1,9 +1,12 @@
+import 'package:fab_tech_sol/AppColor/app_color.dart';
+import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/Screen/client_detail_package.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:fab_tech_sol/ui/tasks_data_source.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class Widgets {
   final List<AgentsTask> agentsTasks = [
@@ -350,21 +353,21 @@ class Widgets {
 
   Widget containerfield(
       String title, String numbers, String assetImage, BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(left: 25),
-      child: Container(
-        width: Responsive.isDesktop(context)? context.screenWidth * 0.2 : Responsive.isTablet(context)? context.screenWidth * 0.4:context.screenWidth * 0.8,
-        decoration: BoxDecoration(
-            color: containerColor,
-            borderRadius: BorderRadius.circular(7),
-            border: Border.all(color: Colors.blue.withOpacity(0.2))),
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
+    return Container(
+      width: Responsive.isDesktop(context)? context.screenWidth * 0.2 : Responsive.isTablet(context)? context.screenWidth * 0.4:context.screenWidth * 0.8,
+      decoration: BoxDecoration(
+          color: containerColor,
+          borderRadius: BorderRadius.circular(7),
+          border: Border.all(color: Colors.blue.withOpacity(0.2))),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     title,
@@ -374,7 +377,7 @@ class Widgets {
                         fontFamily: 'Readex Pro',
                         fontSize: 13),
                   ),
-                  const SizedBox(height: 30),
+                  SizedBox(height: 20,),
                   Text(
                     numbers,
                     style: const TextStyle(
@@ -384,27 +387,23 @@ class Widgets {
                   ),
                 ],
               ),
-              Column(
-                children: [
-                  Container(
-                    height: 60,
-                    width: 60,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(7)),
-                    child: Center(
-                      child: Image(
-                        width: 30,
-                        height: 30,
-                        image: AssetImage(assetImage),
-                        fit: BoxFit.contain,
-                      ),
-                    ),
-                  ),
-                ],
-              )
-            ],
-          ),
+            ),
+            Container(
+              height: 60,
+              width: 60,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(7)),
+              child: Center(
+                child: Image(
+                  width: 30,
+                  height: 30,
+                  image: AssetImage(assetImage),
+                  fit: BoxFit.contain,
+                ),
+              ),
+            )
+          ],
         ),
       ),
     );
@@ -564,6 +563,42 @@ class Widgets {
           '$TextNumberlist',
           style: TextStyle(fontSize: 14, color: Color(0XFF8897AD)),
         ),
+      ),
+    );
+  }
+
+  Widget buildFeature(BuildContext context, String featureText) {
+    return Padding(
+      padding: const EdgeInsets.only(top: 6.0),
+      child: Row(
+        children: [
+          Container(
+            height: 20,
+            width: 20,
+            decoration: BoxDecoration(
+              color: AppColor.blueColor,
+              borderRadius: BorderRadius.circular(18),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: SvgPicture.asset('${ImagesAssets.imagePath}VectorRight.svg'),
+            ),
+          ),
+          SizedBox(width: 8),
+          Expanded(
+            child: Text(
+              featureText,
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.bold,
+                fontSize: 12,
+                fontFamily: 'Readex Pro',
+              ),
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ),
+        ],
       ),
     );
   }

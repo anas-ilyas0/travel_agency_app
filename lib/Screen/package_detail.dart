@@ -1,4 +1,5 @@
-import 'package:fab_tech_sol/Screen/create_new_package.dart';
+
+import 'package:fab_tech_sol/Screen/add_new_lead_form_create_new_package.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/widgets/widgets.dart';
@@ -36,7 +37,7 @@ class PackageDetail extends StatelessWidget {
                 Widgets().button(
                   'Add New Package',
                   () {
-                 Navigator.push(context, MaterialPageRoute(builder: (context) => CreateNewPackage(),));
+                 Navigator.push(context, MaterialPageRoute(builder: (context) => CreateNewPackageForm(),));
                   },
                 )
               ],

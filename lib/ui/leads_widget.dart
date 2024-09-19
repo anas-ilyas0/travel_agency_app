@@ -11,10 +11,8 @@ class LeadsWidget {
   Widget leads(BuildContext context, TabController leadsTabController) {
     final providerValue = Provider.of<UserProvider>(context);
 
-    // Using MediaQuery to adjust padding based on screen width
     final isMobile = Responsive.isMobile(context);
     final isTablet = Responsive.isTablet(context);
-    final isDesktop = Responsive.isDesktop(context);
 
     double horizontalPadding = isMobile
         ? 20.0 // Mobile padding
@@ -23,90 +21,98 @@ class LeadsWidget {
             : 75.0; // Desktop padding
 
     return Padding(
-      padding: EdgeInsets.only(top: 40),
+      padding: EdgeInsets.only(
+          top: Responsive.isMobile(context) ? 2 : 35,
+          left: Responsive.isMobile(context) ? 16 : 50,
+          right: Responsive.isMobile(context) ? 16 : 50),
       child: Column(
         children: [
           // Header Row
           Row(
+            mainAxisAlignment:Responsive.isMobile(context)? MainAxisAlignment.start:MainAxisAlignment.spaceBetween,
             children: [
-              Padding(
-                padding: EdgeInsets.only(left: horizontalPadding),
-                child: Text(
-                  'All Leads',
-                  style: TextStyle(
-                    fontSize: isMobile ? 16 : 20, // Smaller font for mobile
+              Responsive.isMobile(context)?  SizedBox.shrink(): Text(
+                'All Leads',
+                style: TextStyle(
+                    fontSize: 20,
                     fontFamily: fontFamily,
                     fontWeight: FontWeight.bold,
-                    color: color,
-                  ),
-                ),
+                    color: color),
               ),
-              Spacer(),
-              Padding(
-                padding: EdgeInsets.only(
-                  right: horizontalPadding, // Responsive right padding
-                ),
-                child: Row(
-                  children: [
-                    Text(
-                      'Leads Status :',
-                      style: TextStyle(
+              Row(
+                children: [
+                 Text(
+                    'Leads Status :',
+                    style: TextStyle(
                         color: color,
                         fontFamily: fontFamily,
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w600),
+                  ),
+                  TabBar(
+                      labelStyle: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontFamily: fontFamily,
                       ),
-                    ),
-                    SizedBox(width: 10),
-                    Wrap(
-                      spacing: 10,
-                      direction: Axis.vertical,
-                      children: [
-                       TabBar(
-                        labelStyle: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontFamily: fontFamily,
-                        ),
-                        unselectedLabelStyle:
-                            const TextStyle(fontWeight: FontWeight.normal),
-                        unselectedLabelColor: Colors.grey,
-                        labelColor: color,
-                        indicatorColor: color,
-                        controller: leadsTabController,
-                        isScrollable: true,
-                        tabs: const [
-                          Tab(text: 'Confirmed'),
-                          Tab(text: 'Pending'),
-                          Tab(text: 'Canceled'),
-                        ],
-                      ),
-                      ]
-                    ),
-                    SizedBox(width: 10),
-                    // Dropdown button to select lead status
-                    Widgets().dropDownButton(
-                      providerValue.selectedItem2,
-                      providerValue.dropdownItems2,
-                      (String? newValue) {
-                        providerValue.updateSelectedItem2(newValue);
-                      },
-                      context,
-                    ),
-                    const SizedBox(width: 15),
-                    // Button to add new lead
-                    Widgets().button('Add New Lead', () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => InvoiceDetails(),
-                        ),
-                      );
-                    }),
-                  ],
-                ),
+                      unselectedLabelStyle:
+                          const TextStyle(fontWeight: FontWeight.normal),
+                      unselectedLabelColor: Colors.grey,
+                      labelColor: color,
+                      indicatorColor: color,
+                      dividerColor: Colors.transparent,
+                      controller: leadsTabController,
+                      isScrollable: true,
+                      tabs: const [
+                        Tab(text: 'Confirmed'),
+                        Tab(text: 'Pending'),
+                        Tab(text: 'Canceled'),
+                      ]),
+                  Responsive.isDesktop(context)
+                      ? Widgets().dropDownButton(providerValue.selectedItem2,
+                          providerValue.dropdownItems2, (String? newValue) {
+                          providerValue.updateSelectedItem2(newValue);
+                        }, context)
+                      : SizedBox.shrink(),
+                  const SizedBox(width: 15),
+                  Responsive.isDesktop(context)
+                      ? Widgets().button('Add New Lead', () {
+                          // Navigator.pushNamed(
+                          //   context, AppRoutes.lead_details);
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => InvoiceDetails(),
+                              ));
+                        })
+                      : SizedBox.shrink(),
+                ],
               ),
             ],
           ),
-          // Expanded content area (Grid/List view for leads)
+          Responsive.isDesktop(context)
+              ? SizedBox.shrink()
+              : Padding(
+                  padding: const EdgeInsets.only(top: 12),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Widgets().dropDownButton(providerValue.selectedItem2,
+                          providerValue.dropdownItems2, (String? newValue) {
+                        providerValue.updateSelectedItem2(newValue);
+                      }, context),
+                      const SizedBox(width: 15),
+                      Widgets().button('Add New Lead', () {
+                        // Navigator.pushNamed(
+                        //   context, AppRoutes.lead_details);
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => InvoiceDetails(),
+                            ));
+                      }),
+                    ],
+                  ),
+                ),
+
           Expanded(
             child: TabBarView(controller: leadsTabController, children: [
               Padding(
@@ -230,7 +236,7 @@ class LeadsWidget {
                     },
                   ),
 
-                  
+
                   tablet: GridView.builder(
                     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2, // 2 items per row for tablet
@@ -294,8 +300,11 @@ class LeadsWidget {
               const Center(child: Text('Canceled')),
             ]),
           ),
-        ],
-      ),
-    );
+            ],
+          ),
+          // Expanded content area (Grid/List view for leads)
+
+
+      );
   }
 }
