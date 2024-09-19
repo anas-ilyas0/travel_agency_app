@@ -107,11 +107,10 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
           ]
         ],
       ),
-<<<<<<< HEAD
-      drawer: Responsive.isDesktop(context) ? null : DashboardDrawer(),
-=======
+
+   
       drawer: Responsive.isDesktop(context)? null:  DashboardDrawer(tabController: dashboardTabController),
->>>>>>> e17aa57d977e1ab7a85698cb7af2dda1ec96278d
+
       body: Column(
         children: [
           Expanded(
