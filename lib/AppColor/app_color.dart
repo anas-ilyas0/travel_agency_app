@@ -12,4 +12,5 @@ class AppColor {
   static Color Textbackground = const Color(0XFFFCFCFC);
   static Color customdropdownColor = const Color(0XFFF7FBFF);
   static Color darkGrey = const Color(0XFF707070);
+  static Color textColor = const Color(0XFF0C1421);
 }

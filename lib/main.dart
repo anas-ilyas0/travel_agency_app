@@ -1,4 +1,7 @@
 
+import 'package:fab_tech_sol/Screen/client_detail_package.dart';
+import 'package:fab_tech_sol/Screen/lead_details.dart';
+import 'package:fab_tech_sol/Screen/package.dart';
 import 'package:fab_tech_sol/firebase_options.dart';
 import 'package:fab_tech_sol/login_page.dart';
 
@@ -7,7 +10,7 @@ import 'package:fab_tech_sol/providers/manage_color_state.dart';
 import 'package:fab_tech_sol/themedata.dart';
 
 import 'package:fab_tech_sol/providers/provider.dart';
-import 'package:fab_tech_sol/ui/add_new_lead.dart';
+import 'package:fab_tech_sol/Screen/add_new_lead.dart';
 import 'package:fab_tech_sol/ui/dashboard.dart';
 
 
@@ -43,13 +46,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeApp.myThemeData,
-
-        home: const Dashboard() );
+// home: LeadDetails());
+        // home: const AddNewLeadForm());
+        // home: ClientDetailPackage());
         // home: Package() );
       // debugShowCheckedModeBanner: false,
       // theme: ThemeApp.myThemeData,
       // initialRoute: AppRoutes.dashboard,
-      // home: const Dashboard(),
+      home: const Dashboard());
       // routes: AppRoutes.getRoutes(),
     // );
 

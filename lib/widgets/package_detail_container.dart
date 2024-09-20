@@ -20,6 +20,7 @@ class PackageDetailContainer extends StatelessWidget {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(22),
             color: AppColor.background,
+            
             border: Border.all(
                 color: AppColor.borderColor.withOpacity(0.1), width: 1)),
         child: Padding

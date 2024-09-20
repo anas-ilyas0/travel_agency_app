@@ -1,8 +1,9 @@
-import 'package:fab_tech_sol/Screen/invoice_details.dart';
+import 'package:fab_tech_sol/Screen/invoice_details_invoice.dart';
 import 'package:fab_tech_sol/Screen/lead_details.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
+import 'package:fab_tech_sol/Screen/add_new_lead.dart';
 import 'package:fab_tech_sol/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -80,7 +81,7 @@ class LeadsWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => InvoiceDetails(),
+                                builder: (context) => AddNewLeadForm(),
                               ));
                         })
                       : SizedBox.shrink(),
@@ -106,7 +107,7 @@ class LeadsWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => InvoiceDetails(),
+                              builder: (context) => AddNewLeadForm(),
                             ));
                       }),
                     ],
@@ -163,7 +164,7 @@ class LeadsWidget {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) => LeadDetails(),
+                                            builder: (context) => LeadInvoiceDetails(),
                                           ),
                                         );
                                       },
@@ -238,7 +239,7 @@ class LeadsWidget {
                                       Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                          builder: (context) => LeadDetails(),
+                                          builder: (context) => LeadInvoiceDetails(),
                                         ),
                                       );
                                     },

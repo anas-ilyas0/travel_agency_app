@@ -4,14 +4,14 @@ import 'package:fab_tech_sol/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class AddNewLead extends StatefulWidget {
-  const AddNewLead({super.key});
+class AddNewLeadForm extends StatefulWidget {
+  const AddNewLeadForm({super.key});
 
   @override
-  State<AddNewLead> createState() => _AddNewLeadState();
+  State<AddNewLeadForm> createState() => _AddNewLeadFormState();
 }
 
-class _AddNewLeadState extends State<AddNewLead> {
+class _AddNewLeadFormState extends State<AddNewLeadForm> {
   List<String> agents = ['John Doe', 'Jane Smith', 'James Bond', 'Tony Stark'];
   List<String> filteredAgents = [];
 
@@ -21,7 +21,7 @@ class _AddNewLeadState extends State<AddNewLead> {
   @override
   void initState() {
     super.initState();
-    filteredAgents = agents; // Initially, all agents are displayed
+    filteredAgents = agents;
   }
 
   void filterAgents(String query) {
