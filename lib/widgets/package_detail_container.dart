@@ -2,6 +2,7 @@ import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
+import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -58,7 +59,7 @@ class PackageDetailContainer extends StatelessWidget {
                   ),
                   SizedBox(
 
-                    height: 50,
+                    height: 45,
 
                     width: 150,
                     child: ElevatedButton(
@@ -79,11 +80,12 @@ class PackageDetailContainer extends StatelessWidget {
                 Align(
                     alignment: Alignment.centerLeft,
                     child: Padding(
-                      padding: const EdgeInsets.only(right: 300),
+                      padding:  EdgeInsets.only(right: Responsive.isDesktop(context)? 280:40),
                       child: Text(
                         'The Premium Plan offers unlimited ticket handling annually, making it perfect for those who receive multiple tickets throughout the year.\ This plan ensures that no matter how many tickets you get, weve got you covered with top-notch service and support.',
                         style:
-                            TextStyle(fontSize: 12, fontWeight: FontWeight.w400,fontFamily: fontFamily,color: AppColor.darkGrey),
+                            TextStyle(fontSize: 12, fontWeight: FontWeight.w400,fontFamily: fontFamily,color: AppColor.darkGrey,),maxLines: 2,
+                          overflow: TextOverflow.ellipsis
                       ),
                     )),
                 const Align(

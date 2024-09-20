@@ -149,11 +149,12 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
             child: TabBarView(
               controller: dashboardTabController,
               children: [
+                PackageWidget().package(context),
+
                 DashboardWidget().dashboard(context),
                 LeadsWidget().leads(context, leadsTabController),
                 AgentsWidget().agent(context),
                 SupplierWidget().supplier(context),
-                PackageWidget().package(context),
               ],
             ),
           ),

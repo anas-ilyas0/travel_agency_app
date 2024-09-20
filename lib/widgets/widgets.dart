@@ -545,9 +545,10 @@ class Widgets {
               featureText,
               style: TextStyle(
                 color: Colors.black,
-                fontWeight: FontWeight.bold,
+                // fontWeight: FontWeight.bold,  Good work Usman
+                fontWeight: FontWeight.w500,
                 fontSize: 12,
-                fontFamily: 'Readex Pro',
+                fontFamily: 'Poppin',
               ),
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
