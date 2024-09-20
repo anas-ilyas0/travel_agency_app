@@ -1,5 +1,7 @@
+import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Screen/package_widget.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
+import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:fab_tech_sol/widgets/dashboardDrawer.dart';
@@ -10,6 +12,8 @@ import 'package:fab_tech_sol/ui/supplier_widget.dart';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../widgets/widgets.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -48,66 +52,60 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
     return Scaffold(
       appBar: AppBar(
         elevation: .2,
-        // bottom: Responsive.isMobile(context) && dashboardTabController.index ==1
-        //     ? TabBar(
-        //
-        //   controller: leadsTabController,
-        //   isScrollable: true,
-        //   tabAlignment: TabAlignment.center,
-        //   tabs: const [
-        //     Tab(text: 'Confirmed'),
-        //     Tab(text: 'Pending'),
-        //     Tab(text: 'Canceled'),
-        //
-        //   ],
-        // )
-        //     : null,
+        toolbarHeight:77,
         title: Responsive.isDesktop(context)
-            ? Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Padding(
+            ? Padding(
+              padding: const EdgeInsets.only(top: 8),
+              child: Row(
+                  children: [
+                    Padding(
                       padding: const EdgeInsets.only(left: 50),
                       child: SizedBox(
-                        width: 150,
-                        height: 60,
+                        width: 130,
+                        height: 45,
                         child: Image.asset(
                           '${imageUrl}briton_logo.png',
                           fit: BoxFit.contain,
                         ),
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 170),
-                    child: Row(
-                      children: [
-                        TabBar(
-                          labelStyle: TextStyle(
-                              fontFamily: fontFamily,
-                              fontWeight: FontWeight.bold),
-                          labelColor: color,
-                          unselectedLabelColor: Colors.grey,
-                          unselectedLabelStyle:
-                              const TextStyle(fontWeight: FontWeight.normal),
-                          indicatorColor: color,
-                          dividerColor: Colors.transparent,
-                          controller: dashboardTabController,
-                          isScrollable: true,
-                          tabs: const [
-                            Tab(text: 'Dashboard'),
-                            Tab(text: 'Leads'),
-                            Tab(text: 'Agents'),
-                            Tab(text: 'Supplier'),
-                            Tab(text: 'Package'),
-                          ],
-                        ),
-                      ],
+                    Padding(
+                      padding:  EdgeInsets.only(left: context.screenWidth*.12, ),
+                      child: TabBar(
+                        labelStyle: TextStyle(
+                            fontFamily: fontFamily,
+                            fontWeight: FontWeight.bold),
+                        labelColor: color,
+                        unselectedLabelColor: AppColor.hintColor,
+                        unselectedLabelStyle:
+                            const TextStyle(fontWeight: FontWeight.normal),
+                        indicatorColor: color,
+                        dividerColor: Colors.transparent,
+                        controller: dashboardTabController,
+                        indicatorWeight: 3,
+                        indicatorSize: TabBarIndicatorSize.tab,
+
+                        // indicator: UnderlineTabIndicator(
+                        //     borderSide: BorderSide(width: 2.50),
+                        //     // insets: EdgeInsets.symmetric(horizontal:2.0)
+                        // ),
+
+                        // indicatorPadding: EdgeInsets.only(top: 45),
+                        labelPadding: EdgeInsets.symmetric(horizontal: 24,vertical: 8),
+                        isScrollable: true,
+
+                        tabs: const [
+                          Tab(text: 'Dashboard'),
+                          Tab(text: 'Leads'),
+                          Tab(text: 'Agents'),
+                          Tab(text: 'Supplier'),
+                          Tab(text: 'Package'),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
-              )
+                  ],
+                ),
+            )
             : null,
         leading:
             Responsive.isMobile(context) && dashboardTabController.index == 0
@@ -124,7 +122,10 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
                   )
                 : null,
         actions: [
-          // Widgets().circularAvatar(text: 'Name here'),
+          Padding(
+            padding:  EdgeInsets.only(right: context.screenWidth*.01),
+            child: Widgets().circularAvatar(text: 'Name here'),
+          ),
           if (dashboardTabController.index == 0) ...[
             if (Responsive.isMobile(context)) _buildMenuBar()
           ]

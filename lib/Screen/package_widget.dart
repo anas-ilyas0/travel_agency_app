@@ -70,12 +70,16 @@ class PackageWidget {
               padding: const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(24),
-                color: Colors.white,
-                border: Border.all(color: AppColor.borderColor),
-                boxShadow: const [
-                  BoxShadow(color: Color(0XFFE3F5FA)),
+                border: Border.all(color: AppColor.borderColor.withOpacity(.1)),
+                boxShadow: [
                   BoxShadow(
-                      color: Colors.white, blurRadius: 7, spreadRadius: -4),
+                    color: containerColor,
+                  ),
+                  const BoxShadow(
+                    color: Colors.white,
+                    spreadRadius: -2.0,
+                    blurRadius: 10.0,
+                  ),
                 ],
               ),
               child: ListView.builder(

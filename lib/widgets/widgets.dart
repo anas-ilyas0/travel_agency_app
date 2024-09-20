@@ -38,26 +38,7 @@ class Widgets {
         'Sialkot Punjab 51040', 'Active', ''),
     AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
         'Sialkot Punjab 51040', 'Active', ''),
-    // AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-  //       'Sialkot Punjab 51040', 'Active', ''),
-  //   AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-  //       'Sialkot Punjab 51040', 'Active', ''),
-  //   AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-  //       'Sialkot Punjab 51040', 'Active', ''),
-  //   AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-  //       'Sialkot Punjab 51040', 'Active', ''),
-  //   AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-  //       'Sialkot Punjab 51040', 'Active', ''),
-  //   AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-  //       'Sialkot Punjab 51040', 'Active', ''),
-  //   AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-  //       'Sialkot Punjab 51040', 'Active', ''),
-  //   AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-  //       'Sialkot Punjab 51040', 'Active', ''),
-  //   AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-  //       'Sialkot Punjab 51040', 'Active', ''),
-  //   AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-  //       'Sialkot Punjab 51040', 'Active', ''),
+
   ];
 
   final List<SupplierTask> tasks = [
@@ -89,38 +70,7 @@ class Widgets {
         'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
     SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
         'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    // SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-    //     'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    // SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-    //     'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    // SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-    //     'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    // SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-    //     'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    // SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-    //     'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    // SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-    //     'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    // SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-    //     'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    // SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-    //     'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    // SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-    //     'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    // SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-    //     'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    // SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-    //     'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    // SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-    //     'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    // SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-    //     'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    // SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-    //     'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    // SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-    //     'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    // SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-    //     'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+
   ];
 
   Widget editDelContainer(VoidCallback onPress) {
@@ -228,6 +178,7 @@ class Widgets {
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 12,
+                          fontWeight: FontWeight.w300,
                           fontFamily: fontFamily),
                     ),
                   ),
@@ -417,7 +368,10 @@ class Widgets {
                 child: Center(
                   child: Text(
                     text,
-                    style: TextStyle(color: color, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      fontSize: 14,
+                        fontFamily: fontFamily,
+                        color: color, fontWeight: FontWeight.w400),
                   ),
                 ),
               ),
@@ -433,44 +387,54 @@ class Widgets {
     return Padding(
       padding: const EdgeInsets.only(left: 10),
       child: Container(
-        width: Responsive.isDesktop(context)? 180 : 160,
+        width: Responsive.isDesktop(context)? 182 : 160,
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(7),
             border: Border.all(color: Colors.blue.withOpacity(0.2))),
         height: 50,
-        child: Row(
-          children: [
-            SizedBox(
-              height: Responsive.isDesktop(context)? 40: 30  ,
-              width:  Responsive.isDesktop(context)? 25:5,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 5),
-                child: Image(
-                  image: AssetImage('${imageUrl}vector.png'),
-                  fit: BoxFit.contain,
+        child: Expanded(
+          child: Row(
+            mainAxisSize: MainAxisSize.min, // Align children to start
+          
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 5.0),
+                child: SizedBox(
+                  height: Responsive.isDesktop(context)? 20: 15  ,
+                  width:  Responsive.isDesktop(context)? 20:15,
+                  child: Image(
+                    image: AssetImage('${imageUrl}vector.png'),
+                    fit: BoxFit.contain,
+                  ),
                 ),
               ),
-            ),
-            const SizedBox(width: 5),
-            DropdownButton<String>(
-              dropdownColor: Colors.white,
-              isDense: true,
-              underline: Container(),
-              value: value,
-              items: data.map((String item) {
-                return DropdownMenuItem<String>(
-                  value: item,
-                  child: Text(
-                    item,
-                    style: const TextStyle(color: Colors.grey),
+              const SizedBox(width: 5),
+              Flexible(
+                child: DropdownButtonHideUnderline(
+                  child: DropdownButton<String>(
+                    dropdownColor: Colors.white,
+                    padding: EdgeInsets.zero,
+                    isDense: true,
+                    // focusColor: AppColor.background,
+                    // underline: Container(),
+                    value: value,
+                    items: data.map((String item) {
+                      return DropdownMenuItem<String>(
+                        value: item,
+                        child: Text(
+                          item,
+                          style:  TextStyle(color: AppColor.hintColor, fontFamily: fontFamily,fontWeight: FontWeight.w400, fontSize: 14),
+                        ),
+                      );
+                    }).toList(),
+                    onChanged: onChanged,
+                    hint: const Text('Select an option'),
                   ),
-                );
-              }).toList(),
-              onChanged: onChanged,
-              hint: const Text('Select an option'),
-            )
-          ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

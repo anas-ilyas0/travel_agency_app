@@ -35,6 +35,8 @@ class ThemeApp {
         color: Colors.white,
         fontSize: 16.0,
         fontWeight: FontWeight.w600,
+          fontFamily: "Poppin"
+
       ),
     ),
 
