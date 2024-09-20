@@ -14,13 +14,13 @@ class _TypesDropDownButtonState extends State<TypesDropDownButton> {
   bool isExpanded=false;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
+    return 
+     Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
                 height: context.screenHeight* 0.08,
-                width: context.screenWidth * 0.2,
+                width: context.screenWidth * 0.12,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border.all(color: Colors.grey),
@@ -43,7 +43,7 @@ class _TypesDropDownButtonState extends State<TypesDropDownButton> {
                     ),
                   ),
                 ),
-              ),]),
-    );
+              ),]);
+    
   }
 }

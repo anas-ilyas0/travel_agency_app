@@ -5,14 +5,14 @@ import 'package:fab_tech_sol/media_query_extension.dart';
 import 'package:fab_tech_sol/widgets/invoice_detail_price_table.dart';
 import 'package:flutter/material.dart';
 
-class InvoiceDetails extends StatefulWidget {
-  const InvoiceDetails({super.key});
+class LeadInvoiceDetails extends StatefulWidget {
+  const LeadInvoiceDetails({super.key});
 
   @override
-  State<InvoiceDetails> createState() => _InvoiceDetailsState();
+  State<LeadInvoiceDetails> createState() => _LeadInvoiceDetailsState();
 }
 
-class _InvoiceDetailsState extends State<InvoiceDetails> {
+class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

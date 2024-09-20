@@ -1,4 +1,5 @@
 import 'package:fab_tech_sol/AppColor/app_color.dart';
+import 'package:fab_tech_sol/Screen/DropDownButton/type_of_people.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
@@ -36,10 +37,7 @@ class AgentsWidget {
                   child: Row(
                     children: [
                       Widgets().searchTextField(),
-                      Widgets().dropDownButton(providerValue.selectedItem2,
-                          providerValue.dropdownItems2, (String? newValue) {
-                        providerValue.updateSelectedItem2(newValue);
-                      }, context),
+                     TypesDropDownButton(),
                       const SizedBox(width: 15),
                       Widgets().button('Add Agent', () {})
                     ],

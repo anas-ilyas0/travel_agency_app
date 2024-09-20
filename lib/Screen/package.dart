@@ -1,12 +1,13 @@
 import 'package:fab_tech_sol/AppColor/app_color.dart';
-import 'package:fab_tech_sol/Image.dart';
+
 import 'package:fab_tech_sol/Screen/package_detail.dart';
+import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:fab_tech_sol/widgets/package_detail_container.dart';
 import 'package:fab_tech_sol/widgets/widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+
 
 class Package extends StatelessWidget {
   const Package({super.key});
@@ -78,11 +79,7 @@ class Package extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(24),
                     color: Colors.white,
-                   // border: Border.all(color: AppColor.borderColor.withOpacity(0.1,),width: 1),
-                    boxShadow:  [
-        BoxShadow(color: Color(0XFFE3F5FA)),
-        BoxShadow(color: Colors.white, blurRadius: 7, spreadRadius: -4),
-            ],
+                  
                   ),
                   child: ListView.builder(
                       itemBuilder: (context, index) {
@@ -144,7 +141,20 @@ class Package extends StatelessWidget {
         Container(
           height: context.screenHeight * 0.8, // Adjusted height for better layout
           width: double.infinity,
-          color: Colors.white,
+          
+          decoration: BoxDecoration(
+            color: Colors.white,
+             boxShadow: [
+                              BoxShadow(
+                                color: containerColor,
+                              ),
+                             const BoxShadow(
+                                color: Colors.white,
+                                spreadRadius: -2.0,
+                                blurRadius: 10.0,
+                              ),
+                            ],
+          ),
           child: ListView.builder(
             itemCount: 10, // Reduced item count for faster loading in the example
             itemBuilder: (context, index) {
