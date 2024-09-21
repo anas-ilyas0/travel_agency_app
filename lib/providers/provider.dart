@@ -4,10 +4,10 @@ class UserProvider extends ChangeNotifier {
   bool _isCheckedEmail = true;
   bool _isCheckedSMS = true;
   bool _isCheckedWhatsApp = true;
-
   bool get isCheckedEmail => _isCheckedEmail;
   bool get isCheckedSMS => _isCheckedSMS;
   bool get isCheckedWhatsApp => _isCheckedWhatsApp;
+
 
   void toggleCheckboxEmail(bool newValue) {
     _isCheckedEmail = newValue;

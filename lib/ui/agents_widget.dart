@@ -25,7 +25,7 @@ class AgentsWidget {
                   'All Agents',
                   style: TextStyle(
                       fontSize: 20,
-                      fontFamily: fontFamily,
+                      fontFamily: readexPro,
                       fontWeight: FontWeight.bold,
                       color: color),
                 ),

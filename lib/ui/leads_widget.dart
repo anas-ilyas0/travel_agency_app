@@ -36,7 +36,7 @@ class LeadsWidget {
                 'All Leads',
                 style: TextStyle(
                     fontSize: 20,
-                    fontFamily: fontFamily,
+                    fontFamily: readexPro,
                     fontWeight: FontWeight.bold,
                     color: color),
               ),
@@ -46,13 +46,13 @@ class LeadsWidget {
                     'Leads Status :',
                     style: TextStyle(
                         color: color,
-                        fontFamily: fontFamily,
+                        fontFamily: readexPro,
                         fontWeight: FontWeight.w600),
                   ),
                   TabBar(
                       labelStyle: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontFamily: fontFamily,
+                        fontFamily: readexPro,
                       ),
                       unselectedLabelStyle:
                           const TextStyle(fontWeight: FontWeight.normal),
@@ -161,6 +161,7 @@ class LeadsWidget {
                                         backgroundColor: color,
                                       ),
                                       onPressed: () {
+
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
@@ -171,7 +172,7 @@ class LeadsWidget {
                                       child: Text(
                                         'View Details',
                                         style: TextStyle(
-                                          fontFamily: fontFamily,
+                                          fontFamily: readexPro,
                                           color: Colors.white,
                                         ),
                                       ),
@@ -246,7 +247,7 @@ class LeadsWidget {
                                     child: Text(
                                       'View Details',
                                       style: TextStyle(
-                                        fontFamily: fontFamily,
+                                        fontFamily: readexPro,
                                         color: Colors.white,
                                       ),
                                     ),
@@ -306,7 +307,7 @@ class LeadsWidget {
                                   child: Text(
                                     'View Details',
                                     style: TextStyle(
-                                      fontFamily: fontFamily,
+                                      fontFamily: readexPro,
                                       color: Colors.white,
                                     ),
                                   ),

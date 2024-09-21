@@ -14,10 +14,9 @@ class PackageWidget {
     SingleChildScrollView(
       child: Column(
         children: [
-          // FloatingActionButton(onPressed: (){},child: Icon(Icons.add),),
           SizedBox(height: context.screenHeight * 0.01),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 12),
+            padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -32,7 +31,7 @@ class PackageWidget {
                 ),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
+                    backgroundColor: AppColor.blueColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(5),
                     ),
@@ -85,8 +84,8 @@ class PackageWidget {
                   padding: const EdgeInsets.all(
                       30.0), // Increased padding for better layout
                   child: Container(
-                    height: context.screenHeight *
-                        0.36, // Reduced height for a compact view
+                    // height: context.screenHeight *
+                    //     0.36, // Reduced height for a compact view
                     width: context.screenWidth * 0.85, // Responsive width
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(16),
@@ -135,6 +134,7 @@ class PackageWidget {
                                   style: TextStyle(
                                     fontSize: 14,
                                     fontFamily: 'Readex Pro',
+                                    color: Colors.white
                                   ),
                                 ),
                               ),
@@ -145,7 +145,7 @@ class PackageWidget {
                             'The Premium Plan offers unlimited ticket handling annually, making it perfect for those who receive multiple tickets throughout the year. '
                                 'This plan ensures that no matter how many tickets you get, we’ve got you covered with top-notch service and support.',
                             style: TextStyle(
-                              fontSize: 12, fontWeight: FontWeight.w400,fontFamily: fontFamily,color: AppColor.darkGrey,
+                              fontSize: 12, fontWeight: FontWeight.w400,fontFamily: readexPro,color: AppColor.darkGrey,
                               height: 1.5, // Line height for readability
                             ),
                             maxLines: 2,
@@ -198,8 +198,8 @@ class PackageWidget {
               Text(
                 'Packages Details',
                 style: TextStyle(
-                    fontSize: 20,
-                    fontFamily: fontFamily,
+                    fontSize: 25,
+                    fontFamily: readexPro,
                     color: color,
                     fontWeight: FontWeight.w700),
               ),
@@ -207,7 +207,7 @@ class PackageWidget {
               // ElevatedButton on the right
               SizedBox(
                 height: 50,
-                width: 180
+                width: 194
                     , // Increased width for better text fit
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
@@ -226,10 +226,10 @@ class PackageWidget {
                   child: Text(
                     'Add New Package',
                     style: TextStyle(
-                        fontSize: 14,
+                        fontSize: 16,
                         color: AppColor.buttonTextColor,
                         // fontWeight: FontWeight.w400,
-                        fontFamily: fontFamily),
+                        fontFamily: readexPro),
                   ),
                 ),
               ),
@@ -265,7 +265,8 @@ class PackageWidget {
           ),
         ]),
       ),
-    ),tablet: Padding(
+    ),
+      tablet: Padding(
       padding: const EdgeInsets.only(left: 62, right: 62),
       child: SingleChildScrollView(
         child: Column(children: [
@@ -283,7 +284,7 @@ class PackageWidget {
                 'Packages Details',
                 style: TextStyle(
                     fontSize: 20,
-                    fontFamily: fontFamily,
+                    fontFamily: readexPro,
                     color: color,
                     fontWeight: FontWeight.w700),
               ),
@@ -313,7 +314,7 @@ class PackageWidget {
                         fontSize: 14,
                         color: AppColor.buttonTextColor,
                         // fontWeight: FontWeight.w400,
-                        fontFamily: fontFamily),
+                        fontFamily: readexPro),
                   ),
                 ),
               ),

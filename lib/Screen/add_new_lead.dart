@@ -66,7 +66,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                     style: TextStyle(
                         color: addLeadButtonColor,
                         fontSize: 17,
-                        fontFamily: fontFamily),
+                        fontFamily: readexPro),
                   ),
                 ],
               ),
@@ -95,7 +95,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                           'Add New Lead Details',
                           style: TextStyle(
                               color: color,
-                              fontFamily: fontFamily,
+                              fontFamily: readexPro,
                               fontWeight: FontWeight.bold,
                               fontSize: 15),
                         ),
@@ -104,7 +104,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                           'Agent Details',
                           style: TextStyle(
                               color: color,
-                              fontFamily: fontFamily,
+                              fontFamily: readexPro,
                               fontWeight: FontWeight.bold,
                               fontSize: 17),
                         ),
@@ -114,7 +114,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: 13,
-                              fontFamily: fontFamily,
+                              fontFamily: readexPro,
                               fontWeight: FontWeight.bold),
                         ),
                         const SizedBox(height: 5),
@@ -139,7 +139,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                 style: TextStyle(
                     color: color,
                     fontWeight: FontWeight.bold,
-                    fontFamily: fontFamily,
+                    fontFamily: readexPro,
                     fontSize: 17),
               ),
             ),
@@ -156,7 +156,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: 13,
-                            fontFamily: fontFamily,
+                            fontFamily: readexPro,
                             fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(height: 5),
@@ -172,7 +172,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: 13,
-                            fontFamily: fontFamily,
+                            fontFamily: readexPro,
                             fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(height: 5),
@@ -194,7 +194,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                       'Different rates for different category',
                       style: TextStyle(
                         color: addLeadButtonColor,
-                        fontFamily: fontFamily,
+                        fontFamily: readexPro,
                       ),
                     ),
                     const SizedBox(height: 10),
@@ -207,7 +207,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                             style: TextStyle(
                                 color: addLeadButtonColor,
                                 fontSize: 16,
-                                fontFamily: fontFamily),
+                                fontFamily: readexPro),
                           ),
                         ),
                         Expanded(
@@ -216,7 +216,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                             style: TextStyle(
                                 color: addLeadButtonColor,
                                 fontSize: 16,
-                                fontFamily: fontFamily),
+                                fontFamily: readexPro),
                           ),
                         ),
                         Expanded(
@@ -227,7 +227,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                               style: TextStyle(
                                   color: addLeadButtonColor,
                                   fontSize: 16,
-                                  fontFamily: fontFamily),
+                                  fontFamily: readexPro),
                             ),
                           ),
                         ),
@@ -240,7 +240,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                           'Adult',
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              fontFamily: fontFamily),
+                              fontFamily: readexPro),
                         )),
                         Expanded(
                           child: Widgets().textFormField(),
@@ -258,7 +258,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                           child: Text('Child',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontFamily: fontFamily)),
+                                  fontFamily: readexPro)),
                         ),
                         Expanded(
                           child: Widgets().textFormField(),
@@ -276,7 +276,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                           child: Text('Infant',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontFamily: fontFamily)),
+                                  fontFamily: readexPro)),
                         ),
                         Expanded(
                           child: Widgets().textFormField(),
@@ -294,7 +294,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                           child: Text('Senior Citizen',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontFamily: fontFamily)),
+                                  fontFamily: readexPro)),
                         ),
                         Expanded(
                           child: Widgets().textFormField(),
@@ -312,7 +312,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                           child: Text('Other',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontFamily: fontFamily)),
+                                  fontFamily: readexPro)),
                         ),
                         Expanded(
                           child: Widgets().textFormField(),
@@ -340,7 +340,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                       style: TextStyle(
                           color: color,
                           fontWeight: FontWeight.bold,
-                          fontFamily: fontFamily,
+                          fontFamily: readexPro,
                           fontSize: 17),
                     ),
                   ),
@@ -354,7 +354,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 13,
-                                fontFamily: fontFamily,
+                                fontFamily: readexPro,
                                 fontWeight: FontWeight.bold),
                           ),
                           Widgets().textFormField(),
@@ -369,7 +369,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 13,
-                                fontFamily: fontFamily,
+                                fontFamily: readexPro,
                                 fontWeight: FontWeight.bold),
                           ),
                           Widgets().textFormField(),
@@ -384,7 +384,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 13,
-                                fontFamily: fontFamily,
+                                fontFamily: readexPro,
                                 fontWeight: FontWeight.bold),
                           ),
                           Widgets().textFormField(),
@@ -407,7 +407,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                       'Additional Notes',
                       style: TextStyle(
                           color: color,
-                          fontFamily: fontFamily,
+                          fontFamily: readexPro,
                           fontWeight: FontWeight.bold,
                           fontSize: 17),
                     ),
@@ -417,7 +417,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: 13,
-                        fontFamily: fontFamily,
+                        fontFamily: readexPro,
                         fontWeight: FontWeight.bold),
                   ),
                   Widgets().textFormNoteField(5, 775),
@@ -438,7 +438,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                       'Best Way to Reach You',
                       style: TextStyle(
                           color: color,
-                          fontFamily: fontFamily,
+                          fontFamily: readexPro,
                           fontWeight: FontWeight.bold,
                           fontSize: 17),
                     ),
@@ -455,7 +455,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                           Text(
                             'Email',
                             style: TextStyle(
-                                color: Colors.black, fontFamily: fontFamily),
+                                color: Colors.black, fontFamily: readexPro),
                           ),
                           const SizedBox(width: 80),
                           Widgets().checkBox(userProvider.isCheckedSMS,
@@ -465,7 +465,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                           Text(
                             'SMS',
                             style: TextStyle(
-                                color: Colors.black, fontFamily: fontFamily),
+                                color: Colors.black, fontFamily: readexPro),
                           ),
                           const SizedBox(width: 80),
                           Widgets().checkBox(userProvider.isCheckedWhatsApp,
@@ -476,7 +476,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                           Text(
                             'WhatsApp',
                             style: TextStyle(
-                                color: Colors.black, fontFamily: fontFamily),
+                                color: Colors.black, fontFamily: readexPro),
                           ),
                           const SizedBox(width: 5),
                         ],

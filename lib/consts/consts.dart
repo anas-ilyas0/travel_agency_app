@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-final fontFamily = AppStrings.fontFamily;
+final readexPro = AppStrings.ReadexPro;
+final poppin = AppStrings.Poppin;
 final appBackgroundColor = AppStrings.appBackgroundColor;
 final color = AppStrings.color;
 final addLeadButtonColor = AppStrings.addLeadButtonColor;
@@ -9,7 +10,8 @@ final containerColor = AppStrings.containerColor;
 final imageUrl = AppStrings.imageUrl;
 
 class AppStrings {
-  static String fontFamily = 'Readex Pro';
+  static String ReadexPro = 'Readex Pro';
+  static String Poppin = 'Poppin';
   static Color appBackgroundColor = const Color(0XFFE3F5FA);
   static Color color = const Color(0XFF11345A);
   static Color addLeadButtonColor = const Color(0XFF83D0E3);

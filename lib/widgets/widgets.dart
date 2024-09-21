@@ -104,7 +104,7 @@ class Widgets {
         style: TextStyle(
             fontSize: fontSize,
             fontWeight: FontWeight.w300,
-            fontFamily: fontFamily));
+            fontFamily: readexPro));
   }
 
   Widget finalButton(String text, Color color, VoidCallback onPress) {
@@ -120,7 +120,7 @@ class Widgets {
           child: Text(
             text,
             style: TextStyle(
-                fontFamily: fontFamily, color: const Color(0XFF202529)),
+                fontFamily: readexPro, color: const Color(0XFF202529)),
           )),
     );
   }
@@ -179,13 +179,13 @@ class Widgets {
                           color: Colors.black,
                           fontSize: 12,
                           fontWeight: FontWeight.w300,
-                          fontFamily: fontFamily),
+                          fontFamily: readexPro),
                     ),
                   ),
                 ),
                 hintText: 'Search Agent',
                 hintStyle: TextStyle(
-                    color: Colors.grey, fontFamily: fontFamily, fontSize: 12),
+                    color: Colors.grey, fontFamily: readexPro, fontSize: 12),
                 contentPadding: const EdgeInsets.symmetric(
                   horizontal: 5,
                   //vertical: 22
@@ -211,7 +211,7 @@ class Widgets {
         decoration: InputDecoration(
           hintText: 'Add Here',
           hintStyle: TextStyle(
-              color: Colors.grey, fontFamily: fontFamily, fontSize: 13),
+              color: Colors.grey, fontFamily: readexPro, fontSize: 13),
           contentPadding:
               const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
           border: const OutlineInputBorder(borderSide: BorderSide.none),
@@ -231,7 +231,7 @@ class Widgets {
         decoration: InputDecoration(
           hintText: 'Add Here',
           hintStyle: TextStyle(
-              color: Colors.grey, fontFamily: fontFamily, fontSize: 13),
+              color: Colors.grey, fontFamily: readexPro, fontSize: 13),
           contentPadding:
               const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
           border: const OutlineInputBorder(borderSide: BorderSide.none),
@@ -248,7 +248,7 @@ class Widgets {
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Text(
               text,
-              style: TextStyle(fontSize: 17, fontFamily: fontFamily),
+              style: TextStyle(fontSize: 17, fontFamily: readexPro),
             ),
           ),
         Padding(
@@ -276,7 +276,7 @@ class Widgets {
             firstText,
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontFamily: fontFamily,
+              fontFamily: readexPro,
             ),
           ),
         ),
@@ -284,7 +284,7 @@ class Widgets {
           child: Text(
             secondText,
             style: TextStyle(
-              fontFamily: fontFamily,
+              fontFamily: readexPro,
             ),
           ),
         ),
@@ -370,7 +370,7 @@ class Widgets {
                     text,
                     style: TextStyle(
                       fontSize: 14,
-                        fontFamily: fontFamily,
+                        fontFamily: readexPro,
                         color: color, fontWeight: FontWeight.w400),
                   ),
                 ),
@@ -387,7 +387,7 @@ class Widgets {
     return Padding(
       padding: const EdgeInsets.only(left: 10),
       child: Container(
-        width: Responsive.isDesktop(context)? 182 : 160,
+        width:  182 ,
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(7),
@@ -424,7 +424,7 @@ class Widgets {
                         value: item,
                         child: Text(
                           item,
-                          style:  TextStyle(color: AppColor.hintColor, fontFamily: fontFamily,fontWeight: FontWeight.w400, fontSize: 14),
+                          style:  TextStyle(color: AppColor.hintColor, fontFamily: readexPro,fontWeight: FontWeight.w400, fontSize: 14),
                         ),
                       );
                     }).toList(),
