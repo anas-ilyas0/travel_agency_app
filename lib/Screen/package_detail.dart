@@ -24,7 +24,7 @@ class PackageDetail extends StatelessWidget {
                   'Package Detail',
                   style: TextStyle(
                       fontSize: 30,
-                      fontFamily: 'Readex Pro bold',
+                      fontFamily: 'ReadexPro',
                       fontWeight: FontWeight.w700),
                 ),
                 SizedBox(
@@ -137,6 +137,7 @@ border: Border.all(color: Color(0XFF70707033),width: 1),
                                      backgroundImage: '${imageUrl}agent.png',
                                    ),
                                    Widgets().agentText('John Doe', 12),
+                                   
                                  ],
                                ),
                                SizedBox(width: context.screenWidth * 0.04),

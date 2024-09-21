@@ -50,7 +50,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                           'About Supplier Profile',
                           style: TextStyle(
                             fontSize: 20,
-                            fontFamily: 'Readex Pro',
+                            fontFamily: 'ReadexPro',
                             color: Color(0XFF11345A),
                           ),
                         ),
@@ -90,7 +90,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                       color: Color(
                                         0XFF11345A,
                                       ),
-                                      fontFamily: 'Readex Pro'),
+                                      fontFamily: 'ReadexPro'),
                                 ),
                               ],
                             ),
@@ -156,7 +156,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                     Text(
                                       'Supplier Full Name here',
                                       style: TextStyle(
-                                          fontFamily: 'Readex Pro',
+                                          fontFamily: 'ReadexPro',
                                           fontSize: 16),
                                     ),
                                     Text(
@@ -171,7 +171,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          width: context.screenWidth * 0.1,
+                          width: context.screenWidth * 0.03,
                         ),
                         Container(
                           height: context.screenHeight * 0.15,
@@ -204,7 +204,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                               const Text(
                                 'Company Name here',
                                 style: TextStyle(
-                                    fontFamily: 'Readex Pro',
+                                    fontFamily: 'ReadexPro',
                                     fontWeight: FontWeight.bold,
                                     color: Color(0XFF11345A)),
                               ),
@@ -243,7 +243,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                               const Text(
                                 'Personal Information',
                                 style: TextStyle(
-                                  fontFamily: 'Readex Pro',
+                                  fontFamily: 'ReadexPro',
                                   color: Color(0XFF11345A),
                                   fontWeight: FontWeight.bold,
                                   fontSize: 20,
@@ -258,7 +258,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                           fontSize: 18,
                                           fontWeight: FontWeight.w600,
                                           color: Color(0XFF11345A),
-                                          fontFamily: 'Readex Pro')),
+                                          fontFamily: 'ReadexPro')),
                                   SizedBox(
                                     width: context.screenWidth * 0.12,
                                   ),
@@ -267,7 +267,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                           fontSize: 18,
                                           fontWeight: FontWeight.w600,
                                           color: Color(0XFF11345A),
-                                          fontFamily: 'Readex Pro')),
+                                          fontFamily: 'ReadexPro')),
                                   SizedBox(
                                     width: context.screenWidth * 0.08,
                                   ),
@@ -276,7 +276,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                           fontSize: 18,
                                           fontWeight: FontWeight.w600,
                                           color: Color(0XFF11345A),
-                                          fontFamily: 'Readex Pro')),
+                                          fontFamily: 'ReadexPro')),
                                   SizedBox(
                                     width: context.screenWidth * 0.12,
                                   ),
@@ -285,7 +285,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                           fontSize: 18,
                                           fontWeight: FontWeight.w600,
                                           color: Color(0XFF11345A),
-                                          fontFamily: 'Readex Pro')),
+                                          fontFamily: 'ReadexPro')),
                                 ],
                               ),
                               SizedBox(
@@ -303,7 +303,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                           fontSize: 14,
                                           fontWeight: FontWeight.w500,
                                           color: Colors.black,
-                                          fontFamily: 'Readex Pro')),
+                                          fontFamily: 'ReadexPro')),
                                   SizedBox(width: context.screenWidth * 0.058),
                                   SvgPicture.asset(
                                       '${ImagesAssets.imagePath}VectorPhone.svg'),
@@ -316,7 +316,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                         fontSize: 14,
                                         fontWeight: FontWeight.w500,
                                         color: Colors.black,
-                                        fontFamily: 'Readex Pro'),
+                                        fontFamily: 'ReadexPro'),
                                   ),
                                   SizedBox(width: context.screenWidth * 0.07),
                                   SvgPicture.asset(
@@ -330,7 +330,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                         fontSize: 14,
                                         fontWeight: FontWeight.w500,
                                         color: Colors.black,
-                                        fontFamily: 'Readex Pro'),
+                                        fontFamily: 'ReadexPro'),
                                   ),
                                   SizedBox(width: context.screenWidth * 0.043),
                                   SvgPicture.asset(
@@ -344,7 +344,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                         fontSize: 14,
                                         fontWeight: FontWeight.w500,
                                         color: Colors.black,
-                                        fontFamily: 'Readex Pro'),
+                                        fontFamily: 'ReadexPro'),
                                   ),
                                 ],
                               )
@@ -383,7 +383,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                               const Text(
                                 'Bank Information',
                                 style: TextStyle(
-                                  fontFamily: 'Readex Pro',
+                                  fontFamily: 'ReadexPro',
                                   color: Color(0XFF11345A),
                                   fontWeight: FontWeight.bold,
                                   fontSize: 20,
@@ -398,7 +398,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                           fontSize: 18,
                                           fontWeight: FontWeight.w600,
                                           color: Color(0XFF11345A),
-                                          fontFamily: 'Readex Pro')),
+                                          fontFamily: 'ReadexPro')),
                                   SizedBox(
                                     width: context.screenWidth * 0.088,
                                   ),
@@ -407,7 +407,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                           fontSize: 18,
                                           fontWeight: FontWeight.w600,
                                           color: Color(0XFF11345A),
-                                          fontFamily: 'Readex Pro')),
+                                          fontFamily: 'ReadexPro')),
                                   SizedBox(
                                     width: context.screenWidth * 0.08,
                                   ),
@@ -416,7 +416,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                           fontSize: 18,
                                           fontWeight: FontWeight.w600,
                                           color: Color(0XFF11345A),
-                                          fontFamily: 'Readex Pro')),
+                                          fontFamily: 'ReadexPro')),
                                 ],
                               ),
                               SizedBox(
@@ -434,7 +434,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                           fontSize: 14,
                                           fontWeight: FontWeight.w500,
                                           color: Colors.black,
-                                          fontFamily: 'Readex Pro')),
+                                          fontFamily: 'ReadexPro')),
                                   SizedBox(width: context.screenWidth * 0.058),
                                   SvgPicture.asset(
                                       '${ImagesAssets.imagePath}Vectorcode.svg'),
@@ -447,7 +447,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                         fontSize: 14,
                                         fontWeight: FontWeight.w500,
                                         color: Colors.black,
-                                        fontFamily: 'Readex Pro'),
+                                        fontFamily: 'ReadexPro'),
                                   ),
                                   SizedBox(width: context.screenWidth * 0.055),
                                   SvgPicture.asset(
@@ -461,7 +461,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                         fontSize: 14,
                                         fontWeight: FontWeight.w500,
                                         color: Colors.black,
-                                        fontFamily: 'Readex Pro'),
+                                        fontFamily: 'ReadexPro'),
                                   ),
                                 ],
                               )
@@ -500,7 +500,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                               const Text(
                                 'Company Information',
                                 style: TextStyle(
-                                  fontFamily: 'Readex Pro',
+                                  fontFamily: 'ReadexPro',
                                   color: Color(0XFF11345A),
                                   fontWeight: FontWeight.bold,
                                   fontSize: 20,
@@ -515,7 +515,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                           fontSize: 18,
                                           fontWeight: FontWeight.w600,
                                           color: Color(0XFF11345A),
-                                          fontFamily: 'Readex Pro')),
+                                          fontFamily: 'ReadexPro')),
                                   SizedBox(
                                     width: context.screenWidth * 0.056,
                                   ),
@@ -524,7 +524,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                           fontSize: 18,
                                           fontWeight: FontWeight.w600,
                                           color: Color(0XFF11345A),
-                                          fontFamily: 'Readex Pro')),
+                                          fontFamily: 'ReadexPro')),
                                   SizedBox(
                                     width: context.screenWidth * 0.08,
                                   ),
@@ -533,16 +533,16 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                           fontSize: 18,
                                           fontWeight: FontWeight.w600,
                                           color: Color(0XFF11345A),
-                                          fontFamily: 'Readex Pro')),
+                                          fontFamily: 'ReadexPro')),
                                   SizedBox(
-                                    width: context.screenWidth * 0.1,
+                                    width: context.screenWidth * 0.02,
                                   ),
                                   const Text('Brm-Number',
                                       style: TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.w600,
                                           color: Color(0XFF11345A),
-                                          fontFamily: 'Readex Pro')),
+                                          fontFamily: 'ReadexPro')),
                                   SizedBox(
                                     width: context.screenWidth * 0.05,
                                   ),
@@ -551,7 +551,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                           fontSize: 18,
                                           fontWeight: FontWeight.w600,
                                           color: Color(0XFF11345A),
-                                          fontFamily: 'Readex Pro')),
+                                          fontFamily: 'ReadexPro')),
                                 ],
                               ),
                               SizedBox(
@@ -569,7 +569,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                           fontSize: 14,
                                           fontWeight: FontWeight.w500,
                                           color: Colors.black,
-                                          fontFamily: 'Readex Pro')),
+                                          fontFamily: 'ReadexPro')),
                                   SizedBox(width: context.screenWidth * 0.035),
                                   SvgPicture.asset(
                                       '${ImagesAssets.imagePath}VectorPhone.svg'),
@@ -582,7 +582,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                         fontSize: 14,
                                         fontWeight: FontWeight.w500,
                                         color: Colors.black,
-                                        fontFamily: 'Readex Pro'),
+                                        fontFamily: 'ReadexPro'),
                                   ),
                                   SizedBox(width: context.screenWidth * 0.055),
                                   SvgPicture.asset(
@@ -596,7 +596,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                         fontSize: 14,
                                         fontWeight: FontWeight.w500,
                                         color: Colors.black,
-                                        fontFamily: 'Readex Pro'),
+                                        fontFamily: 'ReadexPro'),
                                   ),
                                   SizedBox(width: context.screenWidth * 0.028),
                                   SvgPicture.asset(
@@ -610,9 +610,9 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                         fontSize: 14,
                                         fontWeight: FontWeight.w500,
                                         color: Colors.black,
-                                        fontFamily: 'Readex Pro'),
+                                        fontFamily: 'ReadexPro'),
                                   ),
-                                  SizedBox(width: context.screenWidth * 0.028),
+                                  SizedBox(width: context.screenWidth * 0.05),
                                   SvgPicture.asset(
                                       '${ImagesAssets.imagePath}Vectorlocation.svg'),
                                   SizedBox(
@@ -624,7 +624,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                         fontSize: 14,
                                         fontWeight: FontWeight.w500,
                                         color: Colors.black,
-                                        fontFamily: 'Readex Pro'),
+                                        fontFamily: 'ReadexPro'),
                                   ),
                                 ],
                               ),
@@ -637,16 +637,16 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                           fontSize: 18,
                                           fontWeight: FontWeight.w600,
                                           color: Color(0XFF11345A),
-                                          fontFamily: 'Readex Pro')),
+                                          fontFamily: 'ReadexPro')),
                                   SizedBox(
-                                    width: context.screenWidth * 0.056,
+                                    width: context.screenWidth * 0.066,
                                   ),
                                   const Text('Code',
                                       style: TextStyle(
                                           fontSize: 18,
                                           fontWeight: FontWeight.w600,
                                           color: Color(0XFF11345A),
-                                          fontFamily: 'Readex Pro')),
+                                          fontFamily: 'ReadexPro')),
                                 ],
                               ),
                               SizedBox(height: context.screenHeight*0.02,),
@@ -663,9 +663,9 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                         fontSize: 14,
                                         fontWeight: FontWeight.w500,
                                         color: Colors.black,
-                                        fontFamily: 'Readex Pro'),
+                                        fontFamily: 'ReadexPro'),
                                   ),
-                                  SizedBox(width: context.screenWidth * 0.06),
+                                  SizedBox(width: context.screenWidth * 0.074),
                                   SvgPicture.asset(
                                       '${ImagesAssets.imagePath}Vectorcode.svg'),
                                   SizedBox(
@@ -677,7 +677,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                         fontSize: 14,
                                         fontWeight: FontWeight.w500,
                                         color: Colors.black,
-                                        fontFamily: 'Readex Pro'),
+                                        fontFamily: 'ReadexPro'),
                                   ),
                                 ],
                               )
@@ -716,7 +716,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                               const Text(
                                 'Service Information',
                                 style: TextStyle(
-                                  fontFamily: 'Readex Pro',
+                                  fontFamily: 'ReadexPro',
                                   color: Color(0XFF11345A),
                                   fontWeight: FontWeight.bold,
                                   fontSize: 20,
@@ -729,7 +729,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                       fontSize: 18,
                                       fontWeight: FontWeight.w600,
                                       color: Color(0XFF11345A),
-                                      fontFamily: 'Readex Pro')),
+                                      fontFamily: 'ReadexPro')),
                               SizedBox(
                                 height: context.screenHeight * 0.02,
                               ),
@@ -745,7 +745,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                           fontSize: 14,
                                           fontWeight: FontWeight.w500,
                                           color: Colors.black,
-                                          fontFamily: 'Readex Pro')),
+                                          fontFamily: 'ReadexPro')),
                                 ],
                               )
                             ],

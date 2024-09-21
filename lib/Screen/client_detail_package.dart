@@ -1,5 +1,7 @@
 import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Image.dart';
+import 'package:fab_tech_sol/Screen/AppText/TextStyle.dart';
+import 'package:fab_tech_sol/app_text_style.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
 import 'package:fab_tech_sol/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +14,7 @@ class ClientDetailPackage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.only(left: 90, right: 90),
+        padding: const EdgeInsets.symmetric(horizontal: 68,vertical: 4),
         child: Column(
           children: [
             SizedBox(
@@ -30,7 +32,7 @@ class ClientDetailPackage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: context.screenWidth * 0.16,
+                  width: context.screenWidth * 0.2,
                 ),
                 Widgets().searchTextField(),
                 SizedBox(
@@ -95,39 +97,33 @@ class ClientDetailPackage extends StatelessWidget {
                   width: .5, 
                 ),
                 borderRadius: BorderRadius.circular(
-                    10), 
+                    22), 
               ),
 
            
-              child: SingleChildScrollView(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 22,vertical: 8),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 26,vertical: 16),
+                child: SingleChildScrollView(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
-                          'Client Detail',
-                          style: TextStyle(
-                              color: Color(0XFF11345A),
-                              fontSize: 22,
-                              fontFamily: 'Readex Pro'),
+                          'Client Details:',
+                          style:AppTextstyless.packageClientDetailTextStyleHeading
                         ),
                       ),
                       SizedBox(
-                        height: context.screenHeight * 0.018,
+                        height: context.screenHeight * 0.03,
                       ),
                     
                       Row(
                         children: [
-                          const Text('Client Name:',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 18,
-                                  fontFamily: 'Readex Pro')),
+                           Text('Client Name:',
+                              style: AppTextstyless.packageClientDetailTextStyle),
                           SizedBox(
-                            width: context.screenWidth * 0.06,
+                            width: context.screenWidth * 0.065,
                           ),
                           const CircleAvatar(
                             radius: 20, // Adjust the radius for size
@@ -137,33 +133,22 @@ class ClientDetailPackage extends StatelessWidget {
                           SizedBox(
                             width: context.screenWidth * 0.01,
                           ),
-                          const Text('Jhon Doe',
-                              style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w300,
-                                  fontFamily: 'Readex Pro',
-                                  color: Color(0XFF0C1421))),
+                           Text('Jhon Doe',
+                              style:AppTextstyless.packageClientDetailTextStyleSubTitle),
                           SizedBox(
                             width: context.screenWidth * 0.035,
                           ),
                           Text('Phone Number',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 18,
-                                  fontFamily: 'Readex Pro')),
+                           style:   AppTextstyless.packageClientDetailTextStyle),
                           SizedBox(
                             width: context.screenWidth * 0.03,
                           ),
                           Text('+21 999 909 9090',
-                              style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w300,
-                                  fontFamily: 'Readex Pro',
-                                  color: Color(0XFF0C1421)))
+                              style: AppTextstyless.packageClientDetailTextStyleSubTitle),
                         ],
                       ),
                       SizedBox(
-                        height: context.screenHeight * 0.01,
+                        height: context.screenHeight * 0.03,
                       ),
                       Row(
                         children: [
@@ -198,7 +183,7 @@ class ClientDetailPackage extends StatelessWidget {
                         ],
                       ),
                        SizedBox(
-                    height: context.screenHeight * 0.012,
+                    height: context.screenHeight * 0.03,
                   ),
                       Row(
                         children: [
@@ -249,37 +234,36 @@ class ClientDetailPackage extends StatelessWidget {
                                 fontFamily: 'Readex Pro',
                                 color: Color(0XFF0C1421)),
                           ),
+                            SizedBox(
+                    height: context.screenHeight * 0.02,
+                  ),
                         ],
                       ),
-                      const Divider(
-                        endIndent: 2.0,
-                        indent: 2.0,
-                      ),
+                       Divider(
+                    endIndent: 4,
+                    indent: 4,
+                    color: AppColor.dividerColor,
+                    thickness: 0.5,
+                  ),
                        SizedBox(
-                    height: context.screenHeight * 0.015,
+                    height: context.screenHeight * 0.02,
                   ),
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
                           'Agent Details:',
-                          style: TextStyle(
-                              color: Color(0XFF11345A),
-                              fontSize: 22,
-                              fontFamily: 'Readex Pro'),
+                          style:AppTextstyless.packageClientDetailTextStyleHeading,
                         ),
                       ),
                        SizedBox(
-                    height: context.screenHeight * 0.012,
+                    height: context.screenHeight * 0.03,
                   ),
                       Row(
                         children: [
-                          const Text('Client Name:',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 16,
-                                  fontFamily: 'Readex Pro')),
+                           Text('Client Name:',
+                              style:AppTextstyless.packageClientDetailTextStyle),
                           SizedBox(
-                            width: context.screenWidth * 0.068,
+                            width: context.screenWidth * 0.065,
                           ),
                           const CircleAvatar(
                             radius: 20, // Adjust the radius for size
@@ -289,59 +273,50 @@ class ClientDetailPackage extends StatelessWidget {
                           SizedBox(
                             width: context.screenWidth * 0.01,
                           ),
-                          const Text('Jhon Doe',
-                              style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w300,
-                                  fontFamily: 'Readex Pro',
-                                  color: Color(0XFF0C1421))),
+                           Text('Jhon Doe',
+                              style: AppTextstyless.packageClientDetailTextStyleSubTitle),
                           //  const Text('Jhon doe',style: TextStyle(fontSize: 13),),
                           SizedBox(
                             width: context.screenWidth * 0.04,
                           ),
-                          const Text('Phone No:',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 18,
-                                  fontFamily: 'Readex Pro')),
+                           Text('Phone No:',
+                              style: AppTextstyless.packageClientDetailTextStyle),
                           SizedBox(
                             width: context.screenWidth * 0.02,
                           ),
-                          const Text('XXXXXXXXXXX',
-                              style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w300,
-                                  fontFamily: 'Readex Pro',
-                                  color: Color(0XFF0C1421))),
+                           Text('XXXXXXXXXXX',
+                              style:AppTextstyless.packageClientDetailTextStyleSubTitle),
                         ],
                       ),
-                      //SizedBox(height: context.screenHeight*0.002,),
-                      Divider(),
                        SizedBox(
-                    height: context.screenHeight * 0.015,
+                    height: context.screenHeight * 0.02,
+                  ),
+                      //SizedBox(height: context.screenHeight*0.002,),
+                     Divider(
+                    endIndent: 4,
+                    indent: 4,
+                    color: AppColor.dividerColor,
+                    thickness: 0.5,
+                  ),
+                       SizedBox(
+                    height: context.screenHeight * 0.02,
                   ),
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
                           'Supplier Details:',
-                          style: TextStyle(
-                              color: Color(0XFF11345A),
-                              fontSize: 22,
-                              fontFamily: 'Readex Pro'),
+                          style: AppTextstyless.packageClientDetailTextStyleHeading,
                         ),
                       ),
                        SizedBox(
-                    height: context.screenHeight * 0.015,
+                    height: context.screenHeight * 0.03,
                   ),
                       Row(
                         children: [
-                          const Text('Client Name:',
-                               style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w400,
-                              fontFamily: 'Readex Pro')),
+                           Text('Client Name:',
+                               style:AppTextstyless.packageClientDetailTextStyle),
                           SizedBox(
-                            width: context.screenWidth * 0.06,
+                            width: context.screenWidth * 0.065,
                           ),
                           const CircleAvatar(
                             radius: 20, // Adjust the radius for size
@@ -351,63 +326,50 @@ class ClientDetailPackage extends StatelessWidget {
                           SizedBox(
                             width: context.screenWidth * 0.01,
                           ),
-                          const Text('Jhon Doe',
-                              style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w300,
-                                  fontFamily: 'Readex Pro',
-                                  color: Color(0XFF0C1421))),
+                           Text('Jhon Doe',
+                              style: AppTextstyless.packageClientDetailTextStyleSubTitle),
                           //  const Text('Jhon doe',style: TextStyle(fontSize: 13),),
                           SizedBox(
                             width: context.screenWidth * 0.04,
                           ),
-                          const Text('Phone No:',
-                              style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w400,
-                              fontFamily: 'Readex Pro')),
+                           Text('Phone No:',
+                              style:AppTextstyless.packageClientDetailTextStyle),
                           SizedBox(
                             width: context.screenWidth * 0.02,
                           ),
-                          const Text('XXXXXXXXXXX',
-                              style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w300,
-                                  fontFamily: 'Readex Pro',
-                                  color: Color(0XFF0C1421))),
+                           Text('XXXXXXXXXXX',
+                              style:AppTextstyless.packageClientDetailTextStyleSubTitle),
                         ],
                       ),
-                      //SizedBox(height: context.screenH
-
-                      const Divider(
-                        endIndent: 4,
-                        indent: 4,
-                      ),
+                      SizedBox(
+                    height: context.screenHeight * 0.02,
+                  ),
+                                
+                     Divider(
+                    endIndent: 4,
+                    indent: 4,
+                    color: AppColor.dividerColor,
+                    thickness: 0.5,
+                  ),
                        SizedBox(
-                    height: context.screenHeight * 0.015,
+                    height: context.screenHeight * 0.02,
                   ),
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
                           'Trip Details:',
-                          style: TextStyle(
-                              color: Color(0XFF11345A),
-                              fontSize: 22,
-                              fontFamily: 'Readex Pro'),
+                          style: AppTextstyless.packageClientDetailTextStyleHeading
                         ),
                       ),
                        SizedBox(
-                    height: context.screenHeight * 0.012,
+                    height: context.screenHeight * 0.03,
                   ),
                       Row(
                         children: [
                           Row(
                             children: [
-                              const Text('Destination:',
-                                    style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w400,
-                              fontFamily: 'Readex Pro')),
+                               Text('Destination:',
+                                    style:AppTextstyless.packageClientDetailTextStyle),
                               SizedBox(
                                 width: context.screenWidth * 0.044,
                               ),
@@ -420,11 +382,8 @@ class ClientDetailPackage extends StatelessWidget {
                               SizedBox(
                                 width: context.screenWidth * 0.03,
                               ),
-                              const Text('Booking Date:',
-                                    style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w400,
-                              fontFamily: 'Readex Pro')),
+                               Text('Booking Date:',
+                                    style:AppTextstyless.packageClientDetailTextStyle),
                               SizedBox(
                                 width: context.screenWidth * 0.02,
                               ),
@@ -437,12 +396,9 @@ class ClientDetailPackage extends StatelessWidget {
                               SizedBox(
                                 width: context.screenWidth * 0.05,
                               ),
-                              const Text(
+                               Text(
                                 'Travel Date:',
-                                style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w400,
-                              fontFamily: 'Readex Pro'),
+                                style:AppTextstyless.packageClientDetailTextStyle
                               ),
                               SizedBox(
                                 width: context.screenWidth * 0.05,
@@ -457,33 +413,32 @@ class ClientDetailPackage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      const Divider(
-                        endIndent: 4,
-                        indent: 4,
-                      ),
                        SizedBox(
-                    height: context.screenHeight * 0.012,
+                    height: context.screenHeight * 0.02,
+                  ),
+                      Divider(
+                    endIndent: 4,
+                    indent: 4,
+                    color: AppColor.dividerColor,
+                    thickness: 0.5,
+                  ),
+                       SizedBox(
+                    height: context.screenHeight * 0.02,
                   ),
                       Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
                           'Package Amount Details:',
-                          style: TextStyle(
-                              color: Color(0XFF11345A),
-                              fontSize: 22,
-                              fontFamily: 'Readex Pro'),
+                          style: AppTextstyless.packageClientDetailTextStyleHeading
                         ),
                       ),
                        SizedBox(
-                    height: context.screenHeight * 0.012,
+                    height: context.screenHeight * 0.03,
                   ),
                       Row(
                         children: [
-                          const Text('Package Amount:',
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w400,
-                                  fontFamily: 'Readex Pro')),
+                           Text('Package Amount:',
+                              style: AppTextstyless.packageClientDetailTextStyle),
                           SizedBox(
                             width: context.screenWidth * 0.03,
                           ),
@@ -498,11 +453,8 @@ class ClientDetailPackage extends StatelessWidget {
                           SizedBox(
                             width: context.screenWidth * 0.07,
                           ),
-                          const Text('Paid Amount:',
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w400,
-                                  fontFamily: 'Readex Pro')),
+                           Text('Paid Amount:',
+                              style: AppTextstyless.packageClientDetailTextStyle),
                           SizedBox(
                             width: context.screenWidth * 0.02,
                           ),
@@ -517,12 +469,9 @@ class ClientDetailPackage extends StatelessWidget {
                           SizedBox(
                             width: context.screenWidth * 0.065,
                           ),
-                          const Text(
+                          Text(
                             'Outstanding Amount:',
-                             style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w400,
-                              fontFamily: 'Readex Pro'),
+                             style:AppTextstyless.packageClientDetailTextStyle
                           ),
                           SizedBox(
                             width: context.screenWidth * 0.015,
@@ -535,7 +484,18 @@ class ClientDetailPackage extends StatelessWidget {
                                   color: Color(0XFF0C1421))),
                         ],
                       ),
-                    
+                     SizedBox(
+                    height: context.screenHeight * 0.02,
+                  ),
+                  Divider(
+                    endIndent: 4,
+                    indent: 4,
+                    color: AppColor.dividerColor,
+                    thickness: 0.5,
+                  ),
+                   SizedBox(
+                    height: context.screenHeight * 0.02,
+                  ),
                       
                     ],
                   ),

@@ -1,5 +1,6 @@
 import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Image.dart';
+import 'package:fab_tech_sol/Screen/AppText/TextStyle.dart';
 import 'package:fab_tech_sol/Screen/client_detail_package.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
@@ -103,8 +104,8 @@ class Widgets {
     return Text(text,
         style: TextStyle(
             fontSize: fontSize,
-            fontWeight: FontWeight.w300,
-            fontFamily: fontFamily));
+            fontWeight: FontWeight.w400,
+            fontFamily: fontFamilys));
   }
 
   Widget finalButton(String text, Color color, VoidCallback onPress) {
@@ -120,7 +121,7 @@ class Widgets {
           child: Text(
             text,
             style: TextStyle(
-                fontFamily: fontFamily, color: const Color(0XFF202529)),
+                fontFamily: fontFamilys, color: const Color(0XFF202529)),
           )),
     );
   }
@@ -151,7 +152,7 @@ class Widgets {
         children: [
           Container(
             width: 400,
-            height: 44,
+            height: 40,
             decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(30),
@@ -179,13 +180,13 @@ class Widgets {
                           color: Colors.black,
                           fontSize: 12,
                           fontWeight: FontWeight.w300,
-                          fontFamily: fontFamily),
+                          fontFamily: fontFamilys),
                     ),
                   ),
                 ),
                 hintText: 'Search Agent',
                 hintStyle: TextStyle(
-                    color: Colors.grey, fontFamily: fontFamily, fontSize: 12),
+                    color: Colors.grey, fontFamily: fontFamilys, fontSize: 12),
                 contentPadding: const EdgeInsets.symmetric(
                   horizontal: 5,
                   //vertical: 22
@@ -199,28 +200,22 @@ class Widgets {
     );
   }
 
-  Widget textFormNoteField(int maxLines, double width) {
+  Widget textFormNoteField( double width,double height ){
     return Container(
       width: width,
+      height: height,
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
           border: Border.all(color: Colors.grey.withOpacity(0.3))),
-      child: TextFormField(
-        maxLines: maxLines,
-        decoration: InputDecoration(
-          hintText: 'Add Here',
-          hintStyle: TextStyle(
-              color: Colors.grey, fontFamily: fontFamily, fontSize: 13),
-          contentPadding:
-              const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-          border: const OutlineInputBorder(borderSide: BorderSide.none),
-        ),
-      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 12),
+        child: Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged......',style: AppTextstyless.leadLeadDetailFormAddNoteText,),
+      )
     );
   }
 
-  Widget textFormField() {
+  Widget textFormField(String text) {
     return Container(
       width: 250,
       decoration: BoxDecoration(
@@ -229,9 +224,9 @@ class Widgets {
           border: Border.all(color: Colors.grey.withOpacity(0.3))),
       child: TextFormField(
         decoration: InputDecoration(
-          hintText: 'Add Here',
+          hintText: text,
           hintStyle: TextStyle(
-              color: Colors.grey, fontFamily: fontFamily, fontSize: 13),
+              color: AppColor.hintColor, fontFamily: fontFamilys, fontSize: 15),
           contentPadding:
               const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
           border: const OutlineInputBorder(borderSide: BorderSide.none),
@@ -248,7 +243,7 @@ class Widgets {
             padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Text(
               text,
-              style: TextStyle(fontSize: 17, fontFamily: fontFamily),
+              style: TextStyle(fontSize: 17, fontFamily: fontFamilys),
             ),
           ),
         Padding(
@@ -276,7 +271,7 @@ class Widgets {
             firstText,
             style: TextStyle(
               fontWeight: FontWeight.bold,
-              fontFamily: fontFamily,
+              fontFamily: fontFamilys,
             ),
           ),
         ),
@@ -284,7 +279,7 @@ class Widgets {
           child: Text(
             secondText,
             style: TextStyle(
-              fontFamily: fontFamily,
+              fontFamily: fontFamilys,
             ),
           ),
         ),
@@ -351,9 +346,9 @@ class Widgets {
     );
   }
 
-  Widget button(String text, VoidCallback onTap) {
+  Widget button(String text, VoidCallback onTap,) {
     return Container(
-      height: 48,
+      height:50,
       decoration: BoxDecoration(
           color: addLeadButtonColor, borderRadius: BorderRadius.circular(5)),
       child: Padding(
@@ -370,7 +365,7 @@ class Widgets {
                     text,
                     style: TextStyle(
                       fontSize: 14,
-                        fontFamily: fontFamily,
+                        fontFamily: fontFamilys,
                         color: color, fontWeight: FontWeight.w400),
                   ),
                 ),
@@ -424,7 +419,7 @@ class Widgets {
                         value: item,
                         child: Text(
                           item,
-                          style:  TextStyle(color: AppColor.hintColor, fontFamily: fontFamily,fontWeight: FontWeight.w400, fontSize: 14),
+                          style:  TextStyle(color: AppColor.hintColor, fontFamily: fontFamilys,fontWeight: FontWeight.w400, fontSize: 14),
                         ),
                       );
                     }).toList(),
@@ -547,7 +542,7 @@ class Widgets {
                 color: Colors.black,
                 fontWeight: FontWeight.bold,
                 fontSize: 12,
-                fontFamily: 'Readex Pro',
+                fontFamily: 'ReadexPro',
               ),
               maxLines: 2,
               overflow: TextOverflow.ellipsis,

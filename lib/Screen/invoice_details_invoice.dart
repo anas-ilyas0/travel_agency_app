@@ -1,3 +1,4 @@
+import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/Screen/lead_details.dart';
 import 'package:fab_tech_sol/login_page.dart';
@@ -44,7 +45,10 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> {
               ),
               const Text(
                 'Invoice Details',
-                style: TextStyle(fontSize: 22, fontFamily: 'Readex Pro'),
+                style: TextStyle(
+                    fontSize: 22,
+                    fontFamily: 'ReadexPro',
+                    fontWeight: FontWeight.w500),
               ),
             ],
           ),
@@ -60,12 +64,15 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> {
               SizedBox(
                 width: context.screenWidth * 0.05,
               ),
-              const Text(
-                'Briton Consultancy & Travel Tours',
-                style: TextStyle(
-                    fontSize: 22,
-                    color: Color(0XFF11345A),
-                    fontFamily: 'Readex Pro'),
+              Flexible(
+                child: const Text(
+                  'Briton Consultancy & Travel Tours',
+                  style: TextStyle(
+                      fontSize: 22,
+                      color: Color(0XFF11345A),
+                      fontFamily: 'ReadexPro',
+                      fontWeight: FontWeight.w500),
+                ),
               ),
               SizedBox(
                 width: context.screenWidth * 0.1,
@@ -76,22 +83,29 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> {
                 child: Image.asset("${ImagesAssets.imagePath}BRITON.png"),
               ),
               SizedBox(
-                width: context.screenWidth * 0.23,
+                width: context.screenWidth * 0.44,
               ),
-              const Text(
-                'Invoice Number:',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold, color: Color(0XFF83D0E3)),
+              Flexible(
+                child: const Text(
+                  'Invoice Number:',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold, color: Color(0XFF83D0E3)),
+                ),
               ),
               SizedBox(
                 width: context.screenWidth * 0.02,
               ),
-              const Text(
-                'In834892234',
-                style: TextStyle(
-                    color: Color(0XFF11345A), fontWeight: FontWeight.bold),
+              Flexible(
+                child: const Text(
+                  'In834892234',
+                  style: TextStyle(
+                      color: Color(0XFF11345A), fontWeight: FontWeight.bold),
+                ),
               )
             ],
+          ),
+          SizedBox(
+            height: context.screenHeight * 0.02,
           ),
           const Padding(
             padding: EdgeInsets.only(left: 70), // Adds padding around the text
@@ -99,14 +113,15 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> {
               alignment: Alignment.centerLeft,
               child: Text('Royal Road, Phoenix 00213 | Mauritius',
                   style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                      fontFamily: 'ReadexPro',
+                      fontWeight: FontWeight.w500,
                       color: Color(0XFF83D0E3),
                       fontSize: 16)),
             ),
           ),
           //  Text('Royal Road, Phoenix 00213 | Mauritius',style: TextStyle(fontWeight: FontWeight.bold,color: Color(0XFF83D0E3))),
           SizedBox(
-            height: context.screenHeight * 0.01,
+            height: context.screenHeight * 0.015,
           ),
           const Padding(
             padding: EdgeInsets.only(left: 70), // Adds padding around the text
@@ -119,51 +134,84 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> {
                       fontSize: 16)),
             ),
           ),
+          SizedBox(
+            height: context.screenHeight * 0.02,
+          ),
           const Divider(
             indent: 70,
             endIndent: 70,
           ),
-          Row(
-            children: [
-              const Padding(
-                  padding:
-                      EdgeInsets.only(left: 70), // Adds padding around the text
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text('Bill To',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Color(0XFF83D0E3),
-                            fontSize: 16)),
-                  )),
-              SizedBox(
-                width: context.screenWidth * 0.05,
-              ),
-              const Text(
-                'Beeharree Praina',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16,
-                    color: Color(0XFF11345A)),
-              ),
-              SizedBox(
-                width: context.screenWidth * 0.555,
-              ),
-              const Text(
-                'Invoice Number:',
-                style: TextStyle(
-                    fontWeight: FontWeight.bold, color: Color(0XFF83D0E3)),
-              ),
-              SizedBox(
-                width: context.screenWidth * 0.02,
-              ),
-              const Text(
-                '08/15/2024',
-                style: TextStyle(
-                    color: Color(0XFF11345A), fontWeight: FontWeight.bold),
-              )
-            ],
+
+        Row(
+  children: [
+    // "Bill To" text with padding
+    const Padding(
+      padding: EdgeInsets.only(left: 70), // Adds padding around the text
+      child: Align(
+        alignment: Alignment.centerLeft,
+        child: Text(
+          'Bill To',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Color(0XFF83D0E3),
+            fontSize: 16,
           ),
+        ),
+      ),
+    ),
+
+    // SizedBox for spacing between "Bill To" and Name
+    SizedBox(
+      width: context.screenWidth * 0.05,
+    ),
+
+    // Name Text: 'Beeharree Praina' with Expanded for responsiveness
+    Expanded(
+      child: const Text(
+        'Beeharree Praina',
+        style: TextStyle(
+          fontFamily: 'ReadexPro',
+          fontWeight: FontWeight.w500,
+          fontSize: 16,
+          color: Color(0XFF11345A),
+        ),
+        overflow: TextOverflow.ellipsis, // Prevent overflow
+      ),
+    ),
+
+    // SizedBox for dynamic spacing
+    SizedBox(
+      width: context.screenWidth * 0.49,
+    ),
+
+    // "Invoice Number" text
+    const Text(
+      'Invoice Number:',
+      style: TextStyle(
+        fontWeight: FontWeight.bold,
+        color: Color(0XFF83D0E3),
+      ),
+    ),
+
+    // SizedBox for spacing between "Invoice Number" and Date
+    SizedBox(
+      width: context.screenWidth * 0.02,
+    ),
+
+   
+    Expanded(
+      child: const Text(
+        '08/15/2024',
+        style: TextStyle(
+          color: Color(0XFF11345A),
+          fontWeight: FontWeight.bold,
+        ),
+        overflow: TextOverflow.ellipsis, // Prevent overflow
+      ),
+    ),
+  ],
+),
+
           const Divider(
             indent: 70,
             endIndent: 70,
@@ -177,40 +225,50 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> {
             ),
             child: Row(
               children: [
-                const Padding(
-                  padding: EdgeInsets.all(12),
-                  child: Text(
-                    'Price Per Pax',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold, color: Color(0XFF83D0E3)),
+                Flexible(
+                  child: const Padding(
+                    padding: EdgeInsets.all(12),
+                    child: Text(
+                      'Price Per Pax',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Color(0XFF83D0E3)),
+                    ),
                   ),
                 ),
                 SizedBox(
                   width: context.screenWidth * 0.2,
                 ),
-                const Padding(
-                  padding: EdgeInsets.all(12),
-                  child: Text(
-                    'Qty',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold, color: Color(0XFF83D0E3)),
+                Flexible(
+                  child: const Padding(
+                    padding: EdgeInsets.all(12),
+                    child: Text(
+                      'Qty',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Color(0XFF83D0E3)),
+                    ),
                   ),
                 ),
                 SizedBox(
                   width: context.screenWidth * 0.2,
                 ),
-                const Padding(
-                  padding: EdgeInsets.all(12),
-                  child: Text(
-                    'Total Per Pax',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold, color: Color(0XFF83D0E3)),
+                Flexible(
+                  child: const Padding(
+                    padding: EdgeInsets.all(12),
+                    child: Text(
+                      'Total Per Pax',
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Color(0XFF83D0E3)),
+                    ),
                   ),
                 ),
               ],
             ),
           ),
           SizedBox(height: context.screenHeight * 0.02),
+          
           Row(
             children: [
               Padding(
@@ -319,52 +377,54 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> {
               SizedBox(
                 width: context.screenWidth * 0.012,
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 70),
-                child: Align(
-                  alignment: Alignment.centerLeft,
-                  child: Container(
-                    width: context.screenWidth * 0.18,
-                    color: Colors.white,
-                    child: Column(
-                      children: [
-                        InvoiceDetailPriceTable(
-                          Text1: "",
-                          Text2: "1",
-                        ),
-                        const Divider(
-                          color: Colors.grey,
-                          thickness: .5,
-                        ),
-                        InvoiceDetailPriceTable(
-                          Text1: "",
-                          Text2: "",
-                        ),
-                        const Divider(
-                          color: Colors.grey,
-                          thickness: .5,
-                        ),
-                        InvoiceDetailPriceTable(
-                          Text1: "",
-                          Text2: "",
-                        ),
-                        const Divider(
-                          color: Colors.grey,
-                          thickness: .5,
-                        ),
-                        InvoiceDetailPriceTable(
-                          Text1: "",
-                          Text2: "",
-                        ),
-                        const Divider(
-                          color: Colors.grey,
-                          thickness: .5,
-                        ),
-                        InvoiceDetailPriceTable(
-                          Text1: "",
-                          Text2: "",
-                        ),
-                      ],
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 70),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Container(
+                      width: context.screenWidth * 0.18,
+                      color: Colors.white,
+                      child: Column(
+                        children: [
+                          InvoiceDetailPriceTable(
+                            Text1: "",
+                            Text2: "1",
+                          ),
+                          const Divider(
+                            color: Colors.grey,
+                            thickness: .5,
+                          ),
+                          InvoiceDetailPriceTable(
+                            Text1: "",
+                            Text2: "",
+                          ),
+                          const Divider(
+                            color: Colors.grey,
+                            thickness: .5,
+                          ),
+                          InvoiceDetailPriceTable(
+                            Text1: "",
+                            Text2: "",
+                          ),
+                          const Divider(
+                            color: Colors.grey,
+                            thickness: .5,
+                          ),
+                          InvoiceDetailPriceTable(
+                            Text1: "",
+                            Text2: "",
+                          ),
+                          const Divider(
+                            color: Colors.grey,
+                            thickness: .5,
+                          ),
+                          InvoiceDetailPriceTable(
+                            Text1: "",
+                            Text2: "",
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -389,11 +449,17 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          child: const Padding(
+                          child: Padding(
                               padding: EdgeInsets.all(12),
-                              child: Text('Flight Details'))),
+                              child: Text(
+                                'Flight Details',
+                                style: TextStyle(
+                                    color: AppColor.buttonTextColors,
+                                    fontFamily: 'ReadexPro',
+                                    fontWeight: FontWeight.w400),
+                              ))),
                       SizedBox(
-                        width: context.screenWidth * 0.095,
+                        width: context.screenWidth * 0.03,
                       ),
                       Container(
                           height: context.screenHeight * 0.07,
@@ -402,9 +468,16 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          child: const Padding(
-                              padding: EdgeInsets.all(12),
-                              child: Text('List of Passenger (s)'))),
+                          child: Padding(
+                            padding: EdgeInsets.all(12),
+                            child: Text(
+                              'List of Passenger (s)',
+                              style: TextStyle(
+                                  color: AppColor.buttonTextColors,
+                                  fontFamily: 'ReadexPro',
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          )),
                     ],
                   ),
                   SizedBox(
@@ -441,7 +514,7 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> {
                         ),
                       ),
                       SizedBox(
-                        width: context.screenWidth * 0.095,
+                        width: context.screenWidth * 0.03,
                       ),
                       Container(
                         height: context.screenHeight * 0.35,
@@ -498,15 +571,18 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> {
                   ),
                   const Align(
                       alignment: Alignment.centerLeft,
-                      child: Text(
-                        'Package Details',
-                        style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0XFF11345A)),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 12),
+                        child: Text(
+                          'Package Details',
+                          style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w500,
+                              color: Color(0XFF11345A)),
+                        ),
                       )),
                   SizedBox(
-                    height: context.screenHeight * 0.2,
+                    height: context.screenHeight * 0.1,
                   ),
                   Row(
                     children: [
@@ -527,7 +603,7 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> {
                                     fontWeight: FontWeight.w300),
                               ))),
                       SizedBox(
-                        width: context.screenWidth * 0.098,
+                        width: context.screenWidth * 0.03,
                       ),
                       Container(
                           height: context.screenHeight * 0.07,
@@ -546,7 +622,7 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> {
                                     fontWeight: FontWeight.w300),
                               ))),
                       SizedBox(
-                        height: context.screenHeight * 0.1,
+                        height: context.screenHeight * 0.04,
                       ),
                     ],
                   ),
@@ -554,62 +630,80 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> {
                     height: context.screenHeight * 0.1,
                   ),
                   Row(children: [
-                    const Align(
+                    Expanded(child: const Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
                           'For our full terms and conditions, please',
                           style: TextStyle(
                               fontSize: 18,
-                              fontWeight: FontWeight.w500,
-                              color: Color(0XFF11345A)),
-                        )),
-                    SizedBox(
-                      width: context.screenWidth * 0.24,
-                    ),
-                    const Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          'MCB',
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
-                              color: Color(0XFF11345A)),
-                        ))
+                              fontFamily: 'ReadexPro',
+                              fontWeight: FontWeight.w400,
+                              color: Color(0XFF303C6C)),
+                        )), ),
+                   
+                  
+                    Expanded(
+                      child:  Align(
+                          alignment: Alignment.centerLeft,
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              'MCB',
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w500,
+                                  color: Color(0XFF303C6C)),
+                            ),
+                          )),
+                    )
                   ]),
                   SizedBox(
                     height: context.screenHeight * 0.01,
                   ),
                   Row(children: [
-                    const Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          'Visit Our Website:',
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
-                              color: Color(0XFF11345A)),
-                        )),
+                    Expanded(
+                      child: Row(
+                        children: [
+                          const Text(
+                            'Visit Our Website:',
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontFamily: 'ReadexPro',
+                                fontWeight: FontWeight.w400,
+                                color: Color(0XFF11345A)),
+                          ),
+                          Expanded(
+                            child: TextButton(
+                                onPressed: () {},
+                                child: const Align(
+                                  alignment: Alignment.topLeft,
+                                  child: Text(
+                                    'www.britontraveltours.com',
+                                    style: TextStyle(color: Color(0XFF83D0E3)),
+                                  ),
+                                )),
+                          ),
+                        ],
+                      ),
+                    ),
+
                     SizedBox(
                       width: context.screenWidth * 0.015,
                     ),
-                    TextButton(
-                        onPressed: () {},
-                        child: const Text(
-                          'www.britontraveltours.com',
-                          style: TextStyle(color: Color(0XFF83D0E3)),
-                        )),
-                    SizedBox(
-                      width: context.screenWidth * 0.22,
-                    ),
-                    const Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          'Briton Consultancy & Travel Tours 000 44 25 29 104',
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
-                              color: Color(0XFF11345A)),
-                        ))
+                    const Expanded(
+                        child:  Align(
+                            alignment: Alignment.centerLeft,
+                            child: Text(
+                              'Briton Consultancy & Travel Tours 000 44 25 29 104',
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w500,
+                                  color: Color(0XFF11345A)),
+                            ))),
+
+                    // SizedBox(
+                    //   width: context.screenWidth * 0.22,
+                    // ),
                   ]),
                   SizedBox(
                     height: context.screenHeight * 0.1,

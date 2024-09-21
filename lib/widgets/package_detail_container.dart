@@ -41,7 +41,8 @@ class PackageDetailContainer extends StatelessWidget {
                           '\$ 74.99',
                           style: TextStyle(
                             fontSize: 40,
-                            fontFamily: 'Readex Pro bold',
+                            fontWeight: FontWeight.w600,
+                            fontFamily: 'ReadexPro',
                           ),
                         )),
                     // SizedBox(width: context.screenWidth * 0.52),
@@ -69,7 +70,8 @@ class PackageDetailContainer extends StatelessWidget {
                           'Detail',
                           style: TextStyle(
                               fontSize: 18,
-                              fontFamily: 'Readex Pro',
+                              fontWeight: FontWeight.w500,
+                              fontFamily: 'ReadexPro',
                               color: Colors.white),
                         )),
                   )
@@ -81,19 +83,19 @@ class PackageDetailContainer extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(right: 300),
                       child: Text(
-                        'The Premium Plan offers unlimited ticket handling annually, making it perfect for those who receive multiple tickets throughout the year.\ This plan ensures that no matter how many tickets you get, weve got you covered with top-notch service and support.',
+                        'The Premium Plan offers unlimited ticket handling annually, making it perfect for those who receive multiple tickets throughout the year.\ This plan ensures that no matter how many tickets you get, weve got you covered with top-notch service and support.The Premium Plan offers unlimited ticket handling annually, making it perfect for those who receive multiple tickets throughout the year. This plan ensures that no matter how many tickets you get, we’ve got you covered with top-notch service and support.',
                         style:
-                            TextStyle(fontSize: 12, fontWeight: FontWeight.w400,fontFamily: fontFamily,color: AppColor.darkGrey),
+                            TextStyle(fontSize: 12, fontWeight: FontWeight.w400,fontFamily: fontFamilys,color: AppColor.darkGrey),
                       ),
                     )),
-                const Align(
+                 Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
                       'Features:',
                       style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w500,
-                          fontFamily: 'Readex Pro'),
+                          fontFamily: 'ReadexPro'),
                     )),
                 Padding(
                   padding: const EdgeInsets.only(right: 85),
@@ -123,7 +125,7 @@ class PackageDetailContainer extends StatelessWidget {
                             color: Colors.black,
                             fontWeight: FontWeight.w600,
                             fontSize: 10,
-                            fontFamily: fontFamily),
+                            fontFamily: fontFamilys),
                       ),
                       SizedBox(
                         width: context.screenWidth * 0.01,
@@ -149,7 +151,7 @@ class PackageDetailContainer extends StatelessWidget {
                             color: Colors.black,
                             fontWeight: FontWeight.w600,
                             fontSize: 10,
-                            fontFamily: fontFamily),
+                            fontFamily: fontFamilys),
                       ),
                       SizedBox(
                         width: context.screenWidth * 0.01,
@@ -175,7 +177,7 @@ class PackageDetailContainer extends StatelessWidget {
                             color: Colors.black,
                             fontWeight: FontWeight.w600,
                             fontSize: 10,
-                            fontFamily: fontFamily),
+                            fontFamily: fontFamilys),
                       ),
                       SizedBox(
                         width: context.screenWidth * 0.01,
@@ -201,7 +203,7 @@ class PackageDetailContainer extends StatelessWidget {
                             color: Colors.black,
                             fontWeight: FontWeight.w600,
                             fontSize: 10,
-                            fontFamily: fontFamily),
+                            fontFamily: fontFamilys),
                       ),
                     ],
                   ),

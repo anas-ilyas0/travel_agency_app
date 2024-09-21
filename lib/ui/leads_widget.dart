@@ -3,7 +3,7 @@ import 'package:fab_tech_sol/Screen/lead_details.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
-import 'package:fab_tech_sol/Screen/add_new_lead.dart';
+import 'package:fab_tech_sol/Screen/add_new_lead_form.dart';
 import 'package:fab_tech_sol/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -36,7 +36,7 @@ class LeadsWidget {
                 'All Leads',
                 style: TextStyle(
                     fontSize: 20,
-                    fontFamily: fontFamily,
+                    fontFamily: fontFamilys,
                     fontWeight: FontWeight.bold,
                     color: color),
               ),
@@ -46,13 +46,13 @@ class LeadsWidget {
                     'Leads Status :',
                     style: TextStyle(
                         color: color,
-                        fontFamily: fontFamily,
+                        fontFamily: fontFamilys,
                         fontWeight: FontWeight.w600),
                   ),
                   TabBar(
                       labelStyle: TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontFamily: fontFamily,
+                        fontFamily: fontFamilys,
                       ),
                       unselectedLabelStyle:
                           const TextStyle(fontWeight: FontWeight.normal),
@@ -164,14 +164,14 @@ class LeadsWidget {
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (context) => LeadInvoiceDetails(),
+                                            builder: (context) => LeadDetails(),
                                           ),
                                         );
                                       },
                                       child: Text(
                                         'View Details',
                                         style: TextStyle(
-                                          fontFamily: fontFamily,
+                                          fontFamily: fontFamilys,
                                           color: Colors.white,
                                         ),
                                       ),
@@ -239,14 +239,14 @@ class LeadsWidget {
                                       Navigator.push(
                                         context,
                                         MaterialPageRoute(
-                                          builder: (context) => LeadInvoiceDetails(),
+                                          builder: (context) => LeadDetails(),
                                         ),
                                       );
                                     },
                                     child: Text(
                                       'View Details',
                                       style: TextStyle(
-                                        fontFamily: fontFamily,
+                                        fontFamily: fontFamilys,
                                         color: Colors.white,
                                       ),
                                     ),
@@ -306,7 +306,7 @@ class LeadsWidget {
                                   child: Text(
                                     'View Details',
                                     style: TextStyle(
-                                      fontFamily: fontFamily,
+                                      fontFamily: fontFamilys,
                                       color: Colors.white,
                                     ),
                                   ),

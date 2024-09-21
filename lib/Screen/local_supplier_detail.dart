@@ -49,8 +49,9 @@ class LocalSupplierDetail extends StatelessWidget {
                         child: Text(
                           'Supplier Full Name here',
                           style: TextStyle(
-                            fontSize: 20,
-                            fontFamily: 'Readex Pro',
+                            fontSize: 22,
+                            fontWeight: FontWeight.w600,
+                            fontFamily: 'ReadexPro',
                             color: Color(0XFF11345A),
                           ),
                         ),
@@ -171,7 +172,7 @@ class LocalSupplierDetail extends StatelessWidget {
                           ),
                         ),
                         SizedBox(
-                          width: context.screenWidth * 0.1,
+                          width: context.screenWidth * 0.02,
                         ),
                         Container(
                           height: context.screenHeight * 0.15,

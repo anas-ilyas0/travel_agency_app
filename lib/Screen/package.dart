@@ -33,7 +33,7 @@ class Package extends StatelessWidget {
                   'Packages Details',
                   style: TextStyle(
                       fontSize: 20,
-                      fontFamily: 'Readex Pro',
+                      fontFamily: 'ReadexPro',
                       color: Color(0XFF11345A),
                       fontWeight: FontWeight.w700),
                 ),
@@ -62,7 +62,7 @@ class Package extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 14,
                           color: AppColor.buttonTextColor,
-                          fontFamily: 'Readex Pro'),
+                          fontFamily: 'ReadexPro'),
                     ),
                   ),
                 ),
@@ -101,7 +101,7 @@ class Package extends StatelessWidget {
                 'Package Detail',
                 style: TextStyle(
                   fontSize: 18, // Updated size for better readability
-                  fontFamily: 'Readex Pro',
+                  fontFamily: 'ReadexPro',
                   color: const Color(0XFF11345A),
                   fontWeight: FontWeight.w700,
                 ),
@@ -129,7 +129,7 @@ class Package extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 12, // Slightly increased font for clarity
                       color: AppColor.buttonTextColor,
-                      fontFamily: 'Readex Pro',
+                      fontFamily: 'ReadexPro',
                     ),
                   ),
                 ),
@@ -208,7 +208,7 @@ class Package extends StatelessWidget {
                                 'Detail',
                                 style: TextStyle(
                                   fontSize: 14,
-                                  fontFamily: 'Readex Pro',
+                                  fontFamily: 'ReadexPro',
                                 ),
                               ),
                             ),
@@ -216,7 +216,7 @@ class Package extends StatelessWidget {
                         ),
                         SizedBox(height: context.screenHeight * 0.01),
                         Text(
-                          'The Premium Plan offers unlimited ticket handling annually, making it perfect for those who receive multiple tickets throughout the year. This plan ensures that no matter how many tickets you get, we’ve got you covered with top-notch service and support.',
+                          'The Premium Plan offers unlimited ticket handling annually, making it perfect for those who receive multiple tickets throughout the year. This plan ensures that no matter how many tickets you get, we’ve got you covered with top-notch service and support. The Premium Plan offers unlimited ticket handling annually, making it perfect for those who receive multiple tickets throughout the year. This plan ensures that no matter how many tickets you get, we’ve got you covered with top-notch service and support',
                           style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
@@ -231,7 +231,7 @@ class Package extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
-                            fontFamily: 'Readex Pro',
+                            fontFamily: 'ReadexPro',
                           ),
                         ),
                         SizedBox(height: context.screenHeight * 0.01),

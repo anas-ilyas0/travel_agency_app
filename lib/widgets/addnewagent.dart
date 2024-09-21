@@ -15,7 +15,7 @@ class AddNewAgentTitelAndDescription extends StatelessWidget {
       width: Responsive.isMobile(context)? null:Responsive.isTablet(context)? context.screenWidth * 0.25:context.screenWidth * 0.2 ,
       child: Column(
         children: [Align(alignment: Alignment.centerLeft,
-          child: Text('$text1',style: const TextStyle(fontSize: 16,fontFamily: 'Readex Pro'),)),
+          child: Text('$text1',style: const TextStyle(fontSize: 16,fontFamily: 'ReadexPro'),)),
        TextField(
          cursorColor: Colors.white,
   decoration: InputDecoration(

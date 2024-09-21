@@ -1,5 +1,5 @@
 import 'package:fab_tech_sol/Screen/lead_details.dart';
-import 'package:fab_tech_sol/Screen/add_new_lead.dart';
+import 'package:fab_tech_sol/Screen/add_new_lead_form.dart';
 import 'package:fab_tech_sol/ui/dashboard.dart';
 import 'package:flutter/material.dart';
 

@@ -1,4 +1,5 @@
 import 'package:fab_tech_sol/consts/consts.dart';
+import 'package:fab_tech_sol/media_query_extension.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -66,7 +67,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                     style: TextStyle(
                         color: addLeadButtonColor,
                         fontSize: 17,
-                        fontFamily: fontFamily),
+                        fontFamily: fontFamilys),
                   ),
                 ],
               ),
@@ -95,30 +96,30 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                           'Add New Lead Details',
                           style: TextStyle(
                               color: color,
-                              fontFamily: fontFamily,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15),
+                              fontFamily: 'ReadexPro',
+                              fontWeight: FontWeight.w700,
+                              fontSize: 20),
                         ),
                         const SizedBox(height: 20),
                         Text(
                           'Agent Details',
                           style: TextStyle(
                               color: color,
-                              fontFamily: fontFamily,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 17),
+                              fontFamily: 'ReadexPro',
+                              fontWeight: FontWeight.w600,
+                              fontSize: 22),
                         ),
                         const SizedBox(height: 15),
                         Text(
                           'Agent Name',
                           style: TextStyle(
                               color: Colors.black,
-                              fontSize: 13,
-                              fontFamily: fontFamily,
-                              fontWeight: FontWeight.bold),
+                              fontSize: 16,
+                              fontFamily: fontFamilys,
+                              fontWeight: FontWeight.w400),
                         ),
                         const SizedBox(height: 5),
-                        Widgets().textFormField(),
+                        Widgets().textFormField('John Doe',),
                       ],
                     ),
                   ),
@@ -139,49 +140,61 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                 style: TextStyle(
                     color: color,
                     fontWeight: FontWeight.bold,
-                    fontFamily: fontFamily,
+                    fontFamily: fontFamilys,
                     fontSize: 17),
               ),
             ),
             const SizedBox(height: 15),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 115),
-              child: Row(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Client Name',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 13,
-                            fontFamily: fontFamily,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      const SizedBox(height: 5),
-                      Widgets().textFormField(),
-                    ],
+          MediaQuery(
+    data: MediaQuery.of(context), // Access screen size information
+    child: Padding(
+      padding: const EdgeInsets.only(left: 110),
+      child: Row(
+      //  mainAxisAlignment: MainAxisAlignment.spaceBetween, // Distribute evenly
+        crossAxisAlignment: CrossAxisAlignment.start, // Align vertically
+        children: [
+          Flexible( // Wraps Column1 to fill available space
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Client Name',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 13,
+                    fontFamily: fontFamilys,
+                    fontWeight: FontWeight.bold,
                   ),
-                  const SizedBox(width: 15),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Phone Number',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 13,
-                            fontFamily: fontFamily,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      const SizedBox(height: 5),
-                      Widgets().textFormField(),
-                    ],
-                  )
-                ],
-              ),
+                ),
+                const SizedBox(height: 5),
+                Widgets().textFormField('John Alen'),
+              ],
             ),
+          ),
+          const SizedBox(width: 15), // Maintain spacing on smaller screens
+          Flexible( // Wraps Column2 to fill available space
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Phone Number',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize:  
+       13,
+                    fontFamily: fontFamilys,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 5),
+                Widgets().textFormField('+1 (555) 987-6543'),
+              ],
+            ),
+          ),
+        ],
+      ),
+    ),
+  ),
             const SizedBox(height: 5),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 115),
@@ -194,7 +207,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                       'Different rates for different category',
                       style: TextStyle(
                         color: addLeadButtonColor,
-                        fontFamily: fontFamily,
+                        fontFamily: fontFamilys,
                       ),
                     ),
                     const SizedBox(height: 10),
@@ -207,7 +220,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                             style: TextStyle(
                                 color: addLeadButtonColor,
                                 fontSize: 16,
-                                fontFamily: fontFamily),
+                                fontFamily: fontFamilys),
                           ),
                         ),
                         Expanded(
@@ -216,7 +229,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                             style: TextStyle(
                                 color: addLeadButtonColor,
                                 fontSize: 16,
-                                fontFamily: fontFamily),
+                                fontFamily: fontFamilys),
                           ),
                         ),
                         Expanded(
@@ -227,7 +240,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                               style: TextStyle(
                                   color: addLeadButtonColor,
                                   fontSize: 16,
-                                  fontFamily: fontFamily),
+                                  fontFamily: fontFamilys),
                             ),
                           ),
                         ),
@@ -240,14 +253,14 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                           'Adult',
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              fontFamily: fontFamily),
+                              fontFamily: fontFamilys),
                         )),
                         Expanded(
-                          child: Widgets().textFormField(),
+                          child: Widgets().textFormField('500'),
                         ),
                         const SizedBox(width: 15),
                         Expanded(
-                          child: Widgets().textFormField(),
+                          child: Widgets().textFormField('\$200'),
                         ),
                       ],
                     ),
@@ -258,14 +271,14 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                           child: Text('Child',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontFamily: fontFamily)),
+                                  fontFamily: fontFamilys)),
                         ),
                         Expanded(
-                          child: Widgets().textFormField(),
+                          child: Widgets().textFormField('600'),
                         ),
                         const SizedBox(width: 15),
                         Expanded(
-                          child: Widgets().textFormField(),
+                          child: Widgets().textFormField('\$300'),
                         ),
                       ],
                     ),
@@ -276,14 +289,14 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                           child: Text('Infant',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontFamily: fontFamily)),
+                                  fontFamily: fontFamilys)),
                         ),
                         Expanded(
-                          child: Widgets().textFormField(),
+                          child: Widgets().textFormField('350'),
                         ),
                         const SizedBox(width: 15),
                         Expanded(
-                          child: Widgets().textFormField(),
+                          child: Widgets().textFormField('\$150'),
                         ),
                       ],
                     ),
@@ -294,14 +307,14 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                           child: Text('Senior Citizen',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontFamily: fontFamily)),
+                                  fontFamily: fontFamilys)),
                         ),
                         Expanded(
-                          child: Widgets().textFormField(),
+                          child: Widgets().textFormField('500'),
                         ),
                         const SizedBox(width: 15),
                         Expanded(
-                          child: Widgets().textFormField(),
+                          child: Widgets().textFormField('\$500'),
                         ),
                       ],
                     ),
@@ -312,14 +325,14 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                           child: Text('Other',
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontFamily: fontFamily)),
+                                  fontFamily: fontFamilys)),
                         ),
                         Expanded(
-                          child: Widgets().textFormField(),
+                          child: Widgets().textFormField('500'),
                         ),
                         const SizedBox(width: 15),
                         Expanded(
-                          child: Widgets().textFormField(),
+                          child: Widgets().textFormField('\$350'),
                         ),
                       ],
                     ),
@@ -340,7 +353,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                       style: TextStyle(
                           color: color,
                           fontWeight: FontWeight.bold,
-                          fontFamily: fontFamily,
+                          fontFamily: fontFamilys,
                           fontSize: 17),
                     ),
                   ),
@@ -354,10 +367,10 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 13,
-                                fontFamily: fontFamily,
+                                fontFamily: fontFamilys,
                                 fontWeight: FontWeight.bold),
                           ),
-                          Widgets().textFormField(),
+                          Widgets().textFormField('London'),
                         ],
                       ),
                       const SizedBox(width: 15),
@@ -369,10 +382,10 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 13,
-                                fontFamily: fontFamily,
+                                fontFamily: fontFamilys,
                                 fontWeight: FontWeight.bold),
                           ),
-                          Widgets().textFormField(),
+                          Widgets().textFormField('05/07/2024'),
                         ],
                       ),
                       const SizedBox(width: 15),
@@ -384,10 +397,10 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 13,
-                                fontFamily: fontFamily,
+                                fontFamily: fontFamilys,
                                 fontWeight: FontWeight.bold),
                           ),
-                          Widgets().textFormField(),
+                          Widgets().textFormField('22/07/2024'),
                         ],
                       ),
                     ],
@@ -407,7 +420,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                       'Additional Notes',
                       style: TextStyle(
                           color: color,
-                          fontFamily: fontFamily,
+                          fontFamily: fontFamilys,
                           fontWeight: FontWeight.bold,
                           fontSize: 17),
                     ),
@@ -417,10 +430,10 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: 13,
-                        fontFamily: fontFamily,
+                        fontFamily: fontFamilys,
                         fontWeight: FontWeight.bold),
                   ),
-                  Widgets().textFormNoteField(5, 775),
+                  Widgets().textFormNoteField(context.screenWidth*0.58,context.screenHeight*0.25),
                 ],
               ),
             ),
@@ -438,7 +451,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                       'Best Way to Reach You',
                       style: TextStyle(
                           color: color,
-                          fontFamily: fontFamily,
+                          fontFamily: fontFamilys,
                           fontWeight: FontWeight.bold,
                           fontSize: 17),
                     ),
@@ -455,7 +468,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                           Text(
                             'Email',
                             style: TextStyle(
-                                color: Colors.black, fontFamily: fontFamily),
+                                color: Colors.black, fontFamily: fontFamilys),
                           ),
                           const SizedBox(width: 80),
                           Widgets().checkBox(userProvider.isCheckedSMS,
@@ -465,7 +478,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                           Text(
                             'SMS',
                             style: TextStyle(
-                                color: Colors.black, fontFamily: fontFamily),
+                                color: Colors.black, fontFamily: fontFamilys),
                           ),
                           const SizedBox(width: 80),
                           Widgets().checkBox(userProvider.isCheckedWhatsApp,
@@ -476,7 +489,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                           Text(
                             'WhatsApp',
                             style: TextStyle(
-                                color: Colors.black, fontFamily: fontFamily),
+                                color: Colors.black, fontFamily: fontFamilys),
                           ),
                           const SizedBox(width: 5),
                         ],

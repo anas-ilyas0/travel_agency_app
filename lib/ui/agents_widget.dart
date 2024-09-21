@@ -25,7 +25,7 @@ class AgentsWidget {
                   'All Agents',
                   style: TextStyle(
                       fontSize: 20,
-                      fontFamily: fontFamily,
+                      fontFamily: fontFamilys,
                       fontWeight: FontWeight.bold,
                       color: color),
                 ),
@@ -34,6 +34,9 @@ class AgentsWidget {
                   child: Row(
                     children: [
                       Widgets().searchTextField(),
+                      SizedBox(
+                        width: context.screenWidth*0.01,
+                      ),
                      TypesDropDownButton(),
                       const SizedBox(width: 15),
                       Widgets().button('Add Agent', () {})

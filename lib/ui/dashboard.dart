@@ -1,4 +1,5 @@
 import 'package:fab_tech_sol/AppColor/app_color.dart';
+import 'package:fab_tech_sol/Screen/package.dart';
 import 'package:fab_tech_sol/Screen/package_widget.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
@@ -9,10 +10,8 @@ import 'package:fab_tech_sol/ui/agents_widget.dart';
 import 'package:fab_tech_sol/ui/dashboard_widget.dart';
 import 'package:fab_tech_sol/ui/leads_widget.dart';
 import 'package:fab_tech_sol/ui/supplier_widget.dart';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../widgets/widgets.dart';
 
 class Dashboard extends StatefulWidget {
@@ -73,7 +72,7 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
                       padding:  EdgeInsets.only(left: context.screenWidth*.12, ),
                       child: TabBar(
                         labelStyle: TextStyle(
-                            fontFamily: fontFamily,
+                            fontFamily: fontFamilys,
                             fontWeight: FontWeight.bold),
                         labelColor: color,
                         unselectedLabelColor: AppColor.hintColor,
@@ -153,7 +152,8 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
                 LeadsWidget().leads(context, leadsTabController),
                 AgentsWidget().agent(context),
                 SupplierWidget().supplier(context),
-                PackageWidget().package(context),
+               PackageWidget().package(context),
+               Package(),
               ],
             ),
           ),

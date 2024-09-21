@@ -79,16 +79,10 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Readex Pro
+    - family: ReadexPro
       fonts:
         - asset: assets/fonts/ReadexPro-Medium.ttf
-       # - asset: fonts/Schyler-Italic.ttf
-        #  style: italic
-    - family: ReadexPro-Light
-      fonts:
         - asset: assets/fonts/ReadexPro-Light.ttf
-    - family: Readex Pro bold
-      fonts:
         - asset: assets/fonts/ReadexPro-bold.ttf
     - family: Poppin
       fonts:

@@ -23,7 +23,7 @@ class SupplierWidget {
                   'Local Supplier',
                   style: TextStyle(
                       fontSize: 20,
-                      fontFamily: fontFamily,
+                      fontFamily: fontFamilys,
                       fontWeight: FontWeight.bold,
                       color: color),
                 ),

@@ -30,8 +30,8 @@ class BackButtonAverter extends StatelessWidget {
                   text1,
                   style: const TextStyle(
                       fontSize: 20,
-                     // fontWeight: FontWeight.w600,
-                      fontFamily: 'Readex Pro',
+                     fontWeight: FontWeight.w600,
+                      fontFamily: 'ReadexPro',
                       color: Color(0XFF11345A)),
                 ),
               ],

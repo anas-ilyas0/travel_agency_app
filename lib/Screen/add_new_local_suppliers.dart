@@ -25,7 +25,7 @@ class AddNewLocalSupplier extends StatelessWidget {
             children: [
                SizedBox(height: context.screenHeight*0.02,),
                 const Align(alignment: Alignment.centerLeft,
-                child: Text('Local Suppler Details',style: TextStyle(fontSize: 23,color: Color(0XFF11345A),fontFamily: 'Readex Pro',fontWeight: FontWeight.w500),)),
+                child: Text('Local Suppler Details',style: TextStyle(fontSize: 23,color: Color(0XFF11345A),fontFamily: 'ReadexPro',fontWeight: FontWeight.w500),)),
                SizedBox(height: context.screenHeight*0.01,),
                Align(
               alignment: Alignment.centerLeft,
@@ -152,7 +152,7 @@ class AddNewLocalSupplier extends StatelessWidget {
               height: context.screenHeight*0.03,
              ),
                const Align(alignment: Alignment.centerLeft,
-                child: Text('Supplier Details',style: TextStyle(fontSize: 23,color: Color(0XFF11345A),fontFamily: 'Readex Pro'),)),
+                child: Text('Supplier Details',style: TextStyle(fontSize: 23,color: Color(0XFF11345A),fontFamily: 'ReadexPro'),)),
               SizedBox(
               height: context.screenHeight*0.04,
         
@@ -190,7 +190,7 @@ class AddNewLocalSupplier extends StatelessWidget {
 
           
              const Align(alignment: Alignment.centerLeft,
-                child: Text('Supplier Service Details',style: TextStyle(fontSize: 23,color: Color(0XFF11345A),fontFamily: 'Readex Pro',fontWeight: FontWeight.w600),)),
+                child: Text('Supplier Service Details',style: TextStyle(fontSize: 23,color: Color(0XFF11345A),fontFamily: 'ReadexPro',fontWeight: FontWeight.w600),)),
               SizedBox(
               height: context.screenHeight*0.04,
         
@@ -208,7 +208,7 @@ class AddNewLocalSupplier extends StatelessWidget {
         alignment: Alignment.centerLeft,
         child: Text(
           'Select Service',
-          style: TextStyle(fontSize: 16, fontFamily: 'Readex Pro'),
+          style: TextStyle(fontSize: 16, fontFamily: 'ReadexPro'),
         ),
       ),
       TextField(
@@ -278,7 +278,7 @@ class AddNewLocalSupplier extends StatelessWidget {
                 
               },
               child: const Text(
-                'Cancle',style: TextStyle(fontSize: 18,fontFamily: 'Readex Pro',color: Colors.black),
+                'Cancle',style: TextStyle(fontSize: 18,fontFamily: 'ReadexPro',color: Colors.black),
               
               )),
                  ),
@@ -297,7 +297,7 @@ class AddNewLocalSupplier extends StatelessWidget {
                 
               },
               child: const Text(
-                'Save',style: TextStyle(fontSize: 18,fontFamily: 'Readex Pro',color: Colors.black),
+                'Save',style: TextStyle(fontSize: 18,fontFamily: 'ReadexPro',color: Colors.black),
               
               )),
                  ),

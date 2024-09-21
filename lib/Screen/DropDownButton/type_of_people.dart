@@ -33,14 +33,14 @@ class _TypesDropDownButtonState extends State<TypesDropDownButton> {
                     });
                   },
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                    padding: const EdgeInsets.all(8.0),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text('Add Here', style: TextStyle(fontSize: 16)),
-                        Icon(isExpanded ? Icons.arrow_drop_up : Icons.arrow_drop_down),
-                      ],
-                    ),
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text('Filter', style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold)),
+                                    Icon(isExpanded ? Icons.arrow_drop_up : Icons.arrow_drop_down),
+                                  ],
+                                ),
                   ),
                 ),
               ),]);

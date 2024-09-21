@@ -24,7 +24,7 @@ class PackageWidget {
               'Packages Details',
               style: TextStyle(
                   fontSize: 20,
-                  fontFamily: fontFamily,
+                  fontFamily: fontFamilys,
                   color: color,
                   fontWeight: FontWeight.w700),
             ),
@@ -54,7 +54,7 @@ class PackageWidget {
                       fontSize: 14,
                       color: AppColor.buttonTextColor,
                       // fontWeight: FontWeight.w400,
-                      fontFamily: fontFamily),
+                      fontFamily: fontFamilys),
                 ),
               ),
             ),
