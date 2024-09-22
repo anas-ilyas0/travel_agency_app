@@ -44,7 +44,7 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> with TickerProv
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: CustomHeader(dashboardTabController: dashboardTabController,),
+        // appBar: CustomHeader(dashboardTabController: dashboardTabController,),
 
         // drawer: Responsive.isDesktop(context)
         //     ? null

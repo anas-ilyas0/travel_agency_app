@@ -9,69 +9,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class Widgets {
-  final List<AgentsTask> agentsTasks = [
-    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-        'Sialkot Punjab 51040', 'Active', ''),
-    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-        'Sialkot Punjab 51040', 'Active', ''),
-    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-        'Sialkot Punjab 51040', 'Active', ''),
-    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-        'Sialkot Punjab 51040', 'Active', ''),
-    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-        'Sialkot Punjab 51040', 'Active', ''),
-    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-        'Sialkot Punjab 51040', 'Active', ''),
-    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-        'Sialkot Punjab 51040', 'Active', ''),
-    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-        'Sialkot Punjab 51040', 'Active', ''),
-    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-        'Sialkot Punjab 51040', 'Active', ''),
-    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-        'Sialkot Punjab 51040', 'Active', ''),
-    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-        'Sialkot Punjab 51040', 'Active', ''),
-    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-        'Sialkot Punjab 51040', 'Active', ''),
-    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-        'Sialkot Punjab 51040', 'Active', ''),
-    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-        'Sialkot Punjab 51040', 'Active', ''),
+  final List<AgentsTask> agentsTasks = List.generate(20, (index)=>AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
+      'Sialkot Punjab 51040', 'Active', ''));
 
-  ];
+final List<SupplierTask> tasks=List.generate(20, (index)=>
+    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'));
 
-  final List<SupplierTask> tasks = [
-    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
 
-  ];
+
+
 
   Widget editDelContainer(VoidCallback onPress) {
     return Container(

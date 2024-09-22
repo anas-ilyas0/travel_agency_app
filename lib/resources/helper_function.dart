@@ -5,8 +5,11 @@ class HelperUtil {
     return columnNames
         .map((name) =>
         DataColumn(
-          label: Text(
-            name,
+          label: Padding(
+            padding:  EdgeInsets.only(left: name == "Action" ? 25.0 : 0.0),
+            child: Text(
+              name,
+            ),
           ),
         ))
         .toList();

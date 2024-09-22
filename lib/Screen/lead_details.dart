@@ -27,7 +27,7 @@ class LeadDetails extends StatelessWidget {
                   // primary: Colors.blue,  // Background color
                   backgroundColor: Colors.white),
               child:
-                  const Icon(Icons.arrow_back, size: 24, color: Colors.black),
+                  const Icon(Icons.arrow_back_outlined, size: 20, color: Colors.black),
             ),
             const Text(
               'Details',

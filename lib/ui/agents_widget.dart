@@ -34,7 +34,11 @@ class AgentsWidget {
                   child: Row(
                     children: [
                       Widgets().searchTextField(),
-                     TypesDropDownButton(),
+                      Widgets().dropDownButton(providerValue.selectedItem2,
+                          providerValue.dropdownItems2, (String? newValue) {
+                            providerValue.updateSelectedItem2(newValue);
+                          }, context),
+                     // TypesDropDownButton(),
                       const SizedBox(width: 15),
                       Widgets().button('Add Agent', () {})
                     ],
