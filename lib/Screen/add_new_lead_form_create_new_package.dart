@@ -3,7 +3,7 @@ import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/widgets/addnewagent.dart';
-import 'package:fab_tech_sol/widgets/back_button_title_avester.dart';
+import 'package:fab_tech_sol/widgets/back_button_title_avatar.dart';
 import 'package:fab_tech_sol/widgets/widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -119,6 +119,41 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm> {
                   Row(
                     //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+
+                      AddNewAgentTitlelAndDescription(
+                          text1: 'Client Name', text2: 'John Doe'),
+                      SizedBox(
+                        width: context.screenWidth * 0.05,
+                      ),
+                      AddNewAgentTitlelAndDescription(
+                          text1: 'Client Phone Number',
+                          text2: '+1 (555) 987-6543'),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                     Widgets().addNewPackageFormAgentNameAndClinetName(context, 'Agent Name', 'John Doe'),
+                      SizedBox(
+                        width: context.screenWidth * 0.05,
+                      ),
+                     Widgets().addNewPackageFormAgentNameAndClinetName(context, 'Select Supplier', 'John Doe')
+                    ],
+                  ),
+                   SizedBox(
+                    height: context.screenHeight * 0.02,
+                  ),
+                  Row(
+                    children: [
+                      Widgets().CreateNewPackagetext('Name'),
+                      SizedBox(
+                        width: context.screenWidth * 0.21,
+                      ),
+                      Widgets().CreateNewPackagetext('Number of People'),
+                      SizedBox(
+                        width: context.screenWidth * 0.095,
+                      ),
+                      Widgets().CreateNewPackagetext('Budget'),
+
                       Padding(
                         padding: const EdgeInsets.only(right: 16),
                         child: Column(
@@ -156,6 +191,7 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm> {
                       SizedBox(
                         width: context.screenWidth * 0.05,
                       ),
+
 
                     ],
                   ),

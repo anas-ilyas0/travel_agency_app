@@ -1,6 +1,6 @@
 import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/dimensions.dart';
-import 'package:fab_tech_sol/widgets/back_button_title_avester.dart';
+import 'package:fab_tech_sol/widgets/back_button_title_avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -16,7 +16,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
           SizedBox(
             height: context.screenHeight * 0.02,
           ),
-          BackButtonAverter(text1: 'International Supplier Details',),
+          BackButtonAvatar(text1: 'International Supplier Details',),
           const Divider(),
           SizedBox(
             height: context.screenHeight * 0.01,

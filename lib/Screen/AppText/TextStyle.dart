@@ -17,4 +17,8 @@ class AppTextstyless {
       color: Color(0XFF303C6C), fontSize: 18, fontFamily: 'ReadexPro',);
         static TextStyle localSupplierDetailText = const TextStyle(fontWeight: FontWeight.w400,
       color: Color(0XFF202224), fontSize: 14, fontFamily: 'ReadexPro',);
+        static TextStyle addnewinternationalsuppliers = const TextStyle(fontWeight: FontWeight.w600,
+      color: Color(0XFF303C6C), fontSize: 22, fontFamily: 'ReadexPro',);
+        static TextStyle addnewinternationalsuppliersSubText= const TextStyle(fontWeight: FontWeight.w400,
+      color: Color(0XFF000000), fontSize: 16, fontFamily: 'ReadexPro',);
 }

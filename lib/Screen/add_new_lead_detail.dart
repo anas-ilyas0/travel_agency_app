@@ -91,24 +91,24 @@ class AddNewLeadDetail extends StatelessWidget {
                   Row(
                     //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      AddNewAgentTitelAndDescription(
+                      AddNewAgentTitlelAndDescription(
                           text1: 'Client Name', text2: 'Add Here'),
                       SizedBox(
                         width: context.screenWidth * 0.05,
                       ),
-                      AddNewAgentTitelAndDescription(
+                      AddNewAgentTitlelAndDescription(
                           text1: 'Client Phone Number',
                           text2: '+1 (555) 987-6543'),
                     ],
                   ),
                   Row(
                     children: [
-                      AddNewAgentTitelAndDescription(
+                      AddNewAgentTitlelAndDescription(
                           text1: 'Agent Name', text2: 'John Doe'),
                       SizedBox(
                         width: context.screenWidth * 0.05,
                       ),
-                      AddNewAgentTitelAndDescription(
+                      AddNewAgentTitlelAndDescription(
                           text1: 'Select Supplier', text2: 'John Doe'),
                     ],
                   ),

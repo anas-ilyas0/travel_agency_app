@@ -11,6 +11,10 @@ import 'package:flutter_svg/svg.dart';
 
 class Widgets {
 
+  
+
+
+
 
   final List<AgentsTask> agentsTaskss = [
     AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
@@ -490,41 +494,38 @@ final List<SupplierTask> tasks=List.generate(20, (index)=>
   }
 
   Widget PackageDetailButton(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(2.0),
-      child: GestureDetector(
-        onTap: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => const ClientDetailPackage()));
-        },
-        child: Container(
-        
-          padding: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
-          decoration: BoxDecoration(
-            color: AppColor.buttonTextColors,
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Row(
-            children: [
-              Text(
-                "Detail",
-                
-                style: TextStyle(
-                  // decoration: TextDecoration.underline,
-                  color: Color(0XFF11345A),
-                  fontSize: 16,
-                  fontFamily: fontFamilys,
-                  fontWeight: FontWeight.w400,
-                ),
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) => const ClientDetailPackage()));
+      },
+      child: Container(
+      
+            height: context.screenHeight*0.05,
+        decoration: BoxDecoration(
+          color: AppColor.buttonTextColors,
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Row(
+          children: [
+            Text(
+              "Detail",
+              
+              style: TextStyle(
+                // decoration: TextDecoration.underline,
+                color: Color(0XFF11345A),
+                fontSize: 16,
+                fontFamily: fontFamilys,
+                fontWeight: FontWeight.w400,
               ),
-              SizedBox(
-                width: 10,
-              ),
-              Icon(Icons.arrow_forward)
-            ],
-          ),
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Icon(Icons.arrow_forward)
+          ],
         ),
       ),
     );

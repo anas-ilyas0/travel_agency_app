@@ -79,7 +79,7 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
                       LeadScreen(),
                       AgentScreen(),
                       SupplierScreen(),
-                      PackageClassScreen(),
+                      
                       ],
                     ),
                   )

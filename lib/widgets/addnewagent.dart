@@ -1,13 +1,14 @@
 import 'package:fab_tech_sol/AppColor/app_color.dart';
+import 'package:fab_tech_sol/Screen/AppText/TextStyle.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:flutter/material.dart';
 
-class AddNewAgentTitelAndDescription extends StatelessWidget {
+class AddNewAgentTitlelAndDescription extends StatelessWidget {
   String? text1;
   String? text2;
-   AddNewAgentTitelAndDescription({super.key,required this.text1,required this.text2});
+   AddNewAgentTitlelAndDescription({super.key,required this.text1,required this.text2});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +17,7 @@ class AddNewAgentTitelAndDescription extends StatelessWidget {
       width: Responsive.isMobile(context)? null:Responsive.isTablet(context)? context.screenWidth * 0.25:context.screenWidth * 0.2 ,
       child: Column(
         children: [Align(alignment: Alignment.centerLeft,
-          child: Text('$text1',style:  TextStyle(fontSize: 16,fontFamily: fontFamilys,fontWeight: FontWeight.w400),)),
+          child: Text('$text1',style: AppTextstyless.addnewinternationalsuppliersSubText)),
        TextField(
          cursorColor: Colors.white,
   decoration: InputDecoration(

@@ -12,7 +12,7 @@ class AppRoutes {
   static Map<String, WidgetBuilder> getRoutes() {
     return {
       dashboard: (context) => const Dashboard(),
-      addNewLead: (context) => const AddNewLeadForm(),
+     // addNewLead: (context) => const AddNewLeadForm(),
       //package: (context)=> PackageWidget(),
 
       lead_details: (context) => const LeadDetails(),

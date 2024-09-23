@@ -3,9 +3,9 @@ import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:flutter/material.dart';
 
-class BackButtonAverter extends StatelessWidget {
+class BackButtonAvatar extends StatelessWidget {
   String text1;
-   BackButtonAverter({super.key,required this.text1});
+   BackButtonAvatar({super.key,required this.text1});
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class BackButtonAverter extends StatelessWidget {
                       padding: const EdgeInsets.all(16),
                       backgroundColor: Colors.white),
                   child: const Icon(Icons.arrow_back,
-                      size: 24, color: Colors.black),
+                      size: 22, color: Colors.black),
                 ),
                  Text(
                   text1,

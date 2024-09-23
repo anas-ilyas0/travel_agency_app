@@ -1,5 +1,7 @@
 import 'package:fab_tech_sol/Screen/add_new_lead_form.dart';
+import 'package:fab_tech_sol/Screen/invoice_details_invoice.dart';
 import 'package:fab_tech_sol/Screen/lead_details.dart';
+import 'package:fab_tech_sol/Screen/package.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
@@ -115,7 +117,7 @@ class _LeadScreenState extends State<LeadScreen> with SingleTickerProviderStateM
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => AddNewLeadForm(),
+                                builder: (context) => LeadInvoiceDetails(),
                               ));
                         },)
                       : SizedBox.shrink(),
@@ -141,7 +143,7 @@ class _LeadScreenState extends State<LeadScreen> with SingleTickerProviderStateM
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => AddNewLeadForm(),
+                              builder: (context) => Package(),
                             ));
                       },),
                     ],

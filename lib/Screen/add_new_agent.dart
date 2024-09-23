@@ -4,7 +4,7 @@ import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:fab_tech_sol/widgets/addnewagent.dart';
-import 'package:fab_tech_sol/widgets/back_button_title_avester.dart';
+import 'package:fab_tech_sol/widgets/back_button_title_avatar.dart';
 import 'package:flutter/material.dart';
 
 class AddNewAgent extends StatelessWidget {
@@ -18,7 +18,7 @@ class AddNewAgent extends StatelessWidget {
         child: Responsive(desktop: Column(
           children: [
       
-            BackButtonAverter(text1: 'Add New Agent',),
+            BackButtonAvatar(text1: 'Add New Agent',),
             const Divider(),
             Padding(
               padding:  EdgeInsets.symmetric(horizontal: context.screenWidth*.08),
@@ -83,11 +83,11 @@ class AddNewAgent extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      AddNewAgentTitelAndDescription(text1: 'First Name', text2: 'John Doe'),
+                      AddNewAgentTitlelAndDescription(text1: 'First Name', text2: 'John Doe'),
                       const SizedBox(width: 20,),
-                      AddNewAgentTitelAndDescription(text1: 'Last Name', text2: 'John Doe'),
+                      AddNewAgentTitlelAndDescription(text1: 'Last Name', text2: 'John Doe'),
                       const SizedBox(width: 20,),
-                      AddNewAgentTitelAndDescription(text1: 'Phone Number', text2: '+1 (555) 987-6543'),
+                      AddNewAgentTitlelAndDescription(text1: 'Phone Number', text2: '+1 (555) 987-6543'),
                     ],
                   ),
                   SizedBox(
@@ -97,11 +97,11 @@ class AddNewAgent extends StatelessWidget {
 
                   Row(
                     children: [
-                      AddNewAgentTitelAndDescription(text1: 'E-Mail', text2: 'john.smith@gmail.com'),
+                      AddNewAgentTitlelAndDescription(text1: 'E-Mail', text2: 'john.smith@gmail.com'),
                       const SizedBox(width: 20,),
-                      AddNewAgentTitelAndDescription(text1: 'Password', text2: 'Demo123456'),
+                      AddNewAgentTitlelAndDescription(text1: 'Password', text2: 'Demo123456'),
                       const SizedBox(width: 20,),
-                      AddNewAgentTitelAndDescription(text1: 'Location', text2: 'Laxmisagar, BBSR, Bhubaneshwar-751006'),
+                      AddNewAgentTitlelAndDescription(text1: 'Location', text2: 'Laxmisagar, BBSR, Bhubaneshwar-751006'),
                     ],
                   ),
                   SizedBox(
@@ -158,7 +158,7 @@ class AddNewAgent extends StatelessWidget {
           mobile: Column(
           children: [
 
-            BackButtonAverter(text1: 'Add New Agent',),
+            BackButtonAvatar(text1: 'Add New Agent',),
             Padding(
               padding:  EdgeInsets.symmetric(horizontal: context.screenWidth*.08),
               child: Column(
@@ -200,16 +200,16 @@ class AddNewAgent extends StatelessWidget {
                     height: context.screenHeight*0.01,
 
                   ),
-                  AddNewAgentTitelAndDescription(text1: 'First Name', text2: 'Add Here'),
+                  AddNewAgentTitlelAndDescription(text1: 'First Name', text2: 'Add Here'),
                   const SizedBox(width: 2,),
-                  AddNewAgentTitelAndDescription(text1: 'Last Name', text2: 'Add Here'),
+                  AddNewAgentTitlelAndDescription(text1: 'Last Name', text2: 'Add Here'),
                   const SizedBox(width: 20,),
-                  AddNewAgentTitelAndDescription(text1: 'Phone Number', text2: 'Add Here'),
-                  AddNewAgentTitelAndDescription(text1: 'E-Mail', text2: 'Add Here'),
+                  AddNewAgentTitlelAndDescription(text1: 'Phone Number', text2: 'Add Here'),
+                  AddNewAgentTitlelAndDescription(text1: 'E-Mail', text2: 'Add Here'),
                   const SizedBox(width: 20,),
-                  AddNewAgentTitelAndDescription(text1: 'Password', text2: 'Add Here'),
+                  AddNewAgentTitlelAndDescription(text1: 'Password', text2: 'Add Here'),
                   const SizedBox(width: 20,),
-                  AddNewAgentTitelAndDescription(text1: 'Location', text2: 'Add Here'),
+                  AddNewAgentTitlelAndDescription(text1: 'Location', text2: 'Add Here'),
 
                   SizedBox(
                     height: 60,
@@ -266,7 +266,7 @@ class AddNewAgent extends StatelessWidget {
           tablet:  Column(
             children: [
 
-              BackButtonAverter(text1: 'Add New Agent',),
+              BackButtonAvatar(text1: 'Add New Agent',),
               const Divider(),
               Padding(
                 padding:  EdgeInsets.symmetric(horizontal: context.screenWidth*.08),
@@ -329,11 +329,11 @@ class AddNewAgent extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        AddNewAgentTitelAndDescription(text1: 'First Name', text2: 'Add Here'),
+                        AddNewAgentTitlelAndDescription(text1: 'First Name', text2: 'Add Here'),
                         const SizedBox(width: 20,),
-                        AddNewAgentTitelAndDescription(text1: 'Last Name', text2: 'Add Here'),
+                        AddNewAgentTitlelAndDescription(text1: 'Last Name', text2: 'Add Here'),
                         const SizedBox(width: 20,),
-                        AddNewAgentTitelAndDescription(text1: 'Phone Number', text2: 'Add Here'),
+                        AddNewAgentTitlelAndDescription(text1: 'Phone Number', text2: 'Add Here'),
                       ],
                     ),
                     SizedBox(
@@ -343,11 +343,11 @@ class AddNewAgent extends StatelessWidget {
 
                     Row(
                       children: [
-                        AddNewAgentTitelAndDescription(text1: 'E-Mail', text2: 'Add Here'),
+                        AddNewAgentTitlelAndDescription(text1: 'E-Mail', text2: 'Add Here'),
                         const SizedBox(width: 20,),
-                        AddNewAgentTitelAndDescription(text1: 'Password', text2: 'Add Here'),
+                        AddNewAgentTitlelAndDescription(text1: 'Password', text2: 'Add Here'),
                         const SizedBox(width: 20,),
-                        AddNewAgentTitelAndDescription(text1: 'Location', text2: 'Add Here'),
+                        AddNewAgentTitlelAndDescription(text1: 'Location', text2: 'Add Here'),
                       ],
                     ),
                     SizedBox(
