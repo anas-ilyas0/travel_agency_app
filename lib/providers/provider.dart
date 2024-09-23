@@ -4,10 +4,12 @@ class UserProvider extends ChangeNotifier {
   bool _isCheckedEmail = true;
   bool _isCheckedSMS = true;
   bool _isCheckedWhatsApp = true;
+  String _selectSuupplier='Supplier';
 
   bool get isCheckedEmail => _isCheckedEmail;
   bool get isCheckedSMS => _isCheckedSMS;
   bool get isCheckedWhatsApp => _isCheckedWhatsApp;
+  String get selectSupplier=>_selectSuupplier; 
 
   void toggleCheckboxEmail(bool newValue) {
     _isCheckedEmail = newValue;
@@ -16,6 +18,10 @@ class UserProvider extends ChangeNotifier {
 
   void toggleCheckboxSMS(bool newValue) {
     _isCheckedSMS = newValue;
+    notifyListeners();
+  }
+  void setSlectedSupplier(String supplier){
+    _selectSuupplier=supplier;
     notifyListeners();
   }
 

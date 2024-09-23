@@ -11,4 +11,10 @@ class AppTextstyless {
       color: Color(0XFF8897AD), fontSize: 16, fontFamily: 'ReadexPro',);
        static TextStyle leadLeadDetailFormAddNoteText = const TextStyle(fontWeight: FontWeight.w300,
       color: Color(0XFF8897AD), fontSize: 14, fontFamily: 'ReadexPro',);
+       static TextStyle localSupplierDetailTitle = const TextStyle(fontWeight: FontWeight.w600,
+      color: Color(0XFF303C6C), fontSize: 20, fontFamily: 'ReadexPro',);
+       static TextStyle localSupplierDetailSubTitle = const TextStyle(fontWeight: FontWeight.w400,
+      color: Color(0XFF303C6C), fontSize: 18, fontFamily: 'ReadexPro',);
+        static TextStyle localSupplierDetailText = const TextStyle(fontWeight: FontWeight.w400,
+      color: Color(0XFF202224), fontSize: 14, fontFamily: 'ReadexPro',);
 }

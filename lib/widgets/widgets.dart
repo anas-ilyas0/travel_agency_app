@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class Widgets {
+  
   final List<AgentsTask> agentsTasks = [
     AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
         'Sialkot Punjab 51040', 'Active', ''),
@@ -104,6 +105,7 @@ class Widgets {
     return Text(text,
         style: TextStyle(
             fontSize: fontSize,
+          
             fontWeight: FontWeight.w400,
             fontFamily: fontFamilys));
   }
@@ -446,6 +448,7 @@ class Widgets {
                   builder: (context) => const ClientDetailPackage()));
         },
         child: Container(
+        
           padding: EdgeInsets.symmetric(vertical: 12, horizontal: 20),
           decoration: BoxDecoration(
             color: AppColor.buttonTextColors,
@@ -455,11 +458,13 @@ class Widgets {
             children: [
               Text(
                 "Detail",
+                
                 style: TextStyle(
+                  // decoration: TextDecoration.underline,
                   color: Color(0XFF11345A),
                   fontSize: 16,
-                  fontFamily: 'Readex Pro bold',
-                  fontWeight: FontWeight.bold,
+                  fontFamily: fontFamilys,
+                  fontWeight: FontWeight.w400,
                 ),
               ),
               SizedBox(
@@ -477,10 +482,10 @@ class Widgets {
     return Text(
       '$textpackage',
       style: TextStyle(
-          fontSize: 18,
+          fontSize: 20,
           color: Color(0XFF83D0E3),
-          fontFamily: 'Readex Pro bold',
-          fontWeight: FontWeight.w300),
+          fontFamily: fontFamilys,
+          fontWeight: FontWeight.w500),
     );
   }
 
@@ -488,9 +493,9 @@ class Widgets {
     return Text(
       '$nameListText',
       style: TextStyle(
-          fontSize: 18,
-          fontFamily: 'Readex Pro bold',
-          fontWeight: FontWeight.w300,
+          fontSize: 20,
+          fontFamily: fontFamilys,
+          fontWeight: FontWeight.w500,
           color: Colors.black),
     );
   }
@@ -498,17 +503,17 @@ class Widgets {
   Widget PackageDeatilNumberOfListText(
       String TextNumberlist, BuildContext context) {
     return Container(
-      height: context.screenHeight * 0.06,
+      height: context.screenHeight * 0.08,
       width: context.screenWidth * 0.2,
       decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(6),
+          borderRadius: BorderRadius.circular(12),
           border: Border.all(
-            color: Color(0XFF70707033),
-            width: 1,
+            color: AppColor.packageFormColor,
+            width: 0.7,
           )),
       child: Padding(
-        padding: const EdgeInsets.only(left: 8, top: 8),
+        padding: const EdgeInsets.all(12),
         child: Text(
           '$TextNumberlist',
           style: TextStyle(fontSize: 14, color: Color(0XFF8897AD)),
@@ -519,7 +524,7 @@ class Widgets {
 
   Widget buildFeature(BuildContext context, String featureText) {
     return Padding(
-      padding: const EdgeInsets.only(top: 6.0),
+      padding: const EdgeInsets.only(left: 6.0),
       child: Row(
         children: [
           Container(
@@ -540,9 +545,12 @@ class Widgets {
               featureText,
               style: TextStyle(
                 color: Colors.black,
-                fontWeight: FontWeight.bold,
+                // fontWeight: FontWeight.bold,  Good work Usman
+                fontWeight: FontWeight.w500,
                 fontSize: 12,
                 fontFamily: 'ReadexPro',
+                //fontFamily: 'Poppin',
+
               ),
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
@@ -580,4 +588,54 @@ class Widgets {
                 ),
               ),]);
   }
+  Widget addNewPackageFormAgentNameAndClinetName(BuildContext context,String text1,String text2){
+    return SizedBox(
+      height: 80,
+      width: Responsive.isMobile(context)? null:Responsive.isTablet(context)? context.screenWidth * 0.25:context.screenWidth * 0.2 ,
+      child: Column(
+        children: [Align(alignment: Alignment.centerLeft,
+          child: Text('$text1',style:  TextStyle(fontSize: 16,fontFamily: fontFamilys,fontWeight: FontWeight.w400),)),
+       TextField(
+         cursorColor: Colors.white,
+  decoration: InputDecoration(
+     suffixIcon: const Icon(
+            Icons.arrow_drop_down, // Dropdown icon
+            color: Color(0XFFD4D7E3)),
+
+    fillColor: Colors.white,
+    filled: true,
+    hintText: '$text2',hintStyle: TextStyle(color:AppColor.hintColor , fontSize: 14),
+
+enabledBorder: const OutlineInputBorder(
+      borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners
+      borderSide: BorderSide(
+        color: Color(0XFFD4D7E3),
+        width: 1
+
+      ),
+    ),
+    focusedBorder: const OutlineInputBorder(
+      borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners
+      borderSide: BorderSide(
+        color: Color(0XFFD4D7E3),
+        width: 1
+
+      ),
+    ),
+    border: const OutlineInputBorder(
+      borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners
+      borderSide: BorderSide(
+        color: Color(0XFFD4D7E3),
+        width: 1
+
+      ),
+    ),
+
+  )
+       ),
+        ],
+      ),
+    );
+  }
+  
 }

@@ -1,24 +1,20 @@
-import 'package:fab_tech_sol/Screen/add_new_lead_detail.dart';
-import 'package:fab_tech_sol/Screen/add_new_lead_form_create_new_package.dart';
+import 'package:fab_tech_sol/Screen/add_new_lead_form.dart';
 import 'package:fab_tech_sol/Screen/lead_details.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
-import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
-import 'package:fab_tech_sol/routes/routes.dart';
 import 'package:fab_tech_sol/widgets/widgets.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import 'dashboard.dart';
+class DashBoardScreen extends StatelessWidget {
+  const DashBoardScreen({super.key});
 
-class DashboardWidget {
-  Widget dashboard(
-    BuildContext context,
-  ) {
-    final providerValue = Provider.of<UserProvider>(context);
-    return Padding(
+  @override
+  Widget build(BuildContext context) {
+     final providerValue = Provider.of<UserProvider>(context);
+    return Scaffold(
+      body:  Padding(
       padding: const EdgeInsets.symmetric(horizontal: 50,vertical: 30),
       child: SingleChildScrollView(
         child: Column(
@@ -61,8 +57,8 @@ class DashboardWidget {
                             }, context),
                             const SizedBox(width: 10),
                             Widgets().button('Add New Lead', () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => LeadDetails()));
-                            }),
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => AddNewLeadForm() ));
+                            },),
                           ],
                         ),
                     )
@@ -92,6 +88,7 @@ class DashboardWidget {
           ],
         ),
       ),
-    );
+     ) );
   }
-}
+    
+  }

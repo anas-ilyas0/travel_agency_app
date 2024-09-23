@@ -1,4 +1,5 @@
 
+import 'package:fab_tech_sol/Screen/add_new_lead_form_create_new_package.dart';
 import 'package:fab_tech_sol/Screen/add_new_local_suppliers.dart';
 import 'package:fab_tech_sol/Screen/client_detail_package.dart';
 import 'package:fab_tech_sol/Screen/international_suppliers_details.dart';
@@ -7,6 +8,7 @@ import 'package:fab_tech_sol/Screen/lead_details.dart';
 import 'package:fab_tech_sol/Screen/local_supplier_detail.dart';
 import 'package:fab_tech_sol/Screen/package.dart';
 import 'package:fab_tech_sol/Screen/package_detail.dart';
+import 'package:fab_tech_sol/Screen/package_Screen.dart';
 import 'package:fab_tech_sol/firebase_options.dart';
 import 'package:fab_tech_sol/login_page.dart';
 
@@ -62,12 +64,18 @@ class MyApp extends StatelessWidget {
         // home: AddNewLeadForm());
         // home: LocalSupplierDetail());
         // home: InternationalSuppliersDetails());
+        // home: ,
         // home: AddNewLocalSupplier());
+        // home:LocalSupplierDetail());
         home: Dashboard());
+        // home: CreateNewPackageForm());
+        // home: PackageClassScreen());
+// home: AgentScreen());
         // home: LeadDetails());
       // debugShowCheckedModeBanner: false,
       // theme: ThemeApp.myThemeData,
       // initialRoute: AppRoutes.dashboard,
+      // home: PackageClassScreen());
       // home: const Dashboard());
       // home: PackageDetail());
   

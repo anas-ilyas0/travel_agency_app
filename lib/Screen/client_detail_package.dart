@@ -1,6 +1,7 @@
 import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/Screen/AppText/TextStyle.dart';
+import 'package:fab_tech_sol/Screen/pacakge_details2.dart';
 import 'package:fab_tech_sol/app_text_style.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
 import 'package:fab_tech_sol/widgets/widgets.dart';
@@ -74,7 +75,9 @@ class ClientDetailPackage extends StatelessWidget {
                 ),
                 Widgets().button(
                   'Add New Package',
-                  () {},
+                  () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => PacakgeDetails2(),));
+                  },
                 )
               ],
             ),

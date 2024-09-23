@@ -8,7 +8,6 @@ import 'package:fab_tech_sol/widgets/package_detail_container.dart';
 import 'package:fab_tech_sol/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
-
 class Package extends StatelessWidget {
   const Package({super.key});
 
@@ -33,7 +32,7 @@ class Package extends StatelessWidget {
                   'Packages Details',
                   style: TextStyle(
                       fontSize: 20,
-                      fontFamily: 'ReadexPro',
+                      fontFamily: 'Readex Pro',
                       color: Color(0XFF11345A),
                       fontWeight: FontWeight.w700),
                 ),
@@ -51,18 +50,14 @@ class Package extends StatelessWidget {
                       ),
                     ),
                     onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => PackageDetail(),
-                          ));
+                     
                     },
                     child: Text(
                       'Add New Package',
                       style: TextStyle(
                           fontSize: 14,
                           color: AppColor.buttonTextColor,
-                          fontFamily: 'ReadexPro'),
+                          fontFamily: 'Readex Pro'),
                     ),
                   ),
                 ),
@@ -101,7 +96,7 @@ class Package extends StatelessWidget {
                 'Package Detail',
                 style: TextStyle(
                   fontSize: 18, // Updated size for better readability
-                  fontFamily: 'ReadexPro',
+                  fontFamily: 'Readex Pro',
                   color: const Color(0XFF11345A),
                   fontWeight: FontWeight.w700,
                 ),
@@ -117,19 +112,14 @@ class Package extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => PackageDetail(), // Navigate to package detail
-                      ),
-                    );
+                   
                   },
                   child: Text(
                     'Add New Package',
                     style: TextStyle(
                       fontSize: 12, // Slightly increased font for clarity
                       color: AppColor.buttonTextColor,
-                      fontFamily: 'ReadexPro',
+                      fontFamily: 'Readex Pro',
                     ),
                   ),
                 ),
@@ -208,7 +198,7 @@ class Package extends StatelessWidget {
                                 'Detail',
                                 style: TextStyle(
                                   fontSize: 14,
-                                  fontFamily: 'ReadexPro',
+                                  fontFamily: 'Readex Pro',
                                 ),
                               ),
                             ),
@@ -216,7 +206,7 @@ class Package extends StatelessWidget {
                         ),
                         SizedBox(height: context.screenHeight * 0.01),
                         Text(
-                          'The Premium Plan offers unlimited ticket handling annually, making it perfect for those who receive multiple tickets throughout the year. This plan ensures that no matter how many tickets you get, we’ve got you covered with top-notch service and support. The Premium Plan offers unlimited ticket handling annually, making it perfect for those who receive multiple tickets throughout the year. This plan ensures that no matter how many tickets you get, we’ve got you covered with top-notch service and support',
+                          'The Premium Plan offers unlimited ticket handling annually, making it perfect for those who receive multiple tickets throughout the year. This plan ensures that no matter how many tickets you get, we’ve got you covered with top-notch service and support.',
                           style: TextStyle(
                             fontSize: 14,
                             fontWeight: FontWeight.w500,
@@ -231,14 +221,14 @@ class Package extends StatelessWidget {
                           style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
-                            fontFamily: 'ReadexPro',
+                            fontFamily: 'Readex Pro',
                           ),
                         ),
                         SizedBox(height: context.screenHeight * 0.01),
-                    Widgets().buildFeature(context, 'Unlimited traffic ticket handling per year'),
+                      Widgets().buildFeature(context, 'Unlimited traffic ticket handling per year'),
                       Widgets().  buildFeature(context, 'Priority processing for faster resolution'),
                       Widgets().  buildFeature(context, 'Dedicated customer support with extended hours'),
-                     Widgets().   buildFeature(context, 'Comprehensive management tools and notifications'),
+                      Widgets().   buildFeature(context, 'Comprehensive management tools and notifications'),
                       ],
                     ),
                   ),

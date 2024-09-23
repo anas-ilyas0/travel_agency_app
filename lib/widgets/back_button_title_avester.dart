@@ -1,4 +1,5 @@
 import 'package:fab_tech_sol/Image.dart';
+import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:flutter/material.dart';
 
@@ -9,7 +10,7 @@ class BackButtonAverter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 32, right: 32),
+      padding: const EdgeInsets.only(left: 42, right: 48),
       child: SizedBox(
         height: context.screenHeight * 0.1,
         child: Row(
@@ -18,7 +19,9 @@ class BackButtonAverter extends StatelessWidget {
             Row(
               children: [
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
                   style: ElevatedButton.styleFrom(
                       shape: const CircleBorder(),
                       padding: const EdgeInsets.all(16),
@@ -28,19 +31,19 @@ class BackButtonAverter extends StatelessWidget {
                 ),
                  Text(
                   text1,
-                  style: const TextStyle(
+                  style:  TextStyle(
                       fontSize: 20,
                      fontWeight: FontWeight.w600,
-                      fontFamily: 'ReadexPro',
+                      fontFamily: fontFamilys,
                       color: Color(0XFF11345A)),
                 ),
               ],
             ),
             Row(
               children: [
-                const Text(
+                 Text(
                   'Your Name',
-                  style: TextStyle(fontFamily: 'Readex Pro'),
+                  style: TextStyle(fontFamily: fontFamilys,fontSize: 15,fontWeight: FontWeight.w500),
                 ),
                 SizedBox(
                   width: context.screenWidth * 0.01,

@@ -1,3 +1,4 @@
+import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
@@ -13,37 +14,37 @@ class AddNewLeadForm extends StatefulWidget {
 }
 
 class _AddNewLeadFormState extends State<AddNewLeadForm> {
-  List<String> agents = ['John Doe', 'Jane Smith', 'James Bond', 'Tony Stark'];
-  List<String> filteredAgents = [];
+ // List<String> agents = ['John Doe', 'Jane Smith', 'James Bond', 'Tony Stark'];
+  //List<String> filteredAgents = [];
 
   // TextController for the search field
   TextEditingController searchController = TextEditingController();
 
-  @override
-  void initState() {
-    super.initState();
-    filteredAgents = agents;
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   filteredAgents = agents;
+  // }
 
-  void filterAgents(String query) {
-    setState(() {
-      if (query.isEmpty) {
-        filteredAgents = agents;
-      } else {
-        filteredAgents = agents
-            .where((agent) => agent.toLowerCase().contains(query.toLowerCase()))
-            .toList();
-      }
-    });
-  }
+  // void filterAgents(String query) {
+  //   setState(() {
+  //     if (query.isEmpty) {
+  //       filteredAgents = agents;
+  //     } else {
+  //       filteredAgents = agents
+  //           .where((agent) => agent.toLowerCase().contains(query.toLowerCase()))
+  //           .toList();
+  //     }
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Text(''),
+      //  leading: const Text(''),
         title: Padding(
-          padding: const EdgeInsets.only(top: 20),
+          padding: const EdgeInsets.only(top: 10,left: 20,right: 20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -87,8 +88,10 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 115),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Expanded(
+                  Flexible(
+                    flex: 2,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -96,7 +99,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                           'Add New Lead Details',
                           style: TextStyle(
                               color: color,
-                              fontFamily: 'ReadexPro',
+                              fontFamily: fontFamilys,
                               fontWeight: FontWeight.w700,
                               fontSize: 20),
                         ),
@@ -105,7 +108,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                           'Agent Details',
                           style: TextStyle(
                               color: color,
-                              fontFamily: 'ReadexPro',
+                              fontFamily: fontFamilys,
                               fontWeight: FontWeight.w600,
                               fontSize: 22),
                         ),
@@ -123,10 +126,13 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                       ],
                     ),
                   ),
-                  Image(
-                      height: 200,
-                      width: 200,
-                      image: AssetImage('${imageUrl}form.png')),
+                  Flexible(
+                    flex: 2,
+                    child: Image(
+                        height: 200,
+                        width: 200,
+                        image: AssetImage('${imageUrl}form.png')),
+                  ),
                 ],
               ),
             ),
@@ -359,49 +365,58 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                   ),
                   Row(
                     children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Destination',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 13,
-                                fontFamily: fontFamilys,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          Widgets().textFormField('London'),
-                        ],
+                      Flexible(
+                        flex: 2,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Destination',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 13,
+                                  fontFamily: fontFamilys,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Widgets().textFormField('London'),
+                          ],
+                        ),
                       ),
                       const SizedBox(width: 15),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Travel Date',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 13,
-                                fontFamily: fontFamilys,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          Widgets().textFormField('05/07/2024'),
-                        ],
+                      Flexible(
+                        flex: 2,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Travel Date',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 13,
+                                  fontFamily: fontFamilys,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Widgets().textFormField('05/07/2024'),
+                          ],
+                        ),
                       ),
                       const SizedBox(width: 15),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Departure Date',
-                            style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 13,
-                                fontFamily: fontFamilys,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          Widgets().textFormField('22/07/2024'),
-                        ],
+                      Flexible(
+                        flex: 2,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Departure Date',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 13,
+                                  fontFamily: fontFamilys,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            Widgets().textFormField('22/07/2024'),
+                          ],
+                        ),
                       ),
                     ],
                   )
@@ -428,7 +443,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                   Text(
                     'Add Note',
                     style: TextStyle(
-                        color: Colors.black,
+                        color: AppColor.blackColor,
                         fontSize: 13,
                         fontFamily: fontFamilys,
                         fontWeight: FontWeight.bold),
@@ -458,53 +473,84 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                   ),
                   Consumer<UserProvider>(
                     builder: (context, userProvider, child) {
-                      return Row(
-                        children: [
-                          Widgets().checkBox(userProvider.isCheckedEmail,
-                              (bool? newValue) {
-                            userProvider.toggleCheckboxEmail(newValue ?? false);
-                          }),
-                          const SizedBox(width: 5),
-                          Text(
-                            'Email',
-                            style: TextStyle(
-                                color: Colors.black, fontFamily: fontFamilys),
-                          ),
-                          const SizedBox(width: 80),
-                          Widgets().checkBox(userProvider.isCheckedSMS,
-                              (bool? newValue) {
-                            userProvider.toggleCheckboxSMS(newValue ?? false);
-                          }),
-                          Text(
-                            'SMS',
-                            style: TextStyle(
-                                color: Colors.black, fontFamily: fontFamilys),
-                          ),
-                          const SizedBox(width: 80),
-                          Widgets().checkBox(userProvider.isCheckedWhatsApp,
-                              (bool? newValue) {
-                            userProvider
-                                .toggleCheckboxWhatsApp(newValue ?? false);
-                          }),
-                          Text(
-                            'WhatsApp',
-                            style: TextStyle(
-                                color: Colors.black, fontFamily: fontFamilys),
-                          ),
-                          const SizedBox(width: 5),
-                        ],
-                      );
+                      return Wrap(
+  spacing: context.screenWidth * 0.05, // Adds spacing between elements
+  runSpacing: 10, // Adds spacing when wrapping to a new line
+  children: [
+    Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Widgets().checkBox(userProvider.isCheckedEmail, (bool? newValue) {
+          userProvider.toggleCheckboxEmail(newValue ?? false);
+        }),
+        const SizedBox(width: 5),
+        Flexible(
+          child: Text(
+            'Email',
+            style: TextStyle(
+              color: Colors.black,
+              fontFamily: fontFamilys,
+            ),
+          ),
+        ),
+      ],
+    ),
+    Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Widgets().checkBox(userProvider.isCheckedSMS, (bool? newValue) {
+          userProvider.toggleCheckboxSMS(newValue ?? false);
+        }),
+        const SizedBox(width: 5),
+        Flexible(
+          child: Text(
+            'SMS',
+            style: TextStyle(
+              color: Colors.black,
+              fontFamily: fontFamilys,
+            ),
+          ),
+        ),
+      ],
+    ),
+    Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Widgets().checkBox(userProvider.isCheckedWhatsApp, (bool? newValue) {
+          userProvider.toggleCheckboxWhatsApp(newValue ?? false);
+        }),
+        const SizedBox(width: 5),
+        Flexible(
+          child: Text(
+            'WhatsApp',
+            style: TextStyle(
+              color: Colors.black,
+              fontFamily: fontFamilys,
+            ),
+          ),
+        ),
+      ],
+    ),
+  ],
+);
+
                     },
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 70),
                     child: Row(
                       children: [
-                        Widgets().finalButton(
-                            'Cancel', const Color(0XFFE7E7E7), () {}),
+                        Flexible(
+                          flex: 2,
+                          child: Widgets().finalButton(
+                              'Cancel', const Color(0XFFE7E7E7), () {}),
+                        ),
                         const SizedBox(width: 15),
-                        Widgets()
-                            .finalButton('Save', const Color(0XFF83D0E3), () {})
+                        Flexible(
+                          flex: 2,
+                          child: Widgets()
+                              .finalButton('Save', const Color(0XFF83D0E3), () {}),
+                        )
                       ],
                     ),
                   ),

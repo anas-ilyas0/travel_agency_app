@@ -1,5 +1,6 @@
 import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Image.dart';
+import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -23,13 +24,13 @@ class PacakgeDetails2 extends StatelessWidget {
                   SizedBox(
                     height: context.screenHeight * 0.04,
                   ),
-                  const Text(
+                   Text(
                     'Package Details',
                     style: TextStyle(
                         fontSize: 22,
-                        color: Color(0XFF303C6C),
-                        fontFamily: 'Readex Pro bold',
-                        fontWeight: FontWeight.w400),
+                        color: AppColor.buttonTextColor,
+                        fontFamily: fontFamilys,
+                        fontWeight: FontWeight.w700),
                   ),
                   SizedBox(
                     height: context.screenHeight * 0.04,
@@ -38,22 +39,22 @@ class PacakgeDetails2 extends StatelessWidget {
                       alignment: Alignment.centerLeft,
                       child: Row(
                         children: [
-                          const Text(
+                           Text(
                             'price',
                             style: TextStyle(
                                 fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'Readex Pro'),
+                                fontWeight: FontWeight.w400,
+                                fontFamily: fontFamilys),
                           ),
                           SizedBox(
                             width: context.screenWidth * 0.2,
                           ),
-                          const Text(
+                           Text(
                             'Types of people',
                             style: TextStyle(
                                 fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                                fontFamily: 'Readex Pro'),
+                                fontWeight: FontWeight.w400,
+                                fontFamily: fontFamilys),
                           ),
                         ],
                       )),
@@ -68,9 +69,9 @@ class PacakgeDetails2 extends StatelessWidget {
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8)),
-                        child: const Padding(
+                        child:  Padding(
                           padding: EdgeInsets.all(14.0),
-                          child: Text('\$ 500'),
+                          child: Text('\$ 500',style: TextStyle(fontFamily: fontFamilys,fontWeight: FontWeight.w300,color: AppColor.hintColor),),
                         ),
                       ),
                       SizedBox(
@@ -82,13 +83,13 @@ class PacakgeDetails2 extends StatelessWidget {
                         decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(8)),
-                        child: const Padding(
+                        child:  Padding(
                           padding: EdgeInsets.all(14.0),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text('Adult'),
-                              Icon(Icons.arrow_downward)
+                              Text('Adult',style: TextStyle(fontFamily: fontFamilys,fontWeight: FontWeight.w300,color: AppColor.hintColor),),
+                              Icon(Icons.arrow_downward,weight: 0.5,size: 20,)
                             ],
                           ),
                         ),
@@ -98,11 +99,11 @@ class PacakgeDetails2 extends StatelessWidget {
                   SizedBox(
                     height: context.screenHeight * 0.03,
                   ),
-                  const Text('Place',
+                  Text('Place',
                       style: TextStyle(
                           fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'Readex Pro')),
+                          fontWeight: FontWeight.w400,
+                          fontFamily: fontFamilys)),
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Container(
@@ -141,11 +142,11 @@ class PacakgeDetails2 extends StatelessWidget {
                                           color: AppColor.borderColor3),
                                       borderRadius: BorderRadius.circular(8),
                                     ),
-                                    child: const Padding(
+                                    child:  Padding(
                                       padding: EdgeInsets.only(
                                           left: 7, top: 12),
                                       child: Text(
-                                          'Laxmisagar, BBSR, Bhubaneshwar-751006'),
+                                          'Laxmisagar, BBSR, Bhubaneshwar-751006',style: TextStyle(fontFamily: fontFamilys,fontWeight: FontWeight.w300,color: AppColor.hintColor),),
                                     ),
                                   ),
                                   GestureDetector(
@@ -169,11 +170,11 @@ class PacakgeDetails2 extends StatelessWidget {
                   SizedBox(
                     height: context.screenHeight * 0.03,
                   ),
-                  const Text('Activity',
+                   Text('Activity',
                       style: TextStyle(
                           fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          fontFamily: 'Readex Pro')),
+                          fontWeight: FontWeight.w400,
+                          fontFamily: fontFamilys)),
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Container(
@@ -196,6 +197,7 @@ class PacakgeDetails2 extends StatelessWidget {
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Checkbox(
+
                                     materialTapTargetSize:
                                         MaterialTapTargetSize.shrinkWrap,
                                     activeColor: AppColor.blueColor,
@@ -212,16 +214,16 @@ class PacakgeDetails2 extends StatelessWidget {
                                           color: AppColor.borderColor3),
                                       borderRadius: BorderRadius.circular(8),
                                     ),
-                                    child: const Padding(
+                                    child:  Padding(
                                       padding: EdgeInsets.only(
                                           left: 7, top: 10),
                                       child: Text(
-                                          'Share or listen to a success story.'),
+                                          'Share or listen to a success story.',style: TextStyle(fontFamily: fontFamilys,fontWeight: FontWeight.w300,color: AppColor.hintColor),),
                                     ),
                                   ),
                                   GestureDetector(
                                     child: IconButton(
-                                      icon: Icon(Icons.remove_circle_outline,
+                                      icon: Icon(Icons.remove_circle_outline,weight: 0.1,
                                           color: AppColor.blueColor),
                                       onPressed: () {},
                                     ),

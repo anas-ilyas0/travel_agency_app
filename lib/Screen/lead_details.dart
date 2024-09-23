@@ -25,7 +25,9 @@ class LeadDetails extends StatelessWidget {
              
              // Back Button
              ElevatedButton(
-               onPressed: () {},
+               onPressed: () {
+                Navigator.pop(context);
+               },
                style: ElevatedButton.styleFrom(
           shape: const CircleBorder(),
           padding: const EdgeInsets.all(16),
@@ -129,8 +131,11 @@ class LeadDetails extends StatelessWidget {
                       SizedBox(
                         width: context.screenWidth * 0.01,
                       ),
-                       Text('Jhon Doe',
-                          style:AppTextstyless.packageClientDetailTextStyleSubTitle),
+                       Flexible(
+                        flex: 1,
+                         child: Text('Jhon Doe',
+                            style:AppTextstyless.packageClientDetailTextStyleSubTitle),
+                       ),
                     ],
                   ),
                    SizedBox(
@@ -159,7 +164,7 @@ class LeadDetails extends StatelessWidget {
   children: [
     // Client Name Label
     Expanded(
-      flex: -1,
+      flex: 1,
       child: Text(
         'Client Name:',
         style: AppTextstyless.packageClientDetailTextStyle,
@@ -169,7 +174,7 @@ class LeadDetails extends StatelessWidget {
    SizedBox(width: context.screenWidth*0.06,),
    
     Expanded(
-      flex:-1,
+      flex:1,
       child: Text(
         'Jhon Doe',
         style: AppTextstyless.packageClientDetailTextStyleSubTitle,
@@ -181,7 +186,7 @@ class LeadDetails extends StatelessWidget {
       width: context.screenWidth * 0.087,
     ),
     Expanded(
-      flex: -1,
+      flex: 1,
       child: Text(
         'Phone No:',
         style: AppTextstyless.packageClientDetailTextStyle,
@@ -194,7 +199,7 @@ class LeadDetails extends StatelessWidget {
     ),
     
     Expanded(
-      flex: -1,
+      flex: 1,
       child: Text(
         'XXXXXXXXXXX',
         style: AppTextstyless.packageClientDetailTextStyleSubTitle,
@@ -442,7 +447,7 @@ class LeadDetails extends StatelessWidget {
                   Row(
                     children: [
                        Flexible(
-                        flex: 1,
+                        flex: 2,
                          child: Text('Package Amount:',
                             style:AppTextstyless.packageClientDetailTextStyle),
                        ),
@@ -462,7 +467,7 @@ class LeadDetails extends StatelessWidget {
                         width: context.screenWidth * 0.083,
                       ),
                     Flexible(
-                      flex: 1,
+                      flex: 2,
                       child: Text('Paid Amount:',
                             style:AppTextstyless.packageClientDetailTextStyle),
                     ),
@@ -482,7 +487,7 @@ class LeadDetails extends StatelessWidget {
                         width: context.screenWidth * 0.07,
                       ),
                        Flexible(
-                        flex: 1,
+                        flex: 2,
                          child: Text('Outstanding Amount:',
                             style:AppTextstyless.packageClientDetailTextStyle),
                        ),

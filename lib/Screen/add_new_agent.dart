@@ -26,8 +26,8 @@ class AddNewAgent extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   SizedBox(height: context.screenHeight*0.05,),
-                  const Align(alignment: Alignment.centerLeft,
-                      child: Text('Agent Details',style: TextStyle(fontSize: 23,color: Color(0XFF11345A),fontFamily: 'Readex Pro'),)),
+                   Align(alignment: Alignment.centerLeft,
+                      child: Text('Agent Details',style: TextStyle(fontSize: 23,color:AppColor.addnewagent,fontFamily: fontFamilys,fontWeight: FontWeight.w600),)),
                   SizedBox(height: context.screenHeight*0.02,),
                   Align(
                     alignment: Alignment.centerLeft,
@@ -42,6 +42,7 @@ class AddNewAgent extends StatelessWidget {
                               width: 150,
                               decoration: BoxDecoration(
                                 color: Colors.white,
+                                border: Border.all(color: AppColor.packageFormColor,width: 0.5),
                                 borderRadius: BorderRadius.circular(12)
                               ),
                             ),
@@ -59,7 +60,8 @@ class AddNewAgent extends StatelessWidget {
                                 mainAxisSize: MainAxisSize.min, // Make Row as wide as the content
                                 children: [
                                   Icon(Icons.file_upload_outlined,
-                                    color: Colors.white,), // Icon
+                                    color: Colors.white,
+                                    ), // Icon
                                   SizedBox(width: 8), // Space between icon and text
                                   Text('Upload Image',style: TextStyle(color: Colors.white),), // Text
                                 ],
@@ -81,11 +83,11 @@ class AddNewAgent extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      AddNewAgentTitelAndDescription(text1: 'First Name', text2: 'Add Here'),
+                      AddNewAgentTitelAndDescription(text1: 'First Name', text2: 'John Doe'),
                       const SizedBox(width: 20,),
-                      AddNewAgentTitelAndDescription(text1: 'Last Name', text2: 'Add Here'),
+                      AddNewAgentTitelAndDescription(text1: 'Last Name', text2: 'John Doe'),
                       const SizedBox(width: 20,),
-                      AddNewAgentTitelAndDescription(text1: 'Phone Number', text2: 'Add Here'),
+                      AddNewAgentTitelAndDescription(text1: 'Phone Number', text2: '+1 (555) 987-6543'),
                     ],
                   ),
                   SizedBox(
@@ -95,11 +97,11 @@ class AddNewAgent extends StatelessWidget {
 
                   Row(
                     children: [
-                      AddNewAgentTitelAndDescription(text1: 'E-Mail', text2: 'Add Here'),
+                      AddNewAgentTitelAndDescription(text1: 'E-Mail', text2: 'john.smith@gmail.com'),
                       const SizedBox(width: 20,),
-                      AddNewAgentTitelAndDescription(text1: 'Password', text2: 'Add Here'),
+                      AddNewAgentTitelAndDescription(text1: 'Password', text2: 'Demo123456'),
                       const SizedBox(width: 20,),
-                      AddNewAgentTitelAndDescription(text1: 'Location', text2: 'Add Here'),
+                      AddNewAgentTitelAndDescription(text1: 'Location', text2: 'Laxmisagar, BBSR, Bhubaneshwar-751006'),
                     ],
                   ),
                   SizedBox(

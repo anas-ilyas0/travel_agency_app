@@ -1,16 +1,38 @@
-import 'package:fab_tech_sol/Screen/invoice_details_invoice.dart';
+import 'package:fab_tech_sol/Screen/add_new_lead_form.dart';
 import 'package:fab_tech_sol/Screen/lead_details.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
-import 'package:fab_tech_sol/Screen/add_new_lead_form.dart';
 import 'package:fab_tech_sol/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class LeadsWidget {
-  Widget leads(BuildContext context, TabController leadsTabController) {
-    final providerValue = Provider.of<UserProvider>(context);
+class LeadScreen extends StatefulWidget {
+  const LeadScreen({super.key});
+
+  @override
+  State<LeadScreen> createState() => _LeadScreenState();
+}
+
+class _LeadScreenState extends State<LeadScreen> with SingleTickerProviderStateMixin {
+   late TabController leadsTabController;
+   @override
+  void initState() {
+    super.initState();
+    leadsTabController = TabController(length: 3, vsync: this);
+  }
+
+  @override
+  void dispose() {
+    leadsTabController.dispose();
+    super.dispose();
+
+  }
+
+
+  Widget build(BuildContext context) {
+    
+ final providerValue = Provider.of<UserProvider>(context);
 
     final isMobile = Responsive.isMobile(context);
     final isTablet = Responsive.isTablet(context);
@@ -20,8 +42,8 @@ class LeadsWidget {
         : isTablet
             ? 40.0 // Tablet padding
             : 75.0; // Desktop padding
-
-    return Padding(
+    return Scaffold(
+      body: Padding(
       padding: EdgeInsets.only(
           top: Responsive.isMobile(context) ? 2 : 35,
           left: Responsive.isMobile(context) ? 16 : 50,
@@ -83,7 +105,7 @@ class LeadsWidget {
                               MaterialPageRoute(
                                 builder: (context) => AddNewLeadForm(),
                               ));
-                        })
+                        },)
                       : SizedBox.shrink(),
                 ],
               ),
@@ -109,13 +131,13 @@ class LeadsWidget {
                             MaterialPageRoute(
                               builder: (context) => AddNewLeadForm(),
                             ));
-                      }),
+                      },),
                     ],
                   ),
                 ),
 
           Expanded(
-            child: TabBarView(controller: leadsTabController, children: [
+            child: TabBarView(controller:leadsTabController, children: [
               Padding(
                 padding: EdgeInsets.symmetric(
                   horizontal: horizontalPadding, // Responsive horizontal padding
@@ -329,6 +351,7 @@ class LeadsWidget {
           // Expanded content area (Grid/List view for leads)
 
 
-      );
+      )
+    );
   }
 }

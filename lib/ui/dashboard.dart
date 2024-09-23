@@ -1,6 +1,7 @@
 import 'package:fab_tech_sol/AppColor/app_color.dart';
+import 'package:fab_tech_sol/Screen/international_suppliers_details.dart';
 import 'package:fab_tech_sol/Screen/package.dart';
-import 'package:fab_tech_sol/Screen/package_widget.dart';
+import 'package:fab_tech_sol/Screen/package_Screen.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
@@ -48,14 +49,15 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    final provider=Provider.of<UserProvider>(context);
     return Scaffold(
       appBar: AppBar(
         elevation: .2,
-        toolbarHeight:77,
+        toolbarHeight: 77,
         title: Responsive.isDesktop(context)
             ? Padding(
-              padding: const EdgeInsets.only(top: 8),
-              child: Row(
+                padding: const EdgeInsets.only(top: 8),
+                child: Row(
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(left: 50),
@@ -69,7 +71,9 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
                       ),
                     ),
                     Padding(
-                      padding:  EdgeInsets.only(left: context.screenWidth*.12, ),
+                      padding: EdgeInsets.only(
+                        left: context.screenWidth * .12,
+                      ),
                       child: TabBar(
                         labelStyle: TextStyle(
                             fontFamily: fontFamilys,
@@ -90,21 +94,52 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
                         // ),
 
                         // indicatorPadding: EdgeInsets.only(top: 45),
-                        labelPadding: EdgeInsets.symmetric(horizontal: 24,vertical: 8),
+                        labelPadding:
+                            EdgeInsets.symmetric(horizontal: 24, vertical: 8),
                         isScrollable: true,
 
-                        tabs: const [
+                        tabs:  [
                           Tab(text: 'Dashboard'),
                           Tab(text: 'Leads'),
                           Tab(text: 'Agents'),
-                          Tab(text: 'Supplier'),
+                          Tab(
+                              child: GestureDetector(
+                                onTap: () {
+                                  showMenu(
+                                    context: context,
+                                    position: const RelativeRect.fromLTRB(
+                                        1000, 57, 500, 20),
+                                    items: [
+                                      const PopupMenuItem<String>(
+                                        value: 'Local Supplier',
+                                        child: Text('Local Supplier'),
+                                      ),
+                                      const PopupMenuItem<String>(
+                                        value: 'International Supplier',
+                                        child: Text('International Supplier'),
+                                      ),
+                                    ],
+                                  ).then((value) {
+                                    if (value != null) {
+                                      provider.setSlectedSupplier(value);
+                                    }
+                                  });
+                                },
+                                child: Row(
+                                  children: [
+                                    Text(provider.selectSupplier),
+                                    const Icon(Icons.arrow_drop_down)
+                                  ],
+                                ),
+                              ),
+                            ),
                           Tab(text: 'Package'),
                         ],
                       ),
                     ),
                   ],
                 ),
-            )
+              )
             : null,
         leading:
             Responsive.isMobile(context) && dashboardTabController.index == 0
@@ -122,7 +157,7 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
                 : null,
         actions: [
           Padding(
-            padding:  EdgeInsets.only(right: context.screenWidth*.01),
+            padding: EdgeInsets.only(right: context.screenWidth * .01),
             child: Widgets().circularAvatar(text: 'Name here'),
           ),
           if (dashboardTabController.index == 0) ...[
@@ -148,12 +183,12 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
             child: TabBarView(
               controller: dashboardTabController,
               children: [
-                DashboardWidget().dashboard(context),
-                LeadsWidget().leads(context, leadsTabController),
-                AgentsWidget().agent(context),
-                SupplierWidget().supplier(context),
-               PackageWidget().package(context),
-               Package(),
+                DashBoardScreen(),
+                LeadScreen(),
+                AgentScreen(),
+                provider.selectSupplier=='Local Supplier'?SupplierScreen():InternationalSuppliersDetails(),
+               
+                PackageClassScreen()
               ],
             ),
           ),

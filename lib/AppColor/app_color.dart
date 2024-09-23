@@ -1,3 +1,4 @@
+import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:flutter/material.dart';
 
 class AppColor {
@@ -14,4 +15,7 @@ class AppColor {
   static Color darkGrey = const Color(0XFF707070);
   static Color textColor = const Color(0XFF0C1421);
   static Color dividerColor = const Color(0XFFCDCDCD);
+  static Color blackColor= Colors.black;
+  static Color packageFormColor=Color(0XFFD4D7E3);
+   static Color addnewagent=Color(0XFF303C6C);
 }

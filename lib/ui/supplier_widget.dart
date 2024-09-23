@@ -1,17 +1,22 @@
+import 'package:fab_tech_sol/Screen/add_new_local_suppliers.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
+import 'package:fab_tech_sol/resources/helper_function.dart';
 import 'package:fab_tech_sol/ui/tasks_data_source.dart';
 import 'package:fab_tech_sol/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../resources/helper_function.dart';
+class SupplierScreen extends StatelessWidget {
+  const SupplierScreen({super.key});
 
-class SupplierWidget {
-  Widget supplier(BuildContext context) {
-    final providerValue = Provider.of<UserProvider>(context);
-    return Padding(
+  @override
+  Widget build(BuildContext context) {
+      final providerValue = Provider.of<UserProvider>(context);
+    return Scaffold(
+      body: 
+      Padding(
       padding: const EdgeInsets.only(top: 25,left: 60,right: 60),
       child: SingleChildScrollView(
         child: Column(
@@ -35,7 +40,9 @@ class SupplierWidget {
                       providerValue.updateSelectedItem2(newValue);
                     }, context),
                     const SizedBox(width: 15),
-                    Widgets().button('Add Supplier', () {})
+                    Widgets().button('Add Supplier', () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => AddNewLocalSupplier(),));
+                    },)
                   ],
                 ),
               ],
@@ -65,6 +72,7 @@ class SupplierWidget {
           ],
         ),
       ),
+    )
     );
   }
 }
