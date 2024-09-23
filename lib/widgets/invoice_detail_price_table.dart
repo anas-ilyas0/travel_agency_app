@@ -1,3 +1,4 @@
+import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +24,7 @@ class InvoiceDetailPriceTable extends StatelessWidget {
             Expanded(child: Align(
               alignment: Alignment.centerRight,
               child: Text('$Text2',
-                  style: const TextStyle(fontSize: 12, color: Color(0XFFD4D7E3))),
+                  style:  TextStyle(fontSize: 12, color: Color(0XFF000000),fontFamily: fontFamilys)),
             ), ),
            
           ],

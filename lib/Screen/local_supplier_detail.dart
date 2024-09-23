@@ -3,7 +3,7 @@ import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/Screen/AppText/TextStyle.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
-import 'package:fab_tech_sol/widgets/back_button_title_avester.dart';
+import 'package:fab_tech_sol/widgets/back_button_title_avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -16,19 +16,19 @@ class LocalSupplierDetail extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          SizedBox(
-            height: context.screenHeight * 0.02,
-          ),
-          BackButtonAverter(
+          // SizedBox(
+          //   height: context.screenHeight * 0.02,
+          // ),
+          BackButtonAvatar(
             text1: 'Local Supplier Details',
           ),
-          const Divider(),
+          const Divider(thickness: 0.5,),
           SizedBox(
             height: context.screenHeight * 0.01,
           ),
           //
           Container(
-            height: context.screenHeight * 0.82,
+            height: context.screenHeight * 0.83,
             width: context.screenWidth * 0.92,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),

@@ -1,7 +1,9 @@
+import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Image.dart';
+import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/widgets/addnewagent.dart';
-import 'package:fab_tech_sol/widgets/back_button_title_avester.dart';
+import 'package:fab_tech_sol/widgets/back_button_title_avatar.dart';
 import 'package:flutter/material.dart';
 
 class AddNewLocalSupplier extends StatelessWidget {
@@ -17,7 +19,7 @@ class AddNewLocalSupplier extends StatelessWidget {
              SizedBox(
               height: context.screenHeight * 0.02,
             ),
-            BackButtonAverter(text1: 'Add New Local Supplier',),
+            BackButtonAvatar(text1: 'Add New Local Supplier',),
             const Divider(),
            Padding(padding: const EdgeInsets.only(left: 90,right: 90),
            child: 
@@ -36,9 +38,11 @@ class AddNewLocalSupplier extends StatelessWidget {
                  Row(
                    children: [
                      Container(
-                      height: 150,
-                      width: 150,
-                      color: Colors.white,
+                      height: context.screenHeight*0.25,
+                      width: context.screenWidth*0.12,
+                    decoration: BoxDecoration( color: Colors.white,
+                        borderRadius: BorderRadius.circular(12),
+                      border: Border.all(color: AppColor.borderColor,width: 0.5)),
                      ),
                         const SizedBox(
                   width: 10,
@@ -64,9 +68,11 @@ class AddNewLocalSupplier extends StatelessWidget {
                 ),
                 SizedBox(width: context.screenWidth*0.02,),
                  Container(
-                      height: context.screenHeight*0.22,
+                      height: context.screenHeight*0.25,
                       width: context.screenWidth*0.12,
-                      color: Colors.white,
+                     decoration: BoxDecoration( color: Colors.white,
+                        borderRadius: BorderRadius.circular(12),
+                      border: Border.all(color: AppColor.borderColor,width: 0.5)),
                      ),
                         SizedBox(
                   width: context.screenWidth*0.01,
@@ -113,11 +119,11 @@ class AddNewLocalSupplier extends StatelessWidget {
              Row(
             //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                children: [
-                 AddNewAgentTitelAndDescription(text1: 'First Name', text2: 'Add Here'),
+                 AddNewAgentTitlelAndDescription(text1: 'First Name', text2: 'Add Here'),
                  SizedBox(width: context.screenWidth*0.01,),
-                  AddNewAgentTitelAndDescription(text1: 'Last Name', text2: 'Add Here'),
+                  AddNewAgentTitlelAndDescription(text1: 'Last Name', text2: 'Add Here'),
                   SizedBox(width: context.screenWidth*0.01,),
-                   AddNewAgentTitelAndDescription(text1: 'Phone Number', text2: 'Add Here'),
+                   AddNewAgentTitlelAndDescription(text1: 'Phone Number', text2: 'Add Here'),
                ],
              ),
               SizedBox(
@@ -138,9 +144,9 @@ class AddNewLocalSupplier extends StatelessWidget {
              Row(
             //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                children: [
-                 AddNewAgentTitelAndDescription(text1: 'Supplier Company Name', text2: 'Add Here'),
+                 AddNewAgentTitlelAndDescription(text1: 'Supplier Company Name', text2: 'Add Here'),
                  SizedBox(width: context.screenWidth*0.01,),
-                  AddNewAgentTitelAndDescription(text1: 'Supplier Company Address', text2: 'Add Here'),
+                  AddNewAgentTitlelAndDescription(text1: 'Supplier Company Address', text2: 'Add Here'),
                  
                ],
              ),
@@ -161,11 +167,11 @@ class AddNewLocalSupplier extends StatelessWidget {
              Row(
             //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                children: [
-                 AddNewAgentTitelAndDescription(text1: 'Supplier Name', text2: 'Add Here'),
+                 AddNewAgentTitlelAndDescription(text1: 'Supplier Name', text2: 'Add Here'),
                  SizedBox(width: context.screenWidth*0.01,),
-                  AddNewAgentTitelAndDescription(text1: 'Supplier Address', text2: 'Add Here'),
+                  AddNewAgentTitlelAndDescription(text1: 'Supplier Address', text2: 'Add Here'),
                    SizedBox(width: context.screenWidth*0.01,),
-                  AddNewAgentTitelAndDescription(text1: 'E-mail', text2: 'Add Here'),
+                  AddNewAgentTitlelAndDescription(text1: 'E-mail', text2: 'Add Here'),
                  
                ],
              ),
@@ -176,11 +182,11 @@ class AddNewLocalSupplier extends StatelessWidget {
                 Row(
             //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                children: [
-                 AddNewAgentTitelAndDescription(text1: 'Phone Number', text2: 'Add Here'),
+                 AddNewAgentTitlelAndDescription(text1: 'Phone Number', text2: 'Add Here'),
                  SizedBox(width: context.screenWidth*0.01,),
-                  AddNewAgentTitelAndDescription(text1: 'VAT Number', text2: 'Add Here'),
+                  AddNewAgentTitlelAndDescription(text1: 'VAT Number', text2: 'Add Here'),
                    SizedBox(width: context.screenWidth*0.01,),
-                  AddNewAgentTitelAndDescription(text1: 'BRN Number', text2: 'Add Here'),
+                  AddNewAgentTitlelAndDescription(text1: 'BRN Number', text2: 'Add Here'),
                  
                ],
              ),
@@ -215,7 +221,7 @@ class AddNewLocalSupplier extends StatelessWidget {
         decoration: InputDecoration(
           fillColor: Colors.white,
           filled: true,
-          hintText: 'Add Here',
+          hintText: 'Add Here',hintStyle:  TextStyle(color:AppColor.hintColor , fontSize: 14,fontFamily: fontFamilys,fontWeight: FontWeight.w300),
           enabledBorder: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners
             borderSide: BorderSide(

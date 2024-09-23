@@ -48,12 +48,24 @@ class AgentScreen
                       SizedBox(
                         width: context.screenWidth*0.01,
                       ),
-                     TypesDropDownButton(),
+                     GestureDetector(
+                      onTap: () {
+                        
+                      },
+                       child: Container(
+                        height: context.screenHeight*0.07,
+                        width: context.screenWidth*0.11,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: Colors.white
+                        ),
+                       ),
+                     ),
 
-                      Widgets().dropDownButton(providerValue.selectedItem2,
-                          providerValue.dropdownItems2, (String? newValue) {
-                            providerValue.updateSelectedItem2(newValue);
-                          }, context),
+                      // Widgets().dropDownButton(providerValue.selectedItem2,
+                      //     providerValue.dropdownItems2, (String? newValue) {
+                      //       providerValue.updateSelectedItem2(newValue);
+                      //     }, context),
                      // TypesDropDownButton(),
 
                       const SizedBox(width: 15),

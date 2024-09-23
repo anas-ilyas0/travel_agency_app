@@ -69,7 +69,7 @@ class DashBoardScreen extends StatelessWidget {
                             }, context),
                             const SizedBox(width: 10),
                             Widgets().button('Add New Lead', () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => AddNewLeadForm() ));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => LeadDetails()));
                             },),
                           ],
                         ),

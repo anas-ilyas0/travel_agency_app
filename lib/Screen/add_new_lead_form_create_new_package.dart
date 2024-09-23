@@ -3,7 +3,7 @@ import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/widgets/addnewagent.dart';
-import 'package:fab_tech_sol/widgets/back_button_title_avester.dart';
+import 'package:fab_tech_sol/widgets/back_button_title_avatar.dart';
 import 'package:fab_tech_sol/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -105,12 +105,12 @@ class CreateNewPackageForm extends StatelessWidget {
                   Row(
                     //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      AddNewAgentTitelAndDescription(
+                      AddNewAgentTitlelAndDescription(
                           text1: 'Client Name', text2: 'John Doe'),
                       SizedBox(
                         width: context.screenWidth * 0.05,
                       ),
-                      AddNewAgentTitelAndDescription(
+                      AddNewAgentTitlelAndDescription(
                           text1: 'Client Phone Number',
                           text2: '+1 (555) 987-6543'),
                     ],

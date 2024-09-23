@@ -6,6 +6,7 @@ class UserProvider extends ChangeNotifier {
   bool _isCheckedWhatsApp = true;
 
   String _selectSuupplier='Supplier';
+   int _selectedSupplierIndex = 0;
 
 
 
@@ -13,10 +14,15 @@ class UserProvider extends ChangeNotifier {
   bool get isCheckedSMS => _isCheckedSMS;
   bool get isCheckedWhatsApp => _isCheckedWhatsApp;
   String get selectSupplier=>_selectSuupplier; 
+   int get selectedSupplierIndex => _selectedSupplierIndex;
 
 
   void toggleCheckboxEmail(bool newValue) {
     _isCheckedEmail = newValue;
+    notifyListeners();
+  }
+    void setSelectedSupplierIndex(int index) {
+    _selectedSupplierIndex = index;
     notifyListeners();
   }
 

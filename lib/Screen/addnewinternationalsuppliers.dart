@@ -1,7 +1,10 @@
+import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Image.dart';
+import 'package:fab_tech_sol/Screen/AppText/TextStyle.dart';
+import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/widgets/addnewagent.dart';
-import 'package:fab_tech_sol/widgets/back_button_title_avester.dart';
+import 'package:fab_tech_sol/widgets/back_button_title_avatar.dart';
 import 'package:flutter/material.dart';
 
 class AddNewInterNationalsuppliers extends StatelessWidget {
@@ -17,15 +20,15 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
              SizedBox(
               height: context.screenHeight * 0.02,
             ),
-            BackButtonAverter(text1: 'Add New International Supplier',),
-            const Divider(),
+            BackButtonAvatar(text1: 'Add New International Supplier',),
+            const Divider(thickness: 0.5,),
            Padding(padding: const EdgeInsets.only(left: 90,right: 90),
            child: 
            Column(
             children: [
                SizedBox(height: context.screenHeight*0.02,),
-                const Align(alignment: Alignment.centerLeft,
-                child: Text('International Suppler Details',style: TextStyle(fontSize: 23,color: Color(0XFF11345A),fontFamily: 'Readex Pro',fontWeight: FontWeight.w500),)),
+                 Align(alignment: Alignment.centerLeft,
+                child: Text('International Suppler Details',style:AppTextstyless.addnewinternationalsuppliers)),
                SizedBox(height: context.screenHeight*0.01,),
                Align(
               alignment: Alignment.centerLeft,
@@ -36,9 +39,12 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
                  Row(
                    children: [
                      Container(
-                      height: 150,
-                      width: 150,
-                      color: Colors.white,
+                      height: context.screenHeight*0.25,
+                      width: context.screenWidth*0.12,
+                      decoration: BoxDecoration( color: Colors.white,
+                        borderRadius: BorderRadius.circular(12),
+                      border: Border.all(color: AppColor.borderColor,width: 0.5)),
+                     
                      ),
                         const SizedBox(
                   width: 10,
@@ -72,9 +78,12 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
   
                 SizedBox(width: context.screenWidth*0.02,),
                  Container(
-                      height: context.screenHeight*0.22,
+                     height: context.screenHeight*0.25,
                       width: context.screenWidth*0.12,
-                      color: Colors.white,
+                       decoration: BoxDecoration( color: Colors.white,
+                        borderRadius: BorderRadius.circular(12),
+                      border: Border.all(color: AppColor.borderColor,width: 0.5)),
+                     
                      ),
                         SizedBox(
                   width: context.screenWidth*0.01,
@@ -121,8 +130,8 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
              SizedBox(
               height: context.screenHeight*0.03,
              ),
-               const Align(alignment: Alignment.centerLeft,
-                child: Text('Bank Details',style: TextStyle(fontSize: 23,color: Color(0XFF11345A),fontFamily: 'Readex Pro'),)),
+                Align(alignment: Alignment.centerLeft,
+                child: Text('Bank Details',style:AppTextstyless.addnewinternationalsuppliers)),
               SizedBox(
               height: context.screenHeight*0.04,
         
@@ -131,11 +140,11 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
              Row(
             //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                children: [
-                 AddNewAgentTitelAndDescription(text1: 'First Name', text2: 'Add Here'),
+                 AddNewAgentTitlelAndDescription(text1: 'First Name', text2: 'Add Here'),
                  SizedBox(width: context.screenWidth*0.01,),
-                  AddNewAgentTitelAndDescription(text1: 'Last Name', text2: 'Add Here'),
+                  AddNewAgentTitlelAndDescription(text1: 'Last Name', text2: 'Add Here'),
                   SizedBox(width: context.screenWidth*0.01,),
-                   AddNewAgentTitelAndDescription(text1: 'Phone Number', text2: 'Add Here'),
+                   AddNewAgentTitlelAndDescription(text1: 'Phone Number', text2: 'Add Here'),
                ],
              ),
               SizedBox(
@@ -146,8 +155,8 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
                SizedBox(
               height: context.screenHeight*0.03,
              ),
-               const Align(alignment: Alignment.centerLeft,
-                child: Text('Company Details',style: TextStyle(fontSize: 23,color: Color(0XFF11345A),fontFamily: 'Readex Pro',fontWeight: FontWeight.w600),)),
+                Align(alignment: Alignment.centerLeft,
+                child: Text('Company Details',style: AppTextstyless.addnewinternationalsuppliers,)),
               SizedBox(
               height: context.screenHeight*0.04,
         
@@ -156,9 +165,9 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
              Row(
             //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                children: [
-                 AddNewAgentTitelAndDescription(text1: 'Supplier Company Name', text2: 'Add Here'),
+                 AddNewAgentTitlelAndDescription(text1: 'Supplier Company Name', text2: 'Add Here'),
                  SizedBox(width: context.screenWidth*0.01,),
-                  AddNewAgentTitelAndDescription(text1: 'Supplier Company Address', text2: 'Add Here'),
+                  AddNewAgentTitlelAndDescription(text1: 'Supplier Company Address', text2: 'Add Here'),
                  
                ],
              ),
@@ -169,8 +178,8 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
          SizedBox(
               height: context.screenHeight*0.03,
              ),
-               const Align(alignment: Alignment.centerLeft,
-                child: Text('Supplier Details',style: TextStyle(fontSize: 23,color: Color(0XFF11345A),fontFamily: 'Readex Pro'),)),
+                Align(alignment: Alignment.centerLeft,
+                child: Text('Supplier Details',style: AppTextstyless.addnewinternationalsuppliers)),
               SizedBox(
               height: context.screenHeight*0.04,
         
@@ -179,11 +188,11 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
              Row(
             //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                children: [
-                 AddNewAgentTitelAndDescription(text1: 'Supplier Name', text2: 'Add Here'),
+                 AddNewAgentTitlelAndDescription(text1: 'Supplier Name', text2: 'Add Here'),
                  SizedBox(width: context.screenWidth*0.01,),
-                  AddNewAgentTitelAndDescription(text1: 'Supplier Address', text2: 'Add Here'),
+                  AddNewAgentTitlelAndDescription(text1: 'Supplier Address', text2: 'Add Here'),
                    SizedBox(width: context.screenWidth*0.01,),
-                  AddNewAgentTitelAndDescription(text1: 'E-mail', text2: 'Add Here'),
+                  AddNewAgentTitlelAndDescription(text1: 'E-mail', text2: 'Add Here'),
                  
                ],
              ),
@@ -194,20 +203,20 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
                 Row(
             //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                children: [
-                 AddNewAgentTitelAndDescription(text1: 'Phone Number', text2: 'Add Here'),
+                 AddNewAgentTitlelAndDescription(text1: 'Phone Number', text2: 'Add Here'),
                  SizedBox(width: context.screenWidth*0.01,),
-                  AddNewAgentTitelAndDescription(text1: 'VAT Number', text2: 'Add Here'),
+                  AddNewAgentTitlelAndDescription(text1: 'VAT Number', text2: 'Add Here'),
                    SizedBox(width: context.screenWidth*0.01,),
-                  AddNewAgentTitelAndDescription(text1: 'BRN Number', text2: 'Add Here'),
+                  AddNewAgentTitlelAndDescription(text1: 'BRN Number', text2: 'Add Here'),
                  
                ],
              ),
               Row(
             //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                children: [
-                 AddNewAgentTitelAndDescription(text1: 'Country Name', text2: 'London'),
+                 AddNewAgentTitlelAndDescription(text1: 'Country Name', text2: 'London'),
                  SizedBox(width: context.screenWidth*0.01,),
-                  AddNewAgentTitelAndDescription(text1: 'Code', text2: '4422'),
+                  AddNewAgentTitlelAndDescription(text1: 'Code', text2: '4422'),
                  
                ],
              ),
@@ -216,8 +225,8 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
              
 
           
-             const Align(alignment: Alignment.centerLeft,
-                child: Text('Supplier Service Details',style: TextStyle(fontSize: 23,color: Color(0XFF11345A),fontFamily: 'Readex Pro',fontWeight: FontWeight.w600),)),
+              Align(alignment: Alignment.centerLeft,
+                child: Text('Supplier Service Details',style:AppTextstyless.addnewinternationalsuppliers)),
               SizedBox(
               height: context.screenHeight*0.04,
         
@@ -243,6 +252,7 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
           fillColor: Colors.white,
           filled: true,
           hintText: 'Add Here',
+          hintStyle:  TextStyle(color:AppColor.hintColor , fontSize: 14,fontFamily: fontFamilys,fontWeight: FontWeight.w300),
           enabledBorder: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners
             borderSide: BorderSide(
