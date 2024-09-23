@@ -40,117 +40,119 @@ class _LoginPageState extends State<LoginPage> {
             // decoration: BoxDecoration(
             //    color: Colors.red
             // ),
-            child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    height: Responsive.isMobile(context) ? 40 : 50,
-                    width: Responsive.isMobile(context) ? 100 : 160,
-                    child: Image.asset("${ImagesAssets.imagePath}BRITON.png"),
-                  ),
-                  SizedBox(height: context.screenHeight * 0.04),
-                  Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        SizedBox(width: context.screenWidth * 0.03),
-                        Text(
-                          'Welcome Back ',
-                          style: TextStyle(
-                              fontSize: Responsive.isMobile(context) ? 26 : 34,
-                              fontWeight: FontWeight.w500,
-                              fontFamily: "Readex Pro"),
-                        ),
-                        Text(
-                          '👋',
-                          style: TextStyle(
-                              color: Colors.yellow,
-                              fontSize: Responsive.isMobile(context) ? 26 : 32),
-                        )
-                      ]),
-                  SizedBox(
-                    height: context.screenHeight * 0.01,
-                  ),
-                  Text(
-                    'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without',
-                    textAlign: TextAlign.center,
-                  ),
-                  SizedBox(
-                    height: context.screenHeight * 0.08,
-                  ),
-
-                  textFormField("Email", TextInputType.emailAddress, '${ImagesAssets.imagePath}email.svg'),
-
-                  SizedBox(
-                    height: context.screenHeight * 0.02,
-                  ),
-                  textFormField("Password", TextInputType.visiblePassword, '${ImagesAssets.imagePath}password.svg'),
-                  SizedBox(
-                    height: context.screenHeight * 0.01,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
+            child: SingleChildScrollView(
+              child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: Responsive.isMobile(context) ? 40 : 50,
+                      width: Responsive.isMobile(context) ? 100 : 160,
+                      child: Image.asset("${ImagesAssets.imagePath}BRITON.png"),
+                    ),
+                    SizedBox(height: context.screenHeight * 0.04),
+                    Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
                         children: [
-                          Checkbox(
-                            value: isChecked,
-                            side: BorderSide(color: AppColor.darkGrey,),
-
-                            onChanged: (bool? value) {
-                              setState(() {
-                                isChecked = value!;
-                              });
-                            },
+                          SizedBox(width: context.screenWidth * 0.03),
+                          Text(
+                            'Welcome Back ',
+                            style: TextStyle(
+                                fontSize: Responsive.isMobile(context) ? 26 : 34,
+                                fontWeight: FontWeight.w500,
+                                fontFamily: "Readex Pro"),
                           ),
                           Text(
-                            'Remember Me',
+                            '👋',
                             style: TextStyle(
-                                fontSize:
-                                    Responsive.isMobile(context) ? 14 : 16,
-                                fontFamily: "Readex Pro",
-                                fontWeight: FontWeight.w400),
-                          ),
-                        ],
-                      ),
-
-                      // height: screenheight*0.05,
-                      TextButton(
-                          onPressed: () {},
+                                color: Colors.yellow,
+                                fontSize: Responsive.isMobile(context) ? 26 : 32),
+                          )
+                        ]),
+                    SizedBox(
+                      height: context.screenHeight * 0.01,
+                    ),
+                    Text(
+                      'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without',
+                      textAlign: TextAlign.center,
+                    ),
+                    SizedBox(
+                      height: context.screenHeight * 0.08,
+                    ),
+              
+                    textFormField("Email", TextInputType.emailAddress, '${ImagesAssets.imagePath}email.svg'),
+              
+                    SizedBox(
+                      height: context.screenHeight * 0.02,
+                    ),
+                    textFormField("Password", TextInputType.visiblePassword, '${ImagesAssets.imagePath}password.svg'),
+                    SizedBox(
+                      height: context.screenHeight * 0.01,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: [
+                            Checkbox(
+                              value: isChecked,
+                              side: BorderSide(color: AppColor.darkGrey,),
+              
+                              onChanged: (bool? value) {
+                                setState(() {
+                                  isChecked = value!;
+                                });
+                              },
+                            ),
+                            Text(
+                              'Remember Me',
+                              style: TextStyle(
+                                  fontSize:
+                                      Responsive.isMobile(context) ? 14 : 16,
+                                  fontFamily: "Readex Pro",
+                                  fontWeight: FontWeight.w400),
+                            ),
+                          ],
+                        ),
+              
+                        // height: screenheight*0.05,
+                        TextButton(
+                            onPressed: () {},
+                            child: Text(
+                              'Forgot Account?',
+                              style: TextStyle(
+                                  fontSize:
+                                      Responsive.isMobile(context) ? 14 : 16,
+                                  fontWeight: FontWeight.w400,
+                                  fontFamily: 'Readex Pro',
+                                  color: AppColor.buttonTextColor),
+                            )),
+                      ],
+                    ),
+                    SizedBox(
+                      height: context.screenHeight * 0.1,
+                    ),
+                    Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+                      ElevatedButton(
+                          onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => Dashboard(), ));
+                          },
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: const Color(0XFFC2E9F3),
+                              minimumSize: Size(
+                                  Responsive.isMobile(context) ? 150 : 190, 55)),
                           child: Text(
-                            'Forgot Account?',
+                            'Log in',
                             style: TextStyle(
-                                fontSize:
-                                    Responsive.isMobile(context) ? 14 : 16,
+                                fontSize: Responsive.isMobile(context) ? 14 : 18,
+                                color: AppColor.buttonTextColor,
                                 fontWeight: FontWeight.w400,
-                                fontFamily: 'Readex Pro',
-                                color: AppColor.buttonTextColor),
+                                fontFamily: "Readex Pro"),
                           )),
-                    ],
-                  ),
-                  SizedBox(
-                    height: context.screenHeight * 0.1,
-                  ),
-                  Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-                    ElevatedButton(
-                        onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => Dashboard(), ));
-                        },
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0XFFC2E9F3),
-                            minimumSize: Size(
-                                Responsive.isMobile(context) ? 150 : 190, 55)),
-                        child: Text(
-                          'Log in',
-                          style: TextStyle(
-                              fontSize: Responsive.isMobile(context) ? 14 : 18,
-                              color: AppColor.buttonTextColor,
-                              fontWeight: FontWeight.w400,
-                              fontFamily: "Readex Pro"),
-                        )),
-                  ])
-                ]),
+                    ])
+                  ]),
+            ),
           ),
         ),
       ),

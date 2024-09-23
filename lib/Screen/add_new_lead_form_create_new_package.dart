@@ -160,7 +160,7 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm> {
                     ],
                   ),
                   SizedBox(
-                    height: 10,
+                    height: 16,
                   ),
                   Padding(
                     padding: const EdgeInsets.only(right: 16),
@@ -192,27 +192,27 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm> {
                             child: Widgets().CreateNewPackagetext('Name'),
                           ),
                           SizedBox(
-                            height: 26,
+                            height: 25,
                           ),
                           Widgets().PackageTextNmaelist('Adult'),
                           SizedBox(
-                            height: 40,
+                            height: 38,
                           ),
                           Widgets().PackageTextNmaelist('Child'),
                           SizedBox(
-                            height: 35,
+                            height: 36,
                           ),
                           Widgets().PackageTextNmaelist('Infant'),
                           SizedBox(
-                            height: 35,
+                            height: 36,
                           ),
                           Widgets().PackageTextNmaelist('Senior Citizen'),
                           SizedBox(
-                            height: 35,
+                            height: 36,
                           ),
                           Widgets().PackageTextNmaelist('Other'),
                           SizedBox(
-                            height: 12,
+                            height: 18,
                           ),
                         ],
                       ),
