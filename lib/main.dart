@@ -38,9 +38,11 @@ void main() async {
       providers: [
         ChangeNotifierProvider(create: (_) => UserProvider()),
         ChangeNotifierProvider(create: (_) => DrawerStateInfo()),
-      ],
+
+  ],
       child: MyApp(),
     ),
+
   );
 }
 

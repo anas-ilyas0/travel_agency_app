@@ -30,19 +30,32 @@ class AgentScreen
                   'All Agents',
                   style: TextStyle(
                       fontSize: 20,
+
                       fontFamily: fontFamilys,
-                      fontWeight: FontWeight.bold,
-                      color: color),
-                ),
+
+                    //  fontFamily: readexPro,
+
+                     fontWeight: FontWeight.bold,
+                     color: color),
+                  ),
+                
                 Padding(
                   padding: const EdgeInsets.only(right: 30),
                   child: Row(
                     children: [
                       Widgets().searchTextField(),
+
                       SizedBox(
                         width: context.screenWidth*0.01,
                       ),
                      TypesDropDownButton(),
+
+                      Widgets().dropDownButton(providerValue.selectedItem2,
+                          providerValue.dropdownItems2, (String? newValue) {
+                            providerValue.updateSelectedItem2(newValue);
+                          }, context),
+                     // TypesDropDownButton(),
+
                       const SizedBox(width: 15),
                       Widgets().button('Add New Agent', () {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => AddNewAgent(),));
@@ -65,7 +78,7 @@ class AgentScreen
                   "Status",
                   "Action"
                 ]),
-                source: AgentsTaskDataSource(Widgets().agentsTasks),
+                source: AgentsTaskDataSource(Widgets().agentsTaskss),
                 headingRowColor: MaterialStateProperty.resolveWith<Color>(
                     (Set<MaterialState> states) {
                   return AppStrings.addLeadButtonColor;

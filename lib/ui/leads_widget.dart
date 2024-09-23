@@ -58,7 +58,11 @@ class _LeadScreenState extends State<LeadScreen> with SingleTickerProviderStateM
                 'All Leads',
                 style: TextStyle(
                     fontSize: 20,
+
                     fontFamily: fontFamilys,
+
+                   // fontFamily: readexPro,
+
                     fontWeight: FontWeight.bold,
                     color: color),
               ),
@@ -68,13 +72,21 @@ class _LeadScreenState extends State<LeadScreen> with SingleTickerProviderStateM
                     'Leads Status :',
                     style: TextStyle(
                         color: color,
+
                         fontFamily: fontFamilys,
+
+                      //  fontFamily: readexPro,
+
                         fontWeight: FontWeight.w600),
                   ),
                   TabBar(
                       labelStyle: TextStyle(
                         fontWeight: FontWeight.bold,
+
                         fontFamily: fontFamilys,
+
+                       // fontFamily: readexPro,
+
                       ),
                       unselectedLabelStyle:
                           const TextStyle(fontWeight: FontWeight.normal),
@@ -183,6 +195,7 @@ class _LeadScreenState extends State<LeadScreen> with SingleTickerProviderStateM
                                         backgroundColor: color,
                                       ),
                                       onPressed: () {
+
                                         Navigator.push(
                                           context,
                                           MaterialPageRoute(
@@ -193,7 +206,11 @@ class _LeadScreenState extends State<LeadScreen> with SingleTickerProviderStateM
                                       child: Text(
                                         'View Details',
                                         style: TextStyle(
+
                                           fontFamily: fontFamilys,
+
+                                        //  fontFamily: readexPro,
+
                                           color: Colors.white,
                                         ),
                                       ),
@@ -268,7 +285,11 @@ class _LeadScreenState extends State<LeadScreen> with SingleTickerProviderStateM
                                     child: Text(
                                       'View Details',
                                       style: TextStyle(
+
                                         fontFamily: fontFamilys,
+
+                                      //  fontFamily: readexPro,
+
                                         color: Colors.white,
                                       ),
                                     ),
@@ -328,7 +349,11 @@ class _LeadScreenState extends State<LeadScreen> with SingleTickerProviderStateM
                                   child: Text(
                                     'View Details',
                                     style: TextStyle(
+
                                       fontFamily: fontFamilys,
+
+                                    //  fontFamily: readexPro,
+
                                       color: Colors.white,
                                     ),
                                   ),

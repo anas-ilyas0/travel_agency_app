@@ -5,6 +5,12 @@ import 'package:fab_tech_sol/login_page.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
 import 'package:fab_tech_sol/widgets/invoice_detail_price_table.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../providers/provider.dart';
+import '../resources/responsive.dart';
+import '../widgets/custom_header.dart';
+import '../widgets/dashboardDrawer.dart';
 
 class LeadInvoiceDetails extends StatefulWidget {
   const LeadInvoiceDetails({super.key});
@@ -13,15 +19,45 @@ class LeadInvoiceDetails extends StatefulWidget {
   State<LeadInvoiceDetails> createState() => _LeadInvoiceDetailsState();
 }
 
-class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> {
+class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> with TickerProviderStateMixin{
+  late TabController dashboardTabController;
+  late TabController leadsTabController;
+  @override
+  void initState() {
+    super.initState();
+
+    dashboardTabController = TabController(length: 5, vsync: this);
+    leadsTabController = TabController(length: 3, vsync: this);
+
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final provider = Provider.of<UserProvider>(context, listen: false);
+      provider.setDashboardTabController(dashboardTabController);
+      provider.setLeadsTabController(leadsTabController);
+    });
+  }
+
+  @override
+  void dispose() {
+    dashboardTabController.dispose();
+    leadsTabController.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        // appBar: CustomHeader(dashboardTabController: dashboardTabController,),
+
+        // drawer: Responsive.isDesktop(context)
+        //     ? null
+        //     : DashboardDrawer(tabController: dashboardTabController),
+
+        // drawer
         body: SingleChildScrollView(
       child: Column(
         // mainAxisAlignment: MainAxisAlignment.start,
         // crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+
           SizedBox(
             height: context.screenHeight * 0.03,
           ),

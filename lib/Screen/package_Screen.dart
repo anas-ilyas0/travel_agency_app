@@ -150,7 +150,11 @@ class _PackageClassScreenState extends State<PackageClassScreen> {
                             'The Premium Plan offers unlimited ticket handling annually, making it perfect for those who receive multiple tickets throughout the year. '
                                 'This plan ensures that no matter how many tickets you get, we’ve got you covered with top-notch service and support.',
                             style: TextStyle(
+<<<<<<< HEAD:lib/Screen/package_Screen.dart
                               fontSize: 12, fontWeight: FontWeight.w400,fontFamily: fontFamilys,color: AppColor.darkGrey,
+=======
+                              fontSize: 12, fontWeight: FontWeight.w400,fontFamily: readexPro,color: AppColor.darkGrey,
+>>>>>>> 7e5b3e93e38658796a4a6fec95a7755f5c60da80:lib/Screen/package_widget.dart
                               height: 1.5, // Line height for readability
                             ),
                             maxLines: 2,
@@ -204,7 +208,11 @@ class _PackageClassScreenState extends State<PackageClassScreen> {
                 'Packages Details',
                 style: TextStyle(
                     fontSize: 25,
+<<<<<<< HEAD:lib/Screen/package_Screen.dart
                     fontFamily: fontFamilys,
+=======
+                    fontFamily: readexPro,
+>>>>>>> 7e5b3e93e38658796a4a6fec95a7755f5c60da80:lib/Screen/package_widget.dart
                     color: color,
                     fontWeight: FontWeight.w700),
               ),
@@ -230,7 +238,11 @@ class _PackageClassScreenState extends State<PackageClassScreen> {
                         fontSize: 16,
                         color: AppColor.buttonTextColor,
                         // fontWeight: FontWeight.w400,
+<<<<<<< HEAD:lib/Screen/package_Screen.dart
                         fontFamily: fontFamilys),
+=======
+                        fontFamily: readexPro),
+>>>>>>> 7e5b3e93e38658796a4a6fec95a7755f5c60da80:lib/Screen/package_widget.dart
                   ),
                 ),
               ),
@@ -285,7 +297,11 @@ class _PackageClassScreenState extends State<PackageClassScreen> {
                 'Packages Details',
                 style: TextStyle(
                     fontSize: 20,
+<<<<<<< HEAD:lib/Screen/package_Screen.dart
                     fontFamily: fontFamilys,
+=======
+                    fontFamily: readexPro,
+>>>>>>> 7e5b3e93e38658796a4a6fec95a7755f5c60da80:lib/Screen/package_widget.dart
                     color: color,
                     fontWeight: FontWeight.w700),
               ),
@@ -315,7 +331,11 @@ class _PackageClassScreenState extends State<PackageClassScreen> {
                         fontSize: 14,
                         color: AppColor.buttonTextColor,
                         // fontWeight: FontWeight.w400,
+<<<<<<< HEAD:lib/Screen/package_Screen.dart
                         fontFamily: fontFamilys),
+=======
+                        fontFamily: readexPro),
+>>>>>>> 7e5b3e93e38658796a4a6fec95a7755f5c60da80:lib/Screen/package_widget.dart
                   ),
                 ),
               ),

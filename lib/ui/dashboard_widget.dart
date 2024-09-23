@@ -10,12 +10,18 @@ import 'package:provider/provider.dart';
 class DashBoardScreen extends StatelessWidget {
   const DashBoardScreen({super.key});
 
+
   @override
   Widget build(BuildContext context) {
      final providerValue = Provider.of<UserProvider>(context);
     return Scaffold(
       body:  Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 50,vertical: 30),
+      
+
+
+    
+      padding:  EdgeInsets.symmetric(horizontal: Responsive.isDesktop(context)? 60:30,vertical: 30),
+
       child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -27,12 +33,18 @@ class DashBoardScreen extends StatelessWidget {
                 Text(
                   'Dashboard',
                   style: TextStyle(
+
                       fontSize: 20,
                       fontFamily: fontFamilys,
                       fontWeight: FontWeight.bold,
+
+                      // fontSize: 30,
+                      // fontFamily: readexPro,
+                      // fontWeight: FontWeight.w600,
+
                       color: color),
                 ),
-                Responsive.isMobile(context)
+                Responsive.isMobile(context) || Responsive.isTablet(context)
                     ? const SizedBox.shrink()
                     : Padding(
                       padding: const EdgeInsets.only(right: 20),
@@ -64,6 +76,27 @@ class DashBoardScreen extends StatelessWidget {
                     )
               ],
             ),
+            Responsive.isTablet(context)
+                ?
+            Row(
+                  children: [
+                    Widgets().dropDownButton(
+                        providerValue.selectedItem1,
+                        providerValue.dropdownItems1,
+                            (String? newValue) {
+                          providerValue.updateSelectedItem1(newValue);
+                        }, context),
+                    const SizedBox(width: 2),
+                    Widgets().dropDownButton(providerValue.selectedItem2,
+                        providerValue.dropdownItems2, (String? newValue) {
+                          providerValue.updateSelectedItem2(newValue);
+                        }, context),
+                    const SizedBox(width: 10),
+                    Widgets().button('Add New Lead', () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => LeadDetails()));
+                    }),
+                  ],
+                ):const SizedBox.shrink(),
             SizedBox(height: 20,),
             Wrap(
               spacing: 20,
@@ -88,7 +121,7 @@ class DashBoardScreen extends StatelessWidget {
           ],
         ),
       ),
-     ) );
+     ));
   }
-    
+
   }

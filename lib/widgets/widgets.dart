@@ -10,8 +10,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class Widgets {
+
   
-  final List<AgentsTask> agentsTasks = [
+  final List<AgentsTask> agentsTaskss = [
     AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
         'Sialkot Punjab 51040', 'Active', ''),
     AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
@@ -39,41 +40,18 @@ class Widgets {
     AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
         'Sialkot Punjab 51040', 'Active', ''),
     AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-        'Sialkot Punjab 51040', 'Active', ''),
+        'Sialkot Punjab 51040', 'Active', ''),];
 
-  ];
+  final List<AgentsTask> agentsTasks = List.generate(20, (index)=>AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
+      'Sialkot Punjab 51040', 'Active', ''));
 
-  final List<SupplierTask> tasks = [
+final List<SupplierTask> tasks=List.generate(20, (index)=>
     SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
-    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'),
+        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'));
 
-  ];
+
+
+
 
   Widget editDelContainer(VoidCallback onPress) {
     return Container(
@@ -105,9 +83,13 @@ class Widgets {
     return Text(text,
         style: TextStyle(
             fontSize: fontSize,
+
           
             fontWeight: FontWeight.w400,
             fontFamily: fontFamilys));
+            // fontWeight: FontWeight.w300,
+            // fontFamily: readexPro));
+
   }
 
   Widget finalButton(String text, Color color, VoidCallback onPress) {
@@ -123,7 +105,11 @@ class Widgets {
           child: Text(
             text,
             style: TextStyle(
+
                 fontFamily: fontFamilys, color: const Color(0XFF202529)),
+
+            //    fontFamily: readexPro, color: const Color(0XFF202529)),
+
           )),
     );
   }
@@ -182,13 +168,21 @@ class Widgets {
                           color: Colors.black,
                           fontSize: 12,
                           fontWeight: FontWeight.w300,
+
                           fontFamily: fontFamilys),
+
+                          ),
+
                     ),
                   ),
-                ),
+                
                 hintText: 'Search Agent',
                 hintStyle: TextStyle(
+
                     color: Colors.grey, fontFamily: fontFamilys, fontSize: 12),
+
+                  // color: Colors.grey, fontFamily: readexPro, fontSize: 12),
+
                 contentPadding: const EdgeInsets.symmetric(
                   horizontal: 5,
                   //vertical: 22
@@ -202,7 +196,7 @@ class Widgets {
     );
   }
 
-  Widget textFormNoteField( double width,double height ){
+  Widget textFormNoteField( double width,double height,int maxLines ){
     return Container(
       width: width,
       height: height,
@@ -210,10 +204,20 @@ class Widgets {
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
           border: Border.all(color: Colors.grey.withOpacity(0.3))),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 12),
-        child: Text('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged......',style: AppTextstyless.leadLeadDetailFormAddNoteText,),
-      )
+
+
+      child: TextFormField(
+        maxLines: maxLines,
+        decoration: InputDecoration(
+          hintText: 'Add Here',
+          hintStyle: TextStyle(
+              color: Colors.grey, fontFamily: readexPro, fontSize: 13),
+          contentPadding:
+              const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+          border: const OutlineInputBorder(borderSide: BorderSide.none),
+        ),
+      ),
+
     );
   }
 
@@ -228,7 +232,11 @@ class Widgets {
         decoration: InputDecoration(
           hintText: text,
           hintStyle: TextStyle(
+
               color: AppColor.hintColor, fontFamily: fontFamilys, fontSize: 15),
+
+            //  color: Colors.grey, fontFamily: readexPro, fontSize: 13),
+
           contentPadding:
               const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
           border: const OutlineInputBorder(borderSide: BorderSide.none),
@@ -246,6 +254,9 @@ class Widgets {
             child: Text(
               text,
               style: TextStyle(fontSize: 17, fontFamily: fontFamilys),
+
+           //   style: TextStyle(fontSize: 17, fontFamily: readexPro),
+
             ),
           ),
         Padding(
@@ -273,7 +284,11 @@ class Widgets {
             firstText,
             style: TextStyle(
               fontWeight: FontWeight.bold,
+
               fontFamily: fontFamilys,
+
+            //  fontFamily: readexPro,
+
             ),
           ),
         ),
@@ -281,7 +296,11 @@ class Widgets {
           child: Text(
             secondText,
             style: TextStyle(
+
               fontFamily: fontFamilys,
+
+           //   fontFamily: readexPro,
+
             ),
           ),
         ),
@@ -367,7 +386,11 @@ class Widgets {
                     text,
                     style: TextStyle(
                       fontSize: 14,
+
                         fontFamily: fontFamilys,
+
+                     //   fontFamily: readexPro,
+
                         color: color, fontWeight: FontWeight.w400),
                   ),
                 ),
@@ -384,7 +407,7 @@ class Widgets {
     return Padding(
       padding: const EdgeInsets.only(left: 10),
       child: Container(
-        width: Responsive.isDesktop(context)? 182 : 160,
+        width:  182 ,
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(7),
@@ -421,7 +444,11 @@ class Widgets {
                         value: item,
                         child: Text(
                           item,
+
                           style:  TextStyle(color: AppColor.hintColor, fontFamily: fontFamilys,fontWeight: FontWeight.w400, fontSize: 14),
+
+                        //  style:  TextStyle(color: AppColor.hintColor, fontFamily: readexPro,fontWeight: FontWeight.w400, fontSize: 14),
+
                         ),
                       );
                     }).toList(),
