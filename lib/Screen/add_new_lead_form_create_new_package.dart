@@ -5,11 +5,17 @@ import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/widgets/addnewagent.dart';
 import 'package:fab_tech_sol/widgets/back_button_title_avatar.dart';
 import 'package:fab_tech_sol/widgets/widgets.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class CreateNewPackageForm extends StatelessWidget {
+class CreateNewPackageForm extends StatefulWidget {
   const CreateNewPackageForm({super.key});
 
+  @override
+  State<CreateNewPackageForm> createState() => _CreateNewPackageFormState();
+}
+
+class _CreateNewPackageFormState extends State<CreateNewPackageForm> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +35,7 @@ class CreateNewPackageForm extends StatelessWidget {
                         fontSize: 30,
                         fontFamily: fontFamilys,
                         fontWeight: FontWeight.w700,
-                        color: Color(0XFF11345A)),
+                        color: const Color(0XFF11345A)),
                   ),
                 )),
             Padding(
@@ -46,7 +52,7 @@ class CreateNewPackageForm extends StatelessWidget {
                         'Client Data',
                         style: TextStyle(
                             fontSize: 23,
-                            color: Color(0XFF11345A),
+                            color: const Color(0XFF11345A),
                             fontFamily: fontFamilys),
                       )),
                   SizedBox(
@@ -57,40 +63,48 @@ class CreateNewPackageForm extends StatelessWidget {
                     child: Row(
                       children: [
                         Container(
-                          height: context.screenHeight * 0.25,
-                          width: context.screenWidth * 0.12,
+                          height:150,
+                          width: 150,
                           decoration: BoxDecoration(
-                            color:  Colors.white,
-                            borderRadius: BorderRadius.circular(12),
-                            border: Border.all(width: 0.5,color: AppColor.packageFormColor)
-                            
-                          ),
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(12),
+                              border: Border.all(
+                                  width: 0.5,
+                                  color: AppColor.packageFormColor)),
                         ),
                         SizedBox(
                           width: context.screenWidth * 0.01,
                         ),
                         Column(
                           children: [
-                            Text('Client Image',style: TextStyle(fontFamily: fontFamilys,fontWeight: FontWeight.w400),),
+                            Text(
+                              'Client Image',
+                              style: TextStyle(
+                                  fontFamily: fontFamilys,
+                                  fontWeight: FontWeight.w400),
+                            ),
                             ElevatedButton(
                               onPressed: () {},
                               style: ElevatedButton.styleFrom(
                                   backgroundColor: const Color(0XFF11345A),
-                                  minimumSize: Size(context.screenWidth * 0.14,
+                                  minimumSize: Size(context.screenWidth * 0.11,
                                       context.screenHeight * 0.09)),
-                              child: const Row(
+                              child:  Row(
                                 mainAxisSize: MainAxisSize
                                     .min, // Make Row as wide as the content
                                 children: [
                                   Icon(
                                     Icons.file_upload_outlined,
-                                    color: Colors.white,
-                                  ), // Icon
-                                  SizedBox(width: 8), // Space between icon and text
+                                    color: Colors.white,size: 18,
+                                  ),
+                                  // Icon
+                                  SizedBox(width: 8),
+                                  // Space between icon and text
                                   Text(
                                     'Upload Image',
-                                    style: TextStyle(color: Colors.white),
-                                  ), // Text
+                                    style: TextStyle(color: Colors.white,fontSize: 12,fontWeight:FontWeight.w300,fontFamily:fontFamilys ),
+                                  ),
+                                  // Text
                                 ],
                               ),
                             ),
@@ -105,6 +119,7 @@ class CreateNewPackageForm extends StatelessWidget {
                   Row(
                     //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+
                       AddNewAgentTitlelAndDescription(
                           text1: 'Client Name', text2: 'John Doe'),
                       SizedBox(
@@ -138,88 +153,171 @@ class CreateNewPackageForm extends StatelessWidget {
                         width: context.screenWidth * 0.095,
                       ),
                       Widgets().CreateNewPackagetext('Budget'),
+
+                      Padding(
+                        padding: const EdgeInsets.only(right: 16),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Client Name',
+                              style: TextStyle(
+                                  fontSize: 16,
+                                  fontFamily: fontFamilys,
+                                  fontWeight: FontWeight.w400),
+                            ),
+                            Widgets().textFormField('John Doe', context),
+                          ],
+                        ),
+                      ),
+
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Client Phone Number',
+                            style: TextStyle(
+                                fontSize: 16,
+                                fontFamily: fontFamilys,
+                                fontWeight: FontWeight.w400),
+                          ),
+                          Widgets()
+                              .textFormField('+1 (555) 987-6543', context),
+                        ],
+                      ),
+
+                      SizedBox(
+                        width: context.screenWidth * 0.05,
+                      ),
+
+
                     ],
                   ),
                   SizedBox(
-                    height: context.screenHeight * 0.01,
+                    height: 10,
                   ),
-                  Row(
-                    children: [
-                      Widgets().PackageTextNmaelist('Adult'),
-                      SizedBox(
-                        width: context.screenWidth * 0.215,
-                      ),
-                      Widgets().PackageDeatilNumberOfListText('500', context),
-                      SizedBox(
-                        width: context.screenWidth * 0.025,
-                      ),
-                      Widgets().PackageDeatilNumberOfListText('\$300', context),
-                    ],
-                  ),
-                  SizedBox(
-                    height: context.screenHeight * 0.02,
-                  ),
-                  Row(
-                    children: [
-                      Widgets().PackageTextNmaelist('Child'),
-                      SizedBox(
-                        width: context.screenWidth * 0.215,
-                      ),
-                      Widgets().PackageDeatilNumberOfListText('600', context),
-                      SizedBox(
-                        width: context.screenWidth * 0.025,
-                      ),
-                      Widgets().PackageDeatilNumberOfListText('\$200', context),
-                    ],
-                  ),
-                  SizedBox(
-                    height: context.screenHeight * 0.02,
-                  ),
-                  Row(
-                    children: [
-                      Widgets().PackageTextNmaelist('Adult'),
-                      SizedBox(
-                        width: context.screenWidth * 0.215,
-                      ),
-                      Widgets().PackageDeatilNumberOfListText('500', context),
-                      SizedBox(
-                        width: context.screenWidth * 0.025,
-                      ),
-                      Widgets().PackageDeatilNumberOfListText('\$500', context),
-                    ],
-                  ),
-                  SizedBox(
-                    height: context.screenHeight * 0.02,
-                  ),
-                  Row(
-                    children: [
-                      Widgets().PackageTextNmaelist('Adult'),
-                      SizedBox(
-                        width: context.screenWidth * 0.215,
-                      ),
-                      Widgets().PackageDeatilNumberOfListText('500', context),
-                      SizedBox(
-                        width: context.screenWidth * 0.025,
-                      ),
-                      Widgets().PackageDeatilNumberOfListText('\$500', context),
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.only(right: 16),
+                    child: Row(
+                      children: [
+                        Widgets().addNewPackageFormAgentNameAndClinetName(
+                            context, 'Agent Name', 'John Doe'),
+                        SizedBox(
+                          width: context.screenWidth * 0.009,
+                        ),
+                        Widgets().addNewPackageFormAgentNameAndClinetName(
+                            context, 'Select Supplier', 'John Doe')
+                      ],
+                    ),
                   ),
                   SizedBox(
                     height: context.screenHeight * 0.02,
                   ),
+
                   Row(
+                    // mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Widgets().PackageTextNmaelist('Adult'),
-                      SizedBox(
-                        width: context.screenWidth * 0.215,
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8),
+                            child: Widgets().CreateNewPackagetext('Name'),
+                          ),
+                          SizedBox(
+                            height: 26,
+                          ),
+                          Widgets().PackageTextNmaelist('Adult'),
+                          SizedBox(
+                            height: 40,
+                          ),
+                          Widgets().PackageTextNmaelist('Child'),
+                          SizedBox(
+                            height: 35,
+                          ),
+                          Widgets().PackageTextNmaelist('Infant'),
+                          SizedBox(
+                            height: 35,
+                          ),
+                          Widgets().PackageTextNmaelist('Senior Citizen'),
+                          SizedBox(
+                            height: 35,
+                          ),
+                          Widgets().PackageTextNmaelist('Other'),
+                          SizedBox(
+                            height: 12,
+                          ),
+                        ],
                       ),
-                      Widgets().PackageDeatilNumberOfListText('500', context),
-                      SizedBox(
-                        width: context.screenWidth * 0.025,
+                      SizedBox(width: context.screenWidth*.08,),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8),
+                            child: Widgets()
+                                .CreateNewPackagetext('Number of People'),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Widgets().textFormField('500', context),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Widgets().textFormField('600', context),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Widgets().textFormField('350', context),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Widgets().textFormField('500', context),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Widgets().textFormField('1100', context),
+                          ),
+                        ],
                       ),
-                      Widgets().PackageDeatilNumberOfListText('\$500', context),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8),
+                            child: Widgets().CreateNewPackagetext('Budget'),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Widgets().textFormField('\$200', context),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Widgets().textFormField('\$300', context),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Widgets().textFormField('\$150', context),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Widgets().textFormField('\$500', context),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Widgets().textFormField('\$600', context),
+                          ),
+                        ],
+                      ),
                     ],
                   ),
+                  //
+
                   SizedBox(
                     height: context.screenHeight * 0.2,
                   ),
@@ -234,11 +332,11 @@ class CreateNewPackageForm extends StatelessWidget {
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(5))),
                             onPressed: () {},
-                            child:  Text(
+                            child: Text(
                               'Cancle',
                               style: TextStyle(
                                   fontSize: 18,
-                                  fontFamily:fontFamilys ,
+                                  fontFamily: fontFamilys,
                                   color: Colors.black),
                             )),
                       ),
@@ -258,12 +356,13 @@ class CreateNewPackageForm extends StatelessWidget {
                               'Save',
                               style: TextStyle(
                                   fontSize: 18,
-                                  fontFamily:fontFamilys ,
+                                  fontFamily: fontFamilys,
                                   color: Colors.black),
                             )),
                       ),
                     ],
                   ),
+                  // // RowWidget("dfs"),
                   SizedBox(
                     height: context.screenHeight * 0.2,
                   )
@@ -275,4 +374,5 @@ class CreateNewPackageForm extends StatelessWidget {
       ),
     );
   }
+
 }

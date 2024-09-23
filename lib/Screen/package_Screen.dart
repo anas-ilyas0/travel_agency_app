@@ -151,9 +151,14 @@ class _PackageClassScreenState extends State<PackageClassScreen> {
                                 'This plan ensures that no matter how many tickets you get, we’ve got you covered with top-notch service and support.',
                             style: TextStyle(
 
+
                               fontSize: 12, fontWeight: FontWeight.w400,fontFamily: fontFamilys,color: AppColor.darkGrey,
 
                             //  fontSize: 12, fontWeight: FontWeight.w400,fontFamily: readexPro,color: AppColor.darkGrey,
+
+
+                            //  fontSize: 12, fontWeight: FontWeight.w400,fontFamily: fontFamilys,color: AppColor.darkGrey,
+                              // fontSize: 12, fontWeight: FontWeight.w400,fontFamily: readexPro,color: AppColor.darkGrey,
 
                               height: 1.5, // Line height for readability
                             ),
@@ -209,9 +214,14 @@ class _PackageClassScreenState extends State<PackageClassScreen> {
                 style: TextStyle(
                     fontSize: 25,
 
+
                     fontFamily: fontFamilys,
 
                    // fontFamily: readexPro,
+
+
+                 
+                    // fontFamily: readexPro,
 
                     color: color,
                     fontWeight: FontWeight.w700),
@@ -238,6 +248,7 @@ class _PackageClassScreenState extends State<PackageClassScreen> {
                         fontSize: 16,
                         color: AppColor.buttonTextColor,
                         // fontWeight: FontWeight.w400,
+
 
                         fontFamily: fontFamilys),
 
@@ -298,9 +309,14 @@ class _PackageClassScreenState extends State<PackageClassScreen> {
                 style: TextStyle(
                     fontSize: 20,
 
+
                     fontFamily: fontFamilys,
 
                   //  fontFamily: readexPro,
+
+
+                  //  fontFamily: fontFamilys,
+
 
                     color: color,
                     fontWeight: FontWeight.w700),
@@ -332,9 +348,14 @@ class _PackageClassScreenState extends State<PackageClassScreen> {
                         color: AppColor.buttonTextColor,
                         // fontWeight: FontWeight.w400,
 
+
                         fontFamily: fontFamilys),
 
                       //  fontFamily: readexPro),
+
+
+                       
+                        // fontFamily: readexPro),
 
                   ),
                 ),

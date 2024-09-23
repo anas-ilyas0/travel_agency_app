@@ -2,6 +2,9 @@ import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
+import '../widget/agent_text_field.dart';
+import '../widget/delContainer.dart';
+
 class SupplierTask {
   final String companyName;
   final String supplierName;
@@ -113,4 +116,58 @@ class AgentsTaskDataSource extends DataTableSource {
 
   @override
   int get selectedRowCount => 0;
+}
+class InternationalSupplierTasks {
+  final String companyName;
+  final String unknown1;
+  final String phoneNumber;
+  final String service;
+  final String unknown2;
+  final String location;
+  final String status;
+  final String action;
+
+  InternationalSupplierTasks(this.companyName, this.unknown1, this.phoneNumber,
+      this.service, this.unknown2, this.location, this.status, this.action);
+}
+
+class InternationalSupplierTaskDataSource extends DataTableSource {
+  final List<InternationalSupplierTasks> internationalSupplierTasks;
+
+InternationalSupplierTaskDataSource(this.internationalSupplierTasks);
+
+@override
+DataRow? getRow(int index) {
+  if (index >= internationalSupplierTasks.length || index < 0) return null;
+  final InternationalSupplierTasks task = internationalSupplierTasks[index];
+  return DataRow.byIndex(
+    index: index,
+    cells: [
+      DataCell(AgentFormText().agentFormText(task.companyName, 12)),
+      DataCell(AgentFormText().agentFormText(task.unknown1, 12)),
+      DataCell(AgentFormText().agentFormText(task.phoneNumber, 12)),
+      DataCell(AgentFormText().agentFormText(task.service, 12)),
+      DataCell(AgentFormText().agentFormText(task.unknown2, 12)),
+      DataCell(AgentFormText().agentFormText(task.location, 12)),
+      DataCell(AgentFormText().agentFormText(task.status, 12)),
+      DataCell(Row(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(5),
+            child: EditDelContainer().editDelContainer(() {}),
+          )
+        ],
+      )),
+    ],
+  );
+}
+
+@override
+int get rowCount => internationalSupplierTasks.length;
+
+@override
+bool get isRowCountApproximate => false;
+
+@override
+int get selectedRowCount=>0;
 }
