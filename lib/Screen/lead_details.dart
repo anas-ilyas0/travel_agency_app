@@ -63,14 +63,12 @@ class LeadDetails extends StatelessWidget {
               color: Colors.white,
               fontSize: 16,
             ),
-<<<<<<< HEAD
           ),
                ),
              ),
            ],
          ),
        ),
-=======
             ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
@@ -110,8 +108,7 @@ class LeadDetails extends StatelessWidget {
                 ),
               ),
               // ElevatedButton(onPressed: () {
->>>>>>> 7e5b3e93e38658796a4a6fec95a7755f5c60da80
-
+            ),
         SizedBox(
           height: context.screenHeight * 0.02,
         ),
@@ -564,7 +561,7 @@ class LeadDetails extends StatelessWidget {
             ),
           ),
         )
-      ]),
+            ]),
     );
   }
 }

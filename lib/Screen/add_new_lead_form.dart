@@ -144,7 +144,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
 
                         ),
                         const SizedBox(height: 5),
-                        Widgets().textFormField('John Doe',),
+                        Widgets().textFormField('John Doe',context),
                       ],
                     ),
                   ),
@@ -200,7 +200,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                   ),
                 ),
                 const SizedBox(height: 5),
-                Widgets().textFormField('John Alen'),
+                Widgets().textFormField('John Alen', context),
               
 
             Padding(
@@ -219,7 +219,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                             fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(height: 5),
-                      Widgets().textFormField(''),
+                      Widgets().textFormField('',context),
                     ],
                   ),
                   const SizedBox(width: 15),
@@ -235,7 +235,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                             fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(height: 5),
-                      Widgets().textFormField(''),
+                      Widgets().textFormField('',context),
                     ],
                   )
                 ],
@@ -259,7 +259,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                   ),
                 ),
                 const SizedBox(height: 5),
-                Widgets().textFormField('+1 (555) 987-6543'),
+                Widgets().textFormField('+1 (555) 987-6543',context),
               ],
             ),
           ),
@@ -345,11 +345,11 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
 
                         )),
                         Expanded(
-                          child: Widgets().textFormField('500'),
+                          child: Widgets().textFormField('500',context),
                         ),
                         const SizedBox(width: 15),
                         Expanded(
-                          child: Widgets().textFormField('\$200'),
+                          child: Widgets().textFormField('\$200',context),
                         ),
                       ],
                     ),
@@ -367,11 +367,11 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
 
                         ),
                         Expanded(
-                          child: Widgets().textFormField('600'),
+                          child: Widgets().textFormField('600',context),
                         ),
                         const SizedBox(width: 15),
                         Expanded(
-                          child: Widgets().textFormField('\$300'),
+                          child: Widgets().textFormField('\$300',context),
                         ),
                       ],
                     ),
@@ -389,11 +389,11 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
 
                         ),
                         Expanded(
-                          child: Widgets().textFormField('350'),
+                          child: Widgets().textFormField('350',context),
                         ),
                         const SizedBox(width: 15),
                         Expanded(
-                          child: Widgets().textFormField('\$150'),
+                          child: Widgets().textFormField('\$150',context),
                         ),
                       ],
                     ),
@@ -411,11 +411,11 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
 
                         ),
                         Expanded(
-                          child: Widgets().textFormField('500'),
+                          child: Widgets().textFormField('500',context),
                         ),
                         const SizedBox(width: 15),
                         Expanded(
-                          child: Widgets().textFormField('\$500'),
+                          child: Widgets().textFormField('\$500',context),
                         ),
                       ],
                     ),
@@ -433,11 +433,11 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
 
                         ),
                         Expanded(
-                          child: Widgets().textFormField('500'),
+                          child: Widgets().textFormField('500',context),
                         ),
                         const SizedBox(width: 15),
                         Expanded(
-                          child: Widgets().textFormField('\$350'),
+                          child: Widgets().textFormField('\$350',context),
                         ),
                       ],
                     ),
@@ -482,7 +482,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                                   fontFamily: fontFamilys,
                                   fontWeight: FontWeight.bold),
                             ),
-                            Widgets().textFormField('London'),
+                            Widgets().textFormField('London',context),
                           ],
                         ),
                       ),
@@ -500,7 +500,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                                   fontFamily: fontFamilys,
                                   fontWeight: FontWeight.bold),
                             ),
-                            Widgets().textFormField('05/07/2024'),
+                            Widgets().textFormField('05/07/2024',context),
                           ],
                         ),
                       ),
@@ -518,7 +518,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                                   fontFamily: fontFamilys,
                                   fontWeight: FontWeight.bold),
                             ),
-                            Widgets().textFormField('22/07/2024'),
+                            Widgets().textFormField('22/07/2024',context),
                           
                         
 
@@ -533,7 +533,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                                 fontFamily: readexPro,
                                 fontWeight: FontWeight.bold),
                           ),
-                          Widgets().textFormField('')
+                          Widgets().textFormField('',context)
                         ],
                       ),
                       const SizedBox(width: 15),
@@ -548,7 +548,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                                 fontFamily: readexPro,
                                 fontWeight: FontWeight.bold),
                           ),
-                          Widgets().textFormField(''),
+                          Widgets().textFormField('',context),
                         ],
                       ),
                       const SizedBox(width: 15),
@@ -563,7 +563,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                                 fontFamily: readexPro,
                                 fontWeight: FontWeight.bold),
                           ),
-                          Widgets().textFormField(''),
+                          Widgets().textFormField('',context),
                         ],
 
                       ),

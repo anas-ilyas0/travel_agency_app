@@ -11,7 +11,7 @@ import 'package:flutter_svg/svg.dart';
 
 class Widgets {
 
-  
+
   final List<AgentsTask> agentsTaskss = [
     AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
         'Sialkot Punjab 51040', 'Active', ''),
@@ -42,12 +42,37 @@ class Widgets {
     AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
         'Sialkot Punjab 51040', 'Active', ''),];
 
+
   final List<AgentsTask> agentsTasks = List.generate(20, (index)=>AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
       'Sialkot Punjab 51040', 'Active', ''));
 
 final List<SupplierTask> tasks=List.generate(20, (index)=>
     SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
         'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'));
+  final List<InternationalSupplierTasks> internationalSupplierTasks = [
+    InternationalSupplierTasks('RADISSON', 'CPT', '+21 999 999 999',
+        'Air Tickets', 'ABSA', 'CENTURY CITY, CAPE TOWN 8001 SA', 'Active', ''),
+    InternationalSupplierTasks('RADISSON', 'CPT', '+21 999 999 999',
+        'Air Tickets', 'ABSA', 'CENTURY CITY, CAPE TOWN 8001 SA', 'Active', ''),
+    InternationalSupplierTasks('RADISSON', 'CPT', '+21 999 999 999',
+        'Air Tickets', 'ABSA', 'CENTURY CITY, CAPE TOWN 8001 SA', 'Active', ''),
+    InternationalSupplierTasks('RADISSON', 'CPT', '+21 999 999 999',
+        'Air Tickets', 'ABSA', 'CENTURY CITY, CAPE TOWN 8001 SA', 'Active', ''),
+    InternationalSupplierTasks('RADISSON', 'CPT', '+21 999 999 999',
+        'Air Tickets', 'ABSA', 'CENTURY CITY, CAPE TOWN 8001 SA', 'Active', ''),
+    InternationalSupplierTasks('RADISSON', 'CPT', '+21 999 999 999',
+        'Air Tickets', 'ABSA', 'CENTURY CITY, CAPE TOWN 8001 SA', 'Active', ''),
+    InternationalSupplierTasks('RADISSON', 'CPT', '+21 999 999 999',
+        'Air Tickets', 'ABSA', 'CENTURY CITY, CAPE TOWN 8001 SA', 'Active', ''),
+    InternationalSupplierTasks('RADISSON', 'CPT', '+21 999 999 999',
+        'Air Tickets', 'ABSA', 'CENTURY CITY, CAPE TOWN 8001 SA', 'Active', ''),
+    InternationalSupplierTasks('RADISSON', 'CPT', '+21 999 999 999',
+        'Air Tickets', 'ABSA', 'CENTURY CITY, CAPE TOWN 8001 SA', 'Active', ''),
+    InternationalSupplierTasks('RADISSON', 'CPT', '+21 999 999 999',
+        'Air Tickets', 'ABSA', 'CENTURY CITY, CAPE TOWN 8001 SA', 'Active', ''),
+    InternationalSupplierTasks('RADISSON', 'CPT', '+21 999 999 999',
+        'Air Tickets', 'ABSA', 'CENTURY CITY, CAPE TOWN 8001 SA', 'Active', ''),];
+
 
 
 
@@ -221,9 +246,9 @@ final List<SupplierTask> tasks=List.generate(20, (index)=>
     );
   }
 
-  Widget textFormField(String text) {
+  Widget textFormField(String text,BuildContext context) {
     return Container(
-      width: 250,
+      width: 100*context.screenWidth/400,
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
@@ -618,7 +643,7 @@ final List<SupplierTask> tasks=List.generate(20, (index)=>
   Widget addNewPackageFormAgentNameAndClinetName(BuildContext context,String text1,String text2){
     return SizedBox(
       height: 80,
-      width: Responsive.isMobile(context)? null:Responsive.isTablet(context)? context.screenWidth * 0.25:context.screenWidth * 0.2 ,
+      width: Responsive.isMobile(context)? null:Responsive.isTablet(context)? context.screenWidth * 0.25:context.screenWidth * 0.25 ,
       child: Column(
         children: [Align(alignment: Alignment.centerLeft,
           child: Text('$text1',style:  TextStyle(fontSize: 16,fontFamily: fontFamilys,fontWeight: FontWeight.w400),)),
