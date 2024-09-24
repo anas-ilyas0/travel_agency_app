@@ -186,9 +186,9 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                                           children: [
                                             CircleAvatar(
                                               backgroundImage: AssetImage('${imageUrl}agent.png'),
-                                              radius: 16, // Same size as in dropdown items
+                                              radius: 16,
                                             ),
-                                            SizedBox(width: 5), // Same spacing as in dropdown items
+                                            SizedBox(width: 5),
                                             Text(
                                               duration,
                                               style: TextStyle(fontSize: 14),
@@ -206,20 +206,20 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                             isExpanded: true,
                             onChanged: (value) {
                               searchName.text = value ??
-                                  ''; // Update the controller with selected year
+                                  '';
                             },
                             selectedItemBuilder: (BuildContext context){
 
                               return agents.map((String duration) {
                                 return SizedBox(
-                                  height: 50, // Ensure consistent height for the selected item
+                                  height: 50,
                                   child: Row(
                                     children: [
                                       CircleAvatar(
                                         backgroundImage: AssetImage('${imageUrl}agent.png'),
-                                        radius: 16, // Same size as in dropdown items
+                                        radius: 16,
                                       ),
-                                      SizedBox(width: 5), // Same spacing as in dropdown items
+                                      SizedBox(width: 5),
                                       Text(
                                         duration,
                                         style: TextStyle(fontSize: 14),
