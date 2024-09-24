@@ -71,7 +71,7 @@ class MyApp extends StatelessWidget {
 // home: LoginPage());
 // home:CustomDropDownButton());
 // home: AddNewInterNationalsuppliers());
-home: AddNewLeadDetail());
+home:  AddNewLeadForm ());
      
 
 

@@ -13,6 +13,7 @@ class LocalSupplierDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -89,26 +90,28 @@ class LocalSupplierDetail extends StatelessWidget {
                             onPressed: () {
                               // Action on button press
                             },
-                            child: Row(
-                              mainAxisSize: MainAxisSize.min,
-                              mainAxisAlignment: MainAxisAlignment
-                                  .center, // Centering the content within the button
-                              children: [
-                                Icon(
-                                  Icons.edit,
-                                  color: Colors.black,
-                                ),
-                                SizedBox(width: 8),
-                                Text(
-                                  'Edit Details',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.w500,
-                                      color: Color(
-                                        0XFF11345A,
-                                      ),
-                                      fontFamily: fontFamilys),
-                                ),
-                              ],
+                            child: FittedBox(
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment: MainAxisAlignment
+                                    .center, // Centering the content within the button
+                                children: [
+                                  Icon(
+                                    Icons.edit,
+                                    color: Colors.black,
+                                  ),
+                                  SizedBox(width: 8),
+                                  Text(
+                                    'Edit Details',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        color: Color(
+                                          0XFF11345A,
+                                        ),
+                                        fontFamily: fontFamilys),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ),
@@ -120,117 +123,123 @@ class LocalSupplierDetail extends StatelessWidget {
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(
-                            left: 32,
-                          ),
-                          child: Container(
-                            height: context.screenHeight * 0.15,
-                            width: context.screenWidth * 0.3,
-                            decoration: BoxDecoration(
-                              color: Colors
-                                  .white, // Optional: Set the background color
-                              border: Border.all(
-                                color:
-                                    const Color(0xff3551b64d), // Border color
-                                width: 1.0, // Border thickness
-                              ),
-                              borderRadius: BorderRadius.circular(
-                                  16), // Optional: Rounded corners
+                    child: Expanded(
+                      child: Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              left: 32,
                             ),
-                            child: Row(
-                              children: [
-                                const Padding(
-                                  padding: EdgeInsets.only(left: 16),
-                                  child: Stack(
-                                    children: [
-                                      CircleAvatar(
-                                        radius:
-                                            30, // Adjust the radius for size
-                                        backgroundImage: AssetImage(
-                                            '${ImagesAssets.imagePath}Ellipse.png'), // Image from assets
-                                      ),
-                                      Positioned(
-                                          right: 4,
-                                          bottom: -2,
-                                          child: Icon(
-                                            Icons.circle,
-                                            color: Colors.green,
-                                            size: 18,
-                                          ))
-                                    ],
+                            child: Container(
+                              height: context.screenHeight * 0.15,
+                              width: context.screenWidth * 0.3,
+                              decoration: BoxDecoration(
+                                color: Colors
+                                    .white, // Optional: Set the background color
+                                border: Border.all(
+                                  color:
+                                      const Color(0xff3551b64d), // Border color
+                                  width: 1.0, // Border thickness
+                                ),
+                                borderRadius: BorderRadius.circular(
+                                    16), // Optional: Rounded corners
+                              ),
+                              child: Row(
+                                children: [
+                                  const Padding(
+                                    padding: EdgeInsets.only(left: 16),
+                                    child: Stack(
+                                      children: [
+                                        CircleAvatar(
+                                          radius:
+                                              30, // Adjust the radius for size
+                                          backgroundImage: AssetImage(
+                                              '${ImagesAssets.imagePath}Ellipse.png'), // Image from assets
+                                        ),
+                                        Positioned(
+                                            right: 4,
+                                            bottom: -2,
+                                            child: Icon(
+                                              Icons.circle,
+                                              color: Colors.green,
+                                              size: 18,
+                                            ))
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                SizedBox(
-                                  width: context.screenWidth * 0.02,
-                                ),
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Supplier Full Name here',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w500,
-                                          fontFamily: fontFamilys,
-                                          color: AppColor.addnewagent,
-                                          fontSize: 18),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.02,
+                                  ),
+                                  Expanded(
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          'Supplier Full Name here',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.w500,
+                                              fontFamily: fontFamilys,
+                                              color: AppColor.addnewagent,
+                                              fontSize: 18),
+                                        ),
+                                        Text(
+                                          'Local Supplier',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold),
+                                        )
+                                      ],
                                     ),
-                                    Text(
-                                      'Local Supplier',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold),
-                                    )
-                                  ],
-                                ),
-                              ],
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
-                        ),
-                        SizedBox(
-                          width: context.screenWidth * 0.02,
-                        ),
-                        Container(
-                          height: context.screenHeight * 0.15,
-                          width: context.screenWidth * 0.3,
-                          decoration: BoxDecoration(
-                            color: Colors
-                                .white, // Optional: Set the background color
-                            border: Border.all(
-                              color: const Color(0xff3551b64d), // Border color
-                              width: 1.0, // Border thickness
-                            ),
-                            borderRadius: BorderRadius.circular(
-                                16), // Optional: Rounded corners
+                          SizedBox(
+                            width: context.screenWidth * 0.02,
                           ),
-                          child: Row(
-                            children: [
-                              const Padding(
-                                  padding: EdgeInsets.only(left: 16),
-                                  child: Align(
-                                    alignment: Alignment.centerLeft,
-                                    child: CircleAvatar(
-                                      radius: 30,
-                                      backgroundImage: AssetImage(
-                                          '${ImagesAssets.imagePath}Ellipse3.png'),
-                                    ),
-                                  )),
-                              SizedBox(
-                                width: context.screenWidth * 0.01,
-                              ),
-                              Text(
-                                'Company Name here',
-                                style: TextStyle(
-                                    fontFamily: fontFamilys,
-                                    fontWeight: FontWeight.w500,
-                                    color: AppColor.addnewagent),
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
+                         Container(
+  height: context.screenHeight * 0.15,
+  width: context.screenWidth * 0.5, // Set width to 50% of the screen width
+  decoration: BoxDecoration(
+    color: Colors.white,
+    border: Border.all(
+      color: const Color(0xff3551b64d),
+      width: 1.0,
+    ),
+    borderRadius: BorderRadius.circular(16),
+  ),
+  child: Row(
+    children: [
+      const Padding(
+        padding: EdgeInsets.only(left: 16),
+        child: Align(
+          alignment: Alignment.centerLeft,
+          child: CircleAvatar(
+            radius: 30,
+            backgroundImage: AssetImage('${ImagesAssets.imagePath}Ellipse3.png'),
+          ),
+        ),
+      ),
+      SizedBox(
+        width: context.screenWidth * 0.01,
+      ),
+      Expanded(
+        child: Text(
+          'Company Name here',
+          style: TextStyle(
+            fontFamily: fontFamilys,
+            fontWeight: FontWeight.w500,
+            color: AppColor.addnewagent,
+          ),
+        ),
+      ),
+    ],
+  ),
+)
+
+                        ],
+                      ),
                     ),
                   ),
                   SizedBox(
