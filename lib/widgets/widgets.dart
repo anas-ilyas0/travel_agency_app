@@ -10,12 +10,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class Widgets {
-
-  
-
-
-
-
   final List<AgentsTask> agentsTaskss = [
     AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
         'Sialkot Punjab 51040', 'Active', ''),
@@ -44,15 +38,18 @@ class Widgets {
     AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
         'Sialkot Punjab 51040', 'Active', ''),
     AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-        'Sialkot Punjab 51040', 'Active', ''),];
+        'Sialkot Punjab 51040', 'Active', ''),
+  ];
 
+  final List<AgentsTask> agentsTasks = List.generate(
+      20,
+      (index) => AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
+          'Sialkot Punjab 51040', 'Active', ''));
 
-  final List<AgentsTask> agentsTasks = List.generate(20, (index)=>AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-      'Sialkot Punjab 51040', 'Active', ''));
-
-final List<SupplierTask> tasks=List.generate(20, (index)=>
-    SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
-        'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'));
+  final List<SupplierTask> tasks = List.generate(
+      20,
+      (index) => SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+          'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'));
   final List<InternationalSupplierTasks> internationalSupplierTasks = [
     InternationalSupplierTasks('RADISSON', 'CPT', '+21 999 999 999',
         'Air Tickets', 'ABSA', 'CENTURY CITY, CAPE TOWN 8001 SA', 'Active', ''),
@@ -75,12 +72,8 @@ final List<SupplierTask> tasks=List.generate(20, (index)=>
     InternationalSupplierTasks('RADISSON', 'CPT', '+21 999 999 999',
         'Air Tickets', 'ABSA', 'CENTURY CITY, CAPE TOWN 8001 SA', 'Active', ''),
     InternationalSupplierTasks('RADISSON', 'CPT', '+21 999 999 999',
-        'Air Tickets', 'ABSA', 'CENTURY CITY, CAPE TOWN 8001 SA', 'Active', ''),];
-
-
-
-
-
+        'Air Tickets', 'ABSA', 'CENTURY CITY, CAPE TOWN 8001 SA', 'Active', ''),
+  ];
 
   Widget editDelContainer(VoidCallback onPress) {
     return Container(
@@ -107,18 +100,14 @@ final List<SupplierTask> tasks=List.generate(20, (index)=>
     );
   }
 
-
   Widget agentText(String text, double fontSize) {
     return Text(text,
         style: TextStyle(
             fontSize: fontSize,
-
-          
             fontWeight: FontWeight.w400,
             fontFamily: fontFamilys));
-            // fontWeight: FontWeight.w300,
-            // fontFamily: readexPro));
-
+    // fontWeight: FontWeight.w300,
+    // fontFamily: readexPro));
   }
 
   Widget finalButton(String text, Color color, VoidCallback onPress) {
@@ -134,11 +123,9 @@ final List<SupplierTask> tasks=List.generate(20, (index)=>
           child: Text(
             text,
             style: TextStyle(
-
                 fontFamily: fontFamilys, color: const Color(0XFF202529)),
 
             //    fontFamily: readexPro, color: const Color(0XFF202529)),
-
           )),
     );
   }
@@ -197,20 +184,16 @@ final List<SupplierTask> tasks=List.generate(20, (index)=>
                           color: Colors.black,
                           fontSize: 12,
                           fontWeight: FontWeight.w300,
-
                           fontFamily: fontFamilys),
-
-                          ),
-
                     ),
                   ),
-                
+                ),
+
                 hintText: 'Search Agent',
                 hintStyle: TextStyle(
-
                     color: Colors.grey, fontFamily: fontFamilys, fontSize: 12),
 
-                  // color: Colors.grey, fontFamily: readexPro, fontSize: 12),
+                // color: Colors.grey, fontFamily: readexPro, fontSize: 12),
 
                 contentPadding: const EdgeInsets.symmetric(
                   horizontal: 5,
@@ -225,7 +208,7 @@ final List<SupplierTask> tasks=List.generate(20, (index)=>
     );
   }
 
-  Widget textFormNoteField( double width,double height,int maxLines ){
+  Widget textFormNoteField(double width, double height, int maxLines) {
     return Container(
       width: width,
       height: height,
@@ -233,8 +216,6 @@ final List<SupplierTask> tasks=List.generate(20, (index)=>
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
           border: Border.all(color: Colors.grey.withOpacity(0.3))),
-
-
       child: TextFormField(
         maxLines: maxLines,
         decoration: InputDecoration(
@@ -246,13 +227,12 @@ final List<SupplierTask> tasks=List.generate(20, (index)=>
           border: const OutlineInputBorder(borderSide: BorderSide.none),
         ),
       ),
-
     );
   }
 
-  Widget textFormField(String text,BuildContext context) {
+  Widget textFormField(String text, BuildContext context) {
     return Container(
-      width: 100*context.screenWidth/400,
+      width: 100 * context.screenWidth / 400,
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
@@ -261,10 +241,9 @@ final List<SupplierTask> tasks=List.generate(20, (index)=>
         decoration: InputDecoration(
           hintText: text,
           hintStyle: TextStyle(
-
               color: AppColor.hintColor, fontFamily: fontFamilys, fontSize: 15),
 
-            //  color: Colors.grey, fontFamily: readexPro, fontSize: 13),
+          //  color: Colors.grey, fontFamily: readexPro, fontSize: 13),
 
           contentPadding:
               const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
@@ -284,8 +263,7 @@ final List<SupplierTask> tasks=List.generate(20, (index)=>
               text,
               style: TextStyle(fontSize: 17, fontFamily: fontFamilys),
 
-           //   style: TextStyle(fontSize: 17, fontFamily: readexPro),
-
+              //   style: TextStyle(fontSize: 17, fontFamily: readexPro),
             ),
           ),
         Padding(
@@ -316,8 +294,7 @@ final List<SupplierTask> tasks=List.generate(20, (index)=>
 
               fontFamily: fontFamilys,
 
-            //  fontFamily: readexPro,
-
+              //  fontFamily: readexPro,
             ),
           ),
         ),
@@ -325,11 +302,9 @@ final List<SupplierTask> tasks=List.generate(20, (index)=>
           child: Text(
             secondText,
             style: TextStyle(
-
               fontFamily: fontFamilys,
 
-           //   fontFamily: readexPro,
-
+              //   fontFamily: readexPro,
             ),
           ),
         ),
@@ -341,7 +316,11 @@ final List<SupplierTask> tasks=List.generate(20, (index)=>
   Widget containerfield(
       String title, String numbers, String assetImage, BuildContext context) {
     return Container(
-      width: Responsive.isDesktop(context)? context.screenWidth * 0.2 : Responsive.isTablet(context)? context.screenWidth * 0.4:context.screenWidth * 0.8,
+      width: Responsive.isDesktop(context)
+          ? context.screenWidth * 0.2
+          : Responsive.isTablet(context)
+              ? context.screenWidth * 0.4
+              : context.screenWidth * 0.8,
       decoration: BoxDecoration(
           color: containerColor,
           borderRadius: BorderRadius.circular(7),
@@ -364,7 +343,9 @@ final List<SupplierTask> tasks=List.generate(20, (index)=>
                         fontFamily: 'Readex Pro',
                         fontSize: 13),
                   ),
-                  SizedBox(height: 30,),
+                  SizedBox(
+                    height: 30,
+                  ),
                   Text(
                     numbers,
                     style: const TextStyle(
@@ -379,8 +360,7 @@ final List<SupplierTask> tasks=List.generate(20, (index)=>
               height: 60,
               width: 60,
               decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(7)),
+                  color: Colors.white, borderRadius: BorderRadius.circular(7)),
               child: Center(
                 child: Image(
                   width: 30,
@@ -396,9 +376,12 @@ final List<SupplierTask> tasks=List.generate(20, (index)=>
     );
   }
 
-  Widget button(String text, VoidCallback onTap,) {
+  Widget button(
+    String text,
+    VoidCallback onTap,
+  ) {
     return Container(
-      height:50,
+      height: 50,
       decoration: BoxDecoration(
           color: addLeadButtonColor, borderRadius: BorderRadius.circular(5)),
       child: Padding(
@@ -414,13 +397,13 @@ final List<SupplierTask> tasks=List.generate(20, (index)=>
                   child: Text(
                     text,
                     style: TextStyle(
-                      fontSize: 14,
-
+                        fontSize: 14,
                         fontFamily: fontFamilys,
 
-                     //   fontFamily: readexPro,
+                        //   fontFamily: readexPro,
 
-                        color: color, fontWeight: FontWeight.w400),
+                        color: color,
+                        fontWeight: FontWeight.w400),
                   ),
                 ),
               ),
@@ -436,7 +419,7 @@ final List<SupplierTask> tasks=List.generate(20, (index)=>
     return Padding(
       padding: const EdgeInsets.only(left: 10),
       child: Container(
-        width:  182 ,
+        width: 182,
         decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(7),
@@ -445,13 +428,13 @@ final List<SupplierTask> tasks=List.generate(20, (index)=>
         child: Expanded(
           child: Row(
             mainAxisSize: MainAxisSize.min, // Align children to start
-          
+
             children: [
               Padding(
                 padding: const EdgeInsets.only(left: 5.0),
                 child: SizedBox(
-                  height: Responsive.isDesktop(context)? 20: 15  ,
-                  width:  Responsive.isDesktop(context)? 20:15,
+                  height: Responsive.isDesktop(context) ? 20 : 15,
+                  width: Responsive.isDesktop(context) ? 20 : 15,
                   child: Image(
                     image: AssetImage('${imageUrl}vector.png'),
                     fit: BoxFit.contain,
@@ -474,10 +457,13 @@ final List<SupplierTask> tasks=List.generate(20, (index)=>
                         child: Text(
                           item,
 
-                          style:  TextStyle(color: AppColor.hintColor, fontFamily: fontFamilys,fontWeight: FontWeight.w400, fontSize: 14),
+                          style: TextStyle(
+                              color: AppColor.hintColor,
+                              fontFamily: fontFamilys,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 14),
 
-                        //  style:  TextStyle(color: AppColor.hintColor, fontFamily: readexPro,fontWeight: FontWeight.w400, fontSize: 14),
-
+                          //  style:  TextStyle(color: AppColor.hintColor, fontFamily: readexPro,fontWeight: FontWeight.w400, fontSize: 14),
                         ),
                       );
                     }).toList(),
@@ -502,8 +488,7 @@ final List<SupplierTask> tasks=List.generate(20, (index)=>
                 builder: (context) => const ClientDetailPackage()));
       },
       child: Container(
-      
-            height: context.screenHeight*0.05,
+        height: context.screenHeight * 0.05,
         decoration: BoxDecoration(
           color: AppColor.buttonTextColors,
           borderRadius: BorderRadius.circular(12),
@@ -512,7 +497,6 @@ final List<SupplierTask> tasks=List.generate(20, (index)=>
           children: [
             Text(
               "Detail",
-              
               style: TextStyle(
                 // decoration: TextDecoration.underline,
                 color: Color(0XFF11345A),
@@ -589,7 +573,8 @@ final List<SupplierTask> tasks=List.generate(20, (index)=>
             ),
             child: Padding(
               padding: const EdgeInsets.all(4.0),
-              child: SvgPicture.asset('${ImagesAssets.imagePath}VectorRight.svg'),
+              child:
+                  SvgPicture.asset('${ImagesAssets.imagePath}VectorRight.svg'),
             ),
           ),
           SizedBox(width: 8),
@@ -603,7 +588,6 @@ final List<SupplierTask> tasks=List.generate(20, (index)=>
                 fontSize: 12,
                 fontFamily: 'ReadexPro',
                 //fontFamily: 'Poppin',
-
               ),
               maxLines: 2,
               overflow: TextOverflow.ellipsis,
@@ -613,82 +597,82 @@ final List<SupplierTask> tasks=List.generate(20, (index)=>
       ),
     );
   }
-  Widget agentFilterDropDown(BuildContext context,ontap){
-      bool isExpanded=false;
-    return  Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                height: context.screenHeight* 0.08,
-                width: context.screenWidth * 0.2,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(color: Colors.grey),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: GestureDetector(
-                  onTap:ontap,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text('Add Here', style: TextStyle(fontSize: 16)),
-                        Icon(isExpanded ? Icons.arrow_drop_up : Icons.arrow_drop_down),
-                      ],
-                    ),
-                  ),
-                ),
-              ),]);
+
+  Widget agentFilterDropDown(BuildContext context, ontap) {
+    bool isExpanded = false;
+    return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+      Container(
+        height: context.screenHeight * 0.08,
+        width: context.screenWidth * 0.2,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          border: Border.all(color: Colors.grey),
+          borderRadius: BorderRadius.circular(8),
+        ),
+        child: GestureDetector(
+          onTap: ontap,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Add Here', style: TextStyle(fontSize: 16)),
+                Icon(isExpanded ? Icons.arrow_drop_up : Icons.arrow_drop_down),
+              ],
+            ),
+          ),
+        ),
+      ),
+    ]);
   }
-  Widget addNewPackageFormAgentNameAndClinetName(BuildContext context,String text1,String text2){
+
+  Widget addNewPackageFormAgentNameAndClinetName(
+      BuildContext context, String text1, String text2) {
     return SizedBox(
       height: 80,
-      width: Responsive.isMobile(context)? null:Responsive.isTablet(context)? context.screenWidth * 0.25:context.screenWidth * 0.25 ,
+      width: Responsive.isMobile(context)
+          ? null
+          : Responsive.isTablet(context)
+              ? context.screenWidth * 0.25
+              : context.screenWidth * 0.25,
       child: Column(
-        children: [Align(alignment: Alignment.centerLeft,
-          child: Text('$text1',style:  TextStyle(fontSize: 16,fontFamily: fontFamilys,fontWeight: FontWeight.w400),)),
-       TextField(
-         cursorColor: Colors.white,
-  decoration: InputDecoration(
-     suffixIcon: const Icon(
-            Icons.arrow_drop_down, // Dropdown icon
-            color: Color(0XFFD4D7E3)),
-
-    fillColor: Colors.white,
-    filled: true,
-    hintText: '$text2',hintStyle: TextStyle(color:AppColor.hintColor , fontSize: 14),
-
-enabledBorder: const OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners
-      borderSide: BorderSide(
-        color: Color(0XFFD4D7E3),
-        width: 1
-
-      ),
-    ),
-    focusedBorder: const OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners
-      borderSide: BorderSide(
-        color: Color(0XFFD4D7E3),
-        width: 1
-
-      ),
-    ),
-    border: const OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners
-      borderSide: BorderSide(
-        color: Color(0XFFD4D7E3),
-        width: 1
-
-      ),
-    ),
-
-  )
-       ),
+        children: [
+          Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                '$text1',
+                style: TextStyle(
+                    fontSize: 16,
+                    fontFamily: fontFamilys,
+                    fontWeight: FontWeight.w400),
+              )),
+          TextField(
+              cursorColor: Colors.white,
+              decoration: InputDecoration(
+                suffixIcon: const Icon(Icons.arrow_drop_down, // Dropdown icon
+                    color: Color(0XFFD4D7E3)),
+                fillColor: Colors.white,
+                filled: true,
+                hintText: '$text2',
+                hintStyle: TextStyle(color: AppColor.hintColor, fontSize: 14),
+                enabledBorder: const OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(12)),
+                  // Rounded corners
+                  borderSide: BorderSide(color: Color(0XFFD4D7E3), width: 1),
+                ),
+                focusedBorder: const OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(12)),
+                  // Rounded corners
+                  borderSide: BorderSide(color: Color(0XFFD4D7E3), width: 1),
+                ),
+                border: const OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(12)),
+                  // Rounded corners
+                  borderSide: BorderSide(color: Color(0XFFD4D7E3), width: 1),
+                ),
+              )),
         ],
       ),
     );
   }
-  
 }

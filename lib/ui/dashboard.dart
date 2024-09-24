@@ -72,14 +72,14 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
                    child:
                     TabBarView(
                       controller: dashboardTabController ,
-
+                      physics: NeverScrollableScrollPhysics(),
                       children: [
 
                       DashBoardScreen(),
                       LeadScreen(),
                       AgentScreen(),
                       SupplierScreen(),
-                      
+                      PackageClassScreen()
                       ],
                     ),
                   )

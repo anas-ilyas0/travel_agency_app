@@ -67,6 +67,7 @@ class SupplierScreen extends StatelessWidget {
                       "Action"
                     ]),
                     source: TaskDataSource(Widgets().tasks),
+
                     headingRowColor: MaterialStateProperty.resolveWith<Color>(
                         (Set<MaterialState> states) {
                       return AppStrings.addLeadButtonColor;

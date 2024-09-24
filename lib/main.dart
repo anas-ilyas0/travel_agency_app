@@ -61,7 +61,7 @@ class MyApp extends StatelessWidget {
 // home: LeadDetails());
 // home: PackageDetail());
 // home: PackageClassScreen());
-home:LoginPage());
+home:AddNewLeadForm());
 // home: Dashboard());
      
 
