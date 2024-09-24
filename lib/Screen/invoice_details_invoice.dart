@@ -1,8 +1,10 @@
 import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/Screen/lead_details.dart';
+import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/login_page.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
+import 'package:fab_tech_sol/widgets/back_button_title_avatar.dart';
 import 'package:fab_tech_sol/widgets/invoice_detail_price_table.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -19,7 +21,8 @@ class LeadInvoiceDetails extends StatefulWidget {
   State<LeadInvoiceDetails> createState() => _LeadInvoiceDetailsState();
 }
 
-class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> with TickerProviderStateMixin{
+class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
+    with TickerProviderStateMixin {
   late TabController dashboardTabController;
   late TabController leadsTabController;
   @override
@@ -42,6 +45,7 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> with TickerProv
     leadsTabController.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,18 +61,17 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> with TickerProv
         // mainAxisAlignment: MainAxisAlignment.start,
         // crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-
           SizedBox(
             height: context.screenHeight * 0.03,
           ),
           Row(
             children: [
-              SizedBox(
-                width: context.screenWidth * 0.02,
-              ),
+           // BackButtonAvatar()
+             // BackButtonAvatar(text1: 'Incoice Details',),
+             SizedBox(width: context.screenWidth*0.025,),
               ElevatedButton(
                 onPressed: () {
-                  // Button logic here
+                 Navigator.pop(context);
                 },
                 style: ElevatedButton.styleFrom(
                     shape: const CircleBorder(), // Makes the button circular
@@ -87,70 +90,66 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> with TickerProv
                     fontWeight: FontWeight.w500),
               ),
             ],
-          ),
-          SizedBox(
-            height: context.screenHeight * 0.02,
-          ),
+           ),
+         
           const Divider(
             indent: 42,
             endIndent: 42,
           ),
           Row(
             children: [
-              SizedBox(
-                width: context.screenWidth * 0.05,
-              ),
+              SizedBox(width: context.screenWidth * 0.05),
               Flexible(
-                child: const Text(
+                flex: 8,
+                child: Text(
                   'Briton Consultancy & Travel Tours',
                   style: TextStyle(
-                      fontSize: 22,
+                      fontSize: 28,
                       color: Color(0XFF11345A),
-                      fontFamily: 'ReadexPro',
+                      fontFamily: fontFamilys,
                       fontWeight: FontWeight.w500),
                 ),
               ),
-              SizedBox(
-                width: context.screenWidth * 0.1,
-              ),
+              SizedBox(width: context.screenWidth * 0.09),
               SizedBox(
                 height: context.screenHeight * 0.08,
                 width: context.screenWidth * 0.1,
                 child: Image.asset("${ImagesAssets.imagePath}BRITON.png"),
               ),
               SizedBox(
-                width: context.screenWidth * 0.44,
+                width: context.screenWidth * 0.15,
               ),
               Flexible(
+                flex: 2,
                 child: const Text(
                   'Invoice Number:',
                   style: TextStyle(
                       fontWeight: FontWeight.bold, color: Color(0XFF83D0E3)),
                 ),
               ),
-              SizedBox(
-                width: context.screenWidth * 0.02,
-              ),
+              SizedBox(width: context.screenWidth * 0.02),
               Flexible(
+                flex: 2,
                 child: const Text(
                   'In834892234',
                   style: TextStyle(
                       color: Color(0XFF11345A), fontWeight: FontWeight.bold),
                 ),
-              )
+              ),
             ],
           ),
+
           SizedBox(
             height: context.screenHeight * 0.02,
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(left: 70), // Adds padding around the text
             child: Align(
               alignment: Alignment.centerLeft,
               child: Text('Royal Road, Phoenix 00213 | Mauritius',
                   style: TextStyle(
-                      fontFamily: 'ReadexPro',
-                      fontWeight: FontWeight.w500,
+                      fontFamily: fontFamilys,
+                      fontWeight: FontWeight.w400,
                       color: Color(0XFF83D0E3),
                       fontSize: 16)),
             ),
@@ -159,13 +158,14 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> with TickerProv
           SizedBox(
             height: context.screenHeight * 0.015,
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(left: 70), // Adds padding around the text
             child: Align(
               alignment: Alignment.centerLeft,
               child: Text('BRN: C13117660',
                   style: TextStyle(
-                      fontWeight: FontWeight.bold,
+                      fontFamily: fontFamilys,
+                      fontWeight: FontWeight.w400,
                       color: Color(0XFF83D0E3),
                       fontSize: 16)),
             ),
@@ -178,75 +178,80 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> with TickerProv
             endIndent: 70,
           ),
 
-        Row(
-  children: [
-    // "Bill To" text with padding
-    const Padding(
-      padding: EdgeInsets.only(left: 70), // Adds padding around the text
-      child: Align(
-        alignment: Alignment.centerLeft,
-        child: Text(
-          'Bill To',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            color: Color(0XFF83D0E3),
-            fontSize: 16,
+          Row(
+            children: [
+              // "Bill To" text with padding
+              Padding(
+                padding:
+                    EdgeInsets.only(left: 70), // Adds padding around the text
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'Bill To',
+                    style: TextStyle(
+                      fontFamily: fontFamilys,
+                      fontWeight: FontWeight.w400,
+                      color: Color(0XFF83D0E3),
+                      fontSize: 16,
+                    ),
+                  ),
+                ),
+              ),
+
+              // SizedBox for spacing between "Bill To" and Name
+              SizedBox(
+                width: context.screenWidth * 0.05,
+              ),
+
+              // Name Text: 'Beeharree Praina' with Expanded for responsiveness
+              Expanded(
+                child: const Text(
+                  'Beeharree Praina',
+                  style: TextStyle(
+                    fontFamily: 'ReadexPro',
+                    fontWeight: FontWeight.w500,
+                    fontSize: 16,
+                    color: Color(0XFF11345A),
+                  ),
+                  overflow: TextOverflow.ellipsis, // Prevent overflow
+                ),
+              ),
+
+             
+              SizedBox(
+                width: context.screenWidth * 0.49,
+              ),
+
+             
+              Flexible(
+                flex: 1,
+                child: const Text(
+                  'Invoice Number:',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Color(0XFF83D0E3),
+                  ),
+                ),
+              ),
+
+             
+              SizedBox(
+                width: context.screenWidth * 0.02,
+              ),
+
+              Flexible(
+                flex: 1,
+                child: const Text(
+                  '08/15/2024',
+                  style: TextStyle(
+                    color: Color(0XFF11345A),
+                    fontWeight: FontWeight.bold,
+                  ),
+                  overflow: TextOverflow.ellipsis, // Prevent overflow
+                ),
+              ),
+            ],
           ),
-        ),
-      ),
-    ),
-
-    // SizedBox for spacing between "Bill To" and Name
-    SizedBox(
-      width: context.screenWidth * 0.05,
-    ),
-
-    // Name Text: 'Beeharree Praina' with Expanded for responsiveness
-    Expanded(
-      child: const Text(
-        'Beeharree Praina',
-        style: TextStyle(
-          fontFamily: 'ReadexPro',
-          fontWeight: FontWeight.w500,
-          fontSize: 16,
-          color: Color(0XFF11345A),
-        ),
-        overflow: TextOverflow.ellipsis, // Prevent overflow
-      ),
-    ),
-
-    // SizedBox for dynamic spacing
-    SizedBox(
-      width: context.screenWidth * 0.49,
-    ),
-
-    // "Invoice Number" text
-    const Text(
-      'Invoice Number:',
-      style: TextStyle(
-        fontWeight: FontWeight.bold,
-        color: Color(0XFF83D0E3),
-      ),
-    ),
-
-    // SizedBox for spacing between "Invoice Number" and Date
-    SizedBox(
-      width: context.screenWidth * 0.02,
-    ),
-
-   
-    Expanded(
-      child: const Text(
-        '08/15/2024',
-        style: TextStyle(
-          color: Color(0XFF11345A),
-          fontWeight: FontWeight.bold,
-        ),
-        overflow: TextOverflow.ellipsis, // Prevent overflow
-      ),
-    ),
-  ],
-),
 
           const Divider(
             indent: 70,
@@ -262,12 +267,13 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> with TickerProv
             child: Row(
               children: [
                 Flexible(
-                  child: const Padding(
+                  child: Padding(
                     padding: EdgeInsets.all(12),
                     child: Text(
                       'Price Per Pax',
                       style: TextStyle(
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.w400,
+                          fontFamily: fontFamilys,
                           color: Color(0XFF83D0E3)),
                     ),
                   ),
@@ -276,12 +282,13 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> with TickerProv
                   width: context.screenWidth * 0.2,
                 ),
                 Flexible(
-                  child: const Padding(
+                  child: Padding(
                     padding: EdgeInsets.all(12),
                     child: Text(
                       'Qty',
                       style: TextStyle(
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.w400,
+                          fontFamily: fontFamilys,
                           color: Color(0XFF83D0E3)),
                     ),
                   ),
@@ -290,12 +297,13 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> with TickerProv
                   width: context.screenWidth * 0.2,
                 ),
                 Flexible(
-                  child: const Padding(
+                  child: Padding(
                     padding: EdgeInsets.all(12),
                     child: Text(
                       'Total Per Pax',
                       style: TextStyle(
-                          fontWeight: FontWeight.bold,
+                          fontFamily: fontFamilys,
+                          fontWeight: FontWeight.w400,
                           color: Color(0XFF83D0E3)),
                     ),
                   ),
@@ -304,7 +312,7 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> with TickerProv
             ),
           ),
           SizedBox(height: context.screenHeight * 0.02),
-          
+
           Row(
             children: [
               Padding(
@@ -491,7 +499,7 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> with TickerProv
                                 'Flight Details',
                                 style: TextStyle(
                                     color: AppColor.buttonTextColors,
-                                    fontFamily: 'ReadexPro',
+                                    fontFamily: fontFamilys,
                                     fontWeight: FontWeight.w400),
                               ))),
                       SizedBox(
@@ -510,7 +518,7 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> with TickerProv
                               'List of Passenger (s)',
                               style: TextStyle(
                                   color: AppColor.buttonTextColors,
-                                  fontFamily: 'ReadexPro',
+                                  fontFamily: fontFamilys,
                                   fontWeight: FontWeight.w400),
                             ),
                           )),
@@ -591,11 +599,12 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> with TickerProv
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(10),
                         ),
-                        child: const Padding(
+                        child:  Padding(
                             padding: EdgeInsets.all(12),
                             child: Text('Package Details',
                                 style: TextStyle(
                                     fontSize: 18,
+                                    fontFamily: fontFamilys,
                                     fontWeight: FontWeight.w300,
                                     color: Color(0XFF83D0E3))))),
                   ),
@@ -605,7 +614,7 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> with TickerProv
                   SizedBox(
                     height: context.screenHeight * 0.05,
                   ),
-                  const Align(
+                   Align(
                       alignment: Alignment.centerLeft,
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 12),
@@ -613,7 +622,8 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> with TickerProv
                           'Package Details',
                           style: TextStyle(
                               fontSize: 18,
-                              fontWeight: FontWeight.w500,
+                              fontFamily:fontFamilys ,
+                              fontWeight: FontWeight.w400,
                               color: Color(0XFF11345A)),
                         ),
                       )),
@@ -629,14 +639,15 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> with TickerProv
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          child: const Padding(
+                          child: Padding(
                               padding: EdgeInsets.all(12),
                               child: Text(
                                 'Notes',
                                 style: TextStyle(
                                     color: Color(0XFF83D0E3),
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w300),
+                                    fontSize: 16,
+                                    fontFamily: fontFamilys,
+                                    fontWeight: FontWeight.w400),
                               ))),
                       SizedBox(
                         width: context.screenWidth * 0.03,
@@ -648,14 +659,15 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> with TickerProv
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          child: const Padding(
+                          child:  Padding(
                               padding: EdgeInsets.all(12),
                               child: Text(
                                 'Banking Details',
                                 style: TextStyle(
+                                  fontFamily: fontFamilys,
                                     color: Color(0XFF83D0E3),
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w300),
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w400),
                               ))),
                       SizedBox(
                         height: context.screenHeight * 0.04,
@@ -666,20 +678,20 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> with TickerProv
                     height: context.screenHeight * 0.1,
                   ),
                   Row(children: [
-                    Expanded(child: const Align(
-                        alignment: Alignment.centerLeft,
-                        child: Text(
-                          'For our full terms and conditions, please',
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontFamily: 'ReadexPro',
-                              fontWeight: FontWeight.w400,
-                              color: Color(0XFF303C6C)),
-                        )), ),
-                   
-                  
                     Expanded(
                       child:  Align(
+                          alignment: Alignment.centerLeft,
+                          child: Text(
+                            'For our full terms and conditions, please',
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontFamily: fontFamilys,
+                                fontWeight: FontWeight.w400,
+                                color: Color(0XFF303C6C)),
+                          )),
+                    ),
+                    Expanded(
+                      child: Align(
                           alignment: Alignment.centerLeft,
                           child: Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -687,6 +699,7 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> with TickerProv
                               'MCB',
                               style: TextStyle(
                                   fontSize: 18,
+                                  fontFamily: fontFamilys,
                                   fontWeight: FontWeight.w500,
                                   color: Color(0XFF303C6C)),
                             ),
@@ -700,11 +713,11 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> with TickerProv
                     Expanded(
                       child: Row(
                         children: [
-                          const Text(
+                          Text(
                             'Visit Our Website:',
                             style: TextStyle(
                                 fontSize: 18,
-                                fontFamily: 'ReadexPro',
+                                fontFamily: fontFamilys,
                                 fontWeight: FontWeight.w400,
                                 color: Color(0XFF11345A)),
                           ),
@@ -727,7 +740,7 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails> with TickerProv
                       width: context.screenWidth * 0.015,
                     ),
                     const Expanded(
-                        child:  Align(
+                        child: Align(
                             alignment: Alignment.centerLeft,
                             child: Text(
                               'Briton Consultancy & Travel Tours 000 44 25 29 104',

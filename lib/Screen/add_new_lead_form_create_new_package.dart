@@ -142,79 +142,27 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm> {
                    SizedBox(
                     height: context.screenHeight * 0.02,
                   ),
-                  Row(
-                    children: [
-                      Widgets().CreateNewPackagetext('Name'),
-                      SizedBox(
-                        width: context.screenWidth * 0.21,
-                      ),
-                      Widgets().CreateNewPackagetext('Number of People'),
-                      SizedBox(
-                        width: context.screenWidth * 0.095,
-                      ),
-                      Widgets().CreateNewPackagetext('Budget'),
-
-                      Padding(
-                        padding: const EdgeInsets.only(right: 16),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Client Name',
-                              style: TextStyle(
-                                  fontSize: 16,
-                                  fontFamily: fontFamilys,
-                                  fontWeight: FontWeight.w400),
-                            ),
-                            Widgets().textFormField('John Doe', context),
-                          ],
-                        ),
-                      ),
-
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Client Phone Number',
-                            style: TextStyle(
-                                fontSize: 16,
-                                fontFamily: fontFamilys,
-                                fontWeight: FontWeight.w400),
-                          ),
-                          Widgets()
-                              .textFormField('+1 (555) 987-6543', context),
-                        ],
-                      ),
-
-                      SizedBox(
-                        width: context.screenWidth * 0.05,
-                      ),
-
-
-                    ],
-                  ),
+                 
                   SizedBox(
                     height: 16,
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(right: 16),
-                    child: Row(
-                      children: [
-                        Widgets().addNewPackageFormAgentNameAndClinetName(
-                            context, 'Agent Name', 'John Doe'),
-                        SizedBox(
-                          width: context.screenWidth * 0.009,
-                        ),
-                        Widgets().addNewPackageFormAgentNameAndClinetName(
-                            context, 'Select Supplier', 'John Doe')
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: context.screenHeight * 0.02,
-                  ),
+                  // Padding(
+                  //   padding: const EdgeInsets.only(right: 16),
+                  //   child: Row(
+                  //     children: [
+                  //       Widgets().addNewPackageFormAgentNameAndClinetName(
+                  //           context, 'Agent Name', 'John Doe'),
+                  //       SizedBox(
+                  //         width: context.screenWidth * 0.009,
+                  //       ),
+                  //       Widgets().addNewPackageFormAgentNameAndClinetName(
+                  //           context, 'Select Supplier', 'John Doe')
+                  //     ],
+                  //   ),
+                  // ),
+                  // SizedBox(
+                  //   height: context.screenHeight * 0.02,
+                  // ),
 
                   Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceAround,

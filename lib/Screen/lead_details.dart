@@ -17,10 +17,7 @@ class LeadDetails extends StatelessWidget {
           height: context.screenHeight * 0.017,
         ),
 
-        Padding(
-          padding: const EdgeInsets.only(right: 72),
-          child: Row(
-            children: [
+      
               
 
        Padding(
@@ -33,77 +30,9 @@ class LeadDetails extends StatelessWidget {
              ),
              
              // Back Button
-             ElevatedButton(
-               onPressed: () {
-                Navigator.pop(context);
-               },
-               style: ElevatedButton.styleFrom(
-          shape: const CircleBorder(),
-          padding: const EdgeInsets.all(16),
-          backgroundColor: Colors.white,
-               ),
-               child: const Icon(Icons.arrow_back, size: 24, color: Colors.black),
-             ),
-         
-             // Title
-             const Text(
-               'Details',
-               style: TextStyle(fontSize: 22, fontFamily: 'Readex Pro'),
-             ),
-         
-             // Spacer
-             const Spacer(),
-         
-             // Add New Lead Button
-             Container(
-               width: context.screenWidth * 0.13,
-               height: context.screenHeight * 0.08,
-               decoration: BoxDecoration(
-          color: const Color(0XFF333333),
-          borderRadius: BorderRadius.circular(10),
-               ),
-               child: TextButton(
-          onPressed: () {
-            // Your action here
-          },
-          child: const Text(
-            "Add new Lead",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 16,
-            ),
-          ),
-               ),
-             ),
-           ],
-         ),
-       ),
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                  shape: const CircleBorder(), // Makes the button circular
-                  padding: const EdgeInsets.all(
-                      16), // Adds padding inside the button
-                  // primary: Colors.blue,  // Background color
-                  backgroundColor: Colors.white),
-              child:
-                  const Icon(Icons.arrow_back_outlined, size: 20, color: Colors.black),
-            ),
-            const Text(
-              'Details',
-              style: TextStyle(fontSize: 22, fontFamily: 'Readex Pro'),
-            ),
-            SizedBox(
-              width: context.screenWidth * 0.68,
-            ),
-            Container(
-              width: context.screenWidth * 0.13,
-              height: context.screenHeight * 0.08,
-              decoration: BoxDecoration(
-                color: const Color(0XFF333333),
-                borderRadius: BorderRadius.circular(10),)),
-
-              
+           
+            
+           
 
               ElevatedButton(
                 onPressed: () {
@@ -152,9 +81,9 @@ class LeadDetails extends StatelessWidget {
                   ),
                 ),
               ),
-            ],
+            ],)
           ),
-        ),
+        
 
             
             

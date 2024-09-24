@@ -51,7 +51,7 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
                  ),
                  Column(
                   children: [
-                    Text('Company Logo',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 16)),
+                    Text('Company Logo',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 16,fontFamily: fontFamilys)),
                     SizedBox(height: 5,),
                      ElevatedButton(onPressed: () {
             
@@ -90,7 +90,7 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
                  ),
                  Column(
                   children: [
-                    Text('Supplier Image',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 16),),
+                    Text('Supplier Image',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 16,fontFamily: fontFamilys),),
                     SizedBox(height: 5,),
                      ElevatedButton(onPressed: () {
             
@@ -140,11 +140,11 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
              Row(
             //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                children: [
-                 AddNewAgentTitlelAndDescription(text1: 'First Name', text2: 'Add Here'),
+                 AddNewAgentTitlelAndDescription(text1: 'Bank Name', text2: 'Summit National Bank'),
                  SizedBox(width: context.screenWidth*0.01,),
-                  AddNewAgentTitlelAndDescription(text1: 'Last Name', text2: 'Add Here'),
+                  AddNewAgentTitlelAndDescription(text1: 'Bank Account', text2: 'Checking Account'),
                   SizedBox(width: context.screenWidth*0.01,),
-                   AddNewAgentTitlelAndDescription(text1: 'Phone Number', text2: 'Add Here'),
+                   AddNewAgentTitlelAndDescription(text1: 'Phone Number', text2: 'Laxmisagar, BBSR, Bhubaneshwar-751006'),
                ],
              ),
               SizedBox(
@@ -165,9 +165,9 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
              Row(
             //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                children: [
-                 AddNewAgentTitlelAndDescription(text1: 'Supplier Company Name', text2: 'Add Here'),
+                 AddNewAgentTitlelAndDescription(text1: 'Supplier Company Name', text2: 'John Doe'),
                  SizedBox(width: context.screenWidth*0.01,),
-                  AddNewAgentTitlelAndDescription(text1: 'Supplier Company Address', text2: 'Add Here'),
+                  AddNewAgentTitlelAndDescription(text1: 'Supplier Company Address', text2: 'Laxmisagar, BBSR, Bhubaneshwar-751006'),
                  
                ],
              ),
@@ -188,11 +188,11 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
              Row(
             //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                children: [
-                 AddNewAgentTitlelAndDescription(text1: 'Supplier Name', text2: 'Add Here'),
+                 AddNewAgentTitlelAndDescription(text1: 'Supplier Name', text2: 'John Doe'),
                  SizedBox(width: context.screenWidth*0.01,),
-                  AddNewAgentTitlelAndDescription(text1: 'Supplier Address', text2: 'Add Here'),
+                  AddNewAgentTitlelAndDescription(text1: 'Supplier Address', text2: 'Laxmisagar, BBSR, Bhubaneshwar-751006'),
                    SizedBox(width: context.screenWidth*0.01,),
-                  AddNewAgentTitlelAndDescription(text1: 'E-mail', text2: 'Add Here'),
+                  AddNewAgentTitlelAndDescription(text1: 'E-mail', text2: 'john.smith@gmail.com'),
                  
                ],
              ),
@@ -203,11 +203,11 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
                 Row(
             //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                children: [
-                 AddNewAgentTitlelAndDescription(text1: 'Phone Number', text2: 'Add Here'),
+                 AddNewAgentTitlelAndDescription(text1: 'Phone Number', text2: 'Demo123456'),
                  SizedBox(width: context.screenWidth*0.01,),
-                  AddNewAgentTitlelAndDescription(text1: 'VAT Number', text2: 'Add Here'),
+                  AddNewAgentTitlelAndDescription(text1: 'VAT Number', text2: 'GB123456789'),
                    SizedBox(width: context.screenWidth*0.01,),
-                  AddNewAgentTitlelAndDescription(text1: 'BRN Number', text2: 'Add Here'),
+                  AddNewAgentTitlelAndDescription(text1: 'BRN Number', text2: '123-456-789-001'),
                  
                ],
              ),
@@ -244,14 +244,14 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
         alignment: Alignment.centerLeft,
         child: Text(
           'Select Service',
-          style: TextStyle(fontSize: 16, fontFamily: 'Readex Pro'),
+          style: TextStyle(fontSize: 16, fontFamily: 'ReadexPro'),
         ),
       ),
       TextField(
         decoration: InputDecoration(
           fillColor: Colors.white,
           filled: true,
-          hintText: 'Add Here',
+          hintText: 'Transfer',
           hintStyle:  TextStyle(color:AppColor.hintColor , fontSize: 14,fontFamily: fontFamilys,fontWeight: FontWeight.w300),
           enabledBorder: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners

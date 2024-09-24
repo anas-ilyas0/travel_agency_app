@@ -489,28 +489,37 @@ class Widgets {
                 builder: (context) => const ClientDetailPackage()));
       },
       child: Container(
-        height: context.screenHeight * 0.05,
+        height: context.screenHeight * 0.075,
+        width: 120,
         decoration: BoxDecoration(
           color: AppColor.buttonTextColors,
           borderRadius: BorderRadius.circular(12),
         ),
-        child: Row(
-          children: [
-            Text(
-              "Detail",
-              style: TextStyle(
-                // decoration: TextDecoration.underline,
-                color: Color(0XFF11345A),
-                fontSize: 16,
-                fontFamily: fontFamilys,
-                fontWeight: FontWeight.w400,
-              ),
+        child: Padding(
+          padding: const EdgeInsets.all(2.0),
+          child: Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Center(
+                  child: Text(
+                    "Detail",
+                    style: TextStyle(
+                      // decoration: TextDecoration.underline,
+                      color: Color(0XFF11345A),
+                      fontSize: 16,
+                      fontFamily: fontFamilys,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  width: 10,
+                ),
+                Icon(Icons.arrow_forward)
+              ],
             ),
-            SizedBox(
-              width: 10,
-            ),
-            Icon(Icons.arrow_forward)
-          ],
+          ),
         ),
       ),
     );
@@ -629,49 +638,48 @@ class Widgets {
 
   Widget addNewPackageFormAgentNameAndClinetName(
       BuildContext context, String text1, String text2) {
-    return SizedBox(
+    return  SizedBox(
       height: 80,
-      width: Responsive.isMobile(context)
-          ? null
-          : Responsive.isTablet(context)
-              ? context.screenWidth * 0.25
-              : context.screenWidth * 0.25,
+      width: Responsive.isMobile(context)? null:Responsive.isTablet(context)? context.screenWidth * 0.25:context.screenWidth * 0.2 ,
       child: Column(
-        children: [
-          Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                '$text1',
-                style: TextStyle(
-                    fontSize: 16,
-                    fontFamily: fontFamilys,
-                    fontWeight: FontWeight.w400),
-              )),
-          TextField(
-              cursorColor: Colors.white,
-              decoration: InputDecoration(
-                suffixIcon: const Icon(Icons.arrow_drop_down, // Dropdown icon
-                    color: Color(0XFFD4D7E3)),
-                fillColor: Colors.white,
-                filled: true,
-                hintText: '$text2',
-                hintStyle: TextStyle(color: AppColor.hintColor, fontSize: 14),
-                enabledBorder: const OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(12)),
-                  // Rounded corners
-                  borderSide: BorderSide(color: Color(0XFFD4D7E3), width: 1),
-                ),
-                focusedBorder: const OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(12)),
-                  // Rounded corners
-                  borderSide: BorderSide(color: Color(0XFFD4D7E3), width: 1),
-                ),
-                border: const OutlineInputBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(12)),
-                  // Rounded corners
-                  borderSide: BorderSide(color: Color(0XFFD4D7E3), width: 1),
-                ),
-              )),
+        children: [Align(alignment: Alignment.centerLeft,
+          child: Text('$text1',style: AppTextstyless.addnewinternationalsuppliersSubText)),
+       TextField(
+         cursorColor: Colors.white,
+  decoration: InputDecoration(
+    suffixIcon: Icon(Icons.arrow_drop_down),
+
+    fillColor: Colors.white,
+    filled: true,
+    hintText: '$text2',hintStyle: TextStyle(color:AppColor.hintColor , fontSize: 14,fontFamily: fontFamilys,fontWeight: FontWeight.w300),
+
+enabledBorder: const OutlineInputBorder(
+      borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners
+      borderSide: BorderSide(
+        color: Color(0XFFD4D7E3),
+        width: 1
+
+      ),
+    ),
+    focusedBorder: const OutlineInputBorder(
+      borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners
+      borderSide: BorderSide(
+        color: Color(0XFFD4D7E3),
+        width: 1
+
+      ),
+    ),
+    border: const OutlineInputBorder(
+      borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners
+      borderSide: BorderSide(
+        color: Color(0XFFD4D7E3),
+        width: 1
+
+      ),
+    ),
+
+  )
+       ),
         ],
       ),
     );

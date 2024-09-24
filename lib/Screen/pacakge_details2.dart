@@ -150,12 +150,15 @@ class PacakgeDetails2 extends StatelessWidget {
                                     ),
                                   ),
                                   GestureDetector(
-                                    child: IconButton(
-                                      icon: Icon(Icons.remove_circle_outline,
-                                          color: AppColor.blueColor),
-                                      onPressed: () {
-                                        // Handle button press
-                                      },
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(2.0),
+                                      child: IconButton(
+                                        icon: Icon(Icons.remove_circle_outline,size: 20,
+                                            color: AppColor.blueColor),
+                                        onPressed: () {
+                                          // Handle button press
+                                        },
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -223,7 +226,7 @@ class PacakgeDetails2 extends StatelessWidget {
                                   ),
                                   GestureDetector(
                                     child: IconButton(
-                                      icon: Icon(Icons.remove_circle_outline,weight: 0.1,
+                                      icon: Icon(Icons.remove_circle_outline,size: 20,
                                           color: AppColor.blueColor),
                                       onPressed: () {},
                                     ),

@@ -1,5 +1,6 @@
 import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Image.dart';
+import 'package:fab_tech_sol/Screen/package_detail.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
@@ -61,7 +62,9 @@ class PackageDetailContainer extends StatelessWidget {
                           height: 45,
                           width: 150,
                           child: ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => PackageDetail(),));
+                              },
                               style: ElevatedButton.styleFrom(
                                   backgroundColor: AppColor.blueColor),
                               child: const Text(

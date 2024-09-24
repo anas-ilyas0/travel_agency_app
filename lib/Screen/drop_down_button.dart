@@ -179,7 +179,7 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
                                                 Text(
                                                   agents[index],
                                                   style: TextStyle(
-                                                      fontFamily: 'Readex Pro',
+                                                      fontFamily: 'ReadexPro',
                                                       color: Colors.black),
                                                 )
                                               ],
