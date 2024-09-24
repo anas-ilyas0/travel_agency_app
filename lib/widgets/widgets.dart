@@ -236,7 +236,8 @@ class Widgets {
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: Colors.grey.withOpacity(0.3))),
+          border: Border.all(color: Colors.grey.withOpacity(0.3))
+      ),
       child: TextFormField(
         decoration: InputDecoration(
           hintText: text,
