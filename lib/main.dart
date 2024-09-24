@@ -1,5 +1,6 @@
 
 import 'package:fab_tech_sol/Screen/add_new_agent.dart';
+import 'package:fab_tech_sol/Screen/add_new_lead_detail.dart';
 import 'package:fab_tech_sol/Screen/add_new_lead_form_create_new_package.dart';
 import 'package:fab_tech_sol/Screen/add_new_local_suppliers.dart';
 import 'package:fab_tech_sol/Screen/addnewinternationalsuppliers.dart';
@@ -70,7 +71,7 @@ class MyApp extends StatelessWidget {
 // home: LoginPage());
 // home:CustomDropDownButton());
 // home: AddNewInterNationalsuppliers());
-home: LeadInvoiceDetails());
+home: AddNewLeadDetail());
      
 
 
