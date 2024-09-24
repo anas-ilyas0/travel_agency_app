@@ -45,7 +45,7 @@ class ClientDetailPackage extends StatelessWidget {
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(4),
-                      border: Border.all(color: Color(0XFF70707033))),
+                      border: Border.all(width: 0.5,color: Color(0XFF70707033),)),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Row(

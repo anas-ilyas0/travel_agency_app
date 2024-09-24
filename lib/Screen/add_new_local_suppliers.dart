@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
@@ -26,8 +28,8 @@ class AddNewLocalSupplier extends StatelessWidget {
            Column(
             children: [
                SizedBox(height: context.screenHeight*0.02,),
-                const Align(alignment: Alignment.centerLeft,
-                child: Text('Local Suppler Details',style: TextStyle(fontSize: 23,color: Color(0XFF11345A),fontFamily: 'ReadexPro',fontWeight: FontWeight.w500),)),
+                 Align(alignment: Alignment.centerLeft,
+                child: Text('Local Suppler Details',style: TextStyle(fontSize: 23,color: AppColor.addnewagent,fontFamily: fontFamilys,fontWeight: FontWeight.w600),)),
                SizedBox(height: context.screenHeight*0.01,),
                Align(
               alignment: Alignment.centerLeft,
@@ -47,25 +49,32 @@ class AddNewLocalSupplier extends StatelessWidget {
                         const SizedBox(
                   width: 10,
                  ),
-                 ElevatedButton(onPressed: () {
-            
-          }, 
-           style: ElevatedButton.styleFrom(
-            padding: const EdgeInsets.symmetric(vertical: 7,horizontal: 12),
-          backgroundColor: const Color(0XFF11345A),
-          ),
-          
-          child:  const Row(
-              // Make Row as wide as the content
-                  children: [
-                    Icon(Icons.file_upload_outlined,
-                    color: Colors.white,size: 15,), // Icon
-                    SizedBox(width: 5,),
-                    // Space between icon and text
-                    Text('Upload Image',style: TextStyle(color: Colors.white,fontSize: 12),), // Text
-                  ],
-                ),
-                ),
+                 Column(
+                  mainAxisAlignment:  MainAxisAlignment.center,
+                   children: [
+                     Text('Company Logo',style: TextStyle(fontFamily: fontFamilys,fontWeight: FontWeight.w400,fontSize: 15),),
+                     ElevatedButton(onPressed: () {
+                                 
+                               }, 
+                                style: ElevatedButton.styleFrom(
+                                 minimumSize: Size(160, 48),
+                                 padding: const EdgeInsets.symmetric(vertical: 6,horizontal: 10),
+                               backgroundColor: const Color(0XFF11345A),
+                               ),
+                               
+                               child:  const Row(
+                                   // Make Row as wide as the content
+                      children: [
+                        Icon(Icons.file_upload_outlined,
+                        color: Colors.white,size: 15,), // Icon
+                        SizedBox(width: 5,),
+                        // Space between icon and text
+                        Text('Upload Image',style: TextStyle(color: Colors.white,fontSize: 12),), // Text
+                      ],
+                                     ),
+                                     ),
+                   ],
+                 ),
                 SizedBox(width: context.screenWidth*0.02,),
                  Container(
                       height: context.screenHeight*0.25,
@@ -77,23 +86,30 @@ class AddNewLocalSupplier extends StatelessWidget {
                         SizedBox(
                   width: context.screenWidth*0.01,
                  ),
-                 ElevatedButton(onPressed: () {
-            
-          }, 
-           style: ElevatedButton.styleFrom(
-          backgroundColor: const Color(0XFF11345A),
-           padding: const EdgeInsets.symmetric(vertical: 7,horizontal: 12),
-          ),
-          
-          child:  const Row(
-                  mainAxisSize: MainAxisSize.min, // Make Row as wide as the content
-                  children: [
-                    Icon(Icons.file_upload_outlined,size: 15,
-                    color: Colors.white,), // Icon
-                    SizedBox(width: 8), // Space between icon and text
-                    Text('Upload Image',style: TextStyle(color: Colors.white),), // Text
-                  ],
-                ),)
+                 Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                   children: [
+                    Text('Supplier Logo',style: TextStyle(fontFamily: fontFamilys,fontWeight: FontWeight.w400,fontSize: 15),),
+                     ElevatedButton(onPressed: () {
+                                 
+                               }, 
+                                style: ElevatedButton.styleFrom(
+                                 minimumSize: Size(160, 48),
+                               backgroundColor: const Color(0XFF11345A),
+                                padding: const EdgeInsets.symmetric(vertical: 6,horizontal: 10),
+                               ),
+                               
+                               child:  const Row(
+                      mainAxisSize: MainAxisSize.min, // Make Row as wide as the content
+                      children: [
+                        Icon(Icons.file_upload_outlined,size: 15,
+                        color: Colors.white,), // Icon
+                        SizedBox(width: 8), // Space between icon and text
+                        Text('Upload Image',style: TextStyle(color: Colors.white,fontSize: 12),), // Text
+                      ],
+                                     ),),
+                   ],
+                 )
                    ],
                  ),
                  SizedBox(
@@ -109,8 +125,8 @@ class AddNewLocalSupplier extends StatelessWidget {
              SizedBox(
               height: context.screenHeight*0.03,
              ),
-               const Align(alignment: Alignment.centerLeft,
-                child: Text('Bank Details',style: TextStyle(fontSize: 23,color: Color(0XFF11345A),fontFamily: 'Readex Pro'),)),
+               Align(alignment: Alignment.centerLeft,
+                child: Text('Bank Details',style: TextStyle(fontSize: 23,color: Color(0XFF11345A),fontFamily: fontFamilys,fontWeight: FontWeight.w600),)),
               SizedBox(
               height: context.screenHeight*0.04,
         
@@ -119,11 +135,11 @@ class AddNewLocalSupplier extends StatelessWidget {
              Row(
             //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                children: [
-                 AddNewAgentTitlelAndDescription(text1: 'First Name', text2: 'Add Here'),
+                 AddNewAgentTitlelAndDescription(text1: 'Bank Name', text2: 'Summit National Bank'),
                  SizedBox(width: context.screenWidth*0.01,),
-                  AddNewAgentTitlelAndDescription(text1: 'Last Name', text2: 'Add Here'),
+                  AddNewAgentTitlelAndDescription(text1: 'Bank Account', text2: 'Checking Account'),
                   SizedBox(width: context.screenWidth*0.01,),
-                   AddNewAgentTitlelAndDescription(text1: 'Phone Number', text2: 'Add Here'),
+                   AddNewAgentTitlelAndDescription(text1: 'Bank address', text2: 'Laxmisagar, BBSR, Bhubaneshwar-751006'),
                ],
              ),
               SizedBox(
@@ -134,8 +150,8 @@ class AddNewLocalSupplier extends StatelessWidget {
                SizedBox(
               height: context.screenHeight*0.03,
              ),
-               const Align(alignment: Alignment.centerLeft,
-                child: Text('Company Details',style: TextStyle(fontSize: 23,color: Color(0XFF11345A),fontFamily: 'Readex Pro',fontWeight: FontWeight.w600),)),
+               Align(alignment: Alignment.centerLeft,
+                child: Text('Company Details',style: TextStyle(fontSize: 23,color: Color(0XFF11345A),fontFamily: fontFamilys,fontWeight: FontWeight.w600),)),
               SizedBox(
               height: context.screenHeight*0.04,
         
@@ -144,9 +160,9 @@ class AddNewLocalSupplier extends StatelessWidget {
              Row(
             //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                children: [
-                 AddNewAgentTitlelAndDescription(text1: 'Supplier Company Name', text2: 'Add Here'),
+                 AddNewAgentTitlelAndDescription(text1: 'Supplier Company Name', text2: 'John Doe'),
                  SizedBox(width: context.screenWidth*0.01,),
-                  AddNewAgentTitlelAndDescription(text1: 'Supplier Company Address', text2: 'Add Here'),
+                  AddNewAgentTitlelAndDescription(text1: 'Supplier Company Address', text2: 'Laxmisagar, BBSR, Bhubaneshwar-751006'),
                  
                ],
              ),
@@ -157,8 +173,8 @@ class AddNewLocalSupplier extends StatelessWidget {
          SizedBox(
               height: context.screenHeight*0.03,
              ),
-               const Align(alignment: Alignment.centerLeft,
-                child: Text('Supplier Details',style: TextStyle(fontSize: 23,color: Color(0XFF11345A),fontFamily: 'ReadexPro'),)),
+                Align(alignment: Alignment.centerLeft,
+                child: Text('Supplier Details',style: TextStyle(fontSize: 23,color: Color(0XFF11345A),fontFamily: fontFamilys),)),
               SizedBox(
               height: context.screenHeight*0.04,
         
@@ -167,11 +183,11 @@ class AddNewLocalSupplier extends StatelessWidget {
              Row(
             //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                children: [
-                 AddNewAgentTitlelAndDescription(text1: 'Supplier Name', text2: 'Add Here'),
+                 AddNewAgentTitlelAndDescription(text1: 'Supplier Name', text2: 'John Doe'),
                  SizedBox(width: context.screenWidth*0.01,),
-                  AddNewAgentTitlelAndDescription(text1: 'Supplier Address', text2: 'Add Here'),
+                  AddNewAgentTitlelAndDescription(text1: 'Supplier Address', text2: 'Laxmisagar, BBSR, Bhubaneshwar-751006'),
                    SizedBox(width: context.screenWidth*0.01,),
-                  AddNewAgentTitlelAndDescription(text1: 'E-mail', text2: 'Add Here'),
+                  AddNewAgentTitlelAndDescription(text1: 'E-mail', text2: 'john.smith@gmail.com'),
                  
                ],
              ),
@@ -182,11 +198,11 @@ class AddNewLocalSupplier extends StatelessWidget {
                 Row(
             //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                children: [
-                 AddNewAgentTitlelAndDescription(text1: 'Phone Number', text2: 'Add Here'),
+                 AddNewAgentTitlelAndDescription(text1: 'Phone Number', text2: 'Demo123456'),
                  SizedBox(width: context.screenWidth*0.01,),
-                  AddNewAgentTitlelAndDescription(text1: 'VAT Number', text2: 'Add Here'),
+                  AddNewAgentTitlelAndDescription(text1: 'VAT Number', text2: 'GB123456789'),
                    SizedBox(width: context.screenWidth*0.01,),
-                  AddNewAgentTitlelAndDescription(text1: 'BRN Number', text2: 'Add Here'),
+                  AddNewAgentTitlelAndDescription(text1: 'BRN Number', text2: '123-456-789-001'),
                  
                ],
              ),
@@ -221,7 +237,7 @@ class AddNewLocalSupplier extends StatelessWidget {
         decoration: InputDecoration(
           fillColor: Colors.white,
           filled: true,
-          hintText: 'Add Here',hintStyle:  TextStyle(color:AppColor.hintColor , fontSize: 14,fontFamily: fontFamilys,fontWeight: FontWeight.w300),
+          hintText: 'Air Ticket',hintStyle:  TextStyle(color:AppColor.hintColor , fontSize: 14,fontFamily: fontFamilys,fontWeight: FontWeight.w300),
           enabledBorder: const OutlineInputBorder(
             borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners
             borderSide: BorderSide(

@@ -14,44 +14,45 @@ class AddNewAgentTitlelAndDescription extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 80,
-      width: Responsive.isMobile(context)? null:Responsive.isTablet(context)? context.screenWidth * 0.25:context.screenWidth * 0.2 ,
+      
+      width: Responsive.isMobile(context)? null:Responsive.isTablet(context)? context.screenWidth * 0.25:context.screenWidth * 0.23 ,
       child: Column(
         children: [Align(alignment: Alignment.centerLeft,
           child: Text('$text1',style: AppTextstyless.addnewinternationalsuppliersSubText)),
        TextField(
          cursorColor: Colors.white,
-  decoration: InputDecoration(
-
-    fillColor: Colors.white,
-    filled: true,
-    hintText: '$text2',hintStyle: TextStyle(color:AppColor.hintColor , fontSize: 14,fontFamily: fontFamilys,fontWeight: FontWeight.w300),
-
-enabledBorder: const OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners
-      borderSide: BorderSide(
+         decoration: InputDecoration(
+       
+           fillColor: Colors.white,
+           filled: true,
+           hintText: '$text2',hintStyle: TextStyle(color:AppColor.hintColor , fontSize: 14,fontFamily: fontFamilys,fontWeight: FontWeight.w300),
+       
+       enabledBorder: const OutlineInputBorder(
+             borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners
+             borderSide: BorderSide(
         color: Color(0XFFD4D7E3),
         width: 1
-
-      ),
-    ),
-    focusedBorder: const OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners
-      borderSide: BorderSide(
+       
+             ),
+           ),
+           focusedBorder: const OutlineInputBorder(
+             borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners
+             borderSide: BorderSide(
         color: Color(0XFFD4D7E3),
         width: 1
-
-      ),
-    ),
-    border: const OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners
-      borderSide: BorderSide(
+       
+             ),
+           ),
+           border: const OutlineInputBorder(
+             borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners
+             borderSide: BorderSide(
         color: Color(0XFFD4D7E3),
         width: 1
-
-      ),
-    ),
-
-  )
+       
+             ),
+           ),
+       
+         )
        ),
         ],
       ),

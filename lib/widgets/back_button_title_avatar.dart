@@ -27,7 +27,7 @@ class BackButtonAvatar extends StatelessWidget {
                       padding: const EdgeInsets.all(16),
                       backgroundColor: Colors.white),
                   child: const Icon(Icons.arrow_back,
-                      size: 22, color: Colors.black),
+                      size: 20, color: Colors.black),
                 ),
                  Text(
                   text1,
@@ -39,6 +39,7 @@ class BackButtonAvatar extends StatelessWidget {
                 ),
               ],
             ),
+            // SizedBox(width: context.screenWidth*0.65,),
             Row(
               children: [
                  Text(

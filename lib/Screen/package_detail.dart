@@ -164,7 +164,7 @@ class PackageDetail extends StatelessWidget {
                                   color:AppColor.buttonTextColors, width: 0.2)),
                           height: 66,
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(horizontal: 15),
+                            padding: const EdgeInsets.symmetric(horizontal: 12),
                             child: Row(
                               children: [
                                 Row(
@@ -200,12 +200,9 @@ class PackageDetail extends StatelessWidget {
                                 SizedBox(width: context.screenWidth * 0.072),
                                 Widgets().agentText('+21 999 999 999', 12),
                                 SizedBox(
-                                  width: context.screenWidth * 0.02,
+                                  width: context.screenWidth * 0.039,
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.only(right: 22),
-                                  child: Widgets().PackageDetailButton(context),
-                                )
+                                Widgets().PackageDetailButton(context)
                               ],
                             ),
                           ),

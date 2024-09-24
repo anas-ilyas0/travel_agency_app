@@ -5,6 +5,7 @@ import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/resources/helper_function.dart';
 import 'package:fab_tech_sol/ui/tasks_data_source.dart';
+
 import 'package:fab_tech_sol/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -48,20 +49,11 @@ class AgentScreen
                       SizedBox(
                         width: context.screenWidth*0.01,
                       ),
-                     GestureDetector(
-                      onTap: () {
-                        
-                      },
-                       child: Container(
-                        height: context.screenHeight*0.07,
-                        width: context.screenWidth*0.11,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          color: Colors.white
-                        ),
-                       ),
-                     ),
-
+                   
+                 Widgets().dropDownButton(providerValue.selectedItem2,
+                        providerValue.dropdownItems2, (String? newValue) {
+                      providerValue.updateSelectedItem2(newValue);
+                    }, context),
                       // Widgets().dropDownButton(providerValue.selectedItem2,
                       //     providerValue.dropdownItems2, (String? newValue) {
                       //       providerValue.updateSelectedItem2(newValue);
