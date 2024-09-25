@@ -236,7 +236,7 @@ class Widgets {
     return Container(
       width: 100 * context.screenWidth / 400,
       decoration: BoxDecoration(
-          color: Colors.white,
+          color: AppColor.customdropdownColor,
           borderRadius: BorderRadius.circular(10),
           border: Border.all(color: Colors.grey.withOpacity(0.3))
       ),

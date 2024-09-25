@@ -1,7 +1,7 @@
 
 import 'package:fab_tech_sol/Screen/add_new_agent.dart';
 import 'package:fab_tech_sol/Screen/add_new_lead_detail.dart';
-import 'package:fab_tech_sol/Screen/add_new_lead_form_create_new_package.dart';
+import 'package:fab_tech_sol/Screen/add_new_create_new_package_form.dart';
 import 'package:fab_tech_sol/Screen/add_new_local_suppliers.dart';
 import 'package:fab_tech_sol/Screen/addnewinternationalsuppliers.dart';
 import 'package:fab_tech_sol/Screen/client_detail_package.dart';
@@ -68,10 +68,14 @@ class MyApp extends StatelessWidget {
     // home:Package()
 // home: ClientDetailPackage()
 // home: PackageClassScreen());
+
 // home:AddNewLocalSupplier());
+
+home:AddNewLeadForm()
+
 // home: Dashboard());
 // home:CreateNewPackageForm()
-home: AddNewLocalSupplier()
+
 // home: AddNewLocalSupplier());
 // home: LoginPage());
 // home:CustomDropDownButton());
