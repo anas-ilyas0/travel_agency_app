@@ -13,6 +13,9 @@ class AddNewLocalSupplier extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List<String> agents = ['John Doe', 'Jane Smith', 'James Bond', 'Tony Stark'];
+
+    String? selectedValue;
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -224,6 +227,7 @@ class AddNewLocalSupplier extends StatelessWidget {
                  SizedBox(
   height: context.screenHeight * 0.15,
   width: context.screenWidth * 0.2,
+
   child: Column(
     children: [
       const Align(
@@ -233,43 +237,110 @@ class AddNewLocalSupplier extends StatelessWidget {
           style: TextStyle(fontSize: 16, fontFamily: 'ReadexPro'),
         ),
       ),
-      TextField(
-        decoration: InputDecoration(
-          fillColor: Colors.white,
-          filled: true,
-          hintText: 'Air Ticket',hintStyle:  TextStyle(color:AppColor.hintColor , fontSize: 14,fontFamily: fontFamilys,fontWeight: FontWeight.w300),
-          enabledBorder: const OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners
-            borderSide: BorderSide(
-              color: Color(0XFFD4D7E3),
-              width: 2,
-            ),
+      SizedBox( width: 400,
+        height: 58,
+        child: Theme(
+          data: Theme.of(context).copyWith(
+              focusColor: AppColor.background,
+              hoverColor: AppColor.background
           ),
-          focusedBorder: const OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners
-            borderSide: BorderSide(
-              color: Color(0XFFD4D7E3),
-              width: 2,
-            ),
-          ),
-          border: const OutlineInputBorder(
-            borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners
-            borderSide: BorderSide(
-              color: Color(0XFFD4D7E3),
-              width: 2,
-            ),
-          ),
-          suffixIcon: DropdownButton<String>(
-            underline: const SizedBox(), // Removes default underline of dropdown
-            icon: const Icon(Icons.arrow_drop_down, color: Color(0XFFD4D7E3)),
-            items: <String>['Option 1', 'Option 2', 'Option 3'].map((String value) {
-              return DropdownMenuItem<String>(
-                value: value,
-                child: Text(value),
-              );
-            }).toList(),
-            onChanged: (String? newValue) {
-              // Handle dropdown item selection
+          child: DropdownButtonFormField<String>(
+            value:selectedValue ,
+
+            decoration: InputDecoration(
+                labelText: 'Select Duration',
+                fillColor: AppColor.customdropdownColor,
+                filled: true,
+
+
+                labelStyle: TextStyle(
+
+                    color:   AppColor.hintColor, fontFamily: poppin, fontSize: 15  ),
+                contentPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                // contentPadding: EdgeInsets.zero,
+                enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(10),
+                    borderSide: BorderSide(color: AppColor.borderColor3,width: 1)),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide:   BorderSide(color: AppColor.borderColor3,width: 1),
+                ),
+                floatingLabelBehavior: FloatingLabelBehavior.never,
+                alignLabelWithHint: false),
+            dropdownColor: AppColor.customdropdownColor,
+            isDense: true,
+            items: [
+              ...agents.map((String duration) {
+                return DropdownMenuItem<String>(
+                  value: duration,
+                  child: SizedBox(
+                    height: 52,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 3.0,horizontal: 4),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.white,
+                            border: Border.all(width: .5,color: Colors.grey.withOpacity(.3))
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: Row(
+                            children: [
+                              SizedBox(width: 5),
+                              CircleAvatar(
+                                backgroundImage: AssetImage('${imageUrl}agent.png'),
+                                radius: 18,
+                              ),
+                              SizedBox(width: 5),
+                              Text(
+                                duration,
+                                style: TextStyle(fontSize: 14),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                );
+              }).toList(),
+
+            ],
+            menuMaxHeight:    400,
+            isExpanded: true,
+            onChanged: (value) {
+              if (value != 'create_agent' && value != 'search_agent') {
+                selectedValue = value;
+              }
+              // searchName.text = value ??
+              //     '';
+            },
+            selectedItemBuilder: (BuildContext context){
+
+              return agents.map((String agent) {
+                return SizedBox(
+                  height: 50,
+                  child: Row(
+                    children: [
+                      CircleAvatar(
+                        backgroundImage: AssetImage('${imageUrl}agent.png'),
+                        radius: 16,
+                      ),
+                      SizedBox(width: 5),
+                      Text(
+                        agent,
+                        style: TextStyle(fontSize: 14),
+                      ),
+                    ],
+                  ),
+                );
+              }).toList();
+            },
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return "Select Duration";
+              }
+              return null;
             },
           ),
         ),
