@@ -15,9 +15,36 @@ class CreateNewPackageForm extends StatefulWidget {
   State<CreateNewPackageForm> createState() => _CreateNewPackageFormState();
 }
 
-class _CreateNewPackageFormState extends State<CreateNewPackageForm> {
+class _CreateNewPackageFormState extends State<CreateNewPackageForm>
+    with SingleTickerProviderStateMixin {
   List<String> agents = ['John Doe', 'Jane Smith', 'James Bond', 'Tony Stark'];
-  String? selectedValue;
+  String? selectedValue1;
+  String? selectedValue2;
+ late TabController tabController;
+  @override
+  void initState() {
+    super.initState();
+    tabController = TabController(length: 2, vsync: this); // Initialize it
+  }
+
+  @override
+  void dispose() {
+    tabController?.dispose(); // Dispose of it to prevent memory leaks
+    super.dispose();
+  }
+
+
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   tabController = TabController(length: 2, vsync: this); // Initialize it
+  // }
+  //
+  // @override
+  // void dispose() {
+  //   tabController?.dispose(); // Dispose of it to prevent memory leaks
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +94,7 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm> {
                     child: Row(
                       children: [
                         Container(
-                          height:150,
+                          height: 150,
                           width: 150,
                           decoration: BoxDecoration(
                               color: Colors.white,
@@ -93,20 +120,23 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm> {
                                   backgroundColor: const Color(0XFF11345A),
                                   minimumSize: Size(context.screenWidth * 0.11,
                                       context.screenHeight * 0.09)),
-                              child:  Row(
+                              child: Row(
                                 mainAxisSize: MainAxisSize
                                     .min, // Make Row as wide as the content
                                 children: [
                                   Icon(
                                     Icons.file_upload_outlined,
-                                    color: Colors.white,size: 18,
+                                    color: Colors.white, size: 18,
                                   ),
                                   // Icon
                                   SizedBox(width: 8),
                                   // Space between icon and text
                                   Text(
                                     'Upload Image',
-                                    style: TextStyle(color: Colors.white,fontSize: 12,fontWeight:FontWeight.w300,fontFamily:fontFamilys ),
+                                    style: TextStyle(color: Colors.white,
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w300,
+                                        fontFamily: fontFamilys),
                                   ),
                                   // Text
                                 ],
@@ -150,7 +180,7 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm> {
                           ),
                           const SizedBox(height: 5),
                           Widgets().textFormField('John Doe', context),
-                      
+
                           SizedBox(
                             width: context.screenWidth * 0.05,
                           ),
@@ -180,6 +210,9 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm> {
                       ),
                     ],
                   ),
+                  SizedBox(
+                    height: context.screenHeight * 0.02,
+                  ),
                   Row(
                     children: [
                       Column(
@@ -195,178 +228,11 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm> {
                                 fontWeight: FontWeight.bold),
                           ),
                           const SizedBox(height: 5),
-                          SizedBox( width: 400,
-                            child: Theme(
-                              data: Theme.of(context).copyWith(
-                                  focusColor: AppColor.background,
-                                  hoverColor: AppColor.background
-                              ),
-                              child: DropdownButtonFormField<String>(
-                                value:selectedValue ,
-
-                                decoration: InputDecoration(
-                                    labelText: 'John Doe',
-                                    fillColor: AppColor.customdropdownColor,
-                                    filled: true,
-
-
-                                    labelStyle: TextStyle(
-
-                                        color:   AppColor.hintColor, fontFamily: poppin, fontSize: 15  ),
-                                    contentPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                                    // contentPadding: EdgeInsets.zero,
-                                    enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(10),
-                                        borderSide: BorderSide(color: AppColor.borderColor3,width: 1)),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(10),
-                                      borderSide:   BorderSide(color: AppColor.borderColor3,width: 1),
-                                    ),
-                                    floatingLabelBehavior: FloatingLabelBehavior.never,
-                                    alignLabelWithHint: false),
-                                dropdownColor: AppColor.customdropdownColor,
-                                isDense: true,
-                                items: [
-
-                                  DropdownMenuItem(
-                                    enabled: false,
-
-                                    value: 'create_agent',
-                                    child: Container(
-                                      height: 50,
-                                      // width: 360,
-                                      padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 4),
-                                      decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          borderRadius: BorderRadius.circular(10),
-                                          boxShadow: [
-                                            BoxShadow(
-                                                blurRadius: 2,
-                                                spreadRadius: 0,
-                                                color: Colors.grey.withOpacity(.3)
-                                            )
-                                          ]
-                                      ),
-                                      child: Row(
-                                        children: [
-                                          const SizedBox(width: 10),
-                                          Icon(Icons.add_box_rounded, color: AppColor.buttonTextColor, ),
-                                          const SizedBox(width: 8),
-                                          Text('Create a new agent', style: TextStyle(color: AppColor.buttonTextColor,fontFamily: fontFamilys, fontWeight: FontWeight.w400)),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                  DropdownMenuItem(
-                                      value: "search_agent",
-                                      enabled: false,
-
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 2),
-                                        child: TextFormField(
-
-                                          decoration: InputDecoration(
-                                            hintText: "Search Agent",
-                                            fillColor: Colors.white,
-                                            filled: true,
-
-                                            suffixIcon: Icon(Icons.search_outlined),
-                                            hintStyle: TextStyle(
-                                                color: AppColor.hintColor, fontFamily: fontFamilys, fontSize: 14,fontWeight: FontWeight.w400),
-
-                                            //  color: Colors.grey, fontFamily: readexPro, fontSize: 13),
-
-                                            contentPadding:
-                                            const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-                                            enabledBorder:  OutlineInputBorder(borderSide: BorderSide(color: AppColor.borderColor3,width: 0.5),
-                                                borderRadius: BorderRadius.circular(10)),
-                                            focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: AppColor.borderColor3,width: 0.5),
-                                                borderRadius: BorderRadius.circular(10)),
-                                          ),
-
-                                        ),
-                                      )
-                                  ),
-                                  ...agents.map((String duration) {
-                                    return DropdownMenuItem<String>(
-                                      value: duration,
-                                      child: SizedBox(
-                                        height: 52,
-                                        child: Padding(
-                                          padding: const EdgeInsets.symmetric(vertical: 3.0,horizontal: 4),
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                                borderRadius: BorderRadius.circular(10),
-                                                color: Colors.white,
-                                                border: Border.all(width: .5,color: Colors.grey.withOpacity(.3))
-                                            ),
-                                            child: Padding(
-                                              padding: const EdgeInsets.all(4.0),
-                                              child: Row(
-                                                children: [
-                                                  SizedBox(width: 5),
-                                                  CircleAvatar(
-                                                    backgroundImage: AssetImage('${imageUrl}agent.png'),
-                                                    radius: 18,
-                                                  ),
-                                                  SizedBox(width: 5),
-                                                  Text(
-                                                    duration,
-                                                    style: TextStyle(fontSize: 14),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    );
-                                  }).toList(),
-
-                                ],
-                                menuMaxHeight:    400,
-                                isExpanded: true,
-                                onChanged: (value) {
-                                  if (value != 'create_agent' && value != 'search_agent') {
-                                    selectedValue = value;
-                                  }
-                                  // searchName.text = value ??
-                                  //     '';
-                                },
-                                selectedItemBuilder: (BuildContext context){
-
-                                  return agents.map((String agent) {
-                                    return SizedBox(
-                                      height: 50,
-                                      child: Row(
-                                        children: [
-                                          CircleAvatar(
-                                            backgroundImage: AssetImage('${imageUrl}agent.png'),
-                                            radius: 16,
-                                          ),
-                                          SizedBox(width: 5),
-                                          Text(
-                                            agent,
-                                            style: TextStyle(fontSize: 14),
-                                          ),
-                                        ],
-                                      ),
-                                    );
-                                  }).toList();
-                                },
-                                validator: (value) {
-                                  if (value == null || value.isEmpty) {
-                                    return "Select Duration";
-                                  }
-                                  return null;
-                                },
-                              ),
-                            ),
-                          ),
+                          // firstDropDown(),
 
                           SizedBox(
                             width: context.screenWidth * 0.05,
                           ),
-                         // Widgets().addNewPackageFormAgentNameAndClinetName(context, 'Select Supplier', 'John Doe')
                         ],
                       ),
                       SizedBox(
@@ -377,7 +243,7 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            'John Doe',
+                            'Select Supplier',
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 13,
@@ -385,207 +251,25 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm> {
                                 fontWeight: FontWeight.bold),
                           ),
                           const SizedBox(height: 5),
-                          SizedBox( width: 400,
-                            child: Theme(
-                              data: Theme.of(context).copyWith(
-                                  focusColor: AppColor.background,
-                                  hoverColor: AppColor.background
-                              ),
-                              child: DropdownButtonFormField<String>(
-                                value:selectedValue ,
-
-                                decoration: InputDecoration(
-                                    labelText: 'Select Duration',
-                                    fillColor: AppColor.customdropdownColor,
-                                    filled: true,
-
-
-                                    labelStyle: TextStyle(
-
-                                        color:   AppColor.hintColor, fontFamily: poppin, fontSize: 15  ),
-                                    contentPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                                    // contentPadding: EdgeInsets.zero,
-                                    enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(10),
-                                        borderSide: BorderSide(color: AppColor.borderColor3,width: 1)),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderRadius: BorderRadius.circular(10),
-                                      borderSide:   BorderSide(color: AppColor.borderColor3,width: 1),
-                                    ),
-                                    floatingLabelBehavior: FloatingLabelBehavior.never,
-                                    alignLabelWithHint: false),
-                                dropdownColor: AppColor.customdropdownColor,
-                                isDense: true,
-                                items: [
-
-                                  DropdownMenuItem(
-                                    enabled: false,
-
-                                    value: 'create_agent',
-                                    child: Container(
-                                      height: 50,
-                                      // width: 360,
-                                      padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 4),
-                                      decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          borderRadius: BorderRadius.circular(10),
-                                          boxShadow: [
-                                            BoxShadow(
-                                                blurRadius: 2,
-                                                spreadRadius: 0,
-                                                color: Colors.grey.withOpacity(.3)
-                                            )
-                                          ]
-                                      ),
-                                      child: Row(
-                                        children: [
-                                          const SizedBox(width: 10),
-                                          Icon(Icons.add_box_rounded, color: AppColor.buttonTextColor, ),
-                                          const SizedBox(width: 8),
-                                          Text('Create a new agent', style: TextStyle(color: AppColor.buttonTextColor,fontFamily: fontFamilys, fontWeight: FontWeight.w400)),
-                                        ],
-                                      ),
-                                    ),
-                                  ),
-                                  DropdownMenuItem(
-                                      value: "search_agent",
-                                      enabled: false,
-
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 2),
-                                        child: TextFormField(
-
-                                          decoration: InputDecoration(
-                                            hintText: "Search Agent",
-                                            fillColor: Colors.white,
-                                            filled: true,
-
-                                            suffixIcon: Icon(Icons.search_outlined),
-                                            hintStyle: TextStyle(
-                                                color: AppColor.hintColor, fontFamily: fontFamilys, fontSize: 14,fontWeight: FontWeight.w400),
-
-                                            //  color: Colors.grey, fontFamily: readexPro, fontSize: 13),
-
-                                            contentPadding:
-                                            const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-                                            enabledBorder:  OutlineInputBorder(borderSide: BorderSide(color: AppColor.borderColor3,width: 0.5),
-                                                borderRadius: BorderRadius.circular(10)),
-                                            focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: AppColor.borderColor3,width: 0.5),
-                                                borderRadius: BorderRadius.circular(10)),
-                                          ),
-
-                                        ),
-                                      )
-                                  ),
-                                  ...agents.map((String duration) {
-                                    return DropdownMenuItem<String>(
-                                      value: duration,
-                                      child: SizedBox(
-                                        height: 52,
-                                        child: Padding(
-                                          padding: const EdgeInsets.symmetric(vertical: 3.0,horizontal: 4),
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                                borderRadius: BorderRadius.circular(10),
-                                                color: Colors.white,
-                                                border: Border.all(width: .5,color: Colors.grey.withOpacity(.3))
-                                            ),
-                                            child: Padding(
-                                              padding: const EdgeInsets.all(4.0),
-                                              child: Row(
-                                                children: [
-                                                  SizedBox(width: 5),
-                                                  CircleAvatar(
-                                                    backgroundImage: AssetImage('${imageUrl}agent.png'),
-                                                    radius: 18,
-                                                  ),
-                                                  SizedBox(width: 5),
-                                                  Text(
-                                                    duration,
-                                                    style: TextStyle(fontSize: 14),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    );
-                                  }).toList(),
-
-                                ],
-                                menuMaxHeight:    400,
-                                isExpanded: true,
-                                onChanged: (value) {
-                                  if (value != 'create_agent' && value != 'search_agent') {
-                                    selectedValue = value;
-                                  }
-                                  // searchName.text = value ??
-                                  //     '';
-                                },
-                                selectedItemBuilder: (BuildContext context){
-
-                                  return agents.map((String agent) {
-                                    return SizedBox(
-                                      height: 50,
-                                      child: Row(
-                                        children: [
-                                          CircleAvatar(
-                                            backgroundImage: AssetImage('${imageUrl}agent.png'),
-                                            radius: 16,
-                                          ),
-                                          SizedBox(width: 5),
-                                          Text(
-                                            agent,
-                                            style: TextStyle(fontSize: 14),
-                                          ),
-                                        ],
-                                      ),
-                                    );
-                                  }).toList();
-                                },
-                                validator: (value) {
-                                  if (value == null || value.isEmpty) {
-                                    return "Select Duration";
-                                  }
-                                  return null;
-                                },
-                              ),
-                            ),
-                          ),
+                          secondDropDown(),
 
                           SizedBox(
                             width: context.screenWidth * 0.05,
                           ),
-                         // Widgets().addNewPackageFormAgentNameAndClinetName(context, 'Select Supplier', 'John Doe')
+                          // Widgets().addNewPackageFormAgentNameAndClinetName(context, 'Select Supplier', 'John Doe')
                         ],
                       ),
                     ],
                   ),
 
-                   SizedBox(
+                  SizedBox(
                     height: context.screenHeight * 0.02,
                   ),
-                 
+
                   SizedBox(
                     height: 16,
                   ),
-                  // Padding(
-                  //   padding: const EdgeInsets.only(right: 16),
-                  //   child: Row(
-                  //     children: [
-                  //       Widgets().addNewPackageFormAgentNameAndClinetName(
-                  //           context, 'Agent Name', 'John Doe'),
-                  //       SizedBox(
-                  //         width: context.screenWidth * 0.009,
-                  //       ),
-                  //       Widgets().addNewPackageFormAgentNameAndClinetName(
-                  //           context, 'Select Supplier', 'John Doe')
-                  //     ],
-                  //   ),
-                  // ),
-                  // SizedBox(
-                  //   height: context.screenHeight * 0.02,
-                  // ),
+
 
                   Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -623,7 +307,7 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm> {
                           ),
                         ],
                       ),
-                      SizedBox(width: context.screenWidth*.08,),
+                      SizedBox(width: context.screenWidth * .08,),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -741,6 +425,396 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm> {
               ),
             )
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget firstDropDown() {
+    return SizedBox(width: 400,
+      child: Theme(
+        data: Theme.of(context).copyWith(
+            focusColor: AppColor.background,
+            hoverColor: AppColor.background
+        ),
+        child: DropdownButtonFormField<String>(
+          value: selectedValue1,
+
+          decoration: InputDecoration(
+              labelText: 'John Doe',
+              fillColor: AppColor.customdropdownColor,
+              filled: true,
+
+
+              labelStyle: TextStyle(
+
+                  color: AppColor.hintColor, fontFamily: poppin, fontSize: 15),
+              contentPadding: const EdgeInsets.symmetric(
+                  vertical: 10, horizontal: 10),
+              // contentPadding: EdgeInsets.zero,
+              enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: BorderSide(
+                      color: AppColor.borderColor3, width: 1)),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: BorderSide(color: AppColor.borderColor3, width: 1),
+              ),
+              floatingLabelBehavior: FloatingLabelBehavior.never,
+              alignLabelWithHint: false),
+          dropdownColor: AppColor.customdropdownColor,
+          isDense: true,
+          items: [
+
+            DropdownMenuItem(
+              enabled: false,
+
+              value: 'create_agent',
+              child: Container(
+                height: 50,
+                // width: 360,
+                padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 4),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                          blurRadius: 2,
+                          spreadRadius: 0,
+                          color: Colors.grey.withOpacity(.3)
+                      )
+                    ]
+                ),
+                child: Row(
+                  children: [
+                    const SizedBox(width: 10),
+                    Icon(
+                      Icons.add_box_rounded, color: AppColor.buttonTextColor,),
+                    const SizedBox(width: 8),
+                    Text('Create a new agent', style: TextStyle(
+                        color: AppColor.buttonTextColor,
+                        fontFamily: fontFamilys,
+                        fontWeight: FontWeight.w400)),
+                  ],
+                ),
+              ),
+            ),
+            DropdownMenuItem(
+                value: "search_agent",
+                enabled: false,
+
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 8, horizontal: 2),
+                  child: TextFormField(
+
+                    decoration: InputDecoration(
+                      hintText: "Search Agent",
+                      fillColor: Colors.white,
+                      filled: true,
+
+                      suffixIcon: Icon(Icons.search_outlined),
+                      hintStyle: TextStyle(
+                          color: AppColor.hintColor,
+                          fontFamily: fontFamilys,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400),
+
+                      //  color: Colors.grey, fontFamily: readexPro, fontSize: 13),
+
+                      contentPadding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+                      enabledBorder: OutlineInputBorder(borderSide: BorderSide(
+                          color: AppColor.borderColor3, width: 0.5),
+                          borderRadius: BorderRadius.circular(10)),
+                      focusedBorder: OutlineInputBorder(borderSide: BorderSide(
+                          color: AppColor.borderColor3, width: 0.5),
+                          borderRadius: BorderRadius.circular(10)),
+                    ),
+
+                  ),
+                )
+            ),
+            ...agents.map((String duration) {
+              return DropdownMenuItem<String>(
+                value: duration,
+                child: SizedBox(
+                  height: 52,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 3.0, horizontal: 4),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Colors.white,
+                          border: Border.all(
+                              width: .5, color: Colors.grey.withOpacity(.3))
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Row(
+                          children: [
+                            SizedBox(width: 5),
+                            CircleAvatar(
+                              backgroundImage: AssetImage(
+                                  '${imageUrl}agent.png'),
+                              radius: 18,
+                            ),
+                            SizedBox(width: 5),
+                            Text(
+                              duration,
+                              style: TextStyle(fontSize: 14),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              );
+            }).toList(),
+
+          ],
+          menuMaxHeight: 400,
+          isExpanded: true,
+          onChanged: (value) {
+            if (value != 'create_agent' && value != 'search_agent') {
+              selectedValue1 = value;
+            }
+            // searchName.text = value ??
+            //     '';
+          },
+          selectedItemBuilder: (BuildContext context) {
+            return agents.map((String agent) {
+              return SizedBox(
+                height: 50,
+                child: Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundImage: AssetImage('${imageUrl}agent.png'),
+                      radius: 16,
+                    ),
+                    SizedBox(width: 5),
+                    Text(
+                      agent,
+                      style: TextStyle(fontSize: 14),
+                    ),
+                  ],
+                ),
+              );
+            }).toList();
+          },
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return "Select Duration";
+            }
+            return null;
+          },
+        ),
+      ),
+    );
+  }
+
+  Widget secondDropDown() {
+    // TabController tabController = TabController();
+
+    return SizedBox(width: 400,
+      child: Theme(
+        data: Theme.of(context).copyWith(
+            focusColor: AppColor.background,
+            hoverColor: AppColor.background
+        ),
+        child: DropdownButtonFormField<String>(
+          value: selectedValue2,
+
+          decoration: InputDecoration(
+              labelText: 'John Doe',
+              fillColor: AppColor.customdropdownColor,
+              filled: true,
+
+
+              labelStyle: TextStyle(
+
+                  color: AppColor.hintColor, fontFamily: poppin, fontSize: 15),
+              contentPadding: const EdgeInsets.symmetric(
+                  vertical: 10, horizontal: 10),
+              // contentPadding: EdgeInsets.zero,
+              enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: BorderSide(
+                      color: AppColor.borderColor3, width: 1)),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: BorderSide(color: AppColor.borderColor3, width: 1),
+              ),
+              floatingLabelBehavior: FloatingLabelBehavior.never,
+              alignLabelWithHint: false),
+          dropdownColor: AppColor.customdropdownColor,
+          isDense: true,
+          items: [
+
+            DropdownMenuItem(
+              enabled: false,
+
+              value: 'create_agent',
+              child: Container(
+                height: 50,
+                // width: 360,
+                padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 4),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                          blurRadius: 2,
+                          spreadRadius: 0,
+                          color: Colors.grey.withOpacity(.3)
+                      )
+                    ]
+                ),
+                child: Row(
+                  children: [
+                    const SizedBox(width: 10),
+                    Icon(
+                      Icons.add_box_rounded, color: AppColor.buttonTextColor,),
+                    const SizedBox(width: 8),
+                    Text('Create a new agent', style: TextStyle(
+                        color: AppColor.buttonTextColor,
+                        fontFamily: fontFamilys,
+                        fontWeight: FontWeight.w400)),
+                  ],
+                ),
+              ),
+            ),
+
+            DropdownMenuItem(
+                value: "search_agent",
+                enabled: false,
+
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 8, horizontal: 2),
+                  child: TextFormField(
+
+                    decoration: InputDecoration(
+                      hintText: "Search Agent",
+                      fillColor: Colors.white,
+                      filled: true,
+
+                      suffixIcon: Icon(Icons.search_outlined),
+                      hintStyle: TextStyle(
+                          color: AppColor.hintColor,
+                          fontFamily: fontFamilys,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w400),
+
+                      //  color: Colors.grey, fontFamily: readexPro, fontSize: 13),
+
+                      contentPadding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+                      enabledBorder: OutlineInputBorder(borderSide: BorderSide(
+                          color: AppColor.borderColor3, width: 0.5),
+                          borderRadius: BorderRadius.circular(10)),
+                      focusedBorder: OutlineInputBorder(borderSide: BorderSide(
+                          color: AppColor.borderColor3, width: 0.5),
+                          borderRadius: BorderRadius.circular(10)),
+                    ),
+
+                  ),
+                )
+            ),
+            DropdownMenuItem(
+                value: "tab_bar",
+                enabled: false,
+
+                child: DefaultTabController(
+                  length: 2,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 8, horizontal: 2),
+                    child: Column(
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                              color: Colors.black
+                          ),
+                          child: TabBar(tabs: [
+                            Text("Local Supplier"),
+                            Text("International Supplier"),
+                          ],),
+                        ),
+                        TabBarView(
+                          controller: tabController,
+                          children: [
+                            Text("hghjgjh"),
+                            Text("hghjgjh"),
+                            //   ListView.builder(
+                            //   itemCount: agents.length,
+                            //   itemBuilder: (context, index) {
+                            //     return ListTile(
+                            //       leading: CircleAvatar(
+                            //         backgroundImage: AssetImage('${imageUrl}agent.png'),
+                            //       ),
+                            //       title: Text(agents[index]),
+                            //     );
+                            //   },
+                            // ),
+                            //   ListView.builder(
+                            //     itemCount: agents.length,
+                            //     itemBuilder: (context, index) {
+                            //       return ListTile(
+                            //         leading: CircleAvatar(
+                            //           backgroundImage: AssetImage('${imageUrl}agent.png'),
+                            //         ),
+                            //         title: Text(agents[index]),
+                            //       );
+                            //     },
+                            //   ),
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                )
+            ),
+
+
+          ],
+          menuMaxHeight: 400,
+          isExpanded: true,
+          onChanged: (value) {
+            if (value != 'create_agent' && value != 'search_agent') {
+              selectedValue2 = value;
+            }
+            // searchName.text = value ??
+            //     '';
+          },
+          selectedItemBuilder: (BuildContext context) {
+            return agents.map((String agent) {
+              return SizedBox(
+                height: 50,
+                child: Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundImage: AssetImage('${imageUrl}agent.png'),
+                      radius: 16,
+                    ),
+                    SizedBox(width: 5),
+                    Text(
+                      agent,
+                      style: TextStyle(fontSize: 14),
+                    ),
+                  ],
+                ),
+              );
+            }).toList();
+          },
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return "Select Duration";
+            }
+            return null;
+          },
         ),
       ),
     );

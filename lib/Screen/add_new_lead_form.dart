@@ -33,6 +33,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
     filteredAgents = agents;
   }
 
+
   void filterAgents(String query) {
     setState(() {
       if (query.isEmpty) {
@@ -135,10 +136,10 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                         const SizedBox(height: 5),
                         SizedBox( width: 400,
                           child: Theme(
-                             data: Theme.of(context).copyWith(
-                               focusColor: AppColor.background,
-                               hoverColor: AppColor.background
-                             ),
+                            data: Theme.of(context).copyWith(
+                                focusColor: AppColor.background,
+                                hoverColor: AppColor.background
+                            ),
                             child: DropdownButtonFormField<String>(
                               value:selectedValue ,
 
@@ -150,11 +151,11 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
 
                                   labelStyle: TextStyle(
 
-                                    color:   AppColor.hintColor, fontFamily: poppin, fontSize: 15  ),
+                                      color:   AppColor.hintColor, fontFamily: poppin, fontSize: 15  ),
                                   contentPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                                   // contentPadding: EdgeInsets.zero,
                                   enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(10),
-                                  borderSide: BorderSide(color: AppColor.borderColor3,width: 1)),
+                                      borderSide: BorderSide(color: AppColor.borderColor3,width: 1)),
                                   focusedBorder: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(10),
                                     borderSide:   BorderSide(color: AppColor.borderColor3,width: 1),
@@ -174,15 +175,15 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                                     // width: 360,
                                     padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 4),
                                     decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(10),
-                                      boxShadow: [
-                                        BoxShadow(
-                                          blurRadius: 2,
-                                          spreadRadius: 0,
-                                          color: Colors.grey.withOpacity(.3)
-                                        )
-                                      ]
+                                        color: Colors.white,
+                                        borderRadius: BorderRadius.circular(10),
+                                        boxShadow: [
+                                          BoxShadow(
+                                              blurRadius: 2,
+                                              spreadRadius: 0,
+                                              color: Colors.grey.withOpacity(.3)
+                                          )
+                                        ]
                                     ),
                                     child: Row(
                                       children: [
@@ -195,34 +196,34 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                                   ),
                                 ),
                                 DropdownMenuItem(
-                                  value: "search_agent",
+                                    value: "search_agent",
                                     enabled: false,
 
                                     child: Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 2),
-                                  child: TextFormField(
+                                      padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 2),
+                                      child: TextFormField(
 
-                                    decoration: InputDecoration(
-                                      hintText: "Search Agent",
-                                      fillColor: Colors.white,
-                                      filled: true,
+                                        decoration: InputDecoration(
+                                          hintText: "Search Agent",
+                                          fillColor: Colors.white,
+                                          filled: true,
 
-                                      suffixIcon: Icon(Icons.search_outlined),
-                                      hintStyle: TextStyle(
-                                          color: AppColor.hintColor, fontFamily: fontFamilys, fontSize: 14,fontWeight: FontWeight.w400),
+                                          suffixIcon: Icon(Icons.search_outlined),
+                                          hintStyle: TextStyle(
+                                              color: AppColor.hintColor, fontFamily: fontFamilys, fontSize: 14,fontWeight: FontWeight.w400),
 
-                                      //  color: Colors.grey, fontFamily: readexPro, fontSize: 13),
+                                          //  color: Colors.grey, fontFamily: readexPro, fontSize: 13),
 
-                                      contentPadding:
-                                      const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-                                      enabledBorder:  OutlineInputBorder(borderSide: BorderSide(color: AppColor.borderColor3,width: 0.5),
-                                      borderRadius: BorderRadius.circular(10)),
-                                      focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: AppColor.borderColor3,width: 0.5),
-                                          borderRadius: BorderRadius.circular(10)),
-                                    ),
+                                          contentPadding:
+                                          const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+                                          enabledBorder:  OutlineInputBorder(borderSide: BorderSide(color: AppColor.borderColor3,width: 0.5),
+                                              borderRadius: BorderRadius.circular(10)),
+                                          focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: AppColor.borderColor3,width: 0.5),
+                                              borderRadius: BorderRadius.circular(10)),
+                                        ),
 
-                                  ),
-                                )
+                                      ),
+                                    )
                                 ),
                                 ...agents.map((String duration) {
                                   return DropdownMenuItem<String>(
@@ -632,7 +633,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                         Widgets().finalButton(
                             'Cancel', const Color(0XFFE7E7E7), () {}),
                         const SizedBox(width: 15),
-                      Widgets()
+                        Widgets()
                             .finalButton('Save', const Color(0XFF83D0E3), () {})
                       ],
                     ),
