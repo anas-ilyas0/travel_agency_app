@@ -27,6 +27,7 @@ import 'package:fab_tech_sol/ui/agents_widget.dart';
 import 'package:fab_tech_sol/ui/dashboard.dart';
 import 'package:fab_tech_sol/ui/dashboard_widget.dart';
 import 'package:fab_tech_sol/ui/supplier_widget.dart';
+import 'package:fab_tech_sol/widgets/package_detail_container.dart';
 
 
 import 'package:firebase_core/firebase_core.dart';
@@ -64,16 +65,22 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeApp.myThemeData,
 // home: LeadDetails());
-// home: PackageDetail());
+    // home:Package()
+// home: ClientDetailPackage()
 // home: PackageClassScreen());
-// home:CreateNewPackageForm());
+// home:AddNewLocalSupplier());
+// home: Dashboard());
+// home:CreateNewPackageForm()
+home: AddNewLocalSupplier()
 // home: AddNewLocalSupplier());
 // home: LoginPage());
 // home:CustomDropDownButton());
 // home: AddNewInterNationalsuppliers());
-home:  AddNewLeadForm ());
+
      
 
+
+    );
 
   }
 }

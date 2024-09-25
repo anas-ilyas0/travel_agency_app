@@ -120,23 +120,31 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm> {
                     //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
 
-                      AddNewAgentTitlelAndDescription(
-                          text1: 'Client Name', text2: 'John Doe'),
+                      Flexible(
+                        child: FittedBox(
+                          child: AddNewAgentTitlelAndDescription(
+                              text1: 'Client Name', text2: 'John Doe'),
+                        ),
+                      ),
                       SizedBox(
                         width: context.screenWidth * 0.05,
                       ),
-                      AddNewAgentTitlelAndDescription(
-                          text1: 'Client Phone Number',
-                          text2: '+1 (555) 987-6543'),
+                      Flexible(
+                        child: FittedBox(
+                          child: AddNewAgentTitlelAndDescription(
+                              text1: 'Client Phone Number',
+                              text2: '+1 (555) 987-6543'),
+                        ),
+                      ),
                     ],
                   ),
                   Row(
                     children: [
-                     Widgets().addNewPackageFormAgentNameAndClinetName(context, 'Agent Name', 'John Doe'),
+                     Flexible(child: FittedBox(child: Widgets().addNewPackageFormAgentNameAndClinetName(context, 'Agent Name', 'John Doe'))),
                       SizedBox(
                         width: context.screenWidth * 0.05,
                       ),
-                     Widgets().addNewPackageFormAgentNameAndClinetName(context, 'Select Supplier', 'John Doe')
+                     Flexible(child: FittedBox(child: Widgets().addNewPackageFormAgentNameAndClinetName(context, 'Select Supplier', 'John Doe')))
                     ],
                   ),
                    SizedBox(
@@ -167,100 +175,112 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm> {
                   Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8),
-                            child: Widgets().CreateNewPackagetext('Name'),
+                      Flexible(
+                        child: FittedBox(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8),
+                                child: Widgets().CreateNewPackagetext('Name'),
+                              ),
+                              SizedBox(
+                                height: 25,
+                              ),
+                              Widgets().PackageTextNmaelist('Adult'),
+                              SizedBox(
+                                height: 38,
+                              ),
+                              Widgets().PackageTextNmaelist('Child'),
+                              SizedBox(
+                                height: 36,
+                              ),
+                              Widgets().PackageTextNmaelist('Infant'),
+                              SizedBox(
+                                height: 36,
+                              ),
+                              Widgets().PackageTextNmaelist('Senior Citizen'),
+                              SizedBox(
+                                height: 36,
+                              ),
+                              Widgets().PackageTextNmaelist('Other'),
+                              SizedBox(
+                                height: 18,
+                              ),
+                            ],
                           ),
-                          SizedBox(
-                            height: 25,
-                          ),
-                          Widgets().PackageTextNmaelist('Adult'),
-                          SizedBox(
-                            height: 38,
-                          ),
-                          Widgets().PackageTextNmaelist('Child'),
-                          SizedBox(
-                            height: 36,
-                          ),
-                          Widgets().PackageTextNmaelist('Infant'),
-                          SizedBox(
-                            height: 36,
-                          ),
-                          Widgets().PackageTextNmaelist('Senior Citizen'),
-                          SizedBox(
-                            height: 36,
-                          ),
-                          Widgets().PackageTextNmaelist('Other'),
-                          SizedBox(
-                            height: 18,
-                          ),
-                        ],
+                        ),
                       ),
                       SizedBox(width: context.screenWidth*.08,),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8),
-                            child: Widgets()
-                                .CreateNewPackagetext('Number of People'),
+                      Flexible(
+                        child: FittedBox(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8),
+                                child: Widgets()
+                                    .CreateNewPackagetext('Number of People'),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Widgets().textFormField('500', context),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Widgets().textFormField('600', context),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Widgets().textFormField('350', context),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Widgets().textFormField('500', context),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Widgets().textFormField('1100', context),
+                              ),
+                            ],
                           ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Widgets().textFormField('500', context),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Widgets().textFormField('600', context),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Widgets().textFormField('350', context),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Widgets().textFormField('500', context),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Widgets().textFormField('1100', context),
-                          ),
-                        ],
+                        ),
                       ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8),
-                            child: Widgets().CreateNewPackagetext('Budget'),
+                      Flexible(
+                        child: FittedBox(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(left: 8),
+                                child: Widgets().CreateNewPackagetext('Budget'),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Widgets().textFormField('\$200', context),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Widgets().textFormField('\$300', context),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Widgets().textFormField('\$150', context),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Widgets().textFormField('\$500', context),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Widgets().textFormField('\$600', context),
+                              ),
+                            ],
                           ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Widgets().textFormField('\$200', context),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Widgets().textFormField('\$300', context),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Widgets().textFormField('\$150', context),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Widgets().textFormField('\$500', context),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Widgets().textFormField('\$600', context),
-                          ),
-                        ],
+                        ),
                       ),
                     ],
                   ),

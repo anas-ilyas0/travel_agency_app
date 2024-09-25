@@ -101,11 +101,13 @@ class Widgets {
   }
 
   Widget agentText(String text, double fontSize) {
-    return Text(text,
-        style: TextStyle(
-            fontSize: fontSize,
-            fontWeight: FontWeight.w400,
-            fontFamily: fontFamilys));
+    return FittedBox(
+      child: Text(text,
+          style: TextStyle(
+              fontSize: fontSize,
+              fontWeight: FontWeight.w400,
+              fontFamily: fontFamilys)),
+    );
     // fontWeight: FontWeight.w300,
     // fontFamily: readexPro));
   }
@@ -236,15 +238,16 @@ class Widgets {
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: Colors.grey.withOpacity(0.3))),
+          border: Border.all(color: Colors.grey.withOpacity(0.3))
+      ),
       child: TextFormField(
         decoration: InputDecoration(
           hintText: text,
           hintStyle: TextStyle(
               color: AppColor.hintColor, fontFamily: fontFamilys, fontSize: 15),
-
+    
           //  color: Colors.grey, fontFamily: readexPro, fontSize: 13),
-
+    
           contentPadding:
               const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
           border: const OutlineInputBorder(borderSide: BorderSide.none),
@@ -501,14 +504,16 @@ class Widgets {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Center(
-                  child: Text(
-                    "Detail",
-                    style: TextStyle(
-                      // decoration: TextDecoration.underline,
-                      color: Color(0XFF11345A),
-                      fontSize: 16,
-                      fontFamily: fontFamilys,
-                      fontWeight: FontWeight.w400,
+                  child: FittedBox(
+                    child: Text(
+                      "Detail",
+                      style: TextStyle(
+                        // decoration: TextDecoration.underline,
+                        color: Color(0XFF11345A),
+                        fontSize: 16,
+                        fontFamily: fontFamilys,
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
                   ),
                 ),
@@ -639,7 +644,7 @@ class Widgets {
       BuildContext context, String text1, String text2) {
     return  SizedBox(
       height: 80,
-      width: Responsive.isMobile(context)? null:Responsive.isTablet(context)? context.screenWidth * 0.25:context.screenWidth * 0.2 ,
+      width: Responsive.isMobile(context)? null:Responsive.isTablet(context)? context.screenWidth * 0.25:context.screenWidth * 0.25 ,
       child: Column(
         children: [Align(alignment: Alignment.centerLeft,
           child: Text('$text1',style: AppTextstyless.addnewinternationalsuppliersSubText)),

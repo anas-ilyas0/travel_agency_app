@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppTextstyless {
   static TextStyle packageClientDetailTextStyle = const TextStyle(
-      color: Colors.black, fontSize: 18, fontFamily: 'ReadexPro',fontWeight: FontWeight.w400);
+      color: Colors.black, fontSize: 17, fontFamily: 'ReadexPro',fontWeight: FontWeight.w400);
       static TextStyle packageClientDetailTextStyleSubTitle = const TextStyle(
       color: Color(0XFF0C1421), fontSize: 15, fontFamily: 'ReadexPro');
        static TextStyle packageClientDetailTextStyleHeading = const TextStyle(fontWeight: FontWeight.w600,
