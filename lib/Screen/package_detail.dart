@@ -1,9 +1,10 @@
 import 'package:fab_tech_sol/AppColor/app_color.dart';
-import 'package:fab_tech_sol/Screen/add_new_lead_form_create_new_package.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/widgets/widgets.dart';
 import 'package:flutter/material.dart';
+
+import 'add_new_create_package_detail.dart';
 
 class PackageDetail extends StatelessWidget {
   const PackageDetail({super.key});

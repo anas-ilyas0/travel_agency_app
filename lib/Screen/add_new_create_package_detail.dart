@@ -19,8 +19,7 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
     with SingleTickerProviderStateMixin {
   List<String> agents = ['John Doe', 'Jane Smith', 'James Bond', 'Tony Stark'];
   String? selectedValue1;
-  String? selectedValue2;
- late TabController tabController;
+  TabController? tabController;
   @override
   void initState() {
     super.initState();
@@ -617,6 +616,7 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
 
   Widget secondDropDown() {
     // TabController tabController = TabController();
+    String? selectedValue2;
 
     return SizedBox(width: 400,
       child: Theme(
@@ -723,57 +723,108 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
                   ),
                 )
             ),
+
             DropdownMenuItem(
                 value: "tab_bar",
-                enabled: false,
+                // enabled: false,
 
                 child: DefaultTabController(
                   length: 2,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 8, horizontal: 2),
-                    child: Column(
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                              color: Colors.black
-                          ),
-                          child: TabBar(tabs: [
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 50,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: AppColor.borderColor3,)
+                        ),
+                        child: TabBar(
+                          labelStyle: TextStyle(
+                              fontFamily: readexPro,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 12
+
+                          )
+                          ,
+                          labelColor: AppColor.blueColor,
+                          unselectedLabelColor: AppColor.hintColor,
+                          unselectedLabelStyle:
+                          const TextStyle(fontWeight: FontWeight.normal),
+                          indicatorColor: AppColor.blueColor,
+                          dividerColor: Colors.transparent,
+                          tabs: [
                             Text("Local Supplier"),
                             Text("International Supplier"),
+
                           ],),
-                        ),
-                        TabBarView(
-                          controller: tabController,
+                      ),
+                      SizedBox(
+                        height: 200,
+                        child: TabBarView(
+                          // controller: tabController,
                           children: [
-                            Text("hghjgjh"),
-                            Text("hghjgjh"),
-                            //   ListView.builder(
-                            //   itemCount: agents.length,
-                            //   itemBuilder: (context, index) {
-                            //     return ListTile(
-                            //       leading: CircleAvatar(
-                            //         backgroundImage: AssetImage('${imageUrl}agent.png'),
-                            //       ),
-                            //       title: Text(agents[index]),
-                            //     );
-                            //   },
-                            // ),
-                            //   ListView.builder(
-                            //     itemCount: agents.length,
-                            //     itemBuilder: (context, index) {
-                            //       return ListTile(
-                            //         leading: CircleAvatar(
-                            //           backgroundImage: AssetImage('${imageUrl}agent.png'),
-                            //         ),
-                            //         title: Text(agents[index]),
-                            //       );
-                            //     },
-                            //   ),
+
+                            ListView.builder(
+                              itemCount: agents.length,
+                              itemBuilder: (context, index) {
+                                return Padding(
+                                  padding: const EdgeInsets.all(4.0),
+                                  child: InkWell(
+                                    onTap: (){
+                                      setState(() {
+                                        selectedValue2=agents[index];
+                                      });
+                                    },
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(10),
+                                          border: Border.all(color: AppColor.borderColor3,)
+                                      ),
+                                      child: ListTile(
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage('${imageUrl}agent.png'),
+                                        ),
+                                        title: Text(agents[index],),
+                                        trailing: Text('Local Supplier'),
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              },
+                            ),
+                            ListView.builder(
+                              itemCount: agents.length,
+                              itemBuilder: (context, index) {
+                                return Padding(
+                                  padding: const EdgeInsets.all(4.0),
+                                  child: InkWell(
+                                    onTap: (){
+                                      setState(() {
+                                        selectedValue2=agents[index];
+                                      });
+                                    },
+                                    child: Container(
+                                      decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(10),
+                                          border: Border.all(color: AppColor.borderColor3,)
+                                      ),
+                                      child: ListTile(
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage('${imageUrl}agent.png'),
+                                        ),
+                                        title: Text(agents[index]),
+                                        trailing: Text('International Supplier'),
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              },
+                            ),
+
                           ],
-                        )
-                      ],
-                    ),
+                        ),
+                      )
+                    ],
                   ),
                 )
             ),
@@ -784,7 +835,9 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
           isExpanded: true,
           onChanged: (value) {
             if (value != 'create_agent' && value != 'search_agent') {
-              selectedValue2 = value;
+              setState(() {
+                selectedValue2 = value;
+              });
             }
             // searchName.text = value ??
             //     '';
@@ -819,5 +872,6 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
       ),
     );
   }
+
 
 }

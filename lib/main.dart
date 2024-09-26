@@ -1,7 +1,6 @@
 
 import 'package:fab_tech_sol/Screen/add_new_agent.dart';
 import 'package:fab_tech_sol/Screen/add_new_lead_detail.dart';
-import 'package:fab_tech_sol/Screen/add_new_lead_form_create_new_package.dart';
 import 'package:fab_tech_sol/Screen/add_new_local_suppliers.dart';
 import 'package:fab_tech_sol/Screen/addnewinternationalsuppliers.dart';
 import 'package:fab_tech_sol/Screen/client_detail_package.dart';
@@ -32,6 +31,8 @@ import 'package:fab_tech_sol/ui/supplier_widget.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import 'Screen/add_new_create_package_detail.dart';
 
 
 
