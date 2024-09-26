@@ -1,3 +1,4 @@
+import 'package:fab_tech_sol/Screen/local_supplier_detail.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -15,13 +16,14 @@ class SupplierTask {
   final String action;
 
   SupplierTask(this.companyName, this.supplierName, this.supplierAddress,
-      this.service, this.companyAddress, this.status, this.action);
+      this.service, this.companyAddress, this.status, this.action,);
 }
 
 class TaskDataSource extends DataTableSource {
   final List<SupplierTask> tasks;
+ final BuildContext context;
 
-  TaskDataSource(this.tasks);
+  TaskDataSource(this.tasks,this.context);
 
   @override
   DataRow? getRow(int index) {
@@ -32,7 +34,15 @@ class TaskDataSource extends DataTableSource {
     return DataRow.byIndex(
       index: index,
       cells: [
-        DataCell(Text(task.companyName)),
+        DataCell(GestureDetector(
+          onTap: () {
+           
+          },
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => LocalSupplierDetail(),));
+            },
+            child: Text(task.companyName)))),
         DataCell(Text(task.supplierName)),
         DataCell(Text(task.supplierAddress)),
         DataCell(Text(task.service)),

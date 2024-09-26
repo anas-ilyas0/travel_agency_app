@@ -117,7 +117,7 @@ class _LeadScreenState extends State<LeadScreen> with SingleTickerProviderStateM
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => LeadInvoiceDetails(),
+                                builder: (context) => LeadDetails(),
                               ));
                         },)
                       : SizedBox.shrink(),

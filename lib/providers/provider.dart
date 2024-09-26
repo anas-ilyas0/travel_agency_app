@@ -107,4 +107,14 @@ class UserProvider extends ChangeNotifier {
     leadsTabController?.dispose();
     super.dispose();
   }
+
+
+  String _selectedOption = 'Supplier';
+    String get selectedOption => _selectedOption;
+    void setSelectedOption(String value) {
+    _selectedOption = value;
+    notifyListeners(); // Notify listeners to rebuild the widgets that depend on this state
+  }
+
+
 }

@@ -2,7 +2,6 @@ import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/Screen/AppText/TextStyle.dart';
 import 'package:fab_tech_sol/Screen/pacakge_details2.dart';
-import 'package:fab_tech_sol/app_text_style.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
 import 'package:fab_tech_sol/widgets/widgets.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +24,7 @@ class ClientDetailPackage extends StatelessWidget {
               child: Flexible(
                 child: Row(
                   children: [
-                    Text(
+                    const Text(
                       'Client Details',
                       style: TextStyle(
                         fontSize: 30,
@@ -58,10 +57,10 @@ class ClientDetailPackage extends StatelessWidget {
                             children: [
                               SvgPicture.asset(
                                   '${ImagesAssets.imagePath}VectorFilter.svg'),
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
-                              Text(
+                              const Text(
                                 'Filter',
                                 style: TextStyle(
                                     fontSize: 15,
@@ -131,37 +130,79 @@ class ClientDetailPackage extends StatelessWidget {
 
                       Row(
                         children: [
-                          Text('Client Name:',
-                              style:
-                                  AppTextstyless.packageClientDetailTextStyle),
-                          SizedBox(
-                            width: context.screenWidth * 0.065,
-                          ),
-                          const CircleAvatar(
-                            radius: 20, // Adjust the radius for size
-                            backgroundImage: AssetImage(
-                                '${ImagesAssets.imagePath}Ellipse.png'), // Image from assets
-                          ),
-                          SizedBox(
-                            width: context.screenWidth * 0.01,
-                          ),
                           Flexible(
-                            child: Text('Jhon Doe',
-                                style: AppTextstyless
-                                    .packageClientDetailTextStyleSubTitle),
+                            child: FittedBox(
+                              child: Row(
+                                children: [
+                                  Text('Client Name:',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyle),
+                                  SizedBox(width: context.screenWidth * 0.065),
+                                  const CircleAvatar(
+                                    radius: 20,
+                                    backgroundImage: AssetImage(
+                                        '${ImagesAssets.imagePath}Ellipse.png'),
+                                  ),
+                                  SizedBox(width: context.screenWidth * 0.01),
+                                  Text('Jhon Doe',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyleSubTitle),
+                                  SizedBox(width: context.screenWidth * 0.035),
+                                  Text('Phone Number',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyle),
+                                  SizedBox(width: context.screenWidth * 0.03),
+                                  Text('+21 999 909 9090',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyleSubTitle),
+                                ],
+                              ),
+                            ),
                           ),
-                          SizedBox(
-                            width: context.screenWidth * 0.035,
+                        ],
+                      ),
+
+                      SizedBox(
+                        height: context.screenHeight * 0.03,
+                      ),
+                      Row(
+                        children: [
+                          Flexible(
+                            child: FittedBox(
+                              child: Row(
+                                children: [
+                                  Text(
+                                    'Price par pax',
+                                    style: TextStyle(
+                                        color: AppColor.buttonTextColors,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w200,
+                                        fontFamily: 'Readex Pro'),
+                                  ),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.197,
+                                  ),
+                                  Text(
+                                    'QTY',
+                                    style: TextStyle(
+                                        color: AppColor.buttonTextColors,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w200,
+                                        fontFamily: 'Readex Pro'),
+                                  ),
+                                  SizedBox(width: context.screenWidth * 0.15),
+                                  Text(
+                                    'Total per pax',
+                                    style: TextStyle(
+                                        color: AppColor.buttonTextColors,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.w200,
+                                        fontFamily: 'Readex Pro'),
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
-                          Text('Phone Number',
-                              style:
-                                  AppTextstyless.packageClientDetailTextStyle),
-                          SizedBox(
-                            width: context.screenWidth * 0.03,
-                          ),
-                          Text('+21 999 909 9090',
-                              style: AppTextstyless
-                                  .packageClientDetailTextStyleSubTitle),
                         ],
                       ),
                       SizedBox(
@@ -169,92 +210,65 @@ class ClientDetailPackage extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          Text(
-                            'Price par pax',
-                            style: TextStyle(
-                                color: AppColor.buttonTextColors,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w200,
-                                fontFamily: 'Readex Pro'),
-                          ),
-                          SizedBox(
-                            width: context.screenWidth * 0.197,
-                          ),
-                          Text(
-                            'QTY',
-                            style: TextStyle(
-                                color: AppColor.buttonTextColors,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w200,
-                                fontFamily: 'Readex Pro'),
-                          ),
-                          SizedBox(width: context.screenWidth * 0.15),
-                          Text(
-                            'Total per pax',
-                            style: TextStyle(
-                                color: AppColor.buttonTextColors,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w200,
-                                fontFamily: 'Readex Pro'),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: context.screenHeight * 0.03,
-                      ),
-                      Row(
-                        children: [
-                          const Text(
-                            'Adult:',
-                            style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w300,
-                                fontFamily: 'Readex Pro',
-                                color: Color(0XFF0C1421)),
-                          ),
-                          SizedBox(
-                            width: context.screenWidth * 0.11,
-                          ),
-                          const Text(
-                            '1 000 000',
-                            style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w300,
-                                fontFamily: 'Readex Pro',
-                                color: Color(0XFF0C1421)),
-                          ),
-                          SizedBox(
-                            width: context.screenWidth * 0.079,
-                          ),
-                          const Text('Adult',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w200,
-                                  fontSize: 16,
-                                  fontFamily: 'Readex Pro')),
-                          SizedBox(
-                            width: context.screenWidth * 0.1,
-                          ),
-                          const Text(
-                            '1',
-                            style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w300,
-                                fontFamily: 'Readex Pro',
-                                color: Color(0XFF0C1421)),
-                          ),
-                          SizedBox(
-                            width: context.screenWidth * 0.14,
-                          ),
-                          const Text(
-                            '1',
-                            style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w300,
-                                fontFamily: 'Readex Pro',
-                                color: Color(0XFF0C1421)),
-                          ),
-                          SizedBox(
-                            height: context.screenHeight * 0.02,
+                          Flexible(
+                            child: FittedBox(
+                              child: Row(
+                                children: [
+                                  const Text(
+                                    'Adult:',
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w300,
+                                        fontFamily: 'Readex Pro',
+                                        color: Color(0XFF0C1421)),
+                                  ),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.11,
+                                  ),
+                                  const Text(
+                                    '1 000 000',
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w300,
+                                        fontFamily: 'Readex Pro',
+                                        color: Color(0XFF0C1421)),
+                                  ),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.079,
+                                  ),
+                                  const Text('Adult',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.w200,
+                                          fontSize: 16,
+                                          fontFamily: 'Readex Pro')),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.1,
+                                  ),
+                                  const Text(
+                                    '1',
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w300,
+                                        fontFamily: 'Readex Pro',
+                                        color: Color(0XFF0C1421)),
+                                  ),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.14,
+                                  ),
+                                  const Text(
+                                    '1',
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w300,
+                                        fontFamily: 'Readex Pro',
+                                        color: Color(0XFF0C1421)),
+                                  ),
+                                  SizedBox(
+                                    height: context.screenHeight * 0.02,
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
                         ],
                       ),
@@ -280,36 +294,44 @@ class ClientDetailPackage extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          Text('Client Name:',
-                              style:
-                                  AppTextstyless.packageClientDetailTextStyle),
-                          SizedBox(
-                            width: context.screenWidth * 0.065,
+                          Flexible(
+                            child: FittedBox(
+                              child: Row(
+                                children: [
+                                  Text('Client Name:',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyle),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.065,
+                                  ),
+                                  const CircleAvatar(
+                                    radius: 20, // Adjust the radius for size
+                                    backgroundImage: AssetImage(
+                                        '${ImagesAssets.imagePath}Ellipse.png'), // Image from assets
+                                  ),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.01,
+                                  ),
+                                  Text('Jhon Doe',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyleSubTitle),
+                                  //  const Text('Jhon doe',style: TextStyle(fontSize: 13),),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.04,
+                                  ),
+                                  Text('Phone No:',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyle),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.02,
+                                  ),
+                                  Text('XXXXXXXXXXX',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyleSubTitle),
+                                ],
+                              ),
+                            ),
                           ),
-                          const CircleAvatar(
-                            radius: 20, // Adjust the radius for size
-                            backgroundImage: AssetImage(
-                                '${ImagesAssets.imagePath}Ellipse.png'), // Image from assets
-                          ),
-                          SizedBox(
-                            width: context.screenWidth * 0.01,
-                          ),
-                          Text('Jhon Doe',
-                              style: AppTextstyless
-                                  .packageClientDetailTextStyleSubTitle),
-                          //  const Text('Jhon doe',style: TextStyle(fontSize: 13),),
-                          SizedBox(
-                            width: context.screenWidth * 0.04,
-                          ),
-                          Text('Phone No:',
-                              style:
-                                  AppTextstyless.packageClientDetailTextStyle),
-                          SizedBox(
-                            width: context.screenWidth * 0.02,
-                          ),
-                          Text('XXXXXXXXXXX',
-                              style: AppTextstyless
-                                  .packageClientDetailTextStyleSubTitle),
                         ],
                       ),
                       SizedBox(
@@ -338,36 +360,44 @@ class ClientDetailPackage extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          Text('Client Name:',
-                              style:
-                                  AppTextstyless.packageClientDetailTextStyle),
-                          SizedBox(
-                            width: context.screenWidth * 0.065,
+                          Flexible(
+                            child: FittedBox(
+                              child: Row(
+                                children: [
+                                  Text('Client Name:',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyle),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.065,
+                                  ),
+                                  const CircleAvatar(
+                                    radius: 20, // Adjust the radius for size
+                                    backgroundImage: AssetImage(
+                                        '${ImagesAssets.imagePath}Ellipse.png'), // Image from assets
+                                  ),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.01,
+                                  ),
+                                  Text('Jhon Doe',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyleSubTitle),
+                                  //  const Text('Jhon doe',style: TextStyle(fontSize: 13),),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.04,
+                                  ),
+                                  Text('Phone No:',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyle),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.02,
+                                  ),
+                                  Text('XXXXXXXXXXX',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyleSubTitle),
+                                ],
+                              ),
+                            ),
                           ),
-                          const CircleAvatar(
-                            radius: 20, // Adjust the radius for size
-                            backgroundImage: AssetImage(
-                                '${ImagesAssets.imagePath}Ellipse.png'), // Image from assets
-                          ),
-                          SizedBox(
-                            width: context.screenWidth * 0.01,
-                          ),
-                          Text('Jhon Doe',
-                              style: AppTextstyless
-                                  .packageClientDetailTextStyleSubTitle),
-                          //  const Text('Jhon doe',style: TextStyle(fontSize: 13),),
-                          SizedBox(
-                            width: context.screenWidth * 0.04,
-                          ),
-                          Text('Phone No:',
-                              style:
-                                  AppTextstyless.packageClientDetailTextStyle),
-                          SizedBox(
-                            width: context.screenWidth * 0.02,
-                          ),
-                          Text('XXXXXXXXXXX',
-                              style: AppTextstyless
-                                  .packageClientDetailTextStyleSubTitle),
                         ],
                       ),
                       SizedBox(
@@ -394,51 +424,59 @@ class ClientDetailPackage extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          Row(
-                            children: [
-                              Text('Destination:',
-                                  style: AppTextstyless
-                                      .packageClientDetailTextStyle),
-                              SizedBox(
-                                width: context.screenWidth * 0.044,
+                          Flexible(
+                            child: FittedBox(
+                              child: Row(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Text('Destination:',
+                                          style: AppTextstyless
+                                              .packageClientDetailTextStyle),
+                                      SizedBox(
+                                        width: context.screenWidth * 0.044,
+                                      ),
+                                      const Text('Sialkot Punjab 51040',
+                                          style: TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w300,
+                                              fontFamily: 'Readex Pro',
+                                              color: Color(0XFF0C1421))),
+                                      SizedBox(
+                                        width: context.screenWidth * 0.03,
+                                      ),
+                                      Text('Booking Date:',
+                                          style: AppTextstyless
+                                              .packageClientDetailTextStyle),
+                                      SizedBox(
+                                        width: context.screenWidth * 0.02,
+                                      ),
+                                      const Text('08/15/2024',
+                                          style: TextStyle(
+                                              fontSize: 15,
+                                              fontWeight: FontWeight.w300,
+                                              fontFamily: 'Readex Pro',
+                                              color: Color(0XFF0C1421))),
+                                      SizedBox(
+                                        width: context.screenWidth * 0.05,
+                                      ),
+                                      Text('Travel Date:',
+                                          style: AppTextstyless
+                                              .packageClientDetailTextStyle),
+                                      SizedBox(
+                                        width: context.screenWidth * 0.05,
+                                      ),
+                                      const Text('08/18/2024',
+                                          style: TextStyle(
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w300,
+                                              fontFamily: 'Readex Pro',
+                                              color: Color(0XFF0C1421))),
+                                    ],
+                                  ),
+                                ],
                               ),
-                              const Text('Sialkot Punjab 51040',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w300,
-                                      fontFamily: 'Readex Pro',
-                                      color: Color(0XFF0C1421))),
-                              SizedBox(
-                                width: context.screenWidth * 0.03,
-                              ),
-                              Text('Booking Date:',
-                                  style: AppTextstyless
-                                      .packageClientDetailTextStyle),
-                              SizedBox(
-                                width: context.screenWidth * 0.02,
-                              ),
-                              const Text('08/15/2024',
-                                  style: TextStyle(
-                                      fontSize: 15,
-                                      fontWeight: FontWeight.w300,
-                                      fontFamily: 'Readex Pro',
-                                      color: Color(0XFF0C1421))),
-                              SizedBox(
-                                width: context.screenWidth * 0.05,
-                              ),
-                              Text('Travel Date:',
-                                  style: AppTextstyless
-                                      .packageClientDetailTextStyle),
-                              SizedBox(
-                                width: context.screenWidth * 0.05,
-                              ),
-                              const Text('08/18/2024',
-                                  style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w300,
-                                      fontFamily: 'Readex Pro',
-                                      color: Color(0XFF0C1421))),
-                            ],
+                            ),
                           ),
                         ],
                       ),
@@ -465,52 +503,60 @@ class ClientDetailPackage extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          Text('Package Amount:',
-                              style:
-                                  AppTextstyless.packageClientDetailTextStyle),
-                          SizedBox(
-                            width: context.screenWidth * 0.03,
+                          Flexible(
+                            child: FittedBox(
+                              child: Row(
+                                children: [
+                                  Text('Package Amount:',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyle),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.03,
+                                  ),
+                                  const Text(
+                                    "\$232,89.00",
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w300,
+                                        fontFamily: 'Readex Pro',
+                                        color: Color(0XFF0C1421)),
+                                  ),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.07,
+                                  ),
+                                  Text('Paid Amount:',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyle),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.02,
+                                  ),
+                                  const Text(
+                                    ' 232,89.00',
+                                    style: TextStyle(
+                                        fontSize: 15,
+                                        fontWeight: FontWeight.w300,
+                                        fontFamily: 'Readex Pro',
+                                        color: Color(0XFF0C1421)),
+                                  ),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.065,
+                                  ),
+                                  Text('Outstanding Amount:',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyle),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.015,
+                                  ),
+                                  const Text('\$232,89.00',
+                                      style: TextStyle(
+                                          fontSize: 15,
+                                          fontWeight: FontWeight.w300,
+                                          fontFamily: 'Readex Pro',
+                                          color: Color(0XFF0C1421))),
+                                ],
+                              ),
+                            ),
                           ),
-                          const Text(
-                            "\$232,89.00",
-                            style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w300,
-                                fontFamily: 'Readex Pro',
-                                color: Color(0XFF0C1421)),
-                          ),
-                          SizedBox(
-                            width: context.screenWidth * 0.07,
-                          ),
-                          Text('Paid Amount:',
-                              style:
-                                  AppTextstyless.packageClientDetailTextStyle),
-                          SizedBox(
-                            width: context.screenWidth * 0.02,
-                          ),
-                          const Text(
-                            ' 232,89.00',
-                            style: TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w300,
-                                fontFamily: 'Readex Pro',
-                                color: Color(0XFF0C1421)),
-                          ),
-                          SizedBox(
-                            width: context.screenWidth * 0.065,
-                          ),
-                          Text('Outstanding Amount:',
-                              style:
-                                  AppTextstyless.packageClientDetailTextStyle),
-                          SizedBox(
-                            width: context.screenWidth * 0.015,
-                          ),
-                          const Text('\$232,89.00',
-                              style: TextStyle(
-                                  fontSize: 15,
-                                  fontWeight: FontWeight.w300,
-                                  fontFamily: 'Readex Pro',
-                                  color: Color(0XFF0C1421))),
                         ],
                       ),
                       SizedBox(
