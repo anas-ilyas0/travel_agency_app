@@ -19,31 +19,6 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
     with SingleTickerProviderStateMixin {
   List<String> agents = ['John Doe', 'Jane Smith', 'James Bond', 'Tony Stark'];
   String? selectedValue1;
-  TabController? tabController;
-  @override
-  void initState() {
-    super.initState();
-    tabController = TabController(length: 2, vsync: this); // Initialize it
-  }
-
-  @override
-  void dispose() {
-    tabController?.dispose(); // Dispose of it to prevent memory leaks
-    super.dispose();
-  }
-
-
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   tabController = TabController(length: 2, vsync: this); // Initialize it
-  // }
-  //
-  // @override
-  // void dispose() {
-  //   tabController?.dispose(); // Dispose of it to prevent memory leaks
-  //   super.dispose();
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -125,14 +100,16 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
                                 children: [
                                   Icon(
                                     Icons.file_upload_outlined,
-                                    color: Colors.white, size: 18,
+                                    color: Colors.white,
+                                    size: 18,
                                   ),
                                   // Icon
                                   SizedBox(width: 8),
                                   // Space between icon and text
                                   Text(
                                     'Upload Image',
-                                    style: TextStyle(color: Colors.white,
+                                    style: TextStyle(
+                                        color: Colors.white,
                                         fontSize: 12,
                                         fontWeight: FontWeight.w300,
                                         fontFamily: fontFamilys),
@@ -203,8 +180,6 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
                           ),
                           const SizedBox(height: 5),
                           Widgets().textFormField('+1 (555) 987-6543', context),
-
-
                         ],
                       ),
                     ],
@@ -227,8 +202,7 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
                                 fontWeight: FontWeight.bold),
                           ),
                           const SizedBox(height: 5),
-                          // firstDropDown(),
-
+                          firstDropDown(),
                           SizedBox(
                             width: context.screenWidth * 0.05,
                           ),
@@ -269,7 +243,6 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
                     height: 16,
                   ),
 
-
                   Row(
                     // mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
@@ -306,7 +279,9 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
                           ),
                         ],
                       ),
-                      SizedBox(width: context.screenWidth * .08,),
+                      SizedBox(
+                        width: context.screenWidth * .08,
+                      ),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -430,12 +405,11 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
   }
 
   Widget firstDropDown() {
-    return SizedBox(width: 400,
+    return SizedBox(
+      width: 400,
       child: Theme(
         data: Theme.of(context).copyWith(
-            focusColor: AppColor.background,
-            hoverColor: AppColor.background
-        ),
+            focusColor: AppColor.background, hoverColor: AppColor.background),
         child: DropdownButtonFormField<String>(
           value: selectedValue1,
 
@@ -443,18 +417,15 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
               labelText: 'John Doe',
               fillColor: AppColor.customdropdownColor,
               filled: true,
-
-
               labelStyle: TextStyle(
-
                   color: AppColor.hintColor, fontFamily: poppin, fontSize: 15),
-              contentPadding: const EdgeInsets.symmetric(
-                  vertical: 10, horizontal: 10),
-              // contentPadding: EdgeInsets.zero,
+              // contentPadding: const EdgeInsets.symmetric(
+              //     vertical: 10, horizontal: 10),
+              contentPadding: EdgeInsets.zero,
               enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide(
-                      color: AppColor.borderColor3, width: 1)),
+                  borderSide:
+                      BorderSide(color: AppColor.borderColor3, width: 1)),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: BorderSide(color: AppColor.borderColor3, width: 1),
@@ -464,10 +435,8 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
           dropdownColor: AppColor.customdropdownColor,
           isDense: true,
           items: [
-
             DropdownMenuItem(
               enabled: false,
-
               value: 'create_agent',
               child: Container(
                 height: 50,
@@ -480,20 +449,21 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
                       BoxShadow(
                           blurRadius: 2,
                           spreadRadius: 0,
-                          color: Colors.grey.withOpacity(.3)
-                      )
-                    ]
-                ),
+                          color: Colors.grey.withOpacity(.3))
+                    ]),
                 child: Row(
                   children: [
                     const SizedBox(width: 10),
                     Icon(
-                      Icons.add_box_rounded, color: AppColor.buttonTextColor,),
+                      Icons.add_box_rounded,
+                      color: AppColor.buttonTextColor,
+                    ),
                     const SizedBox(width: 8),
-                    Text('Create a new agent', style: TextStyle(
-                        color: AppColor.buttonTextColor,
-                        fontFamily: fontFamilys,
-                        fontWeight: FontWeight.w400)),
+                    Text('Create a new agent',
+                        style: TextStyle(
+                            color: AppColor.buttonTextColor,
+                            fontFamily: fontFamilys,
+                            fontWeight: FontWeight.w400)),
                   ],
                 ),
               ),
@@ -501,12 +471,10 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
             DropdownMenuItem(
                 value: "search_agent",
                 enabled: false,
-
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                      vertical: 8, horizontal: 2),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 8, horizontal: 2),
                   child: TextFormField(
-
                     decoration: InputDecoration(
                       hintText: "Search Agent",
                       fillColor: Colors.white,
@@ -521,58 +489,48 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
 
                       //  color: Colors.grey, fontFamily: readexPro, fontSize: 13),
 
-                      contentPadding:
-                      const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-                      enabledBorder: OutlineInputBorder(borderSide: BorderSide(
-                          color: AppColor.borderColor3, width: 0.5),
+                      contentPadding: const EdgeInsets.symmetric(
+                          vertical: 15, horizontal: 10),
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                              color: AppColor.borderColor3, width: 0.5),
                           borderRadius: BorderRadius.circular(10)),
-                      focusedBorder: OutlineInputBorder(borderSide: BorderSide(
-                          color: AppColor.borderColor3, width: 0.5),
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                              color: AppColor.borderColor3, width: 0.5),
                           borderRadius: BorderRadius.circular(10)),
                     ),
-
                   ),
-                )
-            ),
+                )),
             ...agents.map((String duration) {
               return DropdownMenuItem<String>(
                 value: duration,
-                child: SizedBox(
-                  height: 52,
+                child: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.white,
+                      border: Border.all(
+                          width: .5, color: Colors.grey.withOpacity(.3))),
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 3.0, horizontal: 4),
-                    child: Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.white,
-                          border: Border.all(
-                              width: .5, color: Colors.grey.withOpacity(.3))
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: Row(
-                          children: [
-                            SizedBox(width: 5),
-                            CircleAvatar(
-                              backgroundImage: AssetImage(
-                                  '${imageUrl}agent.png'),
-                              radius: 18,
-                            ),
-                            SizedBox(width: 5),
-                            Text(
-                              duration,
-                              style: TextStyle(fontSize: 14),
-                            ),
-                          ],
+                    padding: const EdgeInsets.all(4.0),
+                    child: Row(
+                      children: [
+                        SizedBox(width: 5),
+                        CircleAvatar(
+                          backgroundImage: AssetImage('${imageUrl}agent.png'),
+                          radius: 18,
                         ),
-                      ),
+                        SizedBox(width: 5),
+                        Text(
+                          duration,
+                          style: TextStyle(fontSize: 14),
+                        ),
+                      ],
                     ),
                   ),
                 ),
               );
             }).toList(),
-
           ],
           menuMaxHeight: 400,
           isExpanded: true,
@@ -583,26 +541,32 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
             // searchName.text = value ??
             //     '';
           },
-          selectedItemBuilder: (BuildContext context) {
-            return agents.map((String agent) {
-              return SizedBox(
-                height: 50,
-                child: Row(
-                  children: [
-                    CircleAvatar(
-                      backgroundImage: AssetImage('${imageUrl}agent.png'),
-                      radius: 16,
-                    ),
-                    SizedBox(width: 5),
-                    Text(
-                      agent,
-                      style: TextStyle(fontSize: 14),
-                    ),
-                  ],
-                ),
-              );
-            }).toList();
+          onTap: () {
+            print(selectedValue1);
           },
+
+
+
+          // selectedItemBuilder: (BuildContext context) {
+          //   return agents.map((String agent) {
+          //     return SizedBox(
+          //       height: 50,
+          //       child: Row(
+          //         children: [
+          //           CircleAvatar(
+          //             backgroundImage: AssetImage('${imageUrl}agent.png'),
+          //             radius: 16,
+          //           ),
+          //           SizedBox(width: 5),
+          //           Text(
+          //             agent,
+          //             style: TextStyle(fontSize: 14),
+          //           ),
+          //         ],
+          //       ),
+          //     );
+          //   }).toList();
+          // },
           validator: (value) {
             if (value == null || value.isEmpty) {
               return "Select Duration";
@@ -618,31 +582,26 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
     // TabController tabController = TabController();
     String? selectedValue2;
 
-    return SizedBox(width: 400,
+    return SizedBox(
+      width: 400,
       child: Theme(
         data: Theme.of(context).copyWith(
-            focusColor: AppColor.background,
-            hoverColor: AppColor.background
-        ),
+            focusColor: AppColor.background, hoverColor: AppColor.background),
         child: DropdownButtonFormField<String>(
           value: selectedValue2,
-
           decoration: InputDecoration(
               labelText: 'John Doe',
               fillColor: AppColor.customdropdownColor,
               filled: true,
-
-
               labelStyle: TextStyle(
-
                   color: AppColor.hintColor, fontFamily: poppin, fontSize: 15),
-              contentPadding: const EdgeInsets.symmetric(
-                  vertical: 10, horizontal: 10),
+              contentPadding:
+                  const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
               // contentPadding: EdgeInsets.zero,
               enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
-                  borderSide: BorderSide(
-                      color: AppColor.borderColor3, width: 1)),
+                  borderSide:
+                      BorderSide(color: AppColor.borderColor3, width: 1)),
               focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: BorderSide(color: AppColor.borderColor3, width: 1),
@@ -652,10 +611,8 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
           dropdownColor: AppColor.customdropdownColor,
           isDense: true,
           items: [
-
             DropdownMenuItem(
               enabled: false,
-
               value: 'create_agent',
               child: Container(
                 height: 50,
@@ -668,34 +625,32 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
                       BoxShadow(
                           blurRadius: 2,
                           spreadRadius: 0,
-                          color: Colors.grey.withOpacity(.3)
-                      )
-                    ]
-                ),
+                          color: Colors.grey.withOpacity(.3))
+                    ]),
                 child: Row(
                   children: [
                     const SizedBox(width: 10),
                     Icon(
-                      Icons.add_box_rounded, color: AppColor.buttonTextColor,),
+                      Icons.add_box_rounded,
+                      color: AppColor.buttonTextColor,
+                    ),
                     const SizedBox(width: 8),
-                    Text('Create a new agent', style: TextStyle(
-                        color: AppColor.buttonTextColor,
-                        fontFamily: fontFamilys,
-                        fontWeight: FontWeight.w400)),
+                    Text('Create a new agent',
+                        style: TextStyle(
+                            color: AppColor.buttonTextColor,
+                            fontFamily: fontFamilys,
+                            fontWeight: FontWeight.w400)),
                   ],
                 ),
               ),
             ),
-
             DropdownMenuItem(
                 value: "search_agent",
                 enabled: false,
-
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(
-                      vertical: 8, horizontal: 2),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 8, horizontal: 2),
                   child: TextFormField(
-
                     decoration: InputDecoration(
                       hintText: "Search Agent",
                       fillColor: Colors.white,
@@ -710,24 +665,21 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
 
                       //  color: Colors.grey, fontFamily: readexPro, fontSize: 13),
 
-                      contentPadding:
-                      const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-                      enabledBorder: OutlineInputBorder(borderSide: BorderSide(
-                          color: AppColor.borderColor3, width: 0.5),
+                      contentPadding: const EdgeInsets.symmetric(
+                          vertical: 15, horizontal: 10),
+                      enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                              color: AppColor.borderColor3, width: 0.5),
                           borderRadius: BorderRadius.circular(10)),
-                      focusedBorder: OutlineInputBorder(borderSide: BorderSide(
-                          color: AppColor.borderColor3, width: 0.5),
+                      focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                              color: AppColor.borderColor3, width: 0.5),
                           borderRadius: BorderRadius.circular(10)),
                     ),
-
                   ),
-                )
-            ),
-
+                )),
             DropdownMenuItem(
                 value: "tab_bar",
-                // enabled: false,
-
                 child: DefaultTabController(
                   length: 2,
                   child: Column(
@@ -736,55 +688,57 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
                         height: 50,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: AppColor.borderColor3,)
-                        ),
+                            border: Border.all(
+                              color: AppColor.borderColor3,
+                            )),
                         child: TabBar(
                           labelStyle: TextStyle(
                               fontFamily: readexPro,
                               fontWeight: FontWeight.w500,
-                              fontSize: 12
-
-                          )
-                          ,
+                              fontSize: 12),
                           labelColor: AppColor.blueColor,
                           unselectedLabelColor: AppColor.hintColor,
                           unselectedLabelStyle:
-                          const TextStyle(fontWeight: FontWeight.normal),
+                              const TextStyle(fontWeight: FontWeight.normal),
                           indicatorColor: AppColor.blueColor,
                           dividerColor: Colors.transparent,
                           tabs: [
                             Text("Local Supplier"),
                             Text("International Supplier"),
-
-                          ],),
+                          ],
+                        ),
                       ),
                       SizedBox(
                         height: 200,
                         child: TabBarView(
                           // controller: tabController,
                           children: [
-
                             ListView.builder(
                               itemCount: agents.length,
                               itemBuilder: (context, index) {
                                 return Padding(
                                   padding: const EdgeInsets.all(4.0),
                                   child: InkWell(
-                                    onTap: (){
+                                    onTap: () {
                                       setState(() {
-                                        selectedValue2=agents[index];
+                                        selectedValue2 = agents[index];
                                       });
                                     },
                                     child: Container(
                                       decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(10),
-                                          border: Border.all(color: AppColor.borderColor3,)
-                                      ),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          border: Border.all(
+                                            color: AppColor.borderColor3,
+                                          )),
                                       child: ListTile(
                                         leading: CircleAvatar(
-                                          backgroundImage: AssetImage('${imageUrl}agent.png'),
+                                          backgroundImage: AssetImage(
+                                              '${imageUrl}agent.png'),
                                         ),
-                                        title: Text(agents[index],),
+                                        title: Text(
+                                          agents[index],
+                                        ),
                                         trailing: Text('Local Supplier'),
                                       ),
                                     ),
@@ -798,38 +752,38 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
                                 return Padding(
                                   padding: const EdgeInsets.all(4.0),
                                   child: InkWell(
-                                    onTap: (){
+                                    onTap: () {
                                       setState(() {
-                                        selectedValue2=agents[index];
+                                        selectedValue2 = agents[index];
                                       });
                                     },
                                     child: Container(
                                       decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(10),
-                                          border: Border.all(color: AppColor.borderColor3,)
-                                      ),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                          border: Border.all(
+                                            color: AppColor.borderColor3,
+                                          )),
                                       child: ListTile(
                                         leading: CircleAvatar(
-                                          backgroundImage: AssetImage('${imageUrl}agent.png'),
+                                          backgroundImage: AssetImage(
+                                              '${imageUrl}agent.png'),
                                         ),
                                         title: Text(agents[index]),
-                                        trailing: Text('International Supplier'),
+                                        trailing:
+                                            Text('International Supplier'),
                                       ),
                                     ),
                                   ),
                                 );
                               },
                             ),
-
                           ],
                         ),
                       )
                     ],
                   ),
-                )
-            ),
-
-
+                )),
           ],
           menuMaxHeight: 400,
           isExpanded: true,
@@ -837,6 +791,7 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
             if (value != 'create_agent' && value != 'search_agent') {
               setState(() {
                 selectedValue2 = value;
+                print('hello ${value}');
               });
             }
             // searchName.text = value ??
@@ -872,6 +827,4 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
       ),
     );
   }
-
-
 }

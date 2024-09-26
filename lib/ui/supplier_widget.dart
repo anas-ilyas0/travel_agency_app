@@ -27,13 +27,13 @@ class SupplierScreen extends StatelessWidget {
                 Text(
                   'Local Supplier',
                   style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 28,
 
                       fontFamily: fontFamilys,
 
                      // fontFamily: readexPro,
 
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w700,
                       color: color),
                 ),
                 Row(

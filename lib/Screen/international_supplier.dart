@@ -1,128 +1,84 @@
-// // import 'package:fab_tech_sol/consts/consts.dart';
-// // import 'package:fab_tech_sol/providers/provider.dart';
-// // import 'package:fab_tech_sol/ui/tasks_data_source.dart';
-// // import 'package:fab_tech_sol/widget/DropDownButton.dart';
-// // import 'package:fab_tech_sol/widget/agent_text_field.dart';
-// // import 'package:fab_tech_sol/widget/button.dart';
-// // import 'package:fab_tech_sol/widget/internationaltaskdata.dart';
-// // import 'package:fab_tech_sol/widget/serachfiled.dart';
-// <<<<<<< HEAD
-// // import 'package:fab_tech_sol/widgets/agent_form_text.dart';
-// // import 'package:fab_tech_sol/widgets/button.dart';
-// // import 'package:fab_tech_sol/widgets/drop_down_button.dart';
-// // import 'package:fab_tech_sol/widgets/search_text_field.dart';
-// // import 'package:fab_tech_sol/widgets/widgets.dart';
-// // import 'package:flutter/material.dart';
-// // import 'package:provider/provider.dart';
+import 'package:fab_tech_sol/Screen/add_new_local_suppliers.dart';
+import 'package:fab_tech_sol/consts/consts.dart';
+import 'package:fab_tech_sol/dimensions.dart';
+import 'package:fab_tech_sol/providers/provider.dart';
+import 'package:fab_tech_sol/resources/helper_function.dart';
+import 'package:fab_tech_sol/ui/tasks_data_source.dart';
+import 'package:fab_tech_sol/widgets/widgets.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-// // class InternationalSupplierWidget extends StatelessWidget {
-// //   const InternationalSupplierWidget({super.key});
+class InternationalSupplierScreen extends StatelessWidget {
+  const InternationalSupplierScreen({super.key});
 
-// =======
-// //
-// // import 'package:fab_tech_sol/widgets/widgets.dart';
-// // import 'package:flutter/material.dart';
-// // import 'package:provider/provider.dart';
-// //
-// // class InternationalSupplierWidget extends StatelessWidget {
-// //    InternationalSupplierWidget({super.key});
-// //
-// >>>>>>> 5a1e073e08f24ed2ac913aa2b9a3faf42bd322d9
-// //   @override
-// //   Widget build(BuildContext context) {
-// //     final providerValue = Provider.of<UserProvider>(context);
-// //     return Padding(
-// //       padding: const EdgeInsets.only(top: 25),
-// //       child: SingleChildScrollView(
-// //         child: Column(
-// //           children: [
-// //             Row(
-// //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-// //               children: [
-// //                 Padding(
-// //                   padding: const EdgeInsets.only(left: 75),
-// //                   child: Text(
-// //                     'International Supplier',
-// //                     style: TextStyle(
-// //                         fontSize: 20,
-// //                         fontFamily: fontFamilys,
-// //                         fontWeight: FontWeight.bold,
-// //                         color: color),
-// //                   ),
-// //                 ),
-// //                 Padding(
-// //                   padding: const EdgeInsets.only(right: 30),
-// //                   child: Row(
-// //                     children: [
-// //                       SearchTextField().searchTextField(),
-// //                       const SizedBox(width: 15),
-// //                       DropDownButton().dropDownButton(
-// //                           providerValue.selectedItem2,
-// //                           providerValue.dropdownItems2, (String? newValue) {
-// //                         providerValue.updateSelectedItem2(newValue);
-// //                       }, context),
-// //                       const SizedBox(width: 15),
-// //                       Button().button('Add Supplier', () {}, context)
-// //                     ],
-// //                   ),
-// //                 ),
-// //               ],
-// //             ),
-// //             Padding(
-// //                 padding: const EdgeInsets.only(top: 25, right: 90, left: 75),
-// //                 child: Container(
-// //                   decoration: BoxDecoration(
-// //                       color: Colors.white,
-// //                       borderRadius: BorderRadius.circular(7)),
-// //                   child: PaginatedDataTable(
-// //                     rowsPerPage: 10,
-// //                     columns: [
-// //                       DataColumn(
-// //                         label:
-// //                             AgentFormText().agentFormText('Company Name', 14),
-// //                       ),
-// //                       DataColumn(
-// //                         label: AgentFormText().agentFormText('Unknown', 14),
-// //                       ),
-// //                       DataColumn(
-// //                         label:
-// //                             AgentFormText().agentFormText('Phone Number', 14),
-// //                       ),
-// //                       DataColumn(
-// //                         label: AgentFormText().agentFormText('Service', 14),
-// //                       ),
-// //                       DataColumn(
-// //                         label: AgentFormText().agentFormText('Unknown', 14),
-// //                       ),
-// //                       DataColumn(
-// //                         label: AgentFormText().agentFormText('Location', 14),
-// //                       ),
-// //                       DataColumn(
-// //                         label: AgentFormText().agentFormText('Status', 14),
-// //                       ),
-// //                       DataColumn(
-// //                         label: AgentFormText().agentFormText('Action', 14),
-// //                       ),
-// //                     ],
-// <<<<<<< HEAD
-// //                     source: InternationalSupplierTaskDataSource(
-// //                         Widgets().internationalSupplierTasks),
-// =======
-// //                     source: InternationalSupplierTaskDataSource(Widgets().internationalSupplierTasks),
-// >>>>>>> 5a1e073e08f24ed2ac913aa2b9a3faf42bd322d9
-// //                     headingRowColor: MaterialStateProperty.resolveWith<Color>(
-// //                         (Set<MaterialState> states) {
-// //                       return Colors.white;
-// //                     }),
-// //                   ),
-// //                 ))
-// //           ],
-// //         ),
-// //       ),
-// //     );
-// //   }
-// <<<<<<< HEAD
-// // }
-// =======
-// // }
-// >>>>>>> 5a1e073e08f24ed2ac913aa2b9a3faf42bd322d9
+  @override
+  Widget build(BuildContext context) {
+    final providerValue = Provider.of<UserProvider>(context);
+    return Scaffold(
+        body:
+        Padding(
+          padding: const EdgeInsets.only(top: 25,left: 60,right: 60),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'International Supplier',
+                      style: TextStyle(
+                          fontSize: 28,
+
+                          fontFamily: fontFamilys,
+
+                          // fontFamily: readexPro,
+
+                          fontWeight: FontWeight.w700,
+                          color: color),
+                    ),
+                    Row(
+                      children: [
+                        Widgets().searchTextField(),
+                        Widgets().dropDownButton(providerValue.selectedItem2,
+                            providerValue.dropdownItems2, (String? newValue) {
+                              providerValue.updateSelectedItem2(newValue);
+                            }, context),
+                        const SizedBox(width: 15),
+                        Widgets().button('Add Supplier', () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => AddNewLocalSupplier(),));
+                        },)
+                      ],
+                    ),
+                  ],
+                ),
+                Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 50,vertical: 30),
+                    child: SizedBox(
+                      width: context.screenWidth,
+                      child: PaginatedDataTable(
+                        // rowsPerPage: 10,
+                        columns: HelperUtil.createColumns(columnNames: [
+                          "Company Name",
+                          "Unknown",
+                          "Phone Number",
+                          "Service",
+                          "Unknown",
+                          "Location",
+                          "Status",
+                          "Action"
+                        ]),
+                        source: InternationalDataSource(Widgets().international),
+
+                        headingRowColor: MaterialStateProperty.resolveWith<Color>(
+                                (Set<MaterialState> states) {
+                              return AppStrings.addLeadButtonColor;
+                            }),
+                      ),
+                    ))
+              ],
+            ),
+          ),
+        )
+    );
+  }
+}

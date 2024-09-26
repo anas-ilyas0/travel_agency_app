@@ -117,57 +117,59 @@ class AgentsTaskDataSource extends DataTableSource {
   @override
   int get selectedRowCount => 0;
 }
-class InternationalSupplierTasks {
+class InternationalSupplier {
   final String companyName;
-  final String unknown1;
+  final String Unknown;
   final String phoneNumber;
   final String service;
-  final String unknown2;
+  final String unknown;
   final String location;
   final String status;
   final String action;
 
-  InternationalSupplierTasks(this.companyName, this.unknown1, this.phoneNumber,
-      this.service, this.unknown2, this.location, this.status, this.action);
+  InternationalSupplier(this.companyName, this.Unknown, this.phoneNumber, this.service,
+      this.unknown, this.location,this.status, this.action);
 }
 
-class InternationalSupplierTaskDataSource extends DataTableSource {
-  final List<InternationalSupplierTasks> internationalSupplierTasks;
+class InternationalDataSource extends DataTableSource {
+  final List<InternationalSupplier> international;
 
-InternationalSupplierTaskDataSource(this.internationalSupplierTasks);
+  InternationalDataSource(this.international);
 
-@override
-DataRow? getRow(int index) {
-  if (index >= internationalSupplierTasks.length || index < 0) return null;
-  final InternationalSupplierTasks task = internationalSupplierTasks[index];
-  return DataRow.byIndex(
-    index: index,
-    cells: [
-      DataCell(AgentFormText().agentFormText(task.companyName, 12)),
-      DataCell(AgentFormText().agentFormText(task.unknown1, 12)),
-      DataCell(AgentFormText().agentFormText(task.phoneNumber, 12)),
-      DataCell(AgentFormText().agentFormText(task.service, 12)),
-      DataCell(AgentFormText().agentFormText(task.unknown2, 12)),
-      DataCell(AgentFormText().agentFormText(task.location, 12)),
-      DataCell(AgentFormText().agentFormText(task.status, 12)),
-      DataCell(Row(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(5),
-            child: EditDelContainer().editDelContainer(() {}),
-          )
-        ],
-      )),
-    ],
-  );
+  @override
+  DataRow? getRow(int index) {
+    if (index >= international.length || index < 0) return null;
+    final InternationalSupplier task = international[index];
+    return DataRow.byIndex(
+      index: index,
+      cells: [
+        DataCell(Text(task.companyName)),
+        DataCell(Text(task.Unknown)),
+        DataCell(Text(task.phoneNumber)),
+        DataCell(Text(task.service)),
+        DataCell(Text(task.unknown)),
+        DataCell(Text(task.location)),
+        DataCell(Text(task.status)),
+
+        DataCell(Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(5),
+              child: Widgets().editDelContainer(() {}),
+            )
+          ],
+        )),
+      ],
+    );
+  }
+
+  @override
+  int get rowCount => international.length;
+
+  @override
+  bool get isRowCountApproximate => false;
+
+  @override
+  int get selectedRowCount => 0;
 }
 
-@override
-int get rowCount => internationalSupplierTasks.length;
-
-@override
-bool get isRowCountApproximate => false;
-
-@override
-int get selectedRowCount=>0;
-}

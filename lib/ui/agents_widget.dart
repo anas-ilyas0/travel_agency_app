@@ -82,7 +82,7 @@ class AgentScreen
                   "Status",
                   "Action"
                 ]),
-                source: AgentsTaskDataSource(Widgets().agentsTaskss),
+                source: AgentsTaskDataSource(Widgets().agentsTasks),
                 headingRowColor: MaterialStateProperty.resolveWith<Color>(
                     (Set<MaterialState> states) {
                   return AppStrings.addLeadButtonColor;

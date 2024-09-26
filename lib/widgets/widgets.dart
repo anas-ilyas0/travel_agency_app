@@ -10,36 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class Widgets {
-  final List<AgentsTask> agentsTaskss = [
-    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-        'Sialkot Punjab 51040', 'Active', ''),
-    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-        'Sialkot Punjab 51040', 'Active', ''),
-    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-        'Sialkot Punjab 51040', 'Active', ''),
-    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-        'Sialkot Punjab 51040', 'Active', ''),
-    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-        'Sialkot Punjab 51040', 'Active', ''),
-    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-        'Sialkot Punjab 51040', 'Active', ''),
-    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-        'Sialkot Punjab 51040', 'Active', ''),
-    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-        'Sialkot Punjab 51040', 'Active', ''),
-    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-        'Sialkot Punjab 51040', 'Active', ''),
-    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-        'Sialkot Punjab 51040', 'Active', ''),
-    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-        'Sialkot Punjab 51040', 'Active', ''),
-    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-        'Sialkot Punjab 51040', 'Active', ''),
-    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-        'Sialkot Punjab 51040', 'Active', ''),
-    AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
-        'Sialkot Punjab 51040', 'Active', ''),
-  ];
+
 
   final List<AgentsTask> agentsTasks = List.generate(
       20,
@@ -50,30 +21,8 @@ class Widgets {
       20,
       (index) => SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
           'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'));
-  final List<InternationalSupplierTasks> internationalSupplierTasks = [
-    InternationalSupplierTasks('RADISSON', 'CPT', '+21 999 999 999',
-        'Air Tickets', 'ABSA', 'CENTURY CITY, CAPE TOWN 8001 SA', 'Active', ''),
-    InternationalSupplierTasks('RADISSON', 'CPT', '+21 999 999 999',
-        'Air Tickets', 'ABSA', 'CENTURY CITY, CAPE TOWN 8001 SA', 'Active', ''),
-    InternationalSupplierTasks('RADISSON', 'CPT', '+21 999 999 999',
-        'Air Tickets', 'ABSA', 'CENTURY CITY, CAPE TOWN 8001 SA', 'Active', ''),
-    InternationalSupplierTasks('RADISSON', 'CPT', '+21 999 999 999',
-        'Air Tickets', 'ABSA', 'CENTURY CITY, CAPE TOWN 8001 SA', 'Active', ''),
-    InternationalSupplierTasks('RADISSON', 'CPT', '+21 999 999 999',
-        'Air Tickets', 'ABSA', 'CENTURY CITY, CAPE TOWN 8001 SA', 'Active', ''),
-    InternationalSupplierTasks('RADISSON', 'CPT', '+21 999 999 999',
-        'Air Tickets', 'ABSA', 'CENTURY CITY, CAPE TOWN 8001 SA', 'Active', ''),
-    InternationalSupplierTasks('RADISSON', 'CPT', '+21 999 999 999',
-        'Air Tickets', 'ABSA', 'CENTURY CITY, CAPE TOWN 8001 SA', 'Active', ''),
-    InternationalSupplierTasks('RADISSON', 'CPT', '+21 999 999 999',
-        'Air Tickets', 'ABSA', 'CENTURY CITY, CAPE TOWN 8001 SA', 'Active', ''),
-    InternationalSupplierTasks('RADISSON', 'CPT', '+21 999 999 999',
-        'Air Tickets', 'ABSA', 'CENTURY CITY, CAPE TOWN 8001 SA', 'Active', ''),
-    InternationalSupplierTasks('RADISSON', 'CPT', '+21 999 999 999',
-        'Air Tickets', 'ABSA', 'CENTURY CITY, CAPE TOWN 8001 SA', 'Active', ''),
-    InternationalSupplierTasks('RADISSON', 'CPT', '+21 999 999 999',
-        'Air Tickets', 'ABSA', 'CENTURY CITY, CAPE TOWN 8001 SA', 'Active', ''),
-  ];
+  final List<InternationalSupplier> international =List.generate(20, (index)=>
+  InternationalSupplier('RADISSON', 'CPT', '+21 999 999 999', 'Air Tickets', 'ABSA', "CENTURY CITY, CAPE TOWN 8001 SA", 'Active', ''));
 
   Widget editDelContainer(VoidCallback onPress) {
     return Container(
