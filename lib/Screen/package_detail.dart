@@ -1,4 +1,8 @@
 import 'package:fab_tech_sol/AppColor/app_color.dart';
+
+
+
+
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/widgets/widgets.dart';
@@ -13,82 +17,92 @@ class PackageDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.only(left: 52, right: 52),
+        padding:  EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width * 0.04,vertical:context.screenHeight*0.01 ),
         child: Column(children: [
           SizedBox(
             height: context.screenHeight * 0.02,
           ),
-          Row(
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: context.screenWidth*0.02),
+          child: Row(
             children: [
               // Package Detail Text
-              Flexible(
+              Expanded(
+                flex: 2,
                 child: Text(
-                  'Package Detail',
-                  style: TextStyle(
-                    fontSize: 30,
-                    fontFamily: 'ReadexPro',
-                    fontWeight: FontWeight.w700,
-                  ),
+          'Package Detail',
+          style: TextStyle(
+            fontSize: 30,
+            fontFamily: 'ReadexPro',
+            fontWeight: FontWeight.w700,
+          ),
+          overflow: TextOverflow.ellipsis, // Prevents overflow by showing '...'
                 ),
               ),
               Spacer(),
-
-              SizedBox(
-                width: context.screenWidth * 0.12,
+          
+              // Search Field
+              Flexible(
+                flex: 2,
+                child: FittedBox(child: Widgets().searchTextField()),
               ),
-              Widgets().searchTextField(),
-              SizedBox(
-                width: context.screenWidth * 0.02,
-              ),
-
+              
+              SizedBox(width: context.screenWidth * 0.02),
+          
               // Add New Package Button
-              Container(
-                height: context.screenHeight * 0.07,
-                decoration: BoxDecoration(
-                  color: addLeadButtonColor,
-                  borderRadius: BorderRadius.circular(5),
+              GestureDetector(
+                onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => PackageDetail(),
+            ),
+          );
+                },
+                child: Container(
+          height: context.screenHeight * 0.07,
+          width: context.screenWidth*0.13,
+                 // padding: EdgeInsets.symmetric(horizontal: context.screenWidth * 0.02),
+          decoration: BoxDecoration(
+            color: addLeadButtonColor,
+            borderRadius: BorderRadius.circular(5),
+          ),
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(4.0),
+              child: Text(
+                'Add New Package',
+                style: TextStyle(
+                  fontFamily: fontFamilys,
+                  fontSize: 14,
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(13),
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => CreateNewPackageForm(),
-                          ));
-                    },
-                    child: Center(
-                      child: Text(
-                        'Add New Package',
-                        style: TextStyle(
-                          fontSize: 14,
-                          fontFamily: fontFamilys,
-                          color: color,
-                          fontWeight: FontWeight.w400,
-                        ),
-                      ),
-                    ),
-                  ),
+                overflow: TextOverflow.ellipsis, // Prevents overflow
+              ),
+            ),
+          ),
                 ),
               ),
             ],
           ),
-          SizedBox(
-            height: context.screenWidth * 0.02,
-          ),
-          Padding(
-              padding: const EdgeInsets.only(left: 16, right: 16),
-              child: Container(
-                height: context.screenHeight * 0.08,
-                // width: context.screenWidth*0.98,
+        ),
 
+          SizedBox(
+            height: context.screenWidth * 0.012,
+          ),
+          Flexible(
+            child: FittedBox(
+              child: Container(
+                // height: double.infinity,
+                height: context.screenHeight * 0.08,
+                // width: context.screenWidth*0.9,
+              
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(7),
                 //  border: Border.all(color: Color(0XFF70707033), width: 1),
                 ),
                 child: Row(
+                  
                   //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Padding(
@@ -124,7 +138,7 @@ class PackageDetail extends StatelessWidget {
                       endIndent: 5,
                        color: AppColor.buttonTextColors,
                     ),
-                    SizedBox(
+                    Row(children: [SizedBox(
                       width: context.screenWidth * 0.03,
                     ),
                     Widgets().agentText('Supplier Name', 17),
@@ -136,9 +150,15 @@ class PackageDetail extends StatelessWidget {
                       width: context.screenWidth * 0.04,
                     ),
                     Widgets().agentText('Action', 17),
+                    SizedBox(width: context.screenWidth*0.026,)
+                    ],
+                    )
+                    
                   ],
                 ),
-              )),
+              ),
+            ),
+          ),
           SizedBox(
             height: 10,
           ),
@@ -168,42 +188,55 @@ class PackageDetail extends StatelessWidget {
                             padding: const EdgeInsets.symmetric(horizontal: 12),
                             child: Row(
                               children: [
-                                Row(
-                                  children: [
-                                    Widgets().circularAvatar(
-                                      backgroundImage: '${imageUrl}agent.png',
+                                Flexible(
+                                  child: FittedBox(
+                                    child: Row(
+                                      children: [
+                                        Widgets().circularAvatar(
+                                          backgroundImage: '${imageUrl}agent.png',
+                                        ),
+                                        Widgets().agentText('John Doe', 16),
+                                      ],
                                     ),
-                                    Widgets().agentText('John Doe', 12),
-                                  ],
+                                  ),
                                 ),
                                 SizedBox(width: context.screenWidth * 0.04),
-                                Widgets().agentText('+21 999 999 999', 12),
+                                Flexible(child: FittedBox(child: Widgets().agentText('+21 999 999 999', 15))),
                                 SizedBox(width: context.screenWidth * 0.063),
-                                Row(
-                                  children: [
-                                    Widgets().circularAvatar(
-                                      backgroundImage: '${imageUrl}agent.png',
+                                Flexible(
+                                  child: FittedBox(
+                                    child: Row(
+                                      children: [
+                                        Widgets().circularAvatar(
+                                          backgroundImage: '${imageUrl}agent.png',
+                                        ),
+                                        Widgets().agentText('John Doe', 16),
+                                      ],
                                     ),
-                                    Widgets().agentText('John Doe', 12),
-                                  ],
+                                  ),
                                 ),
                                 SizedBox(width: context.screenWidth * 0.04),
-                                Widgets().agentText('+21 999 999 999', 12),
+                                Flexible(child: FittedBox(child: Widgets().agentText('+21 999 999 999', 15))),
                                 SizedBox(width: context.screenWidth * 0.07),
-                                Row(
-                                  children: [
-                                    Widgets().circularAvatar(
-                                      backgroundImage: '${imageUrl}agent.png',
+                                Flexible(
+                                  child: FittedBox(
+                                    child: Row(
+                                      children: [
+                                        Widgets().circularAvatar(
+                                          backgroundImage: '${imageUrl}agent.png',
+                                        ),
+                                        Widgets().agentText('John Doe', 16),
+                                      ],
                                     ),
-                                    Widgets().agentText('John Doe', 12),
-                                  ],
+                                  ),
                                 ),
                                 SizedBox(width: context.screenWidth * 0.072),
-                                Widgets().agentText('+21 999 999 999', 12),
+                                Flexible(
+                                  child: FittedBox(child: Widgets().agentText('+21 999 999 999', 15))),
                                 SizedBox(
                                   width: context.screenWidth * 0.039,
                                 ),
-                                Widgets().PackageDetailButton(context)
+                                Flexible(child: FittedBox(child: Widgets().PackageDetailButton(context)))
                               ],
                             ),
                           ),

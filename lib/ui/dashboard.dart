@@ -1,5 +1,7 @@
 import 'package:fab_tech_sol/AppColor/app_color.dart';
+import 'package:fab_tech_sol/Screen/international_suppliers_details.dart';
 import 'package:fab_tech_sol/Screen/package_Screen.dart';
+import 'package:fab_tech_sol/Screen/supplier_index.dart';
 
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
@@ -25,6 +27,7 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
+  
   late TabController dashboardTabController;
   late TabController leadsTabController;
 
@@ -34,6 +37,9 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
 
     dashboardTabController = TabController(length: 5, vsync: this);
     leadsTabController = TabController(length: 3, vsync: this);
+
+
+    
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
       final provider = Provider.of<UserProvider>(context, listen: false);
@@ -51,6 +57,8 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+      final provider = Provider.of<UserProvider>(context, listen: false);
+        String? selectedOption = 'Supplier'; 
 
     return Scaffold(
       appBar: CustomHeader(dashboardTabController: dashboardTabController),
@@ -77,8 +85,11 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
 
                       DashBoardScreen(),
                       LeadScreen(),
+                    
                       AgentScreen(),
-                      SupplierScreen(),
+                      
+             SupplierScreen(),
+                      
                       PackageClassScreen()
                       ],
                     ),

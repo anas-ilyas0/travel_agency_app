@@ -4,6 +4,7 @@ import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PacakgeDetails2 extends StatelessWidget {
   const PacakgeDetails2({super.key});
@@ -116,55 +117,59 @@ class PacakgeDetails2 extends StatelessWidget {
                       ),
                       child: ListView.builder(
                         itemBuilder: (context, index) {
-                          return Column(
-                            children: [
-                              SizedBox(
-                                height: context.screenHeight * 0.01,
-                              ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                          return Flexible(
+                            child: FittedBox(
+                              child: Column(
                                 children: [
-                                  Checkbox(
-                                    activeColor: AppColor.blueColor,
-                                    materialTapTargetSize:
-                                        MaterialTapTargetSize.shrinkWrap,
-                                    checkColor: AppColor.blueColor,
-                                    value: false,
-                                    onChanged: (bool? newValue) {},
+                                  SizedBox(
+                                    height: context.screenHeight * 0.01,
                                   ),
-                                  Container(
-                                    width: context.screenWidth * 0.36,
-                                    height: 45,
-                                    decoration: BoxDecoration(
-                                      color: AppColor.Textbackground,
-                                      border: Border.all(
-                                          color: AppColor.borderColor3),
-                                      borderRadius: BorderRadius.circular(8),
-                                    ),
-                                    child:  Padding(
-                                      padding: EdgeInsets.only(
-                                          left: 7, top: 12),
-                                      child: Text(
-                                          'Laxmisagar, BBSR, Bhubaneshwar-751006',style: TextStyle(fontFamily: fontFamilys,fontWeight: FontWeight.w300,color: AppColor.hintColor),),
-                                    ),
-                                  ),
-                                  GestureDetector(
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(2.0),
-                                      child: IconButton(
-                                        icon: Icon(Icons.remove_circle_outline,size: 20,
-                                            color: AppColor.blueColor),
-                                        onPressed: () {
-                                          // Handle button press
-                                        },
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Checkbox(
+                                        activeColor: AppColor.blueColor,
+                                        materialTapTargetSize:
+                                            MaterialTapTargetSize.shrinkWrap,
+                                        checkColor: AppColor.blueColor,
+                                        value: false,
+                                        onChanged: (bool? newValue) {},
                                       ),
-                                    ),
+                                      Container(
+                                        width: context.screenWidth * 0.36,
+                                        height: 45,
+                                        decoration: BoxDecoration(
+                                          color: AppColor.Textbackground,
+                                          border: Border.all(
+                                              color: AppColor.borderColor3),
+                                          borderRadius: BorderRadius.circular(8),
+                                        ),
+                                        child:  Padding(
+                                          padding: EdgeInsets.only(
+                                              left: 7, top: 12),
+                                          child: Text(
+                                              'Laxmisagar, BBSR, Bhubaneshwar-751006',style: TextStyle(fontFamily: fontFamilys,fontWeight: FontWeight.w300,color: AppColor.hintColor),),
+                                        ),
+                                      ),
+                                      GestureDetector(
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(2.0),
+                                          child: IconButton(
+                                            icon: Icon(Icons.remove_circle_outline,size: 20,
+                                                color: AppColor.blueColor),
+                                            onPressed: () {
+                                              // Handle button press
+                                            },
+                                          ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
+                                  // Right side: Circle button with "-" icon
                                 ],
                               ),
-                              // Right side: Circle button with "-" icon
-                            ],
+                            ),
                           );
                         },
                       ),
@@ -190,51 +195,55 @@ class PacakgeDetails2 extends StatelessWidget {
                       ),
                       child: ListView.builder(
                         itemBuilder: (context, index) {
-                          return Column(
-                            children: [
-                              SizedBox(
-                                height: context.screenHeight * 0.01,
-                              ),
-                              Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                          return Flexible(
+                            child: FittedBox(
+                              child: Column(
                                 children: [
-                                  Checkbox(
-
-                                    materialTapTargetSize:
-                                        MaterialTapTargetSize.shrinkWrap,
-                                    activeColor: AppColor.blueColor,
-                                    checkColor: AppColor.blueColor,
-                                    value: false, // Set initial value
-                                    onChanged: (bool? newValue) {},
+                                  SizedBox(
+                                    height: context.screenHeight * 0.01,
                                   ),
-                                  Container(
-                                    width: context.screenWidth * 0.36,
-                                    height: 45,
-                                    decoration: BoxDecoration(
-                                      color: AppColor.Textbackground,
-                                      border: Border.all(
-                                          color: AppColor.borderColor3),
-                                      borderRadius: BorderRadius.circular(8),
-                                    ),
-                                    child:  Padding(
-                                      padding: EdgeInsets.only(
-                                          left: 7, top: 10),
-                                      child: Text(
-                                          'Share or listen to a success story.',style: TextStyle(fontFamily: fontFamilys,fontWeight: FontWeight.w300,color: AppColor.hintColor),),
-                                    ),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Checkbox(
+                                                      
+                                        materialTapTargetSize:
+                                            MaterialTapTargetSize.shrinkWrap,
+                                        activeColor: AppColor.blueColor,
+                                        checkColor: AppColor.blueColor,
+                                        value: false, // Set initial value
+                                        onChanged: (bool? newValue) {},
+                                      ),
+                                      Container(
+                                        width: context.screenWidth * 0.36,
+                                        height: 45,
+                                        decoration: BoxDecoration(
+                                          color: AppColor.Textbackground,
+                                          border: Border.all(
+                                              color: AppColor.borderColor3),
+                                          borderRadius: BorderRadius.circular(8),
+                                        ),
+                                        child:  Padding(
+                                          padding: EdgeInsets.only(
+                                              left: 7, top: 10),
+                                          child: Text(
+                                              'Share or listen to a success story.',style: TextStyle(fontFamily: fontFamilys,fontWeight: FontWeight.w300,color: AppColor.hintColor),),
+                                        ),
+                                      ),
+                                      GestureDetector(
+                                        child: IconButton(
+                                          icon: Icon(Icons.remove_circle_outline,size: 20,
+                                              color: AppColor.blueColor),
+                                          onPressed: () {},
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                  GestureDetector(
-                                    child: IconButton(
-                                      icon: Icon(Icons.remove_circle_outline,size: 20,
-                                          color: AppColor.blueColor),
-                                      onPressed: () {},
-                                    ),
-                                  ),
+                                  // Right side: Circle button with "-" icon
                                 ],
                               ),
-                              // Right side: Circle button with "-" icon
-                            ],
+                            ),
                           );
                         },
                       ),
@@ -289,13 +298,19 @@ class PacakgeDetails2 extends StatelessWidget {
                   )
                 ],
               ),
-              Align(
-                  alignment: Alignment.centerRight,
-                  child: SizedBox(
-                      height: context.screenHeight * 0.5,
-                      width: context.screenWidth * 0.47,
-                      child: SvgPicture.asset(
-                          '${ImagesAssets.imagePath}OBJECTS.svg'))),
+              Flexible(
+                child: Align(
+                    alignment: Alignment.centerRight,
+                    child: Flexible(
+                      child: FittedBox(
+                        child: SizedBox(
+                            height: context.screenHeight * 0.5,
+                            width: context.screenWidth * 0.47,
+                            child: SvgPicture.asset(
+                                '${ImagesAssets.imagePath}OBJECTS.svg')),
+                      ),
+                    )),
+              ),
             ],
           ),
         ),

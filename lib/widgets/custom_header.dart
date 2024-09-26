@@ -1,4 +1,7 @@
+import 'package:fab_tech_sol/Screen/international_suppliers_details.dart';
 import 'package:fab_tech_sol/dimensions.dart';
+import 'package:fab_tech_sol/providers/provider.dart';
+import 'package:fab_tech_sol/ui/supplier_widget.dart';
 import 'package:fab_tech_sol/widgets/widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +20,7 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
   Size get preferredSize => const Size.fromHeight(77);
   @override
   Widget build(BuildContext context) {
+      final supplierProvider = Provider.of<UserProvider>(context);
 
    return AppBar(
       elevation: .2,
@@ -41,32 +45,77 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
               padding:  EdgeInsets.only(left: context.screenWidth*.12, ),
               child:
 
-              TabBar(
+            TabBar(
+  labelStyle: TextStyle(
+      fontFamily: readexPro,
+      fontWeight: FontWeight.bold),
+  labelColor: color,
+  unselectedLabelColor: AppColor.hintColor,
+  unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.normal),
+  indicatorColor: color,
+  dividerColor: Colors.transparent,
+  controller: dashboardTabController,
+  indicatorWeight: 3,
+  indicatorSize: TabBarIndicatorSize.tab,
+  labelPadding: EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+  isScrollable: true,
 
-                labelStyle: TextStyle(
-                    fontFamily: readexPro,
-                    fontWeight: FontWeight.bold),
-                labelColor: color,
-                unselectedLabelColor: AppColor.hintColor,
-                unselectedLabelStyle:
-                const TextStyle(fontWeight: FontWeight.normal),
-                indicatorColor: color,
-                dividerColor: Colors.transparent,
-                controller: dashboardTabController,
-                indicatorWeight: 3,
-                indicatorSize: TabBarIndicatorSize.tab,
+  // Tabs array
+  tabs: [
+    const Tab(text: 'Dashboard'),
+    const Tab(text: 'Leads'),
+    const Tab(text: 'Agents'),
+    
+    // Custom Tab for Supplier with PopupMenuButton
+     Tab(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                supplierProvider.selectedOption, // Show current selection
+                                style: TextStyle(
+                                  color: dashboardTabController.index == 3 ? color : AppColor.hintColor,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              PopupMenuButton<String>(
+                                onSelected: (String value) {
+                                  supplierProvider.setSelectedOption(value); // Update selected option in provider
 
-                labelPadding: EdgeInsets.symmetric(horizontal: 24,vertical: 8),
-                isScrollable: true,
+                                  // Navigate to the respective screen based on the selected option
+                                  if (value == 'Supplier') {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => SupplierScreen()), // Local Supplier Screen
+                                    );
+                                  } else if (value == 'International Supplier') {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(builder: (context) => InternationalSuppliersDetails()), // International Supplier Screen
+                                    );
+                                  }
+                                },
+                                itemBuilder: (BuildContext context) {
+                                  return [
+                                    PopupMenuItem<String>(
+                                      value: 'Supplier',
+                                      child: Text('Local Supplier'),
+                                    ),
+                                    PopupMenuItem<String>(
+                                      value: 'International Supplier',
+                                      child: Text('International Supplier'),
+                                    ),
+                                  ];
+                                },
+                                icon: Icon(Icons.arrow_drop_down_sharp), // Icon for the menu button
+                              ),
+                            ],
+                          ),
+                        ),
+   Tab(text: 'Package'),
+  ],
+)
 
-                tabs: const [
-                  Tab(text: 'Dashboard'),
-                  Tab(text: 'Leads'),
-                  Tab(text: 'Agents'),
-                  Tab(text: 'Supplier'),
-                  Tab(text: 'Package'),
-                ],
-              ),
             ),
           ],
         ),

@@ -1,4 +1,4 @@
-import 'package:fab_tech_sol/Screen/add_new_lead_form.dart';
+
 import 'package:fab_tech_sol/Screen/invoice_details_invoice.dart';
 import 'package:fab_tech_sol/Screen/lead_details.dart';
 import 'package:fab_tech_sol/Screen/package.dart';
@@ -117,7 +117,7 @@ class _LeadScreenState extends State<LeadScreen> with SingleTickerProviderStateM
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => LeadInvoiceDetails(),
+                                builder: (context) => LeadDetails(),
                               ));
                         },)
                       : SizedBox.shrink(),

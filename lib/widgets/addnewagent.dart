@@ -15,7 +15,7 @@ class AddNewAgentTitlelAndDescription extends StatelessWidget {
     return SizedBox(
       height: 80,
       
-      width: Responsive.isMobile(context)? null:Responsive.isTablet(context)? context.screenWidth * 0.25:context.screenWidth * 0.23 ,
+      width: Responsive.isMobile(context)? null:Responsive.isTablet(context)? context.screenWidth * 0.25:context.screenWidth * 0.25 ,
       child: Column(
         children: [Align(alignment: Alignment.centerLeft,
           child: Text('$text1',style: AppTextstyless.addnewinternationalsuppliersSubText)),

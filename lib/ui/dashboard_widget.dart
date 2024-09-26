@@ -1,3 +1,4 @@
+
 import 'package:fab_tech_sol/Screen/add_new_lead_form.dart';
 import 'package:fab_tech_sol/Screen/lead_details.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
@@ -69,7 +70,7 @@ class DashBoardScreen extends StatelessWidget {
                             }, context),
                             const SizedBox(width: 10),
                             Widgets().button('Add New Lead', () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => LeadDetails()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => AddNewLeadForm()));
                             },),
                           ],
                         ),
