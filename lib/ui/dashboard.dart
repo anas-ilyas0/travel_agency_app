@@ -86,7 +86,7 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
 
         ],
       ),
-    );a
+    );
   }
 
 
