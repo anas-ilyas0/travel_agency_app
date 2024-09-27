@@ -1,4 +1,5 @@
 import 'package:fab_tech_sol/AppColor/app_color.dart';
+import 'package:fab_tech_sol/Screen/international_supplier.dart';
 import 'package:fab_tech_sol/Screen/international_suppliers_details.dart';
 import 'package:fab_tech_sol/Screen/package_Screen.dart';
 import 'package:fab_tech_sol/Screen/supplier_index.dart';
@@ -20,7 +21,8 @@ import 'package:provider/provider.dart';
 import '../widgets/widgets.dart';
 
 class Dashboard extends StatefulWidget {
-  const Dashboard({super.key});
+  final int tabIndex;
+   Dashboard({super.key, this.tabIndex=0});
 
   @override
   State<Dashboard> createState() => _DashboardState();
@@ -30,12 +32,11 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
   
   late TabController dashboardTabController;
   late TabController leadsTabController;
-
   @override
   void initState() {
     super.initState();
 
-    dashboardTabController = TabController(length: 5, vsync: this);
+    dashboardTabController = TabController(length: 5, vsync: this,initialIndex: widget.tabIndex);
     leadsTabController = TabController(length: 3, vsync: this);
 
 
@@ -57,8 +58,7 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-      final provider = Provider.of<UserProvider>(context, listen: false);
-        String? selectedOption = 'Supplier'; 
+
 
     return Scaffold(
       appBar: CustomHeader(dashboardTabController: dashboardTabController),
@@ -78,20 +78,24 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
 
                    Expanded(
                    child:
-                    TabBarView(
-                      controller: dashboardTabController ,
-                      physics: NeverScrollableScrollPhysics(),
-                      children: [
+                    Consumer<UserProvider>(
+                      builder: (context,provider,_) {
+                        return TabBarView(
+                          controller: dashboardTabController ,
+                          physics: const NeverScrollableScrollPhysics(),
+                          children: [
 
-                      DashBoardScreen(),
-                      LeadScreen(),
-                    
-                      AgentScreen(),
-                      
-             SupplierScreen(),
-                      
-                      PackageClassScreen()
-                      ],
+                          const DashBoardScreen(),
+                          const LeadScreen(),
+
+                          const AgentScreen(),
+                          provider.selectedOption=="Local" ?
+                          const SupplierScreen(): const InternationalSupplierScreen(),
+
+                          const PackageClassScreen()
+                          ],
+                        );
+                      }
                     ),
                   )
 

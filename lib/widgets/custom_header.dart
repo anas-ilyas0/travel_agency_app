@@ -13,131 +13,105 @@ import '../resources/responsive.dart';
 
 class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
   TabController dashboardTabController;
+  CustomHeader({super.key, required this.dashboardTabController });
 
-   CustomHeader({super.key, required this.dashboardTabController, required});
-
-@override
+  @override
   Size get preferredSize => const Size.fromHeight(77);
   @override
   Widget build(BuildContext context) {
-      final supplierProvider = Provider.of<UserProvider>(context);
+    final supplierProvider = Provider.of<UserProvider>(context);
 
-   return AppBar(
+    return AppBar(
       elevation: .2,
-      toolbarHeight:77,
+      toolbarHeight: 77,
       title: Responsive.isDesktop(context)
           ? Padding(
-        padding: const EdgeInsets.only(top: 8),
-        child: Row(
-          children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 50),
-              child: SizedBox(
-                width: 130,
-                height: 45,
-                child: Image.asset(
-                  '${imageUrl}briton_logo.png',
-                  fit: BoxFit.contain,
-                ),
-              ),
-            ),
-            Padding(
-              padding:  EdgeInsets.only(left: context.screenWidth*.12, ),
-              child:
+              padding: const EdgeInsets.only(top: 8),
+              child: Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 50),
+                    child: SizedBox(
+                      width: 130,
+                      height: 45,
+                      child: Image.asset(
+                        '${imageUrl}briton_logo.png',
+                        fit: BoxFit.contain,
+                      ),
+                    ),
+                  ),
+                  Padding(
+                      padding: EdgeInsets.only(
+                        left: context.screenWidth * .12,
+                      ),
+                      child: TabBar(
+                        labelStyle: TextStyle(
+                            fontFamily: readexPro, fontWeight: FontWeight.bold),
+                        labelColor: color,
+                        unselectedLabelColor: AppColor.hintColor,
+                        unselectedLabelStyle:
+                            const TextStyle(fontWeight: FontWeight.normal),
+                        indicatorColor: color,
+                        dividerColor: Colors.transparent,
+                        controller: dashboardTabController,
+                        indicatorWeight: 3,
+                        indicatorSize: TabBarIndicatorSize.tab,
+                        labelPadding:
+                            EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+                        isScrollable: true,
 
-            TabBar(
-  labelStyle: TextStyle(
-      fontFamily: readexPro,
-      fontWeight: FontWeight.bold),
-  labelColor: color,
-  unselectedLabelColor: AppColor.hintColor,
-  unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.normal),
-  indicatorColor: color,
-  dividerColor: Colors.transparent,
-  controller: dashboardTabController,
-  indicatorWeight: 3,
-  indicatorSize: TabBarIndicatorSize.tab,
-  labelPadding: EdgeInsets.symmetric(horizontal: 24, vertical: 8),
-  isScrollable: true,
-
-  // Tabs array
-  tabs: [
-    const Tab(text: 'Dashboard'),
-    const Tab(text: 'Leads'),
-    const Tab(text: 'Agents'),
-    
-    // Custom Tab for Supplier with PopupMenuButton
-     Tab(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                supplierProvider.selectedOption, // Show current selection
-                                style: TextStyle(
-                                  color: dashboardTabController.index == 3 ? color : AppColor.hintColor,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                              PopupMenuButton<String>(
-                                onSelected: (String value) {
-                                  supplierProvider.setSelectedOption(value); // Update selected option in provider
-
-                                  // Navigate to the respective screen based on the selected option
-                                  if (value == 'Supplier') {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) => SupplierScreen()), // Local Supplier Screen
-                                    );
-                                  } else if (value == 'International Supplier') {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(builder: (context) => InternationalSuppliersDetails()), // International Supplier Screen
-                                    );
-                                  }
-                                },
-                                itemBuilder: (BuildContext context) {
-                                  return [
-                                    PopupMenuItem<String>(
-                                      value: 'Supplier',
+                        // Tabs array
+                        tabs: [
+                          const Tab(text: 'Dashboard'),
+                          const Tab(text: 'Leads'),
+                          const Tab(text: 'Agents'),
+                          Tab(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                const Text('Supplier'),
+                                PopupMenuButton<String>(
+                                  icon: const Icon(Icons.arrow_drop_down),
+                                  onSelected: (String value){supplierProvider.setSelectedOption(value);},
+                                  itemBuilder: (context) => [
+                                    const PopupMenuItem(
+                                      value: 'Local',
                                       child: Text('Local Supplier'),
                                     ),
-                                    PopupMenuItem<String>(
-                                      value: 'International Supplier',
+                                    const PopupMenuItem(
+                                      value: 'International',
                                       child: Text('International Supplier'),
                                     ),
-                                  ];
-                                },
-                                icon: Icon(Icons.arrow_drop_down_sharp), // Icon for the menu button
-                              ),
-                            ],
+                                  ],
+                                  // child: Text(supplierType),
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-   Tab(text: 'Package'),
-  ],
-)
 
-            ),
-          ],
-        ),
-      )
+                          Tab(text: 'Package'),
+                        ],
+                      )),
+                ],
+              ),
+            )
           : null,
-      leading:
-      Responsive.isMobile(context) && dashboardTabController.index == 0
+      leading: Responsive.isMobile(context) && dashboardTabController.index == 0
           ? Builder(
-        builder: (context) {
-          return IconButton(
-            icon: const Icon(Icons.menu),
-            onPressed: () {
-              Scaffold.of(context)
-                  .openDrawer(); // Correct context provided here
-            },
-          );
-        },
-      )
+              builder: (context) {
+                return IconButton(
+                  icon: const Icon(Icons.menu),
+                  onPressed: () {
+                    Scaffold.of(context)
+                        .openDrawer(); // Correct context provided here
+                  },
+                );
+              },
+            )
           : null,
       actions: [
         Padding(
-          padding:  EdgeInsets.only(right: context.screenWidth*.01),
+          padding: EdgeInsets.only(right: context.screenWidth * .01),
           child: Widgets().circularAvatar(text: 'Name here'),
         ),
         if (dashboardTabController.index == 0) ...[
@@ -171,5 +145,4 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
       icon: const Icon(Icons.more_vert_rounded),
     );
   }
-
 }

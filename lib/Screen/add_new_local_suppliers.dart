@@ -8,14 +8,20 @@ import 'package:fab_tech_sol/widgets/addnewagent.dart';
 import 'package:fab_tech_sol/widgets/back_button_title_avatar.dart';
 import 'package:flutter/material.dart';
 
-class AddNewLocalSupplier extends StatelessWidget {
+class AddNewLocalSupplier extends StatefulWidget {
   const AddNewLocalSupplier({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    List<String> agents = ['John Doe', 'Jane Smith', 'James Bond', 'Tony Stark'];
+  State<AddNewLocalSupplier> createState() => _AddNewLocalSupplierState();
+}
 
-    String? selectedValue;
+class _AddNewLocalSupplierState extends State<AddNewLocalSupplier> {
+  List<String> agents = ['Air Ticket','Hotel Accommodation','Transfers','Tours & Excursions','Other'];
+
+  String? selectedValue;
+  @override
+  Widget build(BuildContext context) {
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -389,61 +395,7 @@ class AddNewLocalSupplier extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            TextField(
-                              decoration: InputDecoration(
-                                fillColor: Colors.white,
-                                filled: true,
-                                hintText: 'Air Ticket',
-                                hintStyle: TextStyle(
-                                    color: AppColor.hintColor,
-                                    fontSize: 14,
-                                    fontFamily: fontFamilys,
-                                    fontWeight: FontWeight.w300),
-                                enabledBorder: const OutlineInputBorder(
-                                  borderRadius: BorderRadius.all(
-                                      Radius.circular(12)), // Rounded corners
-                                  borderSide: BorderSide(
-                                    color: Color(0XFFD4D7E3),
-                                    width: 2,
-                                  ),
-                                ),
-                                focusedBorder: const OutlineInputBorder(
-                                  borderRadius: BorderRadius.all(
-                                      Radius.circular(12)), // Rounded corners
-                                  borderSide: BorderSide(
-                                    color: Color(0XFFD4D7E3),
-                                    width: 2,
-                                  ),
-                                ),
-                                border: const OutlineInputBorder(
-                                  borderRadius: BorderRadius.all(
-                                      Radius.circular(12)), // Rounded corners
-                                  borderSide: BorderSide(
-                                    color: Color(0XFFD4D7E3),
-                                    width: 2,
-                                  ),
-                                ),
-                                suffixIcon: DropdownButton<String>(
-                                  underline:
-                                      const SizedBox(), 
-                                  icon: const Icon(Icons.arrow_drop_down,
-                                      color: Color(0XFFD4D7E3)),
-                                  items: <String>[
-                                    'Option 1',
-                                    'Option 2',
-                                    'Option 3'
-                                  ].map((String value) {
-                                    return DropdownMenuItem<String>(
-                                      value: value,
-                                      child: Text(value),
-                                    );
-                                  }).toList(),
-                                  onChanged: (String? newValue) {
-                                    // Handle dropdown item selection
-                                  },
-                                ),
-                              ),
-                            ),
+                            secondDropDown()
                           ],
                         ),
                       ),
@@ -509,7 +461,92 @@ class AddNewLocalSupplier extends StatelessWidget {
             )
           ],
 ///
-),),);}}
+),),);
+  }
+
+  Widget secondDropDown() {
+    String? selectedValue2;
+
+    return SizedBox(
+      width: 400,
+      child: Theme(
+        data: Theme.of(context).copyWith(
+            focusColor: AppColor.background, hoverColor: AppColor.background),
+        child: DropdownButtonFormField<String>(
+          value: selectedValue2,
+          decoration: InputDecoration(
+              labelText: 'Select Service',
+              fillColor: AppColor.customdropdownColor,
+              filled: true,
+              labelStyle: TextStyle(
+                  color: AppColor.hintColor, fontFamily: poppin, fontSize: 15),
+              contentPadding:
+              const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+              // contentPadding: EdgeInsets.zero,
+              enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide:
+                  BorderSide(color: AppColor.borderColor3, width: 1)),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(10),
+                borderSide: BorderSide(color: AppColor.borderColor3, width: 1),
+              ),
+              floatingLabelBehavior: FloatingLabelBehavior.never,
+              alignLabelWithHint: false),
+          dropdownColor: AppColor.customdropdownColor,
+          isDense: true,
+          items: [
+            ...agents.map((String agent) {
+              return DropdownMenuItem<String>(
+                value: agent, // This is a valid selectable value
+                child: Text(agent, style: TextStyle(fontSize: 14)),
+              );
+            }).toList(),
+
+          ],
+          menuMaxHeight: 400,
+          isExpanded: true,
+          onChanged: (value) {
+            if (value != 'create_agent' && value != 'search_agent') {
+              setState(() {
+                selectedValue2 = value;
+                print('hello ${value}');
+              });
+            }
+            // searchName.text = value ??
+            //     '';
+          },
+          selectedItemBuilder: (BuildContext context) {
+            return agents.map((String agent) {
+              return SizedBox(
+                height: 50,
+                child: Row(
+                  children: [
+                    CircleAvatar(
+                      backgroundImage: AssetImage('${imageUrl}agent.png'),
+                      radius: 16,
+                    ),
+                    SizedBox(width: 5),
+                    Text(
+                      agent,
+                      style: TextStyle(fontSize: 14),
+                    ),
+                  ],
+                ),
+              );
+            }).toList();
+          },
+          validator: (value) {
+            if (value == null || value.isEmpty) {
+              return "Select Duration";
+            }
+            return null;
+          },
+        ),
+      ),
+    );
+  }
+}
                    
                  
                   

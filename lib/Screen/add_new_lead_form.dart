@@ -2,7 +2,10 @@ import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
+import 'package:fab_tech_sol/resources/navigation_util.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
+import 'package:fab_tech_sol/ui/dashboard.dart';
+import 'package:fab_tech_sol/widget/useredit_data.dart';
 import 'package:fab_tech_sol/widgets/widgets.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -134,174 +137,10 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                               fontWeight: FontWeight.bold),
                         ),
                         const SizedBox(height: 5),
-                        SizedBox( width: 400,
-                          child: Theme(
-                            data: Theme.of(context).copyWith(
-                                focusColor: AppColor.background,
-                                hoverColor: AppColor.background
-                            ),
-                            child: DropdownButtonFormField<String>(
-                              value:selectedValue ,
+                        UserEditData(text: "John Doe",onTap: (){
+                          NavigationUtil.navigatePush(context: context, destinationScreen: Dashboard(tabIndex: 2,));
+                        })
 
-                              decoration: InputDecoration(
-                                  labelText: 'Select Duration',
-                                  fillColor: AppColor.customdropdownColor,
-                                  filled: true,
-
-
-                                  labelStyle: TextStyle(
-
-                                      color:   AppColor.hintColor, fontFamily: poppin, fontSize: 15  ),
-                                  contentPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                                  // contentPadding: EdgeInsets.zero,
-                                  enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(10),
-                                      borderSide: BorderSide(color: AppColor.borderColor3,width: 1)),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                    borderSide:   BorderSide(color: AppColor.borderColor3,width: 1),
-                                  ),
-                                  floatingLabelBehavior: FloatingLabelBehavior.never,
-                                  alignLabelWithHint: false),
-                              dropdownColor: AppColor.customdropdownColor,
-                              isDense: true,
-                              items: [
-
-                                DropdownMenuItem(
-                                  enabled: false,
-
-                                  value: 'create_agent',
-                                  child: Container(
-                                    height: 50,
-                                    // width: 360,
-                                    padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 4),
-                                    decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius: BorderRadius.circular(10),
-                                        boxShadow: [
-                                          BoxShadow(
-                                              blurRadius: 2,
-                                              spreadRadius: 0,
-                                              color: Colors.grey.withOpacity(.3)
-                                          )
-                                        ]
-                                    ),
-                                    child: Row(
-                                      children: [
-                                        const SizedBox(width: 10),
-                                        Icon(Icons.add_box_rounded, color: AppColor.buttonTextColor, ),
-                                        const SizedBox(width: 8),
-                                        Text('Create a new agent', style: TextStyle(color: AppColor.buttonTextColor,fontFamily: fontFamilys, fontWeight: FontWeight.w400)),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                DropdownMenuItem(
-                                    value: "search_agent",
-                                    enabled: false,
-
-                                    child: Padding(
-                                      padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 2),
-                                      child: TextFormField(
-
-                                        decoration: InputDecoration(
-                                          hintText: "Search Agent",
-                                          fillColor: Colors.white,
-                                          filled: true,
-
-                                          suffixIcon: Icon(Icons.search_outlined),
-                                          hintStyle: TextStyle(
-                                              color: AppColor.hintColor, fontFamily: fontFamilys, fontSize: 14,fontWeight: FontWeight.w400),
-
-                                          //  color: Colors.grey, fontFamily: readexPro, fontSize: 13),
-
-                                          contentPadding:
-                                          const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-                                          enabledBorder:  OutlineInputBorder(borderSide: BorderSide(color: AppColor.borderColor3,width: 0.5),
-                                              borderRadius: BorderRadius.circular(10)),
-                                          focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: AppColor.borderColor3,width: 0.5),
-                                              borderRadius: BorderRadius.circular(10)),
-                                        ),
-
-                                      ),
-                                    )
-                                ),
-                                ...agents.map((String duration) {
-                                  return DropdownMenuItem<String>(
-                                    value: duration,
-                                    child: SizedBox(
-                                      height: 52,
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(vertical: 3.0,horizontal: 4),
-                                        child: Container(
-                                          decoration: BoxDecoration(
-                                              borderRadius: BorderRadius.circular(10),
-                                              color: Colors.white,
-                                              border: Border.all(width: .5,color: Colors.grey.withOpacity(.3))
-                                          ),
-                                          child: Padding(
-                                            padding: const EdgeInsets.all(4.0),
-                                            child: Row(
-                                              children: [
-                                                SizedBox(width: 5),
-                                                CircleAvatar(
-                                                  backgroundImage: AssetImage('${imageUrl}agent.png'),
-                                                  radius: 18,
-                                                ),
-                                                SizedBox(width: 5),
-                                                Text(
-                                                  duration,
-                                                  style: TextStyle(fontSize: 14),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
-                                  );
-                                }).toList(),
-
-                              ],
-                              menuMaxHeight:    400,
-                              isExpanded: true,
-                              onChanged: (value) {
-                                if (value != 'create_agent' && value != 'search_agent') {
-                                  selectedValue = value;
-                                }
-                                // searchName.text = value ??
-                                //     '';
-                              },
-                              selectedItemBuilder: (BuildContext context){
-
-                                return agents.map((String agent) {
-                                  return SizedBox(
-                                    height: 50,
-                                    child: Row(
-                                      children: [
-                                        CircleAvatar(
-                                          backgroundImage: AssetImage('${imageUrl}agent.png'),
-                                          radius: 16,
-                                        ),
-                                        SizedBox(width: 5),
-                                        Text(
-                                          agent,
-                                          style: TextStyle(fontSize: 14),
-                                        ),
-                                      ],
-                                    ),
-                                  );
-                                }).toList();
-                              },
-                              validator: (value) {
-                                if (value == null || value.isEmpty) {
-                                  return "Select Duration";
-                                }
-                                return null;
-                              },
-                            ),
-                          ),
-                        ),
-                        // Widgets().textFormField("John Deo", context),
                       ],
                     ),
                   ),

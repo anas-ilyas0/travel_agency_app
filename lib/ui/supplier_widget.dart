@@ -16,9 +16,9 @@ class SupplierScreen extends StatelessWidget {
       final providerValue = Provider.of<UserProvider>(context);
     return Scaffold(
       body: 
-      Padding(
-      padding: const EdgeInsets.only(top: 25,left: 60,right: 60),
-      child: SingleChildScrollView(
+      SingleChildScrollView(
+        child: Padding(
+        padding: const EdgeInsets.only(top: 25,left: 60,right: 60),
         child: Column(
           children: [
             Row(
@@ -28,11 +28,11 @@ class SupplierScreen extends StatelessWidget {
                   'Local Supplier',
                   style: TextStyle(
                       fontSize: 28,
-
+        
                       fontFamily: fontFamilys,
-
+        
                      // fontFamily: readexPro,
-
+        
                       fontWeight: FontWeight.w700,
                       color: color),
                 ),
@@ -67,17 +67,17 @@ class SupplierScreen extends StatelessWidget {
                       "Action"
                     ]),
                     source: TaskDataSource(Widgets().tasks,context),
-
+        
                     headingRowColor: MaterialStateProperty.resolveWith<Color>(
                         (Set<MaterialState> states) {
-                      return AppStrings.addLeadButtonColor;
+                      return Colors.white;
                     }),
                   ),
                 ))
           ],
         ),
-      ),
-    )
+            ),
+      )
     );
   }
 }

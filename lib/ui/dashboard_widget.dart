@@ -8,6 +8,9 @@ import 'package:fab_tech_sol/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../widget/dash_board_filter.dart';
+import '../widget/dashboard_filter.dart';
+
 class DashBoardScreen extends StatelessWidget {
   const DashBoardScreen({super.key});
 
@@ -64,10 +67,11 @@ class DashBoardScreen extends StatelessWidget {
                               providerValue.updateSelectedItem1(newValue);
                             }, context),
                             const SizedBox(width: 2),
-                            Widgets().dropDownButton(providerValue.selectedItem2,
-                                providerValue.dropdownItems2, (String? newValue) {
-                              providerValue.updateSelectedItem2(newValue);
-                            }, context),
+                            DashboardFilterBox(),
+                            // Widgets().dropDownButton(providerValue.selectedItem2,
+                            //     providerValue.dropdownItems2, (String? newValue) {
+                            //   providerValue.updateSelectedItem2(newValue);
+                            // }, context),
                             const SizedBox(width: 10),
                             Widgets().button('Add New Lead', () {
                               Navigator.push(context, MaterialPageRoute(builder: (context) => AddNewLeadForm()));

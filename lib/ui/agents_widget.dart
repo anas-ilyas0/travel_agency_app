@@ -19,9 +19,9 @@ class AgentScreen
   Widget build(BuildContext context) {
      final providerValue = Provider.of<UserProvider>(context);
     return Scaffold(
-      body:  Padding(
-      padding: const EdgeInsets.only(top: 25,right: 80,left: 80),
-      child: SingleChildScrollView(
+      body:  SingleChildScrollView(
+        child: Padding(
+        padding: const EdgeInsets.only(top: 25,right: 80,left: 80),
         child: Column(
           children: [
             Row(
@@ -31,11 +31,11 @@ class AgentScreen
                   'All Agents',
                   style: TextStyle(
                       fontSize: 20,
-
+        
                       fontFamily: fontFamilys,
-
+        
                     //  fontFamily: readexPro,
-
+        
                      fontWeight: FontWeight.bold,
                      color: color),
                   ),
@@ -45,7 +45,7 @@ class AgentScreen
                   child: Row(
                     children: [
                       Widgets().searchTextField(),
-
+        
                       SizedBox(
                         width: context.screenWidth*0.01,
                       ),
@@ -59,7 +59,7 @@ class AgentScreen
                       //       providerValue.updateSelectedItem2(newValue);
                       //     }, context),
                      // TypesDropDownButton(),
-
+        
                       const SizedBox(width: 15),
                       Widgets().button('Add New Agent', () {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => AddNewAgent(),));
@@ -85,14 +85,14 @@ class AgentScreen
                 source: AgentsTaskDataSource(Widgets().agentsTasks),
                 headingRowColor: MaterialStateProperty.resolveWith<Color>(
                     (Set<MaterialState> states) {
-                  return AppStrings.addLeadButtonColor;
+                  return Colors.white;
                 }),
               ),
             )
           ],
         ),
+            ),
       ),
-    ),
     );
   }
 }

@@ -55,22 +55,21 @@ class LeadDetails extends StatelessWidget {
 
               const Spacer(),
 
-              Container(
-                width: context.screenWidth * 0.13,
-                height: context.screenHeight * 0.08,
-                decoration: BoxDecoration(
-                  color: const Color(0XFF333333),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => LeadDetails(),
-                        ));
-                  },
-                  child:  Text(
+              GestureDetector(
+                onTap: (){ Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LeadDetails(),
+                    ));
+                },
+                child: Container(
+                  width: context.screenWidth * 0.13,
+                  height: context.screenHeight * 0.08,
+                  decoration: BoxDecoration(
+                    color: const Color(0XFF333333),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Text(
                     "Add new Lead",
                     style: TextStyle(
                       fontWeight: FontWeight.w400,

@@ -107,24 +107,26 @@ class Widgets {
         children: [
           Container(
             width: 400,
-            height: 40,
+            height: 44,
             decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(30),
                 border: Border.all(color: Colors.grey.withOpacity(0.3))),
             child: TextFormField(
+              textAlignVertical: TextAlignVertical.center,
+
               decoration: InputDecoration(
                 prefixIcon: Icon(
                   Icons.search,
                   color: addLeadButtonColor,
                 ),
                 suffixIcon: Container(
-                  height: 48,
+                  height: 44,
                   decoration: BoxDecoration(
                     color: addLeadButtonColor,
                     borderRadius: const BorderRadius.only(
-                      topRight: Radius.circular(30),
-                      bottomRight: Radius.circular(30),
+                      topRight: Radius.circular(24),
+                      bottomRight: Radius.circular(24),
                     ),
                   ),
                   child: TextButton(
@@ -134,7 +136,7 @@ class Widgets {
                       style: TextStyle(
                           color: Colors.black,
                           fontSize: 12,
-                          fontWeight: FontWeight.w300,
+                          fontWeight: FontWeight.w400,
                           fontFamily: fontFamilys),
                     ),
                   ),
@@ -143,13 +145,12 @@ class Widgets {
                 hintText: 'Search Agent',
                 hintStyle: TextStyle(
                     color: Colors.grey, fontFamily: fontFamilys, fontSize: 12),
-
                 // color: Colors.grey, fontFamily: readexPro, fontSize: 12),
 
                 contentPadding: const EdgeInsets.symmetric(
                   horizontal: 5,
-                  //vertical: 22
                 ),
+                isDense: true,
                 border: const OutlineInputBorder(borderSide: BorderSide.none),
               ),
             ),
@@ -333,7 +334,7 @@ class Widgets {
     VoidCallback onTap,
   ) {
     return Container(
-      height: 50,
+      height: 48,
       decoration: BoxDecoration(
           color: addLeadButtonColor, borderRadius: BorderRadius.circular(5)),
       child: Padding(

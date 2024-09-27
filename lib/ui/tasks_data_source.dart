@@ -85,7 +85,6 @@ class AgentsTask {
 
 class AgentsTaskDataSource extends DataTableSource {
   final List<AgentsTask> agentsTasks;
-
   AgentsTaskDataSource(this.agentsTasks);
 
   @override

@@ -17,6 +17,7 @@ import 'package:fab_tech_sol/Screen/pacakge_details2.dart';
 import 'package:fab_tech_sol/Screen/package.dart';
 import 'package:fab_tech_sol/Screen/package_detail.dart';
 import 'package:fab_tech_sol/Screen/package_Screen.dart';
+import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/firebase_options.dart';
 import 'package:fab_tech_sol/login_page.dart';
 
@@ -60,7 +61,6 @@ void main() async {
 }
 
 class MyApp extends StatelessWidget {
-  final ThemeApp themeApp = ThemeApp();
 
   MyApp({super.key});
 
@@ -69,25 +69,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeApp.myThemeData,
-// home: LeadDetails());
-    // home:Package()
-// home: ClientDetailPackage()
-// home: PackageClassScreen());
-home:Dashboard());
-// home: Dashboard());
-// home:CreateNewPackageForm());
+        title: AppStrings.appName,
+        home:LoginPage());
 
-// home:AddNewLocalSupplier());
-
-// home: SupplierScreen(),
-
-
-// home:CreateNewPackageForm()
-
-// home: AddNewLocalSupplier());
-// home: LoginPage());
-// home:CustomDropDownButton());
-// home: AddNewInterNationalsuppliers());
 
      
 

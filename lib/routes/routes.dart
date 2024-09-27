@@ -6,13 +6,14 @@ import 'package:flutter/material.dart';
 class AppRoutes {
   static const String dashboard = '/dashboard';
   static const String addNewLead = '/addNewLead';
+
   //static const String package='/package';
   static const String lead_details = '/LeadDetails';
 
   static Map<String, WidgetBuilder> getRoutes() {
     return {
-      dashboard: (context) => const Dashboard(),
-     // addNewLead: (context) => const AddNewLeadForm(),
+      dashboard: (context) => Dashboard(),
+      // addNewLead: (context) => const AddNewLeadForm(),
       //package: (context)=> PackageWidget(),
 
       lead_details: (context) => const LeadDetails(),

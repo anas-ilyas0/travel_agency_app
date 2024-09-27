@@ -4,6 +4,23 @@ import 'package:flutter/material.dart';
 
 class ThemeApp {
   static ThemeData myThemeData = ThemeData(
+    checkboxTheme: CheckboxThemeData(
+      mouseCursor:
+      MaterialStateProperty.all<MouseCursor?>(SystemMouseCursors.click),
+      fillColor: MaterialStateProperty.all<Color?>(Colors.white),
+      checkColor: MaterialStateProperty.all<Color?>(Colors.white),
+      overlayColor: MaterialStateProperty.all<Color?>(Colors.white),
+      splashRadius: 24.0,
+      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+      visualDensity: VisualDensity.adaptivePlatformDensity,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(4.0),
+      ),
+      side: const BorderSide(
+        color: Colors.grey, // Define the border color
+        width: 1.0, // Define the border width
+      ),
+    ),
     dataTableTheme: DataTableThemeData(
       dividerThickness: 0.5,
       dataRowColor:
@@ -11,9 +28,9 @@ class ThemeApp {
         if (states.contains(MaterialState.selected)) {
           return Colors.lightBlue.shade100; // Softer color for selected rows
         }
-        return Colors
-            .grey.shade50; // Lighter color for data rows for a modern look
+        return Colors.white; // Lighter color for data rows for a modern look
       }),
+
       dataRowMinHeight:
       48.0, // Slightly increased for better touch targets and readability
       dataTextStyle: const TextStyle(
@@ -32,10 +49,10 @@ class ThemeApp {
             ; // Lighter color for data rows for a modern look
       }),
       headingTextStyle: const TextStyle(
-        color: Colors.white,
-        fontSize: 16.0,
-        fontWeight: FontWeight.w600,
-          fontFamily: "Poppin"
+        color: Colors.black,
+        fontSize: 18.0,
+        fontWeight: FontWeight.w400,
+          fontFamily: "ReadexPro"
 
       ),
     ),
@@ -58,6 +75,9 @@ class ThemeApp {
       ),
     ),
     scaffoldBackgroundColor: AppColor.background,
+    focusColor: Colors.transparent,
+    hoverColor: AppColor.background,
+
     fontFamily: 'ReadexPro-Light',
     textTheme: const TextTheme(),
   );

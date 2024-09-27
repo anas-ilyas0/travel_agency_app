@@ -16,9 +16,9 @@ class InternationalSupplierScreen extends StatelessWidget {
     final providerValue = Provider.of<UserProvider>(context);
     return Scaffold(
         body:
-        Padding(
-          padding: const EdgeInsets.only(top: 25,left: 60,right: 60),
-          child: SingleChildScrollView(
+        SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 25,left: 60,right: 60),
             child: Column(
               children: [
                 Row(
@@ -28,11 +28,11 @@ class InternationalSupplierScreen extends StatelessWidget {
                       'International Supplier',
                       style: TextStyle(
                           fontSize: 28,
-
+            
                           fontFamily: fontFamilys,
-
+            
                           // fontFamily: readexPro,
-
+            
                           fontWeight: FontWeight.w700,
                           color: color),
                     ),
@@ -68,10 +68,10 @@ class InternationalSupplierScreen extends StatelessWidget {
                           "Action"
                         ]),
                         source: InternationalDataSource(Widgets().international),
-
+            
                         headingRowColor: MaterialStateProperty.resolveWith<Color>(
                                 (Set<MaterialState> states) {
-                              return AppStrings.addLeadButtonColor;
+                              return Colors.white;
                             }),
                       ),
                     ))
