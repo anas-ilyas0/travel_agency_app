@@ -1,3 +1,7 @@
+import 'package:fab_tech_sol/Dialog/agent_dialog.dart';
+import 'package:fab_tech_sol/Dialog/international_edit_dialog.dart';
+import 'package:fab_tech_sol/Dialog/localsupplier_dialog.dart';
+import 'package:fab_tech_sol/Screen/addnewinternationalsuppliers.dart';
 import 'package:fab_tech_sol/Screen/local_supplier_detail.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/widgets/widgets.dart';
@@ -15,46 +19,60 @@ class SupplierTask {
   final String status;
   final String action;
 
-  SupplierTask(this.companyName, this.supplierName, this.supplierAddress,
-      this.service, this.companyAddress, this.status, this.action,);
+  SupplierTask(
+    this.companyName,
+    this.supplierName,
+    this.supplierAddress,
+    this.service,
+    this.companyAddress,
+    this.status,
+    this.action,
+  );
 }
 
 class TaskDataSource extends DataTableSource {
   final List<SupplierTask> tasks;
- final BuildContext context;
+  BuildContext context;
+
 
   TaskDataSource(this.tasks,this.context);
 
+ 
   @override
   DataRow? getRow(int index) {
     // if (index >= tasks.length || index < 0) return null;
     assert(index >= 0);
 
-    final  task = tasks[index];
+    final task = tasks[index];
     return DataRow.byIndex(
       index: index,
       cells: [
         DataCell(GestureDetector(
-          onTap: () {
-           
-          },
-          child: GestureDetector(
-            onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => LocalSupplierDetail(),));
-            },
-            child: Text(task.companyName)))),
+            onTap: () {},
+            child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => LocalSupplierDetail(),
+                      ));
+                },
+                child: Text(task.companyName)))),
         DataCell(Text(task.supplierName)),
         DataCell(Text(task.supplierAddress)),
         DataCell(Text(task.service)),
         DataCell(Text(task.action)),
         DataCell(Text(task.companyAddress)),
-
         DataCell(Row(
           children: [
             Padding(
-              padding: const EdgeInsets.all(5),
-              child: Widgets().editDelContainer(() {}),
-            )
+                padding: const EdgeInsets.all(5),
+                child: Widgets().editDelContainer(context,() {
+                 showDialog(context: context, builder: (context) => LocalsupplierDialog(),);
+                  
+                },() {
+                  
+                },))
           ],
         )),
       ],
@@ -85,8 +103,11 @@ class AgentsTask {
 
 class AgentsTaskDataSource extends DataTableSource {
   final List<AgentsTask> agentsTasks;
+  BuildContext context;
 
-  AgentsTaskDataSource(this.agentsTasks);
+  AgentsTaskDataSource(this.agentsTasks,this.context);
+  
+ 
 
   @override
   DataRow? getRow(int index) {
@@ -105,12 +126,15 @@ class AgentsTaskDataSource extends DataTableSource {
         DataCell(Text(task.email)),
         DataCell(Text(task.location)),
         DataCell(Text(task.status)),
-
         DataCell(Row(
           children: [
             Padding(
               padding: const EdgeInsets.all(5),
-              child: Widgets().editDelContainer(() {}),
+              child: Widgets().editDelContainer(context,() {
+              showDialog(context: context, builder: (context) => AgentDialog(),);
+              },() {
+                
+              },),
             )
           ],
         )),
@@ -127,6 +151,7 @@ class AgentsTaskDataSource extends DataTableSource {
   @override
   int get selectedRowCount => 0;
 }
+
 class InternationalSupplier {
   final String companyName;
   final String Unknown;
@@ -137,17 +162,18 @@ class InternationalSupplier {
   final String status;
   final String action;
 
-  InternationalSupplier(this.companyName, this.Unknown, this.phoneNumber, this.service,
-      this.unknown, this.location,this.status, this.action);
+  InternationalSupplier(this.companyName, this.Unknown, this.phoneNumber,
+      this.service, this.unknown, this.location, this.status, this.action);
 }
 
 class InternationalDataSource extends DataTableSource {
+  BuildContext context;
   final List<InternationalSupplier> international;
 
-  InternationalDataSource(this.international);
+  InternationalDataSource(this.international,this.context);
 
   @override
-  DataRow? getRow(int index) {
+  DataRow? getRow(int index,) {
     if (index >= international.length || index < 0) return null;
     final InternationalSupplier task = international[index];
     return DataRow.byIndex(
@@ -160,12 +186,15 @@ class InternationalDataSource extends DataTableSource {
         DataCell(Text(task.unknown)),
         DataCell(Text(task.location)),
         DataCell(Text(task.status)),
-
         DataCell(Row(
           children: [
             Padding(
               padding: const EdgeInsets.all(5),
-              child: Widgets().editDelContainer(() {}),
+              child: Widgets().editDelContainer(context,() {
+                showDialog(context: context, builder: (context) => InternationalEditDialog(),);
+              },() {
+                
+              },),
             )
           ],
         )),
@@ -182,4 +211,3 @@ class InternationalDataSource extends DataTableSource {
   @override
   int get selectedRowCount => 0;
 }
-

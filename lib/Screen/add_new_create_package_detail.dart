@@ -2,11 +2,13 @@ import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
+import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/widgets/addnewagent.dart';
 import 'package:fab_tech_sol/widgets/back_button_title_avatar.dart';
 import 'package:fab_tech_sol/widgets/widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class CreateNewPackageForm extends StatefulWidget {
   const CreateNewPackageForm({super.key});
@@ -22,6 +24,7 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
 
   @override
   Widget build(BuildContext context) {
+     final imageProvider = Provider.of<UserProvider>(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -72,6 +75,13 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
                           width: 150,
                           decoration: BoxDecoration(
                               color: Colors.white,
+                               image: imageProvider.imageUrl != null
+                                        ? DecorationImage(
+                                            image:
+                                                NetworkImage(imageProvider.imageUrl!),
+                                            fit: BoxFit.cover,
+                                          )
+                                        : null,
                               borderRadius: BorderRadius.circular(12),
                               border: Border.all(
                                   width: 0.5,
@@ -89,7 +99,9 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
                                   fontWeight: FontWeight.w400),
                             ),
                             ElevatedButton(
-                              onPressed: () {},
+                              onPressed: ()async {
+                                  await imageProvider.pickImage();
+                              },
                               style: ElevatedButton.styleFrom(
                                   backgroundColor: const Color(0XFF11345A),
                                   minimumSize: Size(context.screenWidth * 0.11,

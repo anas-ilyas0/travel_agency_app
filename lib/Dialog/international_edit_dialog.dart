@@ -5,33 +5,32 @@ import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/widgets/addnewagent.dart';
-import 'package:fab_tech_sol/widgets/back_button_title_avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class AddNewInterNationalsuppliers extends StatelessWidget {
-  const AddNewInterNationalsuppliers({super.key});
+class InternationalEditDialog extends StatelessWidget {
+  const InternationalEditDialog({super.key});
 
   @override
   Widget build(BuildContext context) {
      final imageProvider = Provider.of<UserProvider>(context);
-    return Scaffold(
-      body: SingleChildScrollView(
+    return Dialog(
+      backgroundColor: AppColor.background,
+      child:  SingleChildScrollView(
         child: Column(
            mainAxisAlignment: MainAxisAlignment.start,
            children: [
              SizedBox(
               height: context.screenHeight * 0.02,
             ),
-            BackButtonAvatar(text1: 'Add New International Supplier',),
-            const Divider(thickness: 0.5,),
+          
            Padding(padding: const EdgeInsets.only(left: 90,right: 90),
            child: 
            Column(
             children: [
                SizedBox(height: context.screenHeight*0.02,),
                  Align(alignment: Alignment.centerLeft,
-                child: Flexible(child: FittedBox(child: Text('International Suppler Details',style:AppTextstyless.addnewinternationalsuppliers)))),
+                child: Flexible(child: FittedBox(child: Text('Edit International Suppler Details',style:AppTextstyless.addnewinternationalsuppliers)))),
                SizedBox(height: context.screenHeight*0.01,),
                Align(
               alignment: Alignment.centerLeft,
@@ -321,7 +320,7 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
                  
                ],
              ), 
-             SizedBox(height: context.screenHeight*0.1,), 
+             SizedBox(height: context.screenHeight*0.05,), 
              Row(
            children: [
              Flexible(
@@ -335,7 +334,7 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5))),
                   onPressed: () {
-                    
+                    Navigator.pop(context);
                   },
                   child: const Text(
                     'Cancle',style: TextStyle(fontSize: 18,fontFamily: 'Readex Pro',color: Colors.black),
@@ -368,7 +367,7 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
                      ),
                    ),
                  ),
-                 SizedBox(height: context.screenHeight*0.2)
+                 SizedBox(height: context.screenHeight*0.1)
            ],
          ),  
                  

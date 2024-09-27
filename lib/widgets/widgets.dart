@@ -1,4 +1,5 @@
 import 'package:fab_tech_sol/AppColor/app_color.dart';
+import 'package:fab_tech_sol/Dialog/agent_dialog.dart';
 import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/Screen/AppText/TextStyle.dart';
 import 'package:fab_tech_sol/Screen/client_detail_package.dart';
@@ -24,7 +25,9 @@ class Widgets {
   final List<InternationalSupplier> international =List.generate(20, (index)=>
   InternationalSupplier('RADISSON', 'CPT', '+21 999 999 999', 'Air Tickets', 'ABSA', "CENTURY CITY, CAPE TOWN 8001 SA", 'Active', ''));
 
-  Widget editDelContainer(VoidCallback onPress) {
+  Widget editDelContainer(BuildContext context,VoidCallback edit,VoidCallback del) {
+    
+    
     return Container(
       decoration: BoxDecoration(
           color: editDelContainerColor,
@@ -34,14 +37,21 @@ class Widgets {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           IconButton(
-              onPressed: onPress, icon: const Icon(Icons.edit), color: color),
+              onPressed: 
+           
+             edit
+              , icon: const Icon(Icons.edit), color: color),
           const VerticalDivider(
             thickness: 0.8,
             indent: 5,
             endIndent: 5,
           ),
           IconButton(
-              onPressed: () {},
+              onPressed: del
+                
+            
+
+              ,
               icon: Image(image: AssetImage('${imageUrl}delImage.png')),
               color: color),
         ],
@@ -167,15 +177,18 @@ class Widgets {
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
           border: Border.all(color: Colors.grey.withOpacity(0.3))),
-      child: TextFormField(
-        maxLines: maxLines,
-        decoration: InputDecoration(
-          hintText: 'Add Here',
-          hintStyle: TextStyle(
-              color: Colors.grey, fontFamily: readexPro, fontSize: 13),
-          contentPadding:
-              const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-          border: const OutlineInputBorder(borderSide: BorderSide.none),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: TextFormField(
+          maxLines: maxLines,
+          decoration: InputDecoration(
+            hintText: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged......',
+            hintStyle: TextStyle(
+                color: AppColor.hintColor, fontFamily: readexPro, fontSize: 13),
+            contentPadding:
+                const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+            border: const OutlineInputBorder(borderSide: BorderSide.none),
+          ),
         ),
       ),
     );

@@ -1,4 +1,10 @@
+import 'dart:io';
+import 'dart:io';
+import 'dart:io';
+import 'dart:html' as html; 
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 class UserProvider extends ChangeNotifier {
   bool _isCheckedEmail = true;
@@ -6,6 +12,7 @@ class UserProvider extends ChangeNotifier {
   bool _isCheckedWhatsApp = true;
   String _selectedRange = 'Today';
     String _selectedValue = 'One';
+   
 
   String _selectSuupplier='Supplier';
    int _selectedSupplierIndex = 0;
@@ -15,13 +22,20 @@ class UserProvider extends ChangeNotifier {
 
   bool get isCheckedEmail => _isCheckedEmail;
   bool get isCheckedSMS => _isCheckedSMS;
+  
   bool get isCheckedWhatsApp => _isCheckedWhatsApp;
   String get selectSupplier=>_selectSuupplier; 
    String get selectedValue => _selectedValue;
    int get selectedSupplierIndex => _selectedSupplierIndex;
     String get selectedRange => _selectedRange;
 
-    
+
+
+
+
+
+
+   
       void setSelectedValue(String value) {
     _selectedValue = value;
     notifyListeners();
@@ -117,4 +131,81 @@ class UserProvider extends ChangeNotifier {
   }
 
 
+
+
+
+
+
+
+
+
+ html.File? _imageFile; // Change File type to html.File
+  String? _imageUrl; // To hold the image URL for display
+
+  String? get imageUrl => _imageUrl;
+
+  Future<void> pickImage() async {
+    // Create an input element to select files
+    final input = html.FileUploadInputElement();
+    input.accept = 'image/*'; // Accept images only
+    input.click(); // Open file picker
+
+    input.onChange.listen((e) async {
+      final files = input.files;
+      if (files!.isEmpty) return;
+
+      _imageFile = files[0];
+      final reader = html.FileReader();
+
+      reader.readAsDataUrl(_imageFile!); // Read the file as data URL
+      reader.onLoadEnd.listen((e) {
+        _imageUrl = reader.result as String; // Get the image URL
+        notifyListeners(); // Notify listeners to update UI
+      });
+    });
+  }
+
+
+
+ bool _isChecked = false;
+
+  bool get isChecked => _isChecked;
+
+  void toggleCheckbox() {
+    _isChecked = !_isChecked;
+    notifyListeners();
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
