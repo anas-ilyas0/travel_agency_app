@@ -53,7 +53,7 @@ class LeadDetails extends StatelessWidget {
                 style: TextStyle(fontSize: 22, fontFamily:fontFamilys ),
               ),
 
-              const Spacer(),
+
 
               GestureDetector(
                 onTap: (){ Navigator.push(
@@ -75,12 +75,10 @@ class LeadDetails extends StatelessWidget {
                       fontWeight: FontWeight.w400,
                       fontFamily: fontFamilys,
                       color: Colors.white,
-                      fontSize: 16,
-                    ),
-                  ),
-                ),
-              ),
-            ],)
+                      fontSize: 16,),
+
+    )))
+                    ])
           ),
         
 
@@ -175,7 +173,7 @@ class LeadDetails extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        width: context.screenWidth * 0.058,
+                        width: context.screenWidth * 0.064,
                       ),
                       Flexible(
                         flex: 1,
@@ -196,7 +194,7 @@ class LeadDetails extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        width: context.screenWidth * 0.06,
+                        width: context.screenWidth * 0.0535,
                       ),
                       Flexible(
                         flex: 1,
@@ -291,7 +289,7 @@ class LeadDetails extends StatelessWidget {
                       ),
 
                       SizedBox(
-                        width: context.screenWidth * 0.1,
+                        width: context.screenWidth * 0.09,
                       ),
 
                       Flexible(
@@ -345,7 +343,7 @@ class LeadDetails extends StatelessWidget {
                       Text('Destination:',
                           style: AppTextstyless.packageClientDetailTextStyle),
                       SizedBox(
-                        width: context.screenWidth * 0.06,
+                        width: context.screenWidth * 0.066,
                       ),
                       Flexible(
                         flex: 2,
@@ -354,7 +352,7 @@ class LeadDetails extends StatelessWidget {
                               .packageClientDetailTextStyleSubTitle),
                       ),
                       SizedBox(
-                        width: context.screenWidth * 0.03,
+                        width: context.screenWidth * 0.034,
                       ),
                       Flexible(
                         flex: 2,
@@ -418,7 +416,7 @@ class LeadDetails extends StatelessWidget {
                             style: AppTextstyless.packageClientDetailTextStyle),
                       ),
                       SizedBox(
-                        width: context.screenWidth * 0.028,
+                        width: context.screenWidth * 0.032,
                       ),
                       Flexible(
                         flex: 1,
@@ -427,7 +425,7 @@ class LeadDetails extends StatelessWidget {
                               .packageClientDetailTextStyleSubTitle),
                       ),
                       SizedBox(
-                        width: context.screenWidth * 0.083,
+                        width: context.screenWidth * 0.092,
                       ),
                       Flexible(
                         flex: 2,
@@ -444,7 +442,7 @@ class LeadDetails extends StatelessWidget {
                               .packageClientDetailTextStyleSubTitle),
                       ),
                       SizedBox(
-                        width: context.screenWidth * 0.07,
+                        width: context.screenWidth * 0.068,
                       ),
                       Flexible(
                         flex: 2,

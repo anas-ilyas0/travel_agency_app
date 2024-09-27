@@ -2,15 +2,18 @@ import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
+import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 
 class PacakgeDetails2 extends StatelessWidget {
   const PacakgeDetails2({super.key});
 
   @override
   Widget build(BuildContext context) {
+     final userProvider = Provider.of<UserProvider>(context);
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.symmetric(
@@ -129,12 +132,14 @@ class PacakgeDetails2 extends StatelessWidget {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Checkbox(
-                                        activeColor: AppColor.blueColor,
+                                        activeColor: Colors.white,
                                         materialTapTargetSize:
                                             MaterialTapTargetSize.shrinkWrap,
-                                        checkColor: AppColor.blueColor,
-                                        value: false,
-                                        onChanged: (bool? newValue) {},
+                                        checkColor: Colors.black,
+                                        value: userProvider.isChecked,
+                                        onChanged: (bool? newValue) {
+                                           userProvider.toggleCheckbox();;
+                                        },
                                       ),
                                       Container(
                                         width: context.screenWidth * 0.36,
@@ -210,10 +215,12 @@ class PacakgeDetails2 extends StatelessWidget {
                                                       
                                         materialTapTargetSize:
                                             MaterialTapTargetSize.shrinkWrap,
-                                        activeColor: AppColor.blueColor,
-                                        checkColor: AppColor.blueColor,
-                                        value: false, // Set initial value
-                                        onChanged: (bool? newValue) {},
+                                        activeColor: Colors.white,
+                                        checkColor: Colors.black,
+                                        value: userProvider.isChecked, // Set initial value
+                                        onChanged: (bool? newValue) {
+                                          userProvider.toggleCheckbox();
+                                        },
                                       ),
                                       Container(
                                         width: context.screenWidth * 0.36,

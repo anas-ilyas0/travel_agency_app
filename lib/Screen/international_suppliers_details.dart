@@ -10,13 +10,15 @@ class InternationalSuppliersDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-  body:     Column(
+      body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           SizedBox(
             height: context.screenHeight * 0.02,
           ),
-          BackButtonAvatar(text1: 'International Supplier Details',),
+          BackButtonAvatar(
+            text1: 'International Supplier Details',
+          ),
           const Divider(),
           SizedBox(
             height: context.screenHeight * 0.01,
@@ -25,7 +27,6 @@ class InternationalSuppliersDetails extends StatelessWidget {
           Container(
             height: context.screenHeight * 0.8,
             width: context.screenWidth * 0.92,
-            
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
               color: Colors.white,
@@ -48,7 +49,8 @@ class InternationalSuppliersDetails extends StatelessWidget {
                           child: FittedBox(
                             child: const Padding(
                               padding: EdgeInsets.only(
-                                  left: 46.0), // Add padding for better alignment
+                                  left:
+                                      46.0), // Add padding for better alignment
                               child: Text(
                                 'About Supplier Profile',
                                 style: TextStyle(
@@ -60,7 +62,7 @@ class InternationalSuppliersDetails extends StatelessWidget {
                             ),
                           ),
                         ),
-                
+
                         // ElevatedButton on the right
                         Padding(
                           padding: const EdgeInsets.only(
@@ -127,7 +129,8 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                   color: Colors
                                       .white, // Optional: Set the background color
                                   border: Border.all(
-                                    color: const Color(0xff3551b64d), // Border color
+                                    color: const Color(
+                                        0xff3551b64d), // Border color
                                     width: 1.0, // Border thickness
                                   ),
                                   borderRadius: BorderRadius.circular(
@@ -161,8 +164,10 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                     ),
                                     Flexible(
                                       child: const Column(
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
                                           FittedBox(
                                             child: Text(
@@ -196,7 +201,8 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                 color: Colors
                                     .white, // Optional: Set the background color
                                 border: Border.all(
-                                  color: const Color(0xff3551b64d), // Border color
+                                  color:
+                                      const Color(0xff3551b64d), // Border color
                                   width: 1.0, // Border thickness
                                 ),
                                 borderRadius: BorderRadius.circular(
@@ -331,7 +337,8 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                                 fontWeight: FontWeight.w500,
                                                 color: Colors.black,
                                                 fontFamily: 'ReadexPro')),
-                                        SizedBox(width: context.screenWidth * 0.058),
+                                        SizedBox(
+                                            width: context.screenWidth * 0.058),
                                         SvgPicture.asset(
                                             '${ImagesAssets.imagePath}VectorPhone.svg'),
                                         SizedBox(
@@ -345,7 +352,8 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                               color: Colors.black,
                                               fontFamily: 'ReadexPro'),
                                         ),
-                                        SizedBox(width: context.screenWidth * 0.07),
+                                        SizedBox(
+                                            width: context.screenWidth * 0.07),
                                         SvgPicture.asset(
                                             '${ImagesAssets.imagePath}VectorEmail.svg'),
                                         SizedBox(
@@ -359,7 +367,8 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                               color: Colors.black,
                                               fontFamily: 'ReadexPro'),
                                         ),
-                                        SizedBox(width: context.screenWidth * 0.043),
+                                        SizedBox(
+                                            width: context.screenWidth * 0.043),
                                         SvgPicture.asset(
                                             '${ImagesAssets.imagePath}VectorEmail.svg'),
                                         SizedBox(
@@ -470,7 +479,8 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                                 fontWeight: FontWeight.w500,
                                                 color: Colors.black,
                                                 fontFamily: 'ReadexPro')),
-                                        SizedBox(width: context.screenWidth * 0.058),
+                                        SizedBox(
+                                            width: context.screenWidth * 0.058),
                                         SvgPicture.asset(
                                             '${ImagesAssets.imagePath}Vectorcode.svg'),
                                         SizedBox(
@@ -484,7 +494,8 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                               color: Colors.black,
                                               fontFamily: 'ReadexPro'),
                                         ),
-                                        SizedBox(width: context.screenWidth * 0.055),
+                                        SizedBox(
+                                            width: context.screenWidth * 0.055),
                                         SvgPicture.asset(
                                             '${ImagesAssets.imagePath}Vectorlocation.svg'),
                                         SizedBox(
@@ -613,7 +624,8 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                                 fontWeight: FontWeight.w500,
                                                 color: Colors.black,
                                                 fontFamily: 'ReadexPro')),
-                                        SizedBox(width: context.screenWidth * 0.035),
+                                        SizedBox(
+                                            width: context.screenWidth * 0.035),
                                         SvgPicture.asset(
                                             '${ImagesAssets.imagePath}VectorPhone.svg'),
                                         SizedBox(
@@ -627,7 +639,8 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                               color: Colors.black,
                                               fontFamily: 'ReadexPro'),
                                         ),
-                                        SizedBox(width: context.screenWidth * 0.055),
+                                        SizedBox(
+                                            width: context.screenWidth * 0.055),
                                         SvgPicture.asset(
                                             '${ImagesAssets.imagePath}VectorEmail.svg'),
                                         SizedBox(
@@ -641,7 +654,8 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                               color: Colors.black,
                                               fontFamily: 'ReadexPro'),
                                         ),
-                                        SizedBox(width: context.screenWidth * 0.028),
+                                        SizedBox(
+                                            width: context.screenWidth * 0.028),
                                         SvgPicture.asset(
                                             '${ImagesAssets.imagePath}VectorPhone.svg'),
                                         SizedBox(
@@ -655,7 +669,8 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                               color: Colors.black,
                                               fontFamily: 'ReadexPro'),
                                         ),
-                                        SizedBox(width: context.screenWidth * 0.05),
+                                        SizedBox(
+                                            width: context.screenWidth * 0.05),
                                         SvgPicture.asset(
                                             '${ImagesAssets.imagePath}Vectorlocation.svg'),
                                         SizedBox(
@@ -673,13 +688,15 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                              
-                                SizedBox(height: context.screenHeight*0.02,),
+
+                                SizedBox(
+                                  height: context.screenHeight * 0.02,
+                                ),
                                 Flexible(
                                   child: FittedBox(
                                     child: Row(
                                       children: [
-                                         const Text('Country Name',
+                                        const Text('Country Name',
                                             style: TextStyle(
                                                 fontSize: 18,
                                                 fontWeight: FontWeight.w600,
@@ -698,17 +715,19 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                SizedBox(height: context.screenHeight*0.02,),
+                                SizedBox(
+                                  height: context.screenHeight * 0.02,
+                                ),
                                 Flexible(
                                   child: FittedBox(
                                     child: Row(
                                       children: [
-                                         SvgPicture.asset(
+                                        SvgPicture.asset(
                                             '${ImagesAssets.imagePath}Vectorflag.svg'),
                                         SizedBox(
                                           width: context.screenWidth * 0.005,
                                         ),
-                                         const Text(
+                                        const Text(
                                           'United Stated',
                                           style: TextStyle(
                                               fontSize: 14,
@@ -716,7 +735,8 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                               color: Colors.black,
                                               fontFamily: 'ReadexPro'),
                                         ),
-                                        SizedBox(width: context.screenWidth * 0.074),
+                                        SizedBox(
+                                            width: context.screenWidth * 0.074),
                                         SvgPicture.asset(
                                             '${ImagesAssets.imagePath}Vectorcode.svg'),
                                         SizedBox(

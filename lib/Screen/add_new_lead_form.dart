@@ -6,6 +6,7 @@ import 'package:fab_tech_sol/resources/navigation_util.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:fab_tech_sol/ui/dashboard.dart';
 import 'package:fab_tech_sol/widget/useredit_data.dart';
+import 'package:fab_tech_sol/widgets/back_button_title_avatar.dart';
 import 'package:fab_tech_sol/widgets/widgets.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -54,7 +55,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
     return Scaffold(
       appBar: AppBar(
         leading: const Text(''),
-        toolbarHeight:77,
+        toolbarHeight:90,
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(1.0),
           child: Container(
@@ -64,36 +65,9 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
         ),
         title: Padding(
           padding: const EdgeInsets.only(top: 14),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.white,
-                      shape: const CircleBorder(),
-                      padding: const EdgeInsets.all(5),
-                      minimumSize: const Size(40, 40),
-                    ),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    child: const Icon(Icons.arrow_back, color: Colors.black),
-                  ),
-                  const SizedBox(width: 10),
-                  Text(
-                    'Add New Lead',
-                    style: TextStyle(
-                        color: addLeadButtonColor,
-                        fontSize: 17,
-                        fontFamily: readexPro),
-                  ),
-                ],
+          child:  BackButtonAvatar(
+                text1: 'Add New Agent',
               ),
-              CircularAvatar().circularAvatar(),
-            ],
-          ),
         ),
       ),
       body: SingleChildScrollView(
@@ -193,7 +167,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                             fontWeight: FontWeight.bold),
                       ),
                       const SizedBox(height: 5),
-                      Widgets().textFormField('',context),
+                      Widgets().textFormField('+1 (555) 987-6543',context),
                     ],
                   )
                 ],
@@ -251,11 +225,11 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                       children: [
                         tableText('Adult'),
                         Expanded(
-                          child: Widgets().textFormField('',context),
+                          child: Widgets().textFormField('500',context),
                         ),
                         const SizedBox(width: 15),
                         Expanded(
-                          child:  Widgets().textFormField('',context),
+                          child:  Widgets().textFormField('\$200',context),
                         ),
                       ],
                     ),
@@ -264,11 +238,11 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                       children: [
                         tableText('Child'),
                         Expanded(
-                          child:  Widgets().textFormField('',context),
+                          child:  Widgets().textFormField('600',context),
                         ),
                         const SizedBox(width: 15),
                         Expanded(
-                          child:  Widgets().textFormField('',context),
+                          child:  Widgets().textFormField('\$300',context),
                         ),
                       ],
                     ),
@@ -277,11 +251,11 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                       children: [
                         tableText('Infant'),
                         Expanded(
-                          child:  Widgets().textFormField('',context),
+                          child:  Widgets().textFormField('350',context),
                         ),
                         const SizedBox(width: 15),
                         Expanded(
-                          child:  Widgets().textFormField('',context),
+                          child:  Widgets().textFormField('\$150',context),
                         ),
                       ],
                     ),
@@ -290,11 +264,11 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                       children: [
                         tableText('Senior Citizen'),
                         Expanded(
-                          child:  Widgets().textFormField('',context),
+                          child:  Widgets().textFormField('500',context),
                         ),
                         const SizedBox(width: 15),
                         Expanded(
-                          child: Widgets().textFormField('',context),
+                          child: Widgets().textFormField('\500',context),
                         ),
                       ],
                     ),
@@ -303,11 +277,11 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                       children: [
                         tableText('Other'),
                         Expanded(
-                          child:  Widgets().textFormField('',context),
+                          child:  Widgets().textFormField('1000',context),
                         ),
                         const SizedBox(width: 15),
                         Expanded(
-                          child: Widgets().textFormField('',context),
+                          child: Widgets().textFormField('\$300',context),
                         ),
                       ],
                     ),
@@ -342,7 +316,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                                 fontFamily: readexPro,
                                 fontWeight: FontWeight.bold),
                           ),
-                          Widgets().textFormField('',context),
+                          Widgets().textFormField('London',context),
                         ],
                       ),
                       const SizedBox(width: 15),
@@ -357,7 +331,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                                 fontFamily: readexPro,
                                 fontWeight: FontWeight.bold),
                           ),
-                          Widgets().textFormField('',context),
+                          Widgets().textFormField('05/07/2024',context),
                         ],
                       ),
                       const SizedBox(width: 15),
@@ -372,7 +346,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                                 fontFamily: readexPro,
                                 fontWeight: FontWeight.bold),
                           ),
-                          Widgets().textFormField('',context),
+                          Widgets().textFormField('22/07/2024',context),
                         ],
                       ),
                     ],
@@ -380,32 +354,34 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                 ],
               ),
               const Divider(thickness: 0.5),
-              Padding(
-                padding: const EdgeInsets.only(left: 115),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 15),
-                      child: Text(
-                        'Additional Notes',
-                        style: TextStyle(
-                            color: color,
-                            fontFamily: readexPro,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 17),
+              Align(
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 15),
+                        child: Text(
+                          'Additional Notes',
+                          style: TextStyle(
+                              color: color,
+                              fontFamily: readexPro,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 17),
+                        ),
                       ),
-                    ),
-                    Text(
-                      'Add Note',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 13,
-                          fontFamily: readexPro,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    Widgets().textFormNoteField(5, 775,3),
-                  ],
+                      Text(
+                        'Add Note',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 13,
+                            fontFamily: readexPro,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Widgets().textFormNoteField(context.screenWidth*0.772, context.screenHeight*0.27,3),
+                    ],
+                  ),
                 ),
               ),
               const Divider(

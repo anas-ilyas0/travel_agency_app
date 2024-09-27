@@ -10,7 +10,7 @@ class BackButtonAvatar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 42, right: 48),
+      padding: const EdgeInsets.only(left: 22, right: 48),
       child: SizedBox(
         height: context.screenHeight * 0.1,
         child: Row(
@@ -29,6 +29,7 @@ class BackButtonAvatar extends StatelessWidget {
                   child: const Icon(Icons.arrow_back,
                       size: 20, color: Colors.black),
                 ),
+                SizedBox(width: 10,),
                  Text(
                   text1,
                   style:  TextStyle(
@@ -44,7 +45,7 @@ class BackButtonAvatar extends StatelessWidget {
               children: [
                  Text(
                   'Your Name',
-                  style: TextStyle(fontFamily: fontFamilys,fontSize: 15,fontWeight: FontWeight.w500),
+                  style: TextStyle(fontFamily: fontFamilys,fontSize: 16,fontWeight: FontWeight.w800),
                 ),
                 SizedBox(
                   width: context.screenWidth * 0.01,

@@ -3,15 +3,18 @@ import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/Screen/AppText/TextStyle.dart';
 import 'package:fab_tech_sol/Screen/pacakge_details2.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
+import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:provider/provider.dart';
 
 class ClientDetailPackage extends StatelessWidget {
   const ClientDetailPackage({super.key});
 
   @override
   Widget build(BuildContext context) {
+     final providerValue = Provider.of<UserProvider>(context);
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 68, vertical: 4),
@@ -37,47 +40,13 @@ class ClientDetailPackage extends StatelessWidget {
                       width: context.screenWidth * 0.2,
                     ),
                     Widgets().searchTextField(),
+                 
+                      Widgets().dropDownButton(providerValue.selectedItem2,
+                        providerValue.dropdownItems2, (String? newValue) {
+                      providerValue.updateSelectedItem2(newValue);
+                    }, context),
                     SizedBox(
-                      width: context.screenWidth * 0.02,
-                    ),
-                    Container(
-                      height: context.screenHeight * 0.07,
-                      width: context.screenWidth * 0.11,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(4),
-                          border: Border.all(
-                            width: 0.5,
-                            color: Color(0XFF70707033),
-                          )),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: FittedBox(
-                          child: Row(
-                            children: [
-                              SvgPicture.asset(
-                                  '${ImagesAssets.imagePath}VectorFilter.svg'),
-                              const SizedBox(
-                                width: 10,
-                              ),
-                              const Text(
-                                'Filter',
-                                style: TextStyle(
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                    color: Color(0XFF8897AD)),
-                              ),
-                              SizedBox(
-                                width: context.screenWidth * 0.022,
-                              ),
-                              Icon(Icons.arrow_drop_down_outlined),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: context.screenWidth * 0.021,
+                      width: context.screenWidth * 0.01,
                     ),
                     Widgets().button(
                       'Add New Package',
@@ -147,8 +116,8 @@ class ClientDetailPackage extends StatelessWidget {
                                   Text('Jhon Doe',
                                       style: AppTextstyless
                                           .packageClientDetailTextStyleSubTitle),
-                                  SizedBox(width: context.screenWidth * 0.035),
-                                  Text('Phone Number',
+                                  SizedBox(width: context.screenWidth * 0.0386),
+                                  Text('Phone Number:',
                                       style: AppTextstyless
                                           .packageClientDetailTextStyle),
                                   SizedBox(width: context.screenWidth * 0.03),
@@ -180,7 +149,7 @@ class ClientDetailPackage extends StatelessWidget {
                                         fontFamily: 'Readex Pro'),
                                   ),
                                   SizedBox(
-                                    width: context.screenWidth * 0.197,
+                                    width: context.screenWidth * 0.205,
                                   ),
                                   Text(
                                     'QTY',
@@ -223,7 +192,7 @@ class ClientDetailPackage extends StatelessWidget {
                                         color: Color(0XFF0C1421)),
                                   ),
                                   SizedBox(
-                                    width: context.screenWidth * 0.11,
+                                    width: context.screenWidth * 0.115,
                                   ),
                                   const Text(
                                     '1 000 000',
@@ -234,7 +203,7 @@ class ClientDetailPackage extends StatelessWidget {
                                         color: Color(0XFF0C1421)),
                                   ),
                                   SizedBox(
-                                    width: context.screenWidth * 0.079,
+                                    width: context.screenWidth * 0.082,
                                   ),
                                   const Text('Adult',
                                       style: TextStyle(
@@ -434,7 +403,7 @@ class ClientDetailPackage extends StatelessWidget {
                                           style: AppTextstyless
                                               .packageClientDetailTextStyle),
                                       SizedBox(
-                                        width: context.screenWidth * 0.044,
+                                        width: context.screenWidth * 0.052,
                                       ),
                                       const Text('Sialkot Punjab 51040',
                                           style: TextStyle(
@@ -443,7 +412,7 @@ class ClientDetailPackage extends StatelessWidget {
                                               fontFamily: 'Readex Pro',
                                               color: Color(0XFF0C1421))),
                                       SizedBox(
-                                        width: context.screenWidth * 0.03,
+                                        width: context.screenWidth * 0.0355,
                                       ),
                                       Text('Booking Date:',
                                           style: AppTextstyless
@@ -511,7 +480,7 @@ class ClientDetailPackage extends StatelessWidget {
                                       style: AppTextstyless
                                           .packageClientDetailTextStyle),
                                   SizedBox(
-                                    width: context.screenWidth * 0.03,
+                                    width: context.screenWidth * 0.021,
                                   ),
                                   const Text(
                                     "\$232,89.00",
@@ -522,7 +491,7 @@ class ClientDetailPackage extends StatelessWidget {
                                         color: Color(0XFF0C1421)),
                                   ),
                                   SizedBox(
-                                    width: context.screenWidth * 0.07,
+                                    width: context.screenWidth * 0.091,
                                   ),
                                   Text('Paid Amount:',
                                       style: AppTextstyless
