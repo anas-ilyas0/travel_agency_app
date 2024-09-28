@@ -15,15 +15,15 @@ class Widgets {
 
 
   final List<AgentsTask> agentsTasks = List.generate(
-      20,
+      5,
       (index) => AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
           'Sialkot Punjab 51040', 'Active', ''));
 
   final List<SupplierTask> tasks = List.generate(
-      20,
+      5,
       (index) => SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
           'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'));
-  final List<InternationalSupplier> international =List.generate(20, (index)=>
+  final List<InternationalSupplier> international =List.generate(5, (index)=>
   InternationalSupplier('RADISSON', 'CPT', '+21 999 999 999', 'Air Tickets', 'ABSA', "CENTURY CITY, CAPE TOWN 8001 SA", 'Active', ''));
   final List<PackageModel> package= List.generate(20, (index)=>PackageModel('Jhon Doe','+21 999 999 999','Agent name here','+21 999 999 999','Supplier name here','+21 999 999 999','International Supplier',''));
 

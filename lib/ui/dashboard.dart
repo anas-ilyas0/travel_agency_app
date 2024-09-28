@@ -1,11 +1,6 @@
-import 'package:fab_tech_sol/AppColor/app_color.dart';
-import 'package:fab_tech_sol/Screen/international_supplier.dart';
-import 'package:fab_tech_sol/Screen/international_suppliers_details.dart';
-import 'package:fab_tech_sol/Screen/package_Screen.dart';
-import 'package:fab_tech_sol/Screen/supplier_index.dart';
 
-import 'package:fab_tech_sol/consts/consts.dart';
-import 'package:fab_tech_sol/dimensions.dart';
+import 'package:fab_tech_sol/Screen/international_supplier.dart';
+import 'package:fab_tech_sol/Screen/package_Screen.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:fab_tech_sol/widgets/custom_header.dart';
@@ -14,95 +9,55 @@ import 'package:fab_tech_sol/ui/agents_widget.dart';
 import 'package:fab_tech_sol/ui/dashboard_widget.dart';
 import 'package:fab_tech_sol/ui/leads_widget.dart';
 import 'package:fab_tech_sol/ui/supplier_widget.dart';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../widgets/widgets.dart';
-
-class Dashboard extends StatefulWidget {
+class Dashboard extends StatelessWidget {
   final int tabIndex;
-   Dashboard({super.key, this.tabIndex=0});
 
-  @override
-  State<Dashboard> createState() => _DashboardState();
-}
-
-class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
-  
-  late TabController dashboardTabController;
-  late TabController leadsTabController;
-  @override
-  void initState() {
-    super.initState();
-
-    dashboardTabController = TabController(length: 5, vsync: this,initialIndex: widget.tabIndex);
-    leadsTabController = TabController(length: 3, vsync: this);
-
-
-    
-
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      final provider = Provider.of<UserProvider>(context, listen: false);
-      provider.setDashboardTabController(dashboardTabController);
-      provider.setLeadsTabController(leadsTabController);
-    });
-  }
-
-  @override
-  void dispose() {
-    dashboardTabController.dispose();
-    leadsTabController.dispose();
-    super.dispose();
-  }
+  const Dashboard({super.key, this.tabIndex = 0});
 
   @override
   Widget build(BuildContext context) {
+    // Get the provider instance
+    final provider = Provider.of<UserProvider>(context);
 
+    // Initialize the TabControllers
+    final dashboardTabController = TabController(length: 5, vsync: Navigator.of(context), initialIndex: tabIndex);
+    final leadsTabController = TabController(length: 3, vsync: Navigator.of(context));
+
+    // Set the TabControllers in the provider
+    provider.setDashboardTabController(dashboardTabController);
+    provider.setLeadsTabController(leadsTabController);
 
     return Scaffold(
       appBar: CustomHeader(dashboardTabController: dashboardTabController),
-
       drawer: Responsive.isDesktop(context)
           ? null
           : DashboardDrawer(tabController: dashboardTabController),
-
-
-
       body: Column(
         children: [
           Divider(
             height: .5,
             color: Colors.grey.withOpacity(.2),
           ),
-
-                   Expanded(
-                   child:
-                    Consumer<UserProvider>(
-                      builder: (context,provider,_) {
-                        return TabBarView(
-                          controller: dashboardTabController ,
-                          physics: const NeverScrollableScrollPhysics(),
-                          children: [
-
-                          const DashBoardScreen(),
-                          const LeadScreen(),
-
-                          const AgentScreen(),
-                          provider.selectedOption=="Local" ?
-                          const SupplierScreen(): const InternationalSupplierScreen(),
-
-                          const PackageClassScreen()
-                          ],
-                        );
-                      }
-                    ),
-                  )
-
+          Expanded(
+            child: TabBarView(
+              controller: dashboardTabController,
+              physics: const NeverScrollableScrollPhysics(),
+              children: [
+                 DashBoardScreen(),
+                 LeadScreen(tabController: leadsTabController,),
+                const AgentScreen(),
+                provider.selectedOption == "Local"
+                    ? const SupplierScreen()
+                    : const InternationalSupplierScreen(),
+                const PackageClassScreen(),
+              ],
+            ),
+          ),
         ],
       ),
     );
   }
-
-
 }

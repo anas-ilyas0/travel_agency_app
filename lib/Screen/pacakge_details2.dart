@@ -20,7 +20,7 @@ class PacakgeDetails2 extends StatelessWidget {
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.symmetric(
-          horizontal: MediaQuery.of(context).size.width * 0.05,
+          horizontal: MediaQuery.of(context).size.width * 0.07,
         ),
         child: SingleChildScrollView(
           child: Row(
@@ -31,14 +31,30 @@ class PacakgeDetails2 extends StatelessWidget {
                   SizedBox(
                     height: context.screenHeight * 0.04,
                   ),
-                   Text(
-                    'Package Details',
-                    style: TextStyle(
-                        fontSize: 22,
-                        color: AppColor.buttonTextColor,
-                        fontFamily: fontFamilys,
-                        fontWeight: FontWeight.w700),
-                  ),
+                   Row(
+                     children: [
+                       ElevatedButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  style: ElevatedButton.styleFrom(
+                      shape: const CircleBorder(),
+                      padding: const EdgeInsets.all(16),
+                      backgroundColor: Colors.white),
+                  child: const Icon(Icons.arrow_back,
+                      size: 20, color: Colors.black),
+                ),
+                SizedBox(width: context.screenWidth*0.0,),
+                       Text(
+                        'Package Details',
+                        style: TextStyle(
+                            fontSize: 22,
+                            color: AppColor.buttonTextColor,
+                            fontFamily: fontFamilys,
+                            fontWeight: FontWeight.w700),
+                                         ),
+                     ],
+                   ),
                   SizedBox(
                     height: context.screenHeight * 0.04,
                   ),
@@ -72,7 +88,7 @@ class PacakgeDetails2 extends StatelessWidget {
                     children: [
                       Widgets().textFormField('\$500', context),
                       SizedBox(
-                        width: context.screenWidth * 0.025,
+                        width: context.screenWidth * 0.01,
                       ),
                       TypePeopleDropdown(),]),
 
@@ -89,8 +105,8 @@ class PacakgeDetails2 extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Container(
-                      height: context.screenHeight * 0.35,
-                      width: context.screenWidth * 0.425,
+                      height: context.screenHeight * 0.42,
+                      width: context.screenWidth * 0.51,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         border: Border.all(color: AppColor.borderColor3),
@@ -105,53 +121,56 @@ class PacakgeDetails2 extends StatelessWidget {
                                   SizedBox(
                                     height: context.screenHeight * 0.015,
                                   ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Checkbox(
-                                        activeColor: Colors.white,
-                                        side: BorderSide(
-                                          color: AppColor.buttonTextColors, // Define the border color
-                                          width: 1.0,
+                                  Padding(
+                                    padding: EdgeInsets.only(left: 6,right: 16),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Checkbox(
+                                          activeColor: Colors.white,
+                                          side: BorderSide(
+                                            color: AppColor.buttonTextColors, // Define the border color
+                                            width: 1.0,
+                                          ),
+                                          materialTapTargetSize:
+                                              MaterialTapTargetSize.shrinkWrap,
+                                          checkColor: Colors.black,
+                                          value: userProvider.isChecked,
+                                          onChanged: (bool? newValue) {
+                                             userProvider.toggleCheckbox();;
+                                          },
                                         ),
-                                        materialTapTargetSize:
-                                            MaterialTapTargetSize.shrinkWrap,
-                                        checkColor: Colors.black,
-                                        value: userProvider.isChecked,
-                                        onChanged: (bool? newValue) {
-                                           userProvider.toggleCheckbox();;
-                                        },
-                                      ),
-                                      Container(
-                                        width: context.screenWidth * 0.36,
-                                        height: 45,
-                                        decoration: BoxDecoration(
-                                          color: AppColor.Textbackground,
-                                          border: Border.all(
-                                              color: AppColor.borderColor3),
-                                          borderRadius: BorderRadius.circular(8),
+                                        Container(
+                                          width: context.screenWidth * 0.36,
+                                          height: 45,
+                                          decoration: BoxDecoration(
+                                            color: AppColor.Textbackground,
+                                            border: Border.all(
+                                                color: AppColor.borderColor3),
+                                            borderRadius: BorderRadius.circular(8),
+                                          ),
+                                          child:  Padding(
+                                            padding: EdgeInsets.only(
+                                                left: 7, top: 12),
+                                            child: Text(
+                                                'Laxmisagar, BBSR, Bhubaneshwar-751006',style: TextStyle(fontFamily: fontFamilys,fontWeight: FontWeight.w300,color: AppColor.hintColor,fontSize: 14),),
+                                          ),
                                         ),
-                                        child:  Padding(
-                                          padding: EdgeInsets.only(
-                                              left: 7, top: 12),
-                                          child: Text(
-                                              'Laxmisagar, BBSR, Bhubaneshwar-751006',style: TextStyle(fontFamily: fontFamilys,fontWeight: FontWeight.w300,color: AppColor.hintColor,fontSize: 14),),
-                                        ),
-                                      ),
-                                      GestureDetector(
-                                        child: Padding(
-                                          padding: const EdgeInsets.all(2.0),
-                                          child: IconButton(
-                                            icon: Icon(Icons.remove_circle_outline,size: 20,
-                                                color: AppColor.blueColor),
-                                            onPressed: () {
-                                              // Handle button press
-                                            },
-
-                                          )))
-                                            ]
-                                        )
+                                        GestureDetector(
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(2.0),
+                                            child: IconButton(
+                                              icon: Icon(Icons.remove_circle_outline,size: 18,weight: 0.5,
+                                                  color: AppColor.blueColor),
+                                              onPressed: () {
+                                                // Handle button press
+                                              },
+                                    
+                                            )))
+                                              ]
+                                          ),
+                                  )
                                   // Right side: Circle button with "-" icon
                                 ],
                               ),
@@ -172,8 +191,8 @@ class PacakgeDetails2 extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Container(
-                      height: context.screenHeight * 0.34,
-                      width: context.screenWidth * 0.425,
+                      height: context.screenHeight * 0.42,
+                      width: context.screenWidth * 0.51,
                       decoration: BoxDecoration(
                         color: Colors.white,
                         border: Border.all(color: AppColor.borderColor3),
@@ -188,37 +207,57 @@ class PacakgeDetails2 extends StatelessWidget {
                                   SizedBox(
                                     height: context.screenHeight * 0.015,
                                   ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Checkbox(
-                                                      
-                                        materialTapTargetSize:
-                                            MaterialTapTargetSize.shrinkWrap,
-                                        activeColor: Colors.white,
-                                        checkColor: Colors.black,
-                                        value: userProvider.isChecked,
-                                        side: BorderSide(
-                                          color: AppColor.buttonTextColors, // Define the border color
-                                          width: 1.0,
-                                        ),// Set initial value
-                                        onChanged: (bool? newValue) {
-                                          userProvider.toggleCheckbox();
-                                        },
-                                      ),
-                                      Container(
-                                        width: context.screenWidth * 0.36,
-                                        height: 45,
-                                        decoration: BoxDecoration(
-                                          color: AppColor.Textbackground,
-                                          border: Border.all(
-                                              color: AppColor.borderColor3),
-                                          borderRadius: BorderRadius.circular(8),)),
-
-                                  // Right side: Circle button with "-" icon
-                                ],
-                              ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 6,right: 16),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
+                                      children: [
+                                        Checkbox(
+                                                        
+                                          materialTapTargetSize:
+                                              MaterialTapTargetSize.shrinkWrap,
+                                          activeColor: Colors.white,
+                                          checkColor: Colors.black,
+                                          value: userProvider.isChecked,
+                                          side: BorderSide(
+                                            color: AppColor.buttonTextColors, // Define the border color
+                                            width: 1.0,
+                                          ),// Set initial value
+                                          onChanged: (bool? newValue) {
+                                            userProvider.toggleCheckbox();
+                                          },
+                                        ),
+                                        Container(
+                                          width: context.screenWidth * 0.36,
+                                          height: 45,
+                                          decoration: BoxDecoration(
+                                            color: AppColor.Textbackground,
+                                            border: Border.all(
+                                                color: AppColor.borderColor3),
+                                            borderRadius: BorderRadius.circular(8),),
+                                            child:  Padding(
+                                            padding: EdgeInsets.only(
+                                                left: 7, top: 12),
+                                            child: Text(
+                                                'Laxmisagar, BBSR, Bhubaneshwar-751006',style: TextStyle(fontFamily: fontFamilys,fontWeight: FontWeight.w300,color: AppColor.hintColor,fontSize: 14),),
+                                          ),
+                                            ),
+                                              GestureDetector(
+                                            child: Padding(
+                                              padding: const EdgeInsets.all(2.0),
+                                              child: IconButton(
+                                                icon: Icon(Icons.remove_circle_outline,size: 18,weight: 0.5,
+                                                    color: AppColor.blueColor),
+                                                onPressed: () {
+                                                  // Handle button press
+                                                },
+                                      
+                                              )))
+                                    
+                                                                    ],
+                                                                  ),
+                                  ),
 
                          ])) );
                         },

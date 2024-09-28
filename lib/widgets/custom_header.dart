@@ -60,8 +60,9 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
                             EdgeInsets.symmetric(horizontal: 24, vertical: 8),
                         isScrollable: true,
 
-                        // Tabs array
+                        
                         tabs: [
+                          
                           const Tab(text: 'Dashboard'),
                           const Tab(text: 'Leads'),
                           const Tab(text: 'Agents'),
