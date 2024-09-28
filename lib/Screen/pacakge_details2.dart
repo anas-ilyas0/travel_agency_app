@@ -3,6 +3,7 @@ import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
+import 'package:fab_tech_sol/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -69,23 +70,14 @@ class PacakgeDetails2 extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Container(
-                        height: context.screenHeight * 0.08,
-                        width: context.screenWidth * 0.2,
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8)),
-                        child:  Padding(
-                          padding: EdgeInsets.all(14.0),
-                          child: Text('\$ 500',style: TextStyle(fontFamily: fontFamilys,fontWeight: FontWeight.w300,color: AppColor.hintColor),),
-                        ),
-                      ),
+                      Widgets().textFormField('\$500', context),
                       SizedBox(
                         width: context.screenWidth * 0.025,
                       ),
-                      TypePeopleDropdown(),
-                    ],
-                  ),
+                      TypePeopleDropdown(),]),
+
+
+
                   SizedBox(
                     height: context.screenHeight * 0.03,
                   ),
@@ -111,7 +103,7 @@ class PacakgeDetails2 extends StatelessWidget {
                               child: Column(
                                 children: [
                                   SizedBox(
-                                    height: context.screenHeight * 0.01,
+                                    height: context.screenHeight * 0.015,
                                   ),
                                   Row(
                                     mainAxisAlignment:
@@ -156,11 +148,10 @@ class PacakgeDetails2 extends StatelessWidget {
                                             onPressed: () {
                                               // Handle button press
                                             },
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
+
+                                          )))
+                                            ]
+                                        )
                                   // Right side: Circle button with "-" icon
                                 ],
                               ),
@@ -195,7 +186,7 @@ class PacakgeDetails2 extends StatelessWidget {
                               child: Column(
                                 children: [
                                   SizedBox(
-                                    height: context.screenHeight * 0.01,
+                                    height: context.screenHeight * 0.015,
                                   ),
                                   Row(
                                     mainAxisAlignment:
@@ -223,29 +214,13 @@ class PacakgeDetails2 extends StatelessWidget {
                                           color: AppColor.Textbackground,
                                           border: Border.all(
                                               color: AppColor.borderColor3),
-                                          borderRadius: BorderRadius.circular(8),
-                                        ),
-                                        child:  Padding(
-                                          padding: EdgeInsets.only(
-                                              left: 7, top: 10),
-                                          child: Text(
-                                              'Share or listen to a success story.',style: TextStyle(fontFamily: fontFamilys,fontWeight: FontWeight.w300,color: AppColor.hintColor),),
-                                        ),
-                                      ),
-                                      GestureDetector(
-                                        child: IconButton(
-                                          icon: Icon(Icons.remove_circle_outline,size: 20,
-                                              color: AppColor.blueColor),
-                                          onPressed: () {},
-                                        ),
-                                      ),
-                                    ],
-                                  ),
+                                          borderRadius: BorderRadius.circular(8),)),
+
                                   // Right side: Circle button with "-" icon
                                 ],
                               ),
-                            ),
-                          );
+
+                         ])) );
                         },
                       ),
                     ),
@@ -295,7 +270,7 @@ class PacakgeDetails2 extends StatelessWidget {
                     ],
                   ),
                   SizedBox(
-                    height: context.screenHeight * 0.2,
+                    height: context.screenHeight * 0.1,
                   )
                 ],
               ),

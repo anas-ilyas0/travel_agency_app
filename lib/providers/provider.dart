@@ -171,7 +171,7 @@ class UserProvider extends ChangeNotifier {
     String get selectedOption => _selectedOption;
     void setSelectedOption(String value) {
     _selectedOption = value;
-    notifyListeners(); // Notify listeners to rebuild the widgets that depend on this state
+    notifyListeners(); 
   }
 
 
@@ -183,16 +183,16 @@ class UserProvider extends ChangeNotifier {
 
 
 
- html.File? _imageFile; // Change File type to html.File
-  String? _imageUrl; // To hold the image URL for display
+ html.File? _imageFile; 
+  String? _imageUrl; 
 
   String? get imageUrl => _imageUrl;
 
   Future<void> pickImage() async {
-    // Create an input element to select files
+  
     final input = html.FileUploadInputElement();
-    input.accept = 'image/*'; // Accept images only
-    input.click(); // Open file picker
+    input.accept = 'image/*'; 
+    input.click(); 
 
     input.onChange.listen((e) async {
       final files = input.files;
@@ -201,10 +201,10 @@ class UserProvider extends ChangeNotifier {
       _imageFile = files[0];
       final reader = html.FileReader();
 
-      reader.readAsDataUrl(_imageFile!); // Read the file as data URL
+      reader.readAsDataUrl(_imageFile!); 
       reader.onLoadEnd.listen((e) {
-        _imageUrl = reader.result as String; // Get the image URL
-        notifyListeners(); // Notify listeners to update UI
+        _imageUrl = reader.result as String;
+        notifyListeners(); 
       });
     });
   }

@@ -52,26 +52,30 @@ class SupplierScreen extends StatelessWidget {
               ],
             ),
             Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 50,vertical: 30),
-                child: SizedBox(
-                  width: context.screenWidth,
-                  child: PaginatedDataTable(
-                    // rowsPerPage: 10,
-                    columns: HelperUtil.createColumns(columnNames: [
-                      "Company Name",
-                      "Supplier Name",
-                      "Supplier Address",
-                      "Service",
-                      "Company Address",
-                      "Status",
-                      "Action"
-                    ]),
-                    source: TaskDataSource(Widgets().tasks,context),
-        
-                    headingRowColor: MaterialStateProperty.resolveWith<Color>(
-                        (Set<MaterialState> states) {
-                      return Colors.white;
-                    }),
+                padding: const EdgeInsets.symmetric(horizontal: 30,vertical: 30),
+                child: Flexible(
+                  child: FittedBox(
+                    child: SizedBox(
+                      width: context.screenWidth,
+                      child: PaginatedDataTable(
+                        // rowsPerPage: 10,
+                        columns: HelperUtil.createColumns(columnNames: [
+                          "Company Name",
+                          "Supplier Name",
+                          "Supplier Address",
+                          "Service",
+                          "Company Address",
+                          "Status",
+                          "Action"
+                        ]),
+                        source: TaskDataSource(Widgets().tasks,context),
+                              
+                        headingRowColor: MaterialStateProperty.resolveWith<Color>(
+                            (Set<MaterialState> states) {
+                          return Colors.white;
+                        }),
+                      ),
+                    ),
                   ),
                 ))
           ],

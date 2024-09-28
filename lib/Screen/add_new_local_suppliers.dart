@@ -3,6 +3,7 @@ import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
+import 'package:fab_tech_sol/providers/localsuplierprovider.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/widgets/addnewagent.dart';
 import 'package:fab_tech_sol/widgets/back_button_title_avatar.dart';
@@ -26,6 +27,7 @@ class _AddNewLocalSupplierState extends State<AddNewLocalSupplier> {
   Widget build(BuildContext context) {
     List<String> agents = ['John Doe', 'Jane Smith', 'James Bond', 'Tony Stark'];
       final imageProvider = Provider.of<UserProvider>(context);
+       
 
     return Scaffold(
       body: SingleChildScrollView(

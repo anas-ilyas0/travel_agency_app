@@ -3,6 +3,7 @@ import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/app_text_style.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
+import 'package:fab_tech_sol/resources/capitalize_first_letter_formatter%20(1).dart';
 import 'package:fab_tech_sol/resources/navigation_util.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:fab_tech_sol/ui/dashboard.dart';
@@ -23,25 +24,25 @@ class _LoginPageState extends State<LoginPage> {
     bool isChecked = false;
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Container(
-        decoration: BoxDecoration(
-            color: AppColor.background,
-            borderRadius: BorderRadius.circular(40)),
-        margin: EdgeInsets.symmetric(
-            horizontal: Responsive.isMobile(context) ? 18 : 70,
-            vertical: Responsive.isMobile(context) ? 20 : 50),
-        child: Center(
-          child: Container(
-            height: context.screenHeight * 0.9,
-            width: Responsive.isDesktop(context)
-                ? context.screenWidth * 0.3
-                : Responsive.isTablet(context)
-                    ? context.screenWidth * 0.5
-                    : context.screenWidth * 0.8,
-            // decoration: BoxDecoration(
-            //    color: Colors.red
-            // ),
-            child: SingleChildScrollView(
+      body: SingleChildScrollView(
+        child: Container(
+          decoration: BoxDecoration(
+              color: AppColor.background,
+              borderRadius: BorderRadius.circular(40)),
+          margin: EdgeInsets.symmetric(
+              horizontal: Responsive.isMobile(context) ? 18 : 70,
+              vertical: Responsive.isMobile(context) ? 20 : 50),
+          child: Center(
+            child: Container(
+              height: context.screenHeight * 0.9,
+              width: Responsive.isDesktop(context)
+                  ? context.screenWidth * 0.3
+                  : Responsive.isTablet(context)
+                      ? context.screenWidth * 0.5
+                      : context.screenWidth * 0.8,
+              // decoration: BoxDecoration(
+              //    color: Colors.red
+              // ),
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -83,12 +84,12 @@ class _LoginPageState extends State<LoginPage> {
                       height: context.screenHeight * 0.08,
                     ),
               
-                    textFormField("Email", TextInputType.emailAddress, '${ImagesAssets.imagePath}email.svg'),
+                    textFormField("Email", '${ImagesAssets.imagePath}email.svg'),
               
                     SizedBox(
                       height: context.screenHeight * 0.02,
                     ),
-                    textFormField("Password", TextInputType.visiblePassword, '${ImagesAssets.imagePath}password.svg'),
+                    textFormField("Password", '${ImagesAssets.imagePath}password.svg'),
                     SizedBox(
                       height: context.screenHeight * 0.01,
                     ),
@@ -132,8 +133,10 @@ class _LoginPageState extends State<LoginPage> {
                             )),
                       ],
                     ),
-                    SizedBox(
-                      height: context.screenHeight * 0.1,
+                    Flexible(
+                      child: SizedBox(
+                        height: context.screenHeight * 0.1,
+                      ),
                     ),
                     Row(mainAxisAlignment: MainAxisAlignment.end, children: [
                       ElevatedButton(
@@ -160,10 +163,12 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-  Widget textFormField(String name, TextInputType inputType,String icon){
+  Widget textFormField(String name,String icon){
     return TextFormField(
-      keyboardType: inputType,
+      
+      inputFormatters: [CapitalizeFirstLetterFormatter()],
       decoration: InputDecoration(
+        
           prefixIcon: Padding(
             padding: const EdgeInsets.all(12.0),
             child: SvgPicture.asset(

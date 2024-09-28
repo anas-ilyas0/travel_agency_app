@@ -5,6 +5,7 @@ import 'package:fab_tech_sol/Screen/AppText/TextStyle.dart';
 import 'package:fab_tech_sol/Screen/client_detail_package.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
+import 'package:fab_tech_sol/resources/capitalize_first_letter_formatter%20(1).dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:fab_tech_sol/ui/tasks_data_source.dart';
 import 'package:flutter/material.dart';
@@ -119,10 +120,12 @@ class Widgets {
             width: 400,
             height: 44,
             decoration: BoxDecoration(
+              
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(30),
                 border: Border.all(color: Colors.grey.withOpacity(0.3))),
             child: TextFormField(
+              inputFormatters: [CapitalizeFirstLetterFormatter()],
               textAlignVertical: TextAlignVertical.center,
 
               decoration: InputDecoration(

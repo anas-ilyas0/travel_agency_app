@@ -29,7 +29,7 @@ class LeadDetails extends StatelessWidget {
                width: context.screenWidth * 0.04,
              ),
              
-             // Back Button
+          
            
             
            
@@ -54,6 +54,7 @@ class LeadDetails extends StatelessWidget {
               ),
 
               Spacer(),
+
               GestureDetector(
                 onTap: (){ Navigator.push(
                     context,
