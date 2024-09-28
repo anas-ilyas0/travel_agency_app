@@ -9,6 +9,8 @@ import 'package:fab_tech_sol/widgets/back_button_title_avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../widgets/supplier_dropdown.dart';
+
 class AddNewLocalSupplier extends StatefulWidget {
   const AddNewLocalSupplier({super.key});
 
@@ -17,7 +19,7 @@ class AddNewLocalSupplier extends StatefulWidget {
 }
 
 class _AddNewLocalSupplierState extends State<AddNewLocalSupplier> {
-  List<String> agents = ['Air Ticket','Hotel Accommodation','Transfers','Tours & Excursions','Other'];
+  List<String> service = ['Air Ticket','Hotel Accommodation','Transfers','Tours & Excursions','Other'];
 
   String? selectedValue;
   @override
@@ -398,25 +400,25 @@ class _AddNewLocalSupplierState extends State<AddNewLocalSupplier> {
                     height: context.screenHeight * 0.04,
                   ),
                   Row(
+
                     children: [
                       SizedBox(
                         height: context.screenHeight * 0.15,
-                        width: context.screenWidth * 0.2,
+                        // width: context.screenWidth * 0.2,
                         child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Align(
-                              alignment: Alignment.centerLeft,
-                              child: Flexible(
-                                child: FittedBox(
-                                  child: Text(
-                                    'Select Service',
-                                    style: TextStyle(
-                                        fontSize: 16, fontFamily: 'ReadexPro'),
-                                  ),
+                           const Flexible(
+                              child: FittedBox(
+                                child: Text(
+                                  'Select Service',
+                                  style: TextStyle(
+                                      fontSize: 16, fontFamily: 'ReadexPro'),
                                 ),
                               ),
                             ),
-                            secondDropDown()
+                            SupplierDropdown()
                           ],
                         ),
                       ),
@@ -485,90 +487,8 @@ class _AddNewLocalSupplierState extends State<AddNewLocalSupplier> {
 ),),);
   }
 
-  Widget secondDropDown() {
-    String? selectedValue2;
-
-    return SizedBox(
-      width: 400,
-      child: Theme(
-        data: Theme.of(context).copyWith(
-            focusColor: AppColor.background, hoverColor: AppColor.background),
-        child: DropdownButtonFormField<String>(
-          value: selectedValue2,
-          decoration: InputDecoration(
-              labelText: 'Select Service',
-              fillColor: AppColor.customdropdownColor,
-              filled: true,
-              labelStyle: TextStyle(
-                  color: AppColor.hintColor, fontFamily: poppin, fontSize: 15),
-              contentPadding:
-              const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-              // contentPadding: EdgeInsets.zero,
-              enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
-                  borderSide:
-                  BorderSide(color: AppColor.borderColor3, width: 1)),
-              focusedBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(10),
-                borderSide: BorderSide(color: AppColor.borderColor3, width: 1),
-              ),
-              floatingLabelBehavior: FloatingLabelBehavior.never,
-              alignLabelWithHint: false),
-          dropdownColor: AppColor.customdropdownColor,
-          isDense: true,
-          items: [
-            ...agents.map((String agent) {
-              return DropdownMenuItem<String>(
-                value: agent, // This is a valid selectable value
-                child: Text(agent, style: TextStyle(fontSize: 14)),
-              );
-            }).toList(),
-
-          ],
-          menuMaxHeight: 400,
-          isExpanded: true,
-          onChanged: (value) {
-            if (value != 'create_agent' && value != 'search_agent') {
-              setState(() {
-                selectedValue2 = value;
-                print('hello ${value}');
-              });
-            }
-            // searchName.text = value ??
-            //     '';
-          },
-          selectedItemBuilder: (BuildContext context) {
-            return agents.map((String agent) {
-              return SizedBox(
-                height: 50,
-                child: Row(
-                  children: [
-                    CircleAvatar(
-                      backgroundImage: AssetImage('${imageUrl}agent.png'),
-                      radius: 16,
-                    ),
-                    SizedBox(width: 5),
-                    Text(
-                      agent,
-                      style: TextStyle(fontSize: 14),
-                    ),
-                  ],
-                ),
-              );
-            }).toList();
-          },
-          validator: (value) {
-            if (value == null || value.isEmpty) {
-              return "Select Duration";
-            }
-            return null;
-          },
-        ),
-      ),
-    );
-  }
 }
-                   
+
                  
                   
 //                  ),

@@ -1,4 +1,5 @@
 import 'package:fab_tech_sol/Screen/add_new_local_suppliers.dart';
+import 'package:fab_tech_sol/Screen/addnewinternationalsuppliers.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
@@ -45,7 +46,7 @@ class InternationalSupplierScreen extends StatelessWidget {
                             }, context),
                         const SizedBox(width: 15),
                         Widgets().button('Add Supplier', () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => AddNewLocalSupplier(),));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => AddNewInterNationalsuppliers(),));
                         },)
                       ],
                     ),

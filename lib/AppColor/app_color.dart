@@ -10,6 +10,7 @@ class AppColor {
   static Color borderColor = const Color(0XFF70707033);
   static Color borderColor2 = const Color(0XFF78534D);
   static Color borderColor3 = const Color(0XFFD4D7E3);
+  static Color borderColor4 = const Color(0XFFFF7853);
   static Color borderColorDropdown = const Color(0XFFFF7853);
   static Color Textbackground = const Color(0XFFFCFCFC);
   static Color customdropdownColor = const Color(0XFFF7FBFF);
@@ -19,5 +20,4 @@ class AppColor {
   static Color blackColor= Colors.black;
   static Color packageFormColor=Color(0XFFD4D7E3);
    static Color addnewagent=Color(0XFF303C6C);
-   static Color lightcontainer=Color(0XFF83D0E3);
 }

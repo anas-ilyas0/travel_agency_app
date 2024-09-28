@@ -8,6 +8,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
+import '../widgets/supplier_dropdown.dart';
+
 class PacakgeDetails2 extends StatelessWidget {
   const PacakgeDetails2({super.key});
 
@@ -81,23 +83,7 @@ class PacakgeDetails2 extends StatelessWidget {
                       SizedBox(
                         width: context.screenWidth * 0.025,
                       ),
-                      Container(
-                        height: context.screenHeight * 0.08,
-                        width: context.screenWidth * 0.2,
-                        decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8)),
-                        child:  Padding(
-                          padding: EdgeInsets.all(14.0),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text('Adult',style: TextStyle(fontFamily: fontFamilys,fontWeight: FontWeight.w300,color: AppColor.hintColor),),
-                              Icon(Icons.arrow_downward,weight: 0.5,size: 20,)
-                            ],
-                          ),
-                        ),
-                      ),
+                      TypePeopleDropdown(),
                     ],
                   ),
                   SizedBox(
@@ -133,6 +119,10 @@ class PacakgeDetails2 extends StatelessWidget {
                                     children: [
                                       Checkbox(
                                         activeColor: Colors.white,
+                                        side: BorderSide(
+                                          color: AppColor.buttonTextColors, // Define the border color
+                                          width: 1.0,
+                                        ),
                                         materialTapTargetSize:
                                             MaterialTapTargetSize.shrinkWrap,
                                         checkColor: Colors.black,
@@ -154,7 +144,7 @@ class PacakgeDetails2 extends StatelessWidget {
                                           padding: EdgeInsets.only(
                                               left: 7, top: 12),
                                           child: Text(
-                                              'Laxmisagar, BBSR, Bhubaneshwar-751006',style: TextStyle(fontFamily: fontFamilys,fontWeight: FontWeight.w300,color: AppColor.hintColor),),
+                                              'Laxmisagar, BBSR, Bhubaneshwar-751006',style: TextStyle(fontFamily: fontFamilys,fontWeight: FontWeight.w300,color: AppColor.hintColor,fontSize: 14),),
                                         ),
                                       ),
                                       GestureDetector(
@@ -217,7 +207,11 @@ class PacakgeDetails2 extends StatelessWidget {
                                             MaterialTapTargetSize.shrinkWrap,
                                         activeColor: Colors.white,
                                         checkColor: Colors.black,
-                                        value: userProvider.isChecked, // Set initial value
+                                        value: userProvider.isChecked,
+                                        side: BorderSide(
+                                          color: AppColor.buttonTextColors, // Define the border color
+                                          width: 1.0,
+                                        ),// Set initial value
                                         onChanged: (bool? newValue) {
                                           userProvider.toggleCheckbox();
                                         },
