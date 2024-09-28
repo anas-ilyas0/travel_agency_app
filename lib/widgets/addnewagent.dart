@@ -21,7 +21,7 @@ class AddNewAgentTitlelAndDescription extends StatelessWidget {
       child: Column(
 
         children: [Align(alignment: Alignment.centerLeft,
-          child: Text('$text1',style: AppTextstyless.addnewinternationalsuppliersSubText)),
+          child: Flexible(child: FittedBox(child: Text('$text1',style: AppTextstyless.addnewinternationalsuppliersSubText)))),
        TextField(
          cursorColor: Colors.white,
           inputFormatters: [CapitalizeFirstLetterFormatter()],

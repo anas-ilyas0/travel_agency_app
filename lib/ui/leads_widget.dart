@@ -1,4 +1,3 @@
-
 import 'package:fab_tech_sol/Screen/invoice_details_invoice.dart';
 import 'package:fab_tech_sol/Screen/lead_details.dart';
 import 'package:fab_tech_sol/Screen/package.dart';
@@ -9,29 +8,12 @@ import 'package:fab_tech_sol/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class LeadScreen extends StatefulWidget {
-  const LeadScreen({super.key});
+class LeadScreen extends StatelessWidget {
+  final TabController tabController;
+
+  const LeadScreen({Key? key, required this.tabController}) : super(key: key);
 
   @override
-  State<LeadScreen> createState() => _LeadScreenState();
-}
-
-class _LeadScreenState extends State<LeadScreen> with SingleTickerProviderStateMixin {
-   late TabController leadsTabController;
-   @override
-  void initState() {
-    super.initState();
-    leadsTabController = TabController(length: 3, vsync: this);
-  }
-
-  @override
-  void dispose() {
-    leadsTabController.dispose();
-    super.dispose();
-
-  }
-
-
   Widget build(BuildContext context) {
     
  final providerValue = Provider.of<UserProvider>(context);
@@ -96,7 +78,7 @@ class _LeadScreenState extends State<LeadScreen> with SingleTickerProviderStateM
                       labelColor: color,
                       indicatorColor: color,
                       dividerColor: Colors.transparent,
-                      controller: leadsTabController,
+                      controller: tabController,
                       isScrollable: true,
                       tabs: const [
                         Tab(text: 'Confirmed'),
@@ -151,7 +133,7 @@ class _LeadScreenState extends State<LeadScreen> with SingleTickerProviderStateM
                 ),
 
           Expanded(
-            child: TabBarView(controller:leadsTabController, children: [
+            child: TabBarView(controller:tabController, children: [
               Padding(
                 padding: EdgeInsets.symmetric(
                   horizontal: horizontalPadding, // Responsive horizontal padding

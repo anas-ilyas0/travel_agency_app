@@ -283,25 +283,17 @@ class _AddNewLocalSupplierState extends State<AddNewLocalSupplier> {
                     height: context.screenHeight * 0.04,
                   ),
                   Row(
-                    //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    
                     children: [
-                      Flexible(
-                        child: FittedBox(
-                          child: AddNewAgentTitlelAndDescription(
-                              text1: 'Supplier Company Name',
-                              text2: 'John Doe'),
-                        ),
-                      ),
+                      AddNewAgentTitlelAndDescription(
+                          text1: 'Supplier Company Name',
+                          text2: 'John Doe'),
                       SizedBox(
                         width: context.screenWidth * 0.01,
                       ),
-                      Flexible(
-                        child: FittedBox(
-                          child: AddNewAgentTitlelAndDescription(
-                              text1: 'Supplier Company Address',
-                              text2: 'Laxmisagar, BBSR, Bhubaneshwar-751006'),
-                        ),
-                      ),
+                      AddNewAgentTitlelAndDescription(
+                          text1: 'Supplier Company Address',
+                          text2: 'Laxmisagar, BBSR, Bhubaneshwar-751006'),
                     ],
                   ),
                   SizedBox(

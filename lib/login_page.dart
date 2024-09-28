@@ -8,7 +8,6 @@ import 'package:fab_tech_sol/resources/navigation_util.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:fab_tech_sol/ui/dashboard.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 
 class LoginPage extends StatefulWidget {
@@ -47,7 +46,9 @@ class _LoginPageState extends State<LoginPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(height: context.screenHeight*.07,),
+                    SizedBox(
+                      height: context.screenHeight * .07,
+                    ),
                     SizedBox(
                       height: Responsive.isMobile(context) ? 40 : 50,
                       width: Responsive.isMobile(context) ? 100 : 160,
@@ -62,7 +63,8 @@ class _LoginPageState extends State<LoginPage> {
                           Text(
                             'Welcome Back ',
                             style: TextStyle(
-                                fontSize: Responsive.isMobile(context) ? 26 : 34,
+                                fontSize:
+                                    Responsive.isMobile(context) ? 26 : 34,
                                 fontWeight: FontWeight.w500,
                                 fontFamily: "Readex Pro"),
                           ),
@@ -70,7 +72,8 @@ class _LoginPageState extends State<LoginPage> {
                             '👋',
                             style: TextStyle(
                                 color: Colors.yellow,
-                                fontSize: Responsive.isMobile(context) ? 26 : 32),
+                                fontSize:
+                                    Responsive.isMobile(context) ? 26 : 32),
                           )
                         ]),
                     SizedBox(
@@ -83,13 +86,13 @@ class _LoginPageState extends State<LoginPage> {
                     SizedBox(
                       height: context.screenHeight * 0.08,
                     ),
-              
-                    textFormField("Email", '${ImagesAssets.imagePath}email.svg'),
-              
+                    textFormField(
+                        "Email", '${ImagesAssets.imagePath}email.svg'),
                     SizedBox(
                       height: context.screenHeight * 0.02,
                     ),
-                    textFormField("Password", '${ImagesAssets.imagePath}password.svg'),
+                    textFormField(
+                        "Password", '${ImagesAssets.imagePath}password.svg'),
                     SizedBox(
                       height: context.screenHeight * 0.01,
                     ),
@@ -100,8 +103,9 @@ class _LoginPageState extends State<LoginPage> {
                           children: [
                             Checkbox(
                               value: isChecked,
-                              side: BorderSide(color: AppColor.darkGrey,),
-              
+                              side: BorderSide(
+                                color: AppColor.darkGrey,
+                              ),
                               onChanged: (bool? value) {
                                 setState(() {
                                   isChecked = value!;
@@ -118,7 +122,7 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                           ],
                         ),
-              
+
                         // height: screenheight*0.05,
                         TextButton(
                             onPressed: () {},
@@ -141,16 +145,20 @@ class _LoginPageState extends State<LoginPage> {
                     Row(mainAxisAlignment: MainAxisAlignment.end, children: [
                       ElevatedButton(
                           onPressed: () {
-                            NavigationUtil.navigateAndReplace(context: context, destinationScreen: Dashboard());
+                            NavigationUtil.navigateAndReplace(
+                                context: context,
+                                destinationScreen: Dashboard());
                           },
                           style: ElevatedButton.styleFrom(
                               backgroundColor: const Color(0XFFC2E9F3),
                               minimumSize: Size(
-                                  Responsive.isMobile(context) ? 150 : 190, 55)),
+                                  Responsive.isMobile(context) ? 150 : 190,
+                                  55)),
                           child: Text(
                             'Log in',
                             style: TextStyle(
-                                fontSize: Responsive.isMobile(context) ? 14 : 18,
+                                fontSize:
+                                    Responsive.isMobile(context) ? 14 : 18,
                                 color: AppColor.buttonTextColor,
                                 fontWeight: FontWeight.w400,
                                 fontFamily: "Readex Pro"),
@@ -163,12 +171,11 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-  Widget textFormField(String name,String icon){
+
+  Widget textFormField(String name, String icon) {
     return TextFormField(
-      
       inputFormatters: [CapitalizeFirstLetterFormatter()],
       decoration: InputDecoration(
-        
           prefixIcon: Padding(
             padding: const EdgeInsets.all(12.0),
             child: SvgPicture.asset(

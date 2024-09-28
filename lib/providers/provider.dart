@@ -1,4 +1,3 @@
-
 import 'dart:html' as html; 
 
 import 'package:flutter/material.dart';
@@ -219,14 +218,6 @@ class UserProvider extends ChangeNotifier {
     _isChecked = !_isChecked;
     notifyListeners();
   }
-
-
-
-
-
-
-
-
 
 
 
