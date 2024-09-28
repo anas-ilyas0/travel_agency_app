@@ -25,6 +25,7 @@ class Widgets {
           'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'));
   final List<InternationalSupplier> international =List.generate(20, (index)=>
   InternationalSupplier('RADISSON', 'CPT', '+21 999 999 999', 'Air Tickets', 'ABSA', "CENTURY CITY, CAPE TOWN 8001 SA", 'Active', ''));
+  final List<PackageModel> package= List.generate(20, (index)=>PackageModel('Jhon Doe','+21 999 999 999','Agent name here','+21 999 999 999','Supplier name here','+21 999 999 999','International Supplier',''));
 
   Widget editDelContainer(BuildContext context,VoidCallback edit,VoidCallback del) {
     
@@ -457,8 +458,8 @@ class Widgets {
                 builder: (context) => const ClientDetailPackage()));
       },
       child: Container(
-        height: context.screenHeight * 0.075,
-        width: 120,
+        height: 46,
+        width: 110,
         decoration: BoxDecoration(
           color: AppColor.buttonTextColors,
           borderRadius: BorderRadius.circular(12),
@@ -486,7 +487,7 @@ class Widgets {
                 SizedBox(
                   width: 10,
                 ),
-                Icon(Icons.arrow_forward)
+                Icon(Icons.arrow_forward,size: 18,)
               ],
             ),
           ),

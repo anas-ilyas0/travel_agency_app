@@ -1,3 +1,4 @@
+import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Dialog/agent_dialog.dart';
 import 'package:fab_tech_sol/Dialog/international_edit_dialog.dart';
 import 'package:fab_tech_sol/Dialog/localsupplier_dialog.dart';
@@ -34,10 +35,8 @@ class TaskDataSource extends DataTableSource {
   final List<SupplierTask> tasks;
   BuildContext context;
 
+  TaskDataSource(this.tasks, this.context);
 
-  TaskDataSource(this.tasks,this.context);
-
- 
   @override
   DataRow? getRow(int index) {
     // if (index >= tasks.length || index < 0) return null;
@@ -67,12 +66,16 @@ class TaskDataSource extends DataTableSource {
           children: [
             Padding(
                 padding: const EdgeInsets.all(5),
-                child: Widgets().editDelContainer(context,() {
-                 showDialog(context: context, builder: (context) => LocalsupplierDialog(),);
-                  
-                },() {
-                  
-                },))
+                child: Widgets().editDelContainer(
+                  context,
+                  () {
+                    showDialog(
+                      context: context,
+                      builder: (context) => LocalsupplierDialog(),
+                    );
+                  },
+                  () {},
+                ))
           ],
         )),
       ],
@@ -105,9 +108,7 @@ class AgentsTaskDataSource extends DataTableSource {
   final List<AgentsTask> agentsTasks;
   BuildContext context;
 
-  AgentsTaskDataSource(this.agentsTasks,this.context);
-  
- 
+  AgentsTaskDataSource(this.agentsTasks, this.context);
 
   @override
   DataRow? getRow(int index) {
@@ -130,11 +131,16 @@ class AgentsTaskDataSource extends DataTableSource {
           children: [
             Padding(
               padding: const EdgeInsets.all(5),
-              child: Widgets().editDelContainer(context,() {
-              showDialog(context: context, builder: (context) => AgentDialog(),);
-              },() {
-                
-              },),
+              child: Widgets().editDelContainer(
+                context,
+                () {
+                  showDialog(
+                    context: context,
+                    builder: (context) => AgentDialog(),
+                  );
+                },
+                () {},
+              ),
             )
           ],
         )),
@@ -170,10 +176,12 @@ class InternationalDataSource extends DataTableSource {
   BuildContext context;
   final List<InternationalSupplier> international;
 
-  InternationalDataSource(this.international,this.context);
+  InternationalDataSource(this.international, this.context);
 
   @override
-  DataRow? getRow(int index,) {
+  DataRow? getRow(
+    int index,
+  ) {
     if (index >= international.length || index < 0) return null;
     final InternationalSupplier task = international[index];
     return DataRow.byIndex(
@@ -190,11 +198,16 @@ class InternationalDataSource extends DataTableSource {
           children: [
             Padding(
               padding: const EdgeInsets.all(5),
-              child: Widgets().editDelContainer(context,() {
-                showDialog(context: context, builder: (context) => InternationalEditDialog(),);
-              },() {
-                
-              },),
+              child: Widgets().editDelContainer(
+                context,
+                () {
+                  showDialog(
+                    context: context,
+                    builder: (context) => InternationalEditDialog(),
+                  );
+                },
+                () {},
+              ),
             )
           ],
         )),
@@ -204,6 +217,71 @@ class InternationalDataSource extends DataTableSource {
 
   @override
   int get rowCount => international.length;
+
+  @override
+  bool get isRowCountApproximate => false;
+
+  @override
+  int get selectedRowCount => 0;
+}
+
+class PackageModel {
+  final String clientName;
+  final String clientPhoneNumber;
+  final String agentName;
+  final String agentPhoneNumber;
+  final String supplierName;
+  final String supplierPhoneNumber;
+  final String supplierType;
+  final String action;
+
+  PackageModel(
+      this.clientName,
+      this.clientPhoneNumber,
+      this.agentName,
+      this.agentPhoneNumber,
+      this.supplierName,
+      this.supplierPhoneNumber,
+      this.supplierType,
+      this.action);
+}
+
+class PackageDataSource extends DataTableSource {
+  BuildContext context;
+  final List<PackageModel> package;
+
+  PackageDataSource(this.package, this.context);
+
+  @override
+  DataRow? getRow(
+    int index,
+  ) {
+    if (index >= package.length || index < 0) return null;
+    final PackageModel task = package[index];
+    return DataRow.byIndex(
+      index: index,
+      cells: [
+        // DataCell(ListTile(title: Text(task.clientName),leading: CircleAvatar(backgroundImage: AssetImage('${imageUrl}agent.png'),),)),
+        DataCell(Row(children: [CircleAvatar(backgroundImage: AssetImage('${imageUrl}agent.png')),SizedBox(width: 10,),Text(task.clientName), ],)),
+        DataCell(Text(task.clientPhoneNumber)),
+        DataCell(Row(children: [CircleAvatar(backgroundImage: AssetImage('${imageUrl}agent.png')),SizedBox(width: 10,),Text(task.agentName), ],)),
+        DataCell(Text(task.agentPhoneNumber)),
+        DataCell(ListTile(
+          contentPadding: EdgeInsets.zero,
+          title: Text(task.supplierName),
+          subtitle: Text(task.supplierType,style: TextStyle(fontSize: 12,fontWeight: FontWeight.w300,color: AppColor.hintColor),),
+          leading: CircleAvatar(
+            backgroundImage: AssetImage('${imageUrl}agent.png'),
+          ),
+        )),
+        DataCell(Text(task.supplierPhoneNumber)),
+        DataCell( Flexible(child: FittedBox(child: Widgets().PackageDetailButton(context)))),
+      ],
+    );
+  }
+
+  @override
+  int get rowCount => package.length;
 
   @override
   bool get isRowCountApproximate => false;
