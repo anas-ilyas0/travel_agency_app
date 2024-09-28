@@ -29,7 +29,7 @@ class LeadDetails extends StatelessWidget {
                width: context.screenWidth * 0.04,
              ),
              
-             // Back Button
+          
            
             
            
@@ -53,7 +53,7 @@ class LeadDetails extends StatelessWidget {
                 style: TextStyle(fontSize: 22, fontFamily:fontFamilys ),
               ),
 
-
+Spacer(),
 
               GestureDetector(
                 onTap: (){ Navigator.push(
@@ -69,15 +69,17 @@ class LeadDetails extends StatelessWidget {
                     color: const Color(0XFF333333),
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: Text(
-                    "Add new Lead",
-                    style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      fontFamily: fontFamilys,
-                      color: Colors.white,
-                      fontSize: 16,),
-
-    )))
+                  child: Center(
+                    child: Text(
+                      "Add new Lead",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontFamily: fontFamilys,
+                        color: Colors.white,
+                        fontSize: 16,),
+                    
+                        ),
+                  )))
                     ])
           ),
         

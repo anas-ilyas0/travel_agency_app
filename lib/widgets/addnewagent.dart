@@ -2,6 +2,7 @@ import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Screen/AppText/TextStyle.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
+import 'package:fab_tech_sol/resources/capitalize_first_letter_formatter%20(1).dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:flutter/material.dart';
 
@@ -21,6 +22,7 @@ class AddNewAgentTitlelAndDescription extends StatelessWidget {
           child: Text('$text1',style: AppTextstyless.addnewinternationalsuppliersSubText)),
        TextField(
          cursorColor: Colors.white,
+          inputFormatters: [CapitalizeFirstLetterFormatter()],
          decoration: InputDecoration(
        
            fillColor: Colors.white,
