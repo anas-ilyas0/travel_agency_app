@@ -73,7 +73,7 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
                                 const Text('Supplier'),
                                 PopupMenuButton<String>(
                                   icon: const Icon(Icons.arrow_drop_down),
-                                  onSelected: (String value){supplierProvider.setSelectedOption(value);},
+                                  onSelected: (String value){supplierProvider.setSelectedOptions(value);},
                                   itemBuilder: (context) => [
                                     const PopupMenuItem(
                                       value: 'Local',

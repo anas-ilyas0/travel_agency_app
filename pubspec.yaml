@@ -41,6 +41,7 @@ dependencies:
   web: ^1.0.0
   flutter_screenutil: ^5.9.3
   image_picker: ^1.1.2
+  animations: ^2.0.11
   
 
 dev_dependencies:

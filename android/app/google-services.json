@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "704385165707",
-    "project_id": "travel-agency-82655",
-    "storage_bucket": "travel-agency-82655.appspot.com"
+    "project_number": "187182098550",
+    "project_id": "travel-agency-11fbf",
+    "storage_bucket": "travel-agency-11fbf.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:704385165707:android:f360d28cfcfea8aaa2e78e",
+        "mobilesdk_app_id": "1:187182098550:android:48a7a52909b024f1d89757",
         "android_client_info": {
           "package_name": "com.example.fab_tech_sol"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDXrLofkydiydt-DdzvGnakjxGHtLznud4"
+          "current_key": "AIzaSyAODf74zmbrtL5mdqBOjTcgLIHEwafHW3s"
         }
       ],
       "services": {

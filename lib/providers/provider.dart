@@ -168,7 +168,7 @@ class UserProvider extends ChangeNotifier {
 
   String _selectedOption = 'Local';
     String get selectedOption => _selectedOption;
-    void setSelectedOption(String value) {
+    void setSelectedOptions(String value) {
     _selectedOption = value;
     notifyListeners(); 
   }
@@ -220,7 +220,12 @@ class UserProvider extends ChangeNotifier {
   }
 
 
+  String selectedOptions = "Local";
 
+  void setSelectedOption(String option) {
+    selectedOptions = option;
+    notifyListeners();
+  }
 
 
 }

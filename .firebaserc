@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "travel-agency-82655"
-  }
+    "default": "travel-agency-82655",
+    "prod": "travel-agency-11fbf"
+  },
+  "targets": {},
+  "etags": {}
 }
