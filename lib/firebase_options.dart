@@ -27,10 +27,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.macOS:
         return macos;
       case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return windows;
       case TargetPlatform.linux:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for linux - '
@@ -44,38 +41,49 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyD8HGNcyqlTdWbUGlmZhI1iaA5UtS9RNG4',
-    appId: '1:704385165707:web:4ee67a89002de027a2e78e',
-    messagingSenderId: '704385165707',
-    projectId: 'travel-agency-82655',
-    authDomain: 'travel-agency-82655.firebaseapp.com',
-    storageBucket: 'travel-agency-82655.appspot.com',
-    measurementId: 'G-EWSW1YW4MQ',
+    apiKey: 'AIzaSyB8WsA5G-_tw_jWM4fiFKGNebZnF0GyKSE',
+    appId: '1:724884602258:web:d98b1ef21c531ae57b154b',
+    messagingSenderId: '724884602258',
+    projectId: 'travel-agency-796cd',
+    authDomain: 'travel-agency-796cd.firebaseapp.com',
+    storageBucket: 'travel-agency-796cd.appspot.com',
+    measurementId: 'G-JEB7B7C8J2',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyDXrLofkydiydt-DdzvGnakjxGHtLznud4',
-    appId: '1:704385165707:android:f360d28cfcfea8aaa2e78e',
-    messagingSenderId: '704385165707',
-    projectId: 'travel-agency-82655',
-    storageBucket: 'travel-agency-82655.appspot.com',
+    apiKey: 'AIzaSyD-lOCocqwUXZi2jHxCz9gOTe5dPWMhhj4',
+    appId: '1:724884602258:android:495a92714762cbbf7b154b',
+    messagingSenderId: '724884602258',
+    projectId: 'travel-agency-796cd',
+    storageBucket: 'travel-agency-796cd.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAGBMHMLmwmtBMCHp3FS0GTFwa87_jLdT8',
-    appId: '1:704385165707:ios:136037dc7257f5c6a2e78e',
-    messagingSenderId: '704385165707',
-    projectId: 'travel-agency-82655',
-    storageBucket: 'travel-agency-82655.appspot.com',
+    apiKey: 'AIzaSyBQIeDOle9xlfrO-FzPd-yzEtDnadb4KBM',
+    appId: '1:724884602258:ios:426119c91864ba7a7b154b',
+    messagingSenderId: '724884602258',
+    projectId: 'travel-agency-796cd',
+    storageBucket: 'travel-agency-796cd.appspot.com',
     iosBundleId: 'com.example.fabTechSol',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyAGBMHMLmwmtBMCHp3FS0GTFwa87_jLdT8',
-    appId: '1:704385165707:ios:136037dc7257f5c6a2e78e',
-    messagingSenderId: '704385165707',
-    projectId: 'travel-agency-82655',
-    storageBucket: 'travel-agency-82655.appspot.com',
+    apiKey: 'AIzaSyBQIeDOle9xlfrO-FzPd-yzEtDnadb4KBM',
+    appId: '1:724884602258:ios:426119c91864ba7a7b154b',
+    messagingSenderId: '724884602258',
+    projectId: 'travel-agency-796cd',
+    storageBucket: 'travel-agency-796cd.appspot.com',
     iosBundleId: 'com.example.fabTechSol',
   );
+
+  static const FirebaseOptions windows = FirebaseOptions(
+    apiKey: 'AIzaSyB8WsA5G-_tw_jWM4fiFKGNebZnF0GyKSE',
+    appId: '1:724884602258:web:16769e06abbe90b37b154b',
+    messagingSenderId: '724884602258',
+    projectId: 'travel-agency-796cd',
+    authDomain: 'travel-agency-796cd.firebaseapp.com',
+    storageBucket: 'travel-agency-796cd.appspot.com',
+    measurementId: 'G-3YVVEDS1QZ',
+  );
+
 }

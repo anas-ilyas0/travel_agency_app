@@ -39,11 +39,10 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
                   ),
                   Align(
                       alignment: Alignment.centerLeft,
-                      child: Flexible(
-                          child: FittedBox(
-                              child: Text('International Suppler Details',
-                                  style: AppTextstyless
-                                      .addnewinternationalsuppliers)))),
+                      child: FittedBox(
+                          child: Text('International Suppler Details',
+                              style: AppTextstyless
+                                  .addnewinternationalsuppliers))),
                   SizedBox(
                     height: context.screenHeight * 0.01,
                   ),
@@ -52,143 +51,141 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Flexible(
-                          child: FittedBox(
-                            child: Row(
-                              children: [
-                                Container(
-                                  height: context.screenHeight * 0.25,
-                                  width: context.screenWidth * 0.12,
-                                  decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      image: imageProvider.imageUrl != null
-                                          ? DecorationImage(
-                                              image: NetworkImage(
-                                                  imageProvider.imageUrl!),
-                                              fit: BoxFit.cover,
-                                            )
-                                          : null,
-                                      borderRadius: BorderRadius.circular(12),
-                                      border: Border.all(
-                                          color: AppColor.borderColor,
-                                          width: 0.5)),
-                                ),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                Column(
-                                  children: [
-                                    Text('Company Logo',
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.w400,
-                                            fontSize: 16,
-                                            fontFamily: fontFamilys)),
-                                    const SizedBox(
-                                      height: 5,
-                                    ),
-                                    ElevatedButton(
-                                      onPressed: () async {
-                                        await imageProvider.pickImage();
-                                      },
-                                      style: ElevatedButton.styleFrom(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 20, horizontal: 12),
-                                        backgroundColor:
-                                            const Color(0XFF11345A),
-                                      ),
-                                      child: const Row(
-                                        // Make Row as wide as the content
-                                        children: [
-                                          Icon(
-                                            Icons.file_upload_outlined,
-                                            color: Colors.white,
-                                            size: 15,
-                                          ), // Icon
-                                          SizedBox(
-                                            width: 5,
-                                          ),
-                                          // Space between icon and text
-                                          Text(
-                                            'Upload Image',
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 12),
-                                          ), // Text
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(
-                                  width: context.screenWidth * 0.02,
-                                ),
-                                Container(
-                                  height: context.screenHeight * 0.25,
-                                  width: context.screenWidth * 0.12,
-                                  decoration: BoxDecoration(
-                                      color: Colors.white,
-                                      image: imageProvider.imageUrl != null
-                                          ? DecorationImage(
-                                              image: NetworkImage(
-                                                  imageProvider.imageUrl!),
-                                              fit: BoxFit.cover,
-                                            )
-                                          : null,
-                                      borderRadius: BorderRadius.circular(12),
-                                      border: Border.all(
-                                          color: AppColor.borderColor,
-                                          width: 0.5)),
-                                ),
-                                SizedBox(
-                                  width: context.screenWidth * 0.01,
-                                ),
-                                Column(
-                                  children: [
-                                    Text(
-                                      'Supplier Image',
+                        FittedBox(
+                          child: Row(
+                            children: [
+                              Container(
+                                height: context.screenHeight * 0.25,
+                                width: context.screenWidth * 0.12,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    image: imageProvider.imageUrl != null
+                                        ? DecorationImage(
+                                            image: NetworkImage(
+                                                imageProvider.imageUrl!),
+                                            fit: BoxFit.cover,
+                                          )
+                                        : null,
+                                    borderRadius: BorderRadius.circular(12),
+                                    border: Border.all(
+                                        color: AppColor.borderColor,
+                                        width: 0.5)),
+                              ),
+                              const SizedBox(
+                                width: 10,
+                              ),
+                              Column(
+                                children: [
+                                  Text('Company Logo',
                                       style: TextStyle(
                                           fontWeight: FontWeight.w400,
                                           fontSize: 16,
-                                          fontFamily: fontFamilys),
+                                          fontFamily: fontFamilys)),
+                                  const SizedBox(
+                                    height: 5,
+                                  ),
+                                  ElevatedButton(
+                                    onPressed: () async {
+                                      await imageProvider.pickImage();
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 20, horizontal: 12),
+                                      backgroundColor:
+                                          const Color(0XFF11345A),
                                     ),
-                                    const SizedBox(
-                                      height: 5,
+                                    child: const Row(
+                                      // Make Row as wide as the content
+                                      children: [
+                                        Icon(
+                                          Icons.file_upload_outlined,
+                                          color: Colors.white,
+                                          size: 15,
+                                        ), // Icon
+                                        SizedBox(
+                                          width: 5,
+                                        ),
+                                        // Space between icon and text
+                                        Text(
+                                          'Upload Image',
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 12),
+                                        ), // Text
+                                      ],
                                     ),
-                                    ElevatedButton(
-                                      onPressed: () async {
-                                        await imageProvider.pickImage();
-                                      },
-                                      style: ElevatedButton.styleFrom(
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 20, horizontal: 12),
-                                        backgroundColor:
-                                            const Color(0XFF11345A),
-                                      ),
-                                      child: const Row(
-                                        // Make Row as wide as the content
-                                        children: [
-                                          Icon(
-                                            Icons.file_upload_outlined,
-                                            color: Colors.white,
-                                            size: 15,
-                                          ), // Icon
-                                          SizedBox(
-                                            width: 5,
-                                          ),
-                                          // Space between icon and text
-                                          Text(
-                                            'Upload Image',
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 12),
-                                          ), // Text
-                                        ],
-                                      ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                width: context.screenWidth * 0.02,
+                              ),
+                              Container(
+                                height: context.screenHeight * 0.25,
+                                width: context.screenWidth * 0.12,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    image: imageProvider.imageUrl != null
+                                        ? DecorationImage(
+                                            image: NetworkImage(
+                                                imageProvider.imageUrl!),
+                                            fit: BoxFit.cover,
+                                          )
+                                        : null,
+                                    borderRadius: BorderRadius.circular(12),
+                                    border: Border.all(
+                                        color: AppColor.borderColor,
+                                        width: 0.5)),
+                              ),
+                              SizedBox(
+                                width: context.screenWidth * 0.01,
+                              ),
+                              Column(
+                                children: [
+                                  Text(
+                                    'Supplier Image',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 16,
+                                        fontFamily: fontFamilys),
+                                  ),
+                                  const SizedBox(
+                                    height: 5,
+                                  ),
+                                  ElevatedButton(
+                                    onPressed: () async {
+                                      await imageProvider.pickImage();
+                                    },
+                                    style: ElevatedButton.styleFrom(
+                                      padding: const EdgeInsets.symmetric(
+                                          vertical: 20, horizontal: 12),
+                                      backgroundColor:
+                                          const Color(0XFF11345A),
                                     ),
-                                  ],
-                                )
-                              ],
-                            ),
+                                    child: const Row(
+                                      // Make Row as wide as the content
+                                      children: [
+                                        Icon(
+                                          Icons.file_upload_outlined,
+                                          color: Colors.white,
+                                          size: 15,
+                                        ), // Icon
+                                        SizedBox(
+                                          width: 5,
+                                        ),
+                                        // Space between icon and text
+                                        Text(
+                                          'Upload Image',
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 12),
+                                        ), // Text
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              )
+                            ],
                           ),
                         ),
                         SizedBox(
@@ -213,28 +210,25 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
                   Row(
                     //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Flexible(
-                          child: FittedBox(
-                              child: AddNewAgentTitlelAndDescription(
-                                  text1: 'Bank Name',
-                                  text2: 'Summit National Bank'))),
+                      FittedBox(
+                          child: AddNewAgentTitlelAndDescription(
+                              text1: 'Bank Name',
+                              text2: 'Summit National Bank')),
                       SizedBox(
                         width: context.screenWidth * 0.01,
                       ),
-                      Flexible(
-                          child: FittedBox(
-                              child: AddNewAgentTitlelAndDescription(
-                                  text1: 'Bank Account',
-                                  text2: 'Checking Account'))),
+                      FittedBox(
+                          child: AddNewAgentTitlelAndDescription(
+                              text1: 'Bank Account',
+                              text2: 'Checking Account')),
                       SizedBox(
                         width: context.screenWidth * 0.01,
                       ),
-                      Flexible(
-                          child: FittedBox(
-                              child: AddNewAgentTitlelAndDescription(
-                                  text1: 'Phone Number',
-                                  text2:
-                                      'Laxmisagar, BBSR, Bhubaneshwar-751006'))),
+                      FittedBox(
+                          child: AddNewAgentTitlelAndDescription(
+                              text1: 'Phone Number',
+                              text2:
+                                  'Laxmisagar, BBSR, Bhubaneshwar-751006')),
                     ],
                   ),
                   SizedBox(
@@ -286,13 +280,12 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
                   SizedBox(
                     height: context.screenHeight * 0.04,
                   ),
-                  Row(
+                  Row (
                     //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Flexible(
-                          child: FittedBox(
-                              child: AddNewAgentTitlelAndDescription(
-                                  text1: 'Supplier Name', text2: 'John Doe'))),
+                      FittedBox(
+                          child: AddNewAgentTitlelAndDescription(
+                              text1: 'Supplier Name', text2: 'John Doe')),
                       SizedBox(
                         width: context.screenWidth * 0.01,
                       ),
@@ -305,11 +298,10 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
                       SizedBox(
                         width: context.screenWidth * 0.01,
                       ),
-                      Flexible(
-                          child: FittedBox(
-                              child: AddNewAgentTitlelAndDescription(
-                                  text1: 'E-mail',
-                                  text2: 'john.smith@gmail.com'))),
+                      FittedBox(
+                          child: AddNewAgentTitlelAndDescription(
+                              text1: 'E-mail',
+                              text2: 'john.smith@gmail.com')),
                     ],
                   ),
                   const SizedBox(

@@ -54,30 +54,28 @@ class InternationalSupplierScreen extends StatelessWidget {
                 ),
                 Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 30),
-                    child: Flexible(
-                      child: FittedBox(
-                        child: SizedBox(
-                          width: context.screenWidth,
-                          child: PaginatedDataTable(
-                            // rowsPerPage: 10,
-                            columns: HelperUtil.createColumns(columnNames: [
-                              "Company Name",
-                              "Unknown",
-                              "Phone Number",
-                              "Service",
-                              "Unknown",
-                              "Location",
-                              "Status",
-                              "Action"
-                            ]),
-                        
-                            source: InternationalDataSource(Widgets().international,context),
-                        
-                            headingRowColor: MaterialStateProperty.resolveWith<Color>(
-                                    (Set<MaterialState> states) {
-                                  return Colors.white;
-                                }),
-                          ),
+                    child: FittedBox(
+                      child: SizedBox(
+                        width: context.screenWidth,
+                        child: PaginatedDataTable(
+                          // rowsPerPage: 10,
+                          columns: HelperUtil.createColumns(columnNames: [
+                            "Company Name",
+                            "Unknown",
+                            "Phone Number",
+                            "Service",
+                            "Unknown",
+                            "Location",
+                            "Status",
+                            "Action"
+                          ]),
+
+                          source: InternationalDataSource(Widgets().international,context),
+
+                          headingRowColor: MaterialStateProperty.resolveWith<Color>(
+                                  (Set<MaterialState> states) {
+                                return Colors.white;
+                              }),
                         ),
                       ),
                     ))
