@@ -12,42 +12,72 @@ import 'package:fab_tech_sol/ui/supplier_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class Dashboard extends StatelessWidget {
+class Dashboard extends StatefulWidget {
   final int tabIndex;
 
-  const Dashboard({super.key, this.tabIndex = 0});
+  const Dashboard({Key? key, this.tabIndex = 0}) : super(key: key);
+
+  @override
+  _DashboardState createState() => _DashboardState();
+}
+
+class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
+  TabController? dashboardTabController;
+  TabController? leadsTabController;
+
+  @override
+  void initState() {
+    super.initState();
+
+    // Initialize TabControllers in initState
+    dashboardTabController = TabController(
+      length: 5,
+      vsync: this,
+      initialIndex: widget.tabIndex,
+    );
+    leadsTabController = TabController(
+      length: 3,
+      vsync: this,
+    );
+
+    // Set the TabControllers in the provider after the widget is built
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      final provider = Provider.of<UserProvider>(context, listen: false);
+      provider.setDashboardTabController(dashboardTabController!);
+      provider.setLeadsTabController(leadsTabController!);
+    });
+  }
+
+  @override
+  void dispose() {
+    // Dispose controllers to avoid memory leaks
+    dashboardTabController?.dispose();
+    leadsTabController?.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    // Get the provider instance
     final provider = Provider.of<UserProvider>(context);
 
-    // Initialize the TabControllers
-    final dashboardTabController = TabController(length: 5, vsync: Navigator.of(context), initialIndex: tabIndex);
-    final leadsTabController = TabController(length: 3, vsync: Navigator.of(context));
-
-    // Set the TabControllers in the provider
-    provider.setDashboardTabController(dashboardTabController);
-    provider.setLeadsTabController(leadsTabController);
-
     return Scaffold(
-      appBar: CustomHeader(dashboardTabController: dashboardTabController),
+      appBar: CustomHeader(dashboardTabController: dashboardTabController!),
       drawer: Responsive.isDesktop(context)
           ? null
-          : DashboardDrawer(tabController: dashboardTabController),
+          : DashboardDrawer(tabController: dashboardTabController!),
       body: Column(
         children: [
           Divider(
-            height: .5,
-            color: Colors.grey.withOpacity(.2),
+            height: 0.5,
+            color: Colors.grey.withOpacity(0.2),
           ),
           Expanded(
             child: TabBarView(
               controller: dashboardTabController,
               physics: const NeverScrollableScrollPhysics(),
               children: [
-                 DashBoardScreen(),
-                 LeadScreen(tabController: leadsTabController,),
+                DashBoardScreen(),
+                LeadScreen(tabController: leadsTabController!),
                 const AgentScreen(),
                 provider.selectedOption == "Local"
                     ? const SupplierScreen()
@@ -61,3 +91,4 @@ class Dashboard extends StatelessWidget {
     );
   }
 }
+

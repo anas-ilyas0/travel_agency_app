@@ -70,20 +70,18 @@ class LeadDetails extends StatelessWidget {
                       color: const Color(0XFF333333),
                       borderRadius: BorderRadius.circular(10),
                     ),
-                    child: Flexible(
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Center(
-                          child: Text(
-                            "Add new Lead",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontFamily: fontFamilys,
-                              color: Colors.white,
-                              fontSize: 16,),
-                             overflow: TextOverflow.ellipsis, 
-                              ),
-                        ),
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Center(
+                        child: Text(
+                          "Add new Lead",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontFamily: fontFamilys,
+                            color: Colors.white,
+                            fontSize: 16,),
+                           overflow: TextOverflow.ellipsis,
+                            ),
                       ),
                     ))),
               )

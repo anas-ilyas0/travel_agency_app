@@ -395,55 +395,53 @@ class Widgets {
             borderRadius: BorderRadius.circular(7),
             border: Border.all(color: Colors.blue.withOpacity(0.2))),
         height: 50,
-        child: Expanded(
-          child: Row(
-            mainAxisSize: MainAxisSize.min, // Align children to start
+        child: Row(
+          mainAxisSize: MainAxisSize.min, // Align children to start
 
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 5.0),
-                child: SizedBox(
-                  height: Responsive.isDesktop(context) ? 20 : 15,
-                  width: Responsive.isDesktop(context) ? 20 : 15,
-                  child: Image(
-                    image: AssetImage('${imageUrl}vector.png'),
-                    fit: BoxFit.contain,
-                  ),
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 5.0),
+              child: SizedBox(
+                height: Responsive.isDesktop(context) ? 20 : 15,
+                width: Responsive.isDesktop(context) ? 20 : 15,
+                child: Image(
+                  image: AssetImage('${imageUrl}vector.png'),
+                  fit: BoxFit.contain,
                 ),
               ),
-              const SizedBox(width: 5),
-              Flexible(
-                child: DropdownButtonHideUnderline(
-                  child: DropdownButton<String>(
-                    dropdownColor: Colors.white,
-                    padding: EdgeInsets.zero,
-                    isDense: true,
-                    // focusColor: AppColor.background,
-                    // underline: Container(),
-                    value: value,
-                    items: data.map((String item) {
-                      return DropdownMenuItem<String>(
-                        value: item,
-                        child: Text(
-                          item,
+            ),
+            const SizedBox(width: 5),
+            Flexible(
+              child: DropdownButtonHideUnderline(
+                child: DropdownButton<String>(
+                  dropdownColor: Colors.white,
+                  padding: EdgeInsets.zero,
+                  isDense: true,
+                  // focusColor: AppColor.background,
+                  // underline: Container(),
+                  value: value,
+                  items: data.map((String item) {
+                    return DropdownMenuItem<String>(
+                      value: item,
+                      child: Text(
+                        item,
 
-                          style: TextStyle(
-                              color: AppColor.hintColor,
-                              fontFamily: fontFamilys,
-                              fontWeight: FontWeight.w400,
-                              fontSize: 14),
+                        style: TextStyle(
+                            color: AppColor.hintColor,
+                            fontFamily: fontFamilys,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 14),
 
-                          //  style:  TextStyle(color: AppColor.hintColor, fontFamily: readexPro,fontWeight: FontWeight.w400, fontSize: 14),
-                        ),
-                      );
-                    }).toList(),
-                    onChanged: onChanged,
-                    hint: const Text('Select an option'),
-                  ),
+                        //  style:  TextStyle(color: AppColor.hintColor, fontFamily: readexPro,fontWeight: FontWeight.w400, fontSize: 14),
+                      ),
+                    );
+                  }).toList(),
+                  onChanged: onChanged,
+                  hint: const Text('Select an option'),
                 ),
-              )
-            ],
-          ),
+              ),
+            )
+          ],
         ),
       ),
     );
