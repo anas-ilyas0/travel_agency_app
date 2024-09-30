@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+{"flutter":{"platforms":{"android":{"default":{"projectId":"travel-agency-11fbf","appId":"1:187182098550:android:48a7a52909b024f1d89757","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"travel-agency-11fbf","configurations":{"android":"1:187182098550:android:48a7a52909b024f1d89757","ios":"1:187182098550:ios:34720f8b7621cdc4d89757","macos":"1:187182098550:ios:34720f8b7621cdc4d89757","web":"1:187182098550:web:496614204e7fb9ced89757","windows":"1:187182098550:web:efdc0257955c8d03d89757"}}}}},"hosting":{"public":"build/web","ignore":["firebase.json","**/.*","**/node_modules/**"],"rewrites":[{"source":"**","destination":"/index.html"}]}}
+=======
 {
   "flutter": {
     "platforms": {
@@ -37,3 +40,4 @@
     ]
   }
 }
+>>>>>>> 919f16055cfbcd6725b425690fcb9404722e15a6

@@ -72,11 +72,7 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
                                   icon: const Icon(Icons.arrow_drop_down),
                                   onSelected: (String value) {
                                     supplierProvider.setSelectedOption(value);
-                                    if (value == 'Local') {
-                                      dashboardTabController.animateTo(3); // Navigate to the Local Supplier tab
-                                    } else if (value == 'International') {
-                                      dashboardTabController.animateTo(3); // Navigate to the International Supplier tab
-                                    }
+                                    dashboardTabController.animateTo(3);
                                   },
                                   itemBuilder: (context) => [
                                     const PopupMenuItem(

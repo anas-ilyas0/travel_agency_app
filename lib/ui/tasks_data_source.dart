@@ -275,7 +275,7 @@ class PackageDataSource extends DataTableSource {
           ),
         )),
         DataCell(Text(task.supplierPhoneNumber)),
-        DataCell( Flexible(child: FittedBox(child: Widgets().PackageDetailButton(context)))),
+        DataCell( Widgets().PackageDetailButton(context)),
       ],
     );
   }

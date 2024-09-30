@@ -16,7 +16,7 @@ class Package extends StatelessWidget {
     return Scaffold(
       body: Responsive(desktop:
         Padding(
-          padding: const EdgeInsets.only(left: 62, right: 62),
+          padding:  EdgeInsets.symmetric(horizontal: context.screenHeight*0.03),
           child: Column(children: [
             SizedBox(
               height: context.screenHeight * 0.01,

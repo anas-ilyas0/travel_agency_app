@@ -135,7 +135,7 @@ class Widgets {
                   color: addLeadButtonColor,
                 ),
                 suffixIcon: Container(
-                  height: 44,
+                  height: 34,
                   decoration: BoxDecoration(
                     color: addLeadButtonColor,
                     borderRadius: const BorderRadius.only(
@@ -469,16 +469,14 @@ class Widgets {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Center(
-                  child: FittedBox(
-                    child: Text(
-                      "Detail",
-                      style: TextStyle(
-                        // decoration: TextDecoration.underline,
-                        color: Color(0XFF11345A),
-                        fontSize: 16,
-                        fontFamily: fontFamilys,
-                        fontWeight: FontWeight.w400,
-                      ),
+                  child: Text(
+                    "Detail",
+                    style: TextStyle(
+                      // decoration: TextDecoration.underline,
+                      color: Color(0XFF11345A),
+                      fontSize: 16,
+                      fontFamily: fontFamilys,
+                      fontWeight: FontWeight.w400,
                     ),
                   ),
                 ),
