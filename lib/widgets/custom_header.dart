@@ -13,7 +13,7 @@ import '../resources/responsive.dart';
 
 class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
   TabController dashboardTabController;
-  CustomHeader({super.key, required this.dashboardTabController });
+  CustomHeader({super.key, required this.dashboardTabController});
 
   @override
   Size get preferredSize => const Size.fromHeight(77);
@@ -59,10 +59,7 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
                         labelPadding:
                             EdgeInsets.symmetric(horizontal: 24, vertical: 8),
                         isScrollable: true,
-
-                        
                         tabs: [
-                          
                           const Tab(text: 'Dashboard'),
                           const Tab(text: 'Leads'),
                           const Tab(text: 'Agents'),
@@ -73,7 +70,14 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
                                 const Text('Supplier'),
                                 PopupMenuButton<String>(
                                   icon: const Icon(Icons.arrow_drop_down),
-                                  onSelected: (String value){supplierProvider.setSelectedOption(value);},
+                                  onSelected: (String value) {
+                                    supplierProvider.setSelectedOption(value);
+                                    if (value == 'Local') {
+                                      dashboardTabController.animateTo(3); // Navigate to the Local Supplier tab
+                                    } else if (value == 'International') {
+                                      dashboardTabController.animateTo(3); // Navigate to the International Supplier tab
+                                    }
+                                  },
                                   itemBuilder: (context) => [
                                     const PopupMenuItem(
                                       value: 'Local',
@@ -89,7 +93,6 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
                               ],
                             ),
                           ),
-
                           Tab(text: 'Package'),
                         ],
                       )),
