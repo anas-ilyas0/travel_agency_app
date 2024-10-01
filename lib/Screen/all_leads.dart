@@ -122,159 +122,120 @@ class AllLeads extends StatelessWidget {
                 ),
                 child: Responsive(
                   mobile: Text('Coming Soon'),
-                  desktop: GridView.builder(
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 4, // 4 items per row for desktop
-                      crossAxisSpacing: 32.0,
-                      // mainAxisSpacing: 32.0,
-                      childAspectRatio: 0.72,
-                    ),
-                    itemCount: 8,
-                    itemBuilder: (context, index) {
-                      return Flexible(
-                        child: Column(
+                  desktop: LayoutBuilder(
+        builder: (context, constraints) {
+          final crossAxisCount = (constraints.maxWidth / 260).floor();
+          return GridView.builder(
+            padding: EdgeInsets.all(16),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: crossAxisCount,
+              crossAxisSpacing: 16.0,
+              mainAxisSpacing: 16.0,
+              childAspectRatio: 0.75,
+            ),
+            itemCount: 8,
+            itemBuilder: (context, index) {
+              return Card(
+                elevation: 4,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                child: Container(
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black,
+                        offset: Offset(0, 4),
+                        blurRadius: 0,
+                      )
+                    ],
+                    color: AppColor.allleadcontainercolor,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(12),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Container(
+                              padding: EdgeInsets.symmetric(horizontal: 8.5, vertical: 4.5),
                               decoration: BoxDecoration(
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.black,
-                                    offset: Offset(0, 4),
-                                    spreadRadius: -0,
-                                  )
-                                ],
-                                color: AppColor.allleadcontainercolor,
-
-                                // color: const Color(0XFFFFFFFF),
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(12),
+                                color: Colors.green,
                               ),
-                              child: Padding(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 12, vertical: 10),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Container(
-                                          height: 25,
-                                          width: 55,
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(12),
-                                            color: Colors.green,
-                                          ),
-                                          child: Padding(
-                                            padding: const EdgeInsets.all(2.0),
-                                            child: Center(
-                                              child: Text(
-                                                '• Active',
-                                                style: TextStyle(
-                                                    fontFamily: fontFamilys,
-                                                    fontWeight: FontWeight.w600,
-                                                    color: Colors.white,
-                                                    fontSize: 12),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                        GestureDetector(
-                                          onTap: () {
-                                      
-                                          },
-                                          child: Icon(Icons.more_vert_rounded))
-                                      ],
-                                    ),
-                                    SizedBox(
-                                      height: context.screenHeight * 0.01,
-                                    ),
-                                    Container(
-                                      width: 120,
-                                      height: 120,
-                                      child: Image.asset(
-                                          "${ImagesAssets.imagePath}allleadimagecontainer.png"),
-                                    ),
-                                    SizedBox(
-                                      height: context.screenHeight * 0.02,
-                                    ),
-                                    Row(
-                                      children: [
-                                        Text(
-                                          'Tour Name:',
-                                          style: AppTextstyless.allLeads,
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                        Text(
-                                          'Dream Destination',
-                                          style: AppTextstyless.allLeads,
-                                          overflow: TextOverflow.ellipsis,
-                                        )
-                                      ],
-                                    ),
-                                    SizedBox(
-                                      height: context.screenHeight * 0.01,
-                                    ),
-                                    Widgets().allLeadNoOfLeads('14'),
-                                    SizedBox(
-                                      height: context.screenHeight * 0.01,
-                                    ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Icon(
-                                          Icons.location_on,
-                                          color: Colors.black,
-                                          size: 18,
-                                        ),
-                                        Text(
-                                          '9827 Railroad St',
-                                          style: AppTextstyless.allLeadsDate,
-                                        ),
-                                      ],
-                                    ),
-                                    SizedBox(
-                                      height: context.screenHeight * 0.02,
-                                    ),
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          'Starting from :',
-                                          style: TextStyle(
-                                              color: AppColor.hintColor),
-                                        ),
-                                        Text(
-                                          'Oct 10 ,2024',
-                                          style: AppTextstyless.allLeadsDate,
-                                        )
-                                      ],
-                                    ),
-                                    SizedBox(
-                                      height: context.screenHeight * 0.02,
-                                    ),
-                                    Text(
-                                      'View Detail',
-                                      style: AppTextstyless.allLeadsViewDetail,
-                                    ),
-                                  ],
-                                ),
+                              child: Text(
+                                '• Active',
+                                style: TextStyle(color: Colors.white, fontSize: 12),
                               ),
                             ),
-                            SizedBox(
-                              height: 20,
-                            )
+                            IconButton(
+                              icon: Icon(Icons.more_vert),
+                              onPressed: () {},
+                              padding: EdgeInsets.zero,
+                              constraints: BoxConstraints(),
+                            ),
                           ],
                         ),
-                      );
-                    },
+                        SizedBox(height: 10,),
+                        Expanded(
+                          child: Center(
+                            child: Image.asset(
+                              "${ImagesAssets.imagePath}allleadimagecontainer.png",
+                              width: 180,
+                              height: 180,
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 16,),
+                        Text(
+                          'Tour Name: Dream Destination',
+                          style: AppTextstyless.allLeads,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        SizedBox(height: 6),
+                        Widgets().allLeadNoOfLeads('14'),
+                        SizedBox(height: 6),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.location_on, size: 16),
+                            Text(
+                              '9827 Railroad Street',
+                              style: AppTextstyless.allLeadsDate,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 8),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Starting from: ',
+                              style: TextStyle(fontSize: 12,color: AppColor.hintColor),
+                            ),
+                            Text('Oct 10,2024')
+                          ],
+                        ),
+                        SizedBox(height: 8),
+                        Center(
+                          child: TextButton(
+                            child: Text('View Details',style: TextStyle(color: Colors.black,fontFamily: 'Poppin',fontWeight: FontWeight.w700,fontSize: 14),),
+                            onPressed: () {},
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
+                ),
+              );
+            },
+          );
+        },
+      ),
                   tablet: Flexible(
                     child: GridView.builder(
                       gridDelegate:
