@@ -2,7 +2,6 @@ import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Dialog/agent_dialog.dart';
 import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/Screen/AppText/TextStyle.dart';
-import 'package:fab_tech_sol/Screen/client_detail_package.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/resources/capitalize_first_letter_formatter%20(1).dart';
@@ -450,10 +449,7 @@ class Widgets {
   Widget PackageDetailButton(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => const ClientDetailPackage()));
+      
       },
       child: Container(
         height: 46,

@@ -1,7 +1,6 @@
 
 
 import 'package:fab_tech_sol/Screen/all_leads.dart';
-import 'package:fab_tech_sol/Screen/client_detail_package.dart';
 import 'package:fab_tech_sol/Screen/lead_details.dart';
 import 'package:fab_tech_sol/Screen/pacakge_details2.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
@@ -54,11 +53,13 @@ class MyApp extends StatelessWidget {
         theme: ThemeApp.myThemeData,
         title: AppStrings.appName,
 
-        home:ClientDetailPackage()
+        home:Dashboard()
         
 
         
         );
+
+
 
 
      

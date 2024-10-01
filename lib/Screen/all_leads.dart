@@ -57,7 +57,6 @@ class AllLeads extends StatelessWidget {
                     ),
               Row(
                 children: [
-                  
                   Text(
                     'Leads Status :',
                     style: TextStyle(
@@ -87,7 +86,6 @@ class AllLeads extends StatelessWidget {
                       tabs: const [
                         Tab(text: 'Active'),
                         Tab(text: 'Inactive'),
-                       
                       ]),
                   Responsive.isDesktop(context)
                       ? Widgets().dropDownButton(providerValue.selectedItem2,
@@ -114,25 +112,23 @@ class AllLeads extends StatelessWidget {
               ),
             ],
           ),
-         
+
           Expanded(
             child: TabBarView(controller: tabController, children: [
               Padding(
                 padding: EdgeInsets.symmetric(
-                  horizontal:
-                      horizontalPadding, 
+                  horizontal: horizontalPadding,
                   vertical: 20,
                 ),
                 child: Responsive(
-                
-                  mobile:Text('Coming Soon'),
+                  mobile: Text('Coming Soon'),
                   desktop: GridView.builder(
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 4, // 4 items per row for desktop
                       crossAxisSpacing: 32.0,
-                     // mainAxisSpacing: 32.0,
-                      childAspectRatio: 0.75,
+                      // mainAxisSpacing: 32.0,
+                      childAspectRatio: 0.72,
                     ),
                     itemCount: 8,
                     itemBuilder: (context, index) {
@@ -142,15 +138,14 @@ class AllLeads extends StatelessWidget {
                             Container(
                               decoration: BoxDecoration(
                                 boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black,
-                                      offset: Offset(0, 4),
-                                    
-                                      spreadRadius:-0,
-                                    )
-                                  ],
-                                color:AppColor.allleadcontainercolor ,
-                               
+                                  BoxShadow(
+                                    color: Colors.black,
+                                    offset: Offset(0, 4),
+                                    spreadRadius: -0,
+                                  )
+                                ],
+                                color: AppColor.allleadcontainercolor,
+
                                 // color: const Color(0XFFFFFFFF),
                                 borderRadius: BorderRadius.circular(8),
                               ),
@@ -159,30 +154,40 @@ class AllLeads extends StatelessWidget {
                                     horizontal: 12, vertical: 10),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.center,
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
                                         Container(
-                                          height: 20,
-                                          width: 50,
+                                          height: 25,
+                                          width: 55,
                                           decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(8),
+                                            borderRadius:
+                                                BorderRadius.circular(12),
                                             color: Colors.green,
                                           ),
-                                          child: Center(
+                                          child: Padding(
+                                            padding: const EdgeInsets.all(2.0),
+                                            child: Center(
                                               child: Text(
-                                            '• Active',
-                                            style: TextStyle(
-                                                fontFamily: 'Roboto',
-                                                fontWeight: FontWeight.w600,
-                                                color: Colors.white,
-                                                fontSize: 10),
-                                          )),
+                                                '• Active',
+                                                style: TextStyle(
+                                                    fontFamily: fontFamilys,
+                                                    fontWeight: FontWeight.w600,
+                                                    color: Colors.white,
+                                                    fontSize: 12),
+                                              ),
+                                            ),
+                                          ),
                                         ),
-                                        Icon(Icons.drag_indicator_sharp)
+                                        GestureDetector(
+                                          onTap: () {
+                                      
+                                          },
+                                          child: Icon(Icons.more_vert_rounded))
                                       ],
                                     ),
                                     SizedBox(
@@ -219,10 +224,14 @@ class AllLeads extends StatelessWidget {
                                       height: context.screenHeight * 0.01,
                                     ),
                                     Row(
-                                  
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
-                                        Icon(Icons.location_on,color: Colors.black,size: 18,),
+                                        Icon(
+                                          Icons.location_on,
+                                          color: Colors.black,
+                                          size: 18,
+                                        ),
                                         Text(
                                           '9827 Railroad St',
                                           style: AppTextstyless.allLeadsDate,
@@ -233,9 +242,14 @@ class AllLeads extends StatelessWidget {
                                       height: context.screenHeight * 0.02,
                                     ),
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
-                                        Text('Starting from :',style: TextStyle(color: AppColor.hintColor),),
+                                        Text(
+                                          'Starting from :',
+                                          style: TextStyle(
+                                              color: AppColor.hintColor),
+                                        ),
                                         Text(
                                           'Oct 10 ,2024',
                                           style: AppTextstyless.allLeadsDate,
@@ -253,13 +267,14 @@ class AllLeads extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            SizedBox(height: 20,)
+                            SizedBox(
+                              height: 20,
+                            )
                           ],
                         ),
                       );
                     },
                   ),
-
                   tablet: Flexible(
                     child: GridView.builder(
                       gridDelegate:
@@ -281,8 +296,8 @@ class AllLeads extends StatelessWidget {
                                     offset: Offset(-1, -1),
                                   )
                                 ],
-                                color:AppColor.allleadcontainercolor ,
-                               
+                                color: AppColor.allleadcontainercolor,
+
                                 // color: const Color(0XFFFFFFFF),
                                 borderRadius: BorderRadius.circular(20),
                               ),
@@ -291,7 +306,8 @@ class AllLeads extends StatelessWidget {
                                     horizontal: 12, vertical: 10),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.center,
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
                                   children: [
                                     Row(
                                       mainAxisAlignment:
@@ -301,7 +317,8 @@ class AllLeads extends StatelessWidget {
                                           height: 20,
                                           width: 50,
                                           decoration: BoxDecoration(
-                                            borderRadius: BorderRadius.circular(8),
+                                            borderRadius:
+                                                BorderRadius.circular(8),
                                             color: Colors.green,
                                           ),
                                           child: Center(
@@ -358,7 +375,8 @@ class AllLeads extends StatelessWidget {
                                       height: context.screenHeight * 0.02,
                                     ),
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
                                         Text('Starting from:'),
                                         Text(
@@ -383,7 +401,6 @@ class AllLeads extends StatelessWidget {
                       },
                     ),
                   ),
-                  
                 ),
               ),
               const Center(child: Text('Pending')),
