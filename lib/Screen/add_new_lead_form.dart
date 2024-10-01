@@ -54,8 +54,10 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Text(''),
+        shadowColor: AppColor.background,
         toolbarHeight:90,
+        elevation: 0,
+        backgroundColor: AppColor.background,
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(1.0),
           child: Container(
@@ -72,73 +74,80 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding:  EdgeInsets.symmetric(horizontal: Responsive.isDesktop(context)? 115: 80),
+          padding:  EdgeInsets.symmetric(horizontal: Responsive.isDesktop(context)? 115: 60),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 5),
-
+              Text(
+                'Add New Quotation',
+                style: TextStyle(
+                    color: color,
+                    fontFamily: fontFamilys,
+                    fontWeight: FontWeight.w700,
+                    fontSize: 20),
+              ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Add New Quotation',
-                          style: TextStyle(
-                              color: color,
-                              fontFamily: fontFamilys,
-                              fontWeight: FontWeight.w700,
-                              fontSize: 20),
-                        ),
-                        const SizedBox(height: 20),
-                        Text(
-                          'Agent Details',
-                          style: TextStyle(
-                              color: color,
-                              fontFamily: readexPro,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 17),
-                        ),
-                        const SizedBox(height: 15),
-                        Row(
-                          children: [
-                            Text(
-                              'Agent Name',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 13,
-                                  fontFamily: readexPro,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                               SizedBox(width: context.screenWidth*0.31,),
-                              Text(
-                              'Supplier Name',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontSize: 13,
-                                  fontFamily: readexPro,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ],
-                        ),
-                        const SizedBox(height: 5),
-                        Row(
-                          children: [
-                            UserEditData(text: "John Doe",onTap: (){
-                              NavigationUtil.navigatePush(context: context, destinationScreen: Dashboard(tabIndex: 2,));
-                            }),
-                              SizedBox(width:context.screenWidth*0.12,),
-                              UserEditData(text: "John Doe",onTap: (){
-                              NavigationUtil.navigatePush(context: context, destinationScreen: Dashboard(tabIndex: 2,));
-                            }),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
 
-                          ],
-                        )
-
-                      ],
-                    ),
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Agent Details',
+                            style: TextStyle(
+                                color: color,
+                                fontFamily: readexPro,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17),
+                          ),
+                          SizedBox(height: 14),
+                          Text(
+                            'Agent Name',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 13,
+                                fontFamily: readexPro,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          UserEditData(text: "John Doe",onTap: (){
+                            NavigationUtil.navigatePush(context: context, destinationScreen: Dashboard(tabIndex: 2,));
+                          }),
+                        ],
+                      ),
+                      SizedBox(width: context.screenWidth*0.04,),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Supplier Details',
+                            style: TextStyle(
+                                color: color,
+                                fontFamily: readexPro,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 17),
+                          ),
+                          SizedBox(height: 14),
+                          Text(
+                            'Supplier Name',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 13,
+                                fontFamily: readexPro,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          UserEditData(text: "John Doe",onTap: (){
+                            NavigationUtil.navigatePush(context: context, destinationScreen: Dashboard(tabIndex: 4,));
+                          }),
+                        ],
+                      ),
+                    ],
                   ),
                   Image(
                       height: 200,
@@ -192,7 +201,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                       Widgets().textFormField('+1 (555) 987-6543',context),
                     ],
                   ),
-                  SizedBox(width: 20,),
+                  SizedBox(width: 26,),
                    Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                      children: [
@@ -418,7 +427,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                             fontFamily: readexPro,
                             fontWeight: FontWeight.bold),
                       ),
-                      Widgets().textFormNoteField(context.screenWidth*0.772, context.screenHeight*0.27,3),
+                      Widgets().textFormNoteField(context.screenWidth*0.772, context.screenHeight*0.22,3),
                     ],
                   ),
                 ),
