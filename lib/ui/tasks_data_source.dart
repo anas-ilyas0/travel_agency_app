@@ -119,8 +119,7 @@ class AgentsTaskDataSource extends DataTableSource {
       cells: [
         DataCell(Row(
           children: [
-            Widgets().circularAvatar(backgroundImage: '${imageUrl}agent.png'),
-            Text(task.name)
+            Row(children: [CircleAvatar(backgroundImage: AssetImage('${imageUrl}agent.png')),SizedBox(width: 10,),Text(task.name), ],)
           ],
         )),
         DataCell(Text(task.phoneNumber)),

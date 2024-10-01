@@ -205,7 +205,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                             fontWeight: FontWeight.bold),
                       ),
                        UserEditData(text: "John Doe",onTap: (){
-                                  NavigationUtil.navigatePush(context: context, destinationScreen: Dashboard(tabIndex: 2,));
+                                  NavigationUtil.navigatePush(context: context, destinationScreen: Dashboard(tabIndex: 5,));
                                 }),
                      ],
                    ),

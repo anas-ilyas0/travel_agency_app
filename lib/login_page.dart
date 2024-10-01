@@ -145,7 +145,7 @@ class _LoginPageState extends State<LoginPage> {
                     Row(mainAxisAlignment: MainAxisAlignment.end, children: [
                       ElevatedButton(
                           onPressed: () {
-                           Navigator.push(context, MaterialPageRoute(builder: (context) => Dashboard(),));
+                           NavigationUtil.navigateAndReplace(context: context, destinationScreen: Dashboard());
                           },
                           style: ElevatedButton.styleFrom(
                               backgroundColor: const Color(0XFFC2E9F3),
