@@ -466,7 +466,7 @@ class Widgets {
   Widget PackageDetailButton(BuildContext context) {
     return GestureDetector(
       onTap: () {
-      
+      Navigator.push(context, MaterialPageRoute(builder: (context) => ClientDetailPackage(),));
       },
       child: Container(
         height: 46,
