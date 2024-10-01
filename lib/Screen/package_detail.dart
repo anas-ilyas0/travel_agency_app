@@ -27,16 +27,16 @@ class PackageDetail extends StatelessWidget {
             Responsive.isDesktop(context)?SizedBox.shrink():
             Row(
               children: [
-                GestureDetector(
-                  onTap: (){
-                    Navigator.pop(context);
-                  },
-                  child: Container(
-                      height: 30,
-                      width: 30,
-                      decoration: BoxDecoration(color: Colors.white,shape: BoxShape.circle),
-                      child: Icon(Icons.arrow_back)),
-                ),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                        height: 30,
+                        width: 30,
+                        decoration: BoxDecoration(color: Colors.white,shape: BoxShape.circle),
+                        child: Icon(Icons.arrow_back)),
+                  ),
                 SizedBox(width: 10,),
                 Text(
                   'Packages Details',
