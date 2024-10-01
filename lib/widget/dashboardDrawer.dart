@@ -73,21 +73,12 @@ class _DashboardDrawerState extends State<DashboardDrawer> {
                 },
               tabController: widget.tabController, // Pass TabController
             ),
-            DrawerWidget(
+               DrawerWidget(
                 icon: Icons.supervisor_account_outlined,
                 index: 4,
-                title: 'Agent',
-                onTap: () {
-                  context.read<DrawerStateInfo>().setCurrentDrawer(4);
-                  Navigator.pop(context);
-                },
-              tabController: widget.tabController, // Pass TabController
-            ),   DrawerWidget(
-                icon: Icons.supervisor_account_outlined,
-                index: 5,
                 title: 'Package',
                 onTap: () {
-                  context.read<DrawerStateInfo>().setCurrentDrawer(5);
+                  context.read<DrawerStateInfo>().setCurrentDrawer(4);
                   Navigator.pop(context);
 
                 },

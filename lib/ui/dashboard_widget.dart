@@ -4,7 +4,7 @@ import 'package:fab_tech_sol/Screen/lead_details.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
-import 'package:fab_tech_sol/widgets/widgets.dart';
+import 'package:fab_tech_sol/widget/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -42,9 +42,6 @@ class DashBoardScreen extends StatelessWidget {
                       fontFamily: fontFamilys,
                       fontWeight: FontWeight.bold,
 
-                      // fontSize: 30,
-                      // fontFamily: readexPro,
-                      // fontWeight: FontWeight.w600,
 
                       color: color),
                 ),

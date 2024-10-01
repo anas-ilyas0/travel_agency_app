@@ -7,7 +7,7 @@ import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
-import 'package:fab_tech_sol/widgets/widgets.dart';
+import 'package:fab_tech_sol/widget/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -57,6 +57,7 @@ class AllLeads extends StatelessWidget {
                     ),
               Row(
                 children: [
+                  
                   Text(
                     'Leads Status :',
                     style: TextStyle(
@@ -113,34 +114,7 @@ class AllLeads extends StatelessWidget {
               ),
             ],
           ),
-          Responsive.isDesktop(context)
-              ? SizedBox.shrink()
-              : Padding(
-                  padding: const EdgeInsets.only(top: 12),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Widgets().dropDownButton(providerValue.selectedItem2,
-                          providerValue.dropdownItems2, (String? newValue) {
-                        providerValue.updateSelectedItem2(newValue);
-                      }, context),
-                      const SizedBox(width: 15),
-                      Widgets().button(
-                        'Add New Lead',
-                        () {
-                          // Navigator.pushNamed(
-                          //   context, AppRoutes.lead_details);
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => Package(),
-                              ));
-                        },
-                      ),
-                    ],
-                  ),
-                ),
-
+         
           Expanded(
             child: TabBarView(controller: tabController, children: [
               Padding(

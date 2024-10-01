@@ -3,7 +3,7 @@ import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
-import 'package:fab_tech_sol/widgets/addnewagent.dart';
+import 'package:fab_tech_sol/widget/addnewagent.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

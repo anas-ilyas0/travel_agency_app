@@ -12,8 +12,8 @@ import 'package:provider/provider.dart';
 
 import '../resources/responsive.dart';
 
-class AgentScreen extends StatelessWidget {
-  const AgentScreen({super.key});
+class CustomerScreen extends StatelessWidget {
+  const CustomerScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -31,11 +31,11 @@ class AgentScreen extends StatelessWidget {
               alignment: Alignment.topLeft ,
               child: Text(
 
-                'All Agents',
+                'Customers',
                 style: TextStyle(
                     fontSize: 26,
                     fontFamily: fontFamilys,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w700,
                     color: color),
               ),
             ),
@@ -45,11 +45,11 @@ class AgentScreen extends StatelessWidget {
               children: [
                 Responsive.isDesktop(context)?
                 Text(
-                  'All Agents',
+                  'Customers',
                   style: TextStyle(
-                      fontSize: 28,
+                      fontSize: 30,
                       fontFamily: fontFamilys,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w700,
                       color: color),
                 ):SizedBox.shrink(),
                 Row(
@@ -58,24 +58,13 @@ class AgentScreen extends StatelessWidget {
                     Responsive.isDesktop(context)
                         ? Row(children: [
                       SizedBox(width: context.screenWidth * 0.005,),
-                            Widgets().dropDownButton(
-                                providerValue.selectedItem2,
-                                providerValue.dropdownItems2,
-                                (String? newValue) {
-                              providerValue.updateSelectedItem2(newValue);
-                            }, context),
-                            const SizedBox(width: 15),
-                            Widgets().button(
-                              'Add New Agent',
-                              () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => AddNewAgent(),
-                                    ));
-                              },
-                            )
-                          ])
+                      Widgets().dropDownButton(
+                          providerValue.selectedItem2,
+                          providerValue.dropdownItems2,
+                              (String? newValue) {
+                            providerValue.updateSelectedItem2(newValue);
+                          }, context),
+                    ])
                         : SizedBox.shrink()
                   ],
                 ),
@@ -83,34 +72,24 @@ class AgentScreen extends StatelessWidget {
             ),
             Responsive.isTablet(context) || Responsive.isMobile(context)
                 ? Column(
-                    children: [
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Widgets().dropDownButton(providerValue.selectedItem2,
-                              providerValue.dropdownItems2, (String? newValue) {
-                            providerValue.updateSelectedItem2(newValue);
-                          }, context),
+              children: [
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Widgets().dropDownButton(providerValue.selectedItem2,
+                        providerValue.dropdownItems2, (String? newValue) {
+                          providerValue.updateSelectedItem2(newValue);
+                        }, context),
 
-                          const SizedBox(width: 15),
-                          Widgets().button(
-                            'Add New Agent',
-                            () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => AddNewAgent(),
-                                  ));
-                            },
-                          )
-                        ],
-                      ),
-                    ],
-                  )
+                    const SizedBox(width: 15),
+                  ],
+                ),
+              ],
+            )
                 : SizedBox.shrink(),
             SizedBox(
               height: 20,
@@ -120,21 +99,24 @@ class AgentScreen extends StatelessWidget {
                 width: double.infinity,
                 child: SingleChildScrollView(
                   child: PaginatedDataTable(
-                    rowsPerPage: 5,
+                    rowsPerPage: 10,
+                    dataRowHeight: 54,
                     columns: HelperUtil.createColumns(columnNames: [
-                      "Name",
+                      "Lead #",
+                      "First Name",
+                      "Last Name",
                       "Phone Number",
                       "Email",
                       "Location",
                       "Status",
                       "Action"
-                    ]),
+                    ],value: true ),
                     source:
-                        AgentsTaskDataSource(Widgets().agentsTasks, context),
+                    CustomerDataSource(Widgets().customerTask, context),
                     headingRowColor: MaterialStateProperty.resolveWith<Color>(
-                        (Set<MaterialState> states) {
-                      return Colors.white;
-                    }),
+                            (Set<MaterialState> states) {
+                          return Colors.white;
+                        }),
                   ),
                 ),
               ),

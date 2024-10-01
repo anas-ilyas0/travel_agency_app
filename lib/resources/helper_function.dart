@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class HelperUtil {
-  static List<DataColumn> createColumns({required List<String> columnNames}) {
+  static List<DataColumn> createColumns({required List<String> columnNames, bool value =false}) {
     return columnNames
         .map((name) =>
         DataColumn(
           label: Padding(
-            padding:  EdgeInsets.only(left: name == "Action" ? 25.0 : 0.0),
+            padding:  EdgeInsets.only(left: name == "Action" && value == false? 25.0 : 0.0),
             child: Text(
               name,
             ),

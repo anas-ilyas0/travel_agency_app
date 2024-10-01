@@ -4,8 +4,9 @@ import 'package:fab_tech_sol/Screen/international_supplier.dart';
 import 'package:fab_tech_sol/Screen/package_Screen.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
-import 'package:fab_tech_sol/widgets/custom_header.dart';
-import 'package:fab_tech_sol/widgets/dashboardDrawer.dart';
+import 'package:fab_tech_sol/ui/customer_widget.dart';
+import 'package:fab_tech_sol/widget/custom_header.dart';
+import 'package:fab_tech_sol/widget/dashboardDrawer.dart';
 import 'package:fab_tech_sol/ui/agents_widget.dart';
 import 'package:fab_tech_sol/ui/dashboard_widget.dart';
 import 'package:fab_tech_sol/ui/leads_widget.dart';
@@ -32,7 +33,7 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
 
     // Initialize TabControllers in initState
     dashboardTabController = TabController(
-      length: 5,
+      length: 6,
       vsync: this,
       initialIndex: widget.tabIndex,
     );
@@ -63,9 +64,8 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
 
     return Scaffold(
       appBar: CustomHeader(dashboardTabController: dashboardTabController!),
-      drawer: Responsive.isDesktop(context)
-          ? null
-          : DashboardDrawer(tabController: dashboardTabController!),
+
+      drawer:Responsive.isDesktop(context)?null: DashboardDrawer(tabController: dashboardTabController!),
       body: Column(
         children: [
           Divider(
@@ -82,7 +82,8 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
                 AllLeads(tabController: leadsTabController!),
                 const AgentScreen(),
                 
-                provider.selectedOption == "Local"
+                CustomerScreen(),
+                provider.selectedOptions == "Local"
                     ? const SupplierScreen()
                     : const InternationalSupplierScreen(),
                      const PackageClassScreen(),

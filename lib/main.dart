@@ -53,6 +53,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeApp.myThemeData,
         title: AppStrings.appName,
+
         home:ClientDetailPackage()
         
 

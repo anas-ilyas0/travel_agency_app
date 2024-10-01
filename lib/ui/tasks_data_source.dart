@@ -5,7 +5,7 @@ import 'package:fab_tech_sol/Dialog/localsupplier_dialog.dart';
 import 'package:fab_tech_sol/Screen/addnewinternationalsuppliers.dart';
 import 'package:fab_tech_sol/Screen/local_supplier_detail.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
-import 'package:fab_tech_sol/widgets/widgets.dart';
+import 'package:fab_tech_sol/widget/widgets.dart';
 import 'package:flutter/material.dart';
 
 import '../widget/agent_text_field.dart';
@@ -268,7 +268,7 @@ class PackageDataSource extends DataTableSource {
         DataCell(Text(task.agentPhoneNumber)),
         DataCell(ListTile(
           contentPadding: EdgeInsets.zero,
-          title: Text(task.supplierName),
+          title: Text(task.supplierName,style: TextStyle(fontSize: 14),),
           subtitle: Text(task.supplierType,style: TextStyle(fontSize: 12,fontWeight: FontWeight.w300,color: AppColor.hintColor),),
           leading: CircleAvatar(
             backgroundImage: AssetImage('${imageUrl}agent.png'),
@@ -282,6 +282,80 @@ class PackageDataSource extends DataTableSource {
 
   @override
   int get rowCount => package.length;
+
+  @override
+  bool get isRowCountApproximate => false;
+
+  @override
+  int get selectedRowCount => 0;
+}
+// Customer table
+class CustomerModel {
+  final String lead;
+  final String firstName;
+  final String lasName;
+  final String phoneNumber;
+  final String email;
+  final String location;
+  final String status;
+  final String action;
+
+  CustomerModel(
+      this.lead,
+      this.firstName,
+      this.lasName,
+      this.phoneNumber,
+      this.email,
+      this.location,
+      this.status,
+      this.action);
+}
+
+class CustomerDataSource extends DataTableSource {
+  BuildContext context;
+  final List<CustomerModel> customer;
+
+  CustomerDataSource(this.customer, this.context);
+
+  @override
+  DataRow? getRow(
+      int index,
+      ) {
+    if (index >= customer.length || index < 0) return null;
+    final CustomerModel task = customer[index];
+    return DataRow.byIndex(
+      index: index,
+      cells: [
+        DataCell( Text(task.lead)),
+        DataCell(Row(children: [Padding(
+          padding: const EdgeInsets.all(2.0),
+          child: CircleAvatar(backgroundImage: AssetImage('${imageUrl}girl.png')),
+        ),SizedBox(width: 10,),Text(task.firstName), ],)),
+        DataCell(Text(task.lasName)),
+        DataCell(Text(task.phoneNumber)),
+        DataCell(Text(task.email)),
+        DataCell(Text(task.location)),
+        DataCell(Text(task.status)),
+        DataCell(Center(
+          child: Container(height: 45,width: 45,
+              decoration: BoxDecoration(
+                color: editDelContainerColor,
+                  borderRadius: BorderRadius.circular(8),
+                  border: Border.all(width: .5,color: AppColor.buttonTextColors),
+              boxShadow: [ BoxShadow(
+                color: AppColor.shadowColor.withOpacity(.05),
+                blurRadius: 18,
+                spreadRadius: 0
+              )]),
+              child: IconButton( onPressed: (){},icon: Icon(Icons.remove_red_eye,color: AppColor.buttonTextColor,),)),
+        ))
+    
+      ],
+    );
+  }
+
+  @override
+  int get rowCount => customer.length;
 
   @override
   bool get isRowCountApproximate => false;
