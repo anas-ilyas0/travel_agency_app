@@ -66,6 +66,7 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
                           const Tab(text: 'Dashboard'),
                           const Tab(text: 'Leads'),
                           const Tab(text: 'Agents'),
+                          
                           Tab(
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,

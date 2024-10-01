@@ -1,16 +1,11 @@
 
 
+import 'package:fab_tech_sol/Screen/all_leads.dart';
 import 'package:fab_tech_sol/Screen/client_detail_package.dart';
 import 'package:fab_tech_sol/Screen/lead_details.dart';
-import 'package:fab_tech_sol/Screen/local_supplier_detail.dart';
 import 'package:fab_tech_sol/Screen/pacakge_details2.dart';
-import 'package:fab_tech_sol/Screen/package.dart';
-import 'package:fab_tech_sol/Screen/package_detail.dart';
-import 'package:fab_tech_sol/Screen/package_Screen.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 
-import 'package:fab_tech_sol/firebase_options.dart';
-import 'package:fab_tech_sol/login_page.dart';
 
 import 'package:fab_tech_sol/providers/manage_color_state.dart';
 
@@ -18,10 +13,11 @@ import 'package:fab_tech_sol/themedata.dart';
 
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/ui/dashboard.dart';
+import 'package:fab_tech_sol/ui/dashboard_widget.dart';
+import 'package:fab_tech_sol/ui/leads_widget.dart';
 
 
 
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -57,7 +53,11 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeApp.myThemeData,
         title: AppStrings.appName,
-        home: ClientDetailPackage());
+        home:ClientDetailPackage()
+        
+
+        
+        );
 
 
      

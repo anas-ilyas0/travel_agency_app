@@ -346,7 +346,7 @@ class _PackageClassScreenState extends State<PackageClassScreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) =>  PacakgeDetails2(),
+                          builder: (context) =>  PackageDetails2(),
                         ));
                   },
                   child: Text(

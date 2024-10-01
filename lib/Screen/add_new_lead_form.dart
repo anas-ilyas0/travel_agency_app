@@ -85,12 +85,12 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Add New Lead Details',
+                          'Add New Quotation',
                           style: TextStyle(
                               color: color,
-                              fontFamily: readexPro,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15),
+                              fontFamily: fontFamilys,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 20),
                         ),
                         const SizedBox(height: 20),
                         Text(
@@ -102,18 +102,40 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                               fontSize: 17),
                         ),
                         const SizedBox(height: 15),
-                        Text(
-                          'Agent Name',
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 13,
-                              fontFamily: readexPro,
-                              fontWeight: FontWeight.bold),
+                        Row(
+                          children: [
+                            Text(
+                              'Agent Name',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 13,
+                                  fontFamily: readexPro,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                               SizedBox(width: context.screenWidth*0.31,),
+                              Text(
+                              'Supplier Name',
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 13,
+                                  fontFamily: readexPro,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ],
                         ),
                         const SizedBox(height: 5),
-                        UserEditData(text: "John Doe",onTap: (){
-                          NavigationUtil.navigatePush(context: context, destinationScreen: Dashboard(tabIndex: 2,));
-                        })
+                        Row(
+                          children: [
+                            UserEditData(text: "John Doe",onTap: (){
+                              NavigationUtil.navigatePush(context: context, destinationScreen: Dashboard(tabIndex: 2,));
+                            }),
+                              SizedBox(width:context.screenWidth*0.12,),
+                              UserEditData(text: "John Doe",onTap: (){
+                              NavigationUtil.navigatePush(context: context, destinationScreen: Dashboard(tabIndex: 2,));
+                            }),
+
+                          ],
+                        )
 
                       ],
                     ),
@@ -154,7 +176,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                       Widgets().textFormField("John Alen",context),
                     ],
                   ),
-                  const SizedBox(width: 15),
+                  const SizedBox(width: 18),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -169,7 +191,24 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                       const SizedBox(height: 5),
                       Widgets().textFormField('+1 (555) 987-6543',context),
                     ],
-                  )
+                  ),
+                  SizedBox(width: 20,),
+                   Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                     children: [
+                       Text(
+                        'Package',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 13,
+                            fontFamily: readexPro,
+                            fontWeight: FontWeight.bold),
+                      ),
+                       UserEditData(text: "John Doe",onTap: (){
+                                  NavigationUtil.navigatePush(context: context, destinationScreen: Dashboard(tabIndex: 2,));
+                                }),
+                     ],
+                   ),
                 ],
               ),
               const SizedBox(height: 10),

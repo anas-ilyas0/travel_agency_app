@@ -20,5 +20,13 @@ class AppTextstyless {
         static TextStyle addnewinternationalsuppliers = const TextStyle(fontWeight: FontWeight.w600,
       color: Color(0XFF303C6C), fontSize: 22, fontFamily: 'ReadexPro',);
         static TextStyle addnewinternationalsuppliersSubText= const TextStyle(fontWeight: FontWeight.w400,
-      color: Color(0XFF000000), fontSize: 16, fontFamily: 'ReadexPro',);
+      color: Color(0XFF000000), fontSize: 16, fontFamily: 'Poppin',);
+        static TextStyle allLeads= const TextStyle(fontWeight: FontWeight.w500,
+      color: Color(0XFF000000), fontSize: 14, fontFamily: 'Poppin',);
+      static TextStyle allLeadslocation= const TextStyle(fontWeight: FontWeight.w500,
+      color: Color(0XFF000000), fontSize: 12, fontFamily: 'Poppin',);
+       static TextStyle allLeadsDate= const TextStyle(fontWeight: FontWeight.w500,
+      color: Color(0XFF000000), fontSize: 12, fontFamily: 'Poppin',);
+       static TextStyle allLeadsViewDetail= const TextStyle(fontWeight: FontWeight.w800,
+      color: Color(0XFF000000), fontSize: 14, fontFamily: 'Poppin',);
 }

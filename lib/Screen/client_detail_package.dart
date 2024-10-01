@@ -53,7 +53,7 @@ class ClientDetailPackage extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => PacakgeDetails2(),
+                            builder: (context) => PackageDetails2(),
                           ));
                     },
                   )
@@ -132,7 +132,7 @@ class ClientDetailPackage extends StatelessWidget {
                                 color: AppColor.buttonTextColors,
                                 fontSize: 16,
                                 fontWeight: FontWeight.w200,
-                                fontFamily: 'Readex Pro'),
+                                fontFamily: 'ReadexPro'),
                           ),
                           SizedBox(
                             width: context.screenWidth * 0.205,
@@ -143,7 +143,7 @@ class ClientDetailPackage extends StatelessWidget {
                                 color: AppColor.buttonTextColors,
                                 fontSize: 16,
                                 fontWeight: FontWeight.w200,
-                                fontFamily: 'Readex Pro'),
+                                fontFamily: 'ReadexPro'),
                           ),
                           SizedBox(width: context.screenWidth * 0.15),
                           Text(
@@ -152,7 +152,7 @@ class ClientDetailPackage extends StatelessWidget {
                                 color: AppColor.buttonTextColors,
                                 fontSize: 16,
                                 fontWeight: FontWeight.w200,
-                                fontFamily: 'Readex Pro'),
+                                fontFamily: 'ReadexPro'),
                           ),
                         ],
                       ),
@@ -166,7 +166,7 @@ class ClientDetailPackage extends StatelessWidget {
                             style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w300,
-                                fontFamily: 'Readex Pro',
+                                fontFamily: 'ReadexPro',
                                 color: Color(0XFF0C1421)),
                           ),
                           SizedBox(
@@ -177,7 +177,7 @@ class ClientDetailPackage extends StatelessWidget {
                             style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w300,
-                                fontFamily: 'Readex Pro',
+                                fontFamily: 'ReadexPro',
                                 color: Color(0XFF0C1421)),
                           ),
                           SizedBox(
@@ -187,7 +187,7 @@ class ClientDetailPackage extends StatelessWidget {
                               style: TextStyle(
                                   fontWeight: FontWeight.w200,
                                   fontSize: 16,
-                                  fontFamily: 'Readex Pro')),
+                                  fontFamily: 'ReadexPro')),
                           SizedBox(
                             width: context.screenWidth * 0.1,
                           ),
@@ -196,7 +196,7 @@ class ClientDetailPackage extends StatelessWidget {
                             style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w300,
-                                fontFamily: 'Readex Pro',
+                                fontFamily: 'ReadexPro',
                                 color: Color(0XFF0C1421)),
                           ),
                           SizedBox(
@@ -207,7 +207,7 @@ class ClientDetailPackage extends StatelessWidget {
                             style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.w300,
-                                fontFamily: 'Readex Pro',
+                                fontFamily: 'ReadexPro',
                                 color: Color(0XFF0C1421)),
                           ),
                           SizedBox(
@@ -237,39 +237,43 @@ class ClientDetailPackage extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          Row(
-                            children: [
-                              Text('Client Name:',
-                                  style: AppTextstyless
-                                      .packageClientDetailTextStyle),
-                              SizedBox(
-                                width: context.screenWidth * 0.065,
+                          Flexible(
+                            child: FittedBox(
+                              child: Row(
+                                children: [
+                                  Text('Client Name:',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyle),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.065,
+                                  ),
+                                  const CircleAvatar(
+                                    radius: 20, // Adjust the radius for size
+                                    backgroundImage: AssetImage(
+                                        '${ImagesAssets.imagePath}Ellipse.png'), // Image from assets
+                                  ),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.01,
+                                  ),
+                                  Text('Jhon Doe',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyleSubTitle),
+                                  //  const Text('Jhon doe',style: TextStyle(fontSize: 13),),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.04,
+                                  ),
+                                  Text('Phone No:',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyle),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.02,
+                                  ),
+                                  Text('XXXXXXXXXXX',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyleSubTitle),
+                                ],
                               ),
-                              const CircleAvatar(
-                                radius: 20, // Adjust the radius for size
-                                backgroundImage: AssetImage(
-                                    '${ImagesAssets.imagePath}Ellipse.png'), // Image from assets
-                              ),
-                              SizedBox(
-                                width: context.screenWidth * 0.01,
-                              ),
-                              Text('Jhon Doe',
-                                  style: AppTextstyless
-                                      .packageClientDetailTextStyleSubTitle),
-                              //  const Text('Jhon doe',style: TextStyle(fontSize: 13),),
-                              SizedBox(
-                                width: context.screenWidth * 0.04,
-                              ),
-                              Text('Phone No:',
-                                  style: AppTextstyless
-                                      .packageClientDetailTextStyle),
-                              SizedBox(
-                                width: context.screenWidth * 0.02,
-                              ),
-                              Text('XXXXXXXXXXX',
-                                  style: AppTextstyless
-                                      .packageClientDetailTextStyleSubTitle),
-                            ],
+                            ),
                           ),
                         ],
                       ),
@@ -299,39 +303,43 @@ class ClientDetailPackage extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          Row(
-                            children: [
-                              Text('Client Name:',
-                                  style: AppTextstyless
-                                      .packageClientDetailTextStyle),
-                              SizedBox(
-                                width: context.screenWidth * 0.065,
+                          Flexible(
+                            child: FittedBox(
+                              child: Row(
+                                children: [
+                                  Text('Client Name:',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyle),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.065,
+                                  ),
+                                  const CircleAvatar(
+                                    radius: 20, // Adjust the radius for size
+                                    backgroundImage: AssetImage(
+                                        '${ImagesAssets.imagePath}Ellipse.png'), // Image from assets
+                                  ),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.01,
+                                  ),
+                                  Text('Jhon Doe',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyleSubTitle),
+                                  //  const Text('Jhon doe',style: TextStyle(fontSize: 13),),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.04,
+                                  ),
+                                  Text('Phone No:',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyle),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.02,
+                                  ),
+                                  Text('XXXXXXXXXXX',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyleSubTitle),
+                                ],
                               ),
-                              const CircleAvatar(
-                                radius: 20, // Adjust the radius for size
-                                backgroundImage: AssetImage(
-                                    '${ImagesAssets.imagePath}Ellipse.png'), // Image from assets
-                              ),
-                              SizedBox(
-                                width: context.screenWidth * 0.01,
-                              ),
-                              Text('Jhon Doe',
-                                  style: AppTextstyless
-                                      .packageClientDetailTextStyleSubTitle),
-                              //  const Text('Jhon doe',style: TextStyle(fontSize: 13),),
-                              SizedBox(
-                                width: context.screenWidth * 0.04,
-                              ),
-                              Text('Phone No:',
-                                  style: AppTextstyless
-                                      .packageClientDetailTextStyle),
-                              SizedBox(
-                                width: context.screenWidth * 0.02,
-                              ),
-                              Text('XXXXXXXXXXX',
-                                  style: AppTextstyless
-                                      .packageClientDetailTextStyleSubTitle),
-                            ],
+                            ),
                           ),
                         ],
                       ),
@@ -359,36 +367,44 @@ class ClientDetailPackage extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          Text('Destination:',
-                              style: AppTextstyless
-                                  .packageClientDetailTextStyle),
-                          SizedBox(
-                            width: context.screenWidth * 0.052,
+                          Flexible(
+                            child: FittedBox(
+                              child: Row(
+                                children: [
+                                  Text('Destination:',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyle),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.052,
+                                  ),
+                                   Text('Sialkot Punjab 51040',
+                                      style:AppTextstyless.packageClientDetailTextStyleSubTitle),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.0355,
+                                  ),
+                                  Text('Booking Date:',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyle),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.02,
+                                  ),
+                                   Text('08/15/2024',
+                                      style:AppTextstyless.packageClientDetailTextStyleSubTitle),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.05,
+                                  ),
+                                  Text('Travel Date:',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyle),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.05,
+                                  ),
+                                Text('08/18/2024',
+                                      style:AppTextstyless.packageClientDetailTextStyleSubTitle),
+                                ],
+                              ),
+                            ),
                           ),
-                           Text('Sialkot Punjab 51040',
-                              style:AppTextstyless.packageClientDetailTextStyleSubTitle),
-                          SizedBox(
-                            width: context.screenWidth * 0.0355,
-                          ),
-                          Text('Booking Date:',
-                              style: AppTextstyless
-                                  .packageClientDetailTextStyle),
-                          SizedBox(
-                            width: context.screenWidth * 0.02,
-                          ),
-                           Text('08/15/2024',
-                              style:AppTextstyless.packageClientDetailTextStyleSubTitle),
-                          SizedBox(
-                            width: context.screenWidth * 0.05,
-                          ),
-                          Text('Travel Date:',
-                              style: AppTextstyless
-                                  .packageClientDetailTextStyle),
-                          SizedBox(
-                            width: context.screenWidth * 0.05,
-                          ),
-                        Text('08/18/2024',
-                              style:AppTextstyless.packageClientDetailTextStyleSubTitle),
                         ],
                       ),
                       SizedBox(
@@ -414,38 +430,46 @@ class ClientDetailPackage extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          Text('Package Amount:',
-                              style: AppTextstyless
-                                  .packageClientDetailTextStyle),
-                          SizedBox(
-                            width: context.screenWidth * 0.021,
+                          Flexible(
+                            child: FittedBox(
+                              child: Row(
+                                children: [
+                                  Text('Package Amount:',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyle),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.021,
+                                  ),
+                                  Text(
+                                    "\$232,89.00",
+                                 style:AppTextstyless.packageClientDetailTextStyleSubTitle),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.091,
+                                  ),
+                                  Text('Paid Amount:',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyle),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.02,
+                                  ),
+                                   Text(
+                                    ' 232,89.00',
+                                    style:AppTextstyless.packageClientDetailTextStyleSubTitle),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.065,
+                                  ),
+                                  Text('Outstanding Amount:',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyle),
+                                  SizedBox(
+                                    width: context.screenWidth * 0.015,
+                                  ),
+                                  Text('\$232,89.00',
+                                      style: AppTextstyless.packageClientDetailTextStyleSubTitle),
+                                ],
+                              ),
+                            ),
                           ),
-                          Text(
-                            "\$232,89.00",
-                         style:AppTextstyless.packageClientDetailTextStyleSubTitle),
-                          SizedBox(
-                            width: context.screenWidth * 0.091,
-                          ),
-                          Text('Paid Amount:',
-                              style: AppTextstyless
-                                  .packageClientDetailTextStyle),
-                          SizedBox(
-                            width: context.screenWidth * 0.02,
-                          ),
-                           Text(
-                            ' 232,89.00',
-                            style:AppTextstyless.packageClientDetailTextStyleSubTitle),
-                          SizedBox(
-                            width: context.screenWidth * 0.065,
-                          ),
-                          Text('Outstanding Amount:',
-                              style: AppTextstyless
-                                  .packageClientDetailTextStyle),
-                          SizedBox(
-                            width: context.screenWidth * 0.015,
-                          ),
-                          Text('\$232,89.00',
-                              style: AppTextstyless.packageClientDetailTextStyleSubTitle),
                         ],
                       ),
                       SizedBox(

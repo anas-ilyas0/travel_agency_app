@@ -651,4 +651,7 @@ enabledBorder: const OutlineInputBorder(
       ),
     );
   }
+   Widget allLeadNoOfLeads(String text){
+    return Text('No Of Leads ${text}',style: AppTextstyless.allLeads,);
+  }
 }
