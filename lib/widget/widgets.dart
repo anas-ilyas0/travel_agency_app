@@ -366,17 +366,17 @@ class Widgets {
     String text,
     VoidCallback onTap,
   ) {
-    return Container(
-      height: 48,
-      decoration: BoxDecoration(
-          color: addLeadButtonColor, borderRadius: BorderRadius.circular(5)),
-      child: Padding(
-        padding: const EdgeInsets.only(left: 10),
-        child: Row(
-          children: [
-            GestureDetector(
-              onTap: onTap,
-              child: SizedBox(
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        height: 48,
+        decoration: BoxDecoration(
+            color: addLeadButtonColor, borderRadius: BorderRadius.circular(5)),
+        child: Padding(
+          padding: const EdgeInsets.only(left: 10),
+          child: Row(
+            children: [
+              SizedBox(
                 height: 46,
                 width: 180,
                 child: Center(
@@ -392,9 +392,9 @@ class Widgets {
                         fontWeight: FontWeight.w400),
                   ),
                 ),
-              ),
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );
