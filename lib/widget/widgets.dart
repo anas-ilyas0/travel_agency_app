@@ -12,7 +12,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class Widgets {
-
+  final List<CustomerModel> customerTask =List.generate(20, (index)=>CustomerModel('F2D744688', 'Jhon', 'Doe', '+21 999 999 999', 'example@gmail.com', 'Sialkot Punjab 51040', 'Active', ''));
 
   final List<AgentsTask> agentsTasks = List.generate(
       5,
@@ -237,7 +237,7 @@ class Widgets {
             ),
           ),
         Padding(
-          padding: const EdgeInsets.only(right: 30),
+          padding: const EdgeInsets.only(right: 25),
           child: CircleAvatar(
             backgroundImage:
                 backgroundImage != null ? AssetImage(backgroundImage) : null,
@@ -361,8 +361,8 @@ class Widgets {
             GestureDetector(
               onTap: onTap,
               child: SizedBox(
-                height: 34,
-                width: 135,
+                height: 46,
+                width: 180,
                 child: Center(
                   child: Text(
                     text,

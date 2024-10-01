@@ -1,6 +1,6 @@
 import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/dimensions.dart';
-import 'package:fab_tech_sol/widgets/back_button_title_avatar.dart';
+import 'package:fab_tech_sol/widget/back_button_title_avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

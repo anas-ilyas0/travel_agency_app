@@ -5,12 +5,12 @@ import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/providers/localsuplierprovider.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
-import 'package:fab_tech_sol/widgets/addnewagent.dart';
-import 'package:fab_tech_sol/widgets/back_button_title_avatar.dart';
+import 'package:fab_tech_sol/widget/addnewagent.dart';
+import 'package:fab_tech_sol/widget/back_button_title_avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../widgets/supplier_dropdown.dart';
+import '../widget/supplier_dropdown.dart';
 
 class AddNewLocalSupplier extends StatefulWidget {
   const AddNewLocalSupplier({super.key});

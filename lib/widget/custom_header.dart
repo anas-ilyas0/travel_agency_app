@@ -2,7 +2,7 @@ import 'package:fab_tech_sol/Screen/international_suppliers_details.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/ui/supplier_widget.dart';
-import 'package:fab_tech_sol/widgets/widgets.dart';
+import 'package:fab_tech_sol/widget/widgets.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -42,7 +42,7 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
                   ),
                   Padding(
                       padding: EdgeInsets.only(
-                        left: context.screenWidth * .12,
+                        left: context.screenWidth * .03,
                       ),
                       child: TabBar(
                         labelStyle: TextStyle(
@@ -57,12 +57,13 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
                         indicatorWeight: 3,
                         indicatorSize: TabBarIndicatorSize.tab,
                         labelPadding:
-                            EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+                            EdgeInsets.symmetric(horizontal: 22, vertical: 8),
                         isScrollable: true,
                         tabs: [
                           const Tab(text: 'Dashboard'),
                           const Tab(text: 'Leads'),
                           const Tab(text: 'Agents'),
+                          const Tab(text: 'Customer'),
                           Tab(
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -96,27 +97,27 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
               ),
             )
           : null,
-      leading: Responsive.isMobile(context) && dashboardTabController.index == 0
-          ? Builder(
-              builder: (context) {
-                return IconButton(
-                  icon: const Icon(Icons.menu),
-                  onPressed: () {
-                    Scaffold.of(context)
-                        .openDrawer(); // Correct context provided here
-                  },
-                );
-              },
-            )
-          : null,
+      // leading: Responsive.isMobile(context) && dashboardTabController.index == 0
+      //     ? Builder(
+      //         builder: (context) {
+      //           return IconButton(
+      //             icon: const Icon(Icons.menu),
+      //             onPressed: () {
+      //               Scaffold.of(context)
+      //                   .openDrawer(); // Correct context provided here
+      //             },
+      //           );
+      //         },
+      //       )
+      //     : null,
       actions: [
         Padding(
           padding: EdgeInsets.only(right: context.screenWidth * .01),
           child: Widgets().circularAvatar(text: 'Name here'),
         ),
-        if (dashboardTabController.index == 0) ...[
-          if (Responsive.isMobile(context)) _buildMenuBar()
-        ]
+        // if (dashboardTabController.index == 0) ...[
+        //   if (Responsive.isMobile(context)) _buildMenuBar()
+        // ]
       ],
     );
   }

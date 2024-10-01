@@ -20,4 +20,5 @@ class AppColor {
   static Color blackColor= Colors.black;
   static Color packageFormColor=Color(0XFFD4D7E3);
    static Color addnewagent=Color(0XFF303C6C);
+   static Color shadowColor=Color(0XFF000000);
 }

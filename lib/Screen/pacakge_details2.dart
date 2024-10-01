@@ -3,13 +3,13 @@ import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
-import 'package:fab_tech_sol/widgets/widgets.dart';
+import 'package:fab_tech_sol/widget/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
-import '../widgets/supplier_dropdown.dart';
+import '../widget/supplier_dropdown.dart';
 
 class PacakgeDetails2 extends StatelessWidget {
   const PacakgeDetails2({super.key});

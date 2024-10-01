@@ -6,8 +6,8 @@ import 'package:fab_tech_sol/resources/navigation_util.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:fab_tech_sol/ui/dashboard.dart';
 import 'package:fab_tech_sol/widget/useredit_data.dart';
-import 'package:fab_tech_sol/widgets/back_button_title_avatar.dart';
-import 'package:fab_tech_sol/widgets/widgets.dart';
+import 'package:fab_tech_sol/widget/back_button_title_avatar.dart';
+import 'package:fab_tech_sol/widget/widgets.dart';
 import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
