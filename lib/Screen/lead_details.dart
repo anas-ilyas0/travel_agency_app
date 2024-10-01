@@ -56,34 +56,36 @@ class LeadDetails extends StatelessWidget {
               Spacer(),SizedBox(width: context.screenWidth*0.55,),
 
               Flexible(
-                child: GestureDetector(
-                  onTap: (){ Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => LeadDetails(),
-                      ));
-                  },
-                  child: Container(
-                    width: context.screenWidth * 0.13,
-                    height: context.screenHeight * 0.08,
-                    decoration: BoxDecoration(
-                      color: const Color(0XFF333333),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: FittedBox(
-                      fit: BoxFit.scaleDown,
-                      child: Center(
-                        child: Text(
-                          "Add new Lead",
-                          style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontFamily: fontFamilys,
-                            color: Colors.white,
-                            fontSize: 16,),
-                           overflow: TextOverflow.ellipsis,
-                            ),
+                child: FittedBox(
+                  child: GestureDetector(
+                    onTap: (){ Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LeadDetails(),
+                        ));
+                    },
+                    child: Container(
+                      width: context.screenWidth * 0.13,
+                      height: context.screenHeight * 0.08,
+                      decoration: BoxDecoration(
+                        color: const Color(0XFF333333),
+                        borderRadius: BorderRadius.circular(10),
                       ),
-                    ))),
+                      child: FittedBox(
+                        fit: BoxFit.scaleDown,
+                        child: Center(
+                          child: Text(
+                            "Add new Lead",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w400,
+                              fontFamily: fontFamilys,
+                              color: Colors.white,
+                              fontSize: 16,),
+                             overflow: TextOverflow.ellipsis,
+                              ),
+                        ),
+                      ))),
+                ),
               )
                     ])
           ),
@@ -115,51 +117,8 @@ class LeadDetails extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text('Agent Details:',
-                        style:
-                            AppTextstyless.packageClientDetailTextStyleHeading),
-                  ),
-                  SizedBox(
-                    height: context.screenHeight * 0.03,
-                  ),
-
-                  Row(
-                    children: [
-                      Text('Agent Name:',
-                          style: AppTextstyless.packageClientDetailTextStyle),
-                      SizedBox(
-                        width: context.screenWidth * 0.066,
-                      ),
-                      const CircleAvatar(
-                        radius: 20, // Adjust the radius for size
-                        backgroundImage: AssetImage(
-                            '${ImagesAssets.imagePath}Ellipse.png'), // Image from assets
-                      ),
-                      SizedBox(
-                        width: context.screenWidth * 0.01,
-                      ),
-                      Flexible(
-                        flex: 1,
-                        child: Text('Jhon Doe',
-                            style: AppTextstyless
-                                .packageClientDetailTextStyleSubTitle),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: context.screenHeight * 0.02,
-                  ),
-                  Divider(
-                    endIndent: 4,
-                    indent: 4,
-                    color: AppColor.dividerColor,
-                    thickness: 0.5,
-                  ),
-                  SizedBox(
-                    height: context.screenHeight * 0.02,
-                  ),
+                 
+                  
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
@@ -182,6 +141,14 @@ class LeadDetails extends StatelessWidget {
                       SizedBox(
                         width: context.screenWidth * 0.064,
                       ),
+                      const CircleAvatar(
+                        radius: 20, // Adjust the radius for size
+                        backgroundImage: AssetImage(
+                            '${ImagesAssets.imagePath}Ellipse.png'), // Image from assets
+                      ),
+                      SizedBox(
+                        width: context.screenWidth * 0.01,
+                      ),
                       Flexible(
                         flex: 1,
                         child: Text(
@@ -191,7 +158,7 @@ class LeadDetails extends StatelessWidget {
                         ),
                       ),
                       SizedBox(
-                        width: context.screenWidth * 0.09,
+                        width: context.screenWidth * 0.05,
                       ),
                       Flexible(
                         flex: 1,
@@ -333,6 +300,127 @@ class LeadDetails extends StatelessWidget {
                     color: AppColor.dividerColor,
                     thickness: 0.5,
                   ),
+                   Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text('Agent Details:',
+                        style:
+                            AppTextstyless.packageClientDetailTextStyleHeading),
+                  ),
+                  SizedBox(
+                    height: context.screenHeight * 0.03,
+                  ),
+
+                  Row(
+                    children: [
+                      Text('Agent Name:',
+                          style: AppTextstyless.packageClientDetailTextStyle),
+                      SizedBox(
+                        width: context.screenWidth * 0.066,
+                      ),
+                      const CircleAvatar(
+                        radius: 20, // Adjust the radius for size
+                        backgroundImage: AssetImage(
+                            '${ImagesAssets.imagePath}Ellipse.png'), // Image from assets
+                      ),
+                      SizedBox(
+                        width: context.screenWidth * 0.01,
+                      ),
+                      
+                      Flexible(
+                        flex: 1,
+                        child: Text('Jhon Doe',
+                            style: AppTextstyless
+                                .packageClientDetailTextStyleSubTitle),
+                      ),
+                       SizedBox(
+                        width: context.screenWidth * 0.049,
+                      ),
+                      Flexible(
+                        flex: 1,
+
+                        child: Text(
+                          'Phone No:',
+                          style: AppTextstyless.packageClientDetailTextStyle,
+                        ),
+                      ),
+                      SizedBox(
+                        width: context.screenWidth * 0.0575,
+                      ),
+                      Flexible(
+                        flex: 1,
+                        child: Text(
+                          'XXXXXXXXXXX',
+                          style: AppTextstyless
+                              .packageClientDetailTextStyleSubTitle,
+                        ),
+                      ),
+                    ],
+                  ),
+                   SizedBox(
+                    height: context.screenHeight * 0.02,
+                  ),
+                  Divider(indent: 4,endIndent: 4,thickness: 0.5,),
+                  SizedBox(
+                    height: context.screenHeight * 0.02,
+                  ),
+                    Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text('Supplier Details:',
+                        style:
+                            AppTextstyless.packageClientDetailTextStyleHeading),
+                  ),
+                  SizedBox(
+                    height: context.screenHeight * 0.03,
+                  ),
+
+                  Row(
+                    children: [
+                      Text('Agent Name:',
+                          style: AppTextstyless.packageClientDetailTextStyle),
+                      SizedBox(
+                        width: context.screenWidth * 0.066,
+                      ),
+                      const CircleAvatar(
+                        radius: 20, // Adjust the radius for size
+                        backgroundImage: AssetImage(
+                            '${ImagesAssets.imagePath}Ellipse.png'), // Image from assets
+                      ),
+                      SizedBox(
+                        width: context.screenWidth * 0.01,
+                      ),
+                      Flexible(
+                        flex: 1,
+                        child: Text('Jhon Doe',
+                            style: AppTextstyless
+                                .packageClientDetailTextStyleSubTitle),
+                      ),
+                       SizedBox(
+                        width: context.screenWidth * 0.049,
+                      ),
+                      Flexible(
+                        flex: 1,
+                        child: Text(
+                          'Phone No:',
+                          style: AppTextstyless.packageClientDetailTextStyle,
+                        ),
+                      ),
+                      SizedBox(
+                        width: context.screenWidth * 0.0575,
+                      ),
+                      Flexible(
+                        flex: 1,
+                        child: Text(
+                          'XXXXXXXXXXX',
+                          style: AppTextstyless
+                              .packageClientDetailTextStyleSubTitle,
+                        ),
+                      ),
+                    ],
+                  ),
+                   SizedBox(
+                    height: context.screenHeight * 0.02,
+                  ),
+                  Divider(indent: 4,endIndent: 4,thickness: 0.5),
                   SizedBox(
                     height: context.screenHeight * 0.02,
                   ),
@@ -479,6 +567,104 @@ class LeadDetails extends StatelessWidget {
                   SizedBox(
                     height: context.screenHeight * 0.02,
                   ),
+                    Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text('Tour Expanse:',
+                        style:
+                            AppTextstyless.packageClientDetailTextStyleHeading),
+                  ),
+                   SizedBox(
+                    height: context.screenHeight * 0.04,
+                  ),
+                   Row(
+                    children: [
+                      Flexible(
+                        flex: 2,
+                        child: Text('Hotel Expanse',
+                            style: AppTextstyless.packageClientDetailTextStyle),
+                      ),
+                      SizedBox(
+                        width: context.screenWidth * 0.054,
+                      ),
+                      Flexible(
+                        flex: 1,
+                        child:  Text("\$25,000",
+                            style: AppTextstyless
+                              .packageClientDetailTextStyleSubTitle),
+                      ),
+                      SizedBox(
+                        width: context.screenWidth * 0.1,
+                      ),
+                      Flexible(
+                        flex: 2,
+                        child: Text('Air Tickets',
+                            style: AppTextstyless.packageClientDetailTextStyle),
+                      ),
+                      SizedBox(
+                        width: context.screenWidth * 0.048,
+                      ),
+                      Flexible(
+                        flex: 1,
+                        child:  Text(' \$35,000',
+                            style:AppTextstyless
+                              .packageClientDetailTextStyleSubTitle),
+                      ),
+                      SizedBox(
+                        width: context.screenWidth * 0.084,
+                      ),
+                      Flexible(
+                        flex: 2,
+                        child: Text('Any refreshments:',
+                            style: AppTextstyless.packageClientDetailTextStyle),
+                      ),
+                      SizedBox(
+                        width: context.screenWidth * 0.015,
+                      ),
+                      Flexible(
+                        flex: 1,
+                        child:  Text('\$10,000',
+                            style:AppTextstyless
+                              .packageClientDetailTextStyleSubTitle),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 10,),
+                    Row(
+                    children: [
+                      Flexible(
+                        flex: 2,
+                        child: Text('Lunch or Any Dinner:',
+                            style: AppTextstyless.packageClientDetailTextStyle),
+                      ),
+                      SizedBox(
+                        width: context.screenWidth * 0.0118,
+                      ),
+                      Flexible(
+                        flex: 1,
+                        child:  Text("\$5,000",
+                            style: AppTextstyless
+                              .packageClientDetailTextStyleSubTitle),
+                      ),
+                      SizedBox(
+                        width: context.screenWidth * 0.108,
+                      ),
+                      Flexible(
+                        flex: 2,
+                        child: Text('Net Profit',
+                            style: AppTextstyless.packageClientDetailTextStyle),
+                      ),
+                      SizedBox(
+                        width: context.screenWidth * 0.05,
+                      ),
+                      Flexible(
+                        flex: 1,
+                        child:  Text(' \$45,000',
+                            style:AppTextstyless
+                              .packageClientDetailTextStyleSubTitle),
+                      ),]),
+                      SizedBox(height: context.screenHeight*0.03,),
+                      Divider(thickness: 0.5,),
+                        SizedBox(height: context.screenHeight*0.02,),
                 ],
               ),
             ),

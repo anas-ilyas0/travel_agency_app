@@ -113,7 +113,7 @@ class _TypePeopleDropdownState extends State<TypePeopleDropdown> {
     String? selectedValue;
 
     return SizedBox(
-      width: 100*  context.screenWidth/400,
+      width: 100*  context.screenWidth/560,
 
       child: DropdownButtonFormField<String>(
         value: selectedValue,

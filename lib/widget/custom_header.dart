@@ -41,8 +41,6 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
                       ),
                     ),
                   ),
-
-
                   TabBar(
                     labelStyle: TextStyle(
                         fontFamily: readexPro, fontWeight: FontWeight.bold),
@@ -65,36 +63,30 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
                       const Tab(text: 'Agents'),
                       const Tab(text: 'Customer'),
                       Tab(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
+                          child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
                             const Text('Supplier'),
                             PopupMenuButton<String>(
-                              icon: const Icon(Icons.arrow_drop_down),
-                              onSelected: (String value) {
-                                supplierProvider.setSelectedOption(value);
-                                dashboardTabController.animateTo(3);
-                              },
-                              itemBuilder: (context) => [
-                                const PopupMenuItem(
-                                  value: 'Local',
-                                  child: Text('Local Supplier'),
-                                ),
-                                const PopupMenuItem(
-                                  value: 'International',
-                                  child: Text('International Supplier'),
-                                ),
-                              ],
-                              // child: Text(supplierType),
-                            ),
-                          ],
-                        ),
-                      ),
+                                icon: const Icon(Icons.arrow_drop_down),
+                                onSelected: (String value) {
+                                  supplierProvider.setSelectedOption(value);
+                                  dashboardTabController.animateTo(3);
+                                },
+                                itemBuilder: (context) => [
+                                      const PopupMenuItem(
+                                        value: 'Local',
+                                        child: Text('Local Supplier'),
+                                      ),
+                                      const PopupMenuItem(
+                                          value: 'International',
+                                          child: Text('International Supplier'))
+                                    ])
+                          ])),
                       Tab(text: 'Package'),
                     ],
                   ),
-
-      ],
+                ],
               ),
             )
           : null,

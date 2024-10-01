@@ -174,7 +174,7 @@ class LeadScreen extends StatelessWidget {
                                 Align(
                                   alignment: Alignment.centerRight,
                                   child: SizedBox(
-                                    width: 150,
+                                    width: 200,
                                     child: ElevatedButton(
                                       style: ElevatedButton.styleFrom(
                                         backgroundColor: color,
@@ -189,12 +189,13 @@ class LeadScreen extends StatelessWidget {
                                         );
                                       },
                                       child: Text(
-                                        'View Details',
+                                        'Create Quotation',
                                         style: TextStyle(
 
                                           fontFamily: fontFamilys,
-
-                                        //  fontFamily: readexPro,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.w400,
+                                        
 
                                           color: Colors.white,
                                         ),
@@ -240,52 +241,59 @@ class LeadScreen extends StatelessWidget {
                               ),
                             ],
                           ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(12.0),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Widgets().row('Lead Number', '01'),
-                                Widgets().row('Agent Name', 'John Doe'),
-                                Widgets().row('Client Name', 'John Doe'),
-                                Widgets().row('Lead Date', '08/16/2024'),
-                                Widgets().row('Status', 'Confirmed'),
-                                const SizedBox(height: 20),
-                                SizedBox(
-                                  width: double.infinity,
-                                  height: 38,
-                                  child: ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                      elevation: 5,
-                                      backgroundColor: color,shadowColor:Colors.orange.withOpacity(.2),
-                                    ),
-                                    onPressed: () {
-                                      Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) => LeadDetails(),
+                          child: Flexible(
+                            child: Padding(
+                              padding: const EdgeInsets.all(12.0),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Widgets().row('Lead Number', '01'),
+                                  Widgets().row('Agent Name', 'John Doe'),
+                                  Widgets().row('Client Name', 'John Doe'),
+                                  Widgets().row('Lead Date', '08/16/2024'),
+                                  Widgets().row('Status', 'Confirmed'),
+                                  const SizedBox(height: 20),
+                                  SizedBox(
+                                    width: double.infinity,
+                                    height: 38,
+                                    child: ElevatedButton(
+                                      style: ElevatedButton.styleFrom(
+                                        elevation: 5,
+                                        backgroundColor: color,shadowColor:Colors.orange.withOpacity(.2),
+                                      ),
+                                      onPressed: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => LeadDetails(),
+                                          ),
+                                        );
+                                      },
+                                      child: Text(
+                                        'Create Quotation',
+                                        style: TextStyle(
+                                      
+                                          fontFamily: fontFamilys,
+                                      
+                                       fontSize: 17,
+                                       fontWeight: FontWeight.w400,
+                                      
+                                          color: Colors.white,
                                         ),
-                                      );
-                                    },
-                                    child: Text(
-                                      'View Details',
-                                      style: TextStyle(
-
-                                        fontFamily: fontFamilys,
-
-                                      //  fontFamily: readexPro,
-
-                                        color: Colors.white,
                                       ),
                                     ),
                                   ),
-                                ),
-                              ],
+                                  
+                                ],
+                              ),
                             ),
                           ),
                         ),
+                        
                       );
+                    
                     },
+                    
                   ),
 
 
@@ -337,7 +345,7 @@ class LeadScreen extends StatelessWidget {
 
                                       fontFamily: fontFamilys,
 
-                                    //  fontFamily: readexPro,
+                                 
 
                                       color: Colors.white,
                                     ),

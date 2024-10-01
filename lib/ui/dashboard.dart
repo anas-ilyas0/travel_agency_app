@@ -1,4 +1,5 @@
 
+import 'package:fab_tech_sol/Screen/all_leads.dart';
 import 'package:fab_tech_sol/Screen/international_supplier.dart';
 import 'package:fab_tech_sol/Screen/package_Screen.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
@@ -73,17 +74,19 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
           ),
           Expanded(
             child: TabBarView(
+              
               controller: dashboardTabController,
               physics: const NeverScrollableScrollPhysics(),
               children: [
                 DashBoardScreen(),
-                LeadScreen(tabController: leadsTabController!),
+                AllLeads(tabController: leadsTabController!),
                 const AgentScreen(),
+                
                 CustomerScreen(),
                 provider.selectedOptions == "Local"
                     ? const SupplierScreen()
                     : const InternationalSupplierScreen(),
-                const PackageClassScreen(),
+                     const PackageClassScreen(),
               ],
             ),
           ),

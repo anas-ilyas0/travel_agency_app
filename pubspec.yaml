@@ -42,6 +42,7 @@ dependencies:
   flutter_screenutil: ^5.9.3
   image_picker: ^1.1.2
   animations: ^2.0.11
+  responsive_screen_utils: ^0.0.2
   
 
 dev_dependencies:
@@ -83,16 +84,25 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: ReadexPro
-      fonts:
-        - asset: assets/fonts/ReadexPro-Medium.ttf
-        - asset: assets/fonts/ReadexPro-Light.ttf
-        - asset: assets/fonts/ReadexPro-bold.ttf
-        - asset: assets/fonts/ReadexPro-Regular.ttf
-    - family: Poppin
-      fonts:
-        - asset: assets/fonts/Poppins-Regular.ttf
-   #ts/fonts/Poppins-Regular.ttf
+  - family: ReadexPro
+    fonts:
+      - asset: assets/fonts/ReadexPro-Medium.ttf
+      - asset: assets/fonts/ReadexPro-Light.ttf
+      - asset: assets/fonts/ReadexPro-Bold.ttf
+      - asset: assets/fonts/ReadexPro-Regular.ttf
+  - family: Poppin
+    fonts:
+      - asset: assets/fonts/Poppins-Regular.ttf
+  - family: Roboto
+    fonts:
+      - asset: assets/fonts/Roboto-Black.ttf
+      - asset: assets/fonts/Roboto-BlackItalic.ttf
+      - asset: assets/fonts/Roboto-Bold.ttf
+      - asset: assets/fonts/Roboto-BoldItalic.ttf
+      - asset: assets/fonts/Roboto-MediumItalic.ttf
+      - asset: assets/fonts/Roboto-Regular.ttf
+      - asset: assets/fonts/Roboto-Thin.ttf
+      - asset: assets/fonts/Roboto-ThinItalic.ttf
 
   #       - asset: fonts/TrajanPro_Bold.ttf
 

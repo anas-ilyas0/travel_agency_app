@@ -10,7 +10,8 @@ import 'package:fab_tech_sol/ui/tasks_data_source.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../Screen/client_details_package.dart';
+import '../Screen/client_detail_package_screen.dart';
+
 
 class Widgets {
   final List<CustomerModel> customerTask =List.generate(20, (index)=>CustomerModel('F2D744688', 'Jhon', 'Doe', '+21 999 999 999', 'example@gmail.com', 'Sialkot Punjab 51040', 'Active', ''));
@@ -665,5 +666,8 @@ enabledBorder: const OutlineInputBorder(
         ],
       ),
     );
+  }
+   Widget allLeadNoOfLeads(String text){
+    return Text('No Of Leads ${text}',style: AppTextstyless.allLeads,);
   }
 }

@@ -18,6 +18,7 @@ final cancelButtonColor  = AppStrings.cancelButtonColor;
 class AppStrings {
 
   static String fontFamily = 'ReadexPro';
+  
   static Color finalButtonTextColor = const Color(0XFF202529);
   static Color mobileLeadText1Color = const Color(0XFF4DA0B5);
   static Color cancelButtonColor = const Color(0XFFD5D5D5);

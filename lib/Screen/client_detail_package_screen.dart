@@ -2,6 +2,7 @@ import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/Screen/AppText/TextStyle.dart';
 import 'package:fab_tech_sol/Screen/pacakge_details2.dart';
+import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
@@ -38,11 +39,11 @@ class ClientDetailPackage extends StatelessWidget {
                 ),
                 SizedBox(width: 10,),
 
-                const Text(
+                 Text(
                   'Client Details',
                   style: TextStyle(
                     fontSize: 30,
-                    fontFamily: 'Readex Pro bold',
+                    fontFamily: fontFamilys,
                     fontWeight: FontWeight.w700,
                     color: Color(0XFF11345A),
                   ),
@@ -70,7 +71,7 @@ class ClientDetailPackage extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => PacakgeDetails2(),
+                                builder: (context) => PackageDetails2(),
                               ));
                         },
                       )
@@ -98,7 +99,7 @@ class ClientDetailPackage extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => PacakgeDetails2(),
+                            builder: (context) => PackageDetails2(),
                           ));
                     },
                   )
@@ -175,8 +176,8 @@ class ClientDetailPackage extends StatelessWidget {
                               style: TextStyle(
                                   color: AppColor.buttonTextColors,
                                   fontSize: 16,
-                                  fontWeight: FontWeight.w200,
-                                  fontFamily: 'Readex Pro'),
+                                  fontWeight: FontWeight.w400,
+                                  fontFamily: fontFamilys),
                             ),
                             SizedBox(
                               width: context.screenWidth * 0.205,
@@ -186,8 +187,8 @@ class ClientDetailPackage extends StatelessWidget {
                               style: TextStyle(
                                   color: AppColor.buttonTextColors,
                                   fontSize: 16,
-                                  fontWeight: FontWeight.w200,
-                                  fontFamily: 'Readex Pro'),
+                                  fontWeight: FontWeight.w400,
+                                  fontFamily:fontFamilys),
                             ),
                             SizedBox(width: context.screenWidth * 0.15),
                             Text(
@@ -195,8 +196,8 @@ class ClientDetailPackage extends StatelessWidget {
                               style: TextStyle(
                                   color: AppColor.buttonTextColors,
                                   fontSize: 16,
-                                  fontWeight: FontWeight.w200,
-                                  fontFamily: 'Readex Pro'),
+                                  fontWeight: FontWeight.w400,
+                                  fontFamily:fontFamilys),
                             ),
                           ],
                         ),
@@ -205,53 +206,53 @@ class ClientDetailPackage extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            const Text(
+                             Text(
                               'Adult:',
                               style: TextStyle(
                                   fontSize: 15,
-                                  fontWeight: FontWeight.w300,
-                                  fontFamily: 'Readex Pro',
+                                  fontWeight: FontWeight.w400,
+                                  fontFamily: fontFamilys,
                                   color: Color(0XFF0C1421)),
                             ),
                             SizedBox(
                               width: context.screenWidth * 0.115,
                             ),
-                            const Text(
+                             Text(
                               '1 000 000',
                               style: TextStyle(
                                   fontSize: 15,
-                                  fontWeight: FontWeight.w300,
-                                  fontFamily: 'Readex Pro',
+                                  fontWeight: FontWeight.w400,
+                                  fontFamily: fontFamilys,
                                   color: Color(0XFF0C1421)),
                             ),
                             SizedBox(
                               width: context.screenWidth * 0.082,
                             ),
-                            const Text('Adult',
+                             Text('Adult',
                                 style: TextStyle(
-                                    fontWeight: FontWeight.w200,
+                                    fontWeight: FontWeight.w400,
                                     fontSize: 16,
-                                    fontFamily: 'Readex Pro')),
+                                    fontFamily: fontFamilys)),
                             SizedBox(
                               width: context.screenWidth * 0.1,
                             ),
-                            const Text(
+                             Text(
                               '1',
                               style: TextStyle(
                                   fontSize: 15,
-                                  fontWeight: FontWeight.w300,
-                                  fontFamily: 'Readex Pro',
+                                  fontWeight: FontWeight.w400,
+                                  fontFamily: fontFamilys,
                                   color: Color(0XFF0C1421)),
                             ),
                             SizedBox(
                               width: context.screenWidth * 0.14,
                             ),
-                            const Text(
+                             Text(
                               '1',
                               style: TextStyle(
                                   fontSize: 15,
                                   fontWeight: FontWeight.w300,
-                                  fontFamily: 'Readex Pro',
+                                  fontFamily: fontFamilys,
                                   color: Color(0XFF0C1421)),
                             ),
                             SizedBox(

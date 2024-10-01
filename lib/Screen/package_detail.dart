@@ -87,7 +87,7 @@ class PackageDetail extends StatelessWidget {
                          Navigator.push(
                              context,
                              MaterialPageRoute(
-                               builder: (context) => PacakgeDetails2(),
+                               builder: (context) => PackageDetails2(),
                              ));
                        },
                      )
