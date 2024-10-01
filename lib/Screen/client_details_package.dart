@@ -15,7 +15,7 @@ class ClientDetailPackage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     final providerValue = Provider.of<UserProvider>(context);
+    final providerValue = Provider.of<UserProvider>(context);
     return Scaffold(
       body: Padding(
         padding:  EdgeInsets.symmetric(horizontal: context.screenWidth*0.058),
@@ -51,30 +51,30 @@ class ClientDetailPackage extends StatelessWidget {
               Row(
                 children: [
 
-              Spacer(),
-              Responsive.isDesktop(context)?  Row(
+                  Spacer(),
+                  Responsive.isDesktop(context)?  Row(
 
                     children: [
-                  Widgets().searchTextField(),
+                      Widgets().searchTextField(),
 
-                  Widgets().dropDownButton(providerValue.selectedItem2,
-                      providerValue.dropdownItems2, (String? newValue) {
-                        providerValue.updateSelectedItem2(newValue);
-                      }, context),
-                  SizedBox(
-                    width: context.screenWidth * 0.01,
-                  ),
-                  Widgets().button(
-                    'Add New Package',
-                        () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => PacakgeDetails2(),
-                          ));
-                    },
-                  )
-                ],):SizedBox.shrink()
+                      Widgets().dropDownButton(providerValue.selectedItem2,
+                          providerValue.dropdownItems2, (String? newValue) {
+                            providerValue.updateSelectedItem2(newValue);
+                          }, context),
+                      SizedBox(
+                        width: context.screenWidth * 0.01,
+                      ),
+                      Widgets().button(
+                        'Add New Package',
+                            () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => PacakgeDetails2(),
+                              ));
+                        },
+                      )
+                    ],):SizedBox.shrink()
                 ],
               ),
               Responsive.isDesktop(context)?SizedBox.shrink(): Align(alignment: Alignment.bottomRight,child: Padding(
@@ -124,7 +124,7 @@ class ClientDetailPackage extends StatelessWidget {
                 ),
                 child: Padding(
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 26, vertical: 16),
+                  const EdgeInsets.symmetric(horizontal: 26, vertical: 16),
                   child: SingleChildScrollView(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.start,
@@ -138,7 +138,7 @@ class ClientDetailPackage extends StatelessWidget {
                         SizedBox(
                           height: context.screenHeight * 0.03,
                         ),
-          
+
                         Row(
                           children: [
                             Text('Client Name:',
@@ -164,7 +164,7 @@ class ClientDetailPackage extends StatelessWidget {
                                     .packageClientDetailTextStyleSubTitle),
                           ],
                         ),
-          
+
                         SizedBox(
                           height: context.screenHeight * 0.03,
                         ),
@@ -382,7 +382,7 @@ class ClientDetailPackage extends StatelessWidget {
                         SizedBox(
                           height: context.screenHeight * 0.02,
                         ),
-          
+
                         Divider(
                           endIndent: 4,
                           indent: 4,
@@ -409,7 +409,7 @@ class ClientDetailPackage extends StatelessWidget {
                             SizedBox(
                               width: context.screenWidth * 0.052,
                             ),
-                             Text('Sialkot Punjab 51040',
+                            Text('Sialkot Punjab 51040',
                                 style:AppTextstyless.packageClientDetailTextStyleSubTitle),
                             SizedBox(
                               width: context.screenWidth * 0.0355,
@@ -420,7 +420,7 @@ class ClientDetailPackage extends StatelessWidget {
                             SizedBox(
                               width: context.screenWidth * 0.02,
                             ),
-                             Text('08/15/2024',
+                            Text('08/15/2024',
                                 style:AppTextstyless.packageClientDetailTextStyleSubTitle),
                             SizedBox(
                               width: context.screenWidth * 0.05,
@@ -431,7 +431,7 @@ class ClientDetailPackage extends StatelessWidget {
                             SizedBox(
                               width: context.screenWidth * 0.05,
                             ),
-                          Text('08/18/2024',
+                            Text('08/18/2024',
                                 style:AppTextstyless.packageClientDetailTextStyleSubTitle),
                           ],
                         ),
@@ -465,8 +465,8 @@ class ClientDetailPackage extends StatelessWidget {
                               width: context.screenWidth * 0.021,
                             ),
                             Text(
-                              "\$232,89.00",
-                           style:AppTextstyless.packageClientDetailTextStyleSubTitle),
+                                "\$232,89.00",
+                                style:AppTextstyless.packageClientDetailTextStyleSubTitle),
                             SizedBox(
                               width: context.screenWidth * 0.091,
                             ),
@@ -476,9 +476,9 @@ class ClientDetailPackage extends StatelessWidget {
                             SizedBox(
                               width: context.screenWidth * 0.02,
                             ),
-                             Text(
-                              ' 232,89.00',
-                              style:AppTextstyless.packageClientDetailTextStyleSubTitle),
+                            Text(
+                                ' 232,89.00',
+                                style:AppTextstyless.packageClientDetailTextStyleSubTitle),
                             SizedBox(
                               width: context.screenWidth * 0.065,
                             ),

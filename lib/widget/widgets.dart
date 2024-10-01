@@ -2,7 +2,6 @@ import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Dialog/agent_dialog.dart';
 import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/Screen/AppText/TextStyle.dart';
-import 'package:fab_tech_sol/Screen/client_detail_package.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/resources/capitalize_first_letter_formatter%20(1).dart';
@@ -10,6 +9,8 @@ import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:fab_tech_sol/ui/tasks_data_source.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+
+import '../Screen/client_details_package.dart';
 
 class Widgets {
   final List<CustomerModel> customerTask =List.generate(20, (index)=>CustomerModel('F2D744688', 'Jhon', 'Doe', '+21 999 999 999', 'example@gmail.com', 'Sialkot Punjab 51040', 'Active', ''));
@@ -238,15 +239,29 @@ class Widgets {
           ),
         Padding(
           padding: const EdgeInsets.only(right: 25),
-          child: CircleAvatar(
-            backgroundImage:
-                backgroundImage != null ? AssetImage(backgroundImage) : null,
-            // backgroundColor:
-            //     backgroundImage != null ? color : Colors.transparent,
-            radius: 15,
-            child: backgroundImage == null
-                ? const Icon(Icons.person, color: Colors.white)
-                : null,
+          child: Row(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(color: AppColor.buttonTextColors,width: .5)
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: CircleAvatar(
+                    backgroundImage:
+                         AssetImage('${imageUrl}appbar.png'),
+                    // backgroundColor:
+                    //     backgroundImage != null ? color : Colors.transparent,
+                    radius: 20,
+                    // child: backgroundImage == null
+                    //     ? const Icon(Icons.person, color: Colors.white)
+                    //     : null,
+                  ),
+                ),
+              ),
+              Icon(Icons.arrow_drop_down,color: AppColor.hintColor,)
+            ],
           ),
         ),
       ],

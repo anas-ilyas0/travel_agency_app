@@ -28,9 +28,10 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
           ? Padding(
               padding: const EdgeInsets.only(top: 8),
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 50),
+                    padding: const EdgeInsets.only(left: 2),
                     child: SizedBox(
                       width: 130,
                       height: 45,
@@ -40,60 +41,60 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
                       ),
                     ),
                   ),
-                  Padding(
-                      padding: EdgeInsets.only(
-                        left: context.screenWidth * .03,
-                      ),
-                      child: TabBar(
-                        labelStyle: TextStyle(
-                            fontFamily: readexPro, fontWeight: FontWeight.bold),
-                        labelColor: color,
-                        unselectedLabelColor: AppColor.hintColor,
-                        unselectedLabelStyle:
-                            const TextStyle(fontWeight: FontWeight.normal),
-                        indicatorColor: color,
-                        dividerColor: Colors.transparent,
-                        controller: dashboardTabController,
-                        indicatorWeight: 3,
-                        indicatorSize: TabBarIndicatorSize.tab,
-                        labelPadding:
-                            EdgeInsets.symmetric(horizontal: 22, vertical: 8),
-                        isScrollable: true,
-                        tabs: [
-                          const Tab(text: 'Dashboard'),
-                          const Tab(text: 'Leads'),
-                          const Tab(text: 'Agents'),
-                          const Tab(text: 'Customer'),
-                          Tab(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                const Text('Supplier'),
-                                PopupMenuButton<String>(
-                                  icon: const Icon(Icons.arrow_drop_down),
-                                  onSelected: (String value) {
-                                    supplierProvider.setSelectedOption(value);
-                                    dashboardTabController.animateTo(3);
-                                  },
-                                  itemBuilder: (context) => [
-                                    const PopupMenuItem(
-                                      value: 'Local',
-                                      child: Text('Local Supplier'),
-                                    ),
-                                    const PopupMenuItem(
-                                      value: 'International',
-                                      child: Text('International Supplier'),
-                                    ),
-                                  ],
-                                  // child: Text(supplierType),
+
+
+                  TabBar(
+                    labelStyle: TextStyle(
+                        fontFamily: readexPro, fontWeight: FontWeight.bold),
+                    labelColor: color,
+                    tabAlignment: TabAlignment.center,
+                    unselectedLabelColor: AppColor.hintColor,
+                    unselectedLabelStyle:
+                        const TextStyle(fontWeight: FontWeight.normal),
+                    indicatorColor: color,
+                    dividerColor: Colors.transparent,
+                    controller: dashboardTabController,
+                    indicatorWeight: 3,
+                    indicatorSize: TabBarIndicatorSize.tab,
+                    labelPadding:
+                        EdgeInsets.symmetric(horizontal: 22, vertical: 8),
+                    isScrollable: true,
+                    tabs: [
+                      const Tab(text: 'Dashboard'),
+                      const Tab(text: 'Leads'),
+                      const Tab(text: 'Agents'),
+                      const Tab(text: 'Customer'),
+                      Tab(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text('Supplier'),
+                            PopupMenuButton<String>(
+                              icon: const Icon(Icons.arrow_drop_down),
+                              onSelected: (String value) {
+                                supplierProvider.setSelectedOption(value);
+                                dashboardTabController.animateTo(3);
+                              },
+                              itemBuilder: (context) => [
+                                const PopupMenuItem(
+                                  value: 'Local',
+                                  child: Text('Local Supplier'),
+                                ),
+                                const PopupMenuItem(
+                                  value: 'International',
+                                  child: Text('International Supplier'),
                                 ),
                               ],
+                              // child: Text(supplierType),
                             ),
-                          ),
-                          Tab(text: 'Package'),
-                        ],
-                      )),
-                ],
+                          ],
+                        ),
+                      ),
+                      Tab(text: 'Package'),
+                    ],
+                  ),
+
+      ],
               ),
             )
           : null,
