@@ -55,38 +55,31 @@ class LeadDetails extends StatelessWidget {
 
               Spacer(),SizedBox(width: context.screenWidth*0.55,),
 
-              Flexible(
-                child: FittedBox(
-                  child: GestureDetector(
-                    onTap: (){ Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => LeadDetails(),
-                        ));
-                    },
-                    child: Container(
-                      width: context.screenWidth * 0.13,
-                      height: context.screenHeight * 0.08,
-                      decoration: BoxDecoration(
-                        color: const Color(0XFF333333),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: FittedBox(
-                        fit: BoxFit.scaleDown,
-                        child: Center(
-                          child: Text(
-                            "Add new Lead",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontFamily: fontFamilys,
-                              color: Colors.white,
-                              fontSize: 16,),
-                             overflow: TextOverflow.ellipsis,
-                              ),
+              GestureDetector(
+                onTap: (){ Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LeadDetails(),
+                    ));
+                },
+                child: Container(
+                  width: context.screenWidth * 0.13,
+                  height: context.screenHeight * 0.08,
+                  decoration: BoxDecoration(
+                    color: const Color(0XFF333333),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "Add new Lead",
+                      style: TextStyle(
+                        fontWeight: FontWeight.w400,
+                        fontFamily: fontFamilys,
+                        color: Colors.white,
+                        fontSize: 16,),
+                       overflow: TextOverflow.ellipsis,
                         ),
-                      ))),
-                ),
-              )
+                  )))
                     ])
           ),
         
@@ -131,12 +124,9 @@ class LeadDetails extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Flexible(
-                        flex: 1,
-                        child: Text(
-                          'Client Name:',
-                          style: AppTextstyless.packageClientDetailTextStyle,
-                        ),
+                      Text(
+                        'Client Name:',
+                        style: AppTextstyless.packageClientDetailTextStyle,
                       ),
                       SizedBox(
                         width: context.screenWidth * 0.064,
@@ -149,34 +139,25 @@ class LeadDetails extends StatelessWidget {
                       SizedBox(
                         width: context.screenWidth * 0.01,
                       ),
-                      Flexible(
-                        flex: 1,
-                        child: Text(
-                          'Jhon Doe',
-                          style: AppTextstyless
-                              .packageClientDetailTextStyleSubTitle,
-                        ),
+                      Text(
+                        'Jhon Doe',
+                        style: AppTextstyless
+                            .packageClientDetailTextStyleSubTitle,
                       ),
                       SizedBox(
                         width: context.screenWidth * 0.05,
                       ),
-                      Flexible(
-                        flex: 1,
-                        child: Text(
-                          'Phone No:',
-                          style: AppTextstyless.packageClientDetailTextStyle,
-                        ),
+                      Text(
+                        'Phone No:',
+                        style: AppTextstyless.packageClientDetailTextStyle,
                       ),
                       SizedBox(
                         width: context.screenWidth * 0.0535,
                       ),
-                      Flexible(
-                        flex: 1,
-                        child: Text(
-                          'XXXXXXXXXXX',
-                          style: AppTextstyless
-                              .packageClientDetailTextStyleSubTitle,
-                        ),
+                      Text(
+                        'XXXXXXXXXXX',
+                        style: AppTextstyless
+                            .packageClientDetailTextStyleSubTitle,
                       ),
                     ],
                   ),
@@ -187,39 +168,30 @@ class LeadDetails extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Flexible(
-                        flex: 1,
-                        child: Text(
-                          'Price par pax',
-                          style: TextStyle(
-                              color: AppColor.buttonTextColors,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w200,
-                              fontFamily: 'Readex Pro'),
-                        ),
+                      Text(
+                        'Price par pax',
+                        style: TextStyle(
+                            color: AppColor.buttonTextColors,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w200,
+                            fontFamily: 'Readex Pro'),
                       ),
                       SizedBox(
                         width: context.screenWidth * 0.215,
                       ),
-                      Flexible(
-                        flex: 1,
-                        child: Text('QTY',
-                            style: TextStyle(
-                                color: AppColor.buttonTextColors,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w200,
-                                fontFamily: 'Readex Pro')),
-                      ),
+                      Text('QTY',
+                          style: TextStyle(
+                              color: AppColor.buttonTextColors,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w200,
+                              fontFamily: 'Readex Pro')),
                       SizedBox(width: context.screenWidth * 0.14),
-                      Flexible(
-                        flex: 1,
-                        child: Text('Total per pax',
-                            style: TextStyle(
-                                color: AppColor.buttonTextColors,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w200,
-                                fontFamily: 'Readex Pro')),
-                      ),
+                      Text('Total per pax',
+                          style: TextStyle(
+                              color: AppColor.buttonTextColors,
+                              fontSize: 16,
+                              fontWeight: FontWeight.w200,
+                              fontFamily: 'Readex Pro')),
                     ],
                   ),
                   SizedBox(
@@ -227,52 +199,40 @@ class LeadDetails extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Flexible(
-                        flex: 1,
-                        child:  Text(
-                          'Adult:',
-                          style:AppTextstyless
-                              .packageClientDetailTextStyleSubTitle,
-                        ),
+                      Text(
+                        'Adult:',
+                        style:AppTextstyless
+                            .packageClientDetailTextStyleSubTitle,
                       ),
 
                       SizedBox(
                         width: context.screenWidth * 0.11,
                       ),
 
-                      Flexible(
-                        flex: 3,
-                        child:  Text(
-                          '1 000 000',
-                          style:AppTextstyless
-                              .packageClientDetailTextStyleSubTitle
-                        ),
+                      Text(
+                        '1 000 000',
+                        style:AppTextstyless
+                            .packageClientDetailTextStyleSubTitle
                       ),
 
                       SizedBox(
                         width: context.screenWidth * 0.09,
                       ),
 
-                      Flexible(
-                        flex: 2,
-                        child:  Text(
-                          'Adult',
-                          style: AppTextstyless
-                              .packageClientDetailTextStyleSubTitle
-                        ),
+                      Text(
+                        'Adult',
+                        style: AppTextstyless
+                            .packageClientDetailTextStyleSubTitle
                       ),
 
                       SizedBox(
                         width: context.screenWidth * 0.09,
                       ),
 
-                      Flexible(
-                        flex: 1,
-                        child: Text(
-                          '1',
-                          style: AppTextstyless
-                              .packageClientDetailTextStyleSubTitle,
-                        ),
+                      Text(
+                        '1',
+                        style: AppTextstyless
+                            .packageClientDetailTextStyleSubTitle,
                       ),
 
                       SizedBox(
@@ -280,13 +240,10 @@ class LeadDetails extends StatelessWidget {
                       ),
 
                       // '1' Text (Second)
-                      Flexible(
-                        flex: 1,
-                        child:  Text(
-                          '1',
-                          style:AppTextstyless
-                              .packageClientDetailTextStyleSubTitle ,
-                        ),
+                      Text(
+                        '1',
+                        style:AppTextstyless
+                            .packageClientDetailTextStyleSubTitle ,
                       ),
                     ],
                   ),
@@ -326,33 +283,23 @@ class LeadDetails extends StatelessWidget {
                         width: context.screenWidth * 0.01,
                       ),
                       
-                      Flexible(
-                        flex: 1,
-                        child: Text('Jhon Doe',
-                            style: AppTextstyless
-                                .packageClientDetailTextStyleSubTitle),
-                      ),
+                      Text('Jhon Doe',
+                          style: AppTextstyless
+                              .packageClientDetailTextStyleSubTitle),
                        SizedBox(
                         width: context.screenWidth * 0.049,
                       ),
-                      Flexible(
-                        flex: 1,
-
-                        child: Text(
-                          'Phone No:',
-                          style: AppTextstyless.packageClientDetailTextStyle,
-                        ),
+                      Text(
+                        'Phone No:',
+                        style: AppTextstyless.packageClientDetailTextStyle,
                       ),
                       SizedBox(
                         width: context.screenWidth * 0.0575,
                       ),
-                      Flexible(
-                        flex: 1,
-                        child: Text(
-                          'XXXXXXXXXXX',
-                          style: AppTextstyless
-                              .packageClientDetailTextStyleSubTitle,
-                        ),
+                      Text(
+                        'XXXXXXXXXXX',
+                        style: AppTextstyless
+                            .packageClientDetailTextStyleSubTitle,
                       ),
                     ],
                   ),
@@ -388,32 +335,23 @@ class LeadDetails extends StatelessWidget {
                       SizedBox(
                         width: context.screenWidth * 0.01,
                       ),
-                      Flexible(
-                        flex: 1,
-                        child: Text('Jhon Doe',
-                            style: AppTextstyless
-                                .packageClientDetailTextStyleSubTitle),
-                      ),
+                      Text('Jhon Doe',
+                          style: AppTextstyless
+                              .packageClientDetailTextStyleSubTitle),
                        SizedBox(
                         width: context.screenWidth * 0.049,
                       ),
-                      Flexible(
-                        flex: 1,
-                        child: Text(
-                          'Phone No:',
-                          style: AppTextstyless.packageClientDetailTextStyle,
-                        ),
+                      Text(
+                        'Phone No:',
+                        style: AppTextstyless.packageClientDetailTextStyle,
                       ),
                       SizedBox(
                         width: context.screenWidth * 0.0575,
                       ),
-                      Flexible(
-                        flex: 1,
-                        child: Text(
-                          'XXXXXXXXXXX',
-                          style: AppTextstyless
-                              .packageClientDetailTextStyleSubTitle,
-                        ),
+                      Text(
+                        'XXXXXXXXXXX',
+                        style: AppTextstyless
+                            .packageClientDetailTextStyleSubTitle,
                       ),
                     ],
                   ),
@@ -440,46 +378,31 @@ class LeadDetails extends StatelessWidget {
                       SizedBox(
                         width: context.screenWidth * 0.066,
                       ),
-                      Flexible(
-                        flex: 2,
-                        child:  Text('Sialkot Punjab 51040',
-                            style:AppTextstyless
-                              .packageClientDetailTextStyleSubTitle),
-                      ),
+                      Text('Sialkot Punjab 51040',
+                          style:AppTextstyless
+                            .packageClientDetailTextStyleSubTitle),
                       SizedBox(
                         width: context.screenWidth * 0.034,
                       ),
-                      Flexible(
-                        flex: 2,
-                        child: Text('Booking Date:',
-                            style: AppTextstyless.packageClientDetailTextStyle),
-                      ),
+                      Text('Booking Date:',
+                          style: AppTextstyless.packageClientDetailTextStyle),
                       SizedBox(
                         width: context.screenWidth * 0.03,
                       ),
-                      Flexible(
-                        flex: 1,
-                        child: Text('08/15/2024',
-                            style: AppTextstyless
-                              .packageClientDetailTextStyleSubTitle),
-                      ),
+                      Text('08/15/2024',
+                          style: AppTextstyless
+                            .packageClientDetailTextStyleSubTitle),
                       SizedBox(
                         width: context.screenWidth * 0.06,
                       ),
-                      Flexible(
-                        flex: 1,
-                        child: Text('Travel Date:',
-                            style: AppTextstyless.packageClientDetailTextStyle),
-                      ),
+                      Text('Travel Date:',
+                          style: AppTextstyless.packageClientDetailTextStyle),
                       SizedBox(
                         width: context.screenWidth * 0.05,
                       ),
-                      Flexible(
-                        flex: 1,
-                        child:  Text('08/18/2024',
-                            style: AppTextstyless
-                              .packageClientDetailTextStyleSubTitle),
-                      ),
+                      Text('08/18/2024',
+                          style: AppTextstyless
+                            .packageClientDetailTextStyleSubTitle),
                     ],
                   ),
                   SizedBox(
@@ -505,54 +428,36 @@ class LeadDetails extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Flexible(
-                        flex: 2,
-                        child: Text('Package Amount:',
-                            style: AppTextstyless.packageClientDetailTextStyle),
-                      ),
+                      Text('Package Amount:',
+                          style: AppTextstyless.packageClientDetailTextStyle),
                       SizedBox(
                         width: context.screenWidth * 0.032,
                       ),
-                      Flexible(
-                        flex: 1,
-                        child:  Text("\$232,89.00",
-                            style: AppTextstyless
-                              .packageClientDetailTextStyleSubTitle),
-                      ),
+                      Text("\$232,89.00",
+                          style: AppTextstyless
+                            .packageClientDetailTextStyleSubTitle),
                       SizedBox(
                         width: context.screenWidth * 0.092,
                       ),
-                      Flexible(
-                        flex: 2,
-                        child: Text('Paid Amount:',
-                            style: AppTextstyless.packageClientDetailTextStyle),
-                      ),
+                      Text('Paid Amount:',
+                          style: AppTextstyless.packageClientDetailTextStyle),
                       SizedBox(
                         width: context.screenWidth * 0.03,
                       ),
-                      Flexible(
-                        flex: 1,
-                        child:  Text(' \$232,89.00',
-                            style:AppTextstyless
-                              .packageClientDetailTextStyleSubTitle),
-                      ),
+                      Text(' \$232,89.00',
+                          style:AppTextstyless
+                            .packageClientDetailTextStyleSubTitle),
                       SizedBox(
                         width: context.screenWidth * 0.068,
                       ),
-                      Flexible(
-                        flex: 2,
-                        child: Text('Outstanding Amount:',
-                            style: AppTextstyless.packageClientDetailTextStyle),
-                      ),
+                      Text('Outstanding Amount:',
+                          style: AppTextstyless.packageClientDetailTextStyle),
                       SizedBox(
                         width: context.screenWidth * 0.015,
                       ),
-                      Flexible(
-                        flex: 1,
-                        child:  Text('\$232,89.00',
-                            style:AppTextstyless
-                              .packageClientDetailTextStyleSubTitle),
-                      ),
+                      Text('\$232,89.00',
+                          style:AppTextstyless
+                            .packageClientDetailTextStyleSubTitle),
                     ],
                   ),
                   SizedBox(
@@ -578,90 +483,60 @@ class LeadDetails extends StatelessWidget {
                   ),
                    Row(
                     children: [
-                      Flexible(
-                        flex: 2,
-                        child: Text('Hotel Expanse',
-                            style: AppTextstyless.packageClientDetailTextStyle),
-                      ),
+                      Text('Hotel Expanse',
+                          style: AppTextstyless.packageClientDetailTextStyle),
                       SizedBox(
                         width: context.screenWidth * 0.054,
                       ),
-                      Flexible(
-                        flex: 1,
-                        child:  Text("\$25,000",
-                            style: AppTextstyless
-                              .packageClientDetailTextStyleSubTitle),
-                      ),
+                      Text("\$25,000",
+                          style: AppTextstyless
+                            .packageClientDetailTextStyleSubTitle),
                       SizedBox(
                         width: context.screenWidth * 0.1,
                       ),
-                      Flexible(
-                        flex: 2,
-                        child: Text('Air Tickets',
-                            style: AppTextstyless.packageClientDetailTextStyle),
-                      ),
+                      Text('Air Tickets',
+                          style: AppTextstyless.packageClientDetailTextStyle),
                       SizedBox(
                         width: context.screenWidth * 0.048,
                       ),
-                      Flexible(
-                        flex: 1,
-                        child:  Text(' \$35,000',
-                            style:AppTextstyless
-                              .packageClientDetailTextStyleSubTitle),
-                      ),
+                      Text(' \$35,000',
+                          style:AppTextstyless
+                            .packageClientDetailTextStyleSubTitle),
                       SizedBox(
                         width: context.screenWidth * 0.084,
                       ),
-                      Flexible(
-                        flex: 2,
-                        child: Text('Any refreshments:',
-                            style: AppTextstyless.packageClientDetailTextStyle),
-                      ),
+                      Text('Any refreshments:',
+                          style: AppTextstyless.packageClientDetailTextStyle),
                       SizedBox(
                         width: context.screenWidth * 0.015,
                       ),
-                      Flexible(
-                        flex: 1,
-                        child:  Text('\$10,000',
-                            style:AppTextstyless
-                              .packageClientDetailTextStyleSubTitle),
-                      ),
+                      Text('\$10,000',
+                          style:AppTextstyless
+                            .packageClientDetailTextStyleSubTitle),
                     ],
                   ),
                   SizedBox(height: 10,),
                     Row(
                     children: [
-                      Flexible(
-                        flex: 2,
-                        child: Text('Lunch or Any Dinner:',
-                            style: AppTextstyless.packageClientDetailTextStyle),
-                      ),
+                      Text('Lunch or Any Dinner:',
+                          style: AppTextstyless.packageClientDetailTextStyle),
                       SizedBox(
                         width: context.screenWidth * 0.0125,
                       ),
-                      Flexible(
-                        flex: 1,
-                        child:  Text("\$5,000",
-                            style: AppTextstyless
-                              .packageClientDetailTextStyleSubTitle),
-                      ),
+                      Text("\$5,000",
+                          style: AppTextstyless
+                            .packageClientDetailTextStyleSubTitle),
                       SizedBox(
                         width: context.screenWidth * 0.108,
                       ),
-                      Flexible(
-                        flex: 2,
-                        child: Text('Net Profit',
-                            style: AppTextstyless.packageClientDetailTextStyle),
-                      ),
+                      Text('Net Profit',
+                          style: AppTextstyless.packageClientDetailTextStyle),
                       SizedBox(
                         width: context.screenWidth * 0.052,
                       ),
-                      Flexible(
-                        flex: 1,
-                        child:  Text(' \$45,000',
-                            style:AppTextstyless
-                              .packageClientDetailTextStyleSubTitle),
-                      ),]),
+                      Text(' \$45,000',
+                          style:AppTextstyless
+                            .packageClientDetailTextStyleSubTitle),]),
                       SizedBox(height: context.screenHeight*0.03,),
                       Divider(thickness: 0.5,),
                         SizedBox(height: context.screenHeight*0.02,),
