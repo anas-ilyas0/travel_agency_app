@@ -3,6 +3,7 @@ import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/Screen/AppText/TextStyle.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
+import 'package:fab_tech_sol/providers/localsuplierprovider.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/widget/addnewagent.dart';
 import 'package:fab_tech_sol/widget/back_button_title_avatar.dart';
@@ -16,6 +17,7 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final imageProvider = Provider.of<UserProvider>(context);
+       final imageProviderLocal = Provider.of<LocalSupplierProvider>(context);
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -59,10 +61,10 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
                                 width: context.screenWidth * 0.12,
                                 decoration: BoxDecoration(
                                     color: Colors.white,
-                                    image: imageProvider.imageUrl != null
+                                    image: imageProvider.internationalSupplierImageUrl != null
                                         ? DecorationImage(
                                             image: NetworkImage(
-                                                imageProvider.imageUrl!),
+                                                imageProvider.internationalSupplierImageUrl!),
                                             fit: BoxFit.cover,
                                           )
                                         : null,
@@ -86,7 +88,7 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
                                   ),
                                   ElevatedButton(
                                     onPressed: () async {
-                                      await imageProvider.pickImage();
+                                      await imageProvider.pickInternationalSupplierImage();
                                     },
                                     style: ElevatedButton.styleFrom(
                                       padding: const EdgeInsets.symmetric(
@@ -125,10 +127,10 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
                                 width: context.screenWidth * 0.12,
                                 decoration: BoxDecoration(
                                     color: Colors.white,
-                                    image: imageProvider.imageUrl != null
+                                    image: imageProviderLocal.localSupplierImageUrl != null
                                         ? DecorationImage(
                                             image: NetworkImage(
-                                                imageProvider.imageUrl!),
+                                                imageProviderLocal.localSupplierImageUrl!),
                                             fit: BoxFit.cover,
                                           )
                                         : null,
@@ -154,7 +156,7 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
                                   ),
                                   ElevatedButton(
                                     onPressed: () async {
-                                      await imageProvider.pickImage();
+                                      await imageProviderLocal.pickLocalSupplierImage();
                                     },
                                     style: ElevatedButton.styleFrom(
                                       padding: const EdgeInsets.symmetric(

@@ -1,5 +1,6 @@
 
 
+import 'package:fab_tech_sol/Screen/addnewinternationalsuppliers.dart';
 import 'package:fab_tech_sol/Screen/all_leads.dart';
 
 import 'package:fab_tech_sol/Screen/lead_details.dart';
@@ -55,7 +56,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeApp.myThemeData,
         title: AppStrings.appName,
 
-        home:Dashboard()
+        home:AddNewInterNationalsuppliers()
         
 
         

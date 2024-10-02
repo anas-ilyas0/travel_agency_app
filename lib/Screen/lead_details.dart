@@ -637,7 +637,7 @@ class LeadDetails extends StatelessWidget {
                             style: AppTextstyless.packageClientDetailTextStyle),
                       ),
                       SizedBox(
-                        width: context.screenWidth * 0.0118,
+                        width: context.screenWidth * 0.0125,
                       ),
                       Flexible(
                         flex: 1,
@@ -654,7 +654,7 @@ class LeadDetails extends StatelessWidget {
                             style: AppTextstyless.packageClientDetailTextStyle),
                       ),
                       SizedBox(
-                        width: context.screenWidth * 0.05,
+                        width: context.screenWidth * 0.052,
                       ),
                       Flexible(
                         flex: 1,

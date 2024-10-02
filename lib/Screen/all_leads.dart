@@ -2,6 +2,7 @@ import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/Screen/AppText/TextStyle.dart';
 import 'package:fab_tech_sol/Screen/invoice_details_invoice.dart';
+import 'package:fab_tech_sol/Screen/lead_details.dart';
 import 'package:fab_tech_sol/Screen/package.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
@@ -224,7 +225,9 @@ class AllLeads extends StatelessWidget {
                         Center(
                           child: TextButton(
                             child: Text('View Details',style: TextStyle(color: Colors.black,fontFamily: 'Poppin',fontWeight: FontWeight.w700,fontSize: 14),),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => LeadDetails(),));
+                            },
                           ),
                         ),
                       ],
@@ -338,7 +341,9 @@ class AllLeads extends StatelessWidget {
                         Center(
                           child: TextButton(
                             child: Text('View Details',style: TextStyle(color: Colors.black,fontFamily: 'Poppin',fontWeight: FontWeight.w700,fontSize: 14),),
-                            onPressed: () {},
+                            onPressed: () {
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => LeadDetails(),));
+                            },
                           ),
                         ),
                       ],
