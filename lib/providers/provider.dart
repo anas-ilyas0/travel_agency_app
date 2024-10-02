@@ -228,6 +228,52 @@ class UserProvider extends ChangeNotifier {
   }
 
 
+
+
+
+
+
+
+
+ html.File? _internationalSupplierImage;
+  String? _internationalSupplierImageUrl;
+
+  String? get internationalSupplierImageUrl => _internationalSupplierImageUrl;
+
+  Future<void> pickInternationalSupplierImage() async {
+    final input = html.FileUploadInputElement();
+    input.accept = 'image/*';
+    input.click();
+
+    input.onChange.listen((e) async {
+      final files = input.files;
+      if (files!.isEmpty) return;
+
+      _internationalSupplierImage = files[0];
+      final reader = html.FileReader();
+
+      reader.readAsDataUrl(_internationalSupplierImage!);
+      reader.onLoadEnd.listen((e) {
+        _internationalSupplierImageUrl = reader.result as String;
+        notifyListeners();
+      });
+    });
+
+
+
+
+
+
+
+    
+  }
+
+
+
+
+
+
+
 }
 
 

@@ -59,10 +59,10 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
                                 width: context.screenWidth * 0.12,
                                 decoration: BoxDecoration(
                                     color: Colors.white,
-                                    image: imageProvider.imageUrl != null
+                                    image: imageProvider.internationalSupplierImageUrl != null
                                         ? DecorationImage(
                                             image: NetworkImage(
-                                                imageProvider.imageUrl!),
+                                                imageProvider.internationalSupplierImageUrl!),
                                             fit: BoxFit.cover,
                                           )
                                         : null,
@@ -86,7 +86,7 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
                                   ),
                                   ElevatedButton(
                                     onPressed: () async {
-                                      await imageProvider.pickImage();
+                                      await imageProvider.pickInternationalSupplierImage();
                                     },
                                     style: ElevatedButton.styleFrom(
                                       padding: const EdgeInsets.symmetric(
