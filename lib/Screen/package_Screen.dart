@@ -235,34 +235,15 @@ class _PackageClassScreenState extends State<PackageClassScreen> {
               // ElevatedButton on the right
               Padding(
                 padding:  EdgeInsets.symmetric(horizontal: context.screenWidth*0.015),
-                child: SizedBox(
-                  height: 50,
-                  width: 194
-                      , // Increased width for better text fit
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0XFF83D0E3),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                    ),
-                  onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => CreateNewPackageForm()));
+                child:     Widgets().button(
+                  'Add New Package',
+                      () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => PackageDetails2(),
+                        ));
                   },
-                    child: Text(
-                      'Add New Package',
-                      style: TextStyle(
-                          fontSize: 16,
-                          color: AppColor.buttonTextColor,
-                          // fontWeight: FontWeight.w400,
-                
-                
-                          fontFamily: fontFamilys),
-                
-                        //  fontFamily: readexPro),
-                
-                    ),
-                  ),
                 ),
               ),
             ],
