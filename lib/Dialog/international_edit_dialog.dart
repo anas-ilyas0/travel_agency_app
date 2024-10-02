@@ -46,10 +46,10 @@ class InternationalEditDialog extends StatelessWidget {
                           height: context.screenHeight*0.25,
                           width: context.screenWidth*0.12,
                           decoration: BoxDecoration( color: Colors.white,
-                           image: imageProvider.imageUrl != null
+                           image: imageProvider.internationalSupplierImageUrl != null
                                         ? DecorationImage(
                                             image:
-                                                NetworkImage(imageProvider.imageUrl!),
+                                                NetworkImage(imageProvider.internationalSupplierImageUrl!),
                                             fit: BoxFit.cover,
                                           )
                                         : null,
@@ -65,7 +65,7 @@ class InternationalEditDialog extends StatelessWidget {
                         Text('Company Logo',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 16,fontFamily: fontFamilys)),
                         SizedBox(height: 5,),
                          ElevatedButton(onPressed: () async{
-                                     await imageProvider.pickImage();
+                                     await imageProvider.pickInternationalSupplierImage();
                                }, 
                                 style: ElevatedButton.styleFrom(
                                  padding: const EdgeInsets.symmetric(vertical: 7,horizontal: 12),
