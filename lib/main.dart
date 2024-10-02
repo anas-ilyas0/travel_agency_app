@@ -57,7 +57,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeApp.myThemeData,
         title: AppStrings.appName,
 
-        home:LeadDetails()
+        home:Dashboard()
         
 
         
