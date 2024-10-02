@@ -16,7 +16,6 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final imageProvider = Provider.of<UserProvider>(context);
-    
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -60,10 +59,10 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
                                 width: context.screenWidth * 0.12,
                                 decoration: BoxDecoration(
                                     color: Colors.white,
-                                    image: imageProvider.internationalSupplierImageUrl != null
+                                    image: imageProvider.imageUrl != null
                                         ? DecorationImage(
                                             image: NetworkImage(
-                                                imageProvider.internationalSupplierImageUrl!),
+                                                imageProvider.imageUrl!),
                                             fit: BoxFit.cover,
                                           )
                                         : null,
@@ -87,7 +86,7 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
                                   ),
                                   ElevatedButton(
                                     onPressed: () async {
-                                      await imageProvider.pickInternationalSupplierImage();
+                                      await imageProvider.pickImage();
                                     },
                                     style: ElevatedButton.styleFrom(
                                       padding: const EdgeInsets.symmetric(
