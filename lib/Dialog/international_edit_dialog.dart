@@ -3,7 +3,6 @@ import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/Screen/AppText/TextStyle.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
-import 'package:fab_tech_sol/providers/localsuplierprovider.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/widget/addnewagent.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +14,7 @@ class InternationalEditDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
      final imageProvider = Provider.of<UserProvider>(context);
-      final imageProviderLocal = Provider.of<LocalSupplierProvider>(context);
+     
     return Dialog(
       backgroundColor: AppColor.background,
       child:  SingleChildScrollView(
@@ -94,10 +93,10 @@ class InternationalEditDialog extends StatelessWidget {
                          height: context.screenHeight*0.25,
                           width: context.screenWidth*0.12,
                            decoration: BoxDecoration( color: Colors.white,
-                            image: imageProviderLocal.localSupplierImageUrl != null
+                            image: imageProvider.imageUrl != null
                                         ? DecorationImage(
                                             image:
-                                                NetworkImage(imageProviderLocal.localSupplierImageUrl!),
+                                                NetworkImage(imageProvider.imageUrl!),
                                             fit: BoxFit.cover,
                                           )
                                         : null,
@@ -113,7 +112,7 @@ class InternationalEditDialog extends StatelessWidget {
                         Text('Supplier Image',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 16,fontFamily: fontFamilys),),
                         SizedBox(height: 5,),
                          ElevatedButton(onPressed: ()async {
-                                     await imageProviderLocal.pickLocalSupplierImage();
+                                     await imageProvider.pickImage();
                                }, 
                                 style: ElevatedButton.styleFrom(
                                  padding: const EdgeInsets.symmetric(vertical: 7,horizontal: 12),
