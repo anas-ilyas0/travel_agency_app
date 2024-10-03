@@ -2,14 +2,11 @@ import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Dialog/agent_dialog.dart';
 import 'package:fab_tech_sol/Dialog/international_edit_dialog.dart';
 import 'package:fab_tech_sol/Dialog/localsupplier_dialog.dart';
-import 'package:fab_tech_sol/Screen/addnewinternationalsuppliers.dart';
 import 'package:fab_tech_sol/Screen/local_supplier_detail.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/widget/widgets.dart';
 import 'package:flutter/material.dart';
 
-import '../widget/agent_text_field.dart';
-import '../widget/delContainer.dart';
 
 class SupplierTask {
   final String companyName;
@@ -53,7 +50,7 @@ class TaskDataSource extends DataTableSource {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => LocalSupplierDetail(),
+                        builder: (context) => const LocalSupplierDetail(),
                       ));
                 },
                 child: Text(task.companyName)))),
@@ -71,7 +68,7 @@ class TaskDataSource extends DataTableSource {
                   () {
                     showDialog(
                       context: context,
-                      builder: (context) => LocalsupplierDialog(),
+                      builder: (context) => const LocalsupplierDialog(),
                     );
                   },
                   () {},
@@ -119,7 +116,7 @@ class AgentsTaskDataSource extends DataTableSource {
       cells: [
         DataCell(Row(
           children: [
-            Row(children: [CircleAvatar(backgroundImage: AssetImage('${imageUrl}agent.png')),SizedBox(width: 10,),Text(task.name), ],)
+            Row(children: [CircleAvatar(backgroundImage: AssetImage('${imageUrl}agent.png')),const SizedBox(width: 10,),Text(task.name), ],)
           ],
         )),
         DataCell(Text(task.phoneNumber)),
@@ -135,7 +132,7 @@ class AgentsTaskDataSource extends DataTableSource {
                 () {
                   showDialog(
                     context: context,
-                    builder: (context) => AgentDialog(),
+                    builder: (context) => const AgentDialog(),
                   );
                 },
                 () {},
@@ -202,7 +199,7 @@ class InternationalDataSource extends DataTableSource {
                 () {
                   showDialog(
                     context: context,
-                    builder: (context) => InternationalEditDialog(),
+                    builder: (context) => const InternationalEditDialog(),
                   );
                 },
                 () {},
@@ -261,9 +258,9 @@ class PackageDataSource extends DataTableSource {
       index: index,
       cells: [
         // DataCell(ListTile(title: Text(task.clientName),leading: CircleAvatar(backgroundImage: AssetImage('${imageUrl}agent.png'),),)),
-        DataCell(Row(children: [CircleAvatar(backgroundImage: AssetImage('${imageUrl}agent.png')),SizedBox(width: 10,),Text(task.clientName), ],)),
+        DataCell(Row(children: [CircleAvatar(backgroundImage: AssetImage('${imageUrl}agent.png')),const SizedBox(width: 10,),Text(task.clientName), ],)),
         DataCell(Text(task.clientPhoneNumber)),
-        DataCell(Row(children: [CircleAvatar(backgroundImage: AssetImage('${imageUrl}agent.png')),SizedBox(width: 10,),Text(task.agentName), ],)),
+        DataCell(Row(children: [CircleAvatar(backgroundImage: AssetImage('${imageUrl}agent.png')),const SizedBox(width: 10,),Text(task.agentName), ],)),
         DataCell(Text(task.agentPhoneNumber)),
         DataCell(ListTile(
           contentPadding: EdgeInsets.zero,
@@ -329,7 +326,7 @@ class CustomerDataSource extends DataTableSource {
         DataCell(Row(children: [Padding(
           padding: const EdgeInsets.all(2.0),
           child: CircleAvatar(backgroundImage: AssetImage('${imageUrl}girl.png')),
-        ),SizedBox(width: 10,),Text(task.firstName), ],)),
+        ),const SizedBox(width: 10,),Text(task.firstName), ],)),
         DataCell(Text(task.lasName)),
         DataCell(Text(task.phoneNumber)),
         DataCell(Text(task.email)),

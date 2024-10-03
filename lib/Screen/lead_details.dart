@@ -173,25 +173,25 @@ class LeadDetails extends StatelessWidget {
                         style: TextStyle(
                             color: AppColor.buttonTextColors,
                             fontSize: 16,
-                            fontWeight: FontWeight.w200,
-                            fontFamily: 'Readex Pro'),
+                            fontWeight: FontWeight.w400,
+                            fontFamily: 'ReadexPro'),
                       ),
                       SizedBox(
-                        width: context.screenWidth * 0.215,
+                        width: context.screenWidth * 0.209,
                       ),
                       Text('QTY',
                           style: TextStyle(
                               color: AppColor.buttonTextColors,
                               fontSize: 16,
-                              fontWeight: FontWeight.w200,
-                              fontFamily: 'Readex Pro')),
+                              fontWeight: FontWeight.w400,
+                              fontFamily: 'ReadexPro')),
                       SizedBox(width: context.screenWidth * 0.14),
                       Text('Total per pax',
                           style: TextStyle(
                               color: AppColor.buttonTextColors,
                               fontSize: 16,
-                              fontWeight: FontWeight.w200,
-                              fontFamily: 'Readex Pro')),
+                              fontWeight: FontWeight.w400,
+                              fontFamily: 'ReadexPro')),
                     ],
                   ),
                   SizedBox(

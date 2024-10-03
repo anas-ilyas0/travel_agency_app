@@ -5,7 +5,7 @@ import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/resources/helper_function.dart';
 import 'package:fab_tech_sol/ui/tasks_data_source.dart';
-
+ import 'package:flutter/material.dart';
 import 'package:fab_tech_sol/widget/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -27,7 +27,7 @@ class CustomerScreen extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Responsive.isDesktop(context)?SizedBox.shrink():Align(
+            Responsive.isDesktop(context)?const SizedBox.shrink():Align(
               alignment: Alignment.topLeft ,
               child: Text(
 
@@ -51,7 +51,7 @@ class CustomerScreen extends StatelessWidget {
                       fontFamily: fontFamilys,
                       fontWeight: FontWeight.w700,
                       color: color),
-                ):SizedBox.shrink(),
+                ):const SizedBox.shrink(),
                 Row(
                   children: [
                     Widgets().searchTextField(),
@@ -65,7 +65,7 @@ class CustomerScreen extends StatelessWidget {
                             providerValue.updateSelectedItem2(newValue);
                           }, context),
                     ])
-                        : SizedBox.shrink()
+                        : const SizedBox.shrink()
                   ],
                 ),
               ],
@@ -73,7 +73,7 @@ class CustomerScreen extends StatelessWidget {
             Responsive.isTablet(context) || Responsive.isMobile(context)
                 ? Column(
               children: [
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 Row(
@@ -90,37 +90,51 @@ class CustomerScreen extends StatelessWidget {
                 ),
               ],
             )
-                : SizedBox.shrink(),
-            SizedBox(
+                : const SizedBox.shrink(),
+            const SizedBox(
               height: 20,
             ),
-            Expanded(
-              child: Container(
-                width: double.infinity,
-                child: SingleChildScrollView(
-                  child: PaginatedDataTable(
-                    rowsPerPage: 10,
-                    dataRowHeight: 54,
-                    columns: HelperUtil.createColumns(columnNames: [
-                      "Lead #",
-                      "First Name",
-                      "Last Name",
-                      "Phone Number",
-                      "Email",
-                      "Location",
-                      "Status",
-                      "Action"
-                    ],value: true ),
-                    source:
-                    CustomerDataSource(Widgets().customerTask, context),
-                    headingRowColor: MaterialStateProperty.resolveWith<Color>(
-                            (Set<MaterialState> states) {
-                          return Colors.white;
-                        }),
-                  ),
-                ),
+       
+
+Expanded(
+  child: LayoutBuilder(
+    builder: (BuildContext context, BoxConstraints constraints) {
+      return SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Container(
+          width: constraints.maxWidth > 1200 ? constraints.maxWidth : 1200,
+          child: SingleChildScrollView(
+            child: PaginatedDataTable(
+              columnSpacing: 20,
+              horizontalMargin: 10,
+              rowsPerPage: 10,
+              dataRowHeight: 54,
+              columns: HelperUtil.createColumns(
+                columnNames: [
+                  "Lead #",
+                  "First Name",
+                  "Last Name",
+                  "Phone Number",
+                  "Email",
+                  "Location",
+                  "Status",
+                  "Action"
+                ],
+                value: true,
               ),
-            )
+              source: CustomerDataSource(Widgets().customerTask, context),
+              headingRowColor: MaterialStateProperty.resolveWith<Color>(
+                (Set<MaterialState> states) {
+                  return Colors.white;
+                },
+              ),
+            ),
+          ),
+        ),
+      );
+    },
+  ),
+)
           ],
         ),
       ),

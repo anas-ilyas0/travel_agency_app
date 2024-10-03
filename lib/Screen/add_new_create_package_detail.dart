@@ -1,14 +1,10 @@
 import 'package:fab_tech_sol/AppColor/app_color.dart';
-import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/ui/dashboard.dart';
 import 'package:fab_tech_sol/widget/useredit_data.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
-import 'package:fab_tech_sol/widget/addnewagent.dart';
-import 'package:fab_tech_sol/widget/back_button_title_avatar.dart';
 import 'package:fab_tech_sol/widget/widgets.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -112,13 +108,13 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
                                 mainAxisSize: MainAxisSize
                                     .min, // Make Row as wide as the content
                                 children: [
-                                  Icon(
+                                  const Icon(
                                     Icons.file_upload_outlined,
                                     color: Colors.white,
                                     size: 18,
                                   ),
                                   // Icon
-                                  SizedBox(width: 8),
+                                  const SizedBox(width: 8),
                                   // Space between icon and text
                                   Text(
                                     'Upload Image',
@@ -220,7 +216,7 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Dashboard(
+                                    builder: (context) => const Dashboard(
                                           tabIndex: 2,
                                         )));
                           }),
@@ -251,7 +247,7 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Dashboard(
+                                    builder: (context) => const Dashboard(
                                           tabIndex: 3,
                                         )));
                           }),
@@ -270,7 +266,7 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
                     height: context.screenHeight * 0.02,
                   ),
 
-                  SizedBox(
+                  const SizedBox(
                     height: 16,
                   ),
 
@@ -285,27 +281,27 @@ class _CreateNewPackageFormState extends State<CreateNewPackageForm>
                             padding: const EdgeInsets.only(left: 8),
                             child: Widgets().CreateNewPackagetext('Name'),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 25,
                           ),
                           Widgets().PackageTextNmaelist('Adult'),
-                          SizedBox(
+                          const SizedBox(
                             height: 38,
                           ),
                           Widgets().PackageTextNmaelist('Child'),
-                          SizedBox(
+                          const SizedBox(
                             height: 36,
                           ),
                           Widgets().PackageTextNmaelist('Infant'),
-                          SizedBox(
+                          const SizedBox(
                             height: 36,
                           ),
                           Widgets().PackageTextNmaelist('Senior Citizen'),
-                          SizedBox(
+                          const SizedBox(
                             height: 36,
                           ),
                           Widgets().PackageTextNmaelist('Other'),
-                          SizedBox(
+                          const SizedBox(
                             height: 18,
                           ),
                         ],
