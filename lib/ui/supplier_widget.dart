@@ -72,7 +72,7 @@ class SupplierScreen extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => AddNewLocalSupplier(),
+                              builder: (context) => const AddNewLocalSupplier(),
                             ));
                       },
                     )
@@ -85,7 +85,7 @@ class SupplierScreen extends StatelessWidget {
           Responsive.isTablet(context) || Responsive.isMobile(context)
               ? Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
@@ -112,9 +112,9 @@ class SupplierScreen extends StatelessWidget {
               ),
             ],
           )
-              : SizedBox.shrink(),
+              : const SizedBox.shrink(),
 
-          Expanded(
+          Flexible(
             child: Container(
               width: double.infinity,
               child: SingleChildScrollView(
@@ -130,7 +130,7 @@ class SupplierScreen extends StatelessWidget {
                     "Action"
                   ]),
                   source: TaskDataSource(Widgets().tasks,context),
-
+            
                   headingRowColor: MaterialStateProperty.resolveWith<Color>(
                       (Set<MaterialState> states) {
                     return Colors.white;

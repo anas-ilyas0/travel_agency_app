@@ -92,7 +92,7 @@ class PackageDetailContainer extends StatelessWidget {
                           //     fontWeight: FontWeight.w400,
                           //     fontFamily: fontFamilys,
                           //     color: AppColor.darkGrey),
-
+                      
                          style:  TextStyle(fontSize: 12, fontWeight: FontWeight.w400,fontFamily: fontFamilys,color: AppColor.darkGrey,),maxLines: 2,
                           overflow: TextOverflow.ellipsis),
                     )),

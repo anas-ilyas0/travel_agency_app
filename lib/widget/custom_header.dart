@@ -1,9 +1,6 @@
-import 'package:fab_tech_sol/Screen/international_suppliers_details.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
-import 'package:fab_tech_sol/ui/supplier_widget.dart';
 import 'package:fab_tech_sol/widget/widgets.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -55,7 +52,7 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
                     indicatorWeight: 3,
                     indicatorSize: TabBarIndicatorSize.tab,
                     labelPadding:
-                        EdgeInsets.symmetric(horizontal: 22, vertical: 8),
+                        const EdgeInsets.symmetric(horizontal: 22, vertical: 8),
                     isScrollable: true,
                     tabs: [
                       const Tab(text: 'Dashboard'),
@@ -83,26 +80,14 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
                                           child: Text('International Supplier'))
                                     ])
                           ])),
-                      Tab(text: 'Package'),
+                      const Tab(text: 'Package'),
                     ],
                   ),
                 ],
               ),
             )
           : null,
-      // leading: Responsive.isMobile(context) && dashboardTabController.index == 0
-      //     ? Builder(
-      //         builder: (context) {
-      //           return IconButton(
-      //             icon: const Icon(Icons.menu),
-      //             onPressed: () {
-      //               Scaffold.of(context)
-      //                   .openDrawer(); // Correct context provided here
-      //             },
-      //           );
-      //         },
-      //       )
-      //     : null,
+      
       actions: [
         Padding(
           padding: EdgeInsets.only(right: context.screenWidth * .01),
@@ -115,28 +100,4 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
     );
   }
 
-  Widget _buildMenuBar() {
-    return PopupMenuButton<String>(
-      onSelected: (value) {
-        print("Selected: $value");
-      },
-      itemBuilder: (BuildContext context) {
-        return [
-          PopupMenuItem<String>(
-            value: 'Today',
-            child: Text('Today'),
-          ),
-          PopupMenuItem<String>(
-            value: 'Filter',
-            child: Text('Filter'),
-          ),
-          PopupMenuItem<String>(
-            value: 'Add new Leads',
-            child: Text('Add new Leads'),
-          ),
-        ];
-      },
-      icon: const Icon(Icons.more_vert_rounded),
-    );
-  }
 }

@@ -1,4 +1,3 @@
-import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +5,8 @@ import 'package:flutter/material.dart';
 import '../AppColor/app_color.dart';
 import '../resources/responsive.dart';
 
+
+// ignore: must_be_immutable
 class BackButtonAvatar extends StatelessWidget {
   String text1;
    BackButtonAvatar({super.key,required this.text1});
@@ -30,17 +31,17 @@ class BackButtonAvatar extends StatelessWidget {
                   child: Container(
                       height: 30,
                       width: 30,
-                      decoration: BoxDecoration(color: Colors.white,shape: BoxShape.circle),
-                      child: Icon(Icons.arrow_back)),
+                      decoration: const BoxDecoration(color: Colors.white,shape: BoxShape.circle),
+                      child: const Icon(Icons.arrow_back)),
                 ),
-                SizedBox(width: 10,),
+                const SizedBox(width: 10,),
                  Text(
                   text1,
                   style:  TextStyle(
                       fontSize: 20,
                      fontWeight: FontWeight.w600,
                       fontFamily: fontFamilys,
-                      color: Color(0XFF11345A)),
+                      color: const Color(0XFF11345A)),
                 ),
               ],
             ),

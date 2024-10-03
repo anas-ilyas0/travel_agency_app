@@ -2,6 +2,7 @@
 import 'package:fab_tech_sol/Screen/all_leads.dart';
 import 'package:fab_tech_sol/Screen/international_supplier.dart';
 import 'package:fab_tech_sol/Screen/package_Screen.dart';
+import 'package:fab_tech_sol/mobile/mobile_custom_app_bar.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:fab_tech_sol/ui/customer_widget.dart';
@@ -11,6 +12,7 @@ import 'package:fab_tech_sol/ui/agents_widget.dart';
 import 'package:fab_tech_sol/ui/dashboard_widget.dart';
 import 'package:fab_tech_sol/ui/leads_widget.dart';
 import 'package:fab_tech_sol/ui/supplier_widget.dart';
+import 'package:fab_tech_sol/widget/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -38,7 +40,7 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
       initialIndex: widget.tabIndex,
     );
     leadsTabController = TabController(
-      length: 3,
+      length: 2,
       vsync: this,
     );
 
@@ -65,7 +67,8 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
     return Scaffold(
       appBar: CustomHeader(dashboardTabController: dashboardTabController!),
 
-      drawer:Responsive.isDesktop(context)?null: DashboardDrawer(tabController: dashboardTabController!),
+      drawer:Responsive.isDesktop(context)?null: MobileCustomAppBar().mobileCustomAppBar("Dashboard", context),
+      // drawer:Responsive.isDesktop(context)?null: DashboardDrawer(tabController: dashboardTabController!),
       body: Column(
         children: [
           Divider(

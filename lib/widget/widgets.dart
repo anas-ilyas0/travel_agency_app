@@ -137,7 +137,7 @@ class Widgets {
                   color: addLeadButtonColor,
                 ),
                 suffixIcon: Container(
-                  height: 34,
+                  height: 32,
                   decoration: BoxDecoration(
                     color: addLeadButtonColor,
                     borderRadius: const BorderRadius.only(
@@ -145,15 +145,18 @@ class Widgets {
                       bottomRight: Radius.circular(24),
                     ),
                   ),
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      'Search',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 12,
-                          fontWeight: FontWeight.w400,
-                          fontFamily: fontFamilys),
+                  child: SizedBox(
+                    width: 80,
+                    child: TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        'Search',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                            fontFamily: fontFamilys),
+                      ),
                     ),
                   ),
                 ),
@@ -252,12 +255,9 @@ class Widgets {
                   child: CircleAvatar(
                     backgroundImage:
                          AssetImage('${imageUrl}appbar.png'),
-                    // backgroundColor:
-                    //     backgroundImage != null ? color : Colors.transparent,
+                   
                     radius: 20,
-                    // child: backgroundImage == null
-                    //     ? const Icon(Icons.person, color: Colors.white)
-                    //     : null,
+                    
                   ),
                 ),
               ),
@@ -329,7 +329,7 @@ class Widgets {
                         fontFamily: 'Readex Pro',
                         fontSize: 13),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   Text(

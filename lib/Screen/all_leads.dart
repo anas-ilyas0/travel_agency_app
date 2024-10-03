@@ -340,7 +340,8 @@ class AllLeads extends StatelessWidget {
                         SizedBox(height: 8),
                         Center(
                           child: TextButton(
-                            child: Text('View Details',style: TextStyle(color: Colors.black,fontFamily: 'Poppin',fontWeight: FontWeight.w700,fontSize: 14),),
+                            child: Text('View Details',style: TextStyle(
+                              color: Colors.black,fontFamily: 'Poppin',fontWeight: FontWeight.w700,fontSize: 14),),
                             onPressed: () {
                               Navigator.push(context, MaterialPageRoute(builder: (context) => LeadDetails(),));
                             },
