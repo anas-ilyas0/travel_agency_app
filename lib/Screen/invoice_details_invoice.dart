@@ -2,7 +2,6 @@ import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/Screen/lead_details.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
-import 'package:fab_tech_sol/login_page.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
 import 'package:fab_tech_sol/widget/back_button_title_avatar.dart';
 import 'package:fab_tech_sol/widget/invoice_detail_price_table.dart';
