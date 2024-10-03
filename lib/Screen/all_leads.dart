@@ -122,8 +122,124 @@ class AllLeads extends StatelessWidget {
                   vertical: 20,
                 ),
                 child: Responsive(
-                  mobile: Text('Coming Soon'),
+                  mobile: Text('Mobile View'),
                   desktop: LayoutBuilder(
+        builder: (context, constraints) {
+          final crossAxisCount = (constraints.maxWidth / 260).floor();
+          return GridView.builder(
+            padding: EdgeInsets.all(16),
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: crossAxisCount,
+              crossAxisSpacing: 16.0,
+              mainAxisSpacing: 16.0,
+              childAspectRatio: 0.75,
+            ),
+            itemCount: 8,
+            itemBuilder: (context, index) {
+              return Card(
+                elevation: 4,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                child: Container(
+                  decoration: BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.black,
+                        offset: Offset(0, 4),
+                        blurRadius: 0,
+                      )
+                    ],
+                    color: AppColor.allleadcontainercolor,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(12),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              padding: EdgeInsets.symmetric(horizontal: 8.5, vertical: 4.5),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(12),
+                                color: Colors.green,
+                              ),
+                              child: Text(
+                                '• Active',
+                                style: TextStyle(color: Colors.white, fontSize: 12),
+                              ),
+                            ),
+                            IconButton(
+                              icon: Icon(Icons.more_vert),
+                              onPressed: () {},
+                              padding: EdgeInsets.zero,
+                              constraints: BoxConstraints(),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 10,),
+                        Expanded(
+                          child: Center(
+                            child: Image.asset(
+                              "${ImagesAssets.imagePath}allleadimagecontainer.png",
+                              width: 140,
+                              height: 140,
+                              fit: BoxFit.contain,
+                            ),
+                          ),
+                        ),
+                        SizedBox(height: 12,),
+                        Text(
+                          'Tour Name: Dream Destination',
+                          style: AppTextstyless.allLeads,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        SizedBox(height: 4),
+                        Widgets().allLeadNoOfLeads('14'),
+                        SizedBox(height: 4),
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(Icons.location_on, size: 14),
+                            Text(
+                              '9827 Railroad Street',
+                              style: AppTextstyless.allLeadsDate,
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 4),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Starting from: ',
+                              style: TextStyle(fontSize: 12,color: AppColor.hintColor),
+                            ),
+                            Text('Oct 10,2024')
+                          ],
+                        ),
+                        SizedBox(height: 4),
+                        Center(
+                          child: TextButton(
+                            child: Text('View Details',style: TextStyle(color: Colors.black,fontFamily: 'Poppin',fontWeight: FontWeight.w700,fontSize: 14),),
+                            onPressed: () {
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => LeadDetails(),));
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              );
+            },
+          );
+        },
+      ),
+                  tablet: LayoutBuilder(
         builder: (context, constraints) {
           final crossAxisCount = (constraints.maxWidth / 260).floor();
           return GridView.builder(
@@ -239,7 +355,7 @@ class AllLeads extends StatelessWidget {
           );
         },
       ),
-                  tablet: Text(''),
+
                 ),
               ),
               const Center(child: Text('Pending')),

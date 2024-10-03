@@ -37,8 +37,8 @@ class _LoginPageState extends State<LoginPage> {
               width: Responsive.isDesktop(context)
                   ? context.screenWidth * 0.3
                   : Responsive.isTablet(context)
-                      ? context.screenWidth * 0.5
-                      : context.screenWidth * 0.8,
+                  ? context.screenWidth * 0.5
+                  : context.screenWidth * 0.8,
               // decoration: BoxDecoration(
               //    color: Colors.red
               // ),
@@ -64,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
                             'Welcome Back ',
                             style: TextStyle(
                                 fontSize:
-                                    Responsive.isMobile(context) ? 26 : 34,
+                                Responsive.isMobile(context) ? 26 : 34,
                                 fontWeight: FontWeight.w500,
                                 fontFamily: "Readex Pro"),
                           ),
@@ -73,7 +73,7 @@ class _LoginPageState extends State<LoginPage> {
                             style: TextStyle(
                                 color: Colors.yellow,
                                 fontSize:
-                                    Responsive.isMobile(context) ? 26 : 32),
+                                Responsive.isMobile(context) ? 26 : 32),
                           )
                         ]),
                     SizedBox(
@@ -116,7 +116,7 @@ class _LoginPageState extends State<LoginPage> {
                               'Remember Me',
                               style: TextStyle(
                                   fontSize:
-                                      Responsive.isMobile(context) ? 14 : 16,
+                                  Responsive.isMobile(context) ? 14 : 16,
                                   fontFamily: "Readex Pro",
                                   fontWeight: FontWeight.w400),
                             ),
@@ -130,7 +130,7 @@ class _LoginPageState extends State<LoginPage> {
                               'Forgot Account?',
                               style: TextStyle(
                                   fontSize:
-                                      Responsive.isMobile(context) ? 14 : 16,
+                                  Responsive.isMobile(context) ? 14 : 16,
                                   fontWeight: FontWeight.w400,
                                   fontFamily: 'Readex Pro',
                                   color: AppColor.buttonTextColor),
@@ -145,7 +145,7 @@ class _LoginPageState extends State<LoginPage> {
                     Row(mainAxisAlignment: MainAxisAlignment.end, children: [
                       ElevatedButton(
                           onPressed: () {
-                           NavigationUtil.navigateAndReplace(context: context, destinationScreen: Dashboard());
+                            NavigationUtil.navigateAndReplace(context: context, destinationScreen: Dashboard());
                           },
                           style: ElevatedButton.styleFrom(
                               backgroundColor: const Color(0XFFC2E9F3),
@@ -156,7 +156,7 @@ class _LoginPageState extends State<LoginPage> {
                             'Log in',
                             style: TextStyle(
                                 fontSize:
-                                    Responsive.isMobile(context) ? 14 : 18,
+                                Responsive.isMobile(context) ? 14 : 18,
                                 color: AppColor.buttonTextColor,
                                 fontWeight: FontWeight.w400,
                                 fontFamily: "Readex Pro"),

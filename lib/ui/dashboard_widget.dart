@@ -89,10 +89,7 @@ class DashBoardScreen extends StatelessWidget {
                           providerValue.updateSelectedItem1(newValue);
                         }, context),
                     const SizedBox(width: 2),
-                    Widgets().dropDownButton(providerValue.selectedItem2,
-                        providerValue.dropdownItems2, (String? newValue) {
-                          providerValue.updateSelectedItem2(newValue);
-                        }, context),
+                    DashboardFilterBox(),
                     const SizedBox(width: 10),
                     Widgets().button('Add New Lead', () {
                       Navigator.push(context, MaterialPageRoute(builder: (context) => LeadDetails()));

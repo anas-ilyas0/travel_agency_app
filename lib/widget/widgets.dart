@@ -377,19 +377,22 @@ class Widgets {
           child: Row(
             children: [
               SizedBox(
-                height: 46,
-                width: 180,
-                child: Center(
-                  child: Text(
-                    text,
-                    style: TextStyle(
-                        fontSize: 14,
-                        fontFamily: fontFamilys,
+                // height: 46,
+                // width: 180,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 18,vertical: 12),
+                  child: Center(
+                    child: Text(
+                      text,
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontFamily: fontFamilys,
 
-                        //   fontFamily: readexPro,
+                          //   fontFamily: readexPro,
 
-                        color: color,
-                        fontWeight: FontWeight.w400),
+                          color: color,
+                          fontWeight: FontWeight.w400),
+                    ),
                   ),
                 ),
               )
