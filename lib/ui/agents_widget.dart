@@ -1,4 +1,3 @@
-import 'package:fab_tech_sol/Screen/DropDownButton/type_of_people.dart';
 import 'package:fab_tech_sol/Screen/add_new_agent.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
@@ -27,7 +26,7 @@ class AgentScreen extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Responsive.isDesktop(context)?SizedBox.shrink():Align(
+            Responsive.isDesktop(context)?const SizedBox.shrink():Align(
               alignment: Alignment.topLeft ,
               child: Text(
 
@@ -51,7 +50,7 @@ class AgentScreen extends StatelessWidget {
                       fontFamily: fontFamilys,
                       fontWeight: FontWeight.bold,
                       color: color),
-                ):SizedBox.shrink(),
+                ):const SizedBox.shrink(),
                 Row(
                   children: [
                     Widgets().searchTextField(),
@@ -71,12 +70,12 @@ class AgentScreen extends StatelessWidget {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => AddNewAgent(),
+                                      builder: (context) => const AddNewAgent(),
                                     ));
                               },
                             )
                           ])
-                        : SizedBox.shrink()
+                        : const SizedBox.shrink()
                   ],
                 ),
               ],
@@ -84,7 +83,7 @@ class AgentScreen extends StatelessWidget {
             Responsive.isTablet(context) || Responsive.isMobile(context)
                 ? Column(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Row(
@@ -103,7 +102,7 @@ class AgentScreen extends StatelessWidget {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => AddNewAgent(),
+                                    builder: (context) => const AddNewAgent(),
                                   ));
                             },
                           )
@@ -111,12 +110,12 @@ class AgentScreen extends StatelessWidget {
                       ),
                     ],
                   )
-                : SizedBox.shrink(),
-            SizedBox(
+                : const SizedBox.shrink(),
+            const SizedBox(
               height: 20,
             ),
             Expanded(
-              child: Container(
+              child: SizedBox(
                 width: double.infinity,
                 child: SingleChildScrollView(
                   child: PaginatedDataTable(
@@ -131,8 +130,8 @@ class AgentScreen extends StatelessWidget {
                     ]),
                     source:
                         AgentsTaskDataSource(Widgets().agentsTasks, context),
-                    headingRowColor: MaterialStateProperty.resolveWith<Color>(
-                        (Set<MaterialState> states) {
+                    headingRowColor: WidgetStateProperty.resolveWith<Color>(
+                        (Set<WidgetState> states) {
                       return Colors.white;
                     }),
                   ),

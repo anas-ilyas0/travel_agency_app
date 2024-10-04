@@ -8,7 +8,6 @@ import 'package:fab_tech_sol/widget/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../widget/dash_board_filter.dart';
 import '../widget/dashboard_filter.dart';
 
 class DashBoardScreen extends StatelessWidget {
@@ -64,14 +63,14 @@ class DashBoardScreen extends StatelessWidget {
                               providerValue.updateSelectedItem1(newValue);
                             }, context),
                             const SizedBox(width: 2),
-                            DashboardFilterBox(),
+                            const DashboardFilterBox(),
                             // Widgets().dropDownButton(providerValue.selectedItem2,
                             //     providerValue.dropdownItems2, (String? newValue) {
                             //   providerValue.updateSelectedItem2(newValue);
                             // }, context),
                             const SizedBox(width: 10),
                             Widgets().button('Add New Lead', () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => AddNewLeadForm()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context) => const AddNewLeadForm()));
                             },),
                           ],
                         ),
@@ -89,14 +88,14 @@ class DashBoardScreen extends StatelessWidget {
                           providerValue.updateSelectedItem1(newValue);
                         }, context),
                     const SizedBox(width: 2),
-                    DashboardFilterBox(),
+                    const DashboardFilterBox(),
                     const SizedBox(width: 10),
                     Widgets().button('Add New Lead', () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => LeadDetails()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const LeadDetails()));
                     }),
                   ],
                 ):const SizedBox.shrink(),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Wrap(
               spacing: 20,
               runSpacing:10.0,

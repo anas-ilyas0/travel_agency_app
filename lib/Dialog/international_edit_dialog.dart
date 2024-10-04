@@ -63,7 +63,7 @@ class InternationalEditDialog extends StatelessWidget {
                      Column(
                       children: [
                         Text('Company Logo',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 16,fontFamily: fontFamilys)),
-                        SizedBox(height: 5,),
+                        const SizedBox(height: 5,),
                          ElevatedButton(onPressed: () async{
                                      await imageProvider.pickImage();
                                }, 
@@ -109,7 +109,7 @@ class InternationalEditDialog extends StatelessWidget {
                      Column(
                       children: [
                         Text('Supplier Image',style: TextStyle(fontWeight: FontWeight.w400,fontSize: 16,fontFamily: fontFamilys),),
-                        SizedBox(height: 5,),
+                        const SizedBox(height: 5,),
                          ElevatedButton(onPressed: ()async {
                                      await imageProvider.pickImage();
                                }, 

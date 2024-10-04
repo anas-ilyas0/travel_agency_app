@@ -1,11 +1,8 @@
 import 'package:fab_tech_sol/AppColor/app_color.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/manage_color_state.dart';
-import '../ui/agents_widget.dart';
-import '../ui/dashboard_widget.dart';
 
 class DashboardDrawer extends StatefulWidget {
   TabController tabController;

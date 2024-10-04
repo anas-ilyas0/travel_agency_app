@@ -3,6 +3,8 @@ import 'package:fab_tech_sol/Screen/international_suppliers_details.dart';
 import 'package:fab_tech_sol/ui/supplier_widget.dart'; // Import your SupplierScreen here
 
 class SupplierScreenIndexs extends StatefulWidget {
+  const SupplierScreenIndexs({super.key});
+
   @override
   _SupplierScreenIndexsState createState() => _SupplierScreenIndexsState();
 }
@@ -27,25 +29,25 @@ class _SupplierScreenIndexsState extends State<SupplierScreenIndexs> {
                 },
                 itemBuilder: (BuildContext context) {
                   return [
-                    PopupMenuItem<String>(
+                    const PopupMenuItem<String>(
                       value: 'Supplier',
                       child: Text('Local Supplier'),
                     ),
-                    PopupMenuItem<String>(
+                    const PopupMenuItem<String>(
                       value: 'International Supplier',
                       child: Text('International Supplier'),
                     ),
                   ];
                 },
-                icon: Icon(Icons.more_vert), // Icon for the menu button
+                icon: const Icon(Icons.more_vert), // Icon for the menu button
               ),
             ],
           ),
           
           Expanded(
             child: selectedOption == 'Supplier'
-                ? SupplierScreen() // Show Local Supplier Screen
-                : InternationalSuppliersDetails(), // Show International Supplier Screen
+                ? const SupplierScreen() // Show Local Supplier Screen
+                : const InternationalSuppliersDetails(), // Show International Supplier Screen
           ),
         ],
       ),

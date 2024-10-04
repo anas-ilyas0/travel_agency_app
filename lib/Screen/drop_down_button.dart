@@ -79,7 +79,7 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
                       decoration: BoxDecoration(
                           color: AppColor.customdropdownColor,
                           borderRadius: BorderRadius.circular(8),
-                          border: Border.all(color: const Color(0XFF70707033))),
+                          border: Border.all(color: const Color(0xff70707033))),
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
@@ -95,7 +95,7 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
                                     color: Colors.white,
                                     borderRadius: BorderRadius.circular(8),
                                     border:
-                                        Border.all(color: const Color(0XFF70707033))),
+                                        Border.all(color: const Color(0xff70707033))),
                                 child: Row(
                                   children: [
                                     const Padding(
@@ -178,7 +178,7 @@ class _CustomDropDownButtonState extends State<CustomDropDownButton> {
                                                 const CircleAvatar(),
                                                 Text(
                                                   agents[index],
-                                                  style: TextStyle(
+                                                  style: const TextStyle(
                                                       fontFamily: 'ReadexPro',
                                                       color: Colors.black),
                                                 )

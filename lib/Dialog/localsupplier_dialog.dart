@@ -87,7 +87,7 @@ class LocalsupplierDialog extends StatelessWidget {
                                           await imageProvider.pickImage();
                                       },
                                       style: ElevatedButton.styleFrom(
-                                        minimumSize: Size(160, 48),
+                                        minimumSize: const Size(160, 48),
                                         padding: const EdgeInsets.symmetric(
                                             vertical: 6, horizontal: 10),
                                         backgroundColor:
@@ -154,7 +154,7 @@ class LocalsupplierDialog extends StatelessWidget {
                                           await imageProvider.pickImage();
                                       },
                                       style: ElevatedButton.styleFrom(
-                                        minimumSize: Size(160, 48),
+                                        minimumSize: const Size(160, 48),
                                         backgroundColor:
                                             const Color(0XFF11345A),
                                         padding: const EdgeInsets.symmetric(
@@ -206,7 +206,7 @@ class LocalsupplierDialog extends StatelessWidget {
                         'Bank Details',
                         style: TextStyle(
                             fontSize: 23,
-                            color: Color(0XFF11345A),
+                            color: const Color(0XFF11345A),
                             fontFamily: fontFamilys,
                             fontWeight: FontWeight.w600),
                       )),
@@ -257,7 +257,7 @@ class LocalsupplierDialog extends StatelessWidget {
                         'Company Details',
                         style: TextStyle(
                             fontSize: 23,
-                            color: Color(0XFF11345A),
+                            color: const Color(0XFF11345A),
                             fontFamily: fontFamilys,
                             fontWeight: FontWeight.w600),
                       )),
@@ -300,7 +300,7 @@ class LocalsupplierDialog extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 23,
                             fontWeight: FontWeight.w600,
-                            color: Color(0XFF11345A),
+                            color: const Color(0XFF11345A),
                             fontFamily: fontFamilys),
                       )),
                   SizedBox(

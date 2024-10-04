@@ -82,12 +82,12 @@ class _SelectAgentDialogState extends State<SelectAgentDialog> {
               child: ListView.builder(
                 itemCount: 5,
                 itemBuilder: (context, index) {
-                  return ListTile(
+                  return const ListTile(
                     leading: CircleAvatar(
                       backgroundImage:
-                          const NetworkImage('https://via.placeholder.com/150'),
+                          NetworkImage('https://via.placeholder.com/150'),
                     ),
-                    title: const Text('Jhon Doe'),
+                    title: Text('Jhon Doe'),
                   );
                 },
               ),

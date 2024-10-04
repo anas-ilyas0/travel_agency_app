@@ -1,7 +1,5 @@
 import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Image.dart';
-import 'package:fab_tech_sol/app_text_style.dart';
-import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
 import 'package:fab_tech_sol/resources/capitalize_first_letter_formatter%20(1).dart';
 import 'package:fab_tech_sol/resources/navigation_util.dart';
@@ -32,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
               horizontal: Responsive.isMobile(context) ? 18 : 70,
               vertical: Responsive.isMobile(context) ? 20 : 50),
           child: Center(
-            child: Container(
+            child: SizedBox(
               height: context.screenHeight * 0.9,
               width: Responsive.isDesktop(context)
                   ? context.screenWidth * 0.3
@@ -79,7 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                     SizedBox(
                       height: context.screenHeight * 0.01,
                     ),
-                    Text(
+                    const Text(
                       'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without',
                       textAlign: TextAlign.center,
                     ),
@@ -145,7 +143,7 @@ class _LoginPageState extends State<LoginPage> {
                     Row(mainAxisAlignment: MainAxisAlignment.end, children: [
                       ElevatedButton(
                           onPressed: () {
-                            NavigationUtil.navigateAndReplace(context: context, destinationScreen: Dashboard());
+                            NavigationUtil.navigateAndReplace(context: context, destinationScreen: const Dashboard());
                           },
                           style: ElevatedButton.styleFrom(
                               backgroundColor: const Color(0XFFC2E9F3),

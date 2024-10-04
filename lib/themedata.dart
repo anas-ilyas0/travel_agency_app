@@ -6,10 +6,10 @@ class ThemeApp {
   static ThemeData myThemeData = ThemeData(
     checkboxTheme: CheckboxThemeData(
       mouseCursor:
-      MaterialStateProperty.all<MouseCursor?>(SystemMouseCursors.click),
-      fillColor: MaterialStateProperty.all<Color?>(Colors.white),
-      checkColor: MaterialStateProperty.all<Color?>(Colors.white),
-      overlayColor: MaterialStateProperty.all<Color?>(Colors.white),
+      WidgetStateProperty.all<MouseCursor?>(SystemMouseCursors.click),
+      fillColor: WidgetStateProperty.all<Color?>(Colors.white),
+      checkColor: WidgetStateProperty.all<Color?>(Colors.white),
+      overlayColor: WidgetStateProperty.all<Color?>(Colors.white),
       splashRadius: 24.0,
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
       visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -24,8 +24,8 @@ class ThemeApp {
     dataTableTheme: DataTableThemeData(
       dividerThickness: 0.5,
       dataRowColor:
-      MaterialStateProperty.resolveWith<Color>((Set<MaterialState> states) {
-        if (states.contains(MaterialState.selected)) {
+      WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
+        if (states.contains(WidgetState.selected)) {
           return Colors.lightBlue.shade100; // Softer color for selected rows
         }
         return Colors.white; // Lighter color for data rows for a modern look
@@ -41,8 +41,8 @@ class ThemeApp {
 
       headingRowHeight: 56.0, // Increased for visual hierarchy
       headingRowColor:
-      MaterialStateProperty.resolveWith<Color>((Set<MaterialState> states) {
-        if (states.contains(MaterialState.selected)) {
+      WidgetStateProperty.resolveWith<Color>((Set<WidgetState> states) {
+        if (states.contains(WidgetState.selected)) {
           return Colors.lightBlue.shade100; // Softer color for selected rows
         }
         return AppStrings.addLeadButtonColor
@@ -68,7 +68,7 @@ class ThemeApp {
     ),
     popupMenuTheme: PopupMenuThemeData(
       color: Colors.white,
-      textStyle: TextStyle(color: Colors.black),
+      textStyle: const TextStyle(color: Colors.black),
       elevation: 8.0,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(8.0),

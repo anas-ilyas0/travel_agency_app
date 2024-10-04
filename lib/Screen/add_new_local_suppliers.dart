@@ -3,7 +3,6 @@ import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
-import 'package:fab_tech_sol/providers/localsuplierprovider.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/widget/addnewagent.dart';
 import 'package:fab_tech_sol/widget/back_button_title_avatar.dart';
@@ -105,7 +104,7 @@ class _AddNewLocalSupplierState extends State<AddNewLocalSupplier> {
                                           await imageProvider.pickImage();
                                       },
                                       style: ElevatedButton.styleFrom(
-                                        minimumSize: Size(160, 48),
+                                        minimumSize: const Size(160, 48),
                                         padding: const EdgeInsets.symmetric(
                                             vertical: 6, horizontal: 10),
                                         backgroundColor:
@@ -172,7 +171,7 @@ class _AddNewLocalSupplierState extends State<AddNewLocalSupplier> {
                                           await imageProvider.pickImage();
                                       },
                                       style: ElevatedButton.styleFrom(
-                                        minimumSize: Size(160, 48),
+                                        minimumSize: const Size(160, 48),
                                         backgroundColor:
                                             const Color(0XFF11345A),
                                         padding: const EdgeInsets.symmetric(
@@ -224,7 +223,7 @@ class _AddNewLocalSupplierState extends State<AddNewLocalSupplier> {
                         'Bank Details',
                         style: TextStyle(
                             fontSize: 23,
-                            color: Color(0XFF11345A),
+                            color: const Color(0XFF11345A),
                             fontFamily: fontFamilys,
                             fontWeight: FontWeight.w600),
                       )),
@@ -275,7 +274,7 @@ class _AddNewLocalSupplierState extends State<AddNewLocalSupplier> {
                         'Company Details',
                         style: TextStyle(
                             fontSize: 23,
-                            color: Color(0XFF11345A),
+                            color: const Color(0XFF11345A),
                             fontFamily: fontFamilys,
                             fontWeight: FontWeight.w600),
                       )),
@@ -310,7 +309,7 @@ class _AddNewLocalSupplierState extends State<AddNewLocalSupplier> {
                         style: TextStyle(
                             fontSize: 23,
                             fontWeight: FontWeight.w600,
-                            color: Color(0XFF11345A),
+                            color: const Color(0XFF11345A),
                             fontFamily: fontFamilys),
                       )),
                   SizedBox(
@@ -399,11 +398,11 @@ class _AddNewLocalSupplierState extends State<AddNewLocalSupplier> {
                       SizedBox(
                         height: context.screenHeight * 0.15,
                         // width: context.screenWidth * 0.2,
-                        child: Column(
+                        child: const Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                           const Flexible(
+                           Flexible(
                               child: FittedBox(
                                 child: Text(
                                   'Select Service',

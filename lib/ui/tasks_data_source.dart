@@ -264,7 +264,7 @@ class PackageDataSource extends DataTableSource {
         DataCell(Text(task.agentPhoneNumber)),
         DataCell(ListTile(
           contentPadding: EdgeInsets.zero,
-          title: Text(task.supplierName,style: TextStyle(fontSize: 14),),
+          title: Text(task.supplierName,style: const TextStyle(fontSize: 14),),
           subtitle: Text(task.supplierType,style: TextStyle(fontSize: 12,fontWeight: FontWeight.w300,color: AppColor.hintColor),),
           leading: CircleAvatar(
             backgroundImage: AssetImage('${imageUrl}agent.png'),

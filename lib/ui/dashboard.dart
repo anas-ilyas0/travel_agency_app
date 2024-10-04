@@ -2,17 +2,15 @@
 import 'package:fab_tech_sol/Screen/all_leads.dart';
 import 'package:fab_tech_sol/Screen/international_supplier.dart';
 import 'package:fab_tech_sol/Screen/package_Screen.dart';
+import 'package:fab_tech_sol/mobile/home_screen_mobile.dart';
 import 'package:fab_tech_sol/mobile/mobile_custom_app_bar.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:fab_tech_sol/ui/customer_widget.dart';
 import 'package:fab_tech_sol/widget/custom_header.dart';
-import 'package:fab_tech_sol/widget/dashboardDrawer.dart';
 import 'package:fab_tech_sol/ui/agents_widget.dart';
 import 'package:fab_tech_sol/ui/dashboard_widget.dart';
-import 'package:fab_tech_sol/ui/leads_widget.dart';
 import 'package:fab_tech_sol/ui/supplier_widget.dart';
-import 'package:fab_tech_sol/widget/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -64,7 +62,7 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     final provider = Provider.of<UserProvider>(context);
 
-    return Scaffold(
+    return Responsive.isMobile(context)?  HomeScreenMobile():Scaffold(
       appBar: CustomHeader(dashboardTabController: dashboardTabController!),
 
       drawer:Responsive.isDesktop(context)?null: MobileCustomAppBar().mobileCustomAppBar("Dashboard", context),
@@ -81,11 +79,11 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
               controller: dashboardTabController,
               physics: const NeverScrollableScrollPhysics(),
               children: [
-                DashBoardScreen(),
+                const DashBoardScreen(),
                 AllLeads(tabController: leadsTabController!),
                 const AgentScreen(),
                 
-                CustomerScreen(),
+                const CustomerScreen(),
                 provider.selectedOptions == "Local"
                     ? const SupplierScreen()
                     : const InternationalSupplierScreen(),

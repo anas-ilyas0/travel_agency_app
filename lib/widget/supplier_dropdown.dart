@@ -1,5 +1,4 @@
 import 'package:fab_tech_sol/dimensions.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../AppColor/app_color.dart';
@@ -61,7 +60,7 @@ class _SupplierDropdownState extends State<SupplierDropdown> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 4),
-                        child: Text(agent, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400,)),
+                        child: Text(agent, style: const TextStyle(fontSize: 14,fontWeight: FontWeight.w400,)),
                       ),
                     ],
                   )),
@@ -84,7 +83,7 @@ class _SupplierDropdownState extends State<SupplierDropdown> {
               height: 50,
               child: Text(
                 agent,
-                style: TextStyle(fontSize: 14),
+                style: const TextStyle(fontSize: 14),
               ),
             );
           }).toList();
@@ -153,7 +152,7 @@ class _TypePeopleDropdownState extends State<TypePeopleDropdown> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 4),
-                        child: Text(type, style: TextStyle(fontSize: 14,fontWeight: FontWeight.w400,)),
+                        child: Text(type, style: const TextStyle(fontSize: 14,fontWeight: FontWeight.w400,)),
                       ),
                     ],
                   )),
@@ -176,7 +175,7 @@ class _TypePeopleDropdownState extends State<TypePeopleDropdown> {
               height: 50,
               child: Text(
                 type,
-                style: TextStyle(fontSize: 14),
+                style: const TextStyle(fontSize: 14),
               ),
             );
           }).toList();

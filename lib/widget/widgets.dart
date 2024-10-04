@@ -1,5 +1,4 @@
 import 'package:fab_tech_sol/AppColor/app_color.dart';
-import 'package:fab_tech_sol/Dialog/agent_dialog.dart';
 import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/Screen/AppText/TextStyle.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
@@ -469,7 +468,7 @@ class Widgets {
   Widget PackageDetailButton(BuildContext context) {
     return GestureDetector(
       onTap: () {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => ClientDetailPackage(),));
+      Navigator.push(context, MaterialPageRoute(builder: (context) => const ClientDetailPackage(),));
       },
       child: Container(
         height: 46,
@@ -489,17 +488,17 @@ class Widgets {
                     "Detail",
                     style: TextStyle(
                       // decoration: TextDecoration.underline,
-                      color: Color(0XFF11345A),
+                      color: const Color(0XFF11345A),
                       fontSize: 16,
                       fontFamily: fontFamilys,
                       fontWeight: FontWeight.w400,
                     ),
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
-                Icon(Icons.arrow_forward,size: 18,)
+                const Icon(Icons.arrow_forward,size: 18,)
               ],
             ),
           ),
@@ -510,10 +509,10 @@ class Widgets {
 
   Widget CreateNewPackagetext(String textpackage) {
     return Text(
-      '$textpackage',
+      textpackage,
       style: TextStyle(
           fontSize: 20,
-          color: Color(0XFF83D0E3),
+          color: const Color(0XFF83D0E3),
           fontFamily: fontFamilys,
           fontWeight: FontWeight.w500),
     );
@@ -521,7 +520,7 @@ class Widgets {
 
   Widget PackageTextNmaelist(String nameListText) {
     return Text(
-      '$nameListText',
+      nameListText,
       style: TextStyle(
           fontSize: 20,
           fontFamily: fontFamilys,
@@ -545,8 +544,8 @@ class Widgets {
       child: Padding(
         padding: const EdgeInsets.all(12),
         child: Text(
-          '$TextNumberlist',
-          style: TextStyle(fontSize: 14, color: Color(0XFF8897AD)),
+          TextNumberlist,
+          style: const TextStyle(fontSize: 14, color: Color(0XFF8897AD)),
         ),
       ),
     );
@@ -570,11 +569,11 @@ class Widgets {
                   SvgPicture.asset('${ImagesAssets.imagePath}VectorRight.svg'),
             ),
           ),
-          SizedBox(width: 8),
+          const SizedBox(width: 8),
           Expanded(
             child: Text(
               featureText,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.black,
                 // fontWeight: FontWeight.bold,  Good work Usman
                 fontWeight: FontWeight.w500,
@@ -609,7 +608,7 @@ class Widgets {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Add Here', style: TextStyle(fontSize: 16)),
+                const Text('Add Here', style: TextStyle(fontSize: 16)),
                 Icon(isExpanded ? Icons.arrow_drop_up : Icons.arrow_drop_down),
               ],
             ),
@@ -626,15 +625,15 @@ class Widgets {
       width: Responsive.isMobile(context)? null:Responsive.isTablet(context)? context.screenWidth * 0.25:context.screenWidth * 0.25 ,
       child: Column(
         children: [Align(alignment: Alignment.centerLeft,
-          child: Text('$text1',style: AppTextstyless.addnewinternationalsuppliersSubText)),
+          child: Text(text1,style: AppTextstyless.addnewinternationalsuppliersSubText)),
        TextField(
          cursorColor: Colors.white,
   decoration: InputDecoration(
-    suffixIcon: Icon(Icons.arrow_drop_down),
+    suffixIcon: const Icon(Icons.arrow_drop_down),
 
     fillColor: Colors.white,
     filled: true,
-    hintText: '$text2',hintStyle: TextStyle(color:AppColor.hintColor , fontSize: 14,fontFamily: fontFamilys,fontWeight: FontWeight.w300),
+    hintText: text2,hintStyle: TextStyle(color:AppColor.hintColor , fontSize: 14,fontFamily: fontFamilys,fontWeight: FontWeight.w300),
 
 enabledBorder: const OutlineInputBorder(
       borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners
@@ -668,6 +667,6 @@ enabledBorder: const OutlineInputBorder(
     );
   }
    Widget allLeadNoOfLeads(String text){
-    return Text('No Of Leads ${text}',style: AppTextstyless.allLeads,);
+    return Text('No Of Leads $text',style: AppTextstyless.allLeads,);
   }
 }

@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class PackageDetailContainer extends StatelessWidget {
-  PackageDetailContainer({
+  const PackageDetailContainer({
     super.key,
   });
 
@@ -48,7 +48,7 @@ class PackageDetailContainer extends StatelessWidget {
                     // SizedBox(width: context.screenWidth * 0.52),
                     Row(
                       children: [
-                        Text(
+                        const Text(
                           'Monthly',
                           style: TextStyle(
                               fontSize: 18,
@@ -63,7 +63,7 @@ class PackageDetailContainer extends StatelessWidget {
                           width: 150,
                           child: ElevatedButton(
                               onPressed: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => PackageDetail(),));
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => const PackageDetail(),));
                               },
                               style: ElevatedButton.styleFrom(
                                   backgroundColor: AppColor.blueColor),
@@ -96,7 +96,7 @@ class PackageDetailContainer extends StatelessWidget {
                          style:  TextStyle(fontSize: 12, fontWeight: FontWeight.w400,fontFamily: fontFamilys,color: AppColor.darkGrey,),maxLines: 2,
                           overflow: TextOverflow.ellipsis),
                     )),
-                Align(
+                const Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
                       'Features:',

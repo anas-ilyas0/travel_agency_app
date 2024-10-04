@@ -52,7 +52,7 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
                       indicatorWeight: 3,
                       indicatorSize: TabBarIndicatorSize.tab,
                       labelPadding:
-                          EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+                          const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
                       isScrollable: true,
                       tabs: const [
                         Tab(text: 'Dashboard'),
@@ -99,15 +99,15 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
       },
       itemBuilder: (BuildContext context) {
         return [
-          PopupMenuItem<String>(
+          const PopupMenuItem<String>(
             value: 'Today',
             child: Text('Today'),
           ),
-          PopupMenuItem<String>(
+          const PopupMenuItem<String>(
             value: 'Filter',
             child: Text('Filter'),
           ),
-          PopupMenuItem<String>(
+          const PopupMenuItem<String>(
             value: 'Add new Leads',
             child: Text('Add new Leads'),
           ),

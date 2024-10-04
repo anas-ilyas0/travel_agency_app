@@ -1,17 +1,12 @@
 import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Image.dart';
-import 'package:fab_tech_sol/Screen/lead_details.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
-import 'package:fab_tech_sol/widget/back_button_title_avatar.dart';
 import 'package:fab_tech_sol/widget/invoice_detail_price_table.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../providers/provider.dart';
-import '../resources/responsive.dart';
-import '../widget/custom_header.dart';
-import '../widget/dashboardDrawer.dart';
 
 class LeadInvoiceDetails extends StatefulWidget {
   const LeadInvoiceDetails({super.key});
@@ -104,7 +99,7 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
                   'Briton Consultancy & Travel Tours',
                   style: TextStyle(
                       fontSize: 28,
-                      color: Color(0XFF11345A),
+                      color: const Color(0XFF11345A),
                       fontFamily: fontFamilys,
                       fontWeight: FontWeight.w500),
                 ),
@@ -118,18 +113,18 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
               SizedBox(
                 width: context.screenWidth * 0.15,
               ),
-              Flexible(
+              const Flexible(
                 flex: 2,
-                child: const Text(
+                child: Text(
                   'Invoice Number:',
                   style: TextStyle(
                       fontWeight: FontWeight.bold, color: Color(0XFF83D0E3)),
                 ),
               ),
               SizedBox(width: context.screenWidth * 0.02),
-              Flexible(
+              const Flexible(
                 flex: 2,
-                child: const Text(
+                child: Text(
                   'In834892234',
                   style: TextStyle(
                       color: Color(0XFF11345A), fontWeight: FontWeight.bold),
@@ -142,14 +137,14 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
             height: context.screenHeight * 0.02,
           ),
           Padding(
-            padding: EdgeInsets.only(left: 70), // Adds padding around the text
+            padding: const EdgeInsets.only(left: 70), // Adds padding around the text
             child: Align(
               alignment: Alignment.centerLeft,
               child: Text('Royal Road, Phoenix 00213 | Mauritius',
                   style: TextStyle(
                       fontFamily: fontFamilys,
                       fontWeight: FontWeight.w400,
-                      color: Color(0XFF83D0E3),
+                      color: const Color(0XFF83D0E3),
                       fontSize: 16)),
             ),
           ),
@@ -158,14 +153,14 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
             height: context.screenHeight * 0.015,
           ),
           Padding(
-            padding: EdgeInsets.only(left: 70), // Adds padding around the text
+            padding: const EdgeInsets.only(left: 70), // Adds padding around the text
             child: Align(
               alignment: Alignment.centerLeft,
               child: Text('BRN: C13117660',
                   style: TextStyle(
                       fontFamily: fontFamilys,
                       fontWeight: FontWeight.w400,
-                      color: Color(0XFF83D0E3),
+                      color: const Color(0XFF83D0E3),
                       fontSize: 16)),
             ),
           ),
@@ -182,7 +177,7 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
               // "Bill To" text with padding
               Padding(
                 padding:
-                    EdgeInsets.only(left: 70), // Adds padding around the text
+                    const EdgeInsets.only(left: 70), // Adds padding around the text
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
@@ -190,7 +185,7 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
                     style: TextStyle(
                       fontFamily: fontFamilys,
                       fontWeight: FontWeight.w400,
-                      color: Color(0XFF83D0E3),
+                      color: const Color(0XFF83D0E3),
                       fontSize: 16,
                     ),
                   ),
@@ -203,8 +198,8 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
               ),
 
               // Name Text: 'Beeharree Praina' with Expanded for responsiveness
-              Expanded(
-                child: const Text(
+              const Expanded(
+                child: Text(
                   'Beeharree Praina',
                   style: TextStyle(
                     fontFamily: 'ReadexPro',
@@ -222,9 +217,9 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
               ),
 
              
-              Flexible(
+              const Flexible(
                 flex: 1,
-                child: const Text(
+                child: Text(
                   'Invoice Number:',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
@@ -238,9 +233,9 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
                 width: context.screenWidth * 0.02,
               ),
 
-              Flexible(
+              const Flexible(
                 flex: 1,
-                child: const Text(
+                child: Text(
                   '08/15/2024',
                   style: TextStyle(
                     color: Color(0XFF11345A),
@@ -267,13 +262,13 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
               children: [
                 Flexible(
                   child: Padding(
-                    padding: EdgeInsets.all(12),
+                    padding: const EdgeInsets.all(12),
                     child: Text(
                       'Price Per Pax',
                       style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontFamily: fontFamilys,
-                          color: Color(0XFF83D0E3)),
+                          color: const Color(0XFF83D0E3)),
                     ),
                   ),
                 ),
@@ -282,13 +277,13 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
                 ),
                 Flexible(
                   child: Padding(
-                    padding: EdgeInsets.all(12),
+                    padding: const EdgeInsets.all(12),
                     child: Text(
                       'Qty',
                       style: TextStyle(
                           fontWeight: FontWeight.w400,
                           fontFamily: fontFamilys,
-                          color: Color(0XFF83D0E3)),
+                          color: const Color(0XFF83D0E3)),
                     ),
                   ),
                 ),
@@ -297,13 +292,13 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
                 ),
                 Flexible(
                   child: Padding(
-                    padding: EdgeInsets.all(12),
+                    padding: const EdgeInsets.all(12),
                     child: Text(
                       'Total Per Pax',
                       style: TextStyle(
                           fontFamily: fontFamilys,
                           fontWeight: FontWeight.w400,
-                          color: Color(0XFF83D0E3)),
+                          color: const Color(0XFF83D0E3)),
                     ),
                   ),
                 ),
@@ -493,7 +488,7 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Padding(
-                              padding: EdgeInsets.all(12),
+                              padding: const EdgeInsets.all(12),
                               child: Text(
                                 'Flight Details',
                                 style: TextStyle(
@@ -512,7 +507,7 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Padding(
-                            padding: EdgeInsets.all(12),
+                            padding: const EdgeInsets.all(12),
                             child: Text(
                               'List of Passenger (s)',
                               style: TextStyle(
@@ -599,13 +594,13 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
                           borderRadius: BorderRadius.circular(10),
                         ),
                         child:  Padding(
-                            padding: EdgeInsets.all(12),
+                            padding: const EdgeInsets.all(12),
                             child: Text('Package Details',
                                 style: TextStyle(
                                     fontSize: 18,
                                     fontFamily: fontFamilys,
                                     fontWeight: FontWeight.w300,
-                                    color: Color(0XFF83D0E3))))),
+                                    color: const Color(0XFF83D0E3))))),
                   ),
                   SizedBox(
                     width: context.screenWidth * 0.095,
@@ -616,14 +611,14 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
                    Align(
                       alignment: Alignment.centerLeft,
                       child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 12),
+                        padding: const EdgeInsets.symmetric(horizontal: 12),
                         child: Text(
                           'Package Details',
                           style: TextStyle(
                               fontSize: 18,
                               fontFamily:fontFamilys ,
                               fontWeight: FontWeight.w400,
-                              color: Color(0XFF11345A)),
+                              color: const Color(0XFF11345A)),
                         ),
                       )),
                   SizedBox(
@@ -639,11 +634,11 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Padding(
-                              padding: EdgeInsets.all(12),
+                              padding: const EdgeInsets.all(12),
                               child: Text(
                                 'Notes',
                                 style: TextStyle(
-                                    color: Color(0XFF83D0E3),
+                                    color: const Color(0XFF83D0E3),
                                     fontSize: 16,
                                     fontFamily: fontFamilys,
                                     fontWeight: FontWeight.w400),
@@ -659,12 +654,12 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child:  Padding(
-                              padding: EdgeInsets.all(12),
+                              padding: const EdgeInsets.all(12),
                               child: Text(
                                 'Banking Details',
                                 style: TextStyle(
                                   fontFamily: fontFamilys,
-                                    color: Color(0XFF83D0E3),
+                                    color: const Color(0XFF83D0E3),
                                     fontSize: 16,
                                     fontWeight: FontWeight.w400),
                               ))),
@@ -686,7 +681,7 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
                                 fontSize: 18,
                                 fontFamily: fontFamilys,
                                 fontWeight: FontWeight.w400,
-                                color: Color(0XFF303C6C)),
+                                color: const Color(0XFF303C6C)),
                           )),
                     ),
                     Expanded(
@@ -700,7 +695,7 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
                                   fontSize: 18,
                                   fontFamily: fontFamilys,
                                   fontWeight: FontWeight.w500,
-                                  color: Color(0XFF303C6C)),
+                                  color: const Color(0XFF303C6C)),
                             ),
                           )),
                     )
@@ -718,7 +713,7 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
                                 fontSize: 18,
                                 fontFamily: fontFamilys,
                                 fontWeight: FontWeight.w400,
-                                color: Color(0XFF11345A)),
+                                color: const Color(0XFF11345A)),
                           ),
                           Expanded(
                             child: TextButton(

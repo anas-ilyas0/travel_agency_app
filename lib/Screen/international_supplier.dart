@@ -1,4 +1,3 @@
-import 'package:fab_tech_sol/Screen/add_new_local_suppliers.dart';
 import 'package:fab_tech_sol/Screen/addnewinternationalsuppliers.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
@@ -73,18 +72,18 @@ class InternationalSupplierScreen extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => AddNewInterNationalsuppliers(),
+                              builder: (context) => const AddNewInterNationalsuppliers(),
                             ));
                       },
                     )
                   ])
-                      : SizedBox.shrink(),
+                      : const SizedBox.shrink(),
                 ],
               ),
               Responsive.isTablet(context) || Responsive.isMobile(context)
                   ? Column(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Row(
@@ -103,7 +102,7 @@ class InternationalSupplierScreen extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => AddNewInterNationalsuppliers(),
+                                builder: (context) => const AddNewInterNationalsuppliers(),
                               ));
                         },
                       )
@@ -111,9 +110,9 @@ class InternationalSupplierScreen extends StatelessWidget {
                   ),
                 ],
               )
-                  : SizedBox.shrink(),
+                  : const SizedBox.shrink(),
               Expanded(
-                child: Container(
+                child: SizedBox(
                   width: double.infinity,
                   child: SingleChildScrollView(
                     child: PaginatedDataTable(
@@ -131,8 +130,8 @@ class InternationalSupplierScreen extends StatelessWidget {
 
                       source: InternationalDataSource(Widgets().international,context),
 
-                      headingRowColor: MaterialStateProperty.resolveWith<Color>(
-                              (Set<MaterialState> states) {
+                      headingRowColor: WidgetStateProperty.resolveWith<Color>(
+                              (Set<WidgetState> states) {
                             return Colors.white;
                           }),
                     ),

@@ -1,6 +1,4 @@
 import 'package:fab_tech_sol/widget/dash_board_filter.dart';
-import 'package:fab_tech_sol/resources/navigation_util.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../AppColor/app_color.dart';
@@ -42,7 +40,7 @@ class DashboardFilterBox extends StatelessWidget {
             ),
               const SizedBox(width: 5),
               Text('Filter',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w400,fontFamily: fontFamilys,color: AppColor.hintColor),),],),
-              Align(alignment:Alignment.centerRight,child: Icon(Icons.arrow_drop_down,))
+              const Align(alignment:Alignment.centerRight,child: Icon(Icons.arrow_drop_down,))
 
 
             ],

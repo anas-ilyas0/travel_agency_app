@@ -119,6 +119,15 @@ class UserProvider extends ChangeNotifier {
 
   void setDashboardTabController(TabController controller) {
     dashboardTabController = controller;
+    dashboardTabController!.addListener(() {
+      controller.index == 4
+          ? setSelectedIndex(3)
+          : controller.index == 5
+              ? setSelectedIndex(4)
+              : setSelectedIndex(controller.index);
+      print('provider value ${controller.index}');
+    });
+
     notifyListeners();
   }
 
@@ -382,6 +391,8 @@ class UserProvider extends ChangeNotifier {
   }
 
   void setSelectedIndex(int index) {
+
+    index == 3? dashboardTabController!.animateTo(4): index == 4 ? dashboardTabController!.animateTo(5): dashboardTabController!.animateTo(index);
     _selectedIndex = index;
     notifyListeners();
   }

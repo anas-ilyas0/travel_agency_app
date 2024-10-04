@@ -25,7 +25,7 @@ class SupplierScreen extends StatelessWidget {
       ),
       child: Column(
         children: [
-          Responsive.isDesktop(context)?SizedBox.shrink():Align(
+          Responsive.isDesktop(context)?const SizedBox.shrink():Align(
             alignment: Alignment.topLeft ,
             child: Text(
               'Local Supplier',
@@ -52,7 +52,7 @@ class SupplierScreen extends StatelessWidget {
                     fontFamily: fontFamilys,
                     fontWeight: FontWeight.bold,
                     color: color),
-              ):SizedBox.shrink(),
+              ):const SizedBox.shrink(),
               Row(
                 children: [
                   Widgets().searchTextField(),
@@ -77,7 +77,7 @@ class SupplierScreen extends StatelessWidget {
                       },
                     )
                   ])
-                      : SizedBox.shrink()
+                      : const SizedBox.shrink()
                 ],
               ),
             ],
@@ -104,7 +104,7 @@ class SupplierScreen extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => AddNewLocalSupplier(),
+                            builder: (context) => const AddNewLocalSupplier(),
                           ));
                     },
                   )
@@ -115,7 +115,7 @@ class SupplierScreen extends StatelessWidget {
               : const SizedBox.shrink(),
 
           Flexible(
-            child: Container(
+            child: SizedBox(
               width: double.infinity,
               child: SingleChildScrollView(
                 child: PaginatedDataTable(
@@ -131,8 +131,8 @@ class SupplierScreen extends StatelessWidget {
                   ]),
                   source: TaskDataSource(Widgets().tasks,context),
             
-                  headingRowColor: MaterialStateProperty.resolveWith<Color>(
-                      (Set<MaterialState> states) {
+                  headingRowColor: WidgetStateProperty.resolveWith<Color>(
+                      (Set<WidgetState> states) {
                     return Colors.white;
                   }),
                 ),

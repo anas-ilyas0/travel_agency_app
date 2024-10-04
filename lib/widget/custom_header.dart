@@ -68,6 +68,7 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
                                 icon: const Icon(Icons.arrow_drop_down),
                                 onSelected: (String value) {
                                   supplierProvider.setSelectedOption(value);
+                                 value=="Local"? supplierProvider.setSelectedSupplierIndex(0): supplierProvider.setSelectedSupplierIndex(1);
                                   dashboardTabController.animateTo(3);
                                 },
                                 itemBuilder: (context) => [

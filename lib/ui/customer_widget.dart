@@ -1,5 +1,3 @@
-import 'package:fab_tech_sol/Screen/DropDownButton/type_of_people.dart';
-import 'package:fab_tech_sol/Screen/add_new_agent.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
@@ -7,7 +5,6 @@ import 'package:fab_tech_sol/resources/helper_function.dart';
 import 'package:fab_tech_sol/ui/tasks_data_source.dart';
  import 'package:flutter/material.dart';
 import 'package:fab_tech_sol/widget/widgets.dart';
-import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../resources/responsive.dart';
@@ -101,7 +98,7 @@ Expanded(
     builder: (BuildContext context, BoxConstraints constraints) {
       return SingleChildScrollView(
         scrollDirection: Axis.horizontal,
-        child: Container(
+        child: SizedBox(
           width: constraints.maxWidth > 1200 ? constraints.maxWidth : 1200,
           child: SingleChildScrollView(
             child: PaginatedDataTable(
@@ -123,8 +120,8 @@ Expanded(
                 value: true,
               ),
               source: CustomerDataSource(Widgets().customerTask, context),
-              headingRowColor: MaterialStateProperty.resolveWith<Color>(
-                (Set<MaterialState> states) {
+              headingRowColor: WidgetStateProperty.resolveWith<Color>(
+                (Set<WidgetState> states) {
                   return Colors.white;
                 },
               ),

@@ -37,7 +37,7 @@ class _TypesDropDownButtonState extends State<TypesDropDownButton> {
                     child: Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text('Filter', style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold)),
+                                    const Text('Filter', style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold)),
                                     Icon(isExpanded ? Icons.arrow_drop_up : Icons.arrow_drop_down),
                                   ],
                                 ),

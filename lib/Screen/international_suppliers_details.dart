@@ -45,9 +45,9 @@ class InternationalSuppliersDetails extends StatelessWidget {
                           .center, // Centers vertically within the Row
                       children: [
                         // Text on the left
-                        Flexible(
+                        const Flexible(
                           child: FittedBox(
-                            child: const Padding(
+                            child: Padding(
                               padding: EdgeInsets.only(
                                   left:
                                       46.0), // Add padding for better alignment
@@ -81,9 +81,9 @@ class InternationalSuppliersDetails extends StatelessWidget {
                               onPressed: () {
                                 // Action on button press
                               },
-                              child: Flexible(
+                              child: const Flexible(
                                 child: FittedBox(
-                                  child: const Row(
+                                  child: Row(
                                     mainAxisSize: MainAxisSize.min,
                                     mainAxisAlignment: MainAxisAlignment
                                         .center, // Centering the content within the button
@@ -162,8 +162,8 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                     SizedBox(
                                       width: context.screenWidth * 0.02,
                                     ),
-                                    Flexible(
-                                      child: const Column(
+                                    const Flexible(
+                                      child: Column(
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         crossAxisAlignment:
@@ -223,9 +223,9 @@ class InternationalSuppliersDetails extends StatelessWidget {
                                   SizedBox(
                                     width: context.screenWidth * 0.01,
                                   ),
-                                  Flexible(
+                                  const Flexible(
                                     child: FittedBox(
-                                      child: const Text(
+                                      child: Text(
                                         'Company Name here',
                                         style: TextStyle(
                                             fontFamily: 'ReadexPro',

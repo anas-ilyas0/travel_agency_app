@@ -1,7 +1,6 @@
 import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/Screen/AppText/TextStyle.dart';
-import 'package:fab_tech_sol/Screen/add_new_lead_form.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
 import 'package:flutter/material.dart';
@@ -53,13 +52,13 @@ class LeadDetails extends StatelessWidget {
                 style: TextStyle(fontSize: 22, fontFamily:fontFamilys ),
               ),
 
-              Spacer(),SizedBox(width: context.screenWidth*0.55,),
+              const Spacer(),SizedBox(width: context.screenWidth*0.55,),
 
               GestureDetector(
                 onTap: (){ Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => LeadDetails(),
+                      builder: (context) => const LeadDetails(),
                     ));
                 },
                 child: Container(
@@ -94,7 +93,7 @@ class LeadDetails extends StatelessWidget {
           height: context.screenHeight * 0.86,
           width: context.screenWidth * 0.9,
           decoration: BoxDecoration(
-            boxShadow: [
+            boxShadow: const [
               BoxShadow(color: Color(0XFFE3F5FA)),
               BoxShadow(color: Colors.white, blurRadius: 7, spreadRadius: -4),
             ],
@@ -106,7 +105,7 @@ class LeadDetails extends StatelessWidget {
           ),
           child: SingleChildScrollView(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 28, vertical: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 16),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -306,7 +305,7 @@ class LeadDetails extends StatelessWidget {
                    SizedBox(
                     height: context.screenHeight * 0.02,
                   ),
-                  Divider(indent: 4,endIndent: 4,thickness: 0.5,),
+                  const Divider(indent: 4,endIndent: 4,thickness: 0.5,),
                   SizedBox(
                     height: context.screenHeight * 0.02,
                   ),
@@ -358,7 +357,7 @@ class LeadDetails extends StatelessWidget {
                    SizedBox(
                     height: context.screenHeight * 0.02,
                   ),
-                  Divider(indent: 4,endIndent: 4,thickness: 0.5),
+                  const Divider(indent: 4,endIndent: 4,thickness: 0.5),
                   SizedBox(
                     height: context.screenHeight * 0.02,
                   ),
@@ -515,7 +514,7 @@ class LeadDetails extends StatelessWidget {
                             .packageClientDetailTextStyleSubTitle),
                     ],
                   ),
-                  SizedBox(height: 10,),
+                  const SizedBox(height: 10,),
                     Row(
                     children: [
                       Text('Lunch or Any Dinner:',
@@ -538,7 +537,7 @@ class LeadDetails extends StatelessWidget {
                           style:AppTextstyless
                             .packageClientDetailTextStyleSubTitle),]),
                       SizedBox(height: context.screenHeight*0.03,),
-                      Divider(thickness: 0.5,),
+                      const Divider(thickness: 0.5,),
                         SizedBox(height: context.screenHeight*0.02,),
                 ],
               ),

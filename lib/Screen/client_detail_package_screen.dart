@@ -8,7 +8,6 @@ import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:fab_tech_sol/widget/widgets.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:provider/provider.dart';
 
 class ClientDetailPackage extends StatelessWidget {
@@ -34,10 +33,10 @@ class ClientDetailPackage extends StatelessWidget {
                   child: Container(
                       height: 40,
                       width: 40,
-                      decoration: BoxDecoration(color: Colors.white,shape: BoxShape.circle),
-                      child: Icon(Icons.arrow_back)),
+                      decoration: const BoxDecoration(color: Colors.white,shape: BoxShape.circle),
+                      child: const Icon(Icons.arrow_back)),
                 ),
-                SizedBox(width: 10,),
+                const SizedBox(width: 10,),
 
                  Text(
                   'Client Details',
@@ -45,14 +44,14 @@ class ClientDetailPackage extends StatelessWidget {
                     fontSize: 30,
                     fontFamily: fontFamilys,
                     fontWeight: FontWeight.w700,
-                    color: Color(0XFF11345A),
+                    color: const Color(0XFF11345A),
                   ),
                 ),
               ],),
               Row(
                 children: [
 
-                  Spacer(),
+                  const Spacer(),
                   Responsive.isDesktop(context)?  Row(
 
                     children: [
@@ -71,18 +70,18 @@ class ClientDetailPackage extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => PackageDetails2(),
+                                builder: (context) => const PackageDetails2(),
                               ));
                         },
                       )
-                    ],):SizedBox.shrink()
+                    ],):const SizedBox.shrink()
                 ],
               ),
-              Responsive.isDesktop(context)?SizedBox.shrink(): Align(alignment: Alignment.bottomRight,child: Padding(
+              Responsive.isDesktop(context)?const SizedBox.shrink(): Align(alignment: Alignment.bottomRight,child: Padding(
                 padding: const EdgeInsets.only(bottom: 8),
-                child: Container(width:  400,child: Widgets().searchTextField()),
+                child: SizedBox(width:  400,child: Widgets().searchTextField()),
               )),
-              Responsive.isDesktop(context)? SizedBox.shrink(): Row(
+              Responsive.isDesktop(context)? const SizedBox.shrink(): Row(
                 mainAxisAlignment:MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
@@ -99,7 +98,7 @@ class ClientDetailPackage extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => PackageDetails2(),
+                            builder: (context) => const PackageDetails2(),
                           ));
                     },
                   )
@@ -212,7 +211,7 @@ class ClientDetailPackage extends StatelessWidget {
                                   fontSize: 15,
                                   fontWeight: FontWeight.w400,
                                   fontFamily: fontFamilys,
-                                  color: Color(0XFF0C1421)),
+                                  color: const Color(0XFF0C1421)),
                             ),
                             SizedBox(
                               width: context.screenWidth * 0.115,
@@ -223,7 +222,7 @@ class ClientDetailPackage extends StatelessWidget {
                                   fontSize: 15,
                                   fontWeight: FontWeight.w400,
                                   fontFamily: fontFamilys,
-                                  color: Color(0XFF0C1421)),
+                                  color: const Color(0XFF0C1421)),
                             ),
                             SizedBox(
                               width: context.screenWidth * 0.082,
@@ -242,7 +241,7 @@ class ClientDetailPackage extends StatelessWidget {
                                   fontSize: 15,
                                   fontWeight: FontWeight.w400,
                                   fontFamily: fontFamilys,
-                                  color: Color(0XFF0C1421)),
+                                  color: const Color(0XFF0C1421)),
                             ),
                             SizedBox(
                               width: context.screenWidth * 0.14,
@@ -253,7 +252,7 @@ class ClientDetailPackage extends StatelessWidget {
                                   fontSize: 15,
                                   fontWeight: FontWeight.w300,
                                   fontFamily: fontFamilys,
-                                  color: Color(0XFF0C1421)),
+                                  color: const Color(0XFF0C1421)),
                             ),
                             SizedBox(
                               height: context.screenHeight * 0.02,

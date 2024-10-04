@@ -7,7 +7,7 @@ class AppColor {
   static Color buttonTextColor = const Color(0XFF11345A);
   static Color buttonTextColors = const Color(0XFF83D0E3);
   static Color blueColor = const Color(0XFF83D0E3);
-  static Color borderColor = const Color(0XFF70707033);
+  static Color borderColor = const Color(0xff70707033);
   static Color borderColor2 = const Color(0XFF78534D);
   static Color borderColor3 = const Color(0XFFD4D7E3);
   static Color borderColor4 = const Color(0XFFFF7853);
@@ -18,8 +18,8 @@ class AppColor {
   static Color textColor = const Color(0XFF0C1421);
   static Color dividerColor = const Color(0XFFCDCDCD);
   static Color blackColor= Colors.black;
-  static Color packageFormColor=Color(0XFFD4D7E3);
-   static Color addnewagent=Color(0XFF303C6C);
-     static Color allleadcontainercolor=Color(0XFFF3F6F9);
-   static Color shadowColor=Color(0XFF000000);
+  static Color packageFormColor=const Color(0XFFD4D7E3);
+   static Color addnewagent=const Color(0XFF303C6C);
+     static Color allleadcontainercolor=const Color(0XFFF3F6F9);
+   static Color shadowColor=const Color(0XFF000000);
 }

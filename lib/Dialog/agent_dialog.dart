@@ -1,10 +1,8 @@
 import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Image.dart';
-import 'package:fab_tech_sol/Screen/add_new_agent.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
-import 'package:fab_tech_sol/resources/helper_function.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:fab_tech_sol/widget/addnewagent.dart';
 import 'package:fab_tech_sol/widget/back_button_title_avatar.dart';
@@ -217,7 +215,7 @@ class AgentDialog extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(height: 12),
+                    const SizedBox(height: 12),
                     const Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
@@ -227,7 +225,7 @@ class AgentDialog extends StatelessWidget {
                               color: Color(0XFF11345A),
                               fontFamily: 'Readex Pro'),
                         )),
-                    SizedBox(height: 12),
+                    const SizedBox(height: 12),
                     Container(
                       height: 110,
                       width: 120,
@@ -235,12 +233,12 @@ class AgentDialog extends StatelessWidget {
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(12)),
                     ),
-                    SizedBox(height: 14),
+                    const SizedBox(height: 14),
                     ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0XFF11345A),
-                          minimumSize: Size(0, 45)),
+                          minimumSize: const Size(0, 45)),
                       child: const Row(
                         mainAxisSize:
                             MainAxisSize.min, // Make Row as wide as the content
@@ -285,7 +283,7 @@ class AgentDialog extends StatelessWidget {
                     ),
                     AddNewAgentTitlelAndDescription(
                         text1: 'Location', text2: 'Add Here'),
-                    SizedBox(
+                    const SizedBox(
                       height: 60,
                     ),
                     Row(
@@ -330,7 +328,7 @@ class AgentDialog extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     )
                   ],

@@ -1,14 +1,12 @@
 import 'package:fab_tech_sol/Screen/pacakge_details2.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
-import 'package:fab_tech_sol/resources/navigation_util.dart';
 import 'package:fab_tech_sol/ui/tasks_data_source.dart';
 import 'package:fab_tech_sol/widget/widgets.dart';
 import 'package:flutter/material.dart';
 
 import '../resources/helper_function.dart';
 import '../resources/responsive.dart';
-import 'add_new_create_package_detail.dart';
 
 class PackageDetail extends StatelessWidget {
   const PackageDetail({super.key});
@@ -24,7 +22,7 @@ class PackageDetail extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(height: context.screenHeight * 0.04),
-            Responsive.isDesktop(context)?SizedBox.shrink():
+            Responsive.isDesktop(context)?const SizedBox.shrink():
             Row(
               children: [
                   GestureDetector(
@@ -34,10 +32,10 @@ class PackageDetail extends StatelessWidget {
                     child: Container(
                         height: 30,
                         width: 30,
-                        decoration: BoxDecoration(color: Colors.white,shape: BoxShape.circle),
-                        child: Icon(Icons.arrow_back)),
+                        decoration: const BoxDecoration(color: Colors.white,shape: BoxShape.circle),
+                        child: const Icon(Icons.arrow_back)),
                   ),
-                SizedBox(width: 10,),
+                const SizedBox(width: 10,),
                 Text(
                   'Packages Details',
                   style: TextStyle(
@@ -61,10 +59,10 @@ class PackageDetail extends StatelessWidget {
                       child: Container(
                         height: 35,
                         width: 35,
-                        decoration: BoxDecoration(color: Colors.white,shape: BoxShape.circle),
-                          child: Icon(Icons.arrow_back)),
+                        decoration: const BoxDecoration(color: Colors.white,shape: BoxShape.circle),
+                          child: const Icon(Icons.arrow_back)),
                     ),
-                    SizedBox(width: 10,),
+                    const SizedBox(width: 10,),
                     Text(
                       'Packages Details',
                       style: TextStyle(
@@ -74,7 +72,7 @@ class PackageDetail extends StatelessWidget {
                           color: color),
                     ),
                   ],
-                ):SizedBox.shrink(),
+                ):const SizedBox.shrink(),
                 Row(
                   children: [
                     Widgets().searchTextField(),
@@ -87,7 +85,7 @@ class PackageDetail extends StatelessWidget {
                          Navigator.push(
                              context,
                              MaterialPageRoute(
-                               builder: (context) => PackageDetails2(),
+                               builder: (context) => const PackageDetails2(),
                              ));
                        },
                      )
@@ -114,8 +112,8 @@ class PackageDetail extends StatelessWidget {
                     "Action",
                   ]),
                   source: PackageDataSource(Widgets().package, context),
-                  headingRowColor: MaterialStateProperty.resolveWith<Color>(
-                    (Set<MaterialState> states) {
+                  headingRowColor: WidgetStateProperty.resolveWith<Color>(
+                    (Set<WidgetState> states) {
                       return Colors.white;
                     },
                   ),

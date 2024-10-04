@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class PackageDetailContainer extends StatelessWidget {
-  PackageDetailContainer({
+  const PackageDetailContainer({
     super.key,
   });
 
@@ -84,7 +84,7 @@ class PackageDetailContainer extends StatelessWidget {
                     child: Padding(
                       padding:  EdgeInsets.only(right: Responsive.isDesktop(context)? 280:40),
                       child: Text(
-                        'The Premium Plan offers unlimited ticket handling annually, making it perfect for those who receive multiple tickets throughout the year.\ This plan ensures that no matter how many tickets you get, weve got you covered with top-notch service and support.',
+                        'The Premium Plan offers unlimited ticket handling annually, making it perfect for those who receive multiple tickets throughout the year. This plan ensures that no matter how many tickets you get, weve got you covered with top-notch service and support.',
                         style:
                             TextStyle(fontSize: 12, fontWeight: FontWeight.w400,fontFamily: readexPro,color: AppColor.darkGrey,),maxLines: 2,
                           overflow: TextOverflow.ellipsis

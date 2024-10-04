@@ -63,7 +63,7 @@ class LocalSupplierDetail extends StatelessWidget {
                         Flexible(
                           child: FittedBox(
                             child: Padding(
-                              padding: EdgeInsets.only(
+                              padding: const EdgeInsets.only(
                                   left: 38.0), // Add padding for better alignment
                               child: Text(
                                 'Supplier Full Name here',
@@ -71,7 +71,7 @@ class LocalSupplierDetail extends StatelessWidget {
                                   fontSize: 22,
                                   fontWeight: FontWeight.w600,
                                   fontFamily: fontFamilys,
-                                  color: Color(0XFF11345A),
+                                  color: const Color(0XFF11345A),
                                 ),
                               ),
                             ),
@@ -103,16 +103,16 @@ class LocalSupplierDetail extends StatelessWidget {
                                   mainAxisAlignment: MainAxisAlignment
                                       .center, // Centering the content within the button
                                   children: [
-                                    Icon(
+                                    const Icon(
                                       Icons.edit,
                                       color: Colors.black,
                                     ),
-                                    SizedBox(width: 4),
+                                    const SizedBox(width: 4),
                                     Text(
                                       'Edit Details',
                                       style: TextStyle(
                                           fontWeight: FontWeight.w500,
-                                          color: Color(
+                                          color: const Color(
                                             0XFF11345A,
                                           ),
                                           fontFamily: fontFamilys),
@@ -173,7 +173,7 @@ class LocalSupplierDetail extends StatelessWidget {
                         ],
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 16, // Fixed space between avatar and text
                     ),
                     Flexible(
@@ -194,10 +194,10 @@ class LocalSupplierDetail extends StatelessWidget {
                 softWrap: false,
                             ),
                           ),
-                          FittedBox(
+                          const FittedBox(
                             child: Text(
                 'Local Supplier',
-                style: const TextStyle(
+                style: TextStyle(
                   fontWeight: FontWeight.bold,
                 ),
                 overflow: TextOverflow.ellipsis, // Prevent overflow

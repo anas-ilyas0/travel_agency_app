@@ -3,10 +3,8 @@ import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
-import 'package:fab_tech_sol/widget/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 
 import '../widget/supplier_dropdown.dart';
@@ -98,13 +96,13 @@ class PackageDetails2 extends StatelessWidget {
                     height: context.screenHeight * 0.01,
                   ),
                   Row(children: [
-                    PackageDetails2().textFormFieldPackage('\$500', context),
+                    const PackageDetails2().textFormFieldPackage('\$500', context),
                     SizedBox(
                       width: context.screenWidth * 0.01,
                     ),
-                    TypePeopleDropdown(),
+                    const TypePeopleDropdown(),
                     SizedBox(width: context.screenWidth * 0.01,),
-                    PackageDetails2().textFormFieldPackage('Company Name',context),
+                    const PackageDetails2().textFormFieldPackage('Company Name',context),
                   ]),
                   SizedBox(
                     height: context.screenHeight * 0.03,
@@ -133,7 +131,7 @@ class PackageDetails2 extends StatelessWidget {
                               ),
                               Padding(
                                 padding:
-                                    EdgeInsets.only(left: 6, right: 16),
+                                    const EdgeInsets.only(left: 6, right: 16),
                                 child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
@@ -152,7 +150,6 @@ class PackageDetails2 extends StatelessWidget {
                                         value: userProvider.isChecked,
                                         onChanged: (bool? newValue) {
                                           userProvider.toggleCheckbox();
-                                          ;
                                         },
                                       ),
                                       Container(
@@ -166,7 +163,7 @@ class PackageDetails2 extends StatelessWidget {
                                               BorderRadius.circular(8),
                                         ),
                                         child: Padding(
-                                          padding: EdgeInsets.only(
+                                          padding: const EdgeInsets.only(
                                               left: 7, top: 12),
                                           child: Text(
                                             'Laxmisagar, BBSR, Bhubaneshwar-751006',
@@ -260,7 +257,7 @@ class PackageDetails2 extends StatelessWidget {
                             ),
                             child: Padding(
                               padding:
-                                  EdgeInsets.only(left: 7, top: 12),
+                                  const EdgeInsets.only(left: 7, top: 12),
                               child: Text(
                                 'Laxmisagar, BBSR, Bhubaneshwar-751006',
                                 style: TextStyle(

@@ -1,6 +1,5 @@
 import 'package:fab_tech_sol/AppColor/app_color.dart';
 
-import 'package:fab_tech_sol/Screen/package_detail.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
@@ -70,7 +69,7 @@ class Package extends StatelessWidget {
               child: Container(
                   height: context.screenHeight * 0.77,
                   width: context.screenWidth * 0.94,
-                  padding: EdgeInsets.all(20),
+                  padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(24),
                     color: Colors.white,
@@ -78,7 +77,7 @@ class Package extends StatelessWidget {
                   ),
                   child: ListView.builder(
                       itemBuilder: (context, index) {
-                        return PackageDetailContainer();
+                        return const PackageDetailContainer();
                       },
                       itemCount: 3)),
             ),
@@ -92,12 +91,12 @@ class Package extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
+              const Text(
                 'Package Detail',
                 style: TextStyle(
                   fontSize: 18, // Updated size for better readability
                   fontFamily: 'Readex Pro',
-                  color: const Color(0XFF11345A),
+                  color: Color(0XFF11345A),
                   fontWeight: FontWeight.w700,
                 ),
               ),
@@ -171,14 +170,14 @@ class Package extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(
+                            const Text(
                               '\$ 74.99',
                               style: TextStyle(
                                 fontSize: 22,
                                 fontFamily: 'Readex Pro bold',
                               ),
                             ),
-                            Text(
+                            const Text(
                               'Monthly',
                               style: TextStyle(
                                 fontSize: 16, // Increased size for better clarity
@@ -196,7 +195,7 @@ class Package extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(8),
                                 ),
                               ),
-                              child: Text(
+                              child: const Text(
                                 'Detail',
                                 style: TextStyle(
                                   fontSize: 14,
@@ -207,7 +206,7 @@ class Package extends StatelessWidget {
                           ],
                         ),
                         SizedBox(height: context.screenHeight * 0.01),
-                        Text(
+                        const Text(
                           'The Premium Plan offers unlimited ticket handling annually, making it perfect for those who receive multiple tickets throughout the year. This plan ensures that no matter how many tickets you get, we’ve got you covered with top-notch service and support.',
                           style: TextStyle(
                             fontSize: 14,
@@ -218,7 +217,7 @@ class Package extends StatelessWidget {
                           overflow: TextOverflow.ellipsis, // Ensure no text overflow
                         ),
                         SizedBox(height: context.screenHeight * 0.01),
-                        Text(
+                        const Text(
                           'Features:',
                           style: TextStyle(
                             fontSize: 16,

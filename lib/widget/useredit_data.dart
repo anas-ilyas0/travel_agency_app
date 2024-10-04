@@ -1,5 +1,4 @@
 import 'package:fab_tech_sol/dimensions.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../AppColor/app_color.dart';
@@ -26,13 +25,13 @@ class UserEditData extends StatelessWidget {
               color: AppColor.hintColor,
               fontFamily: fontFamilys,
               fontSize: 15),
-          suffixIcon: Icon(Icons.add_box_rounded),
+          suffixIcon: const Icon(Icons.add_box_rounded),
           suffixIconColor: AppColor.buttonTextColor,
           contentPadding:
           const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
           border: const OutlineInputBorder(borderSide: BorderSide.none),
         ),
       ),
-    );;
+    );
   }
 }

@@ -213,7 +213,7 @@ class AddNewAgent extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(height: 12),
+                    const SizedBox(height: 12),
                     const Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
@@ -223,7 +223,7 @@ class AddNewAgent extends StatelessWidget {
                               color: Color(0XFF11345A),
                               fontFamily: 'Readex Pro'),
                         )),
-                    SizedBox(height: 12),
+                    const SizedBox(height: 12),
                     Container(
                       height: 110,
                       width: 120,
@@ -231,12 +231,12 @@ class AddNewAgent extends StatelessWidget {
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(12)),
                     ),
-                    SizedBox(height: 14),
+                    const SizedBox(height: 14),
                     ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
                           backgroundColor: const Color(0XFF11345A),
-                          minimumSize: Size(0, 45)),
+                          minimumSize: const Size(0, 45)),
                       child: const Row(
                         mainAxisSize:
                             MainAxisSize.min, // Make Row as wide as the content
@@ -281,7 +281,7 @@ class AddNewAgent extends StatelessWidget {
                     ),
                     AddNewAgentTitlelAndDescription(
                         text1: 'Location', text2: 'Add Here'),
-                    SizedBox(
+                    const SizedBox(
                       height: 60,
                     ),
                     Row(
@@ -326,7 +326,7 @@ class AddNewAgent extends StatelessWidget {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     )
                   ],

@@ -8,13 +8,10 @@ import 'package:fab_tech_sol/ui/dashboard.dart';
 import 'package:fab_tech_sol/widget/useredit_data.dart';
 import 'package:fab_tech_sol/widget/back_button_title_avatar.dart';
 import 'package:fab_tech_sol/widget/widgets.dart';
-import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 
-import '../widget/circleAvater.dart';
 
 class AddNewLeadForm extends StatefulWidget {
   const AddNewLeadForm({super.key});
@@ -113,7 +110,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                                     fontWeight: FontWeight.bold,
                                     fontSize: 17),
                               ),
-                              SizedBox(height: 14),
+                              const SizedBox(height: 14),
                               Text(
                                 'Agent Name',
                                 style: TextStyle(
@@ -123,7 +120,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                                     fontWeight: FontWeight.bold),
                               ),
                               UserEditData(text: "John Doe",onTap: (){
-                                NavigationUtil.navigatePush(context: context, destinationScreen: Dashboard(tabIndex: 2,));
+                                NavigationUtil.navigatePush(context: context, destinationScreen: const Dashboard(tabIndex: 2,));
                               }),
                             ],
                           ),
@@ -140,7 +137,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                                     fontWeight: FontWeight.bold,
                                     fontSize: 17),
                               ),
-                              SizedBox(height: 14),
+                              const SizedBox(height: 14),
                               Text(
                                 'Supplier Name',
                                 style: TextStyle(
@@ -150,7 +147,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                                     fontWeight: FontWeight.bold),
                               ),
                               UserEditData(text: "John Doe",onTap: (){
-                                NavigationUtil.navigatePush(context: context, destinationScreen: Dashboard(tabIndex: 4,));
+                                NavigationUtil.navigatePush(context: context, destinationScreen: const Dashboard(tabIndex: 4,));
                               }),
                             ],
                           ),
@@ -208,7 +205,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                           Widgets().textFormField('+1 (555) 987-6543',context),
                         ],
                       ),
-                      SizedBox(width: 26,),
+                      const SizedBox(width: 26,),
                        Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                          children: [
@@ -221,7 +218,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                                 fontWeight: FontWeight.bold),
                           ),
                            UserEditData(text: "John Doe",onTap: (){
-                                      NavigationUtil.navigatePush(context: context, destinationScreen: Dashboard(tabIndex: 5,));
+                                      NavigationUtil.navigatePush(context: context, destinationScreen: const Dashboard(tabIndex: 5,));
                                     }),
                          ],
                        ),
@@ -323,7 +320,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
                             ),
                             const SizedBox(width: 15),
                             Expanded(
-                              child: Widgets().textFormField('\500',context),
+                              child: Widgets().textFormField('500',context),
                             ),
                           ],
                         ),

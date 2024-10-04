@@ -4,7 +4,6 @@ import 'package:fab_tech_sol/AppColor/app_color.dart';
 
 
 import 'package:fab_tech_sol/Screen/pacakge_details2.dart';
-import 'package:fab_tech_sol/Screen/package_detail.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
@@ -12,7 +11,6 @@ import 'package:fab_tech_sol/widget/package_detail_container.dart';
 import 'package:fab_tech_sol/widget/widgets.dart';
 import 'package:flutter/material.dart';
 
-import 'add_new_create_package_detail.dart';
 
 class PackageClassScreen extends StatefulWidget {
   const PackageClassScreen({super.key});
@@ -241,7 +239,7 @@ class _PackageClassScreenState extends State<PackageClassScreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => PackageDetails2(),
+                          builder: (context) => const PackageDetails2(),
                         ));
                   },
                 ),
@@ -272,7 +270,7 @@ class _PackageClassScreenState extends State<PackageClassScreen> {
                 ),
                 child: ListView.builder(
                     itemBuilder: (context, index) {
-                      return PackageDetailContainer();
+                      return const PackageDetailContainer();
                     },
                     itemCount: 3)),
           ),
@@ -327,7 +325,7 @@ class _PackageClassScreenState extends State<PackageClassScreen> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) =>  PackageDetails2(),
+                          builder: (context) =>  const PackageDetails2(),
                         ));
                   },
                   child: Text(
@@ -375,7 +373,7 @@ class _PackageClassScreenState extends State<PackageClassScreen> {
                 ),
                 child: ListView.builder(
                     itemBuilder: (context, index) {
-                      return PackageDetailContainer();
+                      return const PackageDetailContainer();
                     },
                     itemCount: 3)),
           ),
