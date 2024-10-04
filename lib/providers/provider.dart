@@ -1,4 +1,4 @@
-import 'dart:html' as html;
+// import 'dart:html' as html;
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -190,29 +190,29 @@ class UserProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  html.File? _imageFile;
+  File? _imageFile;
   String? _imageUrl;
 
   String? get imageUrl => _imageUrl;
 
   Future<void> pickImage() async {
-    final input = html.FileUploadInputElement();
-    input.accept = 'image/*';
-    input.click();
+   // final input = html.FileUploadInputElement();
+   //  input.accept = 'image/*';
+   //  input.click();
+   //
+   //  input.onChange.listen((e) async {
+   //    final files = input.files;
+   //    if (files!.isEmpty) return;
+   //
+   //    _imageFile = files[0];
+   //    final reader = html.FileReader();
 
-    input.onChange.listen((e) async {
-      final files = input.files;
-      if (files!.isEmpty) return;
-
-      _imageFile = files[0];
-      final reader = html.FileReader();
-
-      reader.readAsDataUrl(_imageFile!);
-      reader.onLoadEnd.listen((e) {
-        _imageUrl = reader.result as String;
-        notifyListeners();
-      });
-    });
+    //   reader.readAsDataUrl(_imageFile!);
+    //   reader.onLoadEnd.listen((e) {
+    //     _imageUrl = reader.result as String;
+    //     notifyListeners();
+    //   });
+    // });
   }
 
   bool _isChecked = false;
@@ -391,8 +391,9 @@ class UserProvider extends ChangeNotifier {
   }
 
   void setSelectedIndex(int index) {
-
-    index == 3? dashboardTabController!.animateTo(4): index == 4 ? dashboardTabController!.animateTo(5): dashboardTabController!.animateTo(index);
+    if(dashboardTabController!=null){
+      index == 3? dashboardTabController!.animateTo(4): index == 4 ? dashboardTabController!.animateTo(5): dashboardTabController!.animateTo(index);
+    }
     _selectedIndex = index;
     notifyListeners();
   }

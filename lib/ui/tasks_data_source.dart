@@ -130,10 +130,10 @@ class AgentsTaskDataSource extends DataTableSource {
               child: Widgets().editDelContainer(
                 context,
                 () {
-                  showDialog(
-                    context: context,
-                    builder: (context) => const AgentDialog(),
-                  );
+                  // showDialog(
+                  //   context: context,
+                  //   builder: (context) => const AgentDialog(),
+                  // );
                 },
                 () {},
               ),

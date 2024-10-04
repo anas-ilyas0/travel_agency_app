@@ -1,24 +1,24 @@
 // ignore_for_file: constant_identifier_names
 
 import 'package:fab_tech_sol/Screen/lead_details.dart';
-import 'package:fab_tech_sol/mobile/hidden_drawer.dart';
-import 'package:fab_tech_sol/mobile/mobile_add_new_agent.dart';
-import 'package:fab_tech_sol/mobile/mobile_add_new_international_supplier.dart';
-import 'package:fab_tech_sol/mobile/mobile_add_new_lead.dart';
-import 'package:fab_tech_sol/mobile/forgot_password.dart';
-import 'package:fab_tech_sol/mobile/mobile_add_new_local_supplier.dart';
-import 'package:fab_tech_sol/mobile/mobile_add_new_package.dart';
-import 'package:fab_tech_sol/mobile/mobile_agent_details.dart';
-import 'package:fab_tech_sol/mobile/mobile_international_supplier_details.dart';
-import 'package:fab_tech_sol/mobile/mobile_lead_details.dart';
-import 'package:fab_tech_sol/mobile/home_screen_mobile.dart';
-import 'package:fab_tech_sol/mobile/mobile_local_supplier_details.dart';
-import 'package:fab_tech_sol/mobile/mobile_notifications.dart';
-import 'package:fab_tech_sol/mobile/mobile_package_details.dart';
-import 'package:fab_tech_sol/mobile/mobile_sign_in.dart';
-import 'package:fab_tech_sol/mobile/sign_up.dart';
 import 'package:fab_tech_sol/ui/dashboard.dart';
 import 'package:flutter/material.dart';
+import '../mobile/forgot_password.dart';
+import '../mobile/hidden_drawer.dart';
+import '../mobile/home_screen_mobile.dart';
+import '../mobile/mobile_add_new_agent.dart';
+import '../mobile/mobile_add_new_international_supplier.dart';
+import '../mobile/mobile_add_new_lead.dart';
+import '../mobile/mobile_add_new_local_supplier.dart';
+import '../mobile/mobile_add_new_package.dart';
+import '../mobile/mobile_agent_details.dart';
+import '../mobile/mobile_international_supplier_details.dart';
+import '../mobile/mobile_lead_details.dart';
+import '../mobile/mobile_local_supplier_details.dart';
+import '../mobile/mobile_notifications.dart';
+import '../mobile/mobile_package_details.dart';
+import '../mobile/mobile_sign_in.dart';
+import '../mobile/sign_up.dart';
 
 class AppRoutes {
   static const String dashboard = '/dashboard';
@@ -62,11 +62,11 @@ class AppRoutes {
       mobileAddNewPackage: (context) => const MobileAddNewPackage(),
       mobileAddNewLocalSupplier: (context) => const MobileAddNewLocalSupplier(),
       mobileLocalSupplierDetails: (context) =>
-          const MobileLocalSupplierDetails(),
+      const MobileLocalSupplierDetails(),
       mobileAddNewInternationalSupplier: (context) =>
-          const MobileAddNewInternationalSupplier(),
+      const MobileAddNewInternationalSupplier(),
       mobileInternationalSupplierDetails: (context) =>
-          const MobileInternationalSupplierDetails(),
+      const MobileInternationalSupplierDetails(),
       mobilePackageDetails: (context) => const MobilePackageDetails(),
       mobileNotifications: (context) => const MobileNotifications()
     };

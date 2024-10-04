@@ -4,8 +4,6 @@ import 'package:fab_tech_sol/Screen/AppText/TextStyle.dart';
 import 'package:fab_tech_sol/Screen/invoice_details_invoice.dart';
 import 'package:fab_tech_sol/Screen/lead_details.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
-import 'package:fab_tech_sol/mobile/home_screen_mobile.dart';
-import 'package:fab_tech_sol/mobile/leads_nav_bar_item.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:fab_tech_sol/widget/widget.dart';

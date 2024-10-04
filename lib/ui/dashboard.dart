@@ -63,7 +63,7 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     final provider = Provider.of<UserProvider>(context);
 
-    return Responsive.isMobile(context)?  HomeScreenMobile():Scaffold(
+    return Responsive.isMobile(context)?  const HomeScreenMobile():Scaffold(
       appBar: CustomHeader(dashboardTabController: dashboardTabController!),
 
       drawer:Responsive.isDesktop(context)?null: MobileCustomAppBar().mobileCustomAppBar("Dashboard", context),
