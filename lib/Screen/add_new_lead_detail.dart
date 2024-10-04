@@ -1,7 +1,8 @@
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/widget/addnewagent.dart';
-import 'package:fab_tech_sol/widget/widgets.dart';
 import 'package:flutter/material.dart';
+
+import '../widget/widget.dart';
 
 class AddNewLeadDetail extends StatelessWidget {
   const AddNewLeadDetail({super.key});

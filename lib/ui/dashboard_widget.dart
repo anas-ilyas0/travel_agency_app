@@ -4,7 +4,7 @@ import 'package:fab_tech_sol/Screen/lead_details.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
-import 'package:fab_tech_sol/widget/widgets.dart';
+import 'package:fab_tech_sol/widget/widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

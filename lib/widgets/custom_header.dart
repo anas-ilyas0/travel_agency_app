@@ -1,11 +1,11 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:fab_tech_sol/dimensions.dart';
-import 'package:fab_tech_sol/widget/widgets.dart';
 import 'package:flutter/material.dart';
 import '../AppColor/app_color.dart';
 import '../consts/consts.dart';
 import '../resources/responsive.dart';
+import '../widget/widget.dart';
 
 class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
   TabController dashboardTabController;

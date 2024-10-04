@@ -17,20 +17,20 @@ class Widgets {
 
   final List<AgentsTask> agentsTasks = List.generate(
       5,
-      (index) => AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
+          (index) => AgentsTask('John Doe', '+21 999 999 999', 'example@gmail.com',
           'Sialkot Punjab 51040', 'Active', ''));
 
   final List<SupplierTask> tasks = List.generate(
       5,
-      (index) => SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
+          (index) => SupplierTask('BIRAM TOUR GUIDE', 'Naseeb', 'Supplier Address',
           'Hotel Accommodation', 'Active', '', 'Sialkot Punjab'));
   final List<InternationalSupplier> international =List.generate(5, (index)=>
-  InternationalSupplier('RADISSON', 'CPT', '+21 999 999 999', 'Air Tickets', 'ABSA', "CENTURY CITY, CAPE TOWN 8001 SA", 'Active', ''));
+      InternationalSupplier('RADISSON', 'CPT', '+21 999 999 999', 'Air Tickets', 'ABSA', "CENTURY CITY, CAPE TOWN 8001 SA", 'Active', ''));
   final List<PackageModel> package= List.generate(20, (index)=>PackageModel('Jhon Doe','+21 999 999 999','Agent name here','+21 999 999 999','Supplier name here','+21 999 999 999','International Supplier',''));
 
   Widget editDelContainer(BuildContext context,VoidCallback edit,VoidCallback del) {
-    
-    
+
+
     return Container(
       decoration: BoxDecoration(
           color: editDelContainerColor,
@@ -40,9 +40,9 @@ class Widgets {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           IconButton(
-              onPressed: 
-           
-             edit
+              onPressed:
+
+              edit
               , icon: const Icon(Icons.edit), color: color),
           const VerticalDivider(
             thickness: 0.8,
@@ -51,8 +51,8 @@ class Widgets {
           ),
           IconButton(
               onPressed: del
-                
-            
+
+
 
               ,
               icon: Image(image: AssetImage('${imageUrl}delImage.png')),
@@ -122,7 +122,7 @@ class Widgets {
             width: 400,
             height: 44,
             decoration: BoxDecoration(
-              
+
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(30),
                 border: Border.all(color: Colors.grey.withOpacity(0.3))),
@@ -195,7 +195,7 @@ class Widgets {
             hintStyle: TextStyle(
                 color: AppColor.hintColor, fontFamily: readexPro, fontSize: 13),
             contentPadding:
-                const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+            const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
             border: const OutlineInputBorder(borderSide: BorderSide.none),
           ),
         ),
@@ -216,11 +216,11 @@ class Widgets {
           hintText: text,
           hintStyle: TextStyle(
               color: AppColor.hintColor, fontFamily: fontFamilys, fontSize: 15),
-    
+
           //  color: Colors.grey, fontFamily: readexPro, fontSize: 13),
-    
+
           contentPadding:
-              const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+          const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
           border: const OutlineInputBorder(borderSide: BorderSide.none),
         ),
       ),
@@ -246,17 +246,17 @@ class Widgets {
             children: [
               Container(
                 decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  border: Border.all(color: AppColor.buttonTextColors,width: .5)
+                    shape: BoxShape.circle,
+                    border: Border.all(color: AppColor.buttonTextColors,width: .5)
                 ),
                 child: Padding(
                   padding: const EdgeInsets.all(4.0),
                   child: CircleAvatar(
                     backgroundImage:
-                         AssetImage('${imageUrl}appbar.png'),
-                   
+                    AssetImage('${imageUrl}appbar.png'),
+
                     radius: 20,
-                    
+
                   ),
                 ),
               ),
@@ -304,8 +304,8 @@ class Widgets {
       width: Responsive.isDesktop(context)
           ? context.screenWidth * 0.2
           : Responsive.isTablet(context)
-              ? context.screenWidth * 0.4
-              : context.screenWidth * 0.8,
+          ? context.screenWidth * 0.4
+          : context.screenWidth * 0.8,
       decoration: BoxDecoration(
           color: containerColor,
           borderRadius: BorderRadius.circular(7),
@@ -362,9 +362,9 @@ class Widgets {
   }
 
   Widget button(
-    String text,
-    VoidCallback onTap,
-  ) {
+      String text,
+      VoidCallback onTap,
+      ) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -468,7 +468,7 @@ class Widgets {
   Widget PackageDetailButton(BuildContext context) {
     return GestureDetector(
       onTap: () {
-      Navigator.push(context, MaterialPageRoute(builder: (context) => const ClientDetailPackage(),));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => const ClientDetailPackage(),));
       },
       child: Container(
         height: 46,
@@ -566,7 +566,7 @@ class Widgets {
             child: Padding(
               padding: const EdgeInsets.all(4.0),
               child:
-                  SvgPicture.asset('${ImagesAssets.imagePath}VectorRight.svg'),
+              SvgPicture.asset('${ImagesAssets.imagePath}VectorRight.svg'),
             ),
           ),
           const SizedBox(width: 8),
@@ -625,48 +625,48 @@ class Widgets {
       width: Responsive.isMobile(context)? null:Responsive.isTablet(context)? context.screenWidth * 0.25:context.screenWidth * 0.25 ,
       child: Column(
         children: [Align(alignment: Alignment.centerLeft,
-          child: Text(text1,style: AppTextstyless.addnewinternationalsuppliersSubText)),
-       TextField(
-         cursorColor: Colors.white,
-  decoration: InputDecoration(
-    suffixIcon: const Icon(Icons.arrow_drop_down),
+            child: Text(text1,style: AppTextstyless.addnewinternationalsuppliersSubText)),
+          TextField(
+              cursorColor: Colors.white,
+              decoration: InputDecoration(
+                suffixIcon: const Icon(Icons.arrow_drop_down),
 
-    fillColor: Colors.white,
-    filled: true,
-    hintText: text2,hintStyle: TextStyle(color:AppColor.hintColor , fontSize: 14,fontFamily: fontFamilys,fontWeight: FontWeight.w300),
+                fillColor: Colors.white,
+                filled: true,
+                hintText: text2,hintStyle: TextStyle(color:AppColor.hintColor , fontSize: 14,fontFamily: fontFamilys,fontWeight: FontWeight.w300),
 
-enabledBorder: const OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners
-      borderSide: BorderSide(
-        color: Color(0XFFD4D7E3),
-        width: 1
+                enabledBorder: const OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners
+                  borderSide: BorderSide(
+                      color: Color(0XFFD4D7E3),
+                      width: 1
 
-      ),
-    ),
-    focusedBorder: const OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners
-      borderSide: BorderSide(
-        color: Color(0XFFD4D7E3),
-        width: 1
+                  ),
+                ),
+                focusedBorder: const OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners
+                  borderSide: BorderSide(
+                      color: Color(0XFFD4D7E3),
+                      width: 1
 
-      ),
-    ),
-    border: const OutlineInputBorder(
-      borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners
-      borderSide: BorderSide(
-        color: Color(0XFFD4D7E3),
-        width: 1
+                  ),
+                ),
+                border: const OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(12)), // Rounded corners
+                  borderSide: BorderSide(
+                      color: Color(0XFFD4D7E3),
+                      width: 1
 
-      ),
-    ),
+                  ),
+                ),
 
-  )
-       ),
+              )
+          ),
         ],
       ),
     );
   }
-   Widget allLeadNoOfLeads(String text){
+  Widget allLeadNoOfLeads(String text){
     return Text('No Of Leads $text',style: AppTextstyless.allLeads,);
   }
 }

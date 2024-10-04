@@ -6,9 +6,10 @@ import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
-import 'package:fab_tech_sol/widget/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../widget/widget.dart';
 
 class ClientDetailPackage extends StatelessWidget {
   const ClientDetailPackage({super.key});

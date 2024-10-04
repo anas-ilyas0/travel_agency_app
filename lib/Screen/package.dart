@@ -4,7 +4,7 @@ import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:fab_tech_sol/widget/package_detail_container.dart';
-import 'package:fab_tech_sol/widget/widgets.dart';
+import 'package:fab_tech_sol/widget/widget.dart';
 import 'package:flutter/material.dart';
 
 class Package extends StatelessWidget {

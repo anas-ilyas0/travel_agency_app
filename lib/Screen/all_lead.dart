@@ -8,7 +8,7 @@ import 'package:fab_tech_sol/mobile/home_screen_mobile.dart';
 import 'package:fab_tech_sol/mobile/leads_nav_bar_item.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
-import 'package:fab_tech_sol/widget/widgets.dart';
+import 'package:fab_tech_sol/widget/widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

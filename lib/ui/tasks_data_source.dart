@@ -4,7 +4,7 @@ import 'package:fab_tech_sol/Dialog/international_edit_dialog.dart';
 import 'package:fab_tech_sol/Dialog/localsupplier_dialog.dart';
 import 'package:fab_tech_sol/Screen/local_supplier_detail.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
-import 'package:fab_tech_sol/widget/widgets.dart';
+import 'package:fab_tech_sol/widget/widget.dart';
 import 'package:flutter/material.dart';
 
 

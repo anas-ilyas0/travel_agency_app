@@ -5,7 +5,7 @@ import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/resources/helper_function.dart';
 import 'package:fab_tech_sol/ui/tasks_data_source.dart';
 
-import 'package:fab_tech_sol/widget/widgets.dart';
+import 'package:fab_tech_sol/widget/widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

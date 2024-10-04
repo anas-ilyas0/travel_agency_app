@@ -7,10 +7,11 @@ import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:fab_tech_sol/ui/dashboard.dart';
 import 'package:fab_tech_sol/widget/useredit_data.dart';
 import 'package:fab_tech_sol/widget/back_button_title_avatar.dart';
-import 'package:fab_tech_sol/widget/widgets.dart';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../widget/widget.dart';
 
 
 class AddNewLeadForm extends StatefulWidget {

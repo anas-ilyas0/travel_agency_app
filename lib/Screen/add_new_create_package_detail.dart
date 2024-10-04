@@ -4,9 +4,10 @@ import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/ui/dashboard.dart';
 import 'package:fab_tech_sol/widget/useredit_data.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
-import 'package:fab_tech_sol/widget/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../widget/widget.dart';
 
 class CreateNewPackageForm extends StatefulWidget {
   const CreateNewPackageForm({super.key});
