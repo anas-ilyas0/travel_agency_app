@@ -120,13 +120,23 @@ class UserProvider extends ChangeNotifier {
   void setDashboardTabController(TabController controller) {
     dashboardTabController = controller;
     dashboardTabController!.addListener(() {
-      controller.index == 4
-          ? setSelectedIndex(3)
-          : controller.index == 5
-              ? setSelectedIndex(4)
-              : setSelectedIndex(controller.index);
-      print('provider value ${controller.index}');
+      if (!dashboardTabController!.indexIsChanging) { // Ensures the index is stable before triggering changes
+        if (controller.index == 4) {
+          setSelectedIndex(3, value: true); // When index is 4, we set selected index to 3
+        } else if (controller.index == 5) {
+          setSelectedIndex(4,value: true); // When index is 5, we set selected index to 4
+        } else {
+          setSelectedIndex(controller.index); // For other cases, just set the index as selected
+        }
+      }
     });
+    // dashboardTabController!.addListener(() {
+    //   controller.index == 4
+    //       ? setSelectedIndex(3)
+    //       : controller.index == 5
+    //           ? setSelectedIndex(4)
+    //           : setSelectedIndex(controller.index);
+    // });
 
     notifyListeners();
   }
@@ -390,8 +400,9 @@ class UserProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void setSelectedIndex(int index) {
-    if(dashboardTabController!=null){
+  void setSelectedIndex(int index,{bool? value}) {
+
+    if(dashboardTabController!=null && !value!){
       index == 3? dashboardTabController!.animateTo(4): index == 4 ? dashboardTabController!.animateTo(5): dashboardTabController!.animateTo(index);
     }
     _selectedIndex = index;
