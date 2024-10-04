@@ -3,7 +3,9 @@ import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
+import 'package:fab_tech_sol/mobile/mobile_add_new_local_supplier.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
+import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:fab_tech_sol/widget/addnewagent.dart';
 import 'package:fab_tech_sol/widget/back_button_title_avatar.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +30,7 @@ class _AddNewLocalSupplierState extends State<AddNewLocalSupplier> {
       final imageProvider = Provider.of<UserProvider>(context);
        
 
-    return Scaffold(
+    return Responsive.isDesktop(context) || Responsive.isTablet(context)? Scaffold(
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -477,7 +479,7 @@ class _AddNewLocalSupplierState extends State<AddNewLocalSupplier> {
             )
           ],
 ///
-),),);
+),),) : MobileAddNewLocalSupplier();
   }
 
 }

@@ -2,6 +2,7 @@
 
 import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
+import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:flutter/material.dart';
 
 class AddNewAgentTitleAndDescription extends StatelessWidget {
@@ -12,7 +13,7 @@ class AddNewAgentTitleAndDescription extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return  SizedBox(
       height: context.screenHeight * 0.15,
       width: context.screenWidth * 0.2,
       child: Column(
