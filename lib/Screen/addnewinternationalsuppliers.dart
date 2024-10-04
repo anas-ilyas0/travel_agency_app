@@ -3,7 +3,9 @@ import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/Screen/AppText/TextStyle.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
+import 'package:fab_tech_sol/mobile/mobile_add_new_international_supplier.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
+import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:fab_tech_sol/widget/addnewagent.dart';
 import 'package:fab_tech_sol/widget/back_button_title_avatar.dart';
 import 'package:fab_tech_sol/widget/supplier_dropdown.dart';
@@ -16,7 +18,7 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final imageProvider = Provider.of<UserProvider>(context);
-    return Scaffold(
+    return Responsive.isDesktop(context) || Responsive.isTablet(context) ? Scaffold(
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -438,6 +440,6 @@ class AddNewInterNationalsuppliers extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ) :MobileAddNewInternationalSupplier();
   }
 }
