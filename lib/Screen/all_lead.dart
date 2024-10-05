@@ -4,6 +4,7 @@ import 'package:fab_tech_sol/Screen/AppText/TextStyle.dart';
 import 'package:fab_tech_sol/Screen/invoice_details_invoice.dart';
 import 'package:fab_tech_sol/Screen/lead_details.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
+import 'package:fab_tech_sol/mobile/leads_nav_bar_item.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:fab_tech_sol/widget/widget.dart';
@@ -28,7 +29,7 @@ class AllLeads extends StatelessWidget {
         ? 40.0 // Tablet padding
         : 75.0; // Desktop padding
 
-    return  Scaffold(
+    return Responsive.isDesktop(context)||Responsive.isTablet(context)? Scaffold(
         body: Padding(
           padding: EdgeInsets.only(
               top: Responsive.isMobile(context) ? 2 : 35,
@@ -365,7 +366,7 @@ class AllLeads extends StatelessWidget {
             ],
           ),
           // Expanded content area (Grid/List view for leads)
-        ));
+        )):LeadsNavBarItem();
 
 
   }

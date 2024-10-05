@@ -2,6 +2,8 @@ import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
+import 'package:fab_tech_sol/mobile/invoice_details.dart';
+import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:fab_tech_sol/widget/invoice_detail_price_table.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -42,7 +44,7 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Responsive.isDesktop(context) || Responsive.isTablet(context)? Scaffold(
         // appBar: CustomHeader(dashboardTabController: dashboardTabController,),
 
         // drawer: Responsive.isDesktop(context)
@@ -755,6 +757,6 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
           ),
         ],
       ),
-    ));
+    )) : MobileLeadInvoiceDetails();
   }
 }

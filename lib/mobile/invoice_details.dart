@@ -6,8 +6,8 @@ import 'package:fab_tech_sol/widgets/mobile_lead_invoice_per_pax_container.dart'
 import 'package:fab_tech_sol/widgets/text_form_note_field.dart';
 import 'package:flutter/material.dart';
 
-class InvoiceDetails extends StatelessWidget {
-  const InvoiceDetails({super.key});
+class MobileLeadInvoiceDetails extends StatelessWidget {
+  const MobileLeadInvoiceDetails({super.key});
 
   @override
   Widget build(BuildContext context) {
