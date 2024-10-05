@@ -17,7 +17,7 @@ class DashBoardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
      final providerValue = Provider.of<UserProvider>(context);
-    return Scaffold(
+    return  Scaffold(
       body:  Padding(
       
 

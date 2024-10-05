@@ -458,42 +458,62 @@ class ClientDetailPackage extends StatelessWidget {
                         SizedBox(
                           height: context.screenHeight * 0.03,
                         ),
-                        Row(
-                          children: [
-                            Text('Package Amount:',
-                                style: AppTextstyless
-                                    .packageClientDetailTextStyle),
-                            SizedBox(
-                              width: context.screenWidth * 0.021,
-                            ),
-                            Text(
-                                "\$232,89.00",
-                                style:AppTextstyless.packageClientDetailTextStyleSubTitle),
-                            SizedBox(
-                              width: context.screenWidth * 0.091,
-                            ),
-                            Text('Paid Amount:',
-                                style: AppTextstyless
-                                    .packageClientDetailTextStyle),
-                            SizedBox(
-                              width: context.screenWidth * 0.02,
-                            ),
-                            Text(
-                                ' 232,89.00',
-                                style:AppTextstyless.packageClientDetailTextStyleSubTitle),
-                            SizedBox(
-                              width: context.screenWidth * 0.065,
-                            ),
-                            Text('Outstanding Amount:',
-                                style: AppTextstyless
-                                    .packageClientDetailTextStyle),
-                            SizedBox(
-                              width: context.screenWidth * 0.015,
-                            ),
-                            Text('\$232,89.00',
-                                style: AppTextstyless.packageClientDetailTextStyleSubTitle),
-                          ],
-                        ),
+                       Row(
+  children: [
+    Expanded(
+      
+      child: Container(
+        color: Colors.amber,
+        child: Text(
+          'Package Amount:',
+          style: AppTextstyless.packageClientDetailTextStyle,
+          //overflow: TextOverflow.ellipsis,
+        ),
+      ),
+    ),
+   // SizedBox(width: context.screenWidth * 0.021),
+    Expanded(
+      child: Text(
+        "\$232,89.00",
+        style: AppTextstyless.packageClientDetailTextStyleSubTitle,
+     //   overflow: TextOverflow.ellipsis,
+      ),
+    ),
+  //  SizedBox(width: context.screenWidth * 0.091),
+    Expanded(
+      child: Text(
+        'Paid Amount:',
+        style: AppTextstyless.packageClientDetailTextStyle,
+       // overflow: TextOverflow.ellipsis,
+      ),
+    ),
+    SizedBox(width: context.screenWidth * 0.02),
+    Expanded(
+      child: Text(
+        '232,89.00',
+        style: AppTextstyless.packageClientDetailTextStyleSubTitle,
+        overflow: TextOverflow.ellipsis,
+      ),
+    ),
+    SizedBox(width: context.screenWidth * 0.065),
+    Expanded(
+      child: Text(
+        'Outstanding Amount:',
+        style: AppTextstyless.packageClientDetailTextStyle,
+        overflow: TextOverflow.ellipsis,
+      ),
+    ),
+    SizedBox(width: context.screenWidth * 0.015),
+    Expanded(
+      child: Text(
+        '\$232,89.00',
+        style: AppTextstyless.packageClientDetailTextStyleSubTitle,
+        overflow: TextOverflow.ellipsis,
+      ),
+    ),
+  ],
+)
+,
                         SizedBox(
                           height: context.screenHeight * 0.02,
                         ),

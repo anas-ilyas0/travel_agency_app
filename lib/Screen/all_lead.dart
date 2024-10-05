@@ -28,7 +28,7 @@ class AllLeads extends StatelessWidget {
         ? 40.0 // Tablet padding
         : 75.0; // Desktop padding
 
-    return Scaffold(
+    return  Scaffold(
         body: Padding(
           padding: EdgeInsets.only(
               top: Responsive.isMobile(context) ? 2 : 35,
