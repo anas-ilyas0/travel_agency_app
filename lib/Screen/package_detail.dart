@@ -1,6 +1,7 @@
 import 'package:fab_tech_sol/Screen/pacakge_details2.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
+import 'package:fab_tech_sol/mobile/mobile_package_details.dart';
 import 'package:fab_tech_sol/ui/tasks_data_source.dart';
 import 'package:fab_tech_sol/widget/widget.dart';
 import 'package:flutter/material.dart';
@@ -123,6 +124,6 @@ class PackageDetail extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ) ;
   }
 }

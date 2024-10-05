@@ -4,6 +4,7 @@ import 'package:fab_tech_sol/Screen/AppText/TextStyle.dart';
 import 'package:fab_tech_sol/Screen/pacakge_details2.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
+import 'package:fab_tech_sol/mobile/mobile_package_details.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +18,7 @@ class ClientDetailPackage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final providerValue = Provider.of<UserProvider>(context);
-    return Scaffold(
+    return  Responsive.isDesktop(context) || Responsive.isTablet(context) ?  Scaffold(
       body: Padding(
         padding:  EdgeInsets.symmetric(horizontal: context.screenWidth*0.058),
         child: SingleChildScrollView(
@@ -514,6 +515,6 @@ class ClientDetailPackage extends StatelessWidget {
           ),
         ),
       ),
-    );
+    ) : MobilePackageDetails();
   }
 }
