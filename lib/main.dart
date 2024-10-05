@@ -30,8 +30,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeApp.myThemeData,
         title: AppStrings.appName,
-       home: LeadDetails(),
-       // home: Responsive.isDesktop(context) || Responsive.isTablet(context)?  const LoginPage() : const MobileSignIn(),
+       // home: LeadDetails(),
+       home: Responsive.isDesktop(context) || Responsive.isTablet(context)?  const LoginPage() : const MobileSignIn(),
         routes: AppRoutes.getRoutes(),
         );
   }
