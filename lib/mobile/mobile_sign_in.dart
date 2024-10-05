@@ -2,6 +2,7 @@ import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/mobile/hidden_drawer.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
+import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:fab_tech_sol/widgets/auth_buttons.dart';
 import 'package:fab_tech_sol/widgets/fields.dart';
 import 'package:flutter/material.dart';

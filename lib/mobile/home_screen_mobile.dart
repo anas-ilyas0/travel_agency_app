@@ -7,8 +7,11 @@ import 'package:fab_tech_sol/mobile/mobile_dashboard.dart';
 import 'package:fab_tech_sol/mobile/package_nav_bar_item.dart';
 import 'package:fab_tech_sol/mobile/supplier_nav_bar_item.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
+import 'package:fab_tech_sol/ui/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../resources/responsive.dart';
 
 class HomeScreenMobile extends StatefulWidget {
   const HomeScreenMobile({super.key});
@@ -29,7 +32,7 @@ class _HomeScreenMobileState extends State<HomeScreenMobile> {
   @override
   Widget build(BuildContext context) {
     final userProvider = Provider.of<UserProvider>(context);
-    return SafeArea(
+    return    Responsive.isDesktop(context) || Responsive.isTablet(context)?Dashboard():SafeArea(
       child: Scaffold(
           body: Center(
             child: _widgetOptions.elementAt(userProvider.selectedIndex),
