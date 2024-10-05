@@ -3,6 +3,8 @@ import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/Screen/AppText/TextStyle.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
+import 'package:fab_tech_sol/mobile/mobile_lead_details.dart';
+import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:flutter/material.dart';
 
 class LeadDetails extends StatelessWidget {
@@ -10,7 +12,7 @@ class LeadDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Responsive.isDesktop(context)|| Responsive.isTablet(context)? Scaffold(
       body: Column(children: [
         SizedBox(
           height: context.screenHeight * 0.017,
@@ -545,6 +547,6 @@ class LeadDetails extends StatelessWidget {
           ),
         )
             ])
-    );
+    ) : MobileLeadDetails();
   }
 }
