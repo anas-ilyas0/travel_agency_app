@@ -40,7 +40,7 @@ class AddNewAgent extends StatelessWidget {
                           'Agent Details',
                           style: TextStyle(
                               fontSize: 23,
-                              color: AppColor.addnewagent,
+                              color: AppColor.Indigo_Dye,
                               fontFamily: fontFamilys,
                               fontWeight: FontWeight.w600),
                         )),

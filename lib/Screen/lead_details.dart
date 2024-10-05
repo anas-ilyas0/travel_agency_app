@@ -255,7 +255,7 @@ class LeadDetails extends StatelessWidget {
                   Divider(
                     endIndent: 4,
                     indent: 4,
-                    color: AppColor.dividerColor,
+                    color: AppColor.gainsboro,
                     thickness: 0.5,
                   ),
                    Align(
@@ -412,7 +412,7 @@ class LeadDetails extends StatelessWidget {
                   Divider(
                     endIndent: 4,
                     indent: 4,
-                    color: AppColor.dividerColor,
+                    color: AppColor.gainsboro,
                     thickness: 0.5,
                   ),
                   SizedBox(
@@ -467,7 +467,7 @@ class LeadDetails extends StatelessWidget {
                   Divider(
                     endIndent: 4,
                     indent: 4,
-                    color: AppColor.dividerColor,
+                    color: AppColor.gainsboro,
                     thickness: 0.5,
                   ),
                   SizedBox(

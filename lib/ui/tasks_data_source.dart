@@ -339,7 +339,7 @@ class CustomerDataSource extends DataTableSource {
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(width: .5,color: AppColor.buttonTextColors),
               boxShadow: [ BoxShadow(
-                color: AppColor.shadowColor.withOpacity(.05),
+                color: AppColor.black.withOpacity(.05),
                 blurRadius: 18,
                 spreadRadius: 0
               )]),

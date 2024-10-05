@@ -264,7 +264,7 @@ class ClientDetailPackage extends StatelessWidget {
                         Divider(
                           endIndent: 4,
                           indent: 4,
-                          color: AppColor.dividerColor,
+                          color: AppColor.gainsboro,
                           thickness: 0.5,
                         ),
                         SizedBox(
@@ -326,7 +326,7 @@ class ClientDetailPackage extends StatelessWidget {
                         Divider(
                           endIndent: 4,
                           indent: 4,
-                          color: AppColor.dividerColor,
+                          color: AppColor.gainsboro,
                           thickness: 0.5,
                         ),
                         SizedBox(
@@ -388,7 +388,7 @@ class ClientDetailPackage extends StatelessWidget {
                         Divider(
                           endIndent: 4,
                           indent: 4,
-                          color: AppColor.dividerColor,
+                          color: AppColor.gainsboro,
                           thickness: 0.5,
                         ),
                         SizedBox(
@@ -443,7 +443,7 @@ class ClientDetailPackage extends StatelessWidget {
                         Divider(
                           endIndent: 4,
                           indent: 4,
-                          color: AppColor.dividerColor,
+                          color: AppColor.gainsboro,
                           thickness: 0.5,
                         ),
                         SizedBox(
@@ -520,7 +520,7 @@ class ClientDetailPackage extends StatelessWidget {
                         Divider(
                           endIndent: 4,
                           indent: 4,
-                          color: AppColor.dividerColor,
+                          color: AppColor.gainsboro,
                           thickness: 0.5,
                         ),
                         SizedBox(

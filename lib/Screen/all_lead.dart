@@ -121,9 +121,9 @@ class AllLeads extends StatelessWidget {
                       horizontal: horizontalPadding,
                       vertical: 20,
                     ),
-                    child: Responsive(
-                      mobile: const Text('Mobile View'),
-                      desktop: LayoutBuilder(
+                    child: 
+                     
+                       LayoutBuilder(
                         builder: (context, constraints) {
                           final crossAxisCount = (constraints.maxWidth / 260).floor();
                           return GridView.builder(
@@ -148,7 +148,7 @@ class AllLeads extends StatelessWidget {
                                         blurRadius: 0,
                                       )
                                     ],
-                                    color: AppColor.allleadcontainercolor,
+                                    color: AppColor.Cultured,
                                     borderRadius: BorderRadius.circular(8),
                                   ),
                                   child: Padding(
@@ -239,125 +239,8 @@ class AllLeads extends StatelessWidget {
                           );
                         },
                       ),
-                      tablet: LayoutBuilder(
-                        builder: (context, constraints) {
-                          final crossAxisCount = (constraints.maxWidth / 260).floor();
-                          return GridView.builder(
-                            padding: const EdgeInsets.all(16),
-                            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: crossAxisCount,
-                              crossAxisSpacing: 16.0,
-                              mainAxisSpacing: 16.0,
-                              childAspectRatio: 0.75,
-                            ),
-                            itemCount: 8,
-                            itemBuilder: (context, index) {
-                              return Card(
-                                elevation: 4,
-                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        color: Colors.black,
-                                        offset: Offset(0, 4),
-                                        blurRadius: 0,
-                                      )
-                                    ],
-                                    color: AppColor.allleadcontainercolor,
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(12),
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.center,
-                                      children: [
-                                        Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Container(
-                                              padding: const EdgeInsets.symmetric(horizontal: 8.5, vertical: 4.5),
-                                              decoration: BoxDecoration(
-                                                borderRadius: BorderRadius.circular(12),
-                                                color: Colors.green,
-                                              ),
-                                              child: const Text(
-                                                '• Active',
-                                                style: TextStyle(color: Colors.white, fontSize: 12),
-                                              ),
-                                            ),
-                                            IconButton(
-                                              icon: const Icon(Icons.more_vert),
-                                              onPressed: () {},
-                                              padding: EdgeInsets.zero,
-                                              constraints: const BoxConstraints(),
-                                            ),
-                                          ],
-                                        ),
-                                        const SizedBox(height: 10,),
-                                        Expanded(
-                                          child: Center(
-                                            child: Image.asset(
-                                              "${ImagesAssets.imagePath}allleadimagecontainer.png",
-                                              width: 180,
-                                              height: 180,
-                                              fit: BoxFit.contain,
-                                            ),
-                                          ),
-                                        ),
-                                        const SizedBox(height: 16,),
-                                        Text(
-                                          'Tour Name: Dream Destination',
-                                          style: AppTextstyless.allLeads,
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                        const SizedBox(height: 6),
-                                        Widgets().allLeadNoOfLeads('14'),
-                                        const SizedBox(height: 6),
-                                        Row(
-                                          crossAxisAlignment: CrossAxisAlignment.center,
-                                          mainAxisAlignment: MainAxisAlignment.center,
-                                          children: [
-                                            const Icon(Icons.location_on, size: 16),
-                                            Text(
-                                              '9827 Railroad Street',
-                                              style: AppTextstyless.allLeadsDate,
-                                              overflow: TextOverflow.ellipsis,
-                                            ),
-                                          ],
-                                        ),
-                                        const SizedBox(height: 8),
-                                        Row(
-                                          mainAxisAlignment: MainAxisAlignment.center,
-                                          children: [
-                                            Text(
-                                              'Starting from: ',
-                                              style: TextStyle(fontSize: 12,color: AppColor.hintColor),
-                                            ),
-                                            const Text('Oct 10,2024')
-                                          ],
-                                        ),
-                                        const SizedBox(height: 8),
-                                        Center(
-                                          child: TextButton(
-                                            child: const Text('View Details',style: TextStyle(
-                                                color: Colors.black,fontFamily: 'Poppin',fontWeight: FontWeight.w700,fontSize: 14),),
-                                            onPressed: () {
-                                              Navigator.push(context, MaterialPageRoute(builder: (context) => const LeadDetails(),));
-                                            },
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              );
-                            },
-                          );
-                        },
-                      ),
-
-                    ),
+                      
+                    
                   ),
                   const Center(child: Text('Pending')),
                   const Center(child: Text('Canceled')),

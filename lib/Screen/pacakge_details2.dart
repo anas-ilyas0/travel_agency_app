@@ -156,7 +156,7 @@ class PackageDetails2 extends StatelessWidget {
                                         width: context.screenWidth * 0.45,
                                         height: 50,
                                         decoration: BoxDecoration(
-                                          color: AppColor.Textbackground,
+                                          color: AppColor.ghostWhite,
                                           border: Border.all(
                                               color: AppColor.borderColor3),
                                           borderRadius:
@@ -250,7 +250,7 @@ class PackageDetails2 extends StatelessWidget {
                             width: context.screenWidth * 0.45,
                             height: 50,
                             decoration: BoxDecoration(
-                              color: AppColor.Textbackground,
+                              color: AppColor.ghostWhite,
                               border: Border.all(
                                   color: AppColor.borderColor3),
                               borderRadius: BorderRadius.circular(8),

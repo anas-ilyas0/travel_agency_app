@@ -1,9 +1,8 @@
-
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 
-class FlChart { // Renamed to avoid conflict
+class FlChart {
   static Widget flChart(BuildContext context) {
     bool isBoldText = MediaQuery.of(context).boldText;
 
@@ -31,7 +30,7 @@ class FlChart { // Renamed to avoid conflict
                   sideTitles: SideTitles(
                     showTitles: true,
                     getTitlesWidget: (double value, TitleMeta meta) {
-                     final style = TextStyle(
+                      final style = TextStyle(
                         fontWeight: FontWeight.w400,
                         fontSize: 11,
                         fontFamily: readexPro,
@@ -39,43 +38,46 @@ class FlChart { // Renamed to avoid conflict
                       Widget text;
                       switch (value.toInt()) {
                         case 0:
-                          text =  Text('Jan', style: style);
+                          text = Text('Jan', style: style);
                           break;
                         case 1:
-                          text =  Text('Feb', style: style);
+                          text = Text('Feb', style: style);
                           break;
                         case 2:
-                          text =  Text('Mar', style: style);
+                          text = Text('Mar', style: style);
                           break;
                         case 3:
-                          text =  Text('Apr', style: style);
+                          text = Text('Apr', style: style);
                           break;
                         case 4:
-                          text =  Text('May', style: style);
+                          text = Text('May', style: style);
                           break;
                         case 5:
-                          text =  Text('Jun', style: style);
+                          text = Text('Jun', style: style);
                           break;
                         case 6:
-                          text =  Text('Jul', style: style);
+                          text = Text('Jul', style: style);
                           break;
                         case 7:
-                          text =  Text('Aug', style: style);
+                          text = Text('Aug', style: style);
                           break;
                         case 8:
-                          text =  Text('Sep', style: style);
+                          text = Text('Sep', style: style);
                           break;
                         default:
-                          text =  Text('', style: style);
+                          text = Text('', style: style);
                           break;
                       }
-                      return SideTitleWidget(axisSide: meta.axisSide, child: text);
+                      return SideTitleWidget(
+                          axisSide: meta.axisSide, child: text);
                     },
                     reservedSize: 28,
                   ),
                 ),
                 leftTitles: AxisTitles(
                   sideTitles: SideTitles(
+                    minIncluded: false,
+                    maxIncluded: false,
                     showTitles: true,
                     interval: 2500,
                     reservedSize: 45,
@@ -83,7 +85,8 @@ class FlChart { // Renamed to avoid conflict
                       return Text(
                         '\$${formatWithCommas(value.toInt())}',
                         style: TextStyle(
-                          fontWeight: isBoldText ? FontWeight.bold : FontWeight.w400,
+                          fontWeight:
+                              isBoldText ? FontWeight.bold : FontWeight.w400,
                           fontSize: 11,
                           fontFamily: readexPro,
                         ),

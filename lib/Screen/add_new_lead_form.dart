@@ -76,7 +76,7 @@ class _AddNewLeadFormState extends State<AddNewLeadForm> {
             BackButtonAvatar(
               text1: 'Add New Lead',
             ),
-             Divider(color: AppColor.dividerColor,thickness: .5,),
+             Divider(color: AppColor.gainsboro,thickness: .5,),
 
             Padding(
               padding:  EdgeInsets.symmetric(horizontal: Responsive.isDesktop(context)? 115: 60),
