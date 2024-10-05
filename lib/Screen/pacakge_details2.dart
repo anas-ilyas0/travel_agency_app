@@ -124,77 +124,82 @@ class PackageDetails2 extends StatelessWidget {
                       ),
                       child: ListView.builder(
                         itemBuilder: (context, index) {
-                          return Column(
-                            children: [
-                              SizedBox(
-                                height: context.screenHeight * 0.015,
-                              ),
-                              Padding(
-                                padding:
-                                    const EdgeInsets.only(left: 6, right: 16),
-                                child: Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Checkbox(
-                                        activeColor: Colors.white,
-                                        side: BorderSide(
-                                          color: AppColor
-                                              .buttonTextColors, // Define the border color
-                                          width: 1.0,
-                                        ),
-                                        materialTapTargetSize:
-                                            MaterialTapTargetSize
-                                                .shrinkWrap,
-                                        checkColor: Colors.black,
-                                        value: userProvider.isChecked,
-                                        onChanged: (bool? newValue) {
-                                          userProvider.toggleCheckbox();
-                                        },
-                                      ),
-                                      Container(
-                                        width: context.screenWidth * 0.45,
-                                        height: 50,
-                                        decoration: BoxDecoration(
-                                          color: AppColor.Textbackground,
-                                          border: Border.all(
-                                              color: AppColor.borderColor3),
-                                          borderRadius:
-                                              BorderRadius.circular(8),
-                                        ),
-                                        child: Padding(
-                                          padding: const EdgeInsets.only(
-                                              left: 7, top: 12),
-                                          child: Text(
-                                            'Laxmisagar, BBSR, Bhubaneshwar-751006',
-                                            style: TextStyle(
-                                                fontFamily: fontFamilys,
-                                                fontWeight: FontWeight.w300,
-                                                color: AppColor.hintColor,
-                                                fontSize: 14),
+                          return Flexible(
+
+                            child: FittedBox(
+                              child: Column(
+                                children: [
+                                  SizedBox(
+                                    height: context.screenHeight * 0.015,
+                                  ),
+                                  Padding(
+                                    padding:
+                                        const EdgeInsets.only(left: 6, right: 16),
+                                    child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Checkbox(
+                                            activeColor: Colors.white,
+                                            side: BorderSide(
+                                              color: AppColor
+                                                  .buttonTextColors, // Define the border color
+                                              width: 1.0,
+                                            ),
+                                            materialTapTargetSize:
+                                                MaterialTapTargetSize
+                                                    .shrinkWrap,
+                                            checkColor: Colors.black,
+                                            value: userProvider.isChecked,
+                                            onChanged: (bool? newValue) {
+                                              userProvider.toggleCheckbox();
+                                            },
                                           ),
-                                        ),
-                                      ),
-                                      GestureDetector(
-                                          child: Padding(
-                                              padding:
-                                                  const EdgeInsets.all(2.0),
-                                              child: IconButton(
-                                                icon: Icon(
-                                                    Icons
-                                                        .remove_circle_outline,
-                                                    size: 18,
-                                                    weight: 0.5,
-                                                    color:
-                                                        AppColor.blueColor),
-                                                onPressed: () {
-                                                  // Handle button press
-                                                },
-                                              )))
-                                    ]),
-                              )
-                              // Right side: Circle button with "-" icon
-                            ],
+                                          Container(
+                                            width: context.screenWidth * 0.45,
+                                            height: 50,
+                                            decoration: BoxDecoration(
+                                              color: AppColor.ghostWhite,
+                                              border: Border.all(
+                                                  color: AppColor.borderColor3),
+                                              borderRadius:
+                                                  BorderRadius.circular(8),
+                                            ),
+                                            child: Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 7, top: 12),
+                                              child: Text(
+                                                'Laxmisagar, BBSR, Bhubaneshwar-751006',
+                                                style: TextStyle(
+                                                    fontFamily: fontFamilys,
+                                                    fontWeight: FontWeight.w300,
+                                                    color: AppColor.hintColor,
+                                                    fontSize: 14),
+                                              ),
+                                            ),
+                                          ),
+                                          GestureDetector(
+                                              child: Padding(
+                                                  padding:
+                                                      const EdgeInsets.all(2.0),
+                                                  child: IconButton(
+                                                    icon: Icon(
+                                                        Icons
+                                                            .remove_circle_outline,
+                                                        size: 18,
+                                                        weight: 0.5,
+                                                        color:
+                                                            AppColor.blueColor),
+                                                    onPressed: () {
+                                                      // Handle button press
+                                                    },
+                                                  )))
+                                        ]),
+                                  )
+                                  // Right side: Circle button with "-" icon
+                                ],
+                              ),
+                            ),
                           );
                         },
                       ),
@@ -220,71 +225,75 @@ class PackageDetails2 extends StatelessWidget {
                       ),
                       child: ListView.builder(
                         itemBuilder: (context, index) {
-                          return Column(children: [
-                                                  SizedBox(
-                                                    height: context.screenHeight * 0.015,
-                                                  ),
-                                                  Padding(
-                                                    padding:
-                          const EdgeInsets.only(left: 6, right: 16),
-                                                    child: Row(
-                                                      mainAxisAlignment:
-                            MainAxisAlignment.spaceBetween,
-                                                      children: [
-                          Checkbox(
-                            materialTapTargetSize:
-                                MaterialTapTargetSize.shrinkWrap,
-                            activeColor: Colors.white,
-                            checkColor: Colors.black,
-                            value: userProvider.isChecked,
-                            side: BorderSide(
-                              color: AppColor
-                                  .buttonTextColors, // Define the border color
-                              width: 1.0,
-                            ), // Set initial value
-                            onChanged: (bool? newValue) {
-                              userProvider.toggleCheckbox();
-                            },
-                          ),
-                          Container(
-                            width: context.screenWidth * 0.45,
-                            height: 50,
-                            decoration: BoxDecoration(
-                              color: AppColor.Textbackground,
-                              border: Border.all(
-                                  color: AppColor.borderColor3),
-                              borderRadius: BorderRadius.circular(8),
-                            ),
-                            child: Padding(
-                              padding:
-                                  const EdgeInsets.only(left: 7, top: 12),
-                              child: Text(
-                                'Laxmisagar, BBSR, Bhubaneshwar-751006',
-                                style: TextStyle(
-                                    fontFamily: fontFamilys,
-                                    fontWeight: FontWeight.w300,
-                                    color: AppColor.hintColor,
-                                    fontSize: 14),
+                          return Flexible(
+                            child: FittedBox(
+                              child: Column(children: [
+                                                      SizedBox(
+                                                        height: context.screenHeight * 0.015,
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                              const EdgeInsets.only(left: 6, right: 16),
+                                                        child: Row(
+                                                          mainAxisAlignment:
+                                MainAxisAlignment.spaceBetween,
+                                                          children: [
+                              Checkbox(
+                                materialTapTargetSize:
+                                    MaterialTapTargetSize.shrinkWrap,
+                                activeColor: Colors.white,
+                                checkColor: Colors.black,
+                                value: userProvider.isChecked,
+                                side: BorderSide(
+                                  color: AppColor
+                                      .buttonTextColors, // Define the border color
+                                  width: 1.0,
+                                ), // Set initial value
+                                onChanged: (bool? newValue) {
+                                  userProvider.toggleCheckbox();
+                                },
                               ),
+                              Container(
+                                width: context.screenWidth * 0.45,
+                                height: 50,
+                                decoration: BoxDecoration(
+                                  color: AppColor.ghostWhite,
+                                  border: Border.all(
+                                      color: AppColor.borderColor3),
+                                  borderRadius: BorderRadius.circular(8),
+                                ),
+                                child: Padding(
+                                  padding:
+                                      const EdgeInsets.only(left: 7, top: 12),
+                                  child: Text(
+                                    'Laxmisagar, BBSR, Bhubaneshwar-751006',
+                                    style: TextStyle(
+                                        fontFamily: fontFamilys,
+                                        fontWeight: FontWeight.w300,
+                                        color: AppColor.hintColor,
+                                        fontSize: 14),
+                                  ),
+                                ),
+                              ),
+                              GestureDetector(
+                                  child: Padding(
+                                      padding: const EdgeInsets.all(2.0),
+                                      child: IconButton(
+                                        icon: Icon(
+                                            Icons.remove_circle_outline,
+                                            size: 18,
+                                            weight: 0.5,
+                                            color: AppColor.blueColor),
+                                        onPressed: () {
+                                          // Handle button press
+                                        },
+                                      )))
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ]),
                             ),
-                          ),
-                          GestureDetector(
-                              child: Padding(
-                                  padding: const EdgeInsets.all(2.0),
-                                  child: IconButton(
-                                    icon: Icon(
-                                        Icons.remove_circle_outline,
-                                        size: 18,
-                                        weight: 0.5,
-                                        color: AppColor.blueColor),
-                                    onPressed: () {
-                                      // Handle button press
-                                    },
-                                  )))
-                                                      ],
-                                                    ),
-                                                  ),
-                                                ]);
+                          );
                         },
                       ),
                     ),

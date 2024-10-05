@@ -114,7 +114,7 @@ class SupplierScreen extends StatelessWidget {
           )
               : const SizedBox.shrink(),
 
-          Flexible(
+         Flexible(
             child: SizedBox(
               width: double.infinity,
               child: SingleChildScrollView(

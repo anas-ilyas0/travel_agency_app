@@ -12,14 +12,14 @@ class AppColor {
   static Color borderColor3 = const Color(0XFFD4D7E3);
   static Color borderColor4 = const Color(0XFFFF7853);
   static Color borderColorDropdown = const Color(0XFFFF7853);
-  static Color Textbackground = const Color(0XFFFCFCFC);
+  static Color ghostWhite = const Color(0XFFFCFCFC);
   static Color customdropdownColor = const Color(0XFFF7FBFF);
   static Color darkGrey = const Color(0XFF707070);
-  static Color textColor = const Color(0XFF0C1421);
-  static Color dividerColor = const Color(0XFFCDCDCD);
+  static Color richBlack = const Color(0XFF0C1421);
+  static Color gainsboro = const Color(0XFFCDCDCD);
   static Color blackColor= Colors.black;
   static Color packageFormColor=const Color(0XFFD4D7E3);
-   static Color addnewagent=const Color(0XFF303C6C);
-     static Color allleadcontainercolor=const Color(0XFFF3F6F9);
-   static Color shadowColor=const Color(0XFF000000);
+   static Color Indigo_Dye=const Color(0XFF303C6C);
+     static Color Cultured=const Color(0XFFF3F6F9);
+   static Color black=const Color(0XFF000000);
 }

@@ -89,10 +89,9 @@ class MobileSignIn extends StatelessWidget {
                 ),
                 const SizedBox(height: 80),
                 AuthButtons().authButtons('Sign In', () {
-                 // Navigator.pushNamed(context, '/hidden_drawer');
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => const HiddenDrawer()));
-                }, FontWeight.w500, color),
-                const SizedBox(height: 130),
+                  Navigator.pushNamed(context, '/hidden_drawer');
+                 }, FontWeight.w500, color),
+               SizedBox(height: context.screenHeight*0.17),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

@@ -4,7 +4,6 @@ import 'package:fab_tech_sol/widgets/animated_search_bar.dart';
 import 'package:fab_tech_sol/widgets/dashed_line.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import 'mobile_custom_app_bar.dart';
 
 class SupplierNavBarItem extends StatelessWidget {
@@ -50,7 +49,7 @@ class SupplierNavBarItem extends StatelessWidget {
                               color: mobileArrowDropDownColor),
                         ))
                       ],
-                      onChanged: (value) {})
+                      onChanged: (value) {}),
                 ],
               ),
               Row(
@@ -110,12 +109,11 @@ class SupplierNavBarItem extends StatelessWidget {
                                     height: 25,
                                     width: 25,
                                     decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                        image: AssetImage(
-                                            '${imageUrl}package_supplier_client_avatar.png'),
-                                      ),
-                                      color: Colors.white,
-                                    ),
+                                        image: DecorationImage(
+                                          image: AssetImage(
+                                              '${imageUrl}package_supplier_client_avatar.png'),
+                                        ),
+                                        color: whiteColor),
                                   ),
                                   const SizedBox(width: 10),
                                   Column(
@@ -164,123 +162,125 @@ class SupplierNavBarItem extends StatelessWidget {
                               ],
                             ),
                             const SizedBox(height: 15),
-                            SingleChildScrollView(
-                              scrollDirection: Axis.horizontal,
-                              child: Column(
-                                children: [
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Row(
-                                            children: [
-                                              Text(
-                                                'Company Name:',
-                                                style: TextStyle(
-                                                    fontFamily: readexPro,
-                                                    fontWeight: FontWeight.w400,
-                                                    fontSize: 8,
-                                                    color:
-                                                        mobileLeadText2Color),
-                                              ),
-                                              const SizedBox(width: 5),
-                                              Text(
-                                                'Bright Travel',
-                                                style: TextStyle(
-                                                    fontFamily: readexPro,
-                                                    fontSize: 9,
-                                                    fontWeight: FontWeight.w500,
-                                                    color:
-                                                        mobileLeadText2Color),
-                                              ),
-                                            ],
-                                          ),
-                                          const SizedBox(width: 20),
-                                          Row(
-                                            children: [
-                                              Text(
-                                                'Service:',
-                                                style: TextStyle(
-                                                    fontFamily: readexPro,
-                                                    fontSize: 8,
-                                                    fontWeight: FontWeight.w400,
-                                                    color:
-                                                        mobileLeadText2Color),
-                                              ),
-                                              const SizedBox(width: 3),
-                                              Text(
-                                                'Hotel Accommodation',
-                                                style: TextStyle(
-                                                    fontFamily: readexPro,
-                                                    fontSize: 9,
-                                                    fontWeight: FontWeight.w500,
-                                                    color:
-                                                        mobileLeadText2Color),
-                                              ),
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-                                      GestureDetector(
-                                        onTap: () {
-                                          Navigator.pushNamed(context,
-                                              '/mobile_local_supplier_details');
-                                        },
-                                        child: Image(
-                                            height: 15,
-                                            width: 15,
-                                            image: AssetImage(
-                                                '${imageUrl}forward_icon.png')),
-                                      ),
-                                    ],
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Expanded(
+                                  child: SingleChildScrollView(
+                                    scrollDirection: Axis.horizontal,
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Row(
+                                          children: [
+                                            Row(
+                                              children: [
+                                                Text(
+                                                  'Company Name:',
+                                                  style: TextStyle(
+                                                      fontFamily: readexPro,
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                      fontSize: 8,
+                                                      color:
+                                                          mobileLeadText2Color),
+                                                ),
+                                                const SizedBox(width: 5),
+                                                Text(
+                                                  'Bright Travel',
+                                                  style: TextStyle(
+                                                      fontFamily: readexPro,
+                                                      fontSize: 9,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      color:
+                                                          mobileLeadText2Color),
+                                                ),
+                                                const SizedBox(width: 20),
+                                                Text(
+                                                  'Service:',
+                                                  style: TextStyle(
+                                                      fontFamily: readexPro,
+                                                      fontSize: 8,
+                                                      fontWeight:
+                                                          FontWeight.w400,
+                                                      color:
+                                                          mobileLeadText2Color),
+                                                ),
+                                                const SizedBox(width: 3),
+                                                Text(
+                                                  'Hotel Accommodation',
+                                                  style: TextStyle(
+                                                      fontFamily: readexPro,
+                                                      fontSize: 9,
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      color:
+                                                          mobileLeadText2Color),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                        const SizedBox(height: 7),
+                                        Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              'Company Address:',
+                                              style: TextStyle(
+                                                  fontFamily: readexPro,
+                                                  fontWeight: FontWeight.w400,
+                                                  fontSize: 8,
+                                                  color: mobileLeadText2Color),
+                                            ),
+                                            const SizedBox(width: 9),
+                                            Text(
+                                              '2776 Bruce St',
+                                              style: TextStyle(
+                                                  fontFamily: readexPro,
+                                                  fontSize: 9,
+                                                  fontWeight: FontWeight.w500,
+                                                  color: mobileLeadText2Color),
+                                            ),
+                                            const SizedBox(width: 12),
+                                            Text(
+                                              'Supplier Address:',
+                                              style: TextStyle(
+                                                  fontFamily: readexPro,
+                                                  fontSize: 8,
+                                                  fontWeight: FontWeight.w400,
+                                                  color: mobileLeadText2Color),
+                                            ),
+                                            const SizedBox(width: 5),
+                                            Text(
+                                              '8119 Nowlin Rd',
+                                              style: TextStyle(
+                                                  fontFamily: readexPro,
+                                                  fontSize: 9,
+                                                  fontWeight: FontWeight.w500,
+                                                  color: mobileLeadText2Color),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                  const SizedBox(height: 7),
-                                  Row(
-                                    mainAxisAlignment: MainAxisAlignment.start,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Company Address:',
-                                        style: TextStyle(
-                                            fontFamily: readexPro,
-                                            fontWeight: FontWeight.w400,
-                                            fontSize: 8,
-                                            color: mobileLeadText2Color),
-                                      ),
-                                      const SizedBox(width: 9),
-                                      Text(
-                                        '2776 Bruce St',
-                                        style: TextStyle(
-                                            fontFamily: readexPro,
-                                            fontSize: 9,
-                                            fontWeight: FontWeight.w500,
-                                            color: mobileLeadText2Color),
-                                      ),
-                                      const SizedBox(width: 12),
-                                      Text(
-                                        'Supplier Address:',
-                                        style: TextStyle(
-                                            fontFamily: readexPro,
-                                            fontSize: 8,
-                                            fontWeight: FontWeight.w400,
-                                            color: mobileLeadText2Color),
-                                      ),
-                                      const SizedBox(width: 5),
-                                      Text(
-                                        '8119 Nowlin Rd',
-                                        style: TextStyle(
-                                            fontFamily: readexPro,
-                                            fontSize: 9,
-                                            fontWeight: FontWeight.w500,
-                                            color: mobileLeadText2Color),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    Navigator.pushNamed(context,
+                                        '/mobile_local_supplier_details');
+                                  },
+                                  child: Image(
+                                      height: 15,
+                                      width: 15,
+                                      image: AssetImage(
+                                          '${imageUrl}forward_icon.png')),
+                                ),
+                              ],
                             ),
                             const SizedBox(height: 10),
                             DashedLine(lineColor: addLeadButtonColor),

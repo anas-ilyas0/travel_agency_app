@@ -187,7 +187,7 @@ class LocalSupplierDetail extends StatelessWidget {
                 style: TextStyle(
                   fontWeight: FontWeight.w500,
                   fontFamily: fontFamilys,
-                  color: AppColor.addnewagent,
+                  color: AppColor.Indigo_Dye,
                   fontSize: 18,
                 ),
                 overflow: TextOverflow.ellipsis, // Prevent overflow
@@ -246,7 +246,7 @@ class LocalSupplierDetail extends StatelessWidget {
                           style: TextStyle(
                             fontFamily: fontFamilys,
                             fontWeight: FontWeight.w500,
-                            color: AppColor.addnewagent,
+                            color: AppColor.Indigo_Dye,
                           ),
                           overflow: TextOverflow.ellipsis, // Handle overflow by showing ellipsis
                           softWrap: false,

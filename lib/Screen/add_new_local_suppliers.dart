@@ -55,7 +55,7 @@ class _AddNewLocalSupplierState extends State<AddNewLocalSupplier> {
                         'Local Suppler Details',
                         style: TextStyle(
                             fontSize: 23,
-                            color: AppColor.addnewagent,
+                            color: AppColor.Indigo_Dye,
                             fontFamily: fontFamilys,
                             fontWeight: FontWeight.w600),
                       )),

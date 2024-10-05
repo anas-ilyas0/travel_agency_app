@@ -26,109 +26,113 @@ class AllLeads extends StatelessWidget {
     double horizontalPadding = isMobile
         ? 20.0 // Mobile padding
         : isTablet
-        ? 40.0 // Tablet padding
-        : 75.0; // Desktop padding
+            ? 40.0 // Tablet padding
+            : 75.0; // Desktop padding
 
-    return Responsive.isDesktop(context)||Responsive.isTablet(context)? Scaffold(
-        body: Padding(
-          padding: EdgeInsets.only(
-              top: Responsive.isMobile(context) ? 2 : 35,
-              left: Responsive.isMobile(context) ? 16 : 50,
-              right: Responsive.isMobile(context) ? 16 : 50),
-          child: Column(
-            children: [
-              // Header Row
-              Row(
-                mainAxisAlignment: Responsive.isMobile(context)
-                    ? MainAxisAlignment.start
-                    : MainAxisAlignment.spaceBetween,
-                children: [
-                  Responsive.isMobile(context)
-                      ? const SizedBox.shrink()
-                      : Text(
-                    'All Leads',
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontFamily: fontFamilys,
+    return Responsive.isDesktop(context) || Responsive.isTablet(context)
+        ? Scaffold(
+            body: Padding(
+            padding: EdgeInsets.only(
+                top: Responsive.isMobile(context) ? 2 : 35,
+                left: Responsive.isMobile(context) ? 16 : 50,
+                right: Responsive.isMobile(context) ? 16 : 50),
+            child: Column(
+              children: [
+                // Header Row
+                Row(
+                  mainAxisAlignment: Responsive.isMobile(context)
+                      ? MainAxisAlignment.start
+                      : MainAxisAlignment.spaceBetween,
+                  children: [
+                    Responsive.isMobile(context)
+                        ? const SizedBox.shrink()
+                        : Text(
+                            'All Leads',
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontFamily: fontFamilys,
 
-                        // fontFamily: readexPro,
+                                // fontFamily: readexPro,
 
-                        fontWeight: FontWeight.bold,
-                        color: color),
-                  ),
-                  Row(
-                    children: [
-                      Text(
-                        'Leads Status :',
-                        style: TextStyle(
-                            color: color,
-                            fontFamily: fontFamilys,
-
-                            //  fontFamily: readexPro,
-
-                            fontWeight: FontWeight.w600),
-                      ),
-                      TabBar(
-                          labelStyle: TextStyle(
-                            fontWeight: FontWeight.bold,
-
-                            fontFamily: fontFamilys,
-
-                            // fontFamily: readexPro,
+                                fontWeight: FontWeight.bold,
+                                color: color),
                           ),
-                          unselectedLabelStyle:
-                          const TextStyle(fontWeight: FontWeight.normal),
-                          unselectedLabelColor: Colors.grey,
-                          labelColor: color,
-                          indicatorColor: color,
-                          dividerColor: Colors.transparent,
-                          controller: tabController,
-                          isScrollable: true,
-                          tabs: const [
-                            Tab(text: 'Active'),
-                            Tab(text: 'Inactive'),
-                          ]),
-                      Responsive.isDesktop(context)
-                          ? Widgets().dropDownButton(providerValue.selectedItem2,
-                          providerValue.dropdownItems2, (String? newValue) {
-                            providerValue.updateSelectedItem2(newValue);
-                          }, context)
-                          : const SizedBox.shrink(),
-                      const SizedBox(width: 15),
-                      Responsive.isDesktop(context)
-                          ? Widgets().button(
-                        'Add New Lead',
-                            () {
-                          // Navigator.pushNamed(
-                          //   context, AppRoutes.lead_details);
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const LeadInvoiceDetails(),
-                              ));
-                        },
-                      )
-                          : const SizedBox.shrink(),
-                    ],
-                  ),
-                ],
-              ),
+                    Row(
+                      children: [
+                        Text(
+                          'Leads Status :',
+                          style: TextStyle(
+                              color: color,
+                              fontFamily: fontFamilys,
 
-              Expanded(
-                child: TabBarView(controller: tabController, children: [
-                  Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: horizontalPadding,
-                      vertical: 20,
+                              //  fontFamily: readexPro,
+
+                              fontWeight: FontWeight.w600),
+                        ),
+                        TabBar(
+                            labelStyle: TextStyle(
+                              fontWeight: FontWeight.bold,
+
+                              fontFamily: fontFamilys,
+
+                              // fontFamily: readexPro,
+                            ),
+                            unselectedLabelStyle:
+                                const TextStyle(fontWeight: FontWeight.normal),
+                            unselectedLabelColor: Colors.grey,
+                            labelColor: color,
+                            indicatorColor: color,
+                            dividerColor: Colors.transparent,
+                            controller: tabController,
+                            isScrollable: true,
+                            tabs: const [
+                              Tab(text: 'Active'),
+                              Tab(text: 'Inactive'),
+                            ]),
+                        Responsive.isDesktop(context)
+                            ? Widgets().dropDownButton(
+                                providerValue.selectedItem2,
+                                providerValue.dropdownItems2,
+                                (String? newValue) {
+                                providerValue.updateSelectedItem2(newValue);
+                              }, context)
+                            : const SizedBox.shrink(),
+                        const SizedBox(width: 15),
+                        Responsive.isDesktop(context)
+                            ? Widgets().button(
+                                'Add New Lead',
+                                () {
+                                  // Navigator.pushNamed(
+                                  //   context, AppRoutes.lead_details);
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const LeadInvoiceDetails(),
+                                      ));
+                                },
+                              )
+                            : const SizedBox.shrink(),
+                      ],
                     ),
-                    child: Responsive(
-                      mobile: const Text('Mobile View'),
-                      desktop: LayoutBuilder(
+                  ],
+                ),
+
+                Expanded(
+                  child: TabBarView(controller: tabController, children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: horizontalPadding,
+                        vertical: 20,
+                      ),
+                      child: LayoutBuilder(
                         builder: (context, constraints) {
-                          final crossAxisCount = (constraints.maxWidth / 260).floor();
+                          final crossAxisCount =
+                              (constraints.maxWidth / 260).floor();
                           return GridView.builder(
                             padding: const EdgeInsets.all(16),
-                            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                            gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: crossAxisCount,
                               crossAxisSpacing: 16.0,
                               mainAxisSpacing: 16.0,
@@ -138,7 +142,8 @@ class AllLeads extends StatelessWidget {
                             itemBuilder: (context, index) {
                               return Card(
                                 elevation: 4,
-                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8)),
                                 child: Container(
                                   decoration: BoxDecoration(
                                     boxShadow: const [
@@ -148,37 +153,48 @@ class AllLeads extends StatelessWidget {
                                         blurRadius: 0,
                                       )
                                     ],
-                                    color: AppColor.allleadcontainercolor,
+                                    color: AppColor.Cultured,
                                     borderRadius: BorderRadius.circular(8),
                                   ),
                                   child: Padding(
                                     padding: const EdgeInsets.all(12),
                                     child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
                                       children: [
                                         Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
                                           children: [
                                             Container(
-                                              padding: const EdgeInsets.symmetric(horizontal: 8.5, vertical: 4.5),
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      horizontal: 8.5,
+                                                      vertical: 4.5),
                                               decoration: BoxDecoration(
-                                                borderRadius: BorderRadius.circular(12),
+                                                borderRadius:
+                                                    BorderRadius.circular(12),
                                                 color: Colors.green,
                                               ),
                                               child: const Text(
                                                 '• Active',
-                                                style: TextStyle(color: Colors.white, fontSize: 12),
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 12),
                                               ),
                                             ),
                                             IconButton(
                                               icon: const Icon(Icons.more_vert),
                                               onPressed: () {},
                                               padding: EdgeInsets.zero,
-                                              constraints: const BoxConstraints(),
+                                              constraints:
+                                                  const BoxConstraints(),
                                             ),
                                           ],
                                         ),
-                                        const SizedBox(height: 10,),
+                                        const SizedBox(
+                                          height: 10,
+                                        ),
                                         Expanded(
                                           child: Center(
                                             child: Image.asset(
@@ -189,7 +205,9 @@ class AllLeads extends StatelessWidget {
                                             ),
                                           ),
                                         ),
-                                        const SizedBox(height: 12,),
+                                        const SizedBox(
+                                          height: 12,
+                                        ),
                                         Text(
                                           'Tour Name: Dream Destination',
                                           style: AppTextstyless.allLeads,
@@ -199,24 +217,31 @@ class AllLeads extends StatelessWidget {
                                         Widgets().allLeadNoOfLeads('14'),
                                         const SizedBox(height: 4),
                                         Row(
-                                          crossAxisAlignment: CrossAxisAlignment.center,
-                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                           children: [
-                                            const Icon(Icons.location_on, size: 14),
+                                            const Icon(Icons.location_on,
+                                                size: 14),
                                             Text(
                                               '9827 Railroad Street',
-                                              style: AppTextstyless.allLeadsDate,
+                                              style:
+                                                  AppTextstyless.allLeadsDate,
                                               overflow: TextOverflow.ellipsis,
                                             ),
                                           ],
                                         ),
                                         const SizedBox(height: 4),
                                         Row(
-                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                           children: [
                                             Text(
                                               'Starting from: ',
-                                              style: TextStyle(fontSize: 12,color: AppColor.hintColor),
+                                              style: TextStyle(
+                                                  fontSize: 12,
+                                                  color: AppColor.hintColor),
                                             ),
                                             const Text('Oct 10,2024')
                                           ],
@@ -224,9 +249,16 @@ class AllLeads extends StatelessWidget {
                                         const SizedBox(height: 4),
                                         Center(
                                           child: TextButton(
-                                            child: const Text('View Details',style: TextStyle(color: Colors.black,fontFamily: 'Poppin',fontWeight: FontWeight.w700,fontSize: 14),),
+                                            child: Text('View Details',
+                                                style: AppTextstyless
+                                                    .allLeadsViewDetail),
                                             onPressed: () {
-                                              Navigator.push(context, MaterialPageRoute(builder: (context) => const LeadDetails(),));
+                                              Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        const LeadDetails(),
+                                                  ));
                                             },
                                           ),
                                         ),
@@ -239,135 +271,15 @@ class AllLeads extends StatelessWidget {
                           );
                         },
                       ),
-                      tablet: LayoutBuilder(
-                        builder: (context, constraints) {
-                          final crossAxisCount = (constraints.maxWidth / 260).floor();
-                          return GridView.builder(
-                            padding: const EdgeInsets.all(16),
-                            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: crossAxisCount,
-                              crossAxisSpacing: 16.0,
-                              mainAxisSpacing: 16.0,
-                              childAspectRatio: 0.75,
-                            ),
-                            itemCount: 8,
-                            itemBuilder: (context, index) {
-                              return Card(
-                                elevation: 4,
-                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        color: Colors.black,
-                                        offset: Offset(0, 4),
-                                        blurRadius: 0,
-                                      )
-                                    ],
-                                    color: AppColor.allleadcontainercolor,
-                                    borderRadius: BorderRadius.circular(8),
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(12),
-                                    child: Column(
-                                      crossAxisAlignment: CrossAxisAlignment.center,
-                                      children: [
-                                        Row(
-                                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                          children: [
-                                            Container(
-                                              padding: const EdgeInsets.symmetric(horizontal: 8.5, vertical: 4.5),
-                                              decoration: BoxDecoration(
-                                                borderRadius: BorderRadius.circular(12),
-                                                color: Colors.green,
-                                              ),
-                                              child: const Text(
-                                                '• Active',
-                                                style: TextStyle(color: Colors.white, fontSize: 12),
-                                              ),
-                                            ),
-                                            IconButton(
-                                              icon: const Icon(Icons.more_vert),
-                                              onPressed: () {},
-                                              padding: EdgeInsets.zero,
-                                              constraints: const BoxConstraints(),
-                                            ),
-                                          ],
-                                        ),
-                                        const SizedBox(height: 10,),
-                                        Expanded(
-                                          child: Center(
-                                            child: Image.asset(
-                                              "${ImagesAssets.imagePath}allleadimagecontainer.png",
-                                              width: 180,
-                                              height: 180,
-                                              fit: BoxFit.contain,
-                                            ),
-                                          ),
-                                        ),
-                                        const SizedBox(height: 16,),
-                                        Text(
-                                          'Tour Name: Dream Destination',
-                                          style: AppTextstyless.allLeads,
-                                          overflow: TextOverflow.ellipsis,
-                                        ),
-                                        const SizedBox(height: 6),
-                                        Widgets().allLeadNoOfLeads('14'),
-                                        const SizedBox(height: 6),
-                                        Row(
-                                          crossAxisAlignment: CrossAxisAlignment.center,
-                                          mainAxisAlignment: MainAxisAlignment.center,
-                                          children: [
-                                            const Icon(Icons.location_on, size: 16),
-                                            Text(
-                                              '9827 Railroad Street',
-                                              style: AppTextstyless.allLeadsDate,
-                                              overflow: TextOverflow.ellipsis,
-                                            ),
-                                          ],
-                                        ),
-                                        const SizedBox(height: 8),
-                                        Row(
-                                          mainAxisAlignment: MainAxisAlignment.center,
-                                          children: [
-                                            Text(
-                                              'Starting from: ',
-                                              style: TextStyle(fontSize: 12,color: AppColor.hintColor),
-                                            ),
-                                            const Text('Oct 10,2024')
-                                          ],
-                                        ),
-                                        const SizedBox(height: 8),
-                                        Center(
-                                          child: TextButton(
-                                            child: const Text('View Details',style: TextStyle(
-                                                color: Colors.black,fontFamily: 'Poppin',fontWeight: FontWeight.w700,fontSize: 14),),
-                                            onPressed: () {
-                                              Navigator.push(context, MaterialPageRoute(builder: (context) => const LeadDetails(),));
-                                            },
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              );
-                            },
-                          );
-                        },
-                      ),
-
                     ),
-                  ),
-                  const Center(child: Text('Pending')),
-                  const Center(child: Text('Canceled')),
-                ]),
-              ),
-            ],
-          ),
-          // Expanded content area (Grid/List view for leads)
-        )):LeadsNavBarItem();
-
-
+                    const Center(child: Text('Pending')),
+                    const Center(child: Text('Canceled')),
+                  ]),
+                ),
+              ],
+            ),
+            // Expanded content area (Grid/List view for leads)
+          ))
+        : LeadsNavBarItem();
   }
 }

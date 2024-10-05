@@ -12,17 +12,16 @@ class LocalsupplierDialog extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-     final imageProvider = Provider.of<UserProvider>(context);
+    final imageProvider = Provider.of<UserProvider>(context);
     return Dialog(
       backgroundColor: AppColor.background,
-      child:  SingleChildScrollView(
+      child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SizedBox(
               height: context.screenHeight * 0.02,
             ),
-          
             Padding(
               padding: const EdgeInsets.only(left: 90, right: 90),
               child: Column(
@@ -36,7 +35,7 @@ class LocalsupplierDialog extends StatelessWidget {
                         'Local Suppler Details',
                         style: TextStyle(
                             fontSize: 23,
-                            color: AppColor.addnewagent,
+                            color: AppColor.Indigo_Dye,
                             fontFamily: fontFamilys,
                             fontWeight: FontWeight.w600),
                       )),
@@ -48,144 +47,134 @@ class LocalsupplierDialog extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Flexible(
-                          child: FittedBox(
-                            child: Row(
+                        Row(
+                          children: [
+                            Container(
+                              height: context.screenHeight * 0.25,
+                              width: context.screenWidth * 0.12,
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  image: imageProvider.imageUrl != null
+                                      ? DecorationImage(
+                                          image: NetworkImage(
+                                              imageProvider.imageUrl!),
+                                          fit: BoxFit.cover,
+                                        )
+                                      : null,
+                                  borderRadius: BorderRadius.circular(12),
+                                  border: Border.all(
+                                      color: AppColor.borderColor, width: 0.5)),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Container(
-                                  height: context.screenHeight * 0.25,
-                                  width: context.screenWidth * 0.12,
-                                  decoration: BoxDecoration(
-                                      color: Colors.white,
-                                       image: imageProvider.imageUrl != null
-                                        ? DecorationImage(
-                                            image:
-                                                NetworkImage(imageProvider.imageUrl!),
-                                            fit: BoxFit.cover,
-                                          )
-                                        : null,
-                                      borderRadius: BorderRadius.circular(12),
-                                      border: Border.all(
-                                          color: AppColor.borderColor,
-                                          width: 0.5)),
+                                Text(
+                                  'Company Logo',
+                                  style: TextStyle(
+                                      fontFamily: fontFamilys,
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 15),
                                 ),
-                                const SizedBox(
-                                  width: 10,
-                                ),
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      'Company Logo',
-                                      style: TextStyle(
-                                          fontFamily: fontFamilys,
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 15),
-                                    ),
-                                    ElevatedButton(
-                                      onPressed: ()async {
-                                          await imageProvider.pickImage();
-                                      },
-                                      style: ElevatedButton.styleFrom(
-                                        minimumSize: const Size(160, 48),
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 6, horizontal: 10),
-                                        backgroundColor:
-                                            const Color(0XFF11345A),
+                                ElevatedButton(
+                                  onPressed: () async {
+                                    await imageProvider.pickImage();
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                    minimumSize: const Size(160, 48),
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 6, horizontal: 10),
+                                    backgroundColor: const Color(0XFF11345A),
+                                  ),
+                                  child: const Row(
+                                    // Make Row as wide as the content
+                                    children: [
+                                      Icon(
+                                        Icons.file_upload_outlined,
+                                        color: Colors.white,
+                                        size: 15,
+                                      ), // Icon
+                                      SizedBox(
+                                        width: 5,
                                       ),
-                                      child: const Row(
-                                        // Make Row as wide as the content
-                                        children: [
-                                          Icon(
-                                            Icons.file_upload_outlined,
-                                            color: Colors.white,
-                                            size: 15,
-                                          ), // Icon
-                                          SizedBox(
-                                            width: 5,
-                                          ),
-                                          // Space between icon and text
-                                          Text(
-                                            'Upload Image',
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 12),
-                                          ), // Text
-                                        ],
-                                      ),
-                                    ),
-                                  ],
+                                      // Space between icon and text
+                                      Text(
+                                        'Upload Image',
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 12),
+                                      ), // Text
+                                    ],
+                                  ),
                                 ),
-                                SizedBox(
-                                  width: context.screenWidth * 0.02,
-                                ),
-                                Container(
-                                  height: context.screenHeight * 0.25,
-                                  width: context.screenWidth * 0.12,
-                                  decoration: BoxDecoration(
-                                      color: Colors.white,
-                                       image: imageProvider.imageUrl != null
-                                        ? DecorationImage(
-                                            image:
-                                                NetworkImage(imageProvider.imageUrl!),
-                                            fit: BoxFit.cover,
-                                          )
-                                        : null,
-                                      borderRadius: BorderRadius.circular(12),
-                                      border: Border.all(
-                                          color: AppColor.borderColor,
-                                          width: 0.5)),
-                                ),
-                                SizedBox(
-                                  width: context.screenWidth * 0.01,
-                                ),
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      'Supplier Logo',
-                                      style: TextStyle(
-                                          fontFamily: fontFamilys,
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 15),
-                                    ),
-                                    ElevatedButton(
-                                      onPressed: ()async {
-                                          await imageProvider.pickImage();
-                                      },
-                                      style: ElevatedButton.styleFrom(
-                                        minimumSize: const Size(160, 48),
-                                        backgroundColor:
-                                            const Color(0XFF11345A),
-                                        padding: const EdgeInsets.symmetric(
-                                            vertical: 6, horizontal: 10),
-                                      ),
-                                      child: const Row(
-                                        mainAxisSize: MainAxisSize
-                                            .min, // Make Row as wide as the content
-                                        children: [
-                                          Icon(
-                                            Icons.file_upload_outlined,
-                                            size: 15,
-                                            color: Colors.white,
-                                          ), // Icon
-                                          SizedBox(
-                                              width:
-                                                  8), // Space between icon and text
-                                          Text(
-                                            'Upload Image',
-                                            style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 12),
-                                          ), // Text
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                )
                               ],
                             ),
-                          ),
+                            SizedBox(
+                              width: context.screenWidth * 0.02,
+                            ),
+                            Container(
+                              height: context.screenHeight * 0.25,
+                              width: context.screenWidth * 0.12,
+                              decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  image: imageProvider.imageUrl != null
+                                      ? DecorationImage(
+                                          image: NetworkImage(
+                                              imageProvider.imageUrl!),
+                                          fit: BoxFit.cover,
+                                        )
+                                      : null,
+                                  borderRadius: BorderRadius.circular(12),
+                                  border: Border.all(
+                                      color: AppColor.borderColor, width: 0.5)),
+                            ),
+                            SizedBox(
+                              width: context.screenWidth * 0.01,
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Supplier Logo',
+                                  style: TextStyle(
+                                      fontFamily: fontFamilys,
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 15),
+                                ),
+                                ElevatedButton(
+                                  onPressed: () async {
+                                    await imageProvider.pickImage();
+                                  },
+                                  style: ElevatedButton.styleFrom(
+                                    minimumSize: const Size(160, 48),
+                                    backgroundColor: const Color(0XFF11345A),
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 6, horizontal: 10),
+                                  ),
+                                  child: const Row(
+                                    mainAxisSize: MainAxisSize
+                                        .min, // Make Row as wide as the content
+                                    children: [
+                                      Icon(
+                                        Icons.file_upload_outlined,
+                                        size: 15,
+                                        color: Colors.white,
+                                      ), // Icon
+                                      SizedBox(
+                                          width:
+                                              8), // Space between icon and text
+                                      Text(
+                                        'Upload Image',
+                                        style: TextStyle(
+                                            color: Colors.white, fontSize: 12),
+                                      ), // Text
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            )
+                          ],
                         ),
                         SizedBox(
                             height: context.screenHeight * 0.3,
@@ -193,7 +182,6 @@ class LocalsupplierDialog extends StatelessWidget {
                             child: Image.asset(
                                 '${ImagesAssets.imagePath}XMLID.png'))
                       ],
-
                     ),
                   ),
                   const Divider(),
@@ -214,15 +202,9 @@ class LocalsupplierDialog extends StatelessWidget {
                     height: context.screenHeight * 0.04,
                   ),
                   Row(
-                    //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Flexible(
-                        child: FittedBox(
-                          child: AddNewAgentTitlelAndDescription(
-                              text1: 'Bank Name',
-                              text2: 'Summit National Bank'),
-                        ),
-                      ),
+                      AddNewAgentTitlelAndDescription(
+                          text1: 'Bank Name', text2: 'Summit National Bank'),
                       SizedBox(
                         width: context.screenWidth * 0.01,
                       ),
@@ -235,13 +217,9 @@ class LocalsupplierDialog extends StatelessWidget {
                       SizedBox(
                         width: context.screenWidth * 0.01,
                       ),
-                      Flexible(
-                        child: FittedBox(
-                          child: AddNewAgentTitlelAndDescription(
-                              text1: 'Bank address',
-                              text2: 'Laxmisagar, BBSR, Bhubaneshwar-751006'),
-                        ),
-                      ),
+                      AddNewAgentTitlelAndDescription(
+                          text1: 'Bank address',
+                          text2: 'Laxmisagar, BBSR, Bhubaneshwar-751006'),
                     ],
                   ),
                   SizedBox(
@@ -437,8 +415,7 @@ class LocalsupplierDialog extends StatelessWidget {
                                   ),
                                 ),
                                 suffixIcon: DropdownButton<String>(
-                                  underline:
-                                      const SizedBox(), 
+                                  underline: const SizedBox(),
                                   icon: const Icon(Icons.arrow_drop_down,
                                       color: Color(0XFFD4D7E3)),
                                   items: <String>[
@@ -478,7 +455,9 @@ class LocalsupplierDialog extends StatelessWidget {
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(5))),
-                                onPressed: () {Navigator.pop(context);},
+                                onPressed: () {
+                                  Navigator.pop(context);
+                                },
                                 child: const Text(
                                   'Cancle',
                                   style: TextStyle(
@@ -521,8 +500,10 @@ class LocalsupplierDialog extends StatelessWidget {
               ),
             )
           ],
-///
-),),
+
+          ///
+        ),
+      ),
     );
   }
 }
