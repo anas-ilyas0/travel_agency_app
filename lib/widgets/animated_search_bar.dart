@@ -1,4 +1,5 @@
 import 'package:fab_tech_sol/consts/consts.dart';
+import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -8,6 +9,7 @@ class AnimatedSearchBar {
     return Consumer<UserProvider>(
       builder: (context, userProvider, child) {
         return _buildSearchBar(
+          context,
           userProvider.isFoldedAgentField,
           userProvider.toggleFoldAgentField,
         );
@@ -19,6 +21,7 @@ class AnimatedSearchBar {
     return Consumer<UserProvider>(
       builder: (context, userProvider, child) {
         return _buildSearchBar(
+          context,
           userProvider.isFoldedSupplierField,
           userProvider.toggleFoldSupplierField,
         );
@@ -30,6 +33,7 @@ class AnimatedSearchBar {
     return Consumer<UserProvider>(
       builder: (context, userProvider, child) {
         return _buildSearchBar(
+          context,
           userProvider.isFoldedPackageField,
           userProvider.toggleFoldPackageField,
         );
@@ -37,10 +41,10 @@ class AnimatedSearchBar {
     );
   }
 
-  Widget _buildSearchBar(bool isFolded, VoidCallback toggleFold) {
+  Widget _buildSearchBar(BuildContext context, bool isFolded, VoidCallback toggleFold) {
     return AnimatedContainer(
       duration: const Duration(milliseconds: 250),
-      width: isFolded ? 56 : 150,
+      width: isFolded ? 56 : context.screenWidth * 0.36,
       height: 30,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(32),

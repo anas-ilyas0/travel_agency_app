@@ -31,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
               vertical: Responsive.isMobile(context) ? 20 : 50),
           child: Center(
             child: SizedBox(
-              height: context.screenHeight * 0.9,
+           //   height: context.screenHeight * 0.9,
               width: Responsive.isDesktop(context)
                   ? context.screenWidth * 0.3
                   : Responsive.isTablet(context)
@@ -135,10 +135,8 @@ class _LoginPageState extends State<LoginPage> {
                             )),
                       ],
                     ),
-                    Flexible(
-                      child: SizedBox(
-                        height: context.screenHeight * 0.1,
-                      ),
+                    SizedBox(
+                      height: context.screenHeight * 0.1,
                     ),
                     Row(mainAxisAlignment: MainAxisAlignment.end, children: [
                       ElevatedButton(
