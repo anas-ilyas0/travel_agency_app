@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
         title: AppStrings.appName,
        // home: LeadDetails(),
        home: Responsive.isDesktop(context) || Responsive.isTablet(context)?  const LoginPage() : const MobileSignIn(),
-        routes: AppRoutes.getRoutes(),
+        routes: AppRoutes.getRoutes(),p
         );
   }
 }
