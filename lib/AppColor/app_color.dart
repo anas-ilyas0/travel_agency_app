@@ -22,4 +22,6 @@ class AppColor {
    static Color Indigo_Dye=const Color(0XFF303C6C);
      static Color Cultured=const Color(0XFFF3F6F9);
    static Color black=const Color(0XFF000000);
+   static Color paragraphColor=const Color(0XFF807E7E);
+
 }

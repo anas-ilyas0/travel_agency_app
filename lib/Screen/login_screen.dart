@@ -1,5 +1,6 @@
 import 'package:fab_tech_sol/AppColor/app_color.dart';
 import 'package:fab_tech_sol/Image.dart';
+import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/media_query_extension.dart';
 import 'package:fab_tech_sol/resources/capitalize_first_letter_formatter%20(1).dart';
 import 'package:fab_tech_sol/resources/navigation_util.dart';
@@ -26,9 +27,9 @@ class _LoginPageState extends State<LoginPage> {
           decoration: BoxDecoration(
               color: AppColor.background,
               borderRadius: BorderRadius.circular(40)),
-          margin: EdgeInsets.symmetric(
-              horizontal: Responsive.isMobile(context) ? 18 : 70,
-              vertical: Responsive.isMobile(context) ? 20 : 50),
+          margin: const EdgeInsets.symmetric(
+              horizontal:  70,
+              vertical:  50),
           child: Center(
             child: SizedBox(
            //   height: context.screenHeight * 0.9,
@@ -77,8 +78,9 @@ class _LoginPageState extends State<LoginPage> {
                     SizedBox(
                       height: context.screenHeight * 0.01,
                     ),
-                    const Text(
+                     const Text(
                       'In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without',
+                      style: TextStyle(color: Colors.grey),
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(
@@ -157,7 +159,10 @@ class _LoginPageState extends State<LoginPage> {
                                 fontWeight: FontWeight.w400,
                                 fontFamily: "Readex Pro"),
                           )),
-                    ])
+                    ]),
+                    SizedBox(
+                      height: context.screenHeight * 0.06,
+                    ),
                   ]),
             ),
           ),
