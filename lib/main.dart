@@ -1,3 +1,4 @@
+import 'package:fab_tech_sol/Screen/invoice_details_invoice.dart';
 import 'package:fab_tech_sol/Screen/lead_details.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/mobile/mobile_sign_in.dart';
@@ -30,8 +31,8 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeApp.myThemeData,
         title: AppStrings.appName,
-      
-        home: Responsive.isDesktop(context) || Responsive.isTablet(context)?  const LoginPage() : const MobileSignIn(),
+     // home: LeadInvoiceDetails(),
+       home: Responsive.isDesktop(context) || Responsive.isTablet(context)?  const LoginPage() : const MobileSignIn(),
         routes: AppRoutes.getRoutes(),
         );
   }

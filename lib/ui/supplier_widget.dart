@@ -114,31 +114,31 @@ class SupplierScreen extends StatelessWidget {
           )
               : const SizedBox.shrink(),
 
-         Flexible(
-            child: SizedBox(
-              width: double.infinity,
-              child: SingleChildScrollView(
-                child: PaginatedDataTable(
-                  rowsPerPage: 5,
-                  columns: HelperUtil.createColumns(columnNames: [
-                    "Company Name",
-                    "Supplier Name",
-                    "Supplier Address",
-                    "Service",
-                    "Company Address",
-                    "Status",
-                    "Action"
-                  ]),
-                  source: TaskDataSource(Widgets().tasks,context),
-            
-                  headingRowColor: WidgetStateProperty.resolveWith<Color>(
-                      (Set<WidgetState> states) {
-                    return Colors.white;
-                  }),
-                ),
-              ),
-            ),
-          )
+         SingleChildScrollView(
+           child: SizedBox(
+             width: double.infinity,
+             child: SingleChildScrollView(
+               child: PaginatedDataTable(
+                 rowsPerPage: 5,
+                 columns: HelperUtil.createColumns(columnNames: [
+                   "Company Name",
+                   "Supplier Name",
+                   "Supplier Address",
+                   "Service",
+                   "Company Address",
+                   "Status",
+                   "Action"
+                 ]),
+                 source: TaskDataSource(Widgets().tasks,context),
+           
+                 headingRowColor: WidgetStateProperty.resolveWith<Color>(
+                     (Set<WidgetState> states) {
+                   return Colors.white;
+                 }),
+               ),
+             ),
+           ),
+         )
         ],
       ),
           )

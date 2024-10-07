@@ -24,10 +24,10 @@ class AllLeads extends StatelessWidget {
     final isTablet = Responsive.isTablet(context);
 
     double horizontalPadding = isMobile
-        ? 20.0 // Mobile padding
+        ? 20.0 
         : isTablet
-            ? 40.0 // Tablet padding
-            : 75.0; // Desktop padding
+            ? 40.0 
+            : 75.0; 
 
     return Responsive.isDesktop(context) || Responsive.isTablet(context)
         ? Scaffold(
