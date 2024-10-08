@@ -106,9 +106,7 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
           padding: EdgeInsets.only(right: context.screenWidth * .01),
           child: Widgets().circularAvatar(text: 'Name here'),
         ),
-        // if (dashboardTabController.index == 0) ...[
-        //   if (Responsive.isMobile(context)) _buildMenuBar()
-        // ]
+       
       ],
     );
   }

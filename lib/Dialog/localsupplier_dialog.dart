@@ -3,6 +3,7 @@ import 'package:fab_tech_sol/Image.dart';
 import 'package:fab_tech_sol/consts/consts.dart';
 import 'package:fab_tech_sol/dimensions.dart';
 import 'package:fab_tech_sol/providers/provider.dart';
+import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:fab_tech_sol/widget/addnewagent.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -50,8 +51,12 @@ class LocalsupplierDialog extends StatelessWidget {
                         Row(
                           children: [
                             Container(
-                              height: context.screenHeight * 0.25,
-                              width: context.screenWidth * 0.12,
+                              height: Responsive.isDesktop(context)
+                                  ? context.screenHeight * 0.25
+                                  : context.screenHeight * 0.2,
+                              width: Responsive.isDesktop(context)
+                                  ? context.screenWidth * 0.12
+                                  : context.screenWidth * 0.18,
                               decoration: BoxDecoration(
                                   color: Colors.white,
                                   image: imageProvider.imageUrl != null
@@ -208,12 +213,8 @@ class LocalsupplierDialog extends StatelessWidget {
                       SizedBox(
                         width: context.screenWidth * 0.01,
                       ),
-                      Flexible(
-                        child: FittedBox(
-                          child: AddNewAgentTitlelAndDescription(
-                              text1: 'Bank Account', text2: 'Checking Account'),
-                        ),
-                      ),
+                      AddNewAgentTitlelAndDescription(
+                          text1: 'Bank Account', text2: 'Checking Account'),
                       SizedBox(
                         width: context.screenWidth * 0.01,
                       ),
@@ -245,23 +246,15 @@ class LocalsupplierDialog extends StatelessWidget {
                   Row(
                     //  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Flexible(
-                        child: FittedBox(
-                          child: AddNewAgentTitlelAndDescription(
-                              text1: 'Supplier Company Name',
-                              text2: 'John Doe'),
-                        ),
-                      ),
+                      AddNewAgentTitlelAndDescription(
+                          text1: 'Supplier Company Name',
+                          text2: 'John Doe'),
                       SizedBox(
                         width: context.screenWidth * 0.01,
                       ),
-                      Flexible(
-                        child: FittedBox(
-                          child: AddNewAgentTitlelAndDescription(
-                              text1: 'Supplier Company Address',
-                              text2: 'Laxmisagar, BBSR, Bhubaneshwar-751006'),
-                        ),
-                      ),
+                      AddNewAgentTitlelAndDescription(
+                          text1: 'Supplier Company Address',
+                          text2: 'Laxmisagar, BBSR, Bhubaneshwar-751006'),
                     ],
                   ),
                   SizedBox(
@@ -286,31 +279,19 @@ class LocalsupplierDialog extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Flexible(
-                        child: FittedBox(
-                          child: AddNewAgentTitlelAndDescription(
-                              text1: 'Supplier Name', text2: 'John Doe'),
-                        ),
-                      ),
+                      AddNewAgentTitlelAndDescription(
+                          text1: 'Supplier Name', text2: 'John Doe'),
                       SizedBox(
                         width: context.screenWidth * 0.01,
                       ),
-                      Flexible(
-                        child: FittedBox(
-                          child: AddNewAgentTitlelAndDescription(
-                              text1: 'Supplier Address',
-                              text2: 'Laxmisagar, BBSR, Bhubaneshwar-751006'),
-                        ),
-                      ),
+                      AddNewAgentTitlelAndDescription(
+                          text1: 'Supplier Address',
+                          text2: 'Laxmisagar, BBSR, Bhubaneshwar-751006'),
                       SizedBox(
                         width: context.screenWidth * 0.01,
                       ),
-                      Flexible(
-                        child: FittedBox(
-                          child: AddNewAgentTitlelAndDescription(
-                              text1: 'E-mail', text2: 'john.smith@gmail.com'),
-                        ),
-                      ),
+                      AddNewAgentTitlelAndDescription(
+                          text1: 'E-mail', text2: 'john.smith@gmail.com'),
                     ],
                   ),
                   const SizedBox(
@@ -318,30 +299,18 @@ class LocalsupplierDialog extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Flexible(
-                        child: FittedBox(
-                          child: AddNewAgentTitlelAndDescription(
-                              text1: 'Phone Number', text2: 'Demo123456'),
-                        ),
-                      ),
+                      AddNewAgentTitlelAndDescription(
+                          text1: 'Phone Number', text2: 'Demo123456'),
                       SizedBox(
                         width: context.screenWidth * 0.01,
                       ),
-                      Flexible(
-                        child: FittedBox(
-                          child: AddNewAgentTitlelAndDescription(
-                              text1: 'VAT Number', text2: 'GB123456789'),
-                        ),
-                      ),
+                      AddNewAgentTitlelAndDescription(
+                          text1: 'VAT Number', text2: 'GB123456789'),
                       SizedBox(
                         width: context.screenWidth * 0.01,
                       ),
-                      Flexible(
-                        child: FittedBox(
-                          child: AddNewAgentTitlelAndDescription(
-                              text1: 'BRN Number', text2: '123-456-789-001'),
-                        ),
-                      ),
+                      AddNewAgentTitlelAndDescription(
+                          text1: 'BRN Number', text2: '123-456-789-001'),
                     ],
                   ),
                   const Divider(),
@@ -370,14 +339,10 @@ class LocalsupplierDialog extends StatelessWidget {
                           children: [
                             const Align(
                               alignment: Alignment.centerLeft,
-                              child: Flexible(
-                                child: FittedBox(
-                                  child: Text(
-                                    'Select Service',
-                                    style: TextStyle(
-                                        fontSize: 16, fontFamily: 'ReadexPro'),
-                                  ),
-                                ),
+                              child: Text(
+                                'Select Service',
+                                style: TextStyle(
+                                    fontSize: 16, fontFamily: 'ReadexPro'),
                               ),
                             ),
                             TextField(
@@ -444,54 +409,46 @@ class LocalsupplierDialog extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Flexible(
-                        child: FittedBox(
-                          child: SizedBox(
-                            height: 45,
-                            width: 140,
-                            child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                    backgroundColor: const Color(0XFFD5D5D5),
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(5))),
-                                onPressed: () {
-                                  Navigator.pop(context);
-                                },
-                                child: const Text(
-                                  'Cancle',
-                                  style: TextStyle(
-                                      fontSize: 18,
-                                      fontFamily: 'ReadexPro',
-                                      color: Colors.black),
-                                )),
-                          ),
-                        ),
+                      SizedBox(
+                        height: 45,
+                        width: 140,
+                        child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                backgroundColor: const Color(0XFFD5D5D5),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                        BorderRadius.circular(5))),
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
+                            child: const Text(
+                              'Cancle',
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontFamily: 'ReadexPro',
+                                  color: Colors.black),
+                            )),
                       ),
                       SizedBox(
                         width: context.screenWidth * 0.02,
                       ),
-                      Flexible(
-                        child: FittedBox(
-                          child: SizedBox(
-                            height: 45,
-                            width: 140,
-                            child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                    backgroundColor: const Color(0XFF83D0E3),
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(5))),
-                                onPressed: () {},
-                                child: const Text(
-                                  'Save',
-                                  style: TextStyle(
-                                      fontSize: 18,
-                                      fontFamily: 'ReadexPro',
-                                      color: Colors.black),
-                                )),
-                          ),
-                        ),
+                      SizedBox(
+                        height: 45,
+                        width: 140,
+                        child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                backgroundColor: const Color(0XFF83D0E3),
+                                shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                        BorderRadius.circular(5))),
+                            onPressed: () {},
+                            child: const Text(
+                              'Save',
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontFamily: 'ReadexPro',
+                                  color: Colors.black),
+                            )),
                       ),
                       SizedBox(height: context.screenHeight * 0.2)
                     ],

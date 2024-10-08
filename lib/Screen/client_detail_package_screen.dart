@@ -427,42 +427,50 @@ class ClientDetailPackage extends StatelessWidget {
                               SizedBox(
                                 height: context.screenHeight * 0.03,
                               ),
-                              Row(
-                                children: [
-                                  Text('Destination:',
-                                      style: AppTextstyless
-                                          .packageClientDetailTextStyle),
-                                  SizedBox(
-                                    width: context.screenWidth * 0.052,
-                                  ),
-                                  Text('Sialkot Punjab 51040',
-                                      style: AppTextstyless
-                                          .packageClientDetailTextStyleSubTitle),
-                                  SizedBox(
-                                    width: context.screenWidth * 0.0355,
-                                  ),
-                                  Text('Booking Date:',
-                                      style: AppTextstyless
-                                          .packageClientDetailTextStyle),
-                                  SizedBox(
-                                    width: context.screenWidth * 0.02,
-                                  ),
-                                  Text('08/15/2024',
-                                      style: AppTextstyless
-                                          .packageClientDetailTextStyleSubTitle),
-                                  SizedBox(
-                                    width: context.screenWidth * 0.05,
-                                  ),
-                                  Text('Travel Date:',
-                                      style: AppTextstyless
-                                          .packageClientDetailTextStyle),
-                                  SizedBox(
-                                    width: context.screenWidth * 0.05,
-                                  ),
-                                  Text('08/18/2024',
-                                      style: AppTextstyless
-                                          .packageClientDetailTextStyleSubTitle),
-                                ],
+                              Align(
+                                alignment: Alignment.centerLeft,
+                                child: Wrap(
+                                  children: [
+                                    Text('Destination:',
+                                        style: AppTextstyless
+                                            .packageClientDetailTextStyle),
+                                    SizedBox(
+                                      width: context.screenWidth * 0.052,
+                                    ),
+                                    Text('Sialkot Punjab 51040',
+                                        style: AppTextstyless
+                                            .packageClientDetailTextStyleSubTitle),
+                                    SizedBox(
+                                      width: context.screenWidth * 0.0355,
+                                    ),
+                                    Text('Booking Date:',
+                                        style: AppTextstyless
+                                            .packageClientDetailTextStyle),
+                                    SizedBox(
+                                      width: context.screenWidth * 0.02,
+                                    ),
+                                    Text('08/15/2024',
+                                        style: AppTextstyless
+                                            .packageClientDetailTextStyleSubTitle),
+                                    SizedBox(
+                                      width: context.screenWidth * 0.05,
+                                    ),
+                                    Wrap(
+                                      children: [
+                                        Text('Travel Date:',
+                                            style: AppTextstyless
+                                                .packageClientDetailTextStyle),
+                                                 SizedBox(
+                                      width: context.screenWidth * 0.05,
+                                    ),
+                                    Text('08/18/2024',
+                                        style: AppTextstyless
+                                            .packageClientDetailTextStyleSubTitle),
+                                      ],
+                                    ),
+                                   
+                                  ],
+                                ),
                               ),
                               SizedBox(
                                 height: context.screenHeight * 0.02,
@@ -485,48 +493,56 @@ class ClientDetailPackage extends StatelessWidget {
                               SizedBox(
                                 height: context.screenHeight * 0.03,
                               ),
-                              Row(
-                                children: [
-                                  Text(
-                                    'Package Amount:',
-                                    style: AppTextstyless
-                                        .packageClientDetailTextStyle,
-                                  ),
-                                  SizedBox(width: context.screenWidth*0.022,),
-                                  Text(
-                                    "\$232,89.00",
-                                    style: AppTextstyless
-                                        .packageClientDetailTextStyleSubTitle,
-                                  ),
-                                  SizedBox(width: context.screenWidth*0.09,),
-                                  Text(
-                                    'Paid Amount:',
-                                    style: AppTextstyless
-                                        .packageClientDetailTextStyle,
-                                    // overflow: TextOverflow.ellipsis,
-                                  ),
-                                  SizedBox(width: context.screenWidth * 0.02),
-                                  Text(
-                                    '232,89.00',
-                                    style: AppTextstyless
-                                        .packageClientDetailTextStyleSubTitle,
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                  SizedBox(width: context.screenWidth * 0.065),
-                                  Text(
-                                    'Outstanding Amount:',
-                                    style: AppTextstyless
-                                        .packageClientDetailTextStyle,
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                  SizedBox(width: context.screenWidth * 0.015),
-                                  Text(
-                                    '\$232,89.00',
-                                    style: AppTextstyless
-                                        .packageClientDetailTextStyleSubTitle,
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                ],
+                              Align(
+                                alignment: Alignment.centerLeft,
+                                child: Wrap(
+                                  children: [
+                                    Text(
+                                      'Package Amount:',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyle,
+                                    ),
+                                    SizedBox(width: context.screenWidth*0.022,),
+                                    Text(
+                                      "\$232,89.00",
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyleSubTitle,
+                                    ),
+                                    SizedBox(width: context.screenWidth*0.09,),
+                                    Text(
+                                      'Paid Amount:',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyle,
+                                      // overflow: TextOverflow.ellipsis,
+                                    ),
+                                    SizedBox(width: context.screenWidth * 0.02),
+                                    Text(
+                                      '232,89.00',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyleSubTitle,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                    SizedBox(width: context.screenWidth * 0.065),
+                                    Wrap(
+                                      children: [
+                                        Text(
+                                          'Outstanding Amount:',
+                                          style: AppTextstyless
+                                              .packageClientDetailTextStyle,
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                         SizedBox(width: context.screenWidth * 0.015),
+                                    Text(
+                                      '\$232,89.00',
+                                      style: AppTextstyless
+                                          .packageClientDetailTextStyleSubTitle,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                      ],
+                                    ),
+                                   
+                                  ],
+                                ),
                               ),
                               SizedBox(
                                 height: context.screenHeight * 0.02,

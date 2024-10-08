@@ -96,15 +96,17 @@ class AgentScreen extends StatelessWidget {
                           }, context),
 
                           const SizedBox(width: 15),
-                          Widgets().button(
-                            'Add New Agent',
-                            () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const AddNewAgent(),
-                                  ));
-                            },
+                          Flexible(
+                            child: Widgets().button(
+                              'Add New Agent',
+                              () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const AddNewAgent(),
+                                    ));
+                              },
+                            ),
                           )
                         ],
                       ),
