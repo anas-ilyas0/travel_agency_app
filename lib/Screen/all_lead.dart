@@ -195,14 +195,12 @@ class AllLeads extends StatelessWidget {
                                         const SizedBox(
                                           height: 10,
                                         ),
-                                        Expanded(
-                                          child: Center(
-                                            child: Image.asset(
-                                              "${ImagesAssets.imagePath}allleadimagecontainer.png",
-                                              width: 140,
-                                              height: 140,
-                                              fit: BoxFit.contain,
-                                            ),
+                                        Center(
+                                          child: Image.asset(
+                                            "${ImagesAssets.imagePath}allleadimagecontainer.png",
+                                            width: 140,
+                                            height: 140,
+                                            fit: BoxFit.contain,
                                           ),
                                         ),
                                         const SizedBox(
@@ -273,7 +271,7 @@ class AllLeads extends StatelessWidget {
                       ),
                     ),
                     const Center(child: Text('Pending')),
-                    const Center(child: Text('Canceled')),
+                    // const Center(child: Text('Canceled')),
                   ]),
                 ),
               ],

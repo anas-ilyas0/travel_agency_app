@@ -12,6 +12,7 @@ import 'package:fab_tech_sol/ui/dashboard_widget.dart';
 import 'package:fab_tech_sol/ui/supplier_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
 import '../Screen/all_lead.dart';
 
 class Dashboard extends StatefulWidget {
@@ -63,10 +64,10 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
     final provider = Provider.of<UserProvider>(context);
 
     return Responsive.isMobile(context)?  const HomeScreenMobile():Scaffold(
-      appBar: CustomHeader(dashboardTabController: dashboardTabController!),
+   appBar: CustomHeader(dashboardTabController: dashboardTabController!),
 
       drawer:Responsive.isDesktop(context)?null: MobileCustomAppBar().mobileCustomAppBar("Dashboard", context),
-      
+      // drawer:Responsive.isDesktop(context)?null: DashboardDrawer(tabController: dashboardTabController!),
       body: Column(
         children: [
           Divider(
@@ -74,15 +75,14 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
             color: Colors.grey.withOpacity(0.2),
           ),
           Expanded(
+            flex: 1,
             child: TabBarView(
-              
               controller: dashboardTabController,
               physics: const NeverScrollableScrollPhysics(),
               children: [
                 const DashBoardScreen(),
                 AllLeads(tabController: leadsTabController!),
                 const AgentScreen(),
-                
                 const CustomerScreen(),
                 provider.selectedOptions == "Local"
                     ? const SupplierScreen()
@@ -96,4 +96,3 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
     );
   }
 }
-
