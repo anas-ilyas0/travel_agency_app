@@ -70,13 +70,14 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
                  Navigator.pop(context);
                 },
                 style: ElevatedButton.styleFrom(
+                  
                     shape: const CircleBorder(), // Makes the button circular
                     padding: const EdgeInsets.all(
-                        16), // Adds padding inside the button
+                        10), // Adds padding inside the button
                     // primary: Colors.blue,  // Background color
                     backgroundColor: Colors.white),
                 child:
-                    const Icon(Icons.arrow_back, size: 24, color: Colors.black),
+                    const Icon(Icons.arrow_back, size: 18, color: Colors.black),
               ),
               const Text(
                 'Invoice Details',
@@ -94,49 +95,55 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
           ),
           Row(
             children: [
-              SizedBox(width: context.screenWidth * 0.05),
+              SizedBox(width:Responsive.isDesktop(context)? context.screenWidth * 0.05:context.screenWidth* 0.08),
               Flexible(
-                flex: 8,
+                flex: 9,
                 child: Text(
                   'Briton Consultancy & Travel Tours',
                   style: TextStyle(
-                      fontSize: 28,
+                      fontSize: Responsive.isDesktop(context)?28:18,
                       color: const Color(0XFF11345A),
                       fontFamily: fontFamilys,
-                      fontWeight: FontWeight.w500),
+                      fontWeight:Responsive.isDesktop(context) ?FontWeight.w500:FontWeight.w500),
                 ),
               ),
               SizedBox(width: context.screenWidth * 0.09),
               SizedBox(
-                height: context.screenHeight * 0.08,
-                width: context.screenWidth * 0.1,
+                height:Responsive.isDesktop(context)? context.screenHeight * 0.08:context.screenHeight*0.07,
+                width:Responsive.isDesktop(context)?  context.screenWidth * 0.1:context.screenWidth*0.08,
                 child: Image.asset("${ImagesAssets.imagePath}BRITON.png"),
               ),
               SizedBox(
-                width: context.screenWidth * 0.15,
+                width: context.screenWidth * 0.09,
               ),
-              const Flexible(
-                flex: 2,
+               Flexible(
+                flex: 3,
                 child: Text(
                   'Invoice Number:',
+                  overflow: TextOverflow.ellipsis,
                   style: TextStyle(
-                      fontWeight: FontWeight.bold, color: Color(0XFF83D0E3)),
+                    fontFamily: fontFamilys,
+                    fontSize: Responsive.isDesktop(context)?18:12,
+                      fontWeight:Responsive.isDesktop(context)? FontWeight.w400:FontWeight.w400, color: Color(0XFF83D0E3)),
                 ),
               ),
               SizedBox(width: context.screenWidth * 0.02),
-              const Flexible(
+               Flexible(
                 flex: 2,
                 child: Text(
-                  'In834892234',
+                  '4043',
+                  
                   style: TextStyle(
-                      color: Color(0XFF11345A), fontWeight: FontWeight.bold),
+                    fontFamily: fontFamilys,
+                  fontSize:Responsive.isDesktop(context)?18:16,
+                      color: Color(0XFF11345A), fontWeight: FontWeight.w400),
                 ),
               ),
             ],
           ),
 
           SizedBox(
-            height: context.screenHeight * 0.02,
+            height:Responsive.isDesktop(context)? context.screenHeight * 0.02:context.screenHeight * 0.01,
           ),
           Padding(
             padding: const EdgeInsets.only(left: 70), // Adds padding around the text
@@ -147,7 +154,7 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
                       fontFamily: fontFamilys,
                       fontWeight: FontWeight.w400,
                       color: const Color(0XFF83D0E3),
-                      fontSize: 16)),
+                      fontSize:Responsive.isDesktop(context)? 16:13)),
             ),
           ),
           //  Text('Royal Road, Phoenix 00213 | Mauritius',style: TextStyle(fontWeight: FontWeight.bold,color: Color(0XFF83D0E3))),
@@ -163,7 +170,7 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
                       fontFamily: fontFamilys,
                       fontWeight: FontWeight.w400,
                       color: const Color(0XFF83D0E3),
-                      fontSize: 16)),
+                      fontSize: Responsive.isDesktop(context)?16:12)),
             ),
           ),
           SizedBox(
@@ -176,10 +183,10 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
 
           Row(
             children: [
-              // "Bill To" text with padding
+              
               Padding(
                 padding:
-                    const EdgeInsets.only(left: 70), // Adds padding around the text
+                    const EdgeInsets.only(left: 70), 
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
@@ -188,25 +195,26 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
                       fontFamily: fontFamilys,
                       fontWeight: FontWeight.w400,
                       color: const Color(0XFF83D0E3),
-                      fontSize: 16,
+                      fontSize:Responsive.isDesktop(context)? 16:13,
                     ),
                   ),
                 ),
               ),
 
-              // SizedBox for spacing between "Bill To" and Name
+           
               SizedBox(
-                width: context.screenWidth * 0.05,
+                width:10,
               ),
 
-              // Name Text: 'Beeharree Praina' with Expanded for responsiveness
-              const Expanded(
+            
+               Expanded(
+                flex: 2,
                 child: Text(
                   'Beeharree Praina',
                   style: TextStyle(
                     fontFamily: 'ReadexPro',
                     fontWeight: FontWeight.w500,
-                    fontSize: 16,
+                    fontSize: Responsive.isDesktop(context)? 16:13,
                     color: Color(0XFF11345A),
                   ),
                   overflow: TextOverflow.ellipsis, // Prevent overflow
@@ -215,16 +223,18 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
 
              
               SizedBox(
-                width: context.screenWidth * 0.49,
+                width: Responsive.isDesktop(context)? context.screenWidth *0.01 : context.screenWidth*  0.005,
               ),
 
              
-              const Flexible(
-                flex: 1,
+               Flexible(
+                flex: 2,
                 child: Text(
                   'Invoice Number:',
                   style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                    fontFamily: fontFamilys,
+                    fontWeight: FontWeight.w400,
+                    fontSize:Responsive.isDesktop(context)?16:13,
                     color: Color(0XFF83D0E3),
                   ),
                 ),
@@ -235,15 +245,50 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
                 width: context.screenWidth * 0.02,
               ),
 
-              const Flexible(
+               Flexible(
                 flex: 1,
                 child: Text(
                   '08/15/2024',
                   style: TextStyle(
+                    fontFamily: fontFamilys,
+                    fontSize: Responsive.isDesktop(context)?16:13,
                     color: Color(0XFF11345A),
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight.w400,
                   ),
-                  overflow: TextOverflow.ellipsis, // Prevent overflow
+                //  overflow: TextOverflow.ellipsis, // Prevent overflow
+                ),
+              ),
+              SizedBox(width: context.screenWidth*0.02,),
+               
+               Flexible(
+                flex: 2,
+                child: Text(
+                  'Invoice Number:',
+                  style: TextStyle(
+                    fontSize: Responsive.isDesktop(context)? 16:13,
+                    fontFamily:fontFamilys ,
+                    fontWeight: FontWeight.w400,
+                    color: Color(0XFF83D0E3),
+                  ),
+                ),
+              ),
+
+             
+              SizedBox(
+                width: context.screenWidth * 0.02,
+              ),
+
+              Flexible(
+                flex: 1,
+                child: Text(
+                  '08/15/2024',
+                  style: TextStyle(
+                    fontFamily:fontFamilys ,
+                    fontSize:Responsive.isDesktop(context)? 16:13,
+                    color: Color(0XFF11345A),
+                    fontWeight: FontWeight.w400,
+                  ),
+                 // overflow: TextOverflow.ellipsis, // Prevent overflow
                 ),
               ),
             ],
@@ -254,8 +299,8 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
             endIndent: 70,
           ),
           Container(
-            height: context.screenHeight * 0.08,
-            width: context.screenWidth * 0.9,
+            height:Responsive.isDesktop(context) ?context.screenHeight * 0.08:context.screenHeight*0.06,
+            width: Responsive.isDesktop(context) ?context.screenWidth * 0.9:context.screenWidth*0.85,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(10),
@@ -316,7 +361,7 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Container(
-                    width: context.screenWidth * 0.18,
+                    width: Responsive.isDesktop(context) ?context.screenWidth * 0.18:context.screenWidth*0.2,
                     color: Colors.white,
                     child: Column(
                       children: [
@@ -369,7 +414,7 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: Container(
-                    width: context.screenWidth * 0.18,
+                    width: Responsive.isDesktop(context) ?context.screenWidth * 0.18:context.screenWidth*0.2,
                     color: Colors.white,
                     child: Column(
                       children: [
@@ -377,34 +422,34 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
                           Text1: "ABCD",
                           Text2: "1",
                         ),
-                        const Divider(
-                          color: Colors.grey,
-                          thickness: .5,
-                        ),
+                        Divider(
+                            color: Colors.grey,
+                            thickness:Responsive.isDesktop(context)? 0.5:1,
+                          ),
                         InvoiceDetailPriceTable(
                           Text1: "ABCD",
                           Text2: "",
                         ),
-                        const Divider(
-                          color: Colors.grey,
-                          thickness: .5,
-                        ),
+                        Divider(
+                            color: Colors.grey,
+                            thickness:Responsive.isDesktop(context)? 0.5:1,
+                          ),
                         InvoiceDetailPriceTable(
                           Text1: "ABCD",
                           Text2: "",
                         ),
-                        const Divider(
-                          color: Colors.grey,
-                          thickness: .5,
-                        ),
+                        Divider(
+                            color: Colors.grey,
+                            thickness:Responsive.isDesktop(context)? 0.5:1,
+                          ),
                         InvoiceDetailPriceTable(
                           Text1: "ABCD",
                           Text2: "",
                         ),
-                        const Divider(
-                          color: Colors.grey,
-                          thickness: .5,
-                        ),
+                        Divider(
+                            color: Colors.grey,
+                            thickness:Responsive.isDesktop(context)? 0.5:1,
+                          ),
                         InvoiceDetailPriceTable(
                           Text1: "ABCD",
                           Text2: "",
@@ -414,16 +459,14 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
                   ),
                 ),
               ),
-              SizedBox(
-                width: context.screenWidth * 0.012,
-              ),
+             
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 70),
+                  padding: const EdgeInsets.only(left: 55),
                   child: Align(
                     alignment: Alignment.centerLeft,
                     child: Container(
-                      width: context.screenWidth * 0.18,
+                      width: Responsive.isDesktop(context) ?context.screenWidth * 0.18:context.screenWidth*0.2,
                       color: Colors.white,
                       child: Column(
                         children: [
@@ -431,33 +474,33 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
                             Text1: "",
                             Text2: "1",
                           ),
-                          const Divider(
+                           Divider(
                             color: Colors.grey,
-                            thickness: .5,
+                            thickness:Responsive.isDesktop(context)? 0.5:1,
                           ),
                           InvoiceDetailPriceTable(
                             Text1: "",
                             Text2: "",
                           ),
-                          const Divider(
+                          Divider(
                             color: Colors.grey,
-                            thickness: .5,
+                            thickness:Responsive.isDesktop(context)? 0.5:1,
                           ),
                           InvoiceDetailPriceTable(
                             Text1: "",
                             Text2: "",
                           ),
-                          const Divider(
+                          Divider(
                             color: Colors.grey,
-                            thickness: .5,
+                            thickness:Responsive.isDesktop(context)? 0.5:1,
                           ),
                           InvoiceDetailPriceTable(
                             Text1: "",
                             Text2: "",
                           ),
-                          const Divider(
+                          Divider(
                             color: Colors.grey,
-                            thickness: .5,
+                            thickness:Responsive.isDesktop(context)? 0.5:1,
                           ),
                           InvoiceDetailPriceTable(
                             Text1: "",
@@ -680,7 +723,7 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
                           child: Text(
                             'For our full terms and conditions, please',
                             style: TextStyle(
-                                fontSize: 18,
+                                fontSize: Responsive.isDesktop(context)? 18:14,
                                 fontFamily: fontFamilys,
                                 fontWeight: FontWeight.w400,
                                 color: const Color(0XFF303C6C)),
@@ -712,7 +755,7 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
                           Text(
                             'Visit Our Website:',
                             style: TextStyle(
-                                fontSize: 18,
+                                fontSize:Responsive.isDesktop(context)? 18:14 ,
                                 fontFamily: fontFamilys,
                                 fontWeight: FontWeight.w400,
                                 color: const Color(0XFF11345A)),
@@ -735,13 +778,13 @@ class _LeadInvoiceDetailsState extends State<LeadInvoiceDetails>
                     SizedBox(
                       width: context.screenWidth * 0.015,
                     ),
-                    const Expanded(
+                     Expanded(
                         child: Align(
                             alignment: Alignment.centerLeft,
                             child: Text(
                               'Briton Consultancy & Travel Tours 000 44 25 29 104',
                               style: TextStyle(
-                                  fontSize: 18,
+                                  fontSize:Responsive.isDesktop(context)? 18:14,
                                   fontWeight: FontWeight.w500,
                                   color: Color(0XFF11345A)),
                             ))),

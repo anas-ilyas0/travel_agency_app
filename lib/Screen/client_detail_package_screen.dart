@@ -492,11 +492,13 @@ class ClientDetailPackage extends StatelessWidget {
                                     style: AppTextstyless
                                         .packageClientDetailTextStyle,
                                   ),
+                                  SizedBox(width: context.screenWidth*0.022,),
                                   Text(
                                     "\$232,89.00",
                                     style: AppTextstyless
                                         .packageClientDetailTextStyleSubTitle,
                                   ),
+                                  SizedBox(width: context.screenWidth*0.09,),
                                   Text(
                                     'Paid Amount:',
                                     style: AppTextstyless
