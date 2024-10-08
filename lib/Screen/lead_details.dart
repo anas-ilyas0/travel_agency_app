@@ -32,11 +32,11 @@ class LeadDetails extends StatelessWidget {
                     },
                     style: ElevatedButton.styleFrom(
                       shape: const CircleBorder(),
-                      padding: const EdgeInsets.all(16),
+                      padding: const EdgeInsets.all(12),
                       backgroundColor: Colors.white,
                     ),
                     child: const Icon(Icons.arrow_back,
-                        size: 24, color: Colors.black),
+                        size: 20, color: Colors.black),
                   ),
 
                   Text(
@@ -58,8 +58,8 @@ class LeadDetails extends StatelessWidget {
                             ));
                       },
                       child: Container(
-                          width: context.screenWidth * 0.13,
-                          height: context.screenHeight * 0.08,
+                          width:Responsive.isDesktop(context)? context.screenWidth * 0.13: context.screenWidth * 0.13,
+                          height:Responsive.isDesktop(context) ?context.screenHeight * 0.08:context.screenHeight * 0.05,
                           decoration: BoxDecoration(
                             color: const Color(0XFF333333),
                             borderRadius: BorderRadius.circular(10),
@@ -71,7 +71,7 @@ class LeadDetails extends StatelessWidget {
                                 fontWeight: FontWeight.w400,
                                 fontFamily: fontFamilys,
                                 color: Colors.white,
-                                fontSize: 16,
+                                fontSize:Responsive.isDesktop(context)? 16:13,
                               ),
                               overflow: TextOverflow.ellipsis,
                             ),

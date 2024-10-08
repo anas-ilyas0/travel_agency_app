@@ -27,7 +27,7 @@ class PackageDetails2 extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(
-                    height: context.screenHeight * 0.01,
+                    height: context.screenHeight * 0.05,
                   ),
                   Row(
                     children: [
@@ -63,7 +63,7 @@ class PackageDetails2 extends StatelessWidget {
                       child: Row(
                         children: [
                           Text(
-                            'price',
+                            'Price',
                             style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w400,
@@ -83,7 +83,7 @@ class PackageDetails2 extends StatelessWidget {
                             width: context.screenWidth * 0.097,
                           ),
                           Text(
-                            'price',
+                            'Price',
                             style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w400,
@@ -144,7 +144,7 @@ class PackageDetails2 extends StatelessWidget {
                                         side: BorderSide(
                                           color: AppColor
                                               .buttonTextColors, // Define the border color
-                                          width: 1.0,
+                                          width: 0.2,
                                         ),
                                         materialTapTargetSize:
                                             MaterialTapTargetSize
@@ -155,29 +155,32 @@ class PackageDetails2 extends StatelessWidget {
                                           userProvider.toggleCheckbox();
                                         },
                                       ),
-                                      Container(
-                                        width: context.screenWidth * 0.45,
-                                        height: 50,
-                                        decoration: BoxDecoration(
-                                          color: AppColor.ghostWhite,
-                                          border: Border.all(
-                                              color: AppColor.borderColor3),
-                                          borderRadius:
-                                              BorderRadius.circular(8),
-                                        ),
-                                        child: Padding(
-                                          padding: const EdgeInsets.only(
-                                              left: 7, top: 12),
-                                          child: Text(
-                                            'Laxmisagar, BBSR, Bhubaneshwar-751006',
-                                            style: TextStyle(
-                                                fontFamily: fontFamilys,
-                                                fontWeight: FontWeight.w300,
-                                                color: AppColor.hintColor,
-                                                fontSize: 14),
+                                      Expanded(
+                                        child: Container(
+                                          width: context.screenWidth * 0.51,
+                                          height: 50,
+                                          decoration: BoxDecoration(
+                                            color: AppColor.ghostWhite,
+                                            border: Border.all(
+                                                color: AppColor.borderColor3),
+                                            borderRadius:
+                                                BorderRadius.circular(8),
+                                          ),
+                                          child: Padding(
+                                            padding: const EdgeInsets.only(
+                                                left: 7, top: 12),
+                                            child: Text(
+                                              'Laxmisagar, BBSR, Bhubaneshwar-751006',
+                                              style: TextStyle(
+                                                  fontFamily: fontFamilys,
+                                                  fontWeight: FontWeight.w300,
+                                                  color: AppColor.hintColor,
+                                                  fontSize: 14),
+                                            ),
                                           ),
                                         ),
                                       ),
+                                      SizedBox(width: 10,),
                                       GestureDetector(
                                           child: Padding(
                                               padding:
@@ -249,29 +252,32 @@ class PackageDetails2 extends StatelessWidget {
                                       userProvider.toggleCheckbox();
                                     },
                                   ),
-                                  Container(
-                                    width: context.screenWidth * 0.45,
-                                    height: 50,
-                                    decoration: BoxDecoration(
-                                      color: AppColor.ghostWhite,
-                                      border: Border.all(
-                                          color: AppColor.borderColor3),
-                                      borderRadius:
-                                          BorderRadius.circular(8),
-                                    ),
-                                    child: Padding(
-                                      padding: const EdgeInsets.only(
-                                          left: 7, top: 12),
-                                      child: Text(
-                                        'Laxmisagar, BBSR, Bhubaneshwar-751006',
-                                        style: TextStyle(
-                                            fontFamily: fontFamilys,
-                                            fontWeight: FontWeight.w300,
-                                            color: AppColor.hintColor,
-                                            fontSize: 14),
+                                  Expanded(
+                                    child: Container(
+                                      width: context.screenWidth * 0.51,
+                                      height: 50,
+                                      decoration: BoxDecoration(
+                                        color: AppColor.ghostWhite,
+                                        border: Border.all(
+                                            color: AppColor.borderColor3),
+                                        borderRadius:
+                                            BorderRadius.circular(8),
+                                      ),
+                                      child: Padding(
+                                        padding: const EdgeInsets.only(
+                                            left: 7, top: 12),
+                                        child: Text(
+                                          'Laxmisagar, BBSR, Bhubaneshwar-751006',
+                                          style: TextStyle(
+                                              fontFamily: fontFamilys,
+                                              fontWeight: FontWeight.w300,
+                                              color: AppColor.hintColor,
+                                              fontSize: 14),
+                                        ),
                                       ),
                                     ),
                                   ),
+                                  SizedBox(width:10 ,),
                                   GestureDetector(
                                       child: Padding(
                                           padding:

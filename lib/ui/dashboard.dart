@@ -12,7 +12,6 @@ import 'package:fab_tech_sol/ui/dashboard_widget.dart';
 import 'package:fab_tech_sol/ui/supplier_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../Screen/all_lead.dart';
 
 class Dashboard extends StatefulWidget {
@@ -67,7 +66,7 @@ class _DashboardState extends State<Dashboard> with TickerProviderStateMixin {
       appBar: CustomHeader(dashboardTabController: dashboardTabController!),
 
       drawer:Responsive.isDesktop(context)?null: MobileCustomAppBar().mobileCustomAppBar("Dashboard", context),
-      // drawer:Responsive.isDesktop(context)?null: DashboardDrawer(tabController: dashboardTabController!),
+      
       body: Column(
         children: [
           Divider(
