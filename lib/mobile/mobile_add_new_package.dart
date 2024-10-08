@@ -106,7 +106,7 @@ class MobileAddNewPackage extends StatelessWidget {
                             color: mobileLeadText2Color),
                       ),
                     ),
-                    Fields().authField(context, 'Client name'),
+                    Fields().authField(context, 'Client Name'),
                     const SizedBox(height: 10),
                     Fields().authField(context, 'Phone Number',
                         textInputType: TextInputType.phone),

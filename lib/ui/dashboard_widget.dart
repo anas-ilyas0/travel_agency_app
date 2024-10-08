@@ -7,24 +7,16 @@ import 'package:fab_tech_sol/resources/responsive.dart';
 import 'package:fab_tech_sol/widget/widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../widget/dashboard_filter.dart';
 
 class DashBoardScreen extends StatelessWidget {
   const DashBoardScreen({super.key});
-
-
   @override
   Widget build(BuildContext context) {
      final providerValue = Provider.of<UserProvider>(context);
     return  Scaffold(
       body:  Padding(
-      
-
-
-    
       padding:  EdgeInsets.symmetric(horizontal: Responsive.isDesktop(context)? 60:30,vertical: 30),
-
       child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -121,5 +113,4 @@ class DashBoardScreen extends StatelessWidget {
       ),
      ));
   }
-
   }

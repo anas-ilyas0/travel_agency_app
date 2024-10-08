@@ -3,7 +3,6 @@ import 'package:fab_tech_sol/providers/provider.dart';
 import 'package:fab_tech_sol/widget/widget.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import '../AppColor/app_color.dart';
 import '../consts/consts.dart';
 import '../resources/responsive.dart';
@@ -106,7 +105,9 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
           padding: EdgeInsets.only(right: context.screenWidth * .01),
           child: Widgets().circularAvatar(text: 'Name here'),
         ),
-       
+        // if (dashboardTabController.index == 0) ...[
+        //   if (Responsive.isMobile(context)) _buildMenuBar()
+        // ]
       ],
     );
   }
