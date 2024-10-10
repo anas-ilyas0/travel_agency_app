@@ -37,11 +37,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeApp.myThemeData,
       title: AppStrings.appName,
-      home: LoginPage(),
-      // home: Responsive.isDesktop(context) || Responsive.isTablet(context)
-      //    ? const LoginPage()
-      //    : const MobileSignIn(),
-      // routes: AppRoutes.getRoutes(),
+  
+      home: Responsive.isDesktop(context) || Responsive.isTablet(context)
+         ? const LoginPage()
+         : const MobileSignIn(),
+      routes: AppRoutes.getRoutes(),
     );
       
   }
