@@ -130,135 +130,133 @@ class LocalSupplierDetail extends StatelessWidget {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Expanded(
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                left: 32,
-                              ),
-                              child: Container(
-                                height: context.screenHeight * 0.15,
-                                width: context.screenWidth * 0.3,
-                                decoration: BoxDecoration(
-                                  color: Colors
-                                      .white, // Optional: Set the background color
-                                  border: Border.all(
-                                    color:
-                                        const Color(0xff3551b64d), // Border color
-                                    width: 1.0, // Border thickness
-                                  ),
-                                  borderRadius: BorderRadius.circular(
-                                      16), // Optional: Rounded corners
-                                ),
-                                child:Row(
-                  children: [
-                    const Padding(
-                      padding: EdgeInsets.only(left: 16),
-                      child: Stack(
+                      child: Row(
                         children: [
-                          CircleAvatar(
-                            radius: 30, // Adjust the radius for size
-                            backgroundImage: AssetImage('${ImagesAssets.imagePath}Ellipse.png'), // Image from assets
-                          ),
-                          Positioned(
-                            right: 4,
-                            bottom: -2,
-                            child: Icon(
-                Icons.circle,
-                color: Colors.green,
-                size: 18,
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              left: 32,
                             ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 16, // Fixed space between avatar and text
-                    ),
-                    Flexible(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          FittedBox(
-                            child: Text(
-                'Supplier Full Name here',
-                style: TextStyle(
-                  fontWeight: FontWeight.w500,
-                  fontFamily: fontFamilys,
-                  color: AppColor.Indigo_Dye,
-                  fontSize: 18,
-                ),
-                overflow: TextOverflow.ellipsis, // Prevent overflow
-                softWrap: false,
-                            ),
-                          ),
-                          const FittedBox(
-                            child: Text(
-                'Local Supplier',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-                overflow: TextOverflow.ellipsis, // Prevent overflow
-                softWrap: false,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                )
-                
-                              ),
-                            ),
-                            SizedBox(
-                              width: context.screenWidth * 0.02,
-                            ),
-                            Container(
+                            child: Container(
                               height: context.screenHeight * 0.15,
-                              width: context.screenWidth *
-                                  0.3, // Set width to 50% of the screen width
+                              width: context.screenWidth * 0.3,
                               decoration: BoxDecoration(
-                                color: Colors.white,
+                                color: Colors
+                                    .white, // Optional: Set the background color
                                 border: Border.all(
-                                  color: const Color(0xff3551b64d),
-                                  width: 1.0,
+                                  color:
+                                      const Color(0xff3551b64d), // Border color
+                                  width: 1.0, // Border thickness
                                 ),
-                                borderRadius: BorderRadius.circular(16),
+                                borderRadius: BorderRadius.circular(
+                                    16), // Optional: Rounded corners
                               ),
-                              child: Row(
-                  children: [
-                    const Padding(
-                      padding: EdgeInsets.only(left: 16),
-                      child: CircleAvatar(
-                        radius: 30,
-                        backgroundImage: AssetImage('${ImagesAssets.imagePath}Ellipse3.png'),
-                      ),
-                    ),
-                    SizedBox(
-                      width: context.screenWidth * 0.01, // Adjust space between avatar and text
-                    ),
-                    Flexible(
-                      child: FittedBox(
-                        child: Text(
-                          'Company Name here',
-                          style: TextStyle(
-                            fontFamily: fontFamilys,
-                            fontWeight: FontWeight.w500,
-                            color: AppColor.Indigo_Dye,
+                              child:Row(
+                                        children: [
+                                          const Padding(
+                                            padding: EdgeInsets.only(left: 16),
+                                            child: Stack(
+                      children: [
+                        CircleAvatar(
+                          radius: 30, // Adjust the radius for size
+                          backgroundImage: AssetImage('${ImagesAssets.imagePath}Ellipse.png'), // Image from assets
+                        ),
+                        Positioned(
+                          right: 4,
+                          bottom: -2,
+                          child: Icon(
+                                      Icons.circle,
+                                      color: Colors.green,
+                                      size: 18,
                           ),
-                          overflow: TextOverflow.ellipsis, // Handle overflow by showing ellipsis
-                          softWrap: false,
                         ),
+                      ],
+                                            ),
+                                          ),
+                                          const SizedBox(
+                                            width: 16, // Fixed space between avatar and text
+                                          ),
+                                          Flexible(
+                                            child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        FittedBox(
+                          child: Text(
+                                      'Supplier Full Name here',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        fontFamily: fontFamilys,
+                                        color: AppColor.Indigo_Dye,
+                                        fontSize: 18,
+                                      ),
+                                      overflow: TextOverflow.ellipsis, // Prevent overflow
+                                      softWrap: false,
+                          ),
+                        ),
+                        const FittedBox(
+                          child: Text(
+                                      'Local Supplier',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                      overflow: TextOverflow.ellipsis, // Prevent overflow
+                                      softWrap: false,
+                          ),
+                        ),
+                      ],
+                                            ),
+                                          ),
+                                        ],
+                                      )
+                                      
+                            ),
+                          ),
+                          SizedBox(
+                            width: context.screenWidth * 0.02,
+                          ),
+                          Container(
+                            height: context.screenHeight * 0.15,
+                            width: context.screenWidth *
+                                0.3, // Set width to 50% of the screen width
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              border: Border.all(
+                                color: const Color(0xff3551b64d),
+                                width: 1.0,
+                              ),
+                              borderRadius: BorderRadius.circular(16),
+                            ),
+                            child: Row(
+                                        children: [
+                                          const Padding(
+                                            padding: EdgeInsets.only(left: 16),
+                                            child: CircleAvatar(
+                      radius: 30,
+                      backgroundImage: AssetImage('${ImagesAssets.imagePath}Ellipse3.png'),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            width: context.screenWidth * 0.01, // Adjust space between avatar and text
+                                          ),
+                                          Flexible(
+                                            child: FittedBox(
+                      child: Text(
+                        'Company Name here',
+                        style: TextStyle(
+                          fontFamily: fontFamilys,
+                          fontWeight: FontWeight.w500,
+                          color: AppColor.Indigo_Dye,
+                        ),
+                        overflow: TextOverflow.ellipsis, // Handle overflow by showing ellipsis
+                        softWrap: false,
                       ),
-                    ),
-                  ],
-                )
-                
-                            )
-                          ],
-                        ),
+                                            ),
+                                          ),
+                                        ],
+                                      )
+                                      
+                          )
+                        ],
                       ),
                     ),
                     SizedBox(

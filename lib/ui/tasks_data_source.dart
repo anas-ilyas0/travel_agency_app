@@ -66,10 +66,7 @@ class TaskDataSource extends DataTableSource {
                 child: Widgets().editDelContainer(
                   context,
                   () {
-                    showDialog(
-                      context: context,
-                      builder: (context) => const LocalsupplierDialog(),
-                    );
+                  
                   },
                   () {},
                 ))

@@ -6,17 +6,14 @@ import 'package:provider/provider.dart';
 import '../AppColor/app_color.dart';
 import '../consts/consts.dart';
 import '../resources/responsive.dart';
-
 class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
   TabController dashboardTabController;
   CustomHeader({super.key, required this.dashboardTabController});
-
   @override
   Size get preferredSize => const Size.fromHeight(77);
   @override
   Widget build(BuildContext context) {
     final supplierProvider = Provider.of<UserProvider>(context);
-
     return AppBar(
       elevation: .2,
       toolbarHeight: 77,
@@ -54,9 +51,10 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
                         const EdgeInsets.symmetric(horizontal: 22, vertical: 8),
                     isScrollable: true,
                     tabs: [
-                      const Tab(text: 'Dashboard'),
-                      const Tab(text: 'Leads'),
+                 
+               const Tab(text: "DashBoard",),
                       const Tab(text: 'Agents'),
+                    const  Tab(text:'Leads' ),
                       const Tab(text: 'Customer'),
                       Tab(
                           child: Row(
@@ -71,12 +69,10 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
                                   if(value == 'Local'){
                                     supplierProvider.setSelectedSupplierIndex(0);
                                     dashboardTabController.animateTo(4);
-
                                   }
                                   else if(value == 'International'){
                                     supplierProvider.setSelectedSupplierIndex(1);
                                     dashboardTabController.animateTo(4);
-
                                   }
                                   else{
                                   }
@@ -99,7 +95,6 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
               ),
             )
           : null,
-      
       actions: [
         Padding(
           padding: EdgeInsets.only(right: context.screenWidth * .01),
@@ -111,5 +106,4 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget {
       ],
     );
   }
-
 }

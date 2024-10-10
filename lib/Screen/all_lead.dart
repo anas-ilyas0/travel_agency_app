@@ -38,7 +38,7 @@ class AllLeads extends StatelessWidget {
                 right: Responsive.isMobile(context) ? 16 : 50),
             child: Column(
               children: [
-                // Header Row
+              
                 Row(
                   mainAxisAlignment: Responsive.isMobile(context)
                       ? MainAxisAlignment.start
@@ -52,7 +52,7 @@ class AllLeads extends StatelessWidget {
                                 fontSize: 20,
                                 fontFamily: fontFamilys,
 
-                                // fontFamily: readexPro,
+                            
 
                                 fontWeight: FontWeight.bold,
                                 color: color),
@@ -65,7 +65,7 @@ class AllLeads extends StatelessWidget {
                               color: color,
                               fontFamily: fontFamilys,
 
-                              //  fontFamily: readexPro,
+                          
 
                               fontWeight: FontWeight.w600),
                         ),
@@ -75,7 +75,7 @@ class AllLeads extends StatelessWidget {
 
                               fontFamily: fontFamilys,
 
-                              // fontFamily: readexPro,
+                      
                             ),
                             unselectedLabelStyle:
                                 const TextStyle(fontWeight: FontWeight.normal),
@@ -102,8 +102,8 @@ class AllLeads extends StatelessWidget {
                             ? Widgets().button(
                                 'Add New Lead',
                                 () {
-                                  // Navigator.pushNamed(
-                                  //   context, AppRoutes.lead_details);
+                              
+                                
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
@@ -195,12 +195,14 @@ class AllLeads extends StatelessWidget {
                                         const SizedBox(
                                           height: 10,
                                         ),
-                                        Center(
-                                          child: Image.asset(
-                                            "${ImagesAssets.imagePath}allleadimagecontainer.png",
-                                            width: 140,
-                                            height: 140,
-                                            fit: BoxFit.contain,
+                                        Expanded(
+                                          child: Center(
+                                            child: Image.asset(
+                                              "${ImagesAssets.imagePath}allleadimagecontainer.png",
+                                              width: 140,
+                                              height: 140,
+                                              fit: BoxFit.contain,
+                                            ),
                                           ),
                                         ),
                                         const SizedBox(
@@ -271,7 +273,7 @@ class AllLeads extends StatelessWidget {
                       ),
                     ),
                     const Center(child: Text('Pending')),
-                    // const Center(child: Text('Canceled')),
+                   // const Center(child: Text('Canceled')),
                   ]),
                 ),
               ],

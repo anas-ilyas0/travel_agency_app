@@ -367,37 +367,35 @@ class Widgets {
       ) {
     return GestureDetector(
       onTap: onTap,
-      child: Expanded(
-        child: Container(
-          height: 48,
-          decoration: BoxDecoration(
-              color: addLeadButtonColor, borderRadius: BorderRadius.circular(5)),
-          child: Padding(
-            padding: const EdgeInsets.only(left: 10),
-            child: Row(
-              children: [
-                SizedBox(
-                  // height: 46,
-                  // width: 180,
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 18,vertical: 12),
-                    child: Center(
-                      child: Text(
-                        text,
-                        style: TextStyle(
-                            fontSize: 14,
-                            fontFamily: fontFamilys,
-                      
-                            //   fontFamily: readexPro,
-                      
-                            color: color,
-                            fontWeight: FontWeight.w400),
-                      ),
+      child: Container(
+        height: 48,
+        decoration: BoxDecoration(
+            color: addLeadButtonColor, borderRadius: BorderRadius.circular(5)),
+        child: Padding(
+          padding: const EdgeInsets.only(left: 10),
+          child: Row(
+            children: [
+              SizedBox(
+                // height: 46,
+                // width: 180,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 18,vertical: 12),
+                  child: Center(
+                    child: Text(
+                      text,
+                      style: TextStyle(
+                          fontSize: 14,
+                          fontFamily: fontFamilys,
+                    
+                          //   fontFamily: readexPro,
+                    
+                          color: color,
+                          fontWeight: FontWeight.w400),
                     ),
                   ),
-                )
-              ],
-            ),
+                ),
+              )
+            ],
           ),
         ),
       ),
